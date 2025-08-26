@@ -1,0 +1,227 @@
+PL/SQL Exception Handling
+An error occurs during the program execution is called Exception in PL/SQL. PL/SQL facilitates programmers to catch such conditions using exception block in the program and an appropriate action is taken against the error condition.
+
+Syntax for exception handling:
+DECLARE
+	<declarations section>
+BEGIN
+	<executable command(s)>
+EXCEPTION
+<exception handling goes here >
+WHEN exception1 THEN
+	exception 1-handling-statements
+WHEN exception2 THEN
+	exception2-handling-statements
+WHEN exception3 THEN
+	exception3-handling-statements ....
+WHEN others THEN
+	<Default exception handling code for all exceptions >
+END;
+
+ Advantages Of Exception Handling
+1.If our code does not have an exception handling, then each time we execute a statement, we must verify errors in execution.
+2.If we avoid exception handling in our code, the actual errors get missed which gives rise to some other errors. 
+3.The exception handling allows skipping multiple verifications in the code.
+4.It provides better readability of the code by isolating the error handlers in the code.
+
+Types of Exception
+There are two types of Exceptions in PL/SQL.
+1.Predefined Exceptions
+2.User-defined Exception
+
+Predefined Exceptions
+Oracle has predefined some common exception. These exceptions have a unique exception name and error number.
+These exceptions are already defined in the 'STANDARD' package in Oracle. In code, we can directly use these predefined exception name to handle them.
+
+Following is a list of some important pre-defined exceptions:
+Exception:-
+ACCESS_INTO_NULL 
+It is raised when a NULL object is automatically assigned a value.
+
+CASE_NOT_FOUND
+It is raised when none of the choices in the "WHEN" clauses of a CASE statement is selected, and there is no else clause.
+
+COLLECTION_IS_NULL
+It is raised when a program attempts to apply collection methods other than exists to an uninitialized nested table or varray, or the program attempts to assign values to the elements of an uninitialized nested table or varray.
+
+DUP_VAL_ON_INDEX
+It is raised when duplicate values are attempted to be stored in a column with unique index. 
+
+INVALID_CURSOR
+It is raised when attempts are made to make a cursor operation that is not allowed, such as closing an unopened cursor.
+
+INVALID_NUMBER
+It is raised when the conversion of a character string into a number fails because the string does not represent a valid number.
+
+LOGIN_DENIED
+It is raised when s program attempts to log on to the database with an invalid username or password.
+
+NO_DATA_FOUND
+It is raised when a select into statement returns no rows.
+
+NOT_LOGGED_ON
+It is raised when a database call is issued without being connected to the database.
+
+PROGRAM_ERROR
+It is raised when PL/SQL has an internal problem.
+
+ROWTYPE_MISMATCH
+It is raised when a cursor fetches value in a variable having incompatible data type.
+
+SELF_IS_NULL
+It is raised when a member method is invoked, but the instance of the object type was not initialized.
+
+STORAGE_ERROR
+It is raised when PL/SQL ran out of memory or memory was corrupted.
+
+TOO_MANY_ROWS
+It is raised when a SELECT INTO statement returns more than one row.
+
+VALUE_ERROR
+It is raised when an arithmetic, conversion, truncation, or size-constraint error occurs.
+
+ZERO_DIVIDE
+It is raised when an attempt is made to divide a number by zero.
+
+1. zero_divide example:
+declare
+	a int;
+	b int;
+	c int;
+begin
+	a:=&a;	
+	b:=&b;
+	c:=a/b;
+	dbms_output.put_line('result =' ||c);
+exception
+	when zero_divide then
+		dbms_output.put_line('Division by 0 is not possible');
+end;
+
+2.too_many_rows example:
+
+declare 
+	eno employee.empno%type;
+	sl employee.sal%type;
+begin
+	select sal into sl from employee where empno=9999;
+	dbms_output.put_line('The Salary is '||sl);
+exception
+	when too_many_rows then
+		dbms_output.put_line('The Salary are more than one');
+
+end;
+
+3.no_data_found example
+declare 
+	eno employee.empno%type;
+	sl employee.sal%type;
+begin
+	select sal into sl from employee where empno=100;
+	dbms_output.put_line('The Salary is '||sl);
+exception
+	when too_many_rows then
+		dbms_output.put_line('The Salary are mony than one');
+	when no_data_found then
+		dbms_output.put_line('There is no employee with the number');
+end;
+
+create table student (s_id int,s_name varchar2(20), marks int);
+ii)declare 
+	temp varchar(20);
+begin
+	select s_id into temp from student where s_name='hello word';
+exception
+	when no_data_found then
+		dbms_output.put_line('Error');
+		dbms_output.put_line('There is no name as');
+		dbms_output.put_line('Hello world in sample table');
+end;
+
+4.value _error example
+
+declare 
+	temp number;
+begin
+	select s_name into temp from student where s_name='Datapro';
+	dbms_output.put_line('the s_name is '|| temp);
+exception
+	when value_error then
+	dbms_output.put_line('Error');
+	dbms_output.put_line('Change data type of temp to varchar(20)'); 
+end;
+
+PL/SQL User-defined Exceptions
+
+PL/SQL facilitates their users to define their own exceptions according to the need of the program. A user-defined exception can be raised explicitly, using either a RAISE statement or the procedure DBMS_STANDARD.RAISE_APPLICATION_ERROR.
+
+Raising Exceptions
+In the case of any internal database error, exceptions are raised by the database server automatically. But it can also be raised explicitly by programmer by using command RAISE.
+
+Syntax for raising an exception:
+DECLARE
+	exception_name EXCEPTION;
+BEGIN
+	IF condition THEN	
+		RAISE exception_name;
+	END IF;
+EXCEPTION
+	WHEN exception_name THEN
+	statement;
+END;
+
+Important points to note in Exception :-
+1.In function, an exception should always either return value or raise the exception further. else Oracle will throw 'Function returned without a value' error at run-time.
+2.Transaction control statements can be given at exception handling block.
+3.SQLERRM and SQLCODE are the in-built functions that will give the exception message and code.
+4.If an exception is not handled then by default all the active transaction in that session will be rolled back.
+5.RAISE_APPLICATION_ERROR (-<error_code>, <error_message>) can be used instead of RAISE to raise the error with user code and message. Error code should be greater than 20000 and prefixed with '-'.
+
+raise application error procedure
+
+The procedure raise_application_error allows you to issue an user-defined error from a code block or stored program. By using this procedure, you can report errors to the callers instead of returning unhandled exceptions.
+
+The raise_application_error has the following syntax:
+raise_application_error(error_number, message [, {TRUE | FALSE}]);
+In this syntax:
+The error_number is a negative integer with the range from -20999 to -20000.
+The message is a character string that represents the error message. Its length is up to 2048 bytes.
+If the third parameter is FALSE, the error replaces all previous errors. If it is TRUE, the error is added to the stack of previous errors.
+
+Example:
+declare
+	sno student.s_id%type;
+	snm student.s_name%type;
+	mark student.marks%type;
+
+	invalid_total exception;
+begin
+	sno:=&rollno;
+	snm:='&sname';
+	mark :=&mark;
+	if(mark >100) then
+		raise invalid_total;
+	end if;
+	insert into student values(sno,snm,mark);
+exception
+	when invalid_total then
+		dbms_output.put_line('Total number of marks cannot be more than 100');
+end;
+
+Example:
+
+declare 
+	myex exception;
+	n number :=&n;
+begin
+	for i in 1..n loop
+		dbms_output.put_line(i);
+		if i=n then
+			raise myex;
+		end if;
+	end loop;
+exception
+	when myex then 
+		raise_application_error(-20015,'loop finish');
+end;
+/

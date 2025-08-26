@@ -1,0 +1,169 @@
+WHILE LOOP
+The condition is tested each pass through the loop. If condition evaluates to TRUE, the loop body is executed. If condition evaluates to FALSE, the loop is terminated.
+Syntax:
+WHILE condition
+LOOP
+{...statements...}
+END LOOP;
+Example: 
+
+1. To print 1 to 10 number
+declare 
+x number(5):=1
+begin
+while x<=10
+loop
+dbms_output.put_line(x);
+x:=x+1;
+end loop;
+end;
+
+2. To print 1 to 10 number And sum 
+declare 
+x number(5):=1
+s number(5):=0
+begin
+while x<=10
+loop
+dbms_output.put_line(x);
+s=s+x;
+x=:x+1;
+end loop;
+dbms_output.put_line('The sum loop is  :'|| s);
+end;
+
+2.
+
+FOR LOOP allows you to execute code repeatedly for a fixed number of times.
+Syntax:
+FOR loop_counter IN [REVERSE] lowest_number..highest_number LOOP
+{...statements...}
+END LOOP;
+
+Example:
+1. To print 1 to 10;
+declare 
+x number(2);
+begin
+for x in 1..10 
+loop
+dbms_output.put_line(x);
+end loop;
+end;
+
+2.. To print 10 to 1;
+declare 
+x number(2);
+begin
+for x in reverse 1..10 loop
+dbms_output.put_line(x);
+end loop;
+end;
+
+3.To print table by user input
+declare 
+x number(3);
+y number(3);
+begin
+x:=&x;
+for y in 1..10 loop
+dbms_output_put_line(to_char(x) || '*' ||to_char(y) || '=' || to_char(x*y));
+end loop;
+end;
+
+4.To print table by user input from starting table and ending table
+
+declare 
+x number(3);
+y number(3);
+begin
+x:=&x;
+y:=&y;
+for i in x..y loop
+for j in 1..10 loop
+dbms_output.put_line(to_char(i) || '*' ||to_char(j) || '=' || to_char(i*j));
+end loop;
+end loop;
+end;
+
+Loop
+Loops are iterative control statements.
+They are used to repeat execution of one or more statements for defined number of times.
+Syntax
+LOOP
+Exit Loop 
+Sequence of statements;
+END LOOP;
+It is used a set of statements is executed at least once before termination of loop.
+There should be an EXIT condition in the loop, otherwise the loop will get into an infinite number of iterations.
+Syntax
+LOOP
+Statements;
+EXIT;
+[or EXIT WHEN condition;]
+
+Example:
+declare
+x number(3):=1;
+begin
+loop 
+dbms_output.put_line(x);
+x:=x+1;
+exit when x>25;
+end loop;
+end;
+
+GOTO Statement
+In PL/SQL, GOTO statement makes you able to get an unconditional jump from the GOTO to a specific executable statement label in the same subprogram of the PL/SQL block. label_name is encapsulated within the << >> symbol
+Syntax GOTO label_name;
+<<label_name>> Statements;
+
+Example:-
+declare
+   x number(3);
+begin
+   x := &x;
+   if x > 10 then
+      goto stop; 
+   end if;
+   dbms_output.put_line('x is less than or equal to 10: ' || x);
+   <<stop>> 
+   dbms_output.put_line('This is the stop label.');
+end;
+
+
+Case statement
+The PL/SQL CASE Statement provides facility to execute a sequence of statements based on a
+selector. A selector may be variable, function or an expression.
+Syntax
+CASE [expression]
+WHEN condition1 THEN result1 
+WHEN condition2 THEN result2
+WHEN condition_n THEN result_n
+ELSE result
+END;
+Example: To check the week given by user;
+
+declare
+x number(1);
+begin
+x:=&x;
+case x
+when 1 then
+	dbms_output.put_line('sunday');
+when 2 then
+	dbms_output.put_line('Monday');
+when 3 then
+	dbms_output.put_line('Tueday');
+when 4 then
+	dbms_output.put_line('Wednesday');
+when 5 then
+	dbms_output.put_line('Thursday');
+when 6 then
+	dbms_output.put_line('Friday');
+when 7 then
+	dbms_output.put_line('Saturday');
+else
+	dbms_output.put_line('Invalid Output....');
+end case;
+end;

@@ -1,0 +1,398 @@
+New Semantic/Structural Elements
+HTML5 offers new elements for better structure:
+Semantics are classified into the following three types:
+1. General Semantics
+2. Arabic Semantics
+3. Chinese Semantics
+
+1. General Semantics
+1. <section> 		
+2. <article> 		
+3. <header> 		
+4. <footer> 		
+5. <hgroup> 		 
+6. <aside> 		
+7. <command> 
+8. <details> 		
+9. <summary> 	
+10. <figure> 		
+11. <figcaption> 	
+12. <nav> 
+13. <wbr> 		
+
+2. Arabic Semantics
+14. <bdi> 		
+15. <bdo>		
+
+3. Chinese Semantics
+16. <ruby> 	
+17. <rt> 		
+18. <rp> 	
+
+1. General Semantics:-
+Tag 		Description
+<section> 	Defines a section in a document
+<article> 		Defines an article
+<header> 	Defines a header for a document or section
+<footer> 		Defines a footer for a document or section
+<hgroup> 		Groups a set of <h1> to <h6> elements 
+<aside> 		Defines content  of related surrounding content 
+<command> 	Defines a command button
+<details> 	Def. additional details that the user can view/hide
+<summary> 	Defines a visible heading for a <details> element
+<figure> 		Spe. self-contained content, like photos, code,listings, etc.
+<figcaption> 	Defines a caption for a <figure> element
+<nav> 		Defines navigation links
+<wbr> 		Defines a possible line-break
+
+<bdi> 		Isolates a part of text formated in a different direction 
+<bdo>		It is used to override the current text direction
+<ruby> 		Defines a ruby annotation(for East Asian typography)
+<rt> 		Defines an explanation/pronunciation of characters 	
+<rp> 		Defines what to show in browsers 
+
+
+<section>
+It defines sections in a document.Such as chapters, headers, footers, or any other sections of the document. It is a paired tag.
+
+Syntax: 
+<section>.........................</section>
+
+Attributes:
+Element-Specific Attributes None.
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<section>
+<article>
+<header>CSS</header>
+A style sheet consists of a list of rules. Each rule or rule-set consists of one or more selectors, and a declaration block. A declaration-block consists of a list of declarations in braces. Each declaration itself consists of a property, a colon (:), and a value. If there are multiple declarations in a block, a semi-colon (;) must be inserted to separate each declaration.
+<footer> &copy; &reg; reserved W3C. </footer>
+  </article>
+</section>
+<section>
+  <h1>CSS3</h1>
+<p>The development of CSS3 is going to be split up into ‘modules’. Some of these modules are: The Box Model Lists Module Hyperlink Presentation Speech Module Backgrounds and Borders Text Effects Multi-Column Layout.</p>
+</section>
+</body>
+</html>
+
+<header>
+This element is used to display headers for subheadings,version information, navigational controls, etc. It is a paired tag.
+
+Syntax: 
+<header>------------------</header>
+
+Attributes:
+Element-Specific Attributes are None.
+
+Note: 
+A <header> tag cannot be placed within a <footer>
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<article>
+  <header>
+  <h1>Search Engine Optimization</h1>
+  </header>
+  <p>As an Internet marketing strategy, SEO considers how search engines work, what people search for, the actual search terms or keywords typed into search engines and which search engines are preferred by their targeted audience</p>
+</article>
+</body>
+</html>
+
+<footer>
+It is used for defining the footer of an HTML document or section. Footers usually contain information such as the author of the document, copyright information, links to terms of use, privacy policy, etc. It is a paired tag.
+
+Syntax: <footer>------------------</footer>
+
+Attributes:
+Element-Specific Attributes are None.
+
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<article>
+<p>Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. </p>
+<p>Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.</p>
+</article>
+<footer>
+ &copy 2012 RIA Internet Apps &reg
+</footer>
+</body>
+</html>
+
+HTML5 <article> Tag:
+It is used to represent an article. More specifically, the content within the <article> tag is independent from the other content on the site.This could be a forum post, a magazine or newspaper article, a blog entry etc. It is  a paired tag.
+
+Syntax: <article>------------------</article>
+
+Attributes:
+Element-Specific Attributes None
+
+Example1:
+<article>
+  <h4>A really awesome article</h4>
+  <p>Lots of awesome text. It is good Article</p>
+</article>
+
+Example2:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>HTML5 article example</title>
+</head>
+<body>
+<article>
+<h1>HTML5 article element</h1>
+<p>HTML5 article element represents independent item like a blog entry in an web document.</p>
+</article>
+</body>
+</html>
+
+Example2:
+<!Doctype HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>Example of article tag.</title>
+</head>
+<body>
+<p><b>Example of article <article> tag in HTML5.</b></p>
+<article>
+<p>
+It  is global services company that understands businesses and aims to deliver value to its customers through its software solutions and services. </p>
+</article>
+</body>
+</html>
+
+<hgroup>
+It is typically used to group a set of one or more h1-h6 elements -to group,such as subheadings, alternative titles, or taglines. It is a paired tag.
+
+Syntax: <hgroup> ---------</hgroup>
+
+Attributes:
+Element-Specific Attributes are None.
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<hgroup>
+<h1>Welcome to my DataproTech</h1>
+<h2>All Web Technologies Train Here</h2>
+<h3> like HTML CSS JS jQuery </h3>
+</hgroup>
+<p>The rest of the content...</p>
+</body>
+</html>
+
+<aside>
+It is used to represent content that is related to the surrounding content within an article or web page, but could still stand alone in its own right. It is a paired tag..!!
+
+Syntax: <aside>-------------</aside>
+
+Attributes:
+Element-Specific Attributes --> None
+
+Example:
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+</head>
+<body>
+<p>HTML5 is Web Environment or platform for future development</p>
+<aside>
+<h4>Cascading Style Sheets</h4>
+<p>It is another advanced look and feel for designing.</p>
+</aside>
+</body>
+</html>
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">	
+<head>
+<meta charset=utf-8>
+<title>
+Good Example for ASIDE
+</title>
+</head>
+<body>
+<aside style="font-size:larger;font-style:italic;color:blue;float:right;width:120px;">
+HTML5 is Web platform. It is collection of technologies. It is from WHATWG and W3C.
+</aside>
+<p>The aside element is new to HTML5 and it can be used in two different contexts. Basically, the context of the aside element is based on whether or not it inside or outside the article element.</p>
+<p>The HTML article tag is used to represent an article. More specifically, the content within the article tag is independent from the other content on the site.This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content..</p>
+</body>
+</html>
+
+<command>
+It defines a command (a radiobutton, a checkbox, or a command button) that the user can invoke. It is a paired tag.
+
+Note:Commands are not supported in any browser
+
+Syntax: 
+<command>------------------</command>
+
+Attributes:
+Attribute 	Value 	Description
+checked	checked Specifies that the command should be checked when the page loads. 	
+disabled  disabled 	Specifies that the command should be disabled.
+icon 	URL 	Specifies an image that represents the command.
+label	Text 	Specifies the name of the command, as shown to the user.
+
+<details>
+It can used to create an interactive widget that the user can open and close. The content of a <details> element should not be visible unless the open attribute is set. It is a paired tag.
+
+Syntax: <details>------------------</details>
+
+Attributes
+Attribute 	Value 	Description
+open 	open 	Specifies that the details should be visible (open) to the user
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+</head>
+<body>
+<details>
+<summary>Copyright 1999-2012.</summary>
+<p> - NuthaniTech. All Rights Reserved.</p>
+<p>All contents are related to IT resources and Training and Development</p>
+</details>
+</body>
+</html>
+
+Example
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+</head>
+<body>
+<details open="open">
+<summary>Copyright 1999-2012.</summary>
+<p> - iTech. All Rights Reserved.</p>
+<p>All contents are related to IT resources and Training and Development</p>
+</details>
+</body>
+</html>
+
+<summary>
+It defines a visible heading for the <details> element. The heading can be clicked to view/hide the details. It is a paired tag.
+
+Syntax: 
+<summary>------------------</summary>
+
+Note: 
+It should be the first child element of the <details> element.
+
+Attributes 
+Element-Specific Attributes are None.
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+</head>
+<body>
+<details>
+<summary>It Description</summary>
+<p>i Technologies</p>
+<p>Leader in IT Training</p>
+<p>www.it.com</p>
+<p>Hyderabad</p>
+</details>
+</body>
+</html>
+
+<figure>
+The figure element represents a unit of content, optionally with a caption, that is self-contained, that is typically referenced as a single unit from the main flow of the document, and that can be moved away from the main flow of the document without affecting the document’s meaning.
+
+Syntax: <figure>----------------------</figure>
+
+Attributes: Element-Specific Attributes are None.
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<p>HTML5 will be the new standard for HTML, XHTML, and the HTML DOM.
+The previous version of HTML came in 1999. The web has changed a lot since then.
+HTML5 is still a work in progress. However, most modern browsers have some HTML5 support...</p>
+<figure>
+  <img src="html5.png" title="WebPlatform" width="300" height="250" />
+</figure>
+</body>
+</html>
+
+<figcaption>
+The <figcaption> tag defines a caption for a <figure> element. The figcaption element represents a caption or legend for a figure.
+
+Syntax: <figcaption>----------------</figcaption>
+
+Attributes:
+Element-Specific Attributes are None.
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<p>HTML5 will be the new standard for HTML, XHTML, and the HTML DOM.
+The previous version of HTML came in 1999. The web has changed a lot since then.
+HTML5 is still a work in progress. However, most modern browsers have some HTML5 support...</p>
+<figure>
+  <img src="html5.png" title="WebPlatform" width="300" height="250" />
+<figcaption> It is HTML5 Logo from W3C and WHATWG</figcaption>
+</figure>
+</body>
+</html>
+
+<nav>
+The HTML <nav> tag is used for declaring a navigational section of the HTML document. Websites typically have sections dedicated to navigational links - links that enable the user to navigate the site. These links should be placed inside a <nav> tag.
+
+Syntax: <nav>--------------------</nav>
+
+Attributes:
+Element-Specific Attributes None.
+
+Example
+<!DOCTYPE html>
+<html>
+<body>
+<nav>
+<a href="http://www.datapro.in">Datapro</a> |
+<a href="http://www.google.com">Google</a> |
+<a href="http://www.gmail.com">Gmail</a> |
+<a href="http://www.facebook.com">Facebook</a> |
+<a href="http://www.yahoomail.com">YahooMail</a>
+</nav>
+</body>
+</html>
+
+<wbr>
+Word break. For defining a line-break opportunity. The Word Break Opportunity (<wbr>) specifies where in a text it would be ok to add a line-break
+
+Syntax: <wbr> or <wbr/>
+
+Attributes:
+Element-Specific Attributes None.
+
+Example:6
+<!DOCTYPE html>
+<html>
+<body>
+<p>This is a veryveryveryveryveryveryveryvery<wbr>longwordthatwillbreakatspecific<wbr>placeswhenthebrowserwindowisresized.</p>
+</body>
+</html>

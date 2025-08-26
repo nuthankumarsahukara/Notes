@@ -1,0 +1,78 @@
+Props drilling in React refers to the process of passing data from a parent component to deeply nested child components through multiple layers of intermediate components, even if those intermediate components don't need the data themselves — they just pass it along.
+
+Example of Props Drilling
+
+1.App.js
+
+import HomePage from "./HomePage";
+
+function App(){
+  let data={
+    name :"Nuthan",
+    age :25,
+    place :"Vizag"
+  }
+
+  return(
+    <>
+      <h1>This is App Page Component</h1>
+      <HomePage data={data}/>
+    </>
+  )
+}
+
+export default App;
+
+2.Hompage.js
+
+import ProductList from "./ProductList";
+
+function HomePage({data}){
+    return (
+        <>
+            <h1>This is Homepage Component</h1>
+            <ProductList data={data}/>
+        </>
+    )
+}
+
+export default HomePage;
+
+3.ProductList.js
+
+import ProductPage from "./ProductPage";
+
+function ProductList({data}){
+    return (
+        <>
+            <h1>This is ProductList Component</h1>
+            <ProductPage data={data}/>
+        </>
+    )
+}
+export default ProductList;
+
+4.ProductPage.js
+
+function ProductPage({data}){
+    return (
+        <>
+            <h1>This is Product page Component</h1>
+            <p>Name :{data.name}</p>
+            <p>Age :{data.age}</p>
+            <p>Place :{data.place}</p>
+        </>
+    )
+}
+
+export default ProductPage;
+
+In the above example:
+-->App needs ProductPage to access data object.
+-->But HomePage and ProductList are just passing the prop down — they don't use it .
+-->This is props drilling
+
+Problems with Props Drilling:-
+-->Unnecessary prop passing through components that don't need it
+-->Difficult to maintain and refactor as the app grows
+-->Makes code less readable

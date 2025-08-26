@@ -1,0 +1,343 @@
+Identifiers:-
+
+All Java variables,Method,Packages,Interface must be identified with unique names.
+
+These unique names are called identifiers.
+
+Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+
+Note: It is recommended to use descriptive names in order to create understandable and maintainable code:
+
+
+The general rules for naming variables are:
+
+1.Names can contain letters, digits, underscores, and dollar signs(a-z,A-Z,0-9,_$)
+2.Names must begin with a letter 
+3.Names should start with a lowercase letter, and cannot contain whitespace.
+4.Names can also begin with $ and _
+5.Names are case-sensitive ("myVar" and "myvar" are different variables)
+6.Reserved words (like Java keywords, such as int or boolean) cannot be used as names.
+7.Names can't begin with digits
+
+Eg:-      a=10; (Correct)  
+	a n=10; (Wrong)
+	9dgffx=10;(Wrong)
+	$a=10;(correct)
+	_ab=10;(correct)
+	break=15;(Wrong)
+
+Data types are divided into two groups
+->Primitive data types - includes byte, short, int, long, float, double, boolean and char
+->Non-primitive data types - such as String, Arrays and Classes.
+
+Primitive Data Types
+A primitive data type specifies the size and type of variable values, and it has no additional methods.
+
+There are eight primitive data types in Java:
+
+Data        TypeSize	    Description
+byte	1 byte	Stores whole numbers from -128 to 127
+short	2 bytes	Stores whole numbers from -32,768 to 32,767
+int	4 bytes	Stores whole numbers from -2,147,483,648 to 2,147,483,647
+long	8 bytes	Stores whole numbers from -9,223,372,036,854,775,808 to 					9,223,372,036,854,775,807
+float	4 bytes	Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double	8 bytes	Stores fractional numbers. Sufficient for storing 15 decimal digits
+boolean	1 bit	Stores true or false values
+char	2 bytes	Stores a single character/letter or ASCII values
+  
+Types of constants
+
+boolean constant	(true/false)
+byte constant	('a','5','%')
+integer constant	(10,20,30,..)
+float constant	(4.56,3.87,...)
+char constant	('f','3','^',...)
+string constant	("datapro",...)
+
+escape sequence  :it is a special char in java and it perform the special operation in java.
+
+\n	:new line
+\t	:tab
+\b	:backspace
+\	:to ignore the meaning of special chars
+
+Java Variables
+A variable is a container which holds the value while the Java program is executed. A variable is assigned with a data type.
+
+Variable is a name of memory location. There are three types of variables in java: local, instance and static.
+
+There are two types of data types in Java: primitive and non-primitive.
+
+Variable
+A variable is the name of a reserved area allocated in memory. In other words, it is a name of the memory location. It is a combination of "vary + able" which means its value can be changed.
+
+Types of Variables
+There are three types of variables in Java:
+
+local variable
+instance variable
+static variable
+
+Local Variables: Defined within a method or block and accessible only there.
+ex:    {
+	int a=10;   ->Local Variable
+	------------		
+         }
+Instance Variables: Defined within a class but outside any method; associated with an instance of the class.
+ex:    	int a=10 ->instance Variable
+ 	{
+	   We need create the object we can access it 
+	    ------------
+	}
+Static Variables: Declared with the static keyword; shared among all instances of a class.
+ex:	static int a =10
+	{
+	     -----------------
+	}
+how to define / declare a variable  ?
+
+datatype variablename;
+
+how to initialize a variable  ?
+
+datatype variablename=value;
+
+Eg: int x=10; char b='t';
+
+const  : it is a keyword in c and c++. it is used to define a constant variable. the value of the constant variable can not be changed.
+
+final  : final is the replacement of const in java.
+	 
+final variable: the value of the final variable can not be changed.
+
+final int x=10;
+x=20; invalid (The value of x can not be changed)
+
+final method :final method can not be overridden.
+final class	:final class can not be inherited.
+
+java does not support operator overloading but only + operator is overloaded.
+
+int + int = int 
+int + string = string
+string+ int =string
+string+string=string
+
+Example:
+
+class OperatorOverloaded
+{
+	public static void main(String args[])
+	{
+		int ia=10,ib=20;
+		float fa=15.26f,fb=12.5454f;
+		double da=15354.54546,db=1515.5435;
+		String sa="Nuthan",sb="Kumar";
+
+		System.out.println("Int + int = int ("+(ia+ib)+")");
+		System.out.println("Int + float = float ("+(ia+fb)+")");
+		System.out.println("Int + double = double ("+(ia+da)+")");
+		System.out.println("Int + String = String ("+(ia+sb)+")");
+		System.out.println("float + float = float ("+(fa+fb)+")");
+		System.out.println("float + int = float ("+(fa+ib)+")");
+		System.out.println("float + double = double ("+(fa+ib)+")");
+		System.out.println("float + String = String ("+(fa+sa)+")");
+		System.out.println("double + double = double ("+(da+db)+")");
+		System.out.println("double + int = double ("+(da+ib)+")");
+		System.out.println("double + float = double ("+(da+fa)+")");
+		System.out.println("double + String = String ("+(da+sb)+")");
+		System.out.println("String + String = String ("+(sa+sb)+")");
+		System.out.println("String + int = String ("+(sa+ib)+")");
+		System.out.println("String + float = String ("+(sa+fb)+")");
+		System.out.println("String + double = String ("+(sa+db)+")");
+	}
+}
+
+output:
+Int + int = int (30)
+Int + float = float (22.545399)
+Int + double = double (15364.54546)
+Int + String = String (10Kumar)
+float + float = float (27.8054)
+float + int = float (35.260002)
+float + double = double (35.260002)
+float + String = String (15.26Nuthan)
+double + double = double (16870.08896)
+double + int = double (15374.54546)
+double + float = double (15369.805460228881)
+double + String = String (15354.54546Kumar)
+String + String = String (NuthanKumar)
+String + int = String (Nuthan20)
+String + float = String (Nuthan12.5454)
+String + double = String (Nuthan1515.5435)
+
+Java Type Casting:-
+
+Type casting is when you assign a value of one primitive data type to another type.
+
+In Java, there are two types of casting:
+
+Widening Casting (automatically) - converting a smaller type to a larger type size
+byte -> short -> char -> int -> float -> long -> double
+
+Narrowing Casting (manually) - converting a larger type to a smaller size type
+double -> long -> float -> int -> char -> short -> byte
+
+Widening Casting:
+
+Widening casting is done automatically when passing a smaller size type to a larger size type:
+
+public class WideningCasting {
+  public static void main(String[] args) {
+    int myInt = 9;
+    double myDouble = myInt; // Automatic casting: int to double
+
+    System.out.println(myInt);      // Outputs 9
+    System.out.println(myDouble);   // Outputs 9.0
+  }
+}
+
+Narrowing Casting
+
+Narrowing casting must be done manually by placing the type in parentheses in front of the value
+Ex:
+public class NarrowingCasting {
+  public static void main(String[] args) {
+    double myDouble = 9.78d;
+    int myInt = (int) myDouble; // Manual casting: double to int
+    System.out.println(myDouble);   // Outputs 9.78
+    System.out.println(myInt);      // Outputs 9
+  }
+}
+
+
+Java Operators:
+
+Operators are used to perform operations on variables and values.
+
+In the example below, we use the + operator to add together two values:
+
+int x = 100 + 50;
+	
+int a=15;
+int b=20;
+int c=a+b;
+
+Java divides the operators into the following groups:
+
+Arithmetic operators
+Assignment operators
+Comparison operators
+Logical operators
+Ternary operator
+Bitwise operators
+Shift operators
+
+Arithmetic Operators
+Arithmetic operators are used to perform common mathematical operations.
+
+Operator	   Name			Description	                Example	
+     +	Addition		Adds together two values		x + y	
+     -	Subtraction	Subtracts one value from another	x - y	
+     *	Multiplication	Multiplies two values		x * y	
+     /	Division		Divides one value by another		x / y	
+    %	Modulus		Returns the division remainder	x % y	
+    ++	Increment		Increases the value of a variable by 1	++x	
+     --	Decrement	Decreases the value of a variable by 1	--x
+
+Ex: 
+class Operations
+{
+	public static void main(String A[])
+	{
+		int a=50;
+		int b=3;
+		System.out.println("Arithmetic Operators");
+		System.out.println("Addition :"+(a+b));
+		System.out.println("Subtraction :"+(a-b));
+		System.out.println("Multiplication :"+(a*b));
+		System.out.println("Division :"+(a/b));
+		System.out.println("Module :"+(a%b));
+		System.out.println("Before Increment :"+a);
+		a++;
+		System.out.println("After Increment :"+a);
+		System.out.println("Before Decrement :"+a);
+		a--;
+		System.out.println("After Decrement :"+a);
+	}
+}
+
+Assignment operators: Assignment operators are used to assign values to a variable. The left side operand of the assignment operator is a variable, and the right side operand of the assignment operator is a value.
+Ex: a=10;
+
+Operator   Example	      Same As	
+   =	  x = 5	       x = 5	
+  +=	 x += 3	       x = x + 3	
+  -=	 x -= 3	       x = x - 3	
+  *=	 x *= 3	       x = x * 3	
+  /=	 x /= 3	       x = x / 3	
+  %=	 x %= 3	       x = x % 3	
+  &=	 x &= 3	       x = x & 3	
+   |=	 x |= 3	       x = x | 3	
+   ^=	 x ^= 3	       x = x ^ 3	
+  >>=	 x >>= 3           x = x >> 3	
+  <<=	 x <<= 3           x = x << 3
+
+Ex:
+class AssignmentOperators
+{
+	public static void main(String args[])
+	{
+		int x=50;		
+		System.out.println("Assignment Operators");
+		System.out.println(x+"+50");
+		System.out.println("Addition :"+(x+=50));
+		System.out.println(x+"-5");
+		System.out.println("Subtraction :"+(x-=5));
+		System.out.println(x+"*10");
+		System.out.println("Multiplication :"+(x*=10));
+		System.out.println(x+"/2");
+		System.out.println("Division :"+(x/=2));
+		System.out.println(x+"%2");
+		System.out.println("Module :"+(x%=2));
+	}
+}
+
+Java Comparison Operators
+
+1.Comparison operators are used to compare two values (or variables). This is important in programming, because it helps us to find answers and make decisions.
+
+2.The return value of a comparison is either true or false. These values are known as Boolean values
+
+
+==	Equal to			x == y	
+!=	Not equal			x != y	
+>	Greater than		x > y	
+<	Less than			x < y	
+>=	Greater than or equal to	x >= y	
+<=	Less than or equal to	x <= y
+
+Eg:
+class ComparisonOperators
+{
+	public static void main(String ab[])
+	{
+		int a=50;
+		int b=45;
+		boolean c=a>b;
+		boolean d=a<b;
+		boolean e=a==b;
+		boolean f=a>=b;
+		boolean g=a<=b;
+		boolean h=a!=b;
+		System.out.println("Comparison Operators");
+		System.out.println("The value of A :"+a+" and B :"+b);
+		System.out.println("Greathan :"+c);
+		System.out.println("lessthan :"+d);
+		System.out.println("Equals :"+e);
+		System.out.println("Greathan Equal:"+f);
+		System.out.println("Lessthan Equal:"+g);
+		System.out.println("Not Equals :"+h);
+	}
+}
+		

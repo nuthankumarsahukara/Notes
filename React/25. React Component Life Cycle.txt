@@ -1,0 +1,239 @@
+React Component Life Cycle 
+--->Applies mainly to Class Components
+
+React components go through 3 main phases:
+1. Mounting Phase
+2. Updating Phase
+3. Unmounting Phase
+
+1. Mounting Phase
+When the component is being created and inserted into the DOM
+
+Method				Purpose
+constructor()			Initialize state and bind methods
+static getDerivedStateFromProps()	Sync state from props (rarely used)
+render()				Returns JSX to render UI
+componentDidMount()		Called once after the component is 						mounted
+
+2. Updating Phase
+When props or state change, the component re-renders
+
+Method				Purpose
+static getDerivedStateFromProps()	Called on every update
+shouldComponentUpdate()		Return true or false to allow/disallow update
+render()				Re-render UI
+getSnapshotBeforeUpdate()		Capture info (like scroll position) before 				update
+componentDidUpdate()		Invoked after update is done
+
+3. Unmounting Phase
+When the component is removed from the DOM
+
+Method			Purpose
+componentWillUnmount()	Cleanup (e.g., clear timers, remove listeners)
+
+
+Example :
+import { Component } from "react";
+import ChildProps from "./ChidProps";
+
+class App extends Component{
+    constructor(){
+        super();
+        this.state ={
+            count:10
+        }
+    }
+
+    render(){
+        return(
+            <>
+                <h1>Component Life Cycle methods</h1>
+                <ChildProps data={this.state.count}/>
+                <button onClick={()=>{this.setState({count:this.state.count+1})}}>Count Update</button>
+            </>
+        )
+    }
+
+}
+
+export default App;
+
+Example 2:
+
+import { Component } from "react";
+
+class ChildProps extends Component{
+    constructor(props){
+        console.log("Constuctor");
+        super(props);
+        this.state={
+            count:this.props.data+1,
+            product:"Dummy"
+        } 
+    }
+    static getDerivedStateFromProps(props,state){
+            console.log("DerivedState");
+            return{
+                count:props.data+1
+            }
+    }
+
+    componentDidMount(){
+        console.log("componentDidMount");
+        fetch('https://fakestoreapi.com/products/1')
+        .then(response => response.json())
+        .then(json => {console.log(json)
+                        this.setState({...this.state,product:json.title})
+        });
+    }
+    render(){
+        console.log("Render");
+        return(
+            <>
+                <h1>This is child class</h1>
+                <h2> props :{this.props.data}</h2>
+                <h2>Count :{this.state.count} </h2>
+                <h2>Product Name :{this.state.product} </h2>
+            </>
+        )
+    }
+
+}
+
+export default ChildProps;
+
+
+Example 3:
+
+import { Component } from "react";
+import ChildProps from "./ChidProps";
+
+class App extends Component{
+    constructor(){
+        super();
+        this.state ={
+            count:10,
+            show:true
+        }
+    }
+
+    render(){
+        return(
+            <>
+                <h1>Component Life Cycle methods</h1>
+                {this.state.show && <ChildProps data={+this.state.count}/>}
+                <button onClick={()=>{this.setState({show:false})}}>Hide</button>
+                <button onClick={()=>{this.setState({show:true})}}>Show</button>
+                
+                <button onClick={()=>{this.setState({count:this.state.count+1})}}>Count Update</button>
+            </>
+        )
+    }
+
+}
+
+export default App;
+
+
+import { Component } from "react";
+
+class ChildProps extends Component{
+    constructor(props){
+        console.log("Constuctor");
+        super(props);
+        this.state={
+            count:this.props.data+1,
+            product:"Dummy"
+        } 
+    }
+    static getDerivedStateFromProps(props,state){
+            console.log("DerivedState");
+            return{
+                ...state,count:props.data+1
+            }
+    }
+
+    shouldComponentUpdate(){
+        console.log("should update");
+        return true;
+    }
+    getSnapshotBeforeUpdate(prevprops,prevstate){
+        console.log("inside the snapshot");
+        return null;
+    }
+
+    componentDidUpdate(){
+        console.log("inside the did update");
+    }
+    componentDidMount(){
+        console.log("componentDidMount");
+        fetch('https://fakestoreapi.com/products/1')
+        .then(response => response.json())
+        .then(json => {console.log(json)
+                        this.setState({...this.state,product:json.title})
+        });
+    }
+    render(){
+        console.log("Render");
+        return(
+            <>
+                <h1>This is child class</h1>
+                <h2> props :{this.props.data}</h2>
+                <h2>Count :{this.state.count} </h2>
+                <h2>Product Name :{this.state.product} </h2>
+            </>
+        )
+    }
+    componentWillUnmount(){
+        console.log("inside unmount");
+    }
+}
+
+export default ChildProps;
+
+
+
+Functional Component Life Cycle (Using Hooks)
+
+Hook				Equivalent to
+useEffect(() => {}, [])		componentDidMount()
+useEffect(() => { return () => {} }, [])	componentWillUnmount()
+useEffect(() => {}, [dependency])	componentDidUpdate() for specific props/state
+
+
+Example (Functional with Hooks)
+
+import React, { useEffect, useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  // Mount
+  useEffect(() => {
+    console.log("Component Mounted");
+
+    // Unmount
+    return () => {
+      console.log("Component Unmounted");
+    };
+  }, []);
+
+  // Update
+  useEffect(() => {
+    console.log("Count Updated:", count);
+  }, [count]);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+
+
+Phase	Class Methods			Functional Hook
+Mount	constructor, componentDidMount	useEffect(() => {}, [])
+Update	shouldComponentUpdate, 		useEffect(() => {}, [deps])
+	componentDidUpdate	
+Unmount	componentWillUnmount		useEffect(() => { return () => {} }, [])

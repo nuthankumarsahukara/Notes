@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="counter">
+    <h1>count : 0</h1>
+    <button id="increment-btn">Increment</button>
+    <ul id="list"></ul>	
+    </div>
+    <script>
+        let count =0;
+        const counterE1=document.querySelector('#counter');
+        const incrementBtnE1=document.querySelector('#increment-btn');
+        const listE1 =document.querySelector('#list');
+
+        incrementBtnE1.addEventListener('click' , () =>{
+            count++;
+            render();
+        });
+
+        function render(){
+            const countE1=counterE1.querySelector('h1');
+            countE1.textContent=`count :${count}`;
+            listE1.innerHTML=' ';
+            for(let i=1;i<=10;i++){
+                const itemE1=document.createElement('li');
+                itemE1.textContent=`Items ${i}`;
+                listE1.appendChild(itemE1);
+            }
+        }
+        render();
+    </script>
+</body>
+</html>

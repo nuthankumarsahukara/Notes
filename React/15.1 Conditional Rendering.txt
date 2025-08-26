@@ -1,0 +1,57 @@
+Conditional Rendering is a technique in React to dynamically show or hide components or elements based on certain conditions (like a boolean or state).
+
+1. Using if-else Statement
+Used outside JSX (in functions or components).
+
+if (isLoggedIn) {
+  return <Dashboard />;
+} else {
+  return <Login />;
+}
+
+2. Ternary Operator condition ? true : false
+Simple inline condition inside JSX.
+
+{isLoggedIn ? <Dashboard /> : <Login />}
+
+3. Logical AND (&&)
+Only renders the component if the condition is true.
+
+{isLoggedIn && <Dashboard />}
+
+Nothing is rendered if the condition is false.
+
+
+Example:-
+let isLoggedIn=true;
+function Header(){
+	return(
+		<li>Home</li>
+		<li>About us </li>
+		<li>Contact us</li>
+		{ isLoggedIn ? <li>Logout</li> :<li>Login</li> }
+	);	
+}
+
+Example 2:
+let isAdminIn=false;
+function App(){
+	return(
+		<>
+		{isAdminIn && <Admin>}
+		{!isAdminIn && <Login/>}
+		</>
+	)
+}
+function Admin(){
+	return(
+		<h1>This is Admin Dashboard</h1>
+	)
+}
+function Login(){
+	return(
+		<h1>This is Login Page</h1>
+	)
+}
+
+	

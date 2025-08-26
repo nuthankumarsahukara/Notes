@@ -1,0 +1,76 @@
+Java do-while Loop
+
+The Java do-while loop is used to iterate a part of the program repeatedly, until the specified condition is true. If the number of iteration is not fixed and you must have to execute the loop at least once, it is recommended to use a do-while loop.
+
+Java do-while loop is called an exit control loop. Therefore, unlike while loop and for loop, the do-while check the condition at the end of loop body. The Java do-while loop is executed at least once because condition is checked after loop body.
+
+Syntax:
+
+do{    
+//code to be executed / loop body  
+//update statement   
+}while (condition);   
+ 
+The different parts of do-while loop:
+
+1. Condition: It is an expression which is tested. If the condition is true, the loop body is executed and control goes to update expression. As soon as the condition becomes false, loop breaks automatically.
+
+Example:
+
+i <=100
+
+2. Update expression: Every time the loop body is executed, the this expression increments or decrements loop variable.
+
+Example:
+
+i++;
+
+Note: The do block is executed at least once, even if the condition is false.
+
+Example:
+
+public class DoWhileExample {    
+public static void main(String[] args) {    
+    int i=1;    
+    do{    
+        System.out.println(i);    
+    i++;    
+    }while(i<=10);    
+}    
+}   
+ 
+Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+Java Infinitive do-while Loop
+If you pass true in the do-while loop, it will be infinitive do-while loop.
+
+Syntax:
+
+do{  
+//code to be executed  
+}while(true);  
+
+Example:
+
+public class DoWhileInfinitive {  
+public static void main(String[] args) {  
+    do{  
+        System.out.println("infinitive do while loop");  
+    }while(true);  
+}  
+}  
+Output:
+
+infinitive do while loop
+infinitive do while loop
+infinitive do while loop

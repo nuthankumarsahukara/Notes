@@ -1,0 +1,195 @@
+Functions in Oracle
+A function in Oracle is a subprogram that is used to perform an action such as complex calculations and returns the result of the action as a value. There are two types of functions in Oracle. They are as follows.
+1.System Defined Function / Pre-Defined Functions / Built-in Functions
+2.User-Defined Function
+
+Pre-define functions / Built-in functions in Oracle
+The functions which are already defined by the oracle system and ready to be used by the user or developer are called system-defined functions or pre-defined functions. These are again classified into two categories.
+1.Single row functions (scalar functions)
+2.Multiple row functions (grouping functions)
+
+Single Row Functions in Oracle: These functions are returning a single row (or) a single value.
+1. Numeric/Math Functions
+2. String/Char Functions
+3. Date/Time Functions
+4. Conversion functions
+5. Analytic Functions
+6. Advanced Functions
+7. Miscellaneous Functions
+
+How to call a function in Oracle?
+Following is the syntax to call a function in Oracle:
+SELECT <FNAME>(VALUES) FROM DUAL;
+
+What is Dual in Oracle?
+1.It is a pre-define table in oracle.
+2.It is having single column & single row
+3.It is called a dummy table in oracle.
+4.It is used for testing functions (pre-define & user define) functionalities.
+
+Structure of Dual table:
+DESC DUAL;
+
+Data of DUAL table:
+SELECT * FROM DUAL;
+
+String/Char Functions:-
+ASCII returns the NUMBER code that represents the specified character.
+Syntax ASCII( single_character)
+
+ASCIISTR converts a string in any character set to an ASCII string using the database character set. 
+Syntax ASCIISTR( string )
+
+CHR It returns the character based on the NUMBER code.
+Syntax CHR( number_code)
+
+COMPOSE returns a Unicode string.
+Syntax COMPOSE( string )
+Unistring Value	Resulting character
+unistr('\0300')	grave accent (`)
+unistr('\0301')	acute accent (')
+unistr('\0302')	circumflex (^)
+unistr('\0303')	tilde (~)
+unistr('\0308')	umlaut (")
+
+CONCAT allows you to concatenate two strings together. 
+Syntax: CONCAT( string1, string2)
+
+CONVERT converts a string from one character set to another. 
+Syntax:CONVERT( string1, char_set_to , [char_set_from])
+
+Character Set	Description
+US7ASCII	US 7-bit ASCII character set
+WE8DEC		West European 8-bit character set
+WE8HP		HP West European Laserjet 8-bit character set
+F7DEC		DEC French 7-bit character set
+WE8EBCDIC500	IBM West European EBCDIC Code Page 500
+WE8PC850	IBM PC Code Page 850
+WE8ISO8859P1	ISO 8859-1 West European 8-bit character set
+
+DECOMPOSE accepts a string and returns a Unicode string.
+Syntax DECOMPOSE( string )
+
+DUMP returns a varchar2 value that includes the datatype code, the length in bytes, and the internal representation of the expression.
+Syntax DUMP( expression [, return_format] [, start_position] [, length])
+
+return_format
+Optional. It determines the format of the return value. This parameter can be any of the following values:
+Value	Explanation
+8	octal notation
+10	decimal notation
+16	hexadecimal notation
+17	single characters
+1008	octal notation with the character set name
+1010	decimal notation with the character set name
+1016	hexadecimal notation with the character set name
+1017	single characters with the character set name
+
+INITCAP sets the first character in each word to uppercase and the rest to lowercase.
+Syntax:INITCAP( string])
+
+INSTR returns the location of a substring in a string.
+Syntax: INSTR( string, substring [, start_position [, th_appearance ]])
+
+LENGTH returns the length of the specified string.
+Syntax: LENGTH( string1 )
+
+LOWER converts all letters in the specified string to lowercase.
+Syntax: LOWER( string1 )
+
+LPAD pads the left-side of a string with a specific set of characters (when string1 is not null).
+Syntax: LPAD( string1, padded_length [, pad_string])
+
+LTRIM removes all specified characters from the left-hand side of a string.
+Syntax: LTRIM( string] [, trim_string])
+
+REPLACE replaces a sequence of characters in a string with another set of characters.
+Syntax: REPLACE( string1, string_to_replace [, replacement_string])
+
+RPAD pads the right-side of a string with a specific set of characters (when string1 is not null).
+Syntax: RPAD( string1, padded_length [, pad_string])
+
+RTRIM removes all specified characters from the right-hand side of a string.
+Syntax: RTRIM( string] [, trim_string ] )
+
+SOUNDEX returns a phonetic representation (the way it sounds) of a string.
+Syntax: SOUNDEX( string )
+
+Note:-
+The SOUNDEX function algorithm works as follows:
+1.The SOUNDEX function return value will always begin with the first letter of string1.
+2.The SOUNDEX function uses only the first 5 consonants to determine the NUMERIC portion of the return value, except if the first letter of string1 is a vowel.
+3.The SOUNDEX function is not case-sensitive. What this means is that both uppercase and lowercase characters will generate the same SOUNDEX function return value.
+
+SUBSTR allows you to extract a substring from a string.
+Syntax: SUBSTR( string, start_position [, length ] )
+
+TRANSLATE replaces a sequence of characters in a string with another set of characters. However, it replaces a single character at a time.
+Syntax: TRANSLATE( string1, string_to_replace, replacement_string )
+
+TRIM removes all specified characters either from the beginning or the end of a string. 
+Syntax: TRIM([[ LEADING | TRAILING | BOTH ] trim_character FROM ] string1 )
+
+UPPER converts all letters in the specified string to uppercase.
+Syntax: UPPER( string )
+
+VSIZE returns the number of bytes in the internal representation of an expression
+Syntax: VSIZE( expression)
+
+REGEXP_INSTR
+REGEXP_INSTR function is an extension of the INSTR function. It returns the location of a regular expression pattern in a string. This function, introduced in Oracle 10g, will allow you to find a substring in a string using regular expression pattern matching.
+Syntax: REGEXP_INSTR( string, pattern [, start_position [, nth_appearance [, return_option [, match_parameter [, sub_expression ]]]]])
+
+Pattern:-
+The regular expression matching information. It can be a combination of the following:
+Value		Description
+Λ		Matches the beginning of a string. If used with a 		match_parameter of 'm', it 	matches the start of a line 		anywhere within expression.
+$		Matches the end of a string. If used with a 		match_parameter of 'm', it matches the end of a line 		anywhere within expression.
+*		Matches zero or more occurrences.
++		Matches one or more occurrences.
+?		Matches zero or one occurrence.
+.		Matches any character except NULL.
+|		Used like an "OR" to specify more than one alternative.
+[]		Used to specify a matching list where you are trying to 		match any one of the characters in the list.
+Value		Description
+[^]		Used to specify a nonmatching list where you are trying to match
+		any character except for the ones in the list.
+()		Used to specify a nonmatching list where you are trying to match
+{m}		Matches m times.
+{m,}		Matches at least m times.
+{m,n}		Matches at least m times, but no more than n times.
+\n		n is a number between 1 and 9. Matches the nth subexpression found 				within () before encountering \n.
+[..]		Matches one collation element that can be more than one character.
+B		Matches character classes.
+|==]		Matches equivalence classes.
+\d		Matches a digit character.
+\D		Matches a nondigit character.
+\w		Matches a word character.
+\W		Matches a nonword character.
+\s		Matches a whitespace character.	
+\S		Matches a non-whitespace character.
+\A		Matches the beginning of a string or matches at the end 		of a string before a newline character.
+\Z		Matches at the end of a string.
+*?		Matches the preceding pattern zero or more occurrences.
++?		Matches the preceding pattern one or more occurrences.
+??		Matches the preceding pattern zero or one occurrence.
+{n}?		Matches the preceding pattern n times.
+(n.)?		Matches the preceding pattern at least n times.
+{n.m}?		Matches the preceding pattern at least n times, but not 		more than m times.
+
+match_parameter
+Optional. It allows you to modify the matching behavior for the REGEXP_INSTR function. It can be a combination of the following:
+Value		Description
+'c'		Perform case-sensitive matching.
+'i'		Perform case-insensitive matching.
+'n'		Allows the period character (.) to match the newline 		character. By default, the period is a wildcard.
+'m'		expression is assumed to have multiple lines, where A is 		the start of a line 	and $ is the end of a line, regardless 				of the position of those characters in expression. By 		default, expression is assumed to be a single line.
+'X'		Whitespace characters are ignored. By default, 		whitespace characters are matched like any other 		character.
+
+REGEXP_REPLACE
+REGEXP_REPLACE function is an extension of the REPLACE function. This function, introduced in Oracle 10g, will allow you to replace a sequence of characters in a string with another set of characters using regular expression pattern matching.
+Syntax: REGEXP_REPLACE( string, pattern [, replacement_string [, start_position [, nth_appearance [, match_parameter ]]]])
+
+REGEXP_SUBSTR
+REGEXP_SUBSTR function is an extension of the SUBSTR function. This function, introduced in Oracle10g, will allow you to extract a substring from a string using regular expression pattern matching.
+Syntax: REGEXP_SUBSTR( string, pattern [, start_position [, nth_appearance [, match_parameter [, sub_expression ]]]])

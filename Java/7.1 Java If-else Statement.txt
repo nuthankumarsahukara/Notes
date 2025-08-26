@@ -1,0 +1,242 @@
+Java Control Statements | Control Flow 
+
+Java compiler executes the code from top to bottom. The statements in the code are executed according to the order in which they appear. However, Java provides statements that can be used to control the flow of Java code. Such statements are called control flow statements. It is one of the fundamental features of Java, which provides a smooth flow of program.
+
+Java provides three types of control flow statements.
+
+Decision Making statements
+	if statements
+	switch statement
+Loop statements
+	do while loop
+	while loop
+	for loop
+	for-each loop
+Jump statements
+	break statement
+	continue statement
+
+Decision-Making statements:
+As the name suggests, decision-making statements decide which statement to execute and when. Decision-making statements evaluate the Boolean expression and control the program flow depending upon the result of the condition provided. There are two types of decision-making statements in Java, i.e., If statement and switch statement.
+
+Java If Statement
+The Java if statement is used to test the condition. It checks boolean condition: true or false. There are various types of if statement in Java.
+
+simple if statement
+if-else statement
+if-else-if ladder statement
+nested if statement
+
+Java Simple if Statement
+The Java Simple if statement tests the condition. It executes the if block if the condition is true.
+
+Syntax:
+
+if(condition){  
+//code to be executed  
+}  
+if statement in java
+Example:
+//Java Program to demonstate the use of if statement.  
+public class IfExample {  
+public static void main(String[] args) {  
+    //defining an 'age' variable  
+    int age=20;  
+    //checking the age  
+    if(age>18){  
+        System.out.print("Age is greater than 18");  
+    }  
+}  
+}  
+Output:
+
+Age is greater than 18
+
+Java if-else Statement
+The Java if-else statement also tests the condition. It executes the if block if the condition is true otherwise else block is executed.
+
+Syntax:
+
+if(condition){  
+//code if condition is true  
+}else{  
+//code if condition is false  
+}  
+if-else statement in java
+Example:
+
+//A Java Program to demonstrate the use of if-else statement.  
+//It is a program of odd and even number.  
+public class IfElseExample {  
+public static void main(String[] args) {  
+    //defining a variable  
+    int number=13;  
+    //Check if the number is divisible by 2 or not  
+    if(number%2==0){  
+        System.out.println("even number");  
+    }else{  
+        System.out.println("odd number");  
+    }  
+}  
+}  
+
+Output:
+odd number
+
+Leap Year Example:
+A year is leap, if it is divisible by 4 and 400. But, not by 100.
+
+public class LeapYearExample {    
+public static void main(String[] args) {    
+    int year=2020;    
+    if(((year % 4 ==0) && (year % 100 !=0)) || (year % 400==0)){  
+        System.out.println("LEAP YEAR");  
+    }  
+    else{  
+        System.out.println("COMMON YEAR");  
+    }  
+}    
+}    
+Output:
+
+LEAP YEAR
+
+Using Ternary Operator
+We can also use ternary operator (? :) to perform the task of if...else statement. It is a shorthand way to check the condition. If the condition is true, the result of ? is returned. But, if the condition is false, the result of : is returned.
+
+Example:
+
+public class IfElseTernaryExample {    
+public static void main(String[] args) {    
+    int number=13;    
+    //Using ternary operator  
+    String output=(number%2==0)?"even number":"odd number";    
+    System.out.println(output);  
+}    
+}    
+Output:
+
+odd number
+
+Java if-else-if ladder Statement
+The if-else-if ladder statement executes one condition from multiple statements.
+
+Syntax:
+
+if(condition1){  
+//code to be executed if condition1 is true  
+}else if(condition2){  
+//code to be executed if condition2 is true  
+}  
+else if(condition3){  
+//code to be executed if condition3 is true  
+}  
+...  
+else{  
+//code to be executed if all the conditions are false  
+}  
+if-else-if ladder statement in java
+Example:
+
+//Java Program to demonstrate the use of If else-if ladder.  
+//It is a program of grading system for fail, D grade, C grade, B grade, A grade and A+.  
+public class IfElseIfExample {  
+public static void main(String[] args) {  
+    int marks=65;  
+      
+    if(marks<50){  
+        System.out.println("fail");  
+    }  
+    else if(marks>=50 && marks<60){  
+        System.out.println("D grade");  
+    }  
+    else if(marks>=60 && marks<70){  
+        System.out.println("C grade");  
+    }  
+    else if(marks>=70 && marks<80){  
+        System.out.println("B grade");  
+    }  
+    else if(marks>=80 && marks<90){  
+        System.out.println("A grade");  
+    }else if(marks>=90 && marks<100){  
+        System.out.println("A+ grade");  
+    }else{  
+        System.out.println("Invalid!");  
+    }  
+}  
+}  
+Output:
+C grade
+
+Program to check POSITIVE, NEGATIVE or ZERO:
+
+public class PositiveNegativeExample {    
+public static void main(String[] args) {    
+    int number=-13;    
+    if(number>0){  
+    System.out.println("POSITIVE");  
+    }else if(number<0){  
+    System.out.println("NEGATIVE");  
+    }else{  
+    System.out.println("ZERO");  
+   }  
+}    
+}    
+Output:
+NEGATIVE
+ 
+Java Nested If Statement:
+
+The nested if statement represents the if block within another if block. Here, the inner if block condition executes only when outer if block condition is true.
+
+Syntax : 
+
+if( condition ){
+
+      if( condition ){
+      
+                if( condition ){
+                
+                         ......
+                }
+       }
+}
+
+Example:
+
+//Java Program to demonstrate the use of Nested If Statement.  
+public class JavaNestedIfExample {    
+public static void main(String[] args) {    
+    //Creating two variables for age and weight  
+    int age=20;  
+    int weight=80;    
+    //applying condition on age and weight  
+    if(age>=18){    
+        if(weight>50){  
+            System.out.println("You are eligible to donate blood");  
+        }    
+    }    
+}}  
+Output:
+
+You are eligible to donate blood
+Example 2:
+
+//Java Program to demonstrate the use of Nested If-else Statement.    
+public class JavaNestedIfExample2 {      
+public static void main(String[] args) {      
+    //Creating two variables for age and weight    
+    int age=25;    
+    int weight=48;      
+    //applying condition on age and weight    
+    if(age>=18){      
+        if(weight>50){    
+            System.out.println("You are eligible to donate blood");    
+        } else{  
+            System.out.println("You are not eligible to donate blood");    
+        }  
+    } else{  
+      System.out.println("Age must be greater than 18");  
+    }  
+}  
+}  

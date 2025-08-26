@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Employee Details</title>
+</head>
+<body>
+<form action="https://sheetdb.io/api/v1/56v5fz3uucl5z" method="post" id="formsheet-db">
+<fieldset>
+<legend>Employee Application</legend>
+Employee Id:<input type="text" pattern="[0-9]{5}" name="data[EmployeeId]" required/><br/><br/>
+Employee Name:<input type="text" name="data[EmployeeName]" required /><br/><br/>
+Employee DOB:<input type="date" name="data[EmployeeDOB]" required /><br/><br/>
+Employee PhoneNumber:<input type="tel" pattern="[0-9]{10}" name="data[EmployeePhoneNumber]" required /><br/><br/>
+Employee Address:<input type="text" name="data[EmployeeAddress]" required/><br/><br/>
+<input type="submit" />
+<input type="reset" />
+</fieldset>
+<script>
+var form=document.getElementById("formsheet-db");
+form.addEventListener("submit",e=>{
+	e.preventDefault();
+	fetch(form.action,{
+		method:"POST",
+		body:new FormData(document.getElementById("formsheet-db"))
+		}).then((html)=>{
+		window.open('msg.html','_blank');
+		});
+	})
+</script>
+</form>
+</body>
+</html>

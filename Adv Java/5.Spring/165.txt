@@ -1,0 +1,44 @@
+package com.datapro.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class ControllerMVC {
+	
+	@GetMapping(value = "/")
+	public String getHello() {
+		return "hello.jsp";
+	}
+	
+	@PostMapping(value ="/success")
+	public String getSuccess(@RequestParam String name ,@RequestParam String email,@RequestParam long phone,Model model) {
+		System.out.println("Success Page");
+		System.out.println("Name :"+name);
+		System.out.println("Email :"+email);
+		System.out.println("Phone Number :"+phone);
+		model.addAttribute("name", name);
+		model.addAttribute("email", email);
+		model.addAttribute("phone", phone);
+		return "success.jsp";
+	}
+}
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Success</title>
+</head>
+<body style="text-align:center">
+	<h1>Name : ${name}</h1>
+	<h1>Email : ${email}</h1>
+	<h1>Phone Number : ${phone}</h1>	
+</body>
+</html>

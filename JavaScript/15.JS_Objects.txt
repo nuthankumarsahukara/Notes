@@ -1,0 +1,482 @@
+The Browser Object Model (BOM)
+Javascript Window Object:
+The JavaScript Window Object is the highest level JavaScript object which corresponds to the web browser window. 
+
+Methods 
+Window open() Method
+It opens a new browser window.
+
+Syntax
+window.open(URL)
+
+Example:
+<!doctype html>
+<body>
+<form>
+<input type="button" value="Click here to see" onclick="window.open('http://www.yahoo.com')" /></form> 
+</body>
+
+Example:
+<html>
+<head>
+<script>
+function myFunction() 
+{
+ window.open("https://www.google.com/");
+ window.open("https://www.datapro.in/");
+}
+</script>
+</head>
+<body>
+<p>Click the button to open multiple windows.</p>
+<button onclick="myFunction()">Open Windows</button>
+</body>
+</html>
+
+Window print() Method
+The print() method prints the contents of the current window.
+
+Syntax
+window.print()
+
+Example:
+<head>
+<script>
+function myFunction() 
+{
+ window.print();
+}
+</script>
+</head>
+<body>
+<p>Click the button to print the current page.</p>
+<button onclick="myFunction()">Print this page</button>
+</body>
+
+Window stop() Method
+The stop() method stops window loading. 
+
+Syntax
+window.stop()
+
+Example:
+<head>
+<script>
+window.stop();
+</script>
+</head>
+
+Window Object Properties
+Window screenX and screenY Properties:
+The screenX and screenY properties returns the x (horizontal) and y (vertical) coordinates of the window relative to the screen
+
+Syntax
+window.screenX
+window.screenY
+
+Example:
+<head>
+<script type='text/javascript'>
+document.write(window.screenX);
+document.write("<br/>");
+document.write(window.screenY);
+</script>
+</head>
+
+Example:
+<head>
+<script>
+function myFunction() 
+{
+    var myWindow = window.open("", "myWin","width=200,height=100");
+    myWindow.document.write("<br>ScreenX: " + myWindow.screenX);
+    myWindow.document.write("<br>ScreenY: " + myWindow.screenY + "</p>");
+}
+</script>
+</head>
+<body>
+<button onclick="myFunction()">OpenWin</button>
+</body>
+
+Navigator Object
+It contains information about the browser.
+
+Navigator Object Properties
+Property 		Description
+appCodeName 	Returns the code name of the browser
+appName 		Returns the name of the browser
+appVersion 	Returns the version information of the browser
+language 		Returns the language of the browser
+
+Navigator appCodeName Property
+The appCodeName property returns the code name of the browser.
+
+Syntax
+navigator.appCodeName
+
+Note: All modern browsers returns "Mozilla", for compatibility reasons.
+Note: This property is read-only.
+
+Example:
+<body>
+<p id="demo">Click the button to display the code name of your browser.</p>
+<button onclick="myFunction()">Display</button>
+<script>
+function myFunction() 
+{
+var x = "Browser CodeName: " + navigator.appCodeName;
+document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+
+Navigator appName Property
+It returns the  name of the Web browser.
+
+Syntax
+navigator.appName
+
+Note: This property is read-only.
+
+Example:
+<body>
+<p id="demo">Click the button to display the name of your browser.</p>
+<button onclick="myFunction()">Display</button>
+<script>
+function myFunction() 
+{
+var x = "Browser CodeName: " + navigator.appName;
+document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+
+Examples:
+<html>
+<body>
+<script type="text/javascript">
+document.write("Version info: " + navigator.appVersion);
+</script>
+</body>
+</html>
+
+Example2:
+<html>
+<head>
+<script>
+function AllProperties()
+{
+document.write("<h1>");
+document.write("Version info is: " + navigator.appVersion);
+document.write("<br/>");
+document.write("AppName is: " + navigator.appName);
+document.write("<br/>");
+document.write("appCodeName is: " + navigator.appCodeName);
+document.write("<br/>");
+document.write("cookieEnabled: " + navigator.cookieEnabled);
+document.write("</h1>");
+}
+</script>
+<head>
+<body>
+<p> Click to get Execute all Navigator Properties</p>
+<input type='button' onclick='AllProperties()'
+value="Display_Properties"/>
+</body>
+</html>
+
+Navigator Object Methods
+Method 		Description
+javaEnabled() 	Specifies whether or not the browser has Java enabled
+
+Example:
+<html>
+<body>
+<script type="text/javascript">
+document.write("Java enabled: " + navigator.javaEnabled());
+</script>
+</body>
+</html>
+
+JavaScript Browser Detection
+Almost everything in this tutorial works on all JavaScript-enabled browsers. The Navigator object contains information about the visitor's browser name, version etc..
+
+Example:
+<body>
+<div id="demo"></div>
+<script type='text/javascript'>
+txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+txt+= "<p>Browser Name: " + navigator.appName + "</p>";
+txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+txt+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+txt+= "<p>Browser Language: " + navigator.language + "</p>";
+txt+= "<p>Browser Online: " + navigator.onLine + "</p>";
+txt+= "<p>Platform: " + navigator.platform + "</p>";
+document.getElementById("demo").innerHTML = txt;
+</script>
+</body>
+
+Screen Object
+It contains information about the visitor's screen.
+
+Screen Object Properties
+Property 		Description
+availHeight 	Returns the height of screen(Excluding Windows 	Taskbar)
+availWidth 	Returns the width of screen (Excluding Windows 	Taskbar)
+height 		Returns the total height of the screen
+width 		Returns the total width of the screen
+
+Example:
+<!doctype html>
+<body>
+<script type="text/javascript">
+document.write("Total Width: " + screen.width +"<br/>");
+document.write("Total Height: " + screen.height +"<br/>");
+document.write("Total AWidth: " + screen.availWidth +"<br/>");
+document.write("Total AHeight: " + screen.availHeight +"<br/>");
+</script>
+</body>
+
+The History Object
+It contains the URLs visited by the user . It is part of the window object and is accessed through the window.history property.
+
+History Object Properties
+Property		Description
+length		Returns the number of URLs in the history list
+
+History Object Methods
+Method		Description
+back()		Loads the previous URL in the history list
+forward()		Loads the next URL in the history list
+
+History length Property
+The length property returns the number of URLs in the history list.
+Note: Internet Explorer and Opera start at 0, while Firefox, Chrome, and Safari start at 1.
+
+Syntax : history.length
+
+Example:
+<html>
+<body>
+<script type="text/javascript">
+document.write("Number of URLs in history list: " + history.length);
+</script>
+</body>
+</html>
+
+History back() Method
+The back() method loads the previous URL in the history list.
+
+Syntax: history.back()
+
+History forward() Method
+The forward() method loads the Next URL in the history list.
+
+Syntax: history.forward()
+
+Example:
+<html>
+<head>
+<script type="text/javascript">
+function goBack()
+  {
+  window.history.back()
+  }
+</script>
+</head>
+<body>
+<input type="button" value="Back" onclick="goBack()" />
+</body>
+</html>
+
+History go() Method
+The go() method loads a specific URL from the history list.
+
+Syntax
+history.go(number|URL)
+Parameter Values
+Parameter 	Description
+number|URL 	Required. The parameter can either be a number which goes to the URL 			within the specific position (-1 goes back one page, 1 goes forward one page)
+
+Example:
+<head>
+<script>
+function goBack() 
+{
+window.history.go(-2);
+}
+</script>
+</head>
+<body>
+<p>Click the button to display the 2 Pages Backward History...</p>
+<button onclick="goBack()">Go 2 pages back</button>
+</body>
+
+Location Object
+The location object contains information about the current URL. The location object is part of the window object and is accessed through the window.location property.
+
+Location Object Properties
+Property 		Description
+hash 		Returns the anchor portion of a URL
+host 		Returns the hostname and port of a URL
+hostname		Returns the hostname of a URL
+href 		Returns the entire URL
+
+Location href Property
+The href property returns the entire URL of the current page.
+
+Syntax: location.href
+
+Example:
+<html>
+<body>
+<script>
+document.write(location.href);
+</script>
+</body>
+</html>
+
+Location Object Methods
+Method 	Description
+reload() 	Reloads the current document
+replace() Replaces the current document with a new one
+
+Location replace() Method:
+The replace() method replaces the current document with a new one.
+
+Syntax: location.replace(newURL)
+Example:
+<html>
+<head>
+<script>
+function replaceDoc()
+  {
+  window.location.replace("https://www.datapro.in")
+  }
+</script>
+</head>
+<body>
+<input type="button" value="Replace document" onclick="replaceDoc()" />
+</body>
+</html>
+
+Document Object
+Each HTML document loaded into a browser window becomes a Document object. It has the following list of properties..!!
+
+1 anchors	2 cookie	3 domain	4 forms
+5 images	6 title	7 URL
+
+Document title Property
+The title property returns the title of the current document (the text inside the HTML title element).
+
+Syntax
+document.title
+
+Example:
+<!doctpe html>
+<head>
+<title>
+Datapro Technologies..!!
+</title>
+</head>
+<body>
+<script type='text/javascript'>
+document.write(document.title)
+</script>
+</body>
+
+Document Object:
+Return the number of anchors in a document:
+<html>
+<body>
+<a name="html">HTML Tutorial</a><br>
+<a name="css">CSS Tutorial</a><br>
+<a name="xml">XML Tutorial</a><br>
+<a href="http://www.w3c.org">JavaScript Tutorial</a>
+<p>Number of anchors:
+<script>
+document.write(document.anchors.length);
+</script></p>
+</body>
+</html>
+
+Return the number of forms in a document
+<html>
+<body>
+<form name="Form1"></form>
+<form name="Form2"></form>
+<form></form>
+<p>Number of forms:
+<script>
+document.write(document.forms.length);
+</script></p>
+</body>
+</html>
+
+Return the number of images in a document
+<html>
+<body>
+<img border="0" src="html.png" width="150" height="113" />
+<img border="0" src="html5.png" width="152" height="128" />
+<p>Number of images:
+<script>
+document.write(document.images.length);
+</script></p>
+</body>
+</html
+
+Return the id of the first image in a document
+<html>
+<body>
+<img id="html" border="0" src="html.png" width="150" height="113" />
+<img id="html5" border="0" src="html5.png" width="152" height="128" />
+<p>Id of first image:
+<script>
+document.write(document.images[0].id);
+</script></p>
+</body>
+</html>
+
+Return all name/value pairs of cookies in a document
+<html>
+<body>
+Cookies associated with this document: 
+<script>
+document.write(document.cookie);
+</script>
+</body>
+</html>
+
+Return the title of a document:
+<html>
+<head>
+<title>My title</title>
+</head>
+<body>
+The title of the document is: 
+<script>
+document.write(document.title);
+</script>
+</body>
+</html>
+
+Return Full URL:
+<html>
+<body>
+The full URL of this document is: 
+<script>
+document.write(document.URL);
+</script>
+</body>
+</html>
+
+<head>
+<title>My WebPage</title>
+</head>
+<body>
+The title of the document is: 
+<script type='text/javascript'>
+document.write(document.title);
+</script>
+</body>
+</html>

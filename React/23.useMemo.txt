@@ -1,0 +1,105 @@
+useMemo :-	
+useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+
+useMemo is a React Hook that memoizes the result of a function, preventing expensive calculations from running on every render unless dependencies change.
+
+syntax: const cachedValue = useMemo(calculateValue, dependencies)
+
+When to Use
+--->To optimize performance.
+--->When you have expensive calculations that don’t need to run on every render.
+--->To avoid recomputing derived data unnecessarily.
+
+Example:-
+
+import { useMemo, useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(1);
+  
+  let num1=15;
+  let num2=30;
+
+  const sum = useMemo(() => {
+    return num1 + num2;
+  }, [num1, num2]);
+
+  return (
+    <>
+      <h1>Count: {count}</h1>
+      <h1>Sum: {sum}</h1>
+      <button onClick={() => setCount(count + 1)}>Update Count</button>
+    </>
+  );
+}
+
+export default App;
+
+
+Example:-
+
+import { useEffect, useMemo, useState } from "react"
+
+function App() {
+    let[Time, setTime] = useState(new Date().toLocaleTimeString());
+
+    useEffect(
+        () => {
+            setInterval(
+                () => {
+                    setTime(new Date().toLocaleTimeString())
+                }, 1000)
+        }, []
+    )
+
+    let[products, setProducts] = useState(
+        [
+            { id: 1, name: 'One Plus Nord CE2', price: 20000 },
+            { id: 2, name: 'Oppo F21 S', price: 22000 },
+            { id: 3, name: 'Samsung Galaxy  M 33', price: 17000 },
+            { id: 4, name: 'Apple Iphone 13', price: 46000 },
+            { id: 5, name: 'Apple Iphone 16', price: 68000 },
+        ]
+    )
+    const [searchText, updateSearchText] = useState('');
+    const filteredProducts = useMemo(
+        () => {
+            return products.filter(
+                (p) => {
+                    const lowerSearch = searchText.toLowerCase();
+                    return p.name.toLowerCase().includes(lowerSearch)
+                }
+            )
+        },
+        [products, searchText]
+    )   
+
+    return (
+        <>
+            <div>Time :{Time}</div> <br/>
+            Search Products:<input type="text" value={searchText} onChange={e => updateSearchText(e.target.value)} /> <br/>
+            <table border="1px" rules="all" style={{ margin: "15px" }} cellPadding="15px" width="50%">
+                <thead>
+                    <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                    filteredProducts.map(p => (
+                        <tr key={p.id} align="center">
+                        <td>{p.id}</td>
+                        <td>{p.name}</td>
+                        <td>{p.price}</td>
+                        </tr>
+                    ))
+                    }
+                </tbody>
+            </table>
+        </>
+    )
+}
+
+export default App;

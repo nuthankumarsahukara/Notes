@@ -1,0 +1,268 @@
+Multi Threading:
+Multithreading in Java is a process of executing multiple threads simultaneously.
+
+A thread is a lightweight sub-process, the smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.
+
+However, we use multithreading than multiprocessing because threads use a shared memory area. They don't allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
+
+Java Multithreading is mostly used in games, animation, etc.
+
+Advantages of Java Multithreading
+1) It doesn't block the user because threads are independent and you can perform multiple operations at the same time.
+
+2) You can perform many operations together, so it saves time.
+
+3) Threads are independent, so it doesn't affect other threads if an exception occurs in a single thread.
+
+
+Thread life cycle :
+A thread goes through various stages in its life cycle. For example, a thread is born, started, runs, and then dies. The following diagram shows the complete life cycle of a thread.
+
+New − A new thread begins its life cycle in the new state. It remains in this state until the program starts the thread. It is also referred to as a born thread.
+
+Runnable − After a newly born thread is started, the thread becomes runnable. A thread in this state is considered to be executing its task.
+
+Waiting − Sometimes, a thread transitions to the waiting state while the thread waits for another thread to perform a task. A thread transitions back to the runnable state only when another thread signals the waiting thread to continue executing.
+
+Timed Waiting − A runnable thread can enter the timed waiting state for a specified interval of time. A thread in this state transitions back to the runnable state when that time interval expires or when the event it is waiting for occurs.
+
+Terminated (Dead) − A runnable thread enters the terminated state when it completes its task or otherwise terminates.
+      +-------------+
+      |    New      |    -> Thread is created but not started yet
+      +-------------+
+             |
+             v
+      +-------------+   start()
+      |  Runnable   |   -> Thread is ready to execute
+      +-------------+
+             |
+  +----------+------------+
+  |           |            |
+ v           v          v
++------------+   +---------------+    +----------------+
+|   Blocked  |   |   Waiting     |    | Timed Waiting  |
++------------+   +---------------+    +----------------+
+             |
+             v
+      +-------------+
+      | Terminated  |   -> Thread has completed execution
+      +-------------+
+
+
+how to define a thread ?
+
+Thread can be defined in 2 ways
+
+1. extending the Threading class
+
+Syntax :
+class A extends Thread
+{
+
+}
+
+Example:
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Thread is running: " + Thread.currentThread().getName());
+    }
+}
+
+public class MultiThreadExample {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        thread1.start();  // Start the thread
+        
+        MyThread thread2 = new MyThread();
+        thread2.start();  // Start the second thread
+    }
+}
+Note: start() This method starts the thread and invokes the run() method.
+
+Output:
+Thread is running: Thread-0
+Thread is running: Thread-1
+
+2. implementating the runnable interface
+Syntax:
+class B implements Runnable
+{
+}
+
+Example :
+
+class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Runnable thread is running: " + Thread.currentThread().getName());
+    }
+}
+
+public class MultiThreadRunnableExample {
+    public static void main(String[] args) {
+        MyRunnable myRunnable = new MyRunnable();
+
+        Thread thread1 = new Thread(myRunnable);
+        thread1.start();  // Start the thread
+        
+        Thread thread2 = new Thread(myRunnable);
+        thread2.start();  // Start the second thread
+    }
+}
+
+Output:
+Runnable thread is running: Thread-0
+Runnable thread is running: Thread-1
+
+ForExample :
+
+horse racing
+
+2 horses are in race  (black horse,white horse)
+
+black horse should be winner of the race
+
+sleep	: it stops the thread execution for the specified time
+	  it throws an exception .
+
+package Collection;
+class A extends Thread
+{
+    public void run()
+    {
+        for(int i=1;i<=100000;i++)
+        {
+            System.out.println("A Thread "+i);
+        }
+    }
+}
+class B extends Thread
+{
+    public void run()
+    {
+        for(int i=1;i<=100000;i++)
+        {
+            System.out.println("B Thread "+i);
+            if(i==1)
+            {
+                try{
+                    System.out.println("Sending to Waiting mode Sleep....");
+                sleep(100);
+                }catch(InterruptedException ie)
+                {
+                    System.out.println(ie);
+                }
+            }
+        }
+    }
+}
+
+public class MyThread1 {
+    public static void main(String[] args) {
+        A ob1=new A();
+        B ob2=new B();
+        ob1.start();
+        ob2.start();
+    }
+}
+
+suspend(): When a thread is suspended using suspend(), it can be left in an inconsistent state because the thread might be holding locks when it is suspended. If other threads are waiting for those locks, a deadlock can occur.
+
+resume(): Similarly, resume() would resume a thread that was suspended, but there's no guarantee about the thread's state or whether it will properly continue from the point where it was suspended.
+
+
+Example:
+
+Java Version @ below 17 Version:-
+
+
+package Collection;
+class A extends Thread
+{
+    B ob;
+    public A(B ob)
+    {
+        this.ob=ob;
+    }
+    public void run()
+    {
+        for(int i=1;i<=1000;i++)
+        {
+            System.out.println("A Thread "+i);
+        }
+        ob.resume();
+    }
+}
+class B extends Thread
+{
+    public void run()
+    {
+        for(int i=1;i<=1000;i++)
+        {
+            System.out.println("B Thread "+i);
+            if(i==1)
+            {
+                
+                System.out.println("Sending to Waiting mode Sleep....");
+                suspend();
+                
+            }
+        }
+    }
+}
+
+public class MyThread1 {
+    public static void main(String[] args) {
+        
+        B ob2=new B();
+        A ob1=new A(ob2);
+        ob1.start();
+        ob2.start();
+    }
+}
+
+Java Version @ above 17 Version:-
+
+class B extends Thread {
+    public synchronized void run() {
+        for (int i = 1; i <= 1000; i++) {
+            System.out.println("B Thread " + i);
+            if (i == 1) {
+                try {
+                    System.out.println("Sending to Waiting mode...");
+                    wait(); // Puts the current thread (B) in waiting state
+                } catch (InterruptedException e) {
+                    System.out.println("Interrupted: " + e);
+                }
+            }
+        }
+    }
+    
+    public synchronized void resumeThread() {
+        notify(); // Wakes up the waiting thread
+    }
+}
+
+class A extends Thread {
+    B ob;
+    public A(B ob) {
+        this.ob = ob;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 1000; i++) {
+            System.out.println("A Thread " + i);
+        }
+        ob.resumeThread(); // Resumes B thread safely
+    }
+}
+
+public class ThreadEx4 {
+    public static void main(String[] args) {
+        B ob2 = new B();
+        A ob1 = new A(ob2);
+        ob2.start();
+        ob1.start();
+    }
+}

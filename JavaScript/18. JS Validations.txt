@@ -1,0 +1,345 @@
+What is a Webform?
+A Webform (HTML form) allows a user to enter data that is sent to a server for processing. These forms contains checkboxes, radio buttons, or text fields.  Webforms are defined in formal programming languages such as HTML, Perl, Php, Java or .NET.
+
+JavaScript Form Validation:
+HTML form validation can be done by a JavaScript.  JavaScript, provides a way to validate form's data on the client's computer before sending it to the web server. Form validation generally performs two functions.
+
+Basic Validation - The form must be checked to make sure data was entered into each form field that required it. This would need just loop through each field in the form and check for data.
+
+Data Format Validation - The data that is entered must be checked for correct form and value. This would need to put more logic to test correctness of data.
+
+Data Validation
+It is the process of ensuring that computer input is clean, correct, and useful.
+
+1 The purpose of data validation is to ensure correct input to a computer application.
+2 Validation can be defined by many different methods, and deployed in many different ways.
+3 Server side validation is performed by a web server, after input has been sent to the server.
+4 Client side validation is performed by a web browser, before input is sent to a web server.
+
+HTML Constraint Validation
+HTML5 introduced a new HTML validation concept called constraint validation.
+
+HTML constraint validation is based on:
+    Constraint validation HTML Input Attributes
+    Constraint validation DOM Properties and Methods
+
+Constraint Validation HTML Input Attributes
+Attribute 	Description
+disabled 	Specifies that the input element should 	be disabled
+max 	Specifies the maximum value of an input 	element
+min 	Specifies the minimum value of an input 	element
+pattern 	Specifies the value pattern of an input 	element
+required 	Specifies that the input field requires an 	element
+type  	Specifies the type of an input element
+
+Form data that typically are checked by a JavaScript:
+1. If a text input is empty or not
+2. If a text input is all numbers
+3. If a text input is all letters (only Alphabets)
+4. has the user left required fields empty?
+5. has the user entered a valid e-mail address?
+6. If a text input is all alphanumeric characters (numbers & letters)
+7. If a text input has the correct number of characters in it 
+8. If a selection has been made from an HTML select 
+9. has the user entered a valid date?
+10. has the user entered text in a numeric field?
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function notEmpty()
+{
+var myTextField = document.getElementById('myText');
+if(myTextField.value != "")
+{
+alert("You entered: " + myTextField.value)
+}
+else
+{
+alert("Would you please enter some text?")		
+}
+}
+</script>
+</head>
+<body>
+<form action='form.html'>
+<input type='text' id='myText' /><br/>
+<input type='button' onclick='notEmpty()' value='Form Validate' />
+</form>
+</body>
+
+Automatic HTML Form Validation
+Example:
+<!doctype html>
+<body>
+<form action="form.html" method="post">
+<input type="text" name="fname" required>
+<input type="submit" value="Submit">
+</form>
+<p>If you click submit, without filling out the text field, your browser will display an error message.</p>
+</body>
+
+The disabled Attribute
+The disabled attribute specifies that the input field is disabled. A disabled element is un-usable and un-clickable. Disabled elements will not be submitted.
+
+Example:
+<!doctype html>
+<body>
+<form action="form.html">
+First name:<br>
+<input type="text" name="firstname" value ="John" disabled><br>
+Last name:<br>
+<input type="text" name="lastname"><br/>
+<input type='submit' value="Disabled">
+</form>
+</body>
+
+Disable Button
+<!doctype html>
+<head>
+<script>
+function disableElement()
+{
+document.getElementById("secondbtn").disabled=true;
+}
+</script>
+</head>
+<body>
+<form>
+Buttons:<br/>
+<input type="button" id="firstbtn" value="OK">
+<input type="button" id="secondbtn" value="Cancel">
+<button onclick="disableElement()">Disable button</button>
+</form>
+</body>
+
+Return the Value of button:
+<!doctype html>
+<body>
+<input type="button" id="button1" value="Click Me!">
+<p>The text on the button is:
+<script>
+document.write(document.getElementById("button1").value);
+</script></p>
+</body>
+
+Close the new window
+<!doctype html>
+<head>
+<script>
+var myWindow;
+function openWin() 
+{
+myWindow = window.open("", "", "width=400, height=200");
+}
+function closeWin() 
+{
+myWindow.close();
+}
+</script>
+</head>
+<body>
+<input type="button" value="Open 'myWindow'" onclick="openWin()" />
+<input type="button" value="Close 'myWindow'" onclick="closeWin()" />
+</body>
+
+VALIDATING RADIO BUTTONS
+<!doctype html>
+<head>
+<script type="text/javascript">
+function validate()
+{
+var r1 = document.getElementById('male').checked;
+var r2 = document.getElementById('female').checked;
+if((r1=="") && (r2=="")){
+alert("Select either Male or Female");
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+You are? 
+<form name="form1" method="post" action='form.html'>
+<input type="radio" id="male" value="male">Male 
+<input type="radio" id="female" value="female">Female 
+<input type="submit" onclick="return validate();" value='Submit'>
+</form>
+</body>
+
+Email Validation:
+We can validate email address at client side and server side. To validate email address on client side, we can use java script with regular expression. Java script can check the regular expression pattern for valid email address. We have different regular expression patterns for validating email address. 
+
+Every email is made up for 5 parts:
+1. A combination of letters, numbers, periods, hyphens, plus signs, and/or underscores
+2. The at symbol @
+3. A combination of letters, numbers, hyphens, and/or periods
+4. A period
+5. The top level domain (com, net, org, us, gov, ...)
+
+Valid Examples:
+info@nuthanit.com
+
+Ex:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("email").value;           
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;  
+            //var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com)|(in)|(org)$/;          
+            if (regex.test(email)) {
+                alert("Valid email address.");
+                return true;
+            } else {
+                alert("Invalid email address.");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateEmail()">
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+Example: (Login Validations as Per Live Project Resqs.)
+<head>
+<script type='text/javascript'>
+function LoginValidate()
+{
+if(document.getElementById('un').value.length>=6 
+&& 
+document.getElementById('pw').value.length>=6)
+{
+document.getElementById('but1').disabled=false
+}
+else
+{
+document.getElementById('but1').disabled=true
+}
+}
+</script>
+</head>
+<body>
+<input type='text' id='un' onblur='LoginValidate()'>
+<br>
+<input type='password' id='pw' onblur='LoginValidate()'>
+<br/>
+<input type="button" value="Click" id="but1" disabled>
+</body>
+
+Validating Text Fields As per Live Project Reqs.
+Example
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function funchklen(len,cid)
+{
+if(len==0)
+{
+document.getElementById(cid).style.borderColor="red"
+}
+else
+{
+document.getElementById(cid).style.borderColor="blue"
+}
+}
+</script>
+<style>
+input{
+border:1px solid silver;
+}
+</style>
+</head>
+<body>
+Username:<br/>
+<input type="text" id="txt1" onblur="funchklen(this.value.length,'txt1')"><br>
+Password:<br/>
+<input type="text" id="txt2" onblur="funchklen(this.value.length,'txt2')"><br>
+<input type='submit' value="Login">
+</body>
+
+Style Object
+The Style object represents an individual style statement.
+
+Access a Style Object
+The Style object can be accessed from the head section of the document, or from specific HTML element(s).
+
+<head>
+<script>
+function myFunction() 
+{
+document.getElementById("myH1").style.color = "blue";
+}
+</script>
+</head>
+<body>
+<h1 id="myH1">How to change the style of a header</h1>
+<p>Click the button to change the style of the H1 element.</p>
+<button onclick="myFunction()">ClickMe</button>
+</body>
+</html>
+
+Style Object Properties
+Style borderRadius Property
+The borderRadius property is a shorthand property for setting, or returning, the four border*Radius properties.
+
+Syntax
+object.style.borderRadius
+
+Set the borderRadius property:
+object.style.borderRadius="1-4 length|% / 1-4 length|%|initial|inherit"
+
+Example:
+<head>
+<style> 
+#myDIV
+{
+border:4px solid #FF00FF;
+width:300px;height:300px;
+}
+</style>
+<script>
+function myFunction()
+{
+document.getElementById("myDIV").style.borderRadius = "25px";
+}
+</script>
+</head>
+<body>
+<p>Click the button to set the borderRadius property of the DIV element:</p>
+<div id="myDIV"></div>
+<button onclick="myFunction()">ClickMe</button>
+</body>
+
+Style textShadow Property:
+the textShadow property sets or returns one ore more shadow effects for a text.
+
+Syntax
+object.style.textShadow
+
+Set the textShadow property
+object.style.textShadow="none|h-shadow v-shadow blur color|initial|inherit"
+
+Example:
+<head>
+<script>
+function myFunction()
+{
+document.getElementById("my").style.textShadow="5px 5px 1px #ff0000,10px 10px 1px #0000ff";
+}
+</script>
+</head>
+<body>
+<p id="my">This is an example paragraph.</p>
+<button type="button" onclick="myFunction()">Add shadow</button>
+</body>

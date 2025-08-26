@@ -1,0 +1,84 @@
+getColumnName(int columnNumber) :-
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+class GFG {
+    public static void main (String[] args) {
+         try {
+	Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "username", "password");
+             Statement stmt = con.createStatement();            //creating object of statement interface 
+
+            String query = "SELECT * FROM testtable";
+            ResultSet rs = stmt.executeQuery(query);            
+            ResultSetMetaData rstmd=rs.getMetaData();           //creating an object of Resultsetmetadata Interface
+
+            System.out.println("1st Column name :"+rstmd.getColumnName(1)); //name of 1st column
+            System.out.println("2nd Column name :"+rstmd.getColumnName(2)); //name of 2nd column
+            System.out.println("4rd Column name :"+rstmd.getColumnName(4)); //Runtime exception as column 4 does not exists
+            
+        }catch(Exception e){e.printStackTrace();}
+    }
+}
+
+2.getColumnCount():
+
+import java.sql.*;
+class GFG 
+{
+    public static void main (String[] args) 
+    {
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "username", "password");
+            Statement stmt = con.createStatement(); // creating object of statement interface
+
+            String query = "SELECT * FROM testtable";
+            ResultSet rs = stmt.executeQuery(query);
+            ResultSetMetaData rstmd = rs.getMetaData(); // creating an object of Resultsetmetadata Interface
+           
+            int columnsNumber = rstmd.getColumnCount(); // getting the number of column in table
+            System.out.println("Column Number: " + columnsNumber);
+          
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+3. getColumnTypeName(int ColumnNumber)
+import java.sql.*;
+
+// Driver Class
+class GFG {
+      // Main Function
+    public static void main(String[] args)
+    {
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test",
+                                                         "username","password");
+
+              // Creating object of statement interface
+            Statement stmt = con.createStatement();
+
+            String query = "SELECT * FROM testtable";
+            ResultSet rs = stmt.executeQuery(query);
+            
+              // Creating an object of Resultsetmetadata
+            // Interface
+            ResultSetMetaData rstmd = rs.getMetaData();
+
+            System.out.println("Type of column 1 :" + rstmd.getColumnTypeName(1));
+            System.out.println("Type of column 2 :" + rstmd.getColumnTypeName(2));
+            System.out.println("Type of column 3 :" + rstmd.getColumnTypeName(3)); 
+              // Gives type of first column, can
+               // Be used for data validation
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

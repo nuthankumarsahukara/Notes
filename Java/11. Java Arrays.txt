@@ -1,0 +1,390 @@
+Java Arrays
+An array is typically a grouping of elements of the same kind that are stored in a single, contiguous block of memory.
+
+Java array is an object which contains elements of a similar data type. Additionally, The elements of an array are stored in a contiguous memory location. It is a data structure where we store similar elements. We can store only a fixed set of elements in a Java array.
+
+Array in Java is index-based, the first element of the array is stored at the 0th index, 2nd element is stored on 1st index and so on.
+
+An object of a dynamically formed class is called an array in Java. Java arrays implement the Serializable and Cloneable interfaces and derive from the Object class. In Java, an array can hold objects or primitive values. Java allows us to create single- or multi-dimensional arrays
+
+
+Advantages
+Code Optimization: It makes the code optimized, we can retrieve or sort the data efficiently.
+Random access: We can get any data located at an index position.
+	
+Disadvantages
+Size Limit: Arrays have a fixed size and do not grow dynamically at runtime.
+
+
+Types of Array in java
+
+There are Four types of array.
+
+Single Dimensional Array
+Multidimensional Array
+Jagged Array
+Anonymous Array
+
+Single-Dimensional Array in Java
+
+A single-dimensional array in Java is a linear collection of elements of the same data type. It is declared and instantiated using the following syntax:
+
+dataType[] arr; (or) dataType []arr; (or)  dataType arr[]; 
+
+Declaration, Instantiation and Initialization of Java Array:
+
+In Java, you can declare, instantiate, and initialize an array in a single line, as demonstrated below:
+
+int a[]={33,3,4,5};//declaration, instantiation and initialization 
+
+Example:
+
+class SimpleArray{  
+public static void main(String args[]){  
+int a[]={33,3,4,5};//declaration, instantiation and initialization  
+//printing array  
+for(int i=0;i<a.length;i++)//length is the property of array  
+System.out.println(a[i]);  
+}
+}  
+
+Output:
+33
+3
+4
+5
+
+Instantiation of an Array in Java By Using New Keyword
+
+Syntax: datatype arrayname=new datatype[]{value,value,....};
+			or
+	datatype arrayname=new datatype[size]
+  
+
+Example:
+
+class NewArrayEx{  
+public static void main(String args[]){  
+int a[]=new int[5];//declaration and instantiation  
+a[0]=10;//initialization  
+a[1]=20;  
+a[2]=70;  
+a[3]=40;  
+a[4]=50;  
+//traversing array  
+for(int i=0;i<a.length;i++)//length is the property of array  
+System.out.println(a[i]);  
+}
+}  
+
+Output:
+10
+20
+70
+40
+50
+
+
+For-each Loop for Java Array:
+
+We can also print the Java array using for-each loop. The Java for-each loop prints the array elements one by one. It holds an array element in a variable, then executes the body of the loop.
+
+The syntax of the for-each loop is given below:
+
+for(data_type variable:arrayname){  
+
+//body of the loop  
+}
+
+Example:
+
+class ForEachArray{  
+public static void main(String args[]){  
+int arr[]={33,3,4,5};  
+//printing array using for-each loop  
+for(int i:arr)  
+System.out.println(i);  
+}
+}    
+
+Output:
+33
+3
+4
+5
+
+Multidimensional Array in Java
+A multidimensional array in Java is an array of arrays where each element can be an array itself. It is useful for storing data in row and column format.
+
+Syntax to Declare Multidimensional Array in Java
+
+dataType[][] arrayRefVar; (or)  dataType [][]arrayRefVar; (or)  dataType arrayRefVar[][]; (or)  dataType []arrayRefVar[];   
+
+Example to instantiate Multidimensional Array in Java
+
+int[][] arr=new int[3][3];//3 row and 3 column  
+
+Example to initialize Multidimensional Array in Java
+
+arr[0][0]=1;  
+arr[0][1]=2;  
+arr[0][2]=3;  
+arr[1][0]=4;  
+arr[1][1]=5;  
+arr[1][2]=6;  
+arr[2][0]=7;  
+arr[2][1]=8;  
+arr[2][2]=9;  
+Example of Multidimensional Java Array
+
+Let's see the simple example to declare, instantiate, initialize and print the 2Dimensional array.
+
+TestMultiArray.java
+
+class TestMultiArray {  
+    public static void main(String args[]) {  
+        int arr[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}; // 3x3 matrix  
+        // Printing the 2D array  
+        for (int i = 0; i < 3; i++) {  
+            for (int j = 0; j < 3; j++) {  
+                System.out.print(arr[i][j] + " ");  
+            }  
+            System.out.println();  
+        }  
+    }  
+}  
+Output:
+
+1 2 3
+4 5 6
+7 8 9
+
+Addition of Two Matrices in Java
+
+	Let's see a simple example that adds two matrices.
+
+ArrayAddition.java
+
+//Java Program to demonstrate the addition of two matrices in Java  
+class ArrayAddition{  
+public static void main(String args[]){  
+//creating two matrices  
+int a[][]={{1,3,4},{3,4,5}};  
+int b[][]={{1,3,4},{3,4,5}};  
+  
+//creating another matrix to store the sum of two matrices  
+int c[][]=new int[2][3];  
+  
+//adding and printing addition of 2 matrices  
+for(int i=0;i<2;i++){  
+for(int j=0;j<3;j++){  
+c[i][j]=a[i][j]+b[i][j];  
+System.out.print(c[i][j]+" ");  
+}  
+System.out.println();//new line  
+}  
+  
+}}  
+Output:
+
+2 6 8
+6 8 10
+
+Multiplication of Two Matrices in Java
+	
+	Let's see a simple example to multiply two matrices of 3 rows and 3 columns.
+
+MatrixMultiplicationExample.java
+
+//Java Program to multiply two matrices  
+public class MatrixMultiplicationExample{  
+public static void main(String args[]){  
+//creating two matrices    
+int a[][]={{1,1,1},{2,2,2},{3,3,3}};    
+int b[][]={{1,1,1},{2,2,2},{3,3,3}};    
+    
+//creating another matrix to store the multiplication of two matrices    
+int c[][]=new int[3][3];  //3 rows and 3 columns  
+    
+//multiplying and printing multiplication of 2 matrices    
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+c[i][j]=0;      
+for(int k=0;k<3;k++)      
+{      
+c[i][j]+=a[i][k]*b[k][j];      
+}//end of k loop  
+System.out.print(c[i][j]+" ");  //printing matrix element  
+}//end of j loop  
+System.out.println();//new line    
+}    
+}}  
+Output:
+
+6 6 6
+12 12 12
+18 18 18
+
+Jagged Arrays in Java
+
+In Java, a jagged array is an array of arrays where each row of the array can have a different number of columns. This contrasts with a regular two-dimensional array, where each row has the same number of columns.
+
+Declaring and Initializing a Jagged Array
+To declare a jagged array in Java, you first declare the array of arrays, and then you initialize each row separately with its own array of columns.
+
+Syntax:
+	datatype arrayname[][]=new datatype[rowsize][];
+	arrayname[rowindex]=new datatype[colsize];
+
+int arr[][] = new int[3][];    
+arr[0] = new int[3];    
+arr[1] = new int[4];    
+arr[2] = new int[2];  
+TestJaggedArray.java
+
+//Java Program to illustrate the jagged array  
+class TestJaggedArray{  
+    public static void main(String[] args){  
+        //declaring a 2D array with odd columns  
+        int arr[][] = new int[3][];  
+        arr[0] = new int[3];  
+        arr[1] = new int[4];  
+        arr[2] = new int[2];  
+        //initializing a jagged array  
+        int count = 0;  
+        for (int i=0; i<arr.length; i++)  
+            for(int j=0; j<arr[i].length; j++)  
+                arr[i][j] = count++;  
+   
+        //printing the data of a jagged array   
+        for (int i=0; i<arr.length; i++){  
+            for (int j=0; j<arr[i].length; j++){  
+                System.out.print(arr[i][j]+" ");  
+            }  
+            System.out.println();//new line  
+        }  
+    }  
+}  
+Output:
+
+0 1 2
+3 4 5 6
+7 8
+
+Cloning an Array in Java
+
+In Java, arrays implement the Cloneable interface, allowing us to create clones of arrays. If we create a clone of a single-dimensional array, it creates a deep copy of the Java array. It means it will copy the actual value. But, if we create the clone of a multidimensional array, it creates a shallow copy of the Java array, which means it copies the references.
+
+This distinction is important because modifying elements in a shallow copied multidimensional array will affect both the original and cloned arrays, while in a deep copied single-dimensional array, modifications will not impact the original.
+
+TestarrayClone.java
+
+//Java Program to clone the array    
+class TestarrayClone{    
+public static void main(String args[]){    
+int arr[]={33,3,4,5};    
+System.out.println("Printing original array:");    
+for(int i:arr)    
+System.out.println(i);    
+System.out.println("Printing clone of the array:");    
+int carr[]=arr.clone();    
+for(int i:carr)    
+System.out.println(i);       
+}  
+}    
+
+Output:
+
+Printing original array:
+33
+3
+4
+5
+Printing clone of the array:
+33
+3
+4
+5
+
+
+Anonymous Array:
+An array in Java without any name is known as an anonymous array. It is an array just for creating and using instantly. Using an anonymous array, we can pass an array with user values without the referenced variable.
+
+// anonymous int array 
+new int[] { 1, 2, 3, 4};  
+
+// anonymous char array 
+new char[] {'x', 'y', 'z'}; 
+
+// anonymous String array
+new String[] {"Geeks", "for", "Geeks"}; 
+
+
+Example:
+
+class AnonymousArrayEx
+{
+	static void print(int a[]){
+		for(int ab:a)
+			System.out.println(ab);
+	}
+	public static void main(String args[])
+	{
+		print(new int[] { 1, 2, 3, 4});
+	}
+	
+}
+
+Output:
+1
+2
+3
+4	  
+// anonymous multidimensional array
+Syntax : new int[][]={{1,2,3},{4,5,6},{7,8,9}};
+Example:
+class AnonymousArrayEx2
+{
+	static void print(int a[][]){
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a.length;j++){
+				System.out.print("\t"+a[i][j]);
+			}
+			System.out.println("");
+		}
+	}
+	public static void main(String args[])
+	{
+		print(new int[][] {{1, 2, 3},{4, 5, 6},{7, 8, 9}});
+	}
+	
+}	  
+// anonymous jagged multidimensional array
+Syntax :new int[][] { {10, 20}, {30, 40, 50} };
+
+Example:
+class AnonymousArrayEx1
+{
+	static void print(int a[][]){
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				System.out.println(a[i][j]);
+			}
+		}
+	}
+	public static void main(String args[])
+	{
+		print(new int[][] {{1, 2},{5, 6, 7, 8}});
+	}
+	
+}	
+
+Output:
+1
+2
+5
+6
+7
+8
+ 
+ 

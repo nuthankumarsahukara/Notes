@@ -1,0 +1,416 @@
+JavaScript String Object:
+A JavaScript string stores a series of characters like "javascript". A string can be any text inside double or single quotes:
+
+Example:
+var name = "javascript";
+var name = 'javascript';
+
+String indexes are zero-based: The first character is in position 0, the second in 1, and so on.
+
+Syntax: 
+var str = new String("string");
+OR
+var txt = "string";
+
+Properties:
+1. length
+
+Methods:
+1. charAt()
+2. match()
+3. endsWith()
+4. repeat()
+5. big()
+6. bold()
+7. italics()
+8. small()
+9. fixed()
+10. strike()
+11. sub()
+12. sup()
+13. fontcolor()
+14. fontsize()
+15. blink() //depcrecated
+16. link()
+17. replace()
+
+String Object Properties:
+JavaScript length Property: 
+The length property returns the length of a string (in characters).
+
+Syntax: string.length
+
+Example:
+<body>
+<script>
+var txt = "Datapro Technologies!";
+document.write(txt.length);
+</script>
+</body>
+
+String Object Methods
+JavaScript charAt() Method:
+It returns the character at the specified index in a string. The index of the first character is 0, the second character is 1, and so on.
+
+Syntax: string.charAt(index)
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+var str="Datapro Technologies";
+document.getElementById("demo").innerHTML=str.charAt(2);
+}
+</script>
+<body>
+<p id="demo">Click the button to display the third character of a string.</p>
+<button onclick="myFunction()">Display_Character</button>
+</body>
+</html>
+
+JS String Match:The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object
+
+Note: This method returns null if no match is found.
+
+Syntax: string.match()
+
+Example:
+<script>
+var str="Java Script!";
+document.write(str.match("Script") + "<br />"); 
+document.write(str.match("java") + "<br />"); 
+document.write(str.match("Scriptt") + "<br />"); 
+document.write(str.match("Java!")); 
+</script>
+
+JavaScript String endsWith() Method
+The endsWith() method determines whether a string ends with the characters of a specified string.
+This method returns true if the string ends with the characters, and false if not.
+
+Note: 
+The endsWith() method is case sensitive.
+
+Syntax
+string.endsWith(searchvalue,length)
+
+Parameter Values
+Parameter 	Description
+searchvalue 	Required. The string to search for
+length 		Optional. Specify the length of the string to search. If omitted, the default 			value is the length of the string
+
+Example:
+<head>
+<script>
+function myFunction() 
+{
+var str = "Hello world, welcome to the universe.";
+var n = str.endsWith("universe.");
+document.getElementById("demo").innerHTML = n;
+}
+</script>
+</head>
+<body>
+<p id="demo">Click the button to check where if the string ends with the specified value.</p>
+<button onclick="myFunction()">ClickMe </button>
+</body>
+
+JavaScript String repeat() method
+The repeat() method returns a new string with a specified number of copies of the string it was called on.
+
+Syntax
+string.repeat(count)
+
+Parameter Values
+Parameter 	Description
+count 		Required. The number of times the original string value should be repeated 				in the new string
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var str="DataproTechnologies<br/>";
+document.write(str.repeat("6"));
+</script>
+</head>
+
+Example:
+<head>
+<script>
+function myFunction() 
+{
+ var str = "JavaScript!";
+ document.getElementById("demo").innerHTML = str.repeat(3);
+}
+</script>
+</head>
+<body>
+<p>Click the button to display the extracted part of the string.</p>
+<button onclick="myFunction()">RepeatString</button>
+<p id="demo"></p>
+</body>
+
+JS String Styles:
+<script>
+var txt = "Hello World!";
+
+document.write("<p>Big: " + txt.big() + "</p>");
+document.write("<p>Small: " + txt.small() + "</p>");
+
+document.write("<p>Bold: " + txt.bold() + "</p>");
+document.write("<p>Italic: " + txt.italics() + "</p>");
+
+document.write("<p>Fixed: " + txt.fixed() + "</p>");
+document.write("<p>Strike: " + txt.strike() + "</p>");
+
+document.write("<p>Fontcolor: " + txt.fontcolor("green") + "</p>");
+document.write("<p>Fontsize: " + txt.fontsize(6) + "</p>");
+
+document.write("<p>Subscript: " + txt.sub() + "</p>");
+document.write("<p>Superscript: " + txt.sup() + "</p>");
+
+document.write("<p>Link: " + txt.link("http://www.Dataproit.in") + "</p>");
+
+document.write("<p>Blink: " + txt.blink() + " (does not work in IE, Chrome, or Safari)</p>");
+
+</script>
+
+String Replace
+<script>
+var str="Visit SunMicro!";
+document.write(str.replace("SunMicro","NuthanTech"));
+</script>
+
+JavaScript Math Object:
+The Math object allows you to perform mathematical tasks. The Math object includes several mathematical constants and methods.
+
+Math Object Properties:
+JavaScript PI Property
+The PI property returns the ratio of a circle's area to the square of its radius, approximately 3.14
+Syntax: Math.PI
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+document.getElementById("demo").innerHTML=Math.PI;
+}
+</script>
+<body>
+<p id="demo">Click the button to display PI.</p>
+<button onclick="myFunction()">Display_PI</button>
+</body>
+</html>
+
+Math Object Methods:
+abs(x) 	Returns the absolute value of x
+
+Syntax: Math.abs(x)
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+document.getElementById("demo").innerHTML=Math.abs(-7.25);
+}
+</script>
+<body>
+<p id="demo">Click the button to the absolute value of -7.25</p>
+<button onclick="myFunction()">Absolute</button>
+</body>
+</html>
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+var a=Math.abs(7.25);
+var b=Math.abs(-7.25);
+var c=Math.abs(null);
+var d=Math.abs("Hello");
+var e=Math.abs(2+3);
+var x=document.getElementById("demo");
+x.innerHTML=a + "<br>" + b + "<br>" + c + "<br>" + d + "<br>" + e;
+}
+</script>
+<body>
+<p id="demo">Click the button to the absolute value of different numbers</p>
+<button onclick="myFunction()">Absolute_Values</button>
+</body>
+</html>
+
+EXAMPLE:
+<script>
+document.write(Math.round(0.60) + "<br />");
+document.write(Math.round(0.50) + "<br />");
+document.write(Math.round(0.49) + "<br />");
+document.write(Math.round(-4.40) + "<br />");
+document.write(Math.round(-4.60));
+</script>             
+
+<script>
+document.write(Math.max(5,10) + "<br />");
+document.write(Math.max(0,150,30,20,38) + "<br />");
+document.write(Math.max(-5,10) + "<br />");
+document.write(Math.max(-5,-10) + "<br />");
+document.write(Math.max(1.5,2.5));
+</script>
+ 
+JavaScript pow() Method
+The pow() method returns the value of x to the power of y (xy).
+
+Syntax: Math.pow(x,y)
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+document.getElementById("demo").innerHTML=Math.pow(4,3);
+}
+</script>
+<body>
+<p id="demo">Click the button to display the result of 4*4*4.</p>
+<button onclick="myFunction()">Display_Result</button>
+</body>
+</html>
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+document.getElementById("demo").innerHTML=Math.sqrt(9);
+}
+</script>
+<body>
+<p id="demo">Click the button to display the square root of 9.</p>
+<button onclick="myFunction()">Display_Square</button>
+</body>
+</html>
+
+JavaScript Number Object
+The Number object is an object wrapper for primitive numeric values. Number objects are created with new Number().
+
+Syntax: var num = new Number(value);
+
+Number Object Properties
+Property 		Description
+MAX_VALUE 	Returns the largest number possible in JavaScript
+MIN_VALUE 	Returns the smallest number possible in JS
+NaN 		Represents a "Not-a-Number" value
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+document.getElementById("demo").innerHTML=Number.MAX_VALUE;
+}
+</script>
+<body>
+<p id="demo">Click the button to display the largest possible number in JavaScript.</p>
+<button onclick="myFunction()">Max_Value</button>
+</body>
+</html>
+
+Number Object Methods
+Method 		Description
+toExponential(x) 	Converts a number into an exponential notation
+toFixed(x) 	Formats a number with x numbers of digits after the decimal point
+toPrecision(x) 	Formats a number to x length 
+toString() 		Converts a Number object to a string
+valueOf() 		Returns the primitive value of a Number object
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+var num = 15;
+var x = document.getElementById("demo");
+x.innerHTML=num.valueOf();
+}
+</script>
+<body>
+<p id="demo">Click the button to display the primitive value of a number.</p>
+<button onclick="myFunction()">Try it</button>
+</body>
+</html
+
+JavaScript RegExp Object
+It is an object that describes a pattern of characters.When you search in a text, you can use a pattern to describe what you are searching for. RE are used to perform powerful pattern-matching and "search-and-replace" functions on text.
+
+Syntax
+var patt=new RegExp(pattern,modifiers);
+OR
+Syntax:
+var patt=/pattern/modifiers;
+
+pattern ==> Specifies the pattern of an expression. 
+modifiers ==> Specify if a search should be global, case-sensitive, etc.
+
+Brackets
+Brackets are used to find a range of characters:
+Expression 	Description
+[abc] 		Find any character between the brackets
+[^abc] 		Find any character not between the brackets
+[0-9] 		Find any digit from 0 to 9
+[A-Z] 		Find any character from uppercase A to uppercase Z
+[a-z] 		Find any character from lowercase a to lowercase z
+[A-z] 		Find any character from uppercase A to lowercase z
+
+Quantifiers
+Quantifier		Description
+n+ 		Matches any string that contains at least one n
+n* 		Matches any string that contains zero or more n's
+n? 		Matches any string that contains zero or one n
+n{X} 		Matches any string that contains a sequence of X n's
+n$ 		Matches any string with n at the end of it
+^n 		Matches any string with n at the beginning of it
+		
+Metacharacters
+A metacharacter is simply an alphabetical character preceded by a backslash.
+Character		Description
+.             	 	a single character
+\s             		a whitespace character (space, tab, newline)
+\S             		non-whitespace character
+\d             		a digit (0-9)
+\D             		a non-digit
+\w             		a word character (a-z, A-Z, 0-9, _)
+\W             		a non-word character
+[aeiou]        	matches a single character in the given set
+
+RegExp Object Properties
+Property 		Description
+global 		Specifies if the "g" modifier is set
+ignoreCase 	Specifies if the "i" modifier is set
+lastIndex 		The index at which to start the next match
+multiline 		Specifies if the "m" modifier is set
+source 		The text of the RegExp pattern
+
+RegExp Object Methods
+Method 		Description
+compile() 		Compiles a regular expression
+exec() 		Tests for a match in a string. Returns the first match
+test() 		Tests for a match in a string. Returns true or false
+
+JavaScript test() Method
+It tests for a match in a string. This method returns true if it finds a match, otherwise it returns false.
+
+Syntax: RegExpObject.test(string)
+
+Parameter 	Description
+string 		Required. The string to be searched
+
+Example:
+<!doctype html>
+<head>
+<script>
+var patt1=new RegExp("h");
+document.write(patt1.test("HTML5 is Next generation Web Platform..!!"));
+</script>
+</head>

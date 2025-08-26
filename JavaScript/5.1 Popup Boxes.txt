@@ -1,0 +1,87 @@
+JavaScript Popup Boxes
+JavaScript has three kind of popup boxes: 
+1. Alert box
+2. Confirm box
+3. Prompt box.
+
+Alert Box
+An alert box is often used if you want to make sure information comes through the user. When an alert box pops up, the user will have to click "OK" to proceed. 
+
+Syntax
+alert("Message");
+
+Example:
+<html>
+<head>
+<title>Alert box</title>
+<script type="text/javascript">
+alert("Click OK to Proceed");
+alert("NuthanTechnologies");
+</script>
+</head>
+<body>
+</body>
+</html>
+
+How to write text on multiple lines in an alert box?
+We can't use the <br> tag here, as we did in write(), because alert() is a method of the window object that cannot interpret HTML tags. Instead we use the new line escape character.
+
+Escape characters in JavaScript:
+Escape characters are characters that can be interpreted in some alternate way then what we intended to. To print these characters as it is, include backslash ‘\’ in front of them.
+Code	Result
+\b	Backspace
+\f	Form Feed
+\n	New Line
+\r	Carriage Return
+\t	Horizontal Tabulator
+\v	Vertical Tabulator
+\\	Backslash
+
+Example:
+<script>
+alert("JavaScript\nis\na\nclient-side\nprogramming\nlanguage");
+</script>
+
+Example:
+<script>
+alert("1\n\t2\n\t\t3");
+</script>
+
+
+Confirm Box:
+A confirm box is often used if you want the user to verify or accept something. When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed. If the user clicks "OK", the box returns true. If the user clicks "Cancel", the box returns false.
+
+Syntax
+confirm("Message");
+
+Example:
+<html>
+<head>
+<title>Confirm box</title>
+<script type="text/javascript">
+confirm("Click OK or Cancel");
+</script>
+</head>
+<body>
+</body>
+</html>
+
+Prompt Box
+A prompt box is often used if you want the user to input a value before entering a page. When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value. If the user clicks "OK" the box returns the input value. If the user clicks "Cancel" the box returns null.
+
+Syntax
+prompt("sometext","defaultvalue");
+
+Example:
+<html>
+<head>
+<title>Prompt box</title>
+<script type="text/javascript">
+var x=prompt("Enter the number","20");
+alert("The Value that u entered is "+x);	
+</script>
+</head>
+<body>
+</body>
+</html>
+

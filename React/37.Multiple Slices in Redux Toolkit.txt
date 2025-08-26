@@ -1,0 +1,195 @@
+Why Use Multiple Slices?
+---->Using multiple slices helps in:
+---->Organizing the state better (feature-based separation)
+---->Keeping reducers modular and maintainable
+---->Making large applications scalable
+
+Benefits:
+---->Less Boilerplate: No need for actions and reducers to be written separately.
+---->Ease of Maintenance: Smaller and modular codebase.
+---->Improved Development Speed: Automatic generation of actions and reducers lets developers focus on the business logic.
+---->Improved Performance: Since state updates are immutable by default, the Redux Toolkit ensures that changes are handled efficiently.
+
+Example :-
+
+store.jsx
+
+import {configureStore, createSlice} from '@reduxjs/toolkit';
+
+let data={
+    balance : 0,
+    fullName : '',
+    mobile : null
+}
+
+const useSlice=createSlice({
+    name : 'user',
+    initialState : data,
+    reducers :{
+        updateMobile : (state,action) => {
+            state.mobile=action.payload;
+        },
+        updateName : (state,action) => {
+            state.fullName=action.payload;
+        },
+        withdraw : (state,action) => {
+            //state.balance =state.balance-action.payload;
+            state.balance -= action.payload;
+        },
+        deposit : (state,action) => {
+            //state.balance =state.balance+action.payload;
+            state.balance += +action.payload;
+        }
+    }
+});
+
+const transactionSlice = createSlice({
+    name: 'transaction',
+    initialState: [],
+    reducers: {
+        addTransaction: (state, action) => {
+        state.push(action.payload);
+        },
+    },
+});
+
+export const { addTransaction } = transactionSlice.actions;
+export const {updateMobile,updateName,withdraw,deposit} = useSlice.actions;
+
+const store=configureStore({
+    reducer :{
+        user:useSlice.reducer,
+        transaction: transactionSlice.reducer,
+    }
+})
+
+export default store;
+
+main.jsx
+
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import {Provider} from 'react-redux'
+import store from './store.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+)
+
+
+App.jsx
+
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateMobile,updateName,withdraw,deposit,addTransaction } from "./store";
+function App(){
+  const {balance,fullName,mobile} = useSelector(state => state.user);
+  const transactions = useSelector((state) => state.transaction);
+  const dispatch=useDispatch();
+
+  const[amount,setAmount]=useState('');
+  const[name ,setName]=useState('');
+  const[phone,setPhone]=useState('');
+
+  const handleDeposit = () =>{
+      dispatch(deposit(Number(amount)));
+      dispatch(addTransaction({
+        id: Date.now(),
+        amount,
+        date: new Date().toLocaleString(),
+        type: 'Credit'
+      }));
+      setAmount('');
+  }
+
+  const handleWithdraw = () =>{
+    dispatch(withdraw(Number(amount)));
+    dispatch(addTransaction({
+      id: Date.now(),
+      amount,
+      date: new Date().toLocaleString(),
+      type: 'Debit'
+    }));
+    setAmount('');
+  }
+
+  const handleUpdateName = () =>{
+    dispatch(updateName(name));
+    setName('');
+  }
+
+  const handleUpdateMobile = () =>{
+      dispatch(updateMobile(phone));
+      setPhone('');
+  }
+
+  return(
+    <>
+      <div style={{ padding: "20px", fontFamily: "Arial" }}>
+        <h1>🏦 Bank Account</h1>
+        <h2>Balance: ₹{balance}</h2>
+        <h2>Full Name: {fullName || 'Not Set'}</h2>
+        <h2>Mobile: {mobile || 'Not Set'}</h2>
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <input
+          type="number"
+          placeholder="Enter Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />&nbsp;
+        <button onClick={handleDeposit}>Deposit</button>&nbsp;
+        <button onClick={handleWithdraw}>Withdraw</button>
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <input
+          type="text"
+          placeholder="Enter Full Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        /> &nbsp;
+        <button onClick={handleUpdateName}>Update Name</button>
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <input
+          type="text"
+          placeholder="Enter Mobile"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        /> &nbsp;
+        <button onClick={handleUpdateMobile}>Update Mobile</button>
+      </div>
+      <hr />
+
+      <h3>Transaction History</h3>
+      <table border="2" align="center" width="75%" rules="all">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody align="center">
+          {transactions.map((tx) => (
+            <tr key={tx.id}>
+              <td>{tx.id}</td>
+              <td>{tx.date}</td>
+              <td>{tx.type}</td>
+              <td>{tx.amount}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  )
+}
+
+export default App;
+
+

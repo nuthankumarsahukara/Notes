@@ -1,0 +1,216 @@
+Lists in html:
+In html, we are having three types of lists.
+	1. Ordered list
+	2. Unordered list
+	3. Definition list
+
+Ordered list:
+It is also called as numbered list. It is used to give numbering to the list items. It is a paired tag.
+
+Syntax:	<ol>--------------</ol>
+
+To specify the list items we use li tag. It is also a paired tag.
+
+Syntax:	<li>--------------</li>
+
+Attibutes		Parameters
+type		i, I, a, A, 1
+start		any number
+
+Example1:
+<html>
+<title>
+Welcome to NiT
+</title>
+<head>
+Working with LISTS
+</head>
+<body>
+<h4>An Ordered List:</h4>
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+</body>
+</html>
+
+Example:2
+<html>
+<title>
+Welcome to NiT
+</title>
+<head>
+<center><h1>Working with LISTS and Course Names</h1></center>
+</head>
+<body>
+<h4>Numbered list: with courses</h4>
+<ol>
+ <li>Java</li>
+ <li>ORACLE</li>
+ <li>QA</li>
+ <li>UNIX</li>
+</ol>  
+
+<h4>Letters list:</h4>
+<ol type="A">
+ <li>.NET</li>
+ <li>COREJAVA</li>
+ <li>J2EE</li>
+ <li>HTML</li>
+</ol>  
+
+<h4>Lowercase letters list:</h4>
+<ol type="a">
+ <li>Android</li>
+ <li>iPhone</li>
+ <li>Selenium</li>
+ <li>TestingTools</li>
+</ol>  
+
+<h4>Roman numbers list:</h4>
+<ol type="I">
+ <li>SqlServer</li>
+ <li>MySql</li>
+ <li>SEQUEL</li>
+ <li>TSQL</li>
+ <li>PL/SQL</li>
+</ol>  
+
+<h4>Lowercase Roman numbers list:</h4>
+<ol type="i">
+<li>SqlServer</li>
+ <li>MySql</li>
+ <li>SEQUEL</li>
+ <li>TSQL</li>
+ <li>PL/SQL</li>
+</ol>  
+</body>
+</html>
+
+Unordered list:
+It is also called as bulleted list. It is used to give bullets to the list items. It is a paired tag.
+
+Syntax:	<ul>-------------</ul>
+
+To specify the list items we use li tag. It is also a paired tag.
+
+Syntax:	<li>-------------</li>
+
+Attributes	Parameters
+type		disc, circle, square
+
+Example:	
+<html>
+<body>
+<h4>An Unordered List:</h4>
+<ul>
+  <li>SQL</li>
+  <li>TSQL</li>
+  <li>PLSQL</li>
+</ul>
+</body>
+</html>
+
+Example2:
+<html>
+<title>
+Welcome to NiT
+</title>
+<head>
+<center><h1>Working with LISTS and Course Names</h1></center>
+</head>
+<body>
+
+<h4>Disc bullets list:</h4>
+<ul type="disc">
+<li>SqlServer</li>
+ <li>MySql</li>
+ <li>SEQUEL</li>
+ <li>TSQL</li>
+ <li>PL/SQL</li>
+</ul>  
+
+<h4>Circle bullets list:</h4>
+<ul type="circle">
+<li>SqlServer</li>
+ <li>MySql</li>
+ <li>SEQUEL</li>
+ <li>TSQL</li>
+ <li>PL/SQL</li>
+</ul>  
+
+<h4>Square bullets list:</h4>
+<ul type="square">
+<li>SqlServer</li>
+ <li>MySql</li>
+ <li>SEQUEL</li>
+ <li>TSQL</li>
+ <li>PL/SQL</li>
+</ul>  </body>
+</html>
+
+Definition list:
+It is also called as discriptive list. It is used to give definitions to definition terms. It is a paired tag.
+
+Syntax:	<dl>--------------</dl>
+
+To specify definition term, we use dt tag.It is a paired tag
+
+Syntax:	<dt>--------------</dt>
+
+To specify definition data, we use dd tag. It is a paired tag
+
+Syntax:	<dd>--------------</dd>
+
+Example:
+<html>
+<title>
+Welcome to NiT
+</title>
+<head>
+<center><h1>Working with LISTS and Course Names</h1></center>
+</head>
+<body>
+<h4>A Definition List:</h4>
+<dl>
+  <dt>.NET</dt>
+  <dd>It is a kind of FRAMEWORK</dd>
+  <dt>Android</dt>
+  <dd>Operating System from Google</dd>
+</dl>
+</body>
+</html>
+
+Example2:
+<html>
+<title>
+Welcome to NiT
+</title>
+<head>
+<center><h1>Working with LISTS and Course Names</h1></center>
+</head>
+<body>
+<html>
+<body>
+<h4>A nested List:</h4>
+<ul>
+  <li>Course</li>
+  <li>Languages
+    <ul>
+    <li>C</li>
+    <li>C++</li>
+   <li>Java</li>
+    </ul>
+  </li>
+  <li>Scripts
+<ul>
+    <li>JavaScript</li>
+    <li>VBScript</li>
+   <li>Shell Script</li>
+  <li> PERL Script</li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

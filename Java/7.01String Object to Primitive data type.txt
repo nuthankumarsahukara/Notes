@@ -1,0 +1,54 @@
+Converting String to Primitive Data Types in Java
+
+In Java, `String` objects can be converted to primitive data types using methods from their corresponding wrapper classes. This is often necessary when working with user input or data from files.
+
+wrapper classes:The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
+
+Since J2SE 5.0, autoboxing and unboxing feature convert primitives into objects and objects into primitives automatically. The automatic conversion of primitive into an object is known as autoboxing and vice-versa unboxing.
+
+Primitive Type  	Wrapper class
+boolean		Boolean
+char		Character
+byte		Byte
+short		Short
+int		Integer
+long		Long
+float		Float
+double		Double
+
+Common Conversions
+
+1. Integer to (int)
+   String str = "123";
+   int intValue = Integer.parseInt(str);
+
+2. Double to (double)
+   String str = "123.45";
+   double doubleValue = Double.parseDouble(str);
+
+3. Float to (float)
+   String str = "123.45";
+   float floatValue = Float.parseFloat(str);
+
+4. Long to (long)
+   String str = "123456789";
+   long longValue = Long.parseLong(str);
+
+5. Short to (short)
+   String str = "123";
+   short shortValue = Short.parseShort(str);
+
+6. Byte to (byte)
+   String str = "123";
+   byte byteValue = Byte.parseByte(str);
+
+7. Boolean to (boolean)
+   String strTrue = "true";
+   String strFalse = "false";
+   boolean boolValueTrue = Boolean.parseBoolean(strTrue);
+   boolean boolValueFalse = Boolean.parseBoolean(strFalse);
+
+Key Points
+- Use the parse method from the appropriate wrapper class (e.g., Integer, Double).
+- Ensure that the string format is valid to avoid runtime exceptions.
+- For boolean, it will return true for the string "true" (case insensitive), and false for any other value.

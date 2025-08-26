@@ -1,0 +1,573 @@
+HTML5 New Form Attributes
+HTML5 has several new attributes for <form> and <input>.
+
+New attributes for <form>:
+1. autocomplete
+2. novalidate
+
+<form> / <input> autocomplete Attribute
+It Specifies whether a form or input field should have autocomplete on or off. When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+
+Syntax
+<form autocomplete="on/off">
+
+Example:
+<!DOCTYPE html>
+<body>
+<form action="nit1.html" autocomplete="off">
+  First name:<br/>
+<input type="text" name="fname" /><br>
+  E-mail: <br/>
+<input type="email" name="email" autocomplete="on" /><br>
+  <input type="submit" />
+</form>
+</body>
+
+<form> novalidate Attribute:
+It is a boolean attribute. When present, it specifies that the form-data (input) should not be validated when submitted.
+
+Syntax
+<form novalidate="novalidate">
+
+Example:
+<!DOCTYPE html>
+<body>
+<form action="nit1.html" novalidate="on">
+  First name:<br/>
+<input type="text" name="fname" required="requried" /><br>
+  Password: <br/>
+<input type="password" name="pwd" required="requried" /><br>
+  <input type="submit" value="GuestLogin"/>
+</form>
+</body>
+
+New attributes for <input>:
+1. placeholder (TextFieldswith TemporaryHints)
+2. autofocus
+3. required (TextFields with Required Values[non-empty])
+4. autocomplete
+5. form
+
+<input> placeholder Attribute
+It specifies a short hint that describes the expected value of an input field The hint is displayed in the input field when it is empty, and disappears when the field gets focus. 
+
+Note: It is populary known as WaterMarks
+
+Syntax
+<input placeholder="text/hint"/>
+
+Example:
+<!DOCTYPE html>
+<body>
+<form action="nit.html">
+<fieldset>
+<legend align="center">User Login Form...!!</legend>
+<input type="text" name="fname" placeholder="First name" /><br/>
+<input type="password" name="pwd" placeholder="Password" /><br/>
+<input type="submit" value="Login" />
+</fieldset>
+</form>
+</body>
+
+HTML5 <input> autofocus Attribute
+The autofocus attribute is a boolean attribute. When present, it specifies that an <input> element should automatically get focus when the page loads.
+
+Syntax
+<input autofocus="autofocus" />
+or
+<input autofocus>
+or
+<input autofocus="">
+
+Note: It supports in all major web browsers
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+ First name:<br/>
+<input type="text" name="fname" autofocus="autofocus"> <br>
+Last name: <br/>
+<input type="text" name="lname"><br>
+<input type="submit"  value="NextPage"/>
+</form>
+</body>
+</html>
+
+HTML5 <input> required Attribute
+The required attribute is a boolean attribute. When present, it specifies that an input field must be filled out before submitting the form.
+
+Note: The required attribute works with the following input types: text, search, url, tel, email, password, date pickers, number, checkbox, radio, and file.
+
+Syntax
+<input required="required" />
+or
+<input required>
+or
+<input required="">
+
+Note: The required attribute works with the following input types: text, search, url, tel, email, password, date pickers, number, checkbox, radio, and file.
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form  action="nit.html" id="form1" name="Myform">
+<label>What is your favorite movie:</label><br/>
+<input name="movie" type="text" required="required"/> <br/>
+<input type="submit" value="Login"/> 
+</form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Required Attribute</title>
+</head>
+<body>
+    <form id="myform">
+        <label>Name:</label>&nbsp;<input type="text" id="name" required="true" /><br/>
+        <label>MyCar:</label>&nbsp;<input type="text" id="car" required="true" /><br/>
+        <br/>
+        <input type="submit" id="btnsubmit" value="Submit!" />
+    </form>
+</body>
+</html>
+
+<input> autocomplete Attribute
+The autocomplete attribute specifies whether or not an input field should have autocomplete enabled. Autocomplete allows the browser to predict the value. When a user starts to type in a field, the browser should display options to fill in the field, based on earlier typed values.
+
+Note: The autocomplete attribute works with the following <input> types: text, search, url, tel, email, password, datepickers, range, and color.
+
+Note: It supports all major web browsers Except Opera.
+
+Syntax
+<input autocomplete="on|off" />
+
+
+Attribute Values
+Value	Description
+on	Default. Specifies that autocomplete is on (enabled)
+off	Specifies that autocomplete is off (disabled)
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New Input Attributes
+</title>
+</head>
+<body>
+<form action="nit.html" autocomplete="off">
+  First name:<br/>
+<input type="text" name="fname" /><br/>
+  Last name: <br/>
+<input type="text" name="lname" /><br/>
+  E-mail: <br/>
+<input type="email" name="email" autocomplete="on"/> <br/>
+<input type="submit"  value="Login"/>
+</form>
+</body>
+</html>
+
+<input> form Attribute
+The form attribute specifies one or more forms an <input> element belongs to.
+
+Syntax
+<input form="id/name" />
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html" id="form1">
+First name: <br/>
+<input type="text" name="fname"><br/>
+<input type="submit" value="Submit">
+</form>
+Last name: <br/> 
+<input type="text" name="lname" form="form1">
+</body>
+</html>
+
+<input> formaction Attribute
+The formaction attribute specifies the URL of a file that will process the input control when the form is submitted. The formaction attribute overrides the action attribute of the <form> element.
+
+Note: This attribute is used with the following input types
+1."submit" 
+2. "image"
+
+Note: It supports all Major Browsers.
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+  First name: <br/>
+<input type="text" name="fname"><br>
+  Last name: <br/>
+<input type="text" name="lname"><br>
+<input type="submit" value="@form">
+<input type="submit" formaction="html5.png" value="@input" >
+</form>
+</body>
+</html>
+
+<input> formenctype Attribute
+The formenctype attribute specifies how the form-data should be encoded when submitting it to the server (only for forms with method="post") The formenctype attribute overrides the enctype attribute of the <form> element.
+
+Note: It  is used with type="submit" and type="image".
+
+Note: It supports all Major Browsers.
+
+Syntax:
+<input type formenctype=name>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html" method="get">
+First name: <br/>
+<input type="text" name="fname"><br/>
+Password: <br/>
+<input type="password" name="pwd"><br/>
+<input type="submit" value="G@form">
+<input type="submit" formenctype="form-data" value="P@input">
+</form>
+</body>
+</html>
+
+<input> formmethod Attribute
+The formmethod attribute defines the HTTP method for sending form-data to the action URL. The formmethod attribute overrides the method attribute of the <form> element.
+
+Note:It can be used with type="submit" and type="image".
+
+Note: It supports all Major Browsers.
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="form.html" method="get">
+First name: <br/>
+<input type="text" name="fname"><br/>
+Last name: <br/>
+<input type="text" name="lname"><br/>
+Password: <br/>
+<input type="password" name="pwd"><br/>
+<input type="submit" value="@Form">
+<input type="submit" formmethod="post" formaction="goodmorning.gif" value="@Input">
+</form>
+</body>
+</html>
+
+
+Example2
+<body>
+<form action="nit.html">
+ <input type="text" placeholder="User Name" name="fname"><br/>
+<input type="password" placeholder="Password"  name="lname"><br/>
+<input type="image" src="html5.png" alt="Submit" width="55" height="30" title='submit using GET'><br/>
+<input type="submit" formmethod="post" formaction="nit1.html" value="Submit using POST">
+</form>
+</body>
+
+<input> formnovalidate Attribute
+The novalidate attribute is a boolean attribute. When present, it specifies that the <input> element should not be validated when submitted. The formnovalidate attribute overrides the novalidate attribute of the <form> element.
+
+Note: It can be used with type="submit"
+Note: It doesn't supports safari Browser.
+Syntax:
+<input type formnovalidate='on|off'>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+E-mail: <br/>
+<input type="email" name="userid" required="required"><br>
+User Name: <br/>
+<input type="text" name="user" required="required"><br>
+<input type="submit" value="@YValidate">
+<input type="submit" formnovalidate="formnovalidate" 
+value="@NValidate">
+</form>
+</body>
+</html>
+
+<input> formtarget Attribute
+The formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form. The formtarget attribute overrides the target attribute of the <form> element.
+
+Note: It can be used with type="submit" and type="image".
+
+Syntax:
+<input type formtarget='target'>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+  First name: <br/>
+<input type="text" name="fname"><br>
+  Last name: <br/>
+<input type="text" name="lname"><br>
+<input type="submit" value="@SameTW">
+<input type="submit" formtarget="_blank" value="@NewTW">
+</form>
+</body>
+</html>
+
+<input> height and width Attributes
+The height and width attributes specify the height and width of an <input> element.
+
+Note: These attributes are only used with <input type="image">.
+
+Syntax:
+<input type='image' height='' " width=''">
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+  First name: <br/>
+<input type="text" name="fname"><br/>
+  Password: <br/>
+<input type="password" name="pwd"><br/>
+<input type="image" src="html5.png" width="25px" height="15px">
+</form>
+</body>
+</html>
+
+<input> list Attribute
+The list attribute refers to a <datalist> element that contains pre-defined options for an <input> element.
+
+Syntax: <input list="Name">
+
+Example
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html" method="get">
+<input list="browsers" name="browser">
+<datalist id="browsers">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+<input type="submit"></form>
+</body>
+</html>
+
+<input> min and max Attributes
+
+The min and max attributes specify the minimum and maximum value for an <input> element.
+
+Note: The min and max attributes works with the following input types: number, range, date, datetime, datetime-local, month, time and week.
+
+
+Syntax:
+<input type min=value max=value>
+
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+Webforms 2.0 number-InputType
+</title>
+</head>
+<body>
+<form action="nit.html">
+Quantity (between 1 and 8): 
+<input type="number" name="quantity" min="1" max="8" />
+<input type="submit"  value="Select"/>
+</form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+  Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br>
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2000-01-02"><br>
+  Quantity (between 1 and 5):
+   <input type="number" name="quantity" min="1" max="5"><br>
+   <input type="submit">
+   </form>
+   </body>
+   </html>
+
+<input> multiple Attribute
+The multiple attribute is a boolean attribute. When present, it specifies that the user is allowed to enter more than one value in the <input> element.
+
+Note: It supports email, and file input types.
+
+Syntax:
+<input type='file' multiple='on|off'>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+  Select images: <input type="file" name="img" multiple="multiple">
+  <input type="submit" value='Login'>
+</form>
+<p>Try selecting more than one file when browsing for files.</p>
+</body>
+</html>
+
+<input> pattern Attribute
+The pattern attribute specifies a regular expression that the <input> element's value is checked against.
+
+Note: The pattern attribute works with the following input types: text, search, url, tel, email, and password.
+
+Syntax:
+<input type pattern=RegExp>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+Webforms 2.0 tel-InputType
+</title>
+</head>
+<body>
+<form action="nit.html">
+<input type='tel' 
+pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' 
+title='Phone Number (Format: +99(99)9999-9999)'>
+ <input type="submit"  value="ClickMe"/>
+</form>
+</body>
+</html>
+
+Example:
+<!doctype html>
+<body>
+<form action='nit1.html' name="Myform" id="form1">
+<label style='color:blue;font-family:tahoma'>Enter Valid Country Code <b style='color:red'>*</b></label><br/>
+<input type='text' placeholder="OnlyCountryCode" title="SorryInvalidCountryCode" pattern="[a-zA-Z]{2}" required="required"  name='ccode' id='txt1' />
+<br/>
+<input type='submit' value="NextPage" />
+<input type='reset' value="Cancel" />
+</form>
+</body>
+
+<input> step Attribute
+The step attribute specifies the legal number intervals for an <input> element.
+
+NOTE:
+The step attribute works with the following input types: number, range, date, datetime, datetime-local, month, time and week.
+
+Syntax:
+<input type=name step=value>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+New input attributes
+</title>
+</head>
+<body>
+<form action="nit.html">
+  <input type="number" name="points" step="3">
+  <input type="submit" value='Login'>
+</form>
+</body>
+</html

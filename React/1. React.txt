@@ -1,0 +1,61 @@
+React js is an open-source Javascript library that is used for building user interfaces specifically for single page application 
+
+It's used for handling the view layer for web and mobile apps.React also allows us to create reusable UI components.
+
+React was first created by Jordan Walke, a software engineer working for Facebook.
+
+Why we Use ?
+
+Component based Architecture
+
+uses virtual DOM for fast rendering The virtual DOM provides a mechanism that abstarcts manuak DOM manipulations away from the developer,helping us to write more predictable code.it does so by comparing two render tress to determine exactly what has changed,only updating what is necessary on the actual DOM.
+
+Features of ReactJS:
+
+1.Easy to learn
+2.Reusable Components
+3.Fast Rendering
+4.SEO friendly
+5.Strong Community Support
+6.Proficient Data Binding
+7.The Virtual DOM
+8.Great Developer Tools
+
+
+Prerequisites:-
+
+HTML
+CSS
+Javascript
+Modules,classes,Arrow Functions,Map,Filter,async/await
+
+
+React Basics:-
+
+How To create react application
+application folder structure
+what is JSX ?
+Components(Function & class)
+Ways to apply css
+props
+
+Intermediate Level :-
+
+Conditional Rendering
+React Events
+React Lists
+Form Handling
+Fragments
+
+Advanced Concepts
+
+component Life Cycle Methods
+React Hooks
+Redux
+
+For Creating react app we need
+
+1.node js
+2.vscode
+3.npx create-react-app projectname (To create the application);
+ 

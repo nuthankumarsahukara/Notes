@@ -1,0 +1,296 @@
+Interfaces in Java	
+An Interface in Java programming language is defined as an abstract type used to specify the behavior of a class. An interface in Java is a blueprint of a behavior. A Java interface contains static constants and abstract methods.
+
+What are Interfaces in Java?
+The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not the method body. It is used to achieve abstraction and multiple inheritances in Java using Interface. In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method body. Java Interface also represents the IS-A relationship.
+
+When we decide on a type of entity by its behavior and not via attribute we should define it as an interface.
+
+Syntax for Java Interfaces
+interface {
+    // declare constant fields
+    // declare methods that abstract 
+    // by default.   
+}
+
+To declare an interface, use the interface keyword. It is used to provide total abstraction. That means all the methods in an interface are declared with an empty body and are public & abstract and all fields are public, static, and final by default. A class that implements an interface must implement all the methods declared in the interface. To implement the interface, use the implements keyword.
+
+Uses of Interfaces in Java:
+
+Uses of Interfaces in Java are mentioned below:
+1.It is used to achieve total abstraction.
+2.Since java does not support multiple inheritances in the case of class, by using an interface it can achieve multiple inheritances.
+3.Any class can extend only 1 class, but can any class implement an infinite number of interfaces.
+4.It is also used to achieve loose coupling.
+5.Interfaces are used to implement abstraction. 
+
+So, the question arises why use interfaces when we have abstract classes?
+The reason is, abstract classes may contain non-final variables, whereas variables in the interface are final, public, and static.
+// A simple interface
+interface Player
+{
+    final int id = 10;
+    int move();
+}
+Relationship Between Class and Interface
+
+A class can extend another class similar to this an interface can extend another interface. But only a class can extend to another interface, and vice-versa is not allowed.
+
+Difference Between Class and Interface
+Although Class and Interface seem the same there have certain differences between Classes and Interface. The major differences between a class and an interface are mentioned below:
+
+Class:-
+In class, you can instantiate variables and create an object.                     
+A class can contain concrete (with implementation) methods	
+The access specifiers used with classes are private, protected, and public.	
+
+Interface:-
+In an interface, you can’t instantiate variables and create an object.
+The interface cannot contain concrete (with implementation) methods.
+In Interface only one specifier is used- Public.
+
+Implementation: To implement an interface, we use the keyword implements
+
+// Java program to demonstrate working of
+// interface
+
+// A simple interface
+interface In1 {
+  
+    // public, static and final
+    final int a = 10;
+
+    // public and abstract
+    void display();
+}
+
+// A class that implements the interface.
+class TestClass implements In1 {
+  
+    // Implementing the capabilities of
+    // interface.
+    public void display(){ 
+      System.out.println("Datapro"); 
+    }
+
+    // Driver Code
+    public static void main(String[] args)
+    {
+        TestClass t = new TestClass();
+        t.display();
+        System.out.println(a);
+    }
+}
+
+Output
+DataPro
+10
+
+Java Interfaces Examples
+
+ Let’s consider the example of vehicles like bicycles, cars, bikes, etc they have common functionalities. So we make an interface and put all these common functionalities. And lets Bicycle, Bike, car, etc implement all these functionalities in their own class in their own way.
+Below is the implementation of the above topic:
+
+// Java program to demonstrate the 
+// real-world example of Interfaces
+
+import java.io.*;
+
+interface Vehicle {
+    
+    // all are the abstract methods.
+    void changeGear(int a);
+    void speedUp(int a);
+    void applyBrakes(int a);
+}
+
+class Bicycle implements Vehicle{
+    
+    int speed;
+    int gear;
+    
+    // to change gear
+    @Override
+    public void changeGear(int newGear){
+        
+        gear = newGear;
+    }
+    
+    // to increase speed
+    @Override
+    public void speedUp(int increment){
+        
+        speed = speed + increment;
+    }
+    
+    // to decrease speed
+    @Override
+    public void applyBrakes(int decrement){
+        
+        speed = speed - decrement;
+    }
+    
+    public void printStates() {
+        System.out.println("speed: " + speed
+            + " gear: " + gear);
+    }
+}
+
+class Bike implements Vehicle {
+    
+    int speed;
+    int gear;
+    
+    // to change gear
+    @Override
+    public void changeGear(int newGear){
+        
+        gear = newGear;
+    }
+    
+    // to increase speed
+    @Override
+    public void speedUp(int increment){
+        
+        speed = speed + increment;
+    }
+    
+    // to decrease speed
+    @Override
+    public void applyBrakes(int decrement){
+        
+        speed = speed - decrement;
+    }
+    
+    public void printStates() {
+        System.out.println("speed: " + speed
+            + " gear: " + gear);
+    }
+    
+}
+class GFG {
+    
+    public static void main (String[] args) {
+    
+        // creating an instance of Bicycle
+        // doing some operations
+        Bicycle bicycle = new Bicycle();
+        bicycle.changeGear(2);
+        bicycle.speedUp(3);
+        bicycle.applyBrakes(1);
+        
+        System.out.println("Bicycle present state :");
+        bicycle.printStates();
+        
+        // creating instance of the bike.
+        Bike bike = new Bike();
+        bike.changeGear(1);
+        bike.speedUp(4);
+        bike.applyBrakes(3);
+        
+        System.out.println("Bike present state :");
+        bike.printStates();
+    }
+}
+
+Output
+Bicycle present state :
+speed: 2 gear: 2
+Bike present state :
+speed: 1 gear: 1
+
+ 
+	interface printable{  
+	void print();  
+	}  
+	class A6 implements printable{  
+	public void print(){System.out.println("Hello");}  
+	  
+	public static void main(String args[]){  
+	A6 obj = new A6();  
+	obj.print();  
+	 }  
+	}  
+
+Java Interface Example: Drawable
+
+In this example, the Drawable interface has only one method. Its implementation is provided by Rectangle and Circle classes. In a real scenario, an interface is defined by someone else, but its implementation is provided by different implementation providers. Moreover, it is used by someone else. The implementation part is hidden by the user who uses the interface.
+	//Interface declaration: by first user  
+	interface Drawable{  
+	void draw();  
+	}  
+	//Implementation: by second user  
+	class Rectangle implements Drawable{  
+	public void draw(){System.out.println("drawing rectangle");}  
+	}  
+	class Circle implements Drawable{  
+	public void draw(){System.out.println("drawing circle");}  
+	}  
+	//Using interface: by third user  
+	class TestInterface1{  
+	public static void main(String args[]){  
+	Drawable d=new Circle();//object is provided by method Ex: getDrawable()  
+	d.draw();  
+	}
+	}  
+
+Output:
+drawing circle
+
+Java Interface Example: Bank
+Let's see another example of java interface which provides the implementation of Bank interface.
+
+	interface Bank{  
+	float rateOfInterest();  
+	}  
+	class SBI implements Bank{  
+	public float rateOfInterest(){return 9.15f;}  
+	}  
+	class PNB implements Bank{  
+	public float rateOfInterest(){return 9.7f;}  
+	}  
+	class TestInterface2{  
+	public static void main(String[] args){  
+	Bank b=new SBI();  
+	System.out.println("ROI: "+b.rateOfInterest());  
+	}
+	}  
+
+
+Multiple Interface:
+
+interface A{
+	void sum(int a,int b);
+	void sub(int a,int b);
+}
+interface B{
+	void mul(int a,int b);
+	void div(int a,int b);
+	void mod(int a,int b);
+}
+
+class InterfaceEx2 implements A,B
+{
+	public void sum(int a,int b){
+		System.out.println("Sum :"+(a+b));
+	}
+	public void sub(int a,int b){
+		System.out.println("Sub :"+(a-b));
+	}
+	public void mul(int a,int b){
+		System.out.println("Mul :"+(a*b));
+	}
+	public void div(int a,int b){
+		System.out.println("Div :"+(a/b));
+	}
+	public void mod(int a,int b){
+		System.out.println("Mod :"+(a%b));
+	}	
+	public static void main(String  A[])
+	{
+		InterfaceEx2 obj=new InterfaceEx2();
+		obj.sum(10,25);
+		obj.sub(25,30);
+		obj.mul(15,10);
+	}
+}

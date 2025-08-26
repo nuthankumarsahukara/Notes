@@ -1,0 +1,105 @@
+SQL commands or Statements with simple syntax
+Note: To connect to the Database & practice SQL commands use:
+1.SQL*Plus 2. SQL Developer
+
+Create table:- Creates a table definition.
+Syntax: Create Table <table name> (column1 datatype,
+Col2 datatype, col3 datatype......) ;
+
+Cl scr: To clear screen
+
+Desc: to describe the structure of the table etc.
+Syntax: desc <table name>
+
+INSERT: Inserts a record into the table.
+Syntax:- insert into <tablename>[(fieldslist)] values(values list)
+
+SELECT:- To query or to display the data in tables.
+Syntax:- select [ALL or DISTINCT] [fields list or *] from <table name> [clauses];
+
+UPDATE:- To modify the data in the table.
+Syntax:- update <table name> set field1=valuel,
+field2-value2,..... [where clause];
+
+DELETE :- Removes the data from the table.
+Syntax:- delete from <table name> [where clause];
+
+
+INSERT Command to insert data repeatedly.
+Example insert into emp values (&eno,'&ename','&job',&sal,'&doj');
+/-> command to repeat last command in the buffer
+
+INSERT INTO SELECT statement
+To select data from a table and insert it into another table. It requires the data type of the source and target tables match.
+
+Syntax :INSERT INTO target_table (col1, col2, col3)
+SELECT col1,
+col2,
+col3
+FROM source table
+WHERE condition;
+
+
+INSERT ALL statement: Insert multiple rows into a table 
+Syntax:
+INSERT ALL
+INTO table_name(col1,col2,col3) VALUES (vall,val2, val3) 
+INTO table_name(coll.col2,col3) VALUES (val4,val5, val6) 
+INTO table_name(coll.col2.col3) VALUES (val7,val8, val9) 
+Subquery:
+
+Insert multiple rows into multiple tables:
+Syntax
+INSERT ALL
+INTO table_name1 (coll,col2,col3) VALUES (vall,val2, val3)
+INTO table_name2(col1.col2.col3) VALUES (val4,val5, val6) 
+INTO table_name3(col1.col2.col3) VALUES (val7,val8, val9) 
+Subquery:
+
+Create table using already existing table:
+Syntax: create table <table name> as <select statement>;
+
+ALTER TABLE Statement :specifies how to add, modify, drop or delete columns in a table. It is also used to rename a table or column.
+
+How to add single columns in the existing table
+Syntax:
+ALTER TABLE table_name ADD column_name column-definition;
+
+How to add multiple columns in the existing table
+Syntax:
+ALTER TABLE table_name  ADD (column_1 column-definition, column_2 column-definition,
+column_n column_definition);
+
+How to modify column of a table
+Syntax:
+ALTER TABLE table_name MODIFY column name column_type;
+
+How to modify multiple columns of a table
+Syntax:
+ALTER TABLE table_name MODIFY (column_1 column_type, column_2 column_type,
+column_n column_type);
+
+How to drop column of a table
+Syntax:
+ALTER TABLE table_name DROP COLUMN column_name;
+
+How to rename column of a table
+Syntax:
+ALTER TABLE table_name RENAME COLUMN old name to new name;
+
+How to rename table
+Syntax:
+ALTER TABLE table_name RENAME TO new table_name;
+
+
+TRUNCATE TABLE Statement is used to remove all records from a table. It works same as DELETE statement but without specifying a WHERE clause. It is generally used when you don?t have to worry about rolling back
+Once a table is truncated, it can?t be rolled back. The TRUNCATE TABLE statement does not affect any of the table?s indexes, triggers or dependencies.
+Syntax:
+TRUNCATE TABLE [schema_name.]table_name
+
+DROP TABLE Statement is used to remove or delete a table from the Oracle database.
+Syntax:
+DROP [schema_name].TABLE table_name [CASCADE CONSTRAINTS] [PURGE ];
+CASCADE CONSTRAINTS: It is optional. If specified, it will drop all referential integrity constraints as well.
+
+PURGE: It is also optional. If specified, the table and its dependent objects are not placed in the recycle bin and can't be recovered.

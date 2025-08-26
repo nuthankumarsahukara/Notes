@@ -1,0 +1,157 @@
+JSP(Java Servlet Page):-
+
+JSP technology is used to create web application just like Servlet technology. It can be thought of as an extension to Servlet because it provides more functionality than servlet such as expression language, JSTL, etc.
+
+A JSP page consists of HTML tags and JSP tags. The JSP pages are easier to maintain than Servlet because we can separate designing and development. It provides some additional features such as Expression Language, Custom Tags, etc.
+
+Advantages of JSP over Servlet
+There are many advantages of JSP over the Servlet. They are as follows:
+
+1) Extension to Servlet
+JSP technology is the extension to Servlet technology. We can use all the features of the Servlet in JSP. In addition to, we can use implicit objects, predefined tags, expression language and Custom tags in JSP, that makes JSP development easy.
+
+2) Easy to maintain
+JSP can be easily managed because we can easily separate our business logic with presentation logic. In Servlet technology, we mix our business logic with the presentation logic.
+
+3) Fast Development: No need to recompile and redeploy
+If JSP page is modified, we don't need to recompile and redeploy the project. The Servlet code needs to be updated and recompiled if we have to change the look and feel of the application.
+
+4) Less code than Servlet
+In JSP, we can use many tags such as action tags, JSTL, custom tags, etc. that reduces the code. Moreover, we can use EL, implicit objects, etc.
+
+
+The Lifecycle of a JSP Page
+The JSP pages follow these phases:
+
+Translation of JSP Page
+Compilation of JSP Page
+Classloading (the classloader loads class file)
+Instantiation (Object of the Generated Servlet is created).
+Initialization ( the container invokes jspInit() method).
+Request processing ( the container invokes _jspService() method).
+Destroy ( the container invokes jspDestroy() method).
+
+
+Creating a simple JSP Page
+To create the first JSP page, write some HTML code as given below, and save it by .jsp extension. We have saved this file as index.jsp. Put it in a folder and paste the folder in the web-apps directory in apache tomcat to run the JSP page.
+
+index.jsp
+Let's see the simple example of JSP where we are using the scriptlet tag to put Java code in the JSP page. We will learn scriptlet tag later.
+
+<html>  
+<body>  
+<% out.print(2*5); %>  
+</body>  
+</html>  
+
+How to run a simple JSP Page?
+Follow the following steps to execute this JSP page:
+
+Start the server
+Put the JSP file in a folder and deploy on the server
+Visit the browser by the URL http://localhost:portno/contextRoot/jspfile, for example, http://localhost:8888/myapplication/index.jsp
+
+
+JSP Scriptlet tag (Scripting elements)
+
+In JSP, java code can be written inside the jsp page using the scriptlet tag. Let's see what are the scripting elements first.
+
+JSP Scripting elements
+
+The scripting elements provides the ability to insert java code inside the jsp. There are three types of scripting elements:
+
+scriptlet tag
+expression tag
+declaration tag
+
+JSP scriptlet tag
+A scriptlet tag is used to execute java source code in JSP. Syntax is as follows:
+
+<%  java source code %>  
+
+Example of JSP scriptlet tag
+In this example, we are displaying a welcome message.
+
+<html>  
+<body>  
+<% out.print("welcome to jsp"); %>  
+</body>  
+</html>  
+
+JSP expression tag
+The code placed within JSP expression tag is written to the output stream of the response. So you need not write out.print() to write data. It is mainly used to print the values of variable or method.
+
+Syntax of JSP expression tag
+<%=  statement %>  
+
+Example of JSP expression tag
+In this example of jsp expression tag, we are simply displaying a welcome message.
+
+<html>  
+<body>  
+<%= "welcome to jsp" %>  
+</body>  
+</html>  
+
+index.html
+<html>  
+<body>  
+<form action="welcome.jsp">  
+<input type="text" name="uname"><br/>  
+<input type="submit" value="go">  
+</form>  
+</body>  
+</html>  
+
+welcome.js
+
+<html>  
+<body>  
+<%= "Welcome "+request.getParameter("uname") %>  
+</body>  
+</html>  
+
+JSP Declaration Tag
+The JSP declaration tag is used to declare fields and methods.
+
+The code written inside the jsp declaration tag is placed outside the service() method of auto generated servlet.So it doesn't get memory at each request.
+
+Syntax of JSP declaration tag
+The syntax of the declaration tag is as follows:
+
+<%!  field or method declaration %> 
+
+Difference between JSP Scriptlet tag and Declaration tag
+Jsp Scriptlet Tag:-		
+The jsp scriptlet tag can only declare variables not methods.
+The declaration of scriptlet tag is placed inside the _jspService() method.
+
+Jsp Declaration Tag :-
+The jsp declaration tag can declare variables as well as methods.
+The declaration of jsp declaration tag is placed outside the _jspService() method.
+
+
+Example of JSP declaration tag that declares field
+In this example of JSP declaration tag, we are declaring the field and printing the value of the declared field using the jsp expression tag.
+
+index.jsp
+<html>  
+<body>  
+<%! int data=50; %>  
+<%= "Value of the variable is:"+data %>  
+</body>  
+</html>  
+
+Example 2:
+<html>  
+<body>  
+<%!   
+int cube(int n){  
+return n*n*n*;  
+}  
+%>  
+<%= "Cube of 3 is:"+cube(3) %>  
+</body>  
+</html>  
+
+

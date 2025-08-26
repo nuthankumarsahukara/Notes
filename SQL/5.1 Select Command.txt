@@ -1,0 +1,35 @@
+DISTINCT Clause :
+SELECT Statement Clauses
+Oracle DISTINCT clause is used to remove the duplicate records from the result set. It is only used with SELECT statement.
+
+Syntax:
+SELECT DISTINCT expressions
+FROM tables
+WHERE conditions;
+
+GROUP BY Clause:
+In Oracle GROUP BY clause is used with SELECT statement to collect data from multiple records and group the results by one or more columns.
+Syntax:
+SELECT expression1, expression2, ... expression_n,
+aggregate_function (aggregate_expression)
+FROM tables
+WHERE conditions GROUP BY expression 1, expression2, ... expression_n;
+
+aggregate_function: It specifies the aggregate functions i.e. SUM, COUNT, MIN, MAX or AVG functions.
+
+HAVING Clause:
+In Oracle, HAVING Clause is used with GROUP BY Clause to restrict the groups of returned rows where condition is TRUE.
+
+Syntax:
+SELECT expressionl, expression2, ... expression_n,
+aggregate_function (aggregate_expression) FROM tables
+WHERE conditions
+GROUP BY expression 1, expression2, ... expression_n
+HAVING having_condition;
+
+ORDER BY Clause:
+In Oracle, ORDER BY Clause is used to sort or re-arrange the records in the result set. The ORDER BY clause is only used with SELECT statement.
+Syntax:
+SELECT expressions FROM tables
+WHERE conditions
+ORDER BY expression [ ASC | DESC ];

@@ -1,0 +1,120 @@
+ React Event Handling
+
+ What is Event Handling in React?  
+- In React, event handling is similar to JavaScript but uses camelCase instead of lowercase event names.  
+- Instead of using `"onclick"`, `"onchange"`, `"onsubmit"`, etc., React uses `onClick`, `onChange`, `onSubmit`, etc.  
+- Event handlers in React are usually functions or arrow functions.  
+
+Basic Event Handling in React  
+
+import React from "react";
+
+const ButtonClick = () => {
+    const handleClick = () => {
+        alert("Button Clicked!");
+    };
+
+    return <button onClick={handleClick}>Click Me</button>;
+};
+
+export default ButtonClick;
+
+ Note: The event handler `handleClick` is a function reference, not a function call (`handleClick()` would execute immediately).
+
+
+
+Passing Arguments in Event Handlers  
+ 
+const handleClick = (name) => {
+    alert(`Hello, ${name}!`);
+};
+
+<button onClick={() => handleClick("John")}>Click Me</button>;
+
+
+Using `bind()` Method :
+
+Bind class methods to the component instance (this) so you can safely use this.state, this.props, etc.
+
+Pass parameters to event handler methods.
+
+<button onClick={handleClick.bind(this, "John")}>Click Me</button>;
+
+
+Handling Events in Class Components  
+
+import React, { Component } from "react";
+
+class EventClass extends Component {
+    handleClick = () => {
+        alert("Button Clicked!");
+    };
+
+    render() {
+        return <button onClick={this.handleClick}>Click Me</button>;
+    }
+}
+
+export default EventClass;
+
+1.Arrow function in class ensures `this` refers to the class instance.  
+2.Alternatively, use `this.handleClick = this.handleClick.bind(this);` in the constructor.  
+
+ Common React Events  
+
+ Event		Description 
+ `onClick`  	Triggers when an element is clicked 
+ `onChange`  	Detects input field changes 
+ `onSubmit`  	Handles form submission 
+ `onMouseEnter`  	Fires when mouse enters an element 
+ `onMouseLeave`  	Fires when mouse leaves an element 
+ `onKeyPress`  	Detects keypress on input fields 
+ `onFocus`  	When an input field gains focus 
+ `onBlur`  	When an input field loses focus 
+
+ Handling Form Events in React  
+
+const FormExample = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Prevents page reload
+        alert("Form Submitted!");
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Enter Name" />
+            <button type="submit">Submit</button>
+        </form>
+    );
+};
+
+Note :- Always use `event.preventDefault()` in form submissions to prevent page reload.
+
+Event Object (`event`) in React  
+React provides an `event` object that contains information about the triggered event.  
+
+const handleInputChange = (event) => {
+    console.log("Input Value:", event.target.value);
+};
+
+<input type="text" onChange={handleInputChange} />;
+
+Note: `event.target.value` fetches the value entered in the input field.
+
+ Synthetic Events in React  
+- React events are Synthetic Events (a wrapper around browser’s native events).  
+- Synthetic events ensure consistent behavior across all browsers.  
+
+Example:  
+
+const handleEvent = (event) => {
+    console.log(event.type);
+};
+
+<button onClick={handleEvent}>Click</button>;
+
+ Event Handling Best Practices  
+1. Use arrow functions to avoid `this` binding issues.  
+2. Use `event.preventDefault()` in form submissions.  
+3. Pass arguments using arrow functions or `.bind(this)`.  
+4. Avoid inline function calls like `onClick={handleClick()}` (executes immediately).  

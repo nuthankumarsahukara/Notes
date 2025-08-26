@@ -1,0 +1,158 @@
+State & useState in React
+
+What is State in React?  
+State is a built-in object that holds dynamic data in a component.  
+- It determines how the component behaves and renders.  
+- Updating state causes re-rendering of the component.  
+
+Features of State:
+- Stores dynamic values.  
+- Changes trigger re-rendering.  
+- Used for interactivity in UI.  
+- Managed within a component.  
+
+useState Hook (Functional Component State)
+- `useState` is a hook that allows functional components to use state.  
+- Syntax:  const [state, setState] = useState(initialValue);
+
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, updateCount] = useState(0);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => updateCount(++count)}>Change</button>
+    </div>
+  );
+}
+
+export default Counter;
+
+Using State in Class Components
+- State in class components is declared using `this.state`.  
+- It is updated using `this.setState()`.  
+
+import React, { Component } from "react";
+
+class Counter extends Component {
+  state={
+    counter : 0
+  }
+  render(){
+    return(
+      <>
+        <h1>Counter Value :{this.state.counter}</h1>
+        <button onClick={
+        ()=>{this.setState((s)=>({counter:s.counter+1}))}  
+        }>
+          Change
+        </button>
+      </>
+    );
+  }
+
+export default Counter;
+
+
+useState with Objects
+
+import React, { useState } from "react";
+
+function UserProfile() {
+  const [user, setUser] = useState({
+    name: "John",
+    age: 25,
+    city: "New York",
+  });
+
+  const updateAge = () => {
+    setUser((prevUser) => ({ ...prevUser, age: prevUser.age + 1 }));
+  };
+
+  return (
+    <div>
+      <h2>Name: {user.name}</h2>
+      <h3>Age: {user.age}</h3>
+      <h3>City: {user.city}</h3>
+      <button onClick={updateAge}>Increase Age</button>
+    </div>
+  );
+}
+
+export default UserProfile;
+
+State with Object:
+
+import React from "react";
+
+class StateEx extends React.Component{
+
+state={
+	product:"Redmi Note 13 Pro Plus",
+	price:35000
+}
+
+render(){
+	return(
+	<>
+	<h1>Product:{this.state.product}</h1>
+	<p>Price :{this.state.price}</p>
+
+	<input type="number" id="price"/><br/><br/>
+	<button onClick={()=>{
+		let p =document.getElementById('price').value
+			this.setState({
+				price:p
+			})
+			}}>Update</button>
+		</>
+	);
+}
+
+}
+
+
+Ex 2:
+
+constructor(){
+	super();	
+	this.updatePrice=this.updatePrice.bind(this)
+}
+updatePrice(){
+	let price =document.getElementById('price').value
+		this.setState({
+			price:p
+		})
+}
+
+useState with Arrays
+
+import React, { useState } from "react";
+
+function ItemList() {
+  // Initialize state as an empty array
+  const [items, setItems] = useState([]);
+
+  // Function to add a new item
+  const addItem = () => {
+    setItems([...items, `Item ${items.length + 1}`]);
+  };
+
+  return (
+    <div>
+      <h2>Items:</h2>
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <button onClick={addItem}>Add Item</button>
+    </div>
+  );
+}
+
+export default ItemList;
+
+

@@ -1,0 +1,218 @@
+Redux-toolkit
+
+1. It is a global state management library like redux.
+2.It simplifers state management  setup.
+3.createSlice function is used to create reducer and will also generates action creators automatically.
+4.Provides featues to modify state directly.
+
+In Redux:-
+ function accountReducer(state=initialState,action)
+     {
+        switch(action.type) {
+	case "updateMobile":
+                      return {...state,mobile :action.payload};
+	}
+      }
+
+In Redux-toolkit
+
+const userSlice =createSlice({
+   name : "user"
+   intitialstate,
+   reducers: {
+     updateMobile :(State,action) =>{
+      state.mobile=action.playload;
+      },
+    },
+});
+
+5.Supports asynchronous state changes,no need of any middleware libraries.
+6.Redux Devtoools library integrated.
+7.A library built on top of Redux.
+8.Official, recommended approach for writing Redux logic.
+9.Simplifies Redux setup and reduces boilerplate code.
+
+---->configureStore(): Simplifies store creation with default middleware and DevTools.
+---->createSlice(): Combines reducers and actions into one unit.
+---->createAsyncThunk(): Handles asynchronous operations like API calls.
+---->Immer Integration: Allows direct state mutation (under the hood it's still immutable).
+---->DevTools Enabled: Built-in support for Redux DevTools.
+
+Advantages:
+
+---->Less boilerplate than traditional Redux.
+---->Built-in tools for async logic.
+---->Easy to manage and scale.
+
+Redux ToolKit Setup
+
+1.npm install @reduxjs/toolkit
+2.npm install react-redux
+3.use createSlice fo state update logic
+const data ={
+    balance : 0,
+    fullName : "",
+    mobile :null,
+}
+ const userSlice =createSlice({
+   name : "user"
+   intitialstate,
+   reducers: {
+     updateMobile :(State,action) =>{
+      state.mobile=action.playload;
+      },
+    },
+});
+
+4.Configure Slice using ConfigureStore method
+   const store =configureStore({
+      reducer: {
+          user : userSlice.reduce,
+      },
+});
+
+
+Example :-
+
+1.npx create-vite reduxtoolkit
+
+Store.jsx
+
+import {configureStore, createSlice} from '@reduxjs/toolkit';
+
+const data ={
+    balance : 0,
+    fullName : "",
+    mobile :null,
+}
+const userSlice=createSlice({
+    name: 'user',
+    initialState :data,
+    reducers: {
+        updateMobile : (state,action) => {
+            state.mobile=action.payload;
+            },
+        updateName : (state,action) => {
+            state.fullName=action.payload;
+        },
+        withdraw : (state,action) => {
+            state.balance -= action.payload;
+        },
+        deposit : (state,action) => {
+            state.balance += +action.payload;
+        }
+    }
+});
+
+export const { updateMobile, updateName, withdraw, deposit } = userSlice.actions;
+
+const store = configureStore({
+    reducer : {
+        user:userSlice.reducer
+    }
+})
+
+export default store;
+
+main.jsx
+
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import {Provider} from 'react-redux'
+import store from './store.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+)
+
+
+App.jsx
+
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { deposit, withdraw, updateName, updateMobile } from './store'; 
+
+function App() {
+  // Accessing user state from Redux
+  const { balance, fullName, mobile } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  // Local component state
+  const [amount, setAmount] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
+  // Dispatching actions
+  const handleDeposit = () => {
+    if (!isNaN(amount) && amount !== '') {
+      dispatch(deposit(Number(amount)));
+      setAmount('');
+    }
+  };
+
+  const handleWithdraw = () => {
+    if (!isNaN(amount) && amount !== '') {
+      dispatch(withdraw(Number(amount)));
+      setAmount('');
+    }
+  };
+
+  const handleUpdateName = () => {
+    if (name.trim()) {
+      dispatch(updateName(name));
+      setName('');
+    }
+  };
+
+  const handleUpdateMobile = () => {
+    if (phone.trim()) {
+      dispatch(updateMobile(phone));
+      setPhone('');
+    }
+  };
+
+  return (
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h1>🏦 Bank Account</h1>
+      <h2>Balance: ₹{balance}</h2>
+      <h2>Full Name: {fullName || 'Not Set'}</h2>
+      <h2>Mobile: {mobile || 'Not Set'}</h2>
+
+      <div style={{ marginTop: "20px" }}>
+        <input
+          type="number"
+          placeholder="Enter Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />&nbsp;
+        <button onClick={handleDeposit}>Deposit</button>&nbsp;
+        <button onClick={handleWithdraw}>Withdraw</button>
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <input
+          type="text"
+          placeholder="Enter Full Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        /> &nbsp;
+        <button onClick={handleUpdateName}>Update Name</button>
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <input
+          type="text"
+          placeholder="Enter Mobile"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        /> &nbsp;
+        <button onClick={handleUpdateMobile}>Update Mobile</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;

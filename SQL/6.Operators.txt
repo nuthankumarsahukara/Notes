@@ -1,0 +1,100 @@
+Operators in Oracle
+•Arithmetic operators
+•Assignment operator
+•Relational operators
+•Logical operators
+•Special Operators (IN,SOME,ANY,ALL,IS NULL,LIKE)
+•Set Operators
+Arithmetic Operators in Oracle:
+Operator		Description 			Example
+
++  	 Addition Adds values on either side of the operator	a+b
+-   	Subtraction Subtracts right hand operand from left hand operand	a-b
+     *	Multiplication - Multiplies values on either side of the operator 	a*b
+     /	Division - Divides left hand operand by right hand operand		a/b
+     %	Modulus - Divides left hand operand by right hand operand 		a%b	
+	and returns remainder
+
+Assignment Operator in Oracle
+The equal sign (=) is the assignment operator where the value on the right is assigned to the value on the left. It is also used to establish a relationship between a column heading and
+the expression that defines the values for the column.
+
+Relational/Comparision Operators in Oracle
+1.Equal (=) Operator
+2.Not Equal (!= or <>) Operator
+3.Greater Than (>) Operator
+4.Less Than (<) Operator
+5.Greater Than or Equal To (>=) Operator 
+6.Less Than or Equal To (<=) Operator
+
+Logical Operators in Oracle
+1.AND: TRUE if both Boolean expressions are TRUE. 
+2.OR: TRUE if one of the Boolean expressions is TRUE. 
+3.NOT: Reverses the value of any other Boolean operator.
+
+Special operators In Oracle
+IN Operator in Oracle:
+The IN Operator in Oracle is used to search for specified values that match any value in the set of multiple values it accepts. The "IN" operator evaluates multiple values on a single data column. It displays the data row if any one of the given values is matched with the data column value. If none of the values matches, the SQL statement won't return that data row.
+Syntax: Expression IN (value1, value2,.. valuen);
+
+BETWEEN Operator in Oracle:
+The BETWEEN Operator in Oracle is used to get the values within a specified range. The BETWEEN operator is used to compare the value in a column. This operator tests a range of values with a column value. The BETWEEN operator is written as the word "BETWEEN" followed by a range of values. 
+Syntax: Expression BETWEEN value1 AND value2;
+
+ANY Operator in Oracle
+The ANY Operator in Oracle is used to compare a value to each value in a list of results from a query and evaluate to true if the result of an inner query contains at least one row. The ANY operator must match at least one row in the subquery and must be preceded by comparison operators.
+Syntax:
+SELECT [column_name... | expression1 ]
+FROM [table_name]
+WHERE expression2 comparison_operator (ANY) (subquery)
+
+SOME Operator in Oracle
+The SOME Operator in Oracle is used to compare a value to each value in a list of results from a query and evaluate to true if the result of an inner query contains at least one row. The SOME Operator must match at least one row in the subquery and must be preceded by comparison operators.
+Syntax:
+SELECT [column_name... | expression1]
+FROM [table_name]
+WHERE expression2 comparison_operator (SOME) (subquery)
+
+ALL Operator in Oracle
+The ALL Operator in Oracle is used to select all records of a Select statement. It compares a value to every value in a list of results from a query. The ALL must be preceded by the comparison operators and evaluated to TRUE if the query returns rows.
+Syntax:
+SELECT [column_name... | expression1 ]
+FROM [table_name]
+WHERE expression2 comparison_operator (ALL) (subquery)
+
+LIKE Operator in Oracle:
+
+The LIKE Operator in Oracle is used with the WHERE clause to search for a specific pattern in a given string. The string pattern contains wildcard characters that represent missing characters. The LIKE operator is written as a word "LIKE" followed by a pattern to match with column values.
+Syntax: Expression LIKE pattern [ESCAPE 'Escape Character'],
+
+Wildcard Characters in Oracle
+---->% Symbol represents any no of characters (zero or more characters) in the expression. 
+---->_will represent a single character in the expression.
+
+Is null Operator in Oracle:
+The Is Null Operator is used for Comparing nulls in a table. NULL is unknown (or) undefined value in database, NULL != 0 & NULL != space. So, use the" IS " keyword.
+Syntax: where <column name> is null;
+
+       
+Returns true if the subquery returns atleast one row. In Oracle, exists clause is used with select. insert, update, delete statements. It is used to combine the queries and creating subquery.
+Syntax:
+Where exists (subquery)
+
+Set Operators in Oracle:
+
+SQL set operators allow combining results from two or more SELECT statements. At first sight, this looks similar to SQL joins although there is a big difference. SQL joins tends to combine columns i.e. with each additionally joined table it is possible to select more and more columns. 
+SQL set operators on the other hand combine rows from different queries with strong preconditions - all involved SELECTS must. Joins we are collecting the data from two tables when there is common data. But in set operators the data is not joined, in this, the data is merged 
+1. Retrieve the same number of columns and
+2.The data types of corresponding columns in each involved SELECT must be compatible (either the same or with possibility implicitly convert to the data types of the first SELECT statement).
+Types of SET Operators in Oracle:
+There are four types of SET Operators available in Oracle. They are as follows:
+1.UNION: It Returns all distinct rows selected by either query
+2.UNION ALL: It Returns all rows selected by either query, including all duplicates 
+3.INTERSECT: It Returns all distinct rows selected by both queries
+4.MINUS: It Returns all distinct rows selected by the first query but not the second
+
+Syntax of SET Operators in Oracle:
+<Component Query>
+{UNION | UNION ALL | MINUS | INTERSECT}
+<Component Query>
+

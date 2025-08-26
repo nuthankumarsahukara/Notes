@@ -1,0 +1,89 @@
+What is a database?
+A database refers to the organized collection of structured data stored electronically in a device. It allows us to access, manage, and find relevant information frequently. The flat file structure was extensively used to store data before the database system was invented. The relational database approach becomes popular in comparison to the flat file model because it eliminates redundant data.
+
+DBMS Models or Database Models:
+
+A set of rules and standards that define how the database organizes/stores data is called a database model. It is also defining how users view the organization of data.
+There are three types of database models.
+
+1.Hierarchical Database Management System (HDBMS)
+2.Network Database Management System (NDBMS)
+3.Relational Database Management System (RDBMS) 
+	->Object-Relational DBMS (ORDBMS) and 
+	->Object-Oriented Relational DBMS (OORDBMS))
+
+RDBMS (Relational Database Management System) or Relational Model:
+
+In HDBMS and NDBMS data is organized in the form of a tree structure that looks complex to manage and understand also. So to overcome this problem in 1970's Mr. E.F.Codd from IBM came with a new concept for storing data in a table structure i.e. Rows and columns format.
+
+-->E.F.Codd with all these ideas for the new model called "relational model" has published an article with the title "a relational model of data for large shared data bank".
+
+-->Based on this above article many companies came forward like IBM, relational software INC (present it is oracle cor.), etc. Has started the design for the new database model i.e. RDBMS.
+
+-->RDBMS is mainly based on two mathematical principles are "relational algebra" and "calculations".in the year 1970's IBM has given the prototype for RDBMS known as "system r".
+
+-->In the year 1974 IBM has launched a language for communication with RDBMS known as "sequel" and later changed it to "SQL".
+
+
+Features of RDBMS:
+
+1.Data can be organized in table format.
+2.More security with the help of "authentication & authorization".
+3.Reduce data redundancy & data inconsistency using normalization.
+4.Easy to manipulate data using DML commands.
+5.Easy to access data from database with the help of "SQL query (select)".
+6.Fastly retrieve data using "indexes ".
+7.Data sharing using "views".
+8.Supporting transactions with "ACID Properties".(Atomicity, Consistency, Isolation, and Durability)
+9.Supporting data types, operators, functions/procedure, clauses, etc.
+10.Supporting all relationships those are "one - one"," one - many /many - one", and "many-many".
+11.Supporting data integrity rules with constraints & triggers
+12.Supporting SQL & PL/SQL languages.
+
+
+EXAMPLES OF RDBMS PRODUCT:
+
+ORACLE, SQL SERVER, MYSQL, DB2, SYBASE, INFORMIX, INGREES, TERADATA, MAXDB, POSTGRESQL.. Etc
+
+			SROLLNO  SNAME  SFEE      ----->      (COLUMNS/FIELD/ ATTRIBUTE)
+ROWS/	   |---------	1	    A	1200.00
+/RECORDS  |		2 	    B	5000.00
+/TUPLE 	   |--------- 	3	    C	3400.00
+	
+DATABASE: COLLECTION OF TABLES
+TABLE : COLLECTION OF ROWS AND COLUMNS
+ROW: COLLECTION OF COLUMNS
+
+Object-Relational database management system (ORDBMS)
+
+This model is completely depending on "SQL". Data can be stored in "Table" format. 
+Table = collection of rows & columns
+Row = collection of columns
+Example: Oracle, SQL Server, MySQL, DB2, etc.
+
+Object-Oriented Database Management System (OODBMS)
+
+This model is called "NO SQL" and this model work based on "oops". Data can be stored in "object".Example: MongoDB, Casandra, etc.
+
+
+Client-Server Technology:
+
+Suppose, we will be having multiple client machines connected with one database server through a computer communication server or through the computer network. These client PCs are running some application programs which users are using. The application programs will have a very easy interface, a GUI interface through which the user can generate their queries, the generation of queries will remain transparent to the user to remain unaware of the fact that they are generating a query because the user is interacting with GUI environment. The query thus generated will be made available to the respective database server through the computer network.
+
+The database server is having the full version of the database that will check the query. It will check the required data for the query processing and also it will check that which user has originated this particular query and also it will check the respective authenticity of the newer user. So, now the query will be processed at the server end. After processing, the result will be produced and that result will be made available to the respective client machine. After getting the result, the client machine will display the result in a proper way. In this way, the user can access the database but in spite of the fact that the database is not residing at the client machine or the database is not coming to the client machine through the computer communication network, all the processing will be done only at the server end, as a result of that the server should have a compatible architecture.
+
+
+
+Client:
+
+1. Application program.
+	User interface
+	Presents results against database queries
+	Generate queries
+2. Preparation of the query will remain transparent to the application user.
+3. May have low compatible architecture.
+
+Database Server:
+1.The server responds to queries from clients, check the syntax of these commands, verifies the access rights of the user, executes these commands, and responds with desired data or error messages. 
+2.The server hides the server system from the client and from the end-user, so the user is completely unaware of the server hardware and software
+3.So, in this way the server architecture will remain will be kept hidden to the end-user and with the client user also in this way the basic theme behind this client-server model who has explained in this particular value.

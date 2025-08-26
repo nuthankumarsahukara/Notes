@@ -1,0 +1,352 @@
+What is Redux?
+Redux is a state management library — it helps you manage the state (data) of your app in one central place. Instead of passing props down many layers, Redux lets you store the data globally and access or update it from anywhere.
+
+Why use Redux?
+---->Makes state predictable.
+---->Easier to debug and test.
+---->Good for big apps with a lot of shared data.
+---->Centralizes all state in one place.
+
+Key Concepts in Redux:
+
+Store: Holds the whole state of the app.
+Action: A plain JavaScript object that describes what happened (example: user clicked a button).
+Reducer: A function that takes the current state and an action, and returns a new state.
+Dispatch: A method to send an action to the store.
+Selector: A way to get data from the store.
+
+Basic Flow (like a chain):
+
+UI → Dispatch an Action → Reducer updates the Store → UI gets updated
+
+Install the Redux: npm install redux
+
+
+Example :-
+
+store.js
+import { createStore } from "redux";
+
+// Initial state
+const initialState = {
+  balance: 0,
+  fullName: "",
+  mobile: null,
+};
+
+// Reducer
+function accountReducer(state = initialState, action) {
+  switch (action.type) {
+    case "account/deposit":
+      return { ...state, balance: state.balance + action.payload };
+    case "account/withdraw":
+      return { ...state, balance: state.balance - action.payload };
+    case "mobileUpdate":
+      return { ...state, mobile: action.payload };
+    case "nameUpdate":
+      return { ...state, fullName: action.payload };
+    default:
+      return state;
+  }
+}
+
+const store = createStore(accountReducer);
+console.log(store.getState());
+
+store.dispatch({type:"account/deposit",payload :1000});
+console.log(store.getState());
+
+store.dispatch({type:"account/withdraw",payload :100});
+console.log(store.getState());
+
+store.dispatch({type:"mobileUpdate",payload : 9848512345});
+console.log(store.getState());
+
+store.dispatch({type:"nameUpdate",payload : "Nuhan"});
+console.log(store.getState());
+
+export default store;
+
+App.js
+
+import './store';
+
+function App(){
+  return(
+       <>
+           <h1>Welcome to Redux Example</h1> 
+       </>
+   )
+}
+
+Example 2 :
+
+store.js
+
+import { createStore } from "redux";
+
+// Initial State
+const initialState = {
+    user: {
+    name: "",
+    email: "",
+    },
+    products: [],
+    orders: [],
+};
+
+// Reducer
+function shopReducer(state = initialState, action) {
+switch (action.type) {
+    case "user/updateName":
+    return {
+        ...state,
+        user: {
+        ...state.user,
+        name: action.payload,
+        },
+    };
+    case "user/updateEmail":
+    return {
+        ...state,
+        user: {
+        ...state.user,
+        email: action.payload,
+        },
+    };
+    case "product/add":
+    return {
+        ...state,
+        products: [...state.products, action.payload],
+    };
+    case "order/add":
+    return {
+        ...state,
+        orders: [...state.orders, action.payload],
+    };
+    default:
+        return state;
+    }
+}
+
+// Create Store
+const store = createStore(shopReducer);
+
+// Logs
+console.log("Initial State:", store.getState());
+
+// Dispatch Actions
+store.dispatch({ type: "user/updateName", payload: "Nuthan" });
+console.log("After Updating User Name:", store.getState());
+
+store.dispatch({ type: "user/updateEmail", payload: "nuthan@example.com" });
+console.log("After Updating User Email:", store.getState());
+
+store.dispatch({
+    type: "product/add",
+    payload: { id: 1, name: "Laptop", price: 50000 },
+});
+console.log("After Adding Product:", store.getState());
+
+store.dispatch({
+    type: "order/add",
+    payload: { id: 1, productId: 1, quantity: 2 },
+});
+console.log("After Adding Order:", store.getState());
+
+export default store;
+
+
+App.js
+
+import './store';
+
+function App(){
+  return(
+       <>
+           <h1>Welcome to Redux Example</h1> 
+       </>
+   )
+}
+
+
+React+Redux:-
+
+Store.js
+
+import { createStore } from "redux";
+
+const initialState = {
+    balance: 0,
+    fullName: "",
+    mobile: null,
+};
+
+
+function accountReducer(state = initialState, action) {
+    switch (action.type) {
+        case "account/deposit":
+            return { ...state, balance: state.balance + action.payload };
+        case "account/withdraw":
+            return { ...state, balance: state.balance - action.payload };
+        case "mobileUpdate":
+            return { ...state, mobile: action.payload };
+        case "nameUpdate":
+            return { ...state, fullName: action.payload };
+        default:
+            return state;
+    }
+}
+
+const store = createStore(accountReducer);
+
+export default store;
+
+index.js
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>
+);
+
+App.js
+
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+function App() {
+    const { balance, fullName, mobile } = useSelector((state) => state);
+    const dispatch = useDispatch();
+
+    const [amount, setAmount] = useState('');
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+
+    const handleDeposit = () => {
+        dispatch({ type: 'account/deposit', payload: Number(amount) });
+        setAmount('');
+    };
+
+    const handleWithdraw = () => {
+        dispatch({ type: 'account/withdraw', payload: Number(amount) });
+        setAmount('');
+    };
+
+    const handleUpdateName = () => {
+        dispatch({ type: 'nameUpdate', payload: name });
+        setName('');
+    };
+
+    const handleUpdateMobile = () => {
+        dispatch({ type: 'mobileUpdate', payload: phone });
+        setPhone('');
+    };
+
+    return (
+        <div style={{ padding: "20px", fontFamily: "Arial" }}>
+            <h1>🏦 Bank Account</h1>
+            <h2>Balance: ₹{balance}</h2>
+            <h2>Full Name: {fullName}</h2>
+            <h2>Mobile: {mobile}</h2>
+
+            <div style={{ marginTop: "20px" }}>
+                <input
+                type="number"
+                placeholder="Enter Amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                />&nbsp;
+                <button onClick={handleDeposit}>Deposit</button>&nbsp;
+                <button onClick={handleWithdraw}>Withdraw</button>
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+                <input
+                type="text"
+                placeholder="Enter Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                /> &nbsp;
+                <button onClick={handleUpdateName}>Update Name</button>
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+                <input
+                type="text"
+                placeholder="Enter Mobile"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                /> &nbsp;
+                <button onClick={handleUpdateMobile}>Update Mobile</button>
+            </div>
+        </div>
+    );
+}
+
+export default App;
+
+Action Creators :-
+
+In Redux, Action Creators are simple functions that return action objects. Instead of hardcoding action objects everywhere, you define reusable functions to generate them.
+
+Why Use Action Creators?
+--->Makes your code cleaner and reusable.
+--->Reduces typos and repetitive object structures.
+--->Easier to test and maintain.
+
+
+Without Action Creator:
+	dispatch({ type: 'account/deposit', payload: 100 });
+
+With Action Creator:
+	const deposit = (amount) => {
+  	  return {
+	    type: 'account/deposit',
+	    payload: amount
+	  };
+	};
+
+	dispatch(deposit(100));
+
+Actions.js
+
+export const deposit = (amount) => ({
+  type: 'account/deposit',
+  payload: amount,
+});
+
+export const withdraw = (amount) => ({
+  type: 'account/withdraw',
+  payload: amount,
+});
+
+export const updateName = (name) => ({
+  type: 'nameUpdate',
+  payload: name,
+});
+
+export const updateMobile = (mobile) => ({
+  type: 'mobileUpdate',
+  payload: mobile,
+});
+
+export const resetAccount = () => ({
+  type: 'account/reset',
+});
+
+
+App.js
+
+import {
+  deposit,
+  withdraw,
+  updateName,
+  updateMobile,
+  resetAccount
+} from './actions';
+
+<button onClick={() => dispatch(deposit(Number(amount)))}>Deposit</button>
+<button onClick={() => dispatch(withdraw(Number(amount)))}>Withdraw</button>
+<button onClick={() => dispatch(resetAccount())}>Reset</button>

@@ -1,0 +1,194 @@
+In Spring Framework, both BeanFactory and ApplicationContext are used for dependency injection and bean management, but they have some important differences. Here's a clear comparison:
+
+BeanFactory
+
+--->Basic container provided by Spring.
+--->Provides the basic features for dependency injection.
+--->Lazy loading: Beans are created only when requested.
+--->Less memory consumption (useful in lightweight applications).
+--->Does not support many advanced features out-of-the-box like event propagation, internationalization, or annotation processing.
+
+"Commonly used implementation: XmlBeanFactory (now deprecated)"
+
+ApplicationContext
+--->Advanced container – it extends BeanFactory.
+--->Supports eager loading: Beans are created at startup unless configured otherwise.
+--->Provides additional features:
+	--->Event propagation
+	--->Message resource handling (i18n)
+	--->AOP integration
+	--->Annotation-based configuration
+	--->Web application context support
+--->Preferred for most enterprise applications.
+
+Common implementations:
+	ClassPathXmlApplicationContext
+	FileSystemXmlApplicationContext
+	AnnotationConfigApplicationContext
+	WebApplicationContext (for Spring MVC)
+
+Summary 
+
+Feature			BeanFactory		ApplicationContext
+Instantiation		Lazy			Eager
+Annotation Support		No			Yes
+Internationalization (i18n)	No			Yes
+Event Handling		No			Yes
+Bean Post Processors	Manual			Automatic
+Use Case			Lightweight apps/testing	Enterprise-level applications
+
+
+Which to Use?
+Always prefer ApplicationContext unless you have a specific reason to use BeanFactory, such as for memory-sensitive mobile or embedded apps.
+
+Examples :-
+
+ Sample Bean Class
+
+// MyBean.java
+public class MyBean {
+    public void showMessage() {
+        System.out.println("Hello from MyBean!");
+    }
+}
+
+ XML Configuration (beans.xml)
+
+<!-- beans.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myBean" class="MyBean"/>
+</beans>
+
+ Using BeanFactory
+
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.core.io.ClassPathResource;
+
+
+public class BeanFactoryExample {
+    public static void main(String[] args) {
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions(new ClassPathResource("applicationContext.xml"));
+
+        MyBean myBean = (MyBean) beanFactory.getBean("myBean");
+        myBean.showMessage();
+    }
+}
+
+Using ApplicationContext
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ApplicationContextExample {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        MyBean myBean = (MyBean) context.getBean("myBean");
+        myBean.showMessage();
+    }
+}
+
+Output for Both:
+Hello from MyBean!
+
+
+What is Dependency Injection?
+Dependency Injection (DI) is a design pattern used to remove hard-coded dependencies and make the application easier to manage and test.
+
+In Spring, DI allows the framework to inject dependencies (objects) into other objects at runtime, either via constructors or setters.
+
+1. Constructor Injection
+Spring injects the dependency via a class constructor.
+
+Example:
+Student.java
+
+public class Student {
+    private String name;
+
+    // Constructor
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public void display() {
+        System.out.println("Student name: " + name);
+    }
+}
+
+beans.xml
+
+<bean id="student" class="Student">
+    <constructor-arg value="Alice" />
+</bean>
+
+MainApp.java
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Student student = (Student) context.getBean("student");
+        student.display();
+    }
+}
+
+
+2. Setter Injection
+Spring injects the dependency via setter methods after object creation.
+
+Example:
+Employee.java
+
+public class Employee {
+    private String name;
+
+    // Setter
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void display() {
+        System.out.println("Employee name: " + name);
+    }
+}
+
+beans.xml
+
+<bean id="employee" class="Employee">
+    <property name="name" value="Bob" />
+</bean>
+
+MainApp.java
+
+public class MainApp {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Employee emp = (Employee) context.getBean("employee");
+        emp.display();
+    }
+}
+
+Constructor vs Setter Injection
+
+Feature			Constructor Injection	Setter Injection
+When Injected		At object creation		After object is created
+Mandatory Dependency	Yes (best for required)	No (best for optional)
+Readability		Clear dependencies upfront	Less obvious
+Flexibility			Less(immutable dependencies)More flexible
+
+
+
+
+
+
+
+

@@ -1,0 +1,223 @@
+New inline elements
+HTML 5 introduces new elements to help indicate basic elements such as times or numbers.
+
+<mark> - This denotes that a bit of text is marked in some way. You could, for example, use this to mark search terms in a list of results.
+
+<meter> - This can be used to indicate a figure of some sort. It can have multiple attributes including: value, min, max, low, high, and optimum.
+
+<progress> - This can be used to show a progress bar of some sort. It has a couple of attributes: value and max. The max attribute can be omitted.
+
+<time> - You can use this to represent time or date in your block of text.
+
+<mark>
+It is used for indicating text as marked or highlighted for reference purposes. This tag is used to highlight the text in the html document. It is a paired tag.
+
+Syntax: 
+<mark>.......................</mark>
+
+Attributes:
+Element-Specific Attributes are None.
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<body>
+<p>Do not forget to learn about WEB <mark>HTML5</mark> Today.</p>
+</body>
+</html>
+
+Example (CSS) 
+<style type='text/css'>
+mark 
+{
+  background-color: #ddddcc;
+  font-weight: bold;
+  font-style: italic;
+   color: red;
+}
+</style>
+<body>
+<mark>i Technologies</mark>
+</body>
+
+<meter>
+It defines a scalar measurement within a known range, or a fractional value. This is also known as a gauge (such as disk space usage or a tally of votes). It is a paired tag.
+
+Syntax: 
+<meter>.......................</meter>
+
+Note: The <meter> tag should not be used to indicate progress.
+
+Attributes:
+Attribute 		Value 	Description
+form 		form_id 	Speci one or more forms 
+high 		number 	Spe the range that is considered to be a high 
+low 		number   Spe the range that is considered to be low 
+max 		number 	Specifies the maximum value of the range
+min 		number 	Specifies the minimum value of the range
+optimum 		number 	What value is the optimal value for the gauge
+value	 	number 	Specifies the current value of the gauge
+
+Example:
+<body>
+<meter value="2" min="0" max="10">2 out of 10</meter>
+</body>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<p> The following meter full 20%..!!</p>
+<meter value="2" min="0" max="10">2 out of 10</meter>
+<br/>
+<p> The following meter full 40%..!!</p>
+<meter value="4" min="0" max="10">4 out of 10</meter>
+<br/>
+<p> The following meter full 80%..!!</p>
+<meter value="8" min="0" max="10">8 out of 10</meter>
+<br/>
+</body>
+</html>
+
+Note:
+1. if value is higher than high, the gauge is red: (When Low available)
+2. When value is lower than low, if optimum is lower than low, the gauge is Green
+3. if Value is more than high then optimum is yellow (When Max Available)
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<p>He got a <meter low="69" high="80" max="100" value="84">B</meter> on the exam.</p>
+<p>He got a <meter high="80" max="100" value="84">B</meter> on the exam.</p>
+<p>He got a <meter max="100" value=50 min=10>B</meter> on the exam.</p>
+</body>
+</html>
+
+Optimum Attribute
+The optimum attribute specifies the range where the gauge's value is considered to be an optimal value. This is considered to be the optimum value and needs to be somewhere between min and max. It can be greater than the high attribute.
+
+Syntax
+<meter optimum="number"> 
+
+Attribute Values
+Value 	Description
+number 	Specifies a floating point number that is the optimal value of the gauge
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<meter value="0.3" high="0.9" low="0.1" optimum="0.5"></meter>
+</body>
+</html>
+
+Example
+A voting or rating tool
+<p>Your score is:  <meter>2 out of 10</meter></p>
+We can give this further meaning by adding min and max attributes
+<p>Your score is: <meter min="0" max="10">2 out of 10</meter></p>
+<p>Your score is: <meter value="91" min="0" max="100" low="40" high="90" optimum="100">A+</meter></p>
+
+
+<progress>
+It is used for representing the progress of a task. This element could be used in conjunction with JavaScript to display the progress of a task or process as it is underway. 
+
+Syntax: <progress>.................</progress>
+
+Attributes:
+Attribute 	Value 	Description
+max 	number 	Specifies how much work the task requires in total
+value 	number 	Specifies how much of the task has been completed
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+Downloading progress:
+<progress value="22" max="100">
+</progress>
+</body>
+</html>
+
+Example:
+<body>
+<script type='text/javascript'>
+window.onload = function() 
+{
+var bar = document.getElementById("bar"), 
+fallback = document.getElementById("fallback"), 
+loaded = 0;
+var load = function() 
+{
+loaded += 10;
+bar.value = loaded;
+if(loaded == 100) 
+{
+clearInterval(dummyLoad);
+}
+};
+var dummyLoad = setInterval(function() 
+{
+load();
+} ,100);        
+}
+</script>
+<p>
+<progress id="bar" value="0" max="100"> 
+<span id="fallback"></span> </progress></p>
+</body>
+
+Example:
+ <body>
+<progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+<span id="status"></span>
+<h1 id="finalMessage"></h1>
+<script type="text/javascript" language="javascript">
+function progressBarSim(al) 
+{
+var bar = document.getElementById('progressBar');
+var status = document.getElementById('status');
+status.innerHTML = al+"%";
+bar.value = al;
+al++;
+var sim = setTimeout("progressBarSim("+al+")",10);
+if(al == 100)
+{
+status.innerHTML = "100%";
+bar.value = 100;
+clearTimeout(sim);
+var finalMessage = document.getElementById('finalMessage');
+finalMessage.innerHTML = "Process is completed Successfully";
+}
+}
+var amountLoaded = 0;
+progressBarSim(amountLoaded);
+</script>
+</body> 
+    
+<time>
+It is intended to be used presenting dates and times in a machine readable format. It is a paired tag.
+
+Syntax:<time>......................</time>
+
+Attributes:
+Attribute 		Value 		Description
+datetime 		datetime 		Gives the date/time being specified.
+
+Example
+<body>
+We arrived at <time>09:00</time>
+</body>
+
+Example
+<body>
+I have an appointment with doctor on date 
+<time datetime="2010-09-02"> day</time>.
+</body>

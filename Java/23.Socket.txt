@@ -1,0 +1,201 @@
+Java Socket Programming Notes
+
+What is a Socket?
+A socket is one endpoint of a two-way communication link between two programs running on the network. Socket programming enables communication between client and server over a TCP/IP network.
+
+Types of Sockets in Java
+Socket Type	Class		Description
+Server Socket	ServerSocket	Used by server to listen for incoming Connections
+Client Socket	Socket		Used by client to connect to the server
+
+
+java.net.Socket – used to create a client socket.
+java.net.ServerSocket – used to create a server socket.
+InputStream / BufferedReader – used to read data from a socket.
+OutputStream / PrintWriter – used to send data through a socket.
+
+Basic Workflow
+1. Server Side:
+	ServerSocket server = new ServerSocket(port);
+	Socket socket = server.accept(); // wait for client
+2. Client Side:
+	Socket socket = new Socket("localhost", port);
+3. Data Transfer:
+// Sending
+	PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+	out.println("Hello");
+
+// Receiving
+BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+String msg = in.readLine();
+
+Key Methods
+Method		Description
+accept()		Waits for a client to connect
+getInputStream()	Returns input stream to read from the socket
+getOutputStream()	Returns output stream to write to the socket
+close()		Closes the socket connection
+
+--->Example Use Cases
+Chat applications
+File transfer
+Remote procedure calls
+Multiplayer games
+
+--->Protocols Used
+TCP (Transmission Control Protocol) – Reliable, connection-oriented
+UDP (User Datagram Protocol) – Fast, connectionless (uses DatagramSocket class)
+
+---> Advantages of Socket Programming
+Real-time communication
+Direct control over the data flow
+Used in various client-server systems
+
+---> Disadvantages
+Needs manual thread management for multiple clients
+Error handling is necessary (connection drops, timeouts)
+Slightly low-level for complex applications (use frameworks in production)
+
+Example :
+
+Server.java
+
+import java.io.*;
+import java.net.*;
+
+public class Server {
+    public static void main(String[] args) {
+        try {
+            // Create a server socket listening on port 1234
+            ServerSocket serverSocket = new ServerSocket(1234);
+            System.out.println("Server started. Waiting for client...");
+
+            // Accept client connection
+            Socket socket = serverSocket.accept();
+            System.out.println("Client connected.");
+
+            // Create input and output streams
+            DataInputStream input = new DataInputStream(socket.getInputStream());
+            DataOutputStream output = new DataOutputStream(socket.getOutputStream());
+
+            // Read message from client and send response
+            String message = input.readUTF();
+            System.out.println("Client says: " + message);
+            output.writeUTF("Hello from server!");
+
+            // Close connections
+            socket.close();
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Client.java
+
+import java.io.*;
+import java.net.*;
+
+public class Client {
+    public static void main(String[] args) {
+        try {
+            // Connect to the server on localhost and port 1234
+            Socket socket = new Socket("localhost", 1234);
+
+            // Create input and output streams
+            DataInputStream input = new DataInputStream(socket.getInputStream());
+            DataOutputStream output = new DataOutputStream(socket.getOutputStream());
+
+            // Send message to server and read response
+            output.writeUTF("Hello from client!");
+            String response = input.readUTF();
+            System.out.println("Server says: " + response);
+
+            // Close connection
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Chat Application
+
+ChatServer.java
+
+import java.io.*;
+import java.net.*;
+
+public class ChatServer {
+    public static void main(String[] args) {
+        try {
+            ServerSocket serverSocket = new ServerSocket(5000);
+            System.out.println("Server started. Waiting for client...");
+
+            Socket socket = serverSocket.accept();
+            System.out.println("Client connected.");
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+
+            String message;
+            while (true) {
+                message = in.readLine();
+                if (message.equalsIgnoreCase("bye")) {
+                    System.out.println("Client left the chat.");
+                    break;
+                }
+                System.out.println("Client: " + message);
+
+                System.out.print("You (server): ");
+                String reply = console.readLine();
+                out.println(reply);
+            }
+
+            socket.close();
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+ChatClient.java
+
+import java.io.*;
+import java.net.*;
+
+public class ChatClient {
+    public static void main(String[] args) {
+        try {
+            Socket socket = new Socket("localhost", 5000);
+            System.out.println("Connected to server.");
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+
+            String message;
+            while (true) {
+                System.out.print("You (client): ");
+                message = console.readLine();
+                out.println(message);
+                if (message.equalsIgnoreCase("bye")) {
+                    System.out.println("Chat ended.");
+                    break;
+                }
+
+                String reply = in.readLine();
+                System.out.println("Server: " + reply);
+            }
+
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+

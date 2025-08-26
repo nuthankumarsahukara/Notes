@@ -1,0 +1,61 @@
+React Lists and Keys – Notes
+1. Lists in React
+You use lists to render multiple components based on an array of data.
+Use JavaScript’s map() to iterate and return JSX for each item.
+
+Example:-
+import React from 'react';
+
+function FruitList() {
+  const fruits = ['Apple', 'Banana', 'Cherry', 'Mango'];
+
+  return (
+    <div>
+      <h2>Fruit List</h2>
+      <ul>
+        {fruits.map((fruit, index) => (
+          <li key={index}>{fruit}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default FruitList;
+
+
+2. Keys in React
+A key is a special string attribute you must include when creating lists of elements.
+Purpose: Help React identify which items have changed, been added, or removed.
+Keys should be unique among siblings (often id is used).
+
+Note :-Never use index as a key unless you have no better option, especially if the list is dynamic.
+
+Example:
+
+import React from 'react';
+
+function UserList() {
+  const users = [
+    { id: 101, name: 'Nuthan' },
+    { id: 102, name: 'Anjali' },
+    { id: 103, name: 'Rahul' }
+  ];
+
+  return (
+    <div>
+      <h2>User List</h2>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>
+            {user.id} - {user.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default UserList;
+
+

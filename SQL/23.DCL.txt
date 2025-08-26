@@ -1,0 +1,98 @@
+DCL Data Control Language
+Data Control Statements are one of the SQL statement types which enforce database security at database and object level. It deals with the access permissions and rights of a user. The article explains the data control statement commands and more about privileges.
+
+DCL commands are used to assign security levels in database, which involves multiple user setups. They are used to grant defined role and access privileges to the users. There are two types of DCL commands in Oracle:
+1. GRANT
+2. REVOKE
+
+GRANT A DBA or user can grant access permission on owned database objects to other user or roles using GRANT command.
+Syntax: GRANT [privilege]
+ON [object]
+TO {user | PUBLIC | role}
+[WITH ADMIN | GRANT OPTION];
+
+Privileges Privilege is the permission name, which is granted to the user. It may be SELECT, INSERT, UPDATE, DELETE, EXECUTE, ALL and many others, on a database object.
+
+Privileges are of two types
+System privilege - Schema level privilege which is granted by DBA to the users is known as System privilege. They include privilege to issue commands like CREATE (cluster, database link, directory, job, procedure, role, synonym, table, trigger, tablespace, types, view, database), ALTER, DROP, DEBUG, FLASHBACK, LOCK, CONNECT, RESOURCE etc. Please note that these privileges are not limited to an object access, but applicable at User level.
+
+Object privilege - Object level privilege can be granted from object owning user (Grantor) to other user (GRANTEE). Grantor permits access on a specific object and grantee enjoys the access privilege only on the database object concerned. It may be DELETE, SELECT, INSERT, UPDATE, EXECUTE, INDEX, READ, WRITE, ALTER (table, sequence).
+	Privileges can be granted to a specific user, assigned to a specific Role or made PUBLIC. Privileges which are made public are enjoyed by all the users.
+
+CREATE USER statement The CREATE USER statement allows you to create a new database user which you can use to log in to the Oracle database.
+
+Syntax CREATE USER username IDENTIFIED BY password [DEFAULT
+TABLESPACE tablespace] [QUOTA {size | UNLIMITED} ON
+tablespace] [PROFILE profile] [PASSWORD EXPIRE] [ACCOUNT {LOCK | UNLOCK}];
+
+In a non-CDB, a user name cannot begin with C## or c##.
+
+In a CDB, the requirements for a user name are as follows:
+1.In Oracle Database 12c Release 1 (12.1.0.1), the name of a common user must begin with C## or c## and the name of a local user must not begin with C## or c##.
+2.Starting with Oracle Database 12c Release 1 (12.1.0.2):
+3.The name of a common user must begin with characters that are a case-insensitive match to the prefix specified by the COMMON_USER_PREFIX initialization parameter. By default, the prefix is C##.
+4.The name of a local user must not begin with characters that are a case-insensitive match to the prefix specified by the COMMON_USER_PREFIX initialization parameter. Regardless of the value of COMMON_USER_PREFIX, the name of a local user can never begin with C## or c##.
+
+	The multitenant architecture enables an Oracle database to function as a multitenant container database (CDB) that includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB.
+
+Drop the user :
+If user Sidney's schema contains no objects, then you can drop sidney by issuing the statement:
+	 DROP USER Sidney;
+If Sidney's schema contains objects, then you must use the CASCADE clause to drop sidney and the objects:
+	DROP USER sidney CASCADE; 
+
+ROLES
+	 A role is a group of Privileges. A role is very handy in managing privileges, Particularly in such situation when number of users should have the same set of privileges.
+	For example you have four users :Sami, Scott, Ashi, Tanya in the database. To these users you want to grant select,update privilege on emp table, select,delete privilege on dept table. To do this first create a role by giving the following statement
+create role clerks
+
+Then grant privileges to this role.
+	grant select, update on emp to clerks;
+	grant select, delete on dept to clerks;
+
+Now grant this clerks role to users like this
+	grant clerks to sami, scott, ashi, tanya ;
+
+Now Sami, Scott, Ashi and Tanya have all the privileges granted on clerks role.
+Suppose after one month you want grant delete on privilege on emp table all these users then just grant this privilege to clerks role and automatically all the users will have the privilege.
+	grant delete on emp to clerks;
+
+If you want to take back update privilege on emp table from these users just take it back from clerks role.
+	revoke update on emp from clerks;
+
+To Drop a role
+	Drop role clerks;
+
+Ex: 
+sys as sysdba
+show user;
+
+create user nuthankumar identified by nuthan;
+
+grant connect,resource to nuthankumar;
+grant unlimited tablespace to nuthankumar;
+
+select * from employee;
+grant select on employee to nuthankumar;
+
+revoke select on employee from nuthankumar;
+
+grant all on example to nuthankumar;
+
+Role:
+
+create role clerks;
+grant select,insert on example to clerks;
+
+create role managers;
+grant all on example to managers;
+
+how to use the role:-
+
+grant clerks to nuthankumar;
+
+grant managers to nuthankumar;
+
+grant all on example to nuthankumar with grant option (now nuthankumar can grant permission on example table to other users)
+ 
+

@@ -1,0 +1,371 @@
+JavaScript - Errors & Exceptions Handling
+There are three types of errors in programming: 
+(a) Syntax Errors 
+(b) Runtime Errors 
+(c) Logical Errors
+
+Syntax errors:
+Syntax errors, also called parsing errors, occur at compile time for traditional programming languages, at interpret time for JavaScript.
+	
+Following example causes a syntax error because it is missing a closing parenthesis.
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+window.document.write("Hey JS"
+</script>
+</head>
+
+When a syntax error occurs in JavaScript, only the code contained within the same thread as the syntax error is affected and code in other threads
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+document.write("Hello<br/>");
+document.write("Welcome to JS<br/>");
+document.write("Thank U";
+</script>
+</head>
+
+Logical Errors/Semantic Errors:
+Logical errors can be the most difficult type of errors to track down. These errors are not the result of a syntax or runtime error. Instead, they occur when you make a mistake in the logic that drives your script and you do not get the result you expected.
+
+You can not catch those errors, because it depends on your business requirement what type of logic you want to put in your program.
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var x=100;
+var y=10;
+var z=x+y/2 //55
+document.write("The Value is: ",z)
+</script>
+</head>
+
+The above script displays '105', to avoid invalid computations, we must use expression in a proper format ie (x+y)/2.
+
+Example:
+<script type='text/javascript'>
+var x=100;var y=10;
+var z=(x+y)/2
+document.write("The Value is: ",z)
+</script>
+
+Runtime errors:
+Runtime errors, also called exceptions, occur during execution (after compilation/ interpretation).
+
+The following example causes a run time error because here syntax is correct but at run time it is trying to call a non existed method:
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+document.write("Good One");
+window.document.writepn("Hello");
+</script>
+</head>
+
+What is Exception Handling?
+An exception is a problem that arises during the execution of a program.
+OR
+Exception handling is the process of responding to the occurrence, during computation, of exceptions.
+
+The try...catch Statement:
+The try...catch statement allows you to test a block of code for errors. The try block contains the code to be run, and the catch block contains the code to be executed if an error occurs.
+
+1 The try statement lets you test a block of code for errors.
+2 The catch statement lets you handle the error.
+3 The throw statement lets you create custom errors.
+4 The finally statement lets you execute code, after try and catch, regardless of the result.
+
+Syntax: 
+<script> 
+try 
+{ 
+Code to run [break;] 
+}
+catch ( e ) 
+{ 
+Code to run if an exception occurs [break;] 
+}
+</script>
+
+Examples:
+<script>
+try{
+alrt("hi")
+}
+catch(e)
+{
+alert(e.message)
+}
+alert("hello")
+</script>
+
+JavaScript eval() Function
+The eval() function evaluates or executes an argument.
+
+Syntax
+eval(expression)
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var x=prompt("Enter value  to evalu")
+alert(eval(x))
+alert("Next")
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+try
+{
+var x=prompt("Enter Any Value  to Compute")
+alert(eval(x))
+}
+catch(e)
+{
+alert("Sorry Alpha-Invalid: " +e.description)
+}
+alert("Next")
+</script>
+</head>
+
+The finally Statement
+The finally statement lets you execute code, after try and catch, regardless of the result:
+
+Syntax:
+try {
+    Block of code to try
+}
+catch(err) {
+    Block of code to handle errors
+} 
+finally {
+    Block of code to be executed regardless of the try / catch result
+}
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+try
+{
+var x=prompt("Enter Any Value  to Compute")
+alert(eval(x))
+}
+catch(e)
+{
+alert("Sorry Alpha-Invalid: " +e.description)
+}
+finally
+{
+alert("This Block Always Get Executed");
+}
+alert("Next")
+</script>
+</head>
+
+The JS Throw Statement
+The throw statement allows you to create an exception. If you use this statement together with the try...catch statement, you can control program flow and generate accurate error messages. The exception can be a string, integer, Boolean or an object.
+
+Syntax
+throw exception
+
+Example:
+<!doctype html>
+<body>
+<script type="text/javascript">
+var x=prompt("Enter Any Number: ","100")
+try
+{ 
+if(x>100)
+  {
+  throw "Err1";
+  }
+else if(x<=100)
+  {
+  throw "Err2";
+  }
+else if(isNaN(x))
+  {
+  throw "Err3";
+  }
+}
+catch(err)
+{
+if(err=="Err1")
+  {
+  document.write("Error! The value is too high.");
+  }
+if(err=="Err2")
+  {
+  document.write("Error! The value is too low.");
+  }
+if(err=="Err3")
+  {
+  document.write("Error! The value is not a number.");
+  }
+}
+</script>
+</body>
+
+JavaScript Global Functions
+JavaScript eval() Function
+The eval() function evaluates or executes an argument.
+
+Syntax
+eval(expression)
+
+Example:
+<!doctype html>
+<body>
+<script type='text/javascript'>
+eval("x=10;y=20;document.write(x*y)");
+document.write("<br/>" + eval("2+2"));
+document.write("<br/>" + eval(x+17));
+</script>
+</body>
+
+JavaScript isFinite() function
+The isFinite is used to determine whether a specified number is finite or not. isFinite is a top-level function and is not associated with any object.
+
+Syntax
+isFinite(number)
+
+Example
+<!doctype html>
+<body>
+<script type='text/javascript'>
+document.write(isFinite("Good Morning")+ "<br />");
+document.write(isFinite(-9.34)+ "<br />");
+document.write(isFinite("2009/01/01")+ "<br />");
+document.write(isFinite(15-12)+ "<br />");
+</script>
+</body>
+
+JavaScript : isNaN() function
+The isNaN function is used to determine whether a value is "NaN" (not a number) or not. isNaN is a top-level function and is not associated with any object.
+
+Syntax
+isNan(textvalue)
+
+Example
+<!doctype html>
+<body>
+<script type='text/javascript'>
+document.write(isNaN("Good Morning")+ "<br />");
+document.write(isNaN(-9.34)+ "<br />");
+document.write(isNaN("2009/01/01")+ "<br />");
+document.write(isNaN(15-12)+ "<br />");
+</script>
+</body>
+
+JS parseInt and parseFloat:
+To convert a string to a number, use the JavaScript functions 
+1. parseFloat (for conversion to a floating-point number) or 
+2. parseInt (for string-to-integer conversion).
+
+JavaScript parseInt() Function:
+The parseInt() function parses a string and returns an integer.
+
+Syntax
+parseInt(string)
+
+Parameter	Description
+string		Required. The string to be parsed
+
+
+Example
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var x="100";
+var y="200";
+var z=x+y;
+alert("The sum(contanation) of the values are: " +z);
+var xyz=parseInt(x)+parseInt(y)
+alert('Sum of the values are: ' +xyz)
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+document.write(parseInt("10") + "<br />");
+document.write(parseInt("10.33") + "<br />");
+document.write(parseInt("34 45 66") + "<br />");
+document.write(parseInt("He was 40") + "<br />");
+document.write("<br />");
+document.write(parseInt("10",16)+ "<br />");
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var x=prompt("Enter any value");
+var y=prompt("Enter any value")
+var z=x+y;
+alert("The sum(contanation) of the values are: " +z);
+var xyz=parseInt(x)+parseInt(y)
+alert('Sum of the values are: ' +xyz)
+</script>
+</head>
+
+JavaScript parseFloat() Function:
+The parseFloat() function parses a string and returns a floating value.
+
+Syntax
+parseFloat(string)
+
+Parameter	Description
+string		Required. The string to be parsed
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var x="100.25";
+var y="200.25";
+var z=x+y;
+alert("The sum(contanation) of the values are: " +z);
+var xyz=parseFloat(x)+parseFloat(y)
+alert('Sum of the values are: ' +xyz)
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+ document.write("<BR>" + parseInt("15"))
+ document.write("<BR>" + parseFloat("12.12345"))
+ document.write("<BR>" + parseInt("45.00000000"))
+ document.write("<BR>" + parseInt("23.348  44.218  55.405"))
+ document.write("<BR>" + parseFloat("    55 aardvarks"))
+ document.write("<BR>" + parseFloat("Year 2002")) 
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var x=prompt("Enter any value");
+var y=prompt("Enter any value")
+var z=x+y;
+alert("The sum(contanation) of the values are: " +z);
+var xyz=parseFloat(x)+parseFloat(y)
+alert('Sum of the values are: ' +xyz)
+</script>
+</head>

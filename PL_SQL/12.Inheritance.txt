@@ -1,0 +1,157 @@
+Inheritance in Object Type
+Inheritance property allows the sub-object type to access all the attribute and members of the super object type or parent object type.
+The sub-object type is called inherited object type, and the super object type is called parent object type. The below syntax shows the how to create parent and inherited object type.
+
+Super Program Syntax:
+CREATE TYPE <object_type_name_parent> AS OBJECT
+(
+<attribute_1> <datatype>,
+) NOT FINAL;
+/
+
+Sub Program Syntax:
+CREATE TYPE<object_type_name_sub> UNDER <object_type_name_parent>
+(
+ <attribute_1> <datatype>,
+);
+/
+
+PL/SQL allows creating object from the existing base objects. To implement inheritance, the base objects should be declared as NOT FINAL. The default is FINAL.
+
+Example:
+
+create type addresstype as object(
+street varchar2(15),
+city varchar2(15),
+state varchar2(10),
+zip varchar2(6)
+);
+/
+
+create type persontype as object (
+id number,
+fname varchar2(10),
+lname varchar2(10),
+dob date,
+phone varchar2(10),
+address addresstype
+)not final;
+/
+
+create type business_persontype123 under persontype123(
+title varchar2(10),
+company varchar2(10)
+);
+/
+
+create table business of business_persontype123;
+
+desc business;
+
+insert into business values(business_persontype(1,'Nuthan','Kumar','13-feb-2025','9999912345',addresstype('DWK','VIZAG','AP','530016'),'Manager','datapro'));
+
+select * from business;
+
+
+Abstract Objects in PL/SQL
+The NOT INSTANTIABLE clause allows you to declare an abstract object. You cannot use an abstract object as it is; you will have to create a subtype or child type of such objects to use its functionalities.
+
+Example :-
+
+create or replace type producttype as object(
+id number,
+company_name varchar2(10),
+model varchar2(10)
+)not final not instantiable;
+/
+
+create or replace type subproduct1 under producttype(
+color varchar2(10)
+);
+/
+
+create or replace type subproduct2 under producttype(
+type varchar2(10)
+);
+/
+
+create table product of producttype;
+
+create table bike of subproduct1;
+
+create table car of subproduct2;
+
+insert into bike values(subproduct1(1,'Hero','SP125','Black'));
+
+insert into car values(subproduct2(1,'Tata','punch','pertol'));
+
+insert into product values(producttype(1,'Honda','Shine'));
+
+Example with methods:-
+
+create or replace type rectangle as object(
+length number,
+width number,
+member function enlarge(inc number) return rectangle,
+not final member procedure display
+)not final;
+/
+
+create or replace type body rectangle as
+member function enlarge(inc number) return rectangle is
+begin
+return rectangle(self.length + inc, self.width + inc);
+end enlarge;
+member procedure display is
+begin
+	dbms_output.put_line('Length : '|| length);
+	dbms_output.put_line('Width :'||width);
+end display;
+end;
+/
+
+create or replace type tabletop under rectangle(   
+material varchar2(10),
+overriding member procedure display
+);
+/
+
+create or replace type body tabletop as
+overriding member procedure display is
+begin
+	dbms_output.put_line('Length : '|| length);
+	dbms_output.put_line('Width :'||width);
+	dbms_output.put_line('Material :'||material);
+end;
+end;
+/
+
+calling the object:-
+i)
+declare 
+	t1 tabletop;
+	t2 tabletop;
+begin
+	t1:= tabletop(20,10,'wood');
+	t2:= tabletop(20,20,'steel');
+	t1.display;
+	t2.display;
+end;
+/
+
+ii)
+
+declare 
+	t1 tabletop;
+	t2 tabletop;
+	r1 rectangle;
+begin
+	t1:= tabletop(20,10,'wood');
+	t2:= tabletop(20,20,'steel');
+	r1:=rectangle(10,200);
+	t1.display;
+	t2.display;
+	r1.display;
+end;
+/
+

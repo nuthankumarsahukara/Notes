@@ -1,0 +1,137 @@
+PropTypes are a way to validate the types of props passed to a React component. They help in debugging and ensure components are used correctly.
+
+To install PropTypes In React :
+	npm install prop-types
+
+Use of PropTypes in React
+PropTypes are used to validate the types of props that a component receives. This ensures the component behaves as expected and helps catch bugs early during development.
+
+Type safety: Ensures components receive the right data type.
+Debugging: Logs warnings in the console if wrong types are passed.
+Documentation: Acts as a clear contract for how components should be used.
+Maintainability: Makes code easier to read, understand, and maintain.
+
+Syntax :
+	ComponentName.propTypes = { ... }
+	ComponentName.defaultProps = { ... }
+
+All Common PropTypes Used in One Component
+
+Type	      Example			Description
+string	   name: PropTypes.string		Text data
+number	   age: PropTypes.number		Numeric value
+bool	   isAdmin: PropTypes.bool		Boolean true/false
+arrayOf(...)   hobbies: PropTypes.arrayOf		Array of specific type
+	    (PropTypes.string)	
+shape({...})   address: PropTypes.shape({...})	Object with defined keys/types
+func	    onClick: PropTypes.func		A function
+node	    children: PropTypes.node		Anything renderable (text, elements)
+element	    profileComponent: PropTypes.	element	A React element
+any	    misc: PropTypes.any		Any type
+
+How to Use PropTypes
+Step 1: Install the package
+	npm install prop-types
+Step 2: Import it
+	import PropTypes from 'prop-types';
+Step 3: Define the prop types
+
+	function Greeting(props) {
+  	       return <h1>Hello, {props.name}</h1>;
+	}
+
+	Greeting.propTypes = {
+  	       name: PropTypes.string.isRequired, // name must be a string and required
+	};
+isRequired in PropTypes
+-->isRequired means that the prop must be passed to the component — it's mandatory.
+-->If a required prop is missing, React will show a warning in the console during development.
+
+Functional Component Example:
+
+import PropTypes from 'prop-types';
+function App(){
+
+    function User({name ='Guest',
+        age = 0,
+        marriage = false,
+        address ={
+            city : "unknown",
+            state :"unknown"
+        },
+        hobbies = [],
+        }){
+        return(
+            <>
+                <p>Name :{name}</p>
+                <p>Age :{age}</p>
+                <p>Marriage :{marriage ? 'Yes' : 'No'}</p>
+                <p>City :{address.city}</p>
+                <p>State :{address.state}</p>
+                <p>Hobbies :</p>
+                <ul>
+                    {hobbies.map((hobby, index) => (
+                        <li key={index}>{hobby}</li>
+                    ))}
+                    </ul>               
+            </>
+        )
+    }
+
+    User.propTypes={
+        name: PropTypes.string,
+        age: PropTypes.number,
+        marriage :PropTypes.bool,
+        address: PropTypes.shape({
+            city: PropTypes.string,
+            state: PropTypes.string
+        }),
+        hobbies:PropTypes.arrayOf(PropTypes.string)
+    }   
+
+    return(
+        <>
+            <User name="Datapro" age={37} address= {{city : 'Vizag',state :'AP'}} hobbies={['playing','running']} />
+        </>
+    )
+}
+
+export default App;
+
+Class Component Example :-
+
+import React from 'react';
+
+class User extends React.Component {
+  render() {
+    return (
+      <>
+        <p>Name: {this.props.name}</p>
+        <p>Age: {this.props.age}</p>
+      </>
+    );
+  }
+}
+
+User.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number
+};
+
+User.defaultProps = {
+  name: "N.A",
+  age: 0
+};
+
+class App extends Component{
+    render(){
+        return(
+            <User name="Datapro" age={25}/>
+        )
+    }
+}
+
+export default App;
+
+
+npm install react@18 react-dom@18

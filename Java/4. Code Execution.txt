@@ -1,0 +1,102 @@
+how to write java program  ?
+
+java program can be written in 2 ways
+
+1.write the program in any text editor(notepad,notepad++,edit window,sublime,visual studio code,code blocks)
+
+->compile and execute in the command prompt
+
+2.write ,compile and execute in any java enabled IDE.(Integrated Development Environment)
+
+Eg:Eclipse,NetBeans Etc...
+
+
+notes for writting a program in java ?
+
+1. one program can have only one main method .
+
+2. all the executable statements should be terminated with semicolon
+
+3. extension of java program should be save with .java
+
+4. main classname and filename should be the same
+
+5. no program can be written without class .(because java is purely oop's)
+
+6.Without main method we can't run the java program.
+
+
+java program structure 
+
+[package specification;] (A Java package is a set of classes, interfaces, and sub-packages that are similar).
+[import specification;] (importing the files/package to current class)
+
+accessspecifier class classname
+{
+	public static void main(String object[])
+	{
+		logic here;
+	}
+	or
+	static public void main(String object[])
+	{
+		logic here;
+	}
+	or
+	static public void main(String []object)
+	{
+		logic here;
+	}
+	or
+	static public void main(String ...object)
+	{
+		logic here;
+	}
+}
+
+
+scope		:it defines the area where the variable/method/class is accessible
+
+accessspecifier	: it defines the scope of variable,method or class.
+
+java access specifiers are
+
+private
+default
+protected
+public
+
+private	:private members are accessible only inside the class.so it provides data hiding
+default	:default members are accessible anywhere in the same package.but it is not 		                    accessible outside the package.
+protected	:protected members are accessible anywhere in the same package and outside the 		 	package only in the derived/child/sub class.
+public	:public members are accessible anywhere in the program
+
+
+public static void main(String object[])
+
+public	: main method 
+
+static	:main method is invoked without object.
+
+void	:main method does not return any value.
+
+main	:every program starts and ends with main
+
+String object[]	:it is only for command line argument.it can collect any type of data in 				string format.
+
+
+how to print the output ?
+
+System.out.println	:it is used to print the output onto the monitor.
+
+System	:it is a class of java.lang package ,java.lang is the default package in java
+out	:it is an object of PrintStream class,but defined as static field in System class
+println	:it is the method of PrintStream class
+
+The execution of a Java program consists of five steps which are
+
+-->Creation of a Java Program
+-->Compiling a Java program,
+-->Loading the program into the memory by Java Virtual Machine,
+-->Java Virtual Machine verification for bytecode,
+-->Java Program execution

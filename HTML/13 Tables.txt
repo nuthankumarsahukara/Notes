@@ -1,0 +1,505 @@
+HTML Tables
+Tables are used to represent our data in a tabular format. The best way to split a page into different sections is to use tables. In HTML, to represent tables we use table tag. It is a paired tag.
+
+
+Syntax:	<table>-----------</table>
+
+Example:
+<table>
+------
+------
+</table>
+
+Table rows:
+The horizontal lines present in the tables are called as table rows. To represent table rows, we use tr tag. It is a paired tag.
+
+Syntax:	<tr>--------------</tr>
+
+Example:
+<table>
+<tr>
+-----
+-----
+</tr>
+</table>
+
+Table Cells
+Each row consists of a number of cells. Each cell defined by a tag. The tag looks like <td>. It is a paired tag.
+
+Syntax:	
+<td>--------------</td>
+
+Example:
+<table>
+<tr>
+<td>SNo.</td>
+<td>SName</td>
+</tr>
+<tr>
+<td>101</td>
+<td>NiT</td>
+</tr>
+<tr>
+<td>102</td>
+<td>KSRaju</td>
+</tr>
+</table>
+
+Table Headings:
+To represent table headings we are using th tag. It is a paired tag.
+
+Syntax:
+<th>-----------------</th>
+
+Example:
+<table>
+<tr>
+<th>SNo.</th>
+<th>SName</th>
+</tr>
+<tr>
+<td>101</td>
+<td>NiT</td>
+</tr>
+<tr>
+<td>102</td>
+<td>KSRaju</td>
+</tr>
+</table>
+
+<caption>
+It represents the title of the table that is its parent, if it has a parent and that is a table element. It is a paired tag.
+
+Syntax:	
+<caption>-----------------</caption>
+
+Example:
+<table>
+  <caption>
+    <p>table 1. Sample table</p>
+  </caption>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+</table>
+
+Attributes	Parameters
+border		pixels
+bordercolor	any color/Color code(hexa)
+bgcolor		any color/Color code(hexa)
+background	image path
+height		pixels or %
+width		pixels or %	
+rules		rows, cols, all, none
+cellspacing	pixels
+cellpadding	pixels
+align		left, right, center
+valign		top, middle, bottom
+rowspan		number
+colspan		number
+
+Cellspacing-->This attribute is used to change the spacing between the cells.
+Cellpadding-->This attribute is used to change the space between the content to the inner edges of the cell.
+
+Example:
+<table border=1>
+<tr>
+<td>cell1</td>
+<td>cell2</td>
+</tr>
+<tr>
+<td>cell3</td>
+<td>cell4</td>
+</tr>
+</table>
+
+Example2:
+<table border=1>
+<tr>
+<th>Name</th>
+<th>Number</th>
+</tr>
+<tr>
+<td>Raju</td>
+<td>1001</td>
+</tr>
+<tr>
+<td>Raju</td>
+<td>1001</td>
+</tr>
+</table>
+
+Height and Width 
+Specifying the width and height on your tables can make your pages much easier to control.
+
+Pixels and Percents
+There are two ways of marking the width and height of your tables. One way is by specifying a certain number of pixels. The other is by marking the width and height using percents. Pixels, will make it a certain length, and stay there. Percents, will take up a certain percent of the browser window, meaning it may change depending on your screen resolution.
+
+Pixels (px): Pixels are fixed-size units that are used in screen media. One pixel is equal to one dot on the computer screen. One problem with the pixel unit is that it does not scale upward for visually-impaired readers or downward to fit mobile devices.
+
+Percent (%): The percent unit is much like the “em” unit . While using the percent unit, your text remains fully scalable for mobile devices and for accessibility.
+
+Example1
+<TABLE width=50% height=50% BORDER=1>
+<TR>
+   <TD>lemons</TD>
+   <TD>grapefruit</TD>
+   </TR>
+<TR>
+   <TD>bananas</TD>
+   <TD>pineapple</TD>
+   </TR>
+</TABLE>
+
+
+Example2:
+<TABLE  BORDER=1>
+<TR>
+   <TD height=100>lemons</TD>
+   <TD>grapefruit</TD>
+   </TR>
+<TR>
+   <TD height=100 width=100>bananas</TD>
+   <TD>pineapple</TD>
+   </TR>
+</TABLE>
+
+Example3
+<table width="500" border="5">
+   <tr>
+  <td width="25%">Column 1</td>
+  <td>Column 2</td>
+   </tr>
+   <tr>
+   <td>Column 1</td>
+  <td>Column 2</td>
+  </tr>
+   <tr>
+   <td>Column 1</td>
+   <td>Column 2</td>
+   </tr>
+</table> 
+
+Example4: Table Rules
+<table border="5" rules=rows>
+<tr>
+<td>Row 1</td>
+<td>Row 1</td>
+<td>Row 1</td>
+</tr>
+<tr>
+<td>Row 2</td>
+<td>Row 2</td>
+<td>Row 2</td>
+</tr>
+</table>
+
+With Empty Cells
+<html>
+<body>
+<table border="1">
+<tr>
+  <td>HTML</td>
+  <td>CSS</td>
+</tr>
+<tr>
+  <td>&nbsp</td>
+  <td>JavaScript</td>
+</tr>
+</table>
+</body>
+</html>
+
+Cell Padding
+Cell Padding controls the distance between the text in the cell and the edge of the cell. To specify cell padding and it's distance, you add the line CELLPADDING="X" to the <TABLE> tag so the final result looks like:
+
+   Syntax:  <TABLE CELLPADDING="X"> 
+
+Example:
+<TABLE CELLPADDING="15">
+<TR> 
+<TD> Cell 1 </TD> 
+<TD> Cell 2 </TD> 
+</TR>
+<TR> 
+<TD> Cell 3 </TD> 
+<TD> Cell 4 </TD> 
+</TR>
+</TABLE> 
+
+Cell Spacing
+Cell Spacing controls the distance between the cells. To specify cell spacing and it's distance, you add the line CELLSPACING="X" to the <TABLE> tag so the final result looks like:
+
+Syntax:    <TABLE CELLSPACING="X"> 
+
+Example:
+<TABLE CELLSPACING="15">
+<TR> 
+<TD> Cell 1 </TD> 
+<TD> Cell 2 </TD> 
+</TR>
+<TR> 
+<TD> Cell 3 </TD> 
+<TD> Cell 4 </TD> 
+</TR>
+</TABLE>
+
+Example5:
+
+<table border="7" cellpadding="7" cellspacing="10">
+<tr bgcolor="#00FF00">
+<td><img src="rose.jpg" alt="rose"></td>
+<td>Image is a transparent .gif.</td>
+</tr>
+</table>  
+
+Example6:
+<table border="7" cellpadding="10" 
+cellspacing="10" bgcolor="red">
+<tr>
+<td>
+<table border="7" cellpadding="10" 
+cellspacing="10" bgcolor='blue'>
+<tr>
+<td><img src="fish1.gif" alt="smiley"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+Table Colors
+Making a table cell have a colorful background, Table color gives your entire table one color which is the background color to all the cells. To define the color of your table, you will need to add the line BGCOLOR="#xxxxxx" to the <TABLE> tag, so the final result looks like this.
+
+Syntax:	<TABLE BGCOLOR="#xxxxxx">
+
+Cell Color
+Cell color lets you define the background color of each individual cell on your table. To add color to one of your table cells, you will need to add the line BGCOLOR="#xxxxxx" to the <TD> tag that you want colored, so the final result looks like this.
+
+    Syntax: <TD BGCOLOR="#xxxxxx"> 
+
+Example:
+<table border=1>
+<tr>
+<th>Course</th>
+<th>Fee</th>
+</tr>
+<tr>
+<td bgcolor="pink">HTML</td>
+<td>5000</td>
+</tr>
+<tr>
+<td bgcolor="green">JavaScript</td>
+<td>5000</td>
+</tr>
+</table>
+
+Colspan and Rowspan
+These two features, Colspan and Rowspan, allow you to extend columns and rows across multiple other columns and rows .
+
+Column Span
+It extends cells on a horizontal row (left and right). 
+
+Syntax:    <TD COLSPAN="X">
+
+Example:
+<table border=2 bordercolor="pink" bgcolor="green">
+<tr>
+<th>Name</th>
+<th>Nos</th>
+</tr>
+<tr> 
+<td colspan="2"> Hello </td> 
+</tr>
+</table>
+
+Row Span
+Row Span extends cells on a vertical row (up and down). 
+
+Syntax:    <TD ROWSPAN="X">
+
+Example:
+<table border=2 bordercolor="pink" bgcolor="green">
+<tr> 
+<td align="center" rowspan="2"> Cell 1 </td>
+<td> cell 2 </td> 
+</tr> 
+<tr> 
+<td> cell 3 </td> 
+</tr>
+</table>  
+
+Table Alignment
+There are two main ways you can align text in a cell, horizontally and vertically. There are 3 ways of aligning it for both of these. Horizontally, you can align it left, right, and center. Vertically, you can align it top, bottom, and middle. 
+
+Align Left
+To align the text or objects in a cell to the left side of the cell, the line ALIGN="left" needs to be added to the <TD> tag, so the final result looks like this:
+
+Syntax:   <TD ALIGN="left"> 
+
+Example:
+<table border="1">
+  <tr>
+    <th>StdName</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td align="right">NiT</td>
+    <td align="left">A++</td>
+  </tr>
+  <tr>
+    <td align="center">Nacre</td>
+    <td align="right">A</td>
+  </tr>
+</table>
+
+Vertical Align:
+<table border=4 bordercolor="red" bgcolor="teal">
+<tr> 
+<td rowspan="2" valign="top"> HTML </td>
+<td> CSS </td> 
+</tr> 
+<tr> 
+<td> JS </td> 
+</tr>
+</table> 
+
+Example: (Vertical Headers)
+<table border="1">
+  <tr>
+    <th>First Name:</th>
+    <td>NareshIT</td>
+  </tr>
+  <tr>
+    <th>Telephone:</th>
+    <td>04023746666</td>
+  </tr>
+</table>
+
+<colgroup>
+The <colgroup> element represents a group of one or more columns in the table that is its parent. It is a container tag.
+
+Syntax: <colgroup>..............</colgroup>
+
+Example:
+<table>
+  <colgroup span="2" bgcolor="red" ></colgroup>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+  </tr>  
+</table>
+
+ <col>
+The <col> element represents one or more columns in the column group represented by that colgroup. It is a container tag.
+
+Syntax: <col>..............</col>
+
+Example:
+<table>
+  <colgroup>
+    <col></col>
+    <col span="2" bgcolor="blue"></col>
+  </colgroup>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+  </tr>  
+</table>
+
+<tbody>
+The <tbody> element represents a block of rows that consist of a body of data for the parent table element, if the tbody element has a parent and it is a table. It is a container tag.
+
+Syntax: <tbody>..............</tbody>
+
+<thead>
+The <thead> element represents the block of rows that consist of the column labels (headers) for the parent table element, if the thead element has a parent and it is a table. It is a container tag.
+
+Syntax: <thead>..............</thead>
+
+Example:
+<table border=1>
+  <caption>
+    <p>table 1. List of HTML elements</p>
+  </caption>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>element</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4.1.1</td>
+      <td>html</td>
+    </tr>
+    <tr>
+      <td>4.2.1</td>
+      <td>head</td>
+    </tr>
+  </tbody>
+</table>
+
+<tfoot>
+The <tfoot> element represents the block of rows that consist of the column summaries (footers) for the parent table element, if the tfoot element has a parent and it is a table. It is a container tag.
+
+Syntax: <tfoot>..............</tfoot>
+
+Example:
+<table border=1>
+  <caption>
+    <p>table 1. List of HTML elements</p>
+  </caption>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>element</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="2">copyright ...</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>4.1.1</td>
+      <td>html</td>
+    </tr>
+    <tr>
+      <td>4.2.1</td>
+      <td>head</td>
+    </tr>
+  </tbody>
+</table>
+
+Example:(Table with form objects)
+<html>
+<head>
+<title>
+Working with table
+</title>
+</head>
+<table bgcolor="lightblue" height="10%" width="300">
+<tr><td>User Name:</td><td><Input></td></tr>
+<tr><td>Password:</td><td><Input type="password"></td></tr>
+<tr><td><Input type="button" value=Login></td></tr>
+</table>

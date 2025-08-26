@@ -1,0 +1,490 @@
+CSS - Lists
+Lists are very helpful in conveying a set of either numbered or bulleted points.
+There are following CSS properties which can be used to control lists:
+1. The list-style-type Allows you to control the shape or appearance of the marker.
+2. The list-style-position Specifies whether a long point that wraps to a second line should align with the first line or start underneath the start of the marker.
+3. The list-style-image Specifies an image for the marker rather than a bullet point or number.
+4. The list-style Serves as shorthand for the preceding properties.
+
+Example:
+<html>
+<head>
+<style type='text/css'>
+ul
+{
+list-style-type:square;
+}
+</style>
+</head>
+<body>
+<ul> 
+<li>HTML</li>
+<li>JavaScript</li>
+<li>CSS</li>
+<li>jQuery</li>
+<li>Json</li>
+</ul>
+</body>
+</html>
+
+<ul style="list-style-type:square;">
+<li>Maths</li>
+<li>Social Science</li>
+<li>Physics</li>
+</ul>
+
+<ol style="list-style-type:decimal;">
+<li>Maths</li>
+<li>Social Science</li>
+<li>Physics</li>
+</ol>
+
+<ol style="list-style-type:lower-alpha;">
+<li>Maths</li>
+<li>Social Science</li>
+<li>Physics</li>
+</ol>
+
+<ol style="list-style-type:lower-roman;">
+<li>Maths</li>
+<li>Social Science</li>
+<li>Physics</li>
+</ol>
+
+The list-style-position:
+The list-style-position property specifies if the list-item markers should appear inside or outside the content flow.
+
+Property Values
+Value	Description	
+inside	Indents the marker and the text. The bullets appear inside the 	content  flow	
+outside	Keeps the marker to the left of the text. The bullets appears 	outside the content flow. This is default
+
+Example:
+<html>
+<head>
+<style type='text/css'>
+ul
+{
+list-style-position:inside;
+}
+</style>
+</head>
+<body>
+<ul> 
+<li>HTML</li>
+<li>JavaScript</li>
+<li>CSS</li>
+<li>jQuery</li>
+<li>Json</li>
+</ul>
+</body>
+</html>
+
+The list-style-image Property:
+The list-style-image allows you to specify an image so that you can use your own bullet style. 
+
+Example:
+
+<ul>
+<li style="list-style-image: url(unsure.gif);">HTML</li>
+<li>JavaScript</li>
+<li>CSS</li>
+<li>jQuery</li>
+</ul>
+
+<ol>
+<li style="list-style-image: url(unsure.gif);">Maths</li>
+<li>Social Science</li>
+<li>Physics</li>
+</ol>
+
+Example:
+<html>
+<head>
+<style type='text/css'>
+ul
+{
+list-style:square url("unsure.gif");
+}
+</style>
+</head>
+<body>
+<ul> 
+<li>HTML</li>
+<li>JavaScript</li>
+<li>CSS</li>
+<li>jQuery</li>
+<li>Json</li>
+</ul>
+</body>
+</html>
+
+CSS Tables
+Table Borders
+To specify table borders in CSS, use the border property.
+
+Example:
+<html>
+<head>
+<style type='text/css'>
+table,th,td
+{
+border:2px solid blue;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>Subba</td>
+<td>Raju</td>
+</tr>
+<tr>
+<td>Thomus</td>
+<td>Affee</td>
+</tr>
+</table>
+</body>
+</html>
+
+Collapse Borders
+The border-collapse property sets whether the table borders are collapsed into a single border or separated:
+Example:
+<html>
+<head>
+<style type='text/css'>
+table
+{
+border-collapse:collapse;
+}
+table,th,td
+{
+border:2px solid blue;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>Subba</td>
+<td>Raju</td>
+</tr>
+<tr>
+<td>Thomus</td>
+<td>Affee</td>
+</tr>
+</table>
+</body>
+</html>
+
+Table Width and Height
+Width and height of a table is defined by the width and height properties.
+
+Example:
+table 
+{
+width:100%;
+}
+th
+{
+height:50px;
+}
+
+Table Text Alignment
+The text in a table is aligned with the text-align and vertical-align properties.
+The text-align property sets the horizontal alignment, like left, right, or center:
+
+Example
+td
+{
+text-align:right;
+}
+
+Table Padding
+To control the space between the border and content in a table, use the padding property on td and th elements:
+
+Example
+td
+{
+padding:15px;
+}
+
+Table Color
+The example below specifies the color of the borders, and the text and background color of th elements:
+
+Example
+table, td, th
+{
+border:1px solid green;
+}
+th
+{
+background-color:green;
+color:white;
+}
+
+CSS Box Model
+The CSS box model is essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.
+
+The box model allows us to place a border around elements and space elements in relation to other elements.
+
+Explanation of the four different parts:
+Margin - Clears an area around the border. The margin does not have a background color, it is completely transparent
+
+Border - A border that goes around the padding and content. The border is affected by the background color
+
+Padding - Clears an area around the content. The padding is affected by the background color of the box
+
+Content - The content of the box, where text and images appear
+
+Example:
+<html>
+<head>
+<style>
+div
+{
+width:220px;
+padding:10px;
+border:5px solid gray;
+margin:0px;
+}
+</style>
+</head>
+<body>
+<img src="water.gif" width="250" height="250" />
+<div>It is Good Background Pic.</div>
+</body>
+</html>
+
+CSS - Borders
+The border properties allow you to specify how the border of the box representing an element should look. There are three properties of a border you can change
+
+1. The border-color Specifies the color of a border.
+2. The border-style Specifies whether a border should be solid, dashed line, double line, or one of the other possible values.
+3. The border-width Specifies the width of a border.
+
+The border-style Property:
+The border-style property allows you to select one of the following styles of border:
+ none: No border. (Equivalent of border-width:0;)
+ solid: Border is a single solid line.
+ dotted: Border is a series of dots.
+ dashed: Border is a series of short lines.
+ double: Border is two solid lines.
+ groove: Border looks as though it is carved into the page.
+ ridge: Border looks the opposite of groove.
+ inset: Border makes the box look like it is embedded in the page.
+ outset: Border makes the box look like it is coming out of the canvas.
+ hidden: Same as none, except in terms of border-conflict resolution for table elements.
+
+Examples:
+<p style="border-width:4px; border-style:none;">
+This is a border with none width.
+</p>
+<p style="border-width:4px; border-style:solid;">
+This is a solid border.
+</p>
+<p style="border-width:4px; border-style:dashed;">
+This is a dahsed border.
+</p>
+<p style="border-width:4px; border-style:double;">
+This is a double border.
+</p>
+<p style="border-width:4px; border-style:groove;">
+This is a groove border.
+</p>
+<p style="border-width:4px; border-style:ridge">
+This is aridge  border.
+</p>
+<p style="border-width:4px; border-style:inset;">
+This is a inset border.
+</p>
+<p style="border-width:4px; border-style:outset;">
+This is a outset border.
+</p>
+<p style="border-width:4px; border-style:hidden;">
+This is a hidden border.
+</p>
+
+CSS Outlines
+An outline is a line that is drawn around elements (outside the borders) to make the element "stand out". The outline properties specify the style, color, and width of an outline.
+However, the outline property is different from the border property.
+
+outline Property
+Example:
+<html>
+<head>
+<style>
+p 
+{
+border:1px solid red;
+outline:green dotted thick;
+}
+</style>
+</head>
+<body>
+<p>Supports the outline properties only</p>
+</body>
+</html>
+
+outline-color Property
+The outline-color property specifies the color of an outline.
+
+Example:
+p 
+{
+outline-style:dotted;
+outline-color:#00ff00;
+}
+
+outline-style Property
+The outline-style property specifies the style of an outline.
+
+Example:
+p 
+{
+outline-style:dotted;
+}
+
+outline-width Property
+The outline-width specifies the width of an outline.
+
+Example:
+p 
+{
+outline-style:dotted;
+outline-width:5px;
+}
+
+CSS - Margins:
+The margin property defines the space around an HTML element. It is possible to use negative values to overlap content.
+
+CSS Margin Properties
+Property		Description
+margin		A short hand property for setting the margin.
+margin-bottom	Sets the bottom margin of an element
+margin-left	Sets the left margin of an element
+margin-right	Sets the right margin of an element
+margin-top	Sets the top margin of an element
+
+Example:
+<html>
+<head>
+<style type='text/css'>
+h5
+{
+margin:2cm 4cm 3cm 4cm
+}
+</style>
+</head>
+<body>
+<p>A paragraph with no specified margins.</p>
+<h5>A paragraph with specified margins.</h5>
+<p>A paragraph with no specified margins.</p>
+</body>
+</html>
+
+margin-bottom	Sets the bottom margin of an element
+
+Example:
+<html>
+<head>
+<style type='text/css'>
+h5
+{
+margin-bottom:2cm;
+}
+</style>
+</head>
+<body>
+<p>A paragraph with no specified margins.</p>
+<h5>A paragraph with specified margins.</h5>
+<p>A paragraph with no specified margins.</p>
+</body>
+</html>
+
+CSS - Paddings
+The padding property allows you to specify how much space should appear between the content of an element and its border:
+
+All CSS Padding Properties
+Property		Description
+padding		A shorthand property for setting all the padding properties in one 		declaration
+padding-bottom	Sets the bottom padding of an element
+padding-left	Sets the left padding of an element
+padding-right	Sets the right padding of an element
+padding-top	Sets the top padding of an element
+
+Example: 
+<html>
+<head>
+<style>
+h4
+{
+padding:2cm;
+}
+h5
+{
+padding:0.5cm 3cm;
+}
+</style>
+</head>
+<body>
+<h4>This text has equal padding on each side.</h4>
+<h5>This text has a top and bottom padding of 0.5cm</h5>
+</body>
+</html>
+
+Flex Box :- 
+align-content	Modifies the behavior of the flex-wrap property. It is 				similar to align-items,but instead of aligning flex items, it 				aligns flex lines
+align-items	Vertically aligns the flex items when the items do not use 				all available space on the cross-axis
+display		Specifies the display behavior (the type of rendering box) 			for an element
+flex-direction	Specifies the direction of the flex items inside a flex 				container
+flex-flow		A shorthand property for flex-direction and flex-wrap
+flex-wrap		Specifies whether the flex items should wrap or not, if 				there is not enough room for them on one flex line
+justify-content	Horizontally aligns the flex items when the items do not 				use all available space on the main-axis
+
+Example:
+
+<html>
+<head>
+<title>Box</title>
+<style>
+.box{
+display:flex;
+height :500px;
+flex-wrap:wrap;
+align-content: space-evenly;
+background-color:grey;
+}
+.box>div{
+height:50px;
+width:100px;
+color:white;
+margin:25px;
+padding:10px;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<div>
+<div style="background-color:red;">Box1</div>
+<div style="background-color:pink;">Box2</div>
+<div style="background-color:green;">Box3</div>
+<div style="background-color:black;">Box4</div>
+<div style="background-color:blue;">Box5</div>
+<div style="background-color:red;">Box6</div>
+<div style="background-color:pink;">Box7</div>
+<div style="background-color:green;">Box8</div>
+<div style="background-color:black;">Box9</div>
+<div style="background-color:blue;">Box10</div>
+</div>
+</body>
+</html>

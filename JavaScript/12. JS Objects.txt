@@ -1,0 +1,234 @@
+JavaScript Objects Introduction:
+JavaScript is an Object Based Programming language. An Object Based Programming language allows you to define your own objects and make your own variable types. An object has properties and methods.
+
+Properties: Properties are the values associated with an object.
+Example:
+length	Width	Height	Name
+
+Methods: Methods are the actions that can be performed on objects.
+Open()	Close()	Resize()
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+person=new Object();
+person.name='Ram';
+person.age=30;
+person.gender='male';
+person.height=6;
+document.write(person.name+' is '+person.age+' years old, '+person.gender+', and '+person.height+' foot tall.');
+</script>
+</head>
+
+NOTE:
+In the above example object name repeated many times, to-overcome that drawback JS has 'with' keyword..!!
+
+with
+There is a keyword associated with an object, which is 'with'. It creates a kind of halfway reference. we can drop the repeated references to 'person', because with (person) has already made the reference for us.
+
+Syntax:
+with (Object)
+{
+Statements;
+Statements;
+Statements;
+}
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+person=new Object();
+with (person) 
+{
+name='Ram';
+age=30;
+gender='male';
+height=6;
+document.write(name+' is '+age+' years old, '+gender+', and '+height+' foot tall.');
+}
+</script>
+</head>
+
+JavaScript and HTML DOM:(Document Object Model)
+1 JavaScript Objects:
+2 Browser Objects
+
+JavaScript Objects:
+    Array object	    Boolean object
+    Date object	    Math object
+    String object	    Number object    RegExp object
+    
+Browser Objects: 
+    Window object	    Navigator object
+    Screen object	    History object	    Location object
+
+JavaScript Array
+The Array object is used to store multiple values in a single variable
+
+The following points should always be remembered when using arrays in JavaScript:
+1. The array is a special type of variable.
+2.Values are stored into an array by using the array name and by stating the location in the array you wish to store the value in brackets. 
+Example: myArray[2] = "Hello World";
+3. Values in an array are accessed by the array name and location of the value. 
+Example: myArray[2];
+4. JavaScript has built-in functions for arrays
+
+Creating a JavaScript Array
+Creating an array is slightly different from creating a normal variable. Because JavaScript has variables and properties associated with arrays, you have to use a special function to create a new array.
+
+Create an Array
+An array can be created in three ways.
+1 Literal:
+var myNames=[items];
+2 Regular:
+var myNames=new Array();
+3 Condenced:
+var myNames=new Array(items);
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+//Literal Way Array Declaration
+var MyArr=['html5','css3','js','jQ','ajs'];
+document.write("The Length of An Array is: " +MyArr.length);
+document.write("<br>");
+document.write("Number of Elements in an Array is: " +MyArr.length);
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function MyArrayLen()
+{
+//Literal Way Array Declaration with Function
+var MyArr=['html5','css3','js','jQ','ajs'];
+document.write("The Length of An Array is: " +MyArr.length);
+document.write("<br>");
+document.write("Number of Elements in an Array is: " +MyArr.length);
+}
+</script>
+</head>
+<body>
+<p>Click the button to display the array Length ... </p>
+<button onclick="MyArrayLen()"> Click_Array </button>
+</body>
+
+2: Regular:
+var myNames=new Array();
+myNames[0]="Ravi";      
+myNames[1]="Smith";
+myNames[2]="Raju";
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+//Regular Way Array Declaration
+var MyArr=new Array();
+MyArr[0]='html5';
+MyArr[1]='css3';
+MyArr[2]='js';
+MyArr[3]='jQ';
+MyArr[4]='ajs';
+MyArr[5]='ajs';
+document.write("The Length of An Array is: " +MyArr.length);
+document.write("<br>");
+document.write("Number of Elements in an Array is: " +MyArr.length);
+</script>
+</head>
+
+3: Condensed:
+var myNames=new Array("Ravi","Smith","Raju");
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+//Condensed Way Array Declaration
+var MyArr=new Array('html5','css3','js','jQ','ajs');
+document.write("The Length of An Array is: " +MyArr.length);
+document.write("<br>");
+document.write("Number of Elements in an Array is: " +MyArr.length);
+</script>
+</head>
+
+Array Methods and Properties
+The Array object has predefined properties and methods:
+var x=myNames.length      // the number of elements in myNames
+var y=myNames.indexOf("Raju")   // the index position of "Raju"
+
+Example:
+<!doctype html>
+<html>
+<body>
+<script>
+var i;
+var mynames = new Array();
+mynames[0] = "Ravi";
+mynames[1] = "sai";
+mynames[2] = "Raju";
+for (i=0;i<mynames.length;i++)
+{
+document.write(mynames[i] + "<br />");
+}
+</script>
+</body>
+
+Example:
+<!doctype html>
+<script>
+var myArray = new Array();
+myArray[0] = "Football";
+myArray[1] = "Baseball";
+myArray[2] = "Cricket";
+document.write(myArray[0] + myArray[1] + myArray[2]);
+</script>
+
+JavaScript Array Sorting
+Imagine that you wanted to sort an array alphabetically before you wrote the array to the browser. Well, this code has already been written and can be accessed by using the Array's sort method.
+
+Example:
+<script>
+var x= new Array();
+x[0] = "Football";
+x[1] = "Baseball";
+x[2] = "Cricket";
+x.sort();
+document.write(x[0] + x[1] + x[2]);
+</script>
+
+Example:
+<!doctype html>
+<script>
+function myFunction()
+{
+var names = ["raju", "nit", "ramu", "scott"];
+var x=document.getElementById("demo");
+x.innerHTML=names.length;
+}
+</script>
+<body>
+<p id="demo">Click the button to create an array, then display it's length</p>
+<button onclick="myFunction()">Length</button>
+</body>
+
+Example:
+<!doctype html>
+<body>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+function myFunction()
+{
+fruits.reverse();
+var x=document.getElementById("demo");
+x.innerHTML=fruits;
+}
+</script>
+<p id="demo">Click the button to reverse the order of the elements in the array.</p>
+<button onclick="myFunction()">Display</button>
+</body>

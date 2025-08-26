@@ -1,0 +1,256 @@
+Container Tags :
+Elements can hold other html Elements/Controls.
+
+Example:
+<div>,<p>,<table>,<span>...!
+
+Non-Containesr Tags:
+Element Can hold only text can not hold Html Controls/Elements.
+
+Example:
+<Textbox>,<Button>,<Radio>,<Textarea>
+
+InnerHTML In JavaScript:
+The innerHTML property is used along with getElementById within your JavaScript code to refer to an HTML element and change its contents.
+
+Syntax
+document.getElementById('{ID of element}').innerHTML = '{content}';
+
+Note:
+All Paired tags are not containers, but all container tags are paired tags.
+
+Example
+<head>
+<script type='text/javascript'>
+function MyFun()
+{
+var val=document.getElementById("t1").value;
+alert(val);
+}
+</script>
+</head>
+<body>
+User Name: <br/>
+<input type="text" name='uname' id='t1'>
+<br/>
+<input type="button" value="Click" onclick="MyFun()">
+</body>
+
+Example:
+<head>
+<script type='text/javascript'>
+function fun1()
+{
+alert(document.getElementById('txtarea1').value);
+alert(document.getElementById('p1').innerHTML);
+}
+</script>
+</head>
+<body>
+<p id='p1'><img src='fish1.gif' width=100px heght=60px></p>
+<textarea id='txtarea1'></textarea>
+<br/>
+<input type="button" value="Click" onclick="fun1()">
+</body>
+
+JavaScript HTML DOM:
+The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
+
+The DOM is a W3C Standard. The DOM defines a standard for accessing documents: DOM is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."
+
+OUTLINE OF HTML & JS DOM:
+
+Example
+The following example changes the content (the innerHTML) of the <p> element with id="demo":
+<body>
+<h1>My First Page</h1>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML = "Hello World!";
+</script>
+</body>
+
+JavaScript HTML DOM Document
+The HTML DOM document object is the owner of all other objects in your web page. 
+
+Finding HTML Elements
+Method					Description
+document.getElementById(id)			Find an element by element id
+document.getElementsByTagName(name)	Find elements by tag name
+document.getElementsByName(name)		Find elements by Name
+document.getElementsByClassName(name)	Find elements by class name
+
+Document getElementById() Method	
+The getElementById() method accesses the first element with the specified id.
+	
+Syntax
+document.getElementById("id")
+
+Parameter 	Description
+id 		Required. The id of the element you want to access/manipulate
+
+Example:
+<head>
+<script>
+function getValue()
+  {
+  var x=document.getElementById("myHeader");
+  alert(x.innerHTML);
+  }
+</script>
+</head>
+<body>
+<h1 id="myHeader" onclick="getValue()">Click Me!</h1>
+</body>
+
+document.getElementsByTagName:
+The getElementsByTagName() method returns a collection of all elements in the document with the specified tagname, as a NodeList object.
+
+Syntax
+document.getElementsByTagName(tagname)
+OR
+Syntax
+var elements = document.getElementsByTagName(name);
+
+Example1:
+<head>
+<script>
+function MyFun()
+{
+var arr=document.getElementsByTagName("div");
+alert(arr[0].innerHTML);
+alert(arr[1].innerHTML);
+alert(arr[2].id);
+}
+</script>
+</head>
+<body>
+<div id="div1">Hi</div>
+<div id="div2">Hello</div>
+<div id="div3">Scott</div>
+<input type="button" value='Click' onclick="MyFun()">
+</body>
+
+Example2:
+<head>
+<script>
+function MyFun()
+{
+var arr=document.getElementsByTagName("div");
+var x=arr.length;
+document.write(x);
+}
+</script>
+</head>
+<body>
+<p style='color:blue;'>Click the button to display the number of divs..!!</p>
+<div id="div1">Hi</div>
+<div id="div2">Hello</div>
+<div id="div3">RaaJ</div>
+<div id="div4">Scott</div>
+<input type="button" value='Click' onclick="MyFun()">
+</body>
+
+JavaScript getElementsByName() Method
+It accesses all elements with the specified name.
+
+Syntax
+document.getElementsByName(name)
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function getElements()
+{
+var x=document.getElementsByName("x");
+alert(x.length);
+}
+</script>
+</head>
+<body>
+Cats:
+<input name="x" type="radio" value="Cats">
+Dogs:<br/>
+<input name="x" type="radio" value="Dogs">
+<br/>
+<input type="button" onclick="getElements()" value="FindElementsNamed 'x'?">
+</body>
+
+Example2:
+<head>
+<script>
+function fun1()
+{
+x=document.getElementsByName("d1")
+alert(x[0].innerHTML)
+alert(x[1].innerHTML)
+}
+</script>
+</head>
+<body>
+<div class="divcls" name='d1'>This is JS</div>
+<p name="d1">This is jQuery</p>
+<button onclick="fun1()">Click
+</body>
+
+getElementsByClassName() Method
+The getElementsByClassName() method returns a collection of all elements in the document with the specified class name, as a NodeList object.
+
+Syntax
+document.getElementsByClassName(classname);
+
+Example:
+<head>
+<script>
+function MyFun()
+{
+var arr=document.getElementsByClassName("xyz");
+alert(arr[0].innerHTML);
+}
+</script>
+</head>
+<body>
+<div class="abc">Hi</div>
+<div class="abc">Hello</div>
+<div class="xyz">HiRaaJ</div>
+<input type="button" value="Click" onclick="MyFun()">
+</body>
+
+Example:
+<!DOCTYPE html>
+<html>
+<script>
+function myFunction() 
+{
+var x = document.getElementsByClassName("example");
+x[0].innerHTML = "Hello World!";
+x[1].innerHTML = "Hello World!";
+}
+</script>
+<body>
+<p style='color:blue'>Click the button to change the text of the div element with class="example"</p>
+<div class="example">First div element with class="example".</div>
+<div class="example">Second div element with class="example".</div>
+<button onclick="myFunction()">ClickMe</button>
+</body>
+</html>
+
+JavaScript Output
+JavaScript does NOT have any built-in print or display functions. JavaScript can "display" data in different ways:
+1 Writing into an alert box, using window.alert().
+2 Writing into the HTML output using document.write().
+3 Writing into an HTML element, using innerHTML.
+4 Writing into the browser console, using console.log().
+
+The console.log() Method
+In your browser, you can use the console.log() method to display data.
+
+<body>
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+</body>

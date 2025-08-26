@@ -1,0 +1,383 @@
+JavaScript Conditional Statements
+JavaScript also allows you to write code that perform different actions based on the results of a logical or comparative test conditions at run time. There are several conditional statements in JavaScript that you can use to make decisions.
+
+1 The if statement 
+2 The if...else statement 
+3 The if...else if....else statement 
+4 The switch...case statement  
+5 The Ternary Operator 
+
+The if Statement
+The if statement is used to execute a block of code only if the specified condition evaluates to true. 
+
+Syntax
+if(condition) {
+    // Code to be executed
+} 
+
+Example:
+<!doctype html>
+<body>
+<script>  
+var a=prompt("Enter Any Number: ");  
+if(a>10)
+{  
+document.write("Value of a is greater than 10");  
+}  
+</script>  
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var x = prompt("Enter number 10");
+if(x==10)
+{
+ alert("Its Correct");
+}
+</script>
+</head>
+
+2. if...else statement: 
+It evaluates the content whether condition is true or false.
+
+Syntax
+if (condition)
+  {
+  True Block Statements
+  True Block Statements
+  }
+else
+  {
+   False Block Statements
+   False Block Statements
+   }
+
+Example:
+<!doctype html>
+<body>
+<script>  
+var a=prompt("Enter Any Number: ")  
+if(a%2==0)
+{  
+document.write("a is Even Number");  
+}  
+else
+{  
+document.write("a is Odd Number");  
+}  
+</script>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var b = prompt("Enter any number");
+if (b > 100)
+{
+document.write("b is greater than 100")
+}
+else
+{
+document.write("b is less than or equal to 100")
+}
+</script>
+</head>
+
+If...else if...else Statement:
+It is used to select one of several blocks of code to be executed.
+
+Syntax
+if(condition1) {
+    // Code to be executed if condition1 is true
+} else if(condition2) {
+    // Code to be executed if the condition1 is false and condition2 is true
+} else {
+    // Code to be executed if both condition1 and condition2 are false
+} 
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascading Style Sheets...!!</title>
+</head>
+<body>
+<script>
+    var x=prompt("Enter Any Number: ")
+    parseInt(x)
+    if(x>0)
+    {
+        document.write("YES POSITIVE")
+        document.write("<br>")
+        document.write("It is if block")
+    }
+    else if(x<0)
+    {
+        document.write("YES NEGATIVE:")
+        document.write("<br>")
+        document.write("It is elseif block")
+    }
+    else if(x==0)
+    {
+        document.write("ZEROZERO")
+        document.write("<br>")
+        document.write("It is elseif block")
+    }
+    else
+    {
+        document.write("Sorry Invalid Input")
+        document.write("<br>")
+        document.write("It is else block")
+    }
+</script>    
+</body>
+</html>
+
+Example:
+<!doctype html>
+<body>
+<script>  
+var a=20;  
+if(a==10)
+{  
+document.write("a is equal to 10");  
+}  
+else if(a==15)
+{  
+document.write("a is equal to 15");  
+}  
+else if(a==20)
+{  
+document.write("a is equal to 20");  
+}  
+else
+{  
+document.write("a is not equal to 10, 15 or 20");  
+}  
+</script>  
+</body>
+
+
+Nested If Statement
+js allows us  to nest if statement within if statement i.e we can place an if statement inside another if statement.
+
+syntax:
+if(condition){
+if(condition){
+	-------
+	--------
+}
+}
+Example:
+
+<!doctype html>
+<body>
+<script>  
+var a=5;  
+if(a>=0)
+{  
+	if(a>10){
+		document.write("Number is Greathan 10");  
+	}
+}  
+</script>  
+</body>
+
+JavaScript Switch Statement
+Use the switch statement to select one of many blocks of code to be executed. 
+
+Syntax
+switch(n)
+{
+case 1:
+  execute code block 1
+  break;
+case 2:
+  execute code block 2
+  break;
+default:
+  code to be executed if 
+n is different from case 1 and 2
+}
+
+The default Keyword
+Use the default keyword to specify what to do if there is no match:
+
+Example:
+<!doctype html>
+<head>
+<script>
+var grade=prompt("Enter any Upper Case Alphabet: ","A");
+document.write("Entering switch block<br />");
+switch (grade)
+{
+  case 'A': document.write("Good job<br />");
+            break;
+  case 'B': document.write("Pretty good<br />");
+            break;
+  case 'C': document.write("Passed<br />");
+            break;
+  case 'D': document.write("Not so good<br />");
+            break;
+  case 'F': document.write("Failed<br />");
+            break;
+  default:  document.write("Unknown grade<br />")
+}
+document.write("Exiting switch block");
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var MyNum=prompt("Enter any Number","5");
+switch (MyNum)
+{
+  case '1': document.write("Selected First Block<br />");
+            break;
+  case '2': document.write("Selected Second Block<br />");
+            break;
+  case '3': document.write("Selected third Block<br />");
+            break;
+  case '4': document.write("Selected Fourth Block<br />");
+            break;
+  case '5': document.write("Selected Fifth Block<br />");
+            break;
+  default:  document.write("Default Block<br />")
+}
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var book=prompt
+("Enter your favorite book(HTML, JS, CSS, jQuery): ","JS")
+switch(book)
+{
+case 'HTML':
+alert("You are Selected HTML");
+break;
+case 'JS':
+alert("You are Selected JS");
+break;
+case 'CSS':
+alert("You are Selected CSS");
+break;
+case 'jQuery':
+alert("You are Selected jQuery");
+break;
+default:
+alert("You are Selected Wrong Book");
+}
+</script>
+</head>
+
+Example:
+<!DOCTYPE html>
+<body>
+<script>  
+var grade=prompt("Enter Any Grade: ");  
+var result;  
+switch(grade)
+{  
+case 'A':  
+result="A Grade";  
+break;  
+case 'B':  
+result="B Grade";  
+break;  
+case 'C':  
+result="C Grade";  
+break;  
+default:  
+result="No Grade";  
+}  
+document.write(result);  
+</script>  
+</body>
+
+Example:
+<!doctype html>
+<script>
+var page=prompt("Enter any desired Page Name(Home,About,News,Login,Links): ","Home")
+document.write("Entering switch block<br />")
+switch (page)
+{
+case "Home": document.write("You selected Home Page")
+break
+case "About": document.write("You selected About Page")
+break
+case "News": document.write("You selected News Page")
+break
+case "Login": document.write("You selected Login Page")
+break
+case "Links": document.write("You selected Links Page")
+break
+default:  document.write("You selected Unknown page<br />")
+}
+</script>
+
+The Ternary Operator
+The ternary operator provides a shorthand way of writing the if...else statements. The ternary operator is represented by the question mark (?) symbol and it takes three operands: a condition to check, a result for true, and a result for false.
+
+Syntax:
+var result = (condition) ? value1 : value2
+
+NOTE:
+The ternary operator evaluates the test condition.
+    If the condition is true, expression1 is executed.
+    If the condition is false, expression2 is executed.
+The ternary operator takes three operands, hence, the name ternary operator. It is also known as a conditional operator.
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var age = prompt("Enter Age: ")
+    var userType = age < 18 ? 'Child' : 'Adult';
+    document.write(userType); 
+    var age = prompt("Enter Age: ")
+    var userType = age < 18 ? 'Child' : 'Adult';
+   document.write("<br/>");
+    document.write(userType);
+    </script>
+</body>
+
+JavaScript Reserved Words:
+Reserved words or keywords, they cannot be used as JavaScript variables, functions, methods, loop labels, or any object names.
+
+abstract 		arguments 	await* 		boolean
+break 		byte 		case 		catch
+char 		class* 		const 		continue
+debugger 		default 		delete 		do
+double 		else 		enum* 		eval
+export* 		extends* 		false 		final
+finally 		float 		for 		function
+goto 		if 		implements 	import*
+in 		instanceof 	int 		interface
+let* 		long 		native 		new
+null 		package 		private 		protected
+public 		return 		short 		static
+super* 		switch 		synchronized 	this
+throw 		throws 		transient 		true
+try 		typeof 		var 		void
+volatile 		while 		with 		yield
+
+NOTE:
+Words marked with* are new in ECMAScript 5 and 6. 
+
+Removed Reserved Words
+The following reserved words have been removed from the ECMAScript 5/6 standard:
+abstract 		boolean 		byte 		char
+double 		final 		float 		goto
+int 		long 		native 		short
+synchronized 	throws 		transient 		volatile

@@ -1,0 +1,298 @@
+Selectors:
+Styles Reusability 
+
+Types of Selectors:
+1. Tag/Type Selectors
+2. ID Selectors
+3. Class Selectors
+4. Grouping Selectors
+5. Universal Selectors
+6.Child Selectors
+
+Type/Tag selectors
+A type selector matches the name of a document language element type. A type selector matches every instance of the element type in the document tree.
+
+Syntax:
+div
+{
+Styles
+Styles
+Styles
+}
+
+2.
+<html>
+<head>
+<style type="text/css">
+body
+{
+background-color:#FF00FF;
+}
+</style>
+</head>
+<body>
+<h1>My CSS web page!</h1>
+<p>Hello world!</p>
+</body>
+</html>
+3.
+<html>
+<head>
+<style type="text/css">
+h1
+{
+background-color:red;
+}
+div
+{
+background-color:pink;
+}
+</style>
+</head>
+<body>
+<h1>CSS background-color example!</h1>
+<div>
+This is a text inside a div element. We are still in the div element.
+</div>
+</body>
+</html>
+
+The id and class Selectors
+In addition to setting a style for a HTML element, CSS allows you to specify your own selectors called "id" and "class".
+
+The id Selector
+It is used to specify a style for a single, unique element. The id selector uses the id attribute of the HTML element, and is defined with a "#". # is the notation or Symbol.
+
+Syntax1:
+#div
+{
+styles
+styles
+styles
+}
+
+Syntax:
+div#div
+{
+styles
+styles
+styles
+}
+
+Examples
+1.
+<html>
+<head>
+<style type="text/css">
+p#bold 
+{ 
+font-weight: bold; 
+}
+</style>
+</head>
+<body>
+<p id="bold">this paragraph will be rendered bold.</p>
+</body>
+</html>
+2.
+<html>
+<head>
+<style type="text/css">
+#Exa
+{
+text-align:center;
+color:red;
+} 
+</style>
+</head>
+<body>
+<p id="Exa">Hello CSS World!</p>
+<p>This paragraph is not affected by the style.</p>
+</body>
+</html>
+3.
+<html>
+<head>
+<style type="text/css">
+#para1
+{
+text-align:right;
+color:green;
+} 
+#para2
+{
+text-align:center;
+color:red;
+} 
+</style>
+</head>
+<body>
+<p id="para1">Hello World!</p>
+<p id="para2">This paragraph is not affected by the style.</p>
+</body>
+</html>
+
+Example:
+<head>
+<style type='text/css'>
+#div1
+{
+color:blue;
+font-family:tahoma;
+}
+</style>
+<script type='text/javascript'>
+function MySelector()
+{
+document.getElementById("div1").color="blue";
+}
+</script>
+</head>
+<body>
+<p style='color:gray'>Click the button to display the ID related result...!!</p>
+<div id="div">HTML5</div>
+<div id="div1">JavaScript</div>
+<button onclick="MySelector()">ClickMe</button>
+</body>
+
+The class Selector
+It is used to specify a style for a group of elements .The class selector uses the HTML class attribute, and is defined with a "."
+
+Syntax:
+.div
+{
+styles
+styles
+styles
+}
+
+Syntax:
+div.div
+{
+styles
+styles
+styles
+}
+
+Examples:
+1.
+<html>
+<head>
+<style type="text/css">
+p.bold 
+{ 
+font-weight: bold; 
+}
+</style>
+</head>
+<body>
+<p class="bold">this paragraph will
+ be rendered bold.</p>
+</body>
+</html>
+2.
+<html>
+<head>
+<style type="text/css">
+.right1
+{
+text-align:right;
+}
+</style>
+</head>
+<body>
+<h1 class="right1">Right-aligned heading</h1>
+<p class="right1">Right-aligned paragraph.</p> 
+</body>
+</html>
+3.
+<html>
+<head>
+<style type="text/css">
+.center
+{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<h1 class="center">NuthanTechnologies</h1>
+<p class="center">Center-aligned paragraph.</p>
+<b class="center">Text is in bold.</b> 
+</body>
+</html>
+4.
+<html>
+<head>
+<style>
+#div1
+{
+text-decoration:underline;
+color:lime;
+}
+.cls1
+{
+border:5px double red;
+width:100;
+height:100;
+}
+</style>
+<body>
+<div id='div1'>Hello</div>
+<div class="cls1">Hii</div>
+</body>
+</html>                    
+
+Grouping Selector
+We can group selectors using a comma (,) separator.
+
+Example1:
+
+h1 { font-family: sans-serif }
+h2 { font-family: sans-serif }
+h3 { font-family: sans-serif }
+
+is equivalent to:
+h1, h2, h3 { font-family: sans-serif }
+
+Example:
+p 
+{
+   font-family: tahoma;
+   font-size: 14px;
+}
+div 
+{
+   font-family: tahoma;
+   font-size: 14px;
+}
+blockquote 
+{
+   font-family: tahoma;
+   font-size: 14px;
+}
+
+is equivalent to:
+
+p, div, blockquote 
+{
+   font-family: tahoma;
+   font-size: 14px;
+}
+
+Example:
+
+<html>
+<head>
+<style>
+#div1,.cls1
+{
+text-decoration:underline;
+color:lime;
+}
+</style>
+<body>
+<div id='div1'>Hello</div>
+<div class="cls1">Hii</div>
+</body>
+</html>                    

@@ -1,0 +1,114 @@
+HTML onafterprint Event:
+The onafterprint attribute fires after the user has set the page to print, and the print dialogue box has appeared.
+
+Syntax
+<element onafterprint="script">
+ 
+Attribute Values
+Value	Description
+script	The script to be run on onafterprint
+
+Example:
+<!doctype html>
+<head>
+<script>
+function printmsg()
+{
+alert("This document is going to printed");
+}
+</script>
+</head>
+<body onafterprint="printmsg()">
+<h1>Try to print this document</h1>
+<p><b>Tip:</b> Keyboard shortcuts, such as Ctrl+P sets the page to print.</p>
+</body>
+
+HTML onbeforeprint Event Attribute:
+The onbeforeprint attribute fires immediately after the user has set the page to print, but before the print dialogue box appears.
+
+Syntax
+<element onbeforeprint="script"> 
+
+Example:
+<!doctype html>
+<head>
+<script>
+function printmsg()
+{
+alert("You are now about to print this document!");
+}
+</script>
+</head>
+<body onbeforeprint="printmsg()">
+<p>Keyboard shortcuts, such as Ctrl+P sets the page to print.</p>
+</body>
+
+Type Event Attribute
+The type event attribute returns the type of the triggered event.
+
+Syntax
+event.type
+
+Example:
+<!doctype html>
+<head>
+<script>
+function getEventType(event)
+{ 
+alert(event.type);
+}
+</script>
+</head>
+<body onmousedown="getEventType(event)">
+<p>Click in the document. An alert box with type.!!</p>
+</body>
+
+onkeydown Event:
+The onkeydown event occurs when the user is pressing a key (on the keyboard).
+
+Tip: The order of events related to the onkeydown event:
+    onkeydown
+    onkeypress
+    onkeyup
+
+Syntax
+In HTML:
+<element onkeydown="SomeJavaScriptCode">
+
+In JavaScript:
+object.onkeydown=function(){SomeJavaScriptCode};
+
+Example:
+<!doctype html>
+<head>
+<script>
+function myFunction()
+{
+alert("You pressed a key inside the input field");
+}
+</script>
+</head>
+<body>
+<p>Press a key in the input field.</p>
+<input type="text" onkeydown="myFunction()">
+</body>
+
+timeStamp Event Property:
+The timeStamp event property returns the number of in milliseconds.
+
+Syntax
+event.timeStamp 
+
+Example:
+<!doctype html>
+<head>
+<script>
+function myFunction(e)
+{
+alert(e.timeStamp);
+}
+</script>
+</head>
+<body>
+<p onclick="myFunction(event)">Click this paragraph.</p>
+</body>

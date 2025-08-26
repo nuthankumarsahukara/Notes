@@ -1,0 +1,72 @@
+Map :-
+	The map function is generally used to render the list items dynamically in react. This function iterates over the array and each iteration returns the JSX for respective item. It helps to render and display the list efficiently.
+
+
+Example:
+const Func = (props) => {
+    return (
+        <div>
+            <h4>Name: {props.name}</h4>
+            <h4>Age: {props.age}</h4>
+            <h4>Place: {props.place}</h4>
+        </div>
+    );
+};
+
+export default Func;
+
+import React from "react";
+import Func from "./Func";
+
+const App = () => {
+    const people = [
+        { id: 1, name: "John", age: 25, place: "New York" },
+       { id: 2, name: "Alice", age: 30, place: "Los Angeles" },
+       { id: 3, name: "Mike", age: 28, place: "Chicago" }
+    ];
+
+    return (
+        <div>
+            <h2>Person Details</h2>
+            {
+	people.map(
+		(person) => {
+              	  <Fun key={person.id} name={person.name} age={person.age} place={person.place} />
+	            }
+	)
+	}
+        </div>
+    );
+};
+
+export default App;
+
+
+import React, { Component } from "react";
+import Fun from "./Person";
+import ChildProps from "./ChildProps";
+
+class Car extends Component {
+  state = {
+    person: [
+      { id: 1, name: "Nuthan", age: 25, place: "Vizag" },
+      { id: 2, name: "Kumar Sai", age: 35, place: "Hyderabad" },
+      { id: 3, name: "Sai", age: 33, place: "Nellore" },
+      { id: 4, name: "Vinod", age: 25, place: "Chennai" },
+      { id: 5, name: "Prasad Sai", age: 55, place: "Hyderabad" }
+    ]
+  };
+
+  render() {
+    return (
+      <div>
+        {this.state.person.map((u) => (
+          <Fun key={u.id} name={u.name} age={u.age} place={u.place} />
+        ))}
+        <ChildProps />
+      </div>
+    );
+  }
+}
+
+export default Car;

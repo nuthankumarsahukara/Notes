@@ -1,0 +1,162 @@
+HTML <kbd> Tag
+It defines keyboard input.It is a paired tag.
+
+Syntax:
+<kbd> .................. </kbd>
+
+Example:
+<body>
+<p>Type the following in the Run dialog:
+<kbd>cmd</kbd><br />Then click the OK button.</p>
+<p>Save the document by pressing
+<kbd>Ctrl</kbd> + <kbd>S</kbd></p>
+</body>
+
+Pre tag: 
+Pre stands for pre-formatted text. If we specify the text in pre tag, the browser will consider the line breaks (Return / Enter keys) and spaces specified in the text editor (notepad). Pre is a paired tag.
+
+Syntax:	<pre>---------------</pre>
+
+Example:
+<html>
+<head>
+<title>
+Pre formated Tag
+</title>
+</head>
+<body>
+<pre>
+Text in a pre element is displayed
+in a fixed-width font, 
+and it preserves both      spaces and
+line breaks
+</pre>
+<p>The pre element is often used to display computer code:</p>
+</body>
+</html>
+
+<q>:
+It is used to display the double quoted text. It is a paired tag.
+
+Synax:
+<q>-------------</q>
+
+Example:
+<html>
+<head>
+<title>
+Double Quotes
+</title>
+</head>
+<body>
+<q>Normal text in Double Quotes..!!</q>
+</body>
+</html>
+
+Striking effect:
+<s> Tag:
+We can able to display striking through text on the web Page. It is indicated removed or deprecated text from the Web Page. It is a paired tag.
+
+Syntax:
+<s>----------------</s>
+
+<strike> Tag:
+We can able to display striking through text on the web Page. It is indicated removed or deprecated text from the Web Page. It is a paired tag.
+
+Syntax:
+<strike>----------------</strike>
+
+<sup>
+It is used to display superscript text. Super Indicates power to the number or string. It is a paired tag.
+
+Syntax:
+<sup>------------</sup>
+
+<sub>
+It is used to display subscript text. It indicates base to the number or string. It is a paired tag.
+
+Syntax:
+<sub>-------------</sub>
+
+Example:
+<html>
+<head>
+<title>
+Super&Sub
+</title>
+</head>
+<body>
+It is the Power of (100) <sup>3</sup><br/>
+It is the Base of  (100) <sub>10</sub>
+</body>
+</html>
+
+<small> Tag:
+It is used to display the small font size text. It is a paired tag.
+
+Syntax:
+<small>----------</small>
+
+<tt>
+It is stands for teletype. It is used to display tele type formated text like dot matrix printer. It is a paired tag.
+
+Syntax:
+<tt>----------</tt>
+
+Example:
+<html>
+<head>
+<title>
+TeleTyped
+</title>
+</head>
+<body>
+<tt>Text looks line Tele formated...!!</tt>
+<br>
+Normal text Normal text Normal text ...@@
+</body>
+</html>
+
+HTML <samp> Tag
+It is a phrase tag. It defines sample output from a computer program. It is a paired tag.
+
+Syntax:
+<samp>..............................</samp>
+
+Example:
+<html>
+<body>
+<samp>Sample output from a computer program</samp>
+</body>
+</html>
+
+<u> Tag:
+It is used to display underlined text on the web page. It is a paired tag.
+
+Syntax:
+<u>......................</u>
+
+Example:
+<html>
+<head>
+<title>
+Underline Tag
+</title>
+</head>
+<body>
+<u>Hello The Text is UnderLined..</u>
+</body>
+</html>
+
+HTML <var> Tag
+The <var> tag is a phrase tag. It defines a variable. It is a paired tag.
+
+Syntax:
+<var> .................... </var>
+
+Example:
+<html>
+<body>
+<var>Variable</var>
+</body>
+</html>

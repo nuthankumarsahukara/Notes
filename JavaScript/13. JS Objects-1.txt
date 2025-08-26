@@ -1,0 +1,604 @@
+JavaScript pop() Method:
+The pop() method removes the last element of an array, and returns that element.
+Note: This method changes the length of an array.
+Note: To remove the first element of an array, use the shift() method.
+
+Syntax: arrayname.pop()
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var techs = ["TeraData", "BigData", "Hadoop", "Spark"];
+function myFunction()
+{
+techs.pop();
+var x=document.getElementById("course");
+x.innerHTML=techs;
+}
+</script>
+<body>
+<p id="course">Click the button to remove the last array element.</p>
+<button onclick="myFunction()">Click_Tech</button>
+</body>
+
+JavaScript pop() Method:
+
+The push() method adds a new element to an array (at the end).
+
+Note:The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<p>The push() method appends a new element to an array:</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.push("Kiwi");
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+</body>
+</html>
+
+JavaScript splice() Method:
+
+a.splice(2,0,"Kumar");//[indexnumber,0(remove the element ,"add element")
+document.write("Add the element at first (splice) :"+a+"<br/>");
+
+Array Img Example:-
+Example:
+<!doctype html>
+<html>
+<head>
+<title>Image Array</title>
+</head>
+<body>
+<h1>Array Image</h1>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&s" id="img" height="250px" width="300px"/>
+<button onclick="funprev()">Prev</button>
+<button onclick="funnext()">Next</button>
+</body>
+<script>
+var arr=['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&s','https://static.vecteezy.com/system/resources/thumbnails/028/716/986/small/sunsets-gift-tree-silhouette-adorned-by-suns-golden-rays-in-twilights-canvas-ai-generated-photo.jpg','https://static.vecteezy.com/system/resources/thumbnails/039/943/419/small/ai-generated-a-small-tree-in-its-ecosystem-within-the-framework-of-the-concept-of-preserving-peace-nature-the-environment-and-environmental-friendliness-photo.jpeg'];
+var i=0;
+function funprev(){
+if(i==0){
+	i=3;
+}
+i--;
+fun2();
+}
+
+function funnext(){
+i++;
+if(i==3){
+	i=0;
+}
+fun2();
+}
+
+function fun2()
+{
+document.getElementById('img').src=""+arr[i];
+}
+</script>
+</html>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+arr=['fish.jpg','fish1.gif', 'nature.jpg', 'nature1.jpg','butterfly.gif',"bird.gif"]
+i=0;
+function fun1()
+{
+i++
+if(i==6)
+{
+alert("No more images")
+}
+else
+{
+document.getElementById('img1').src="img/"+arr[i];
+}
+}
+</script>
+<body>
+<img src="img/fish.jpg" width="300px" height="250px" id="img1">
+<br>
+<input type="button" value=" NEXT" onclick="fun1()">
+</body>
+
+map():-The map() method creates a new array by applying a function to each element of an existing array.
+
+Examples:
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);  // Output: [2, 4, 6, 8, 10]
+
+const names = ["john", "peter", "mary"];
+const upperNames = names.map(name => name.toUpperCase());
+console.log(upperNames);  // Output: ["JOHN", "PETER", "MARY"]
+
+filter() :-
+
+The filter() method creates a new array containing only the elements that pass a specific condition.
+
+Examples:
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens);  // Output: [2, 4, 6]
+
+const students = [
+    { name: "Alice", marks: 85 },
+    { name: "Bob", marks: 45 },
+    { name: "Charlie", marks: 72 }
+];
+
+const passedStudents = students.filter(student => student.marks >= 50);
+console.log(passedStudents);
+// Output: [{ name: "Alice", marks: 85 }, { name: "Charlie", marks: 72 }]
+
+map() + filter() Together
+
+const students = [
+    { name: "Alice", marks: 85 },
+    { name: "Bob", marks: 45 },
+    { name: "Charlie", marks: 72 }
+];
+
+const passedStudentNames = students
+    .filter(student => student.marks >= 50)  // Keep only students with marks >= 50
+    .map(student => student.name.toUpperCase());  // Convert names to uppercase
+
+console.log(passedStudentNames);  // Output: ["ALICE", "CHARLIE"]
+
+
+JavaScript Boolean Object
+The Boolean object represents two values, either "true" or "false". If value parameter is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false.
+
+Syntax
+Use the following syntax to create a boolean object.
+var val = new Boolean(value);
+
+Example1:
+<!doctype html>
+<head>
+<script>
+function myFunction() 
+{
+document.getElementById("demo").innerHTML = Boolean(10 > 9);
+}
+</script>
+</head>
+<body>
+<p id='demo'>Display the value of Boolean(10 > 9):</p>
+<button onclick="myFunction()">ClickMe</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var b1=new Boolean(0);
+var b2=new Boolean(1);
+var b3=new Boolean("");
+var b4=new Boolean(null);
+var b5=new Boolean(NaN);
+document.write("0 is boolean "+ b1 +"<br />");
+document.write("1 is boolean "+ b2 +"<br />");
+document.write("An empty string is boolean "+ b3 + "<br />");
+document.write("null is boolean "+ b4+ "<br />");
+document.write("NaN is boolean "+ b5 +"<br />");
+</script>
+</head>
+
+JavaScript - The Date Object
+The Date object is a datatype built into the JavaScript language. Date objects are created with the new Date( ). Once a Date object is created, a number of methods allows you to operate on it. Most methods simply allows you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC.
+
+There are four ways of instantiating a date:
+var x = new Date();
+var x = new Date(milliseconds);
+var x = new Date(dateString);
+var x = new Date(year, month, day, hours, minutes, seconds, milliseconds); 
+
+Syntax:Date()
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+   var dt = Date();
+   document.write("Date and Time : " + dt ); 
+</script>
+</head>
+
+JavaScript date object Methods:
+The Date object has been created, and now we have a variable that holds the current date! To get the information we need to use the following list of methods...!!
+
+1 getTime() -Number of milliseconds
+2 getSeconds() -Number of seconds (0-59)
+3 getMinutes() -Number of minutes (0-59)
+4 getHours() -Number of hours (0-23)
+5 getDay()-Day of the week(0-6).0=Sunday,6=Saturday
+6 getDate() -Day of the month (0-30)
+7 getMonth() -Number of month (0-11)
+8 getFullYear() -The four digit year (1970-9999)
+
+Example:
+<!doctype html>
+<body>
+<h1  style='color:red;font-family:candara;font-size:50px'>
+<script type='text/javascript'>
+var dt=new Date();
+var  mm=dt.getMonth()+1
+var  dd=dt.getDate()
+var  yy=dt.getFullYear()
+document.write(mm+"/"+dd+"/"+yy+"<br/>")
+var hh=dt.getHours();
+var mm=dt.getMinutes();
+var ss=dt.getSeconds();
+document.write(hh+":"+mm+":"+ss)
+</script></h1>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var dt = new Date()
+var mm = dt.getMonth() + 1
+var dd = dt.getDate()
+var yy = dt.getFullYear()
+document.write(mm + "/" + dd + "/" + yy +"<br>")
+</script>
+</head>
+
+getFullYear() Method
+Description: The getFullYear() method returns the year (four digits) of the specified date. 
+
+Syntax: 
+dt.getFullYear()
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction()
+{
+var dt = new Date();
+var x = document.getElementById("dm");
+x.innerHTML=dt.getFullYear();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display the full year of todays date.</p>
+<button onclick="myFunction()">DisplayFullYear</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+   var dt = new Date("December 25, 1995 23:15:00");
+   document.write("getFullYear() : " + dt.getFullYear() ); 
+</script>
+</head>
+
+The getDate() method returns the day of the month (from 1 to 31) for the specified date.
+
+Syntax: 
+dt.getDate()
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction()
+{
+var dt = new Date();
+var x = document.getElementById("dm");
+x.innerHTML=dt.getDate();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display todays day of the month.</p>
+<button onclick="myFunction()">Display</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+var dt=new Date("July 21, 1983 01:15:00");
+var x=document.getElementById("dm");
+x.innerHTML=dt.getDate();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display todays day of the month.</p>
+<button onclick="myFunction()">Display</button>
+</body>
+
+getHours:
+The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+
+Syntax: 
+dt.getHours()
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+var dt = new Date();
+var x = document.getElementById("dm");
+x.innerHTML=dt.getHours();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display the hour of the time right now.</p>
+<button onclick="myFunction()">DisplayHours</button>
+</body>
+
+JavaScript getTimezoneOffset() Method:
+It returns the time difference between UTC time and local time, in minutes.
+
+Note:
+If your time zone is GMT+2, -120 will be returned.
+
+
+Note: 
+The returned value is not a constant, because of the practice of using Daylight Saving Time.
+
+Note: 
+UTC time is the same as GMT time.
+
+Syntax
+Date.getTimezoneOffset()
+
+Technical Details
+Return Value: 	
+A Number, representing the time difference between UTC and Local Time, in minutes.
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction() 
+{
+var dt = new Date();
+var x=document.getElementById("dm");
+x.innerHTML=dt.getTimezoneOffset();
+}
+</script>
+</head>
+<body>
+<p>Click the button to display the timedifference between UTC and local time.</p>
+<button onclick="myFunction()"> ClickMe </button>
+<p id="dm"></p>
+</body>
+
+Set Dates
+We can easily manipulate the date by using the methods available for the Date object.
+
+setDate() Method:
+The setDate() method sets the day of the month to the date object.
+
+Syntax: 
+Date.setDate(day)
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+var dt = new Date();
+dt.setDate(15);
+var x = document.getElementById("dm");
+x.innerHTML=dt;
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display the date after changing the day of the month. </p>
+<button onclick="myFunction()">Display_SetDate</button>
+</body>
+
+JavaScript setFullYear() Method
+The setFullYear() method sets the year (four digits for dates between year 1000 and 9999) of the date object. This method can also be used to set the month and day of month.
+
+Syntax
+Date.setFullYear(year,month,day)
+
+Example:
+<!doctype html>
+<body>
+<p>Click the button to display a date after changing the year.</p>
+<button onclick="myFunction()">ClickMe</button>
+<p id="dm"></p>
+<script type="text/javascript">
+function myFunction() 
+{
+var dt = new Date();
+dt.setFullYear(2020);
+document.getElementById("dm").innerHTML = dt;
+}
+</script>
+</body>
+
+JavaScript setMonth() Method
+The setMonth() method sets the month of a date object. 
+
+Note: January is 0, February is 1, and so on.
+
+Syntax
+Date.setMonth(month,day)
+
+Example:
+<!doctype html>
+<body>
+<p>Click the button to display the date after changing the month.</p>
+<button onclick="myFunction()">Click it</button>
+<p id="demo"></p>
+<script type="text/javascript">
+function myFunction() 
+{
+var d = new Date();
+d.setMonth(5);
+document.getElementById("demo").innerHTML = d;
+}
+</script>
+</body>
+
+Redirect to Other Location:
+Javascript window.location 
+Control over what page is loaded into the browser rests in the JavaScript property window.location. By setting window.location equal to a new URL, you will in turn change the current webpage to the one that is specified.
+
+Example:
+<!doctype html>
+<script type="text/javascript">
+window.location = "http://www.google.com/"
+</script>
+
+JavaScript Timing Events
+With JavaScript, it is possible to execute some code at specified time-intervals. This is called timing events. It's very easy to time events in JavaScript. The two key methods that are used are:
+
+1. setInterval() - executes a function, over and over again, at specified time intervals.
+
+Syntax
+window.setInterval("javascript function",milliseconds);
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction()
+{
+setInterval(function(){alert("Hello")},3000);
+}
+</script>
+</head>
+<body>
+<p>Click the button to wait 3 seconds, then alert "Hello".</p>
+<button onclick="myFunction()">Display</button>
+</body>
+
+2. setTimeout() - executes a function, once, after waiting a specified number of milliseconds
+
+Syntax
+window.setTimeout("javascript function",milliseconds);
+
+Example:
+<!doctype html>
+<script type='text/javascript'>
+function delayer()
+{
+window.location = "http://www.google.com"
+}
+</script>
+</head>
+<body onLoad="setTimeout('delayer()', 5000)">
+<h2>Prepare to be redirected!</h2>
+<p>This page is a time delay redirect</p>
+</body>
+
+RealTime Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+setInterval("fun1()",1000);
+function fun1()
+{
+var dt=new Date
+str=dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds()
+document.getElementById('sp1').innerHTML=str
+}
+</script>
+</head>
+<body>
+<span id="sp1" style="color:red;font-size:30"></span>
+</body>
+
+JavaScript String Object:
+A JavaScript string stores a series of characters like "javascript". A string can be any text inside double or single quotes:
+
+Example:
+var name = "javascript";
+var name = 'javascript';
+
+String indexes are zero-based: The first character is in position 0, the second in 1, and so on.
+
+Syntax: 
+var str = new String("string");
+OR
+var txt = "string";
+
+Properties:
+1. length
+
+Methods:
+1. charAt()
+2. match()
+3. endsWith()
+4. repeat()
+5. big()
+6. bold()
+7. italics()
+8. small()
+9. fixed()
+10. strike()
+11. sub()
+12. sup()
+13. fontcolor()
+14. fontsize()
+15. blink() //depcrecated
+16. link()
+17. replace()
+
+String Object Properties:
+JavaScript length Property: 
+The length property returns the length of a string (in characters).
+
+Syntax: string.length
+
+Example:
+<body>
+<script>
+var txt = "i Technologies!";
+document.write(txt.length);
+</script>
+</body>
+
+String Object Methods
+JavaScript charAt() Method:
+It returns the character at the specified index in a string. The index of the first character is 0, the second character is 1, and so on.
+
+Syntax: string.charAt(index)
+
+Example:
+<html>
+<script>
+function myFunction()
+{
+var str="i Technologies";
+document.getElementById("demo").innerHTML=str.charAt(2);
+}
+</script>
+<body>
+<p id="demo">Click the button to display the third character of a string.</p>
+<button onclick="myFunction()">Display_Character</button>
+</body>
+</html>

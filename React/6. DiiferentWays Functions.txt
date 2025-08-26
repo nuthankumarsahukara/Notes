@@ -1,0 +1,104 @@
+1. Function Component
+The simplest way to define a component in React.
+
+function Greeting() {
+    return <h1>Hello, Welcome to React!</h1>;
+}
+export default Greeting;
+
+2. Arrow Function
+Used for writing shorter function expressions.
+
+const Greeting = () => {
+    return <h1>Hello, Welcome to React!</h1>;
+};
+export default Greeting;
+
+3. Anonymous Function (Inside JSX)
+Used within event handlers.
+
+import React from 'react';
+
+function ClickButton() {
+    return (
+        <button onClick={() => alert('Button Clicked!')}>Click Me</button>
+    );
+}
+export default ClickButton;
+
+4. Function with Parameters
+Passing arguments to a function.
+
+const GreetUser = (name) => {
+    return <h1>Hello, {name}!</h1>;
+};
+
+function App() {
+    return GreetUser("John");
+}
+export default App;
+
+5. Class Component with Function
+Using a function inside a class component.
+
+import React, { Component } from 'react';
+
+class Welcome extends Component {
+    sayHello() {
+        alert("Hello, Welcome!");
+    }
+
+    render() {
+        return (
+            <button onClick={this.sayHello}>Say Hello</button>
+        );
+    }
+}
+export default Welcome;
+
+6. Function inside useEffect Hook
+Used for side effects.
+
+import React, { useEffect } from 'react';
+
+function Example() {
+    useEffect(() => {
+        console.log("Component Mounted!");
+    }, []);
+
+    return <h1>Check Console</h1>;
+}
+export default Example;
+
+7. Higher-Order Function (HOF)
+A function that returns another function.
+
+Defining a Higher-Order Component (HOC) :-
+const withMessage = (Component) => {
+    return (props) => (
+        <div>
+            <h2>Message: {props.message}</h2>
+            <Component {...props} />
+        </div>
+    );
+};
+
+Creating a Simple Component:-
+const Display = () => <p>This is a message display component.</p>;
+
+export default withMessage(Display);
+
+Render the component
+const App = () => {
+    return <Display message="Hello from HOC!" />;
+};
+
+Different Ways for function calling in Reactjs
+
+1.Direct Function Call 
+	Ex:- sayHello();
+2.Calling Function Inside JSX 
+	Ex:-{sayHello()}
+3.Calling as a JSX Tag
+	Ex:-<sayHello />
+	Ex:-<sayHello></sayHello>

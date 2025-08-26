@@ -1,0 +1,40 @@
+Oracle language:
+	1.SQL - Strctured Query Language(sequel)
+	2.SQL+plus -[To Control The Enviroment of SQL]
+	3.PL/SQL -Procedual Language Sequel
+Strctured Query Language(SQL):
+-->The Language which used to communicate with the database is called Strctured Query Language(SQL) .The Strctured Query Language(SQL) was introduced by "IBM" and the initial name of this language was "sequel" and later renamed with"SQL"
+
+-->SQL is also called "CLI"(Common language Interface) because this is the language that is used to communicate with any RDMS products such as Oracle,SQL server, MYSQL,DB2,etc.
+
+->SQL pre-defined queries are not a case-sensitive(write queries in either upper & lower case characters but every SQL query should end with a ";" semicolon. 
+
+SQL Sub Language: We have 5 sub-languages are there :
+
+1.Data Definition Language(DDL):
+	1.create
+	2.alter
+	3.Rename
+	4.Truncate
+	5.Drop
+	Latest Features in DDL
+	1.Recyclebin
+	2.Flashback	
+	3.Purge
+2.Data Manipulation Language(DML)
+	1.insert
+	2.update
+	3.Delete
+	Latest Commands in DML
+	1.insert all
+	2.Merge
+3.Data Query/Retrieval Language(DQL/DRL)
+	1.Select
+4.Transaction Control Language
+	1.commit
+	2.Rollback
+	3.Savepoint
+5.Data Control Language
+	1.Grant
+	2.Revoke
+	

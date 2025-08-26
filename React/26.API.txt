@@ -1,0 +1,138 @@
+In React js, APIs are commonly used to fetch or send data between the frontend and backend or external services. Here’s a quick breakdown of how to work with APIs in a React app
+
+Common Ways to Call APIs in React:
+1.Using fetch (built-in JS method)
+2.Using Axios (popular external library)
+
+What is an API?
+API stands for Application Programming Interface.
+-->It’s like a bridge that lets two applications talk to each other.
+
+Imagine you're at a restaurant.
+-->You (the user) want to order food.
+-->The menu is the API – it tells you what you can ask for.
+-->The waiter takes your order to the kitchen and brings back your food – the API does the same between your app and the server.
+
+In Web Development:
+An API allows your React app (frontend) to:
+-->GET data (e.g., show user info)
+-->POST data (e.g., submit a form)
+-->PUT/PATCH data (e.g., update profile)
+-->DELETE data (e.g., remove an item)
+
+What is fetch()?
+A built-in JavaScript method to make HTTP requests (GET, POST, PUT, DELETE, etc.)
+-->Returns a Promise that resolves to the Response object.
+
+Example :-
+
+import { useEffect, useState } from "react";
+
+function FetchApi() {
+  const [output, setOutput] = useState([]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  async function getProducts() {
+    try {
+      const res = await fetch("https://fakestoreapi.com/products");
+      const data = await res.json();
+      setOutput(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  }
+
+  return (
+    <div>
+      <h2>Products</h2>
+      <ul>
+        {output.map(product => (
+          <li key={product.id}>{product.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default FetchApi;
+
+	
+-->A promise-based HTTP client for the browser and Node.js.
+-->Used to make HTTP requests (GET, POST, PUT, DELETE, etc.).
+-->Supports automatic JSON data transformation, interceptors, and error handling.
+
+Installation
+npm install axios
+
+Key Differences with Axios:
+--->No need to call .json() — Axios automatically parses the response as JSON.
+--->Response data is accessed via res.data.
+
+Example :-
+
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+function FetchApi() {
+  const [output, setOutput] = useState([]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  async function getProducts() {
+    try {
+      const res = await axios.get("https://fakestoreapi.com/products");
+      setOutput(res.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  }
+
+  return (
+    <div>
+      <h2>Products</h2>
+      <ul>
+        {output.map(product => (
+          <li key={product.id}>{product.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default FetchApi;
+
+
+fetch vs axios
+
+Feature / Aspect	fetch()			axios
+ Built-in		Yes (native JS API)	No (needs to be installed)
+ Install		Not required		npm install axios
+ Response	Needs 	.json() to parse		Parses JSON automatically (res.data)
+ Error Handling	Only catches network errors	Catches HTTP errors too (e.g. 404)
+ Timeout		Not supported by default	Supported with config
+ Req/Resp 	Interceptors Not available	Supported (can modify requests/responses)
+ Upload/Download Progress	Hard to implement	Easy with onUploadProgress
+ 
+Using fetch
+fetch('https://api.example.com/data')
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+
+Using axios
+import axios from 'axios';
+
+axios.get('https://api.example.com/data')
+  .then(res => console.log(res.data))
+  .catch(err => console.error(err));
+
+ Summary
+
+Choose fetch() if:				Choose axios if:
+You want a lightweight native solution		You want extra features & simpler syntax
+You’re fine handling errors and config manually	You prefer built-in error handling & config

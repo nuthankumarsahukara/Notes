@@ -1,0 +1,358 @@
+HTML Multimedia
+Multimedia on the web is sound, music, videos, and animations. Modern web browsers have support for many multimedia formats.
+
+History of multimedia in the internet
+First version of RealPlayer in 1995
+Video support for Flash 8 in 2005
+Windows Media Player and iTunes surpassed RealPlayer in 2007
+
+What is Multimedia?
+Multimedia comes in many different formats. It can be almost anything you can hear or see.
+Modern Web pages have often embedded multimedia elements, and modern browsers have support for various multimedia formats.
+
+Examples: 
+Pictures, music, sound, videos, records, films, animations, and more.
+
+The plugin era
+Plugins proliferated:
+    1991: Apple Quicktime (.mov)
+    1994: MIDI (background music)
+    1995: RealAudio (.ra, .ram)
+    1997: RealVideo (H.263)
+    1998: Windows Media Player
+    1999: Quicktime for Windows (.mov, .mp3, .mp4, .swf)
+    2002: Macromedia Shockwave Flash (.swf)
+    2007: Microsoft Silverlight (flash, vid, etc.) 
+
+Browser Support
+The first Internet browsers had support for text only, and even the text support was limited to a single font in a single color. Then came browsers with support for colors, fonts and text styles, and support for pictures was added.
+
+The support for sounds, animations, and videos is handled in different ways by various browsers. Some multimedia elements is supported, and some requires an extra helper program (a plug-in).
+
+
+Multimedia Formats:(Video formats)
+Multimedia files also have their own formats with different extensions like: .swf, .wav, .mp3, and .mp4. MP4 is the new and upcoming format for internet video. It is supported by YouTube, Flash players and HTML5. 
+	
+
+AVI(.avi)-->AVI (Audio Video Interleave) was developed by Microsoft. AVI is supported by all computers running Windows, and by the most popular web browsers.
+
+WMV (.wmv)-->WMV (Windows Media Video) was developed by Microsoft. WMV is a common format on the Internet.
+
+MPEG(.mpg or .mpeg)-->The MPEG (Moving Pictures Expert Group) format is the most popular format on the Internet.
+
+Flash(.swf or .flv)--> Flash was developed by Macromedia. 
+
+MP4 (.mp4 Mpeg-4 (MP4) is the new format for the internet.
+
+Multimedia Formats:(Audio formats)
+
+MIDI (.mid or .midi)-->MIDI (Musical Instrument Digital Interface) is a format for electronic music devices like synthesizers and PC sound cards.
+
+MP3(.mp3)-->MP3 files are actually the sound part of MPEG files.
+
+WAV (.wav)-->WAVE (more known as WAV) was developed by IBM and Microsoft. WAVs are compatible with Windows, Macintosh, and Linux operating systems.
+
+WMA(.wma)-->WMA (Windows Media Audio)
+
+HTML4 Multimedia Tags:
+
+HTML <object> Tag
+The <object> tag defines an embedded object within an HTML document. Use this element to embed multimedia (like audio, video, Java applets, ActiveX, PDF, and Flash) in your web pages. It is a paired tag
+
+Syntax: <object>...............</object>
+
+Example:
+<html>
+<body>
+<object data="Windows XP Shutdown.wav">
+<param name="autoplay" value="true" />
+</object>
+ </body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<object data="Windows XP Shutdown.wav" type="audio/x-mplayer2" width="320" height="240">
+<param name="src" value="music.wav">
+<param name="autoplay" value="false">
+<param name="autoStart" value="0">
+Hear the sound : <a href="Windows XP Shutdown.wav">music</a>
+</object>
+
+<param> tag:
+You can use the <param> tag to pass parameters to plugins that have been embedded with the <object> tag. It is a Non-Paired Tag..
+
+Syntax: <param>
+
+Example:
+<html>
+<body>
+<object data="Windows XP Shutdown.wav">
+<param name="autoplay" value="true" />
+</object>
+ </body>
+</html>
+
+<embed>
+The HTML <embed> tag is used for embedding an external application or interactive content into an HTML document. It is non-paired tag.
+
+Syntax: <embed>
+
+Attributes
+Attribute 	Value 		Description
+height 	pixels 		Specifies the height of the embedded content
+width 	pixels 		Specifies the width of the embedded content
+src 	URL 		Specifies the address of the external file to embed
+type 	MIME_type 	Specifies the MIME type of the embedded content
+
+
+YouTube in HTML5
+YouTube videos can be included in HTML documents, and Google offers the code to do so right on the same page as the video itself!
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<embed src="http://www.youtube.com/v/opVb89Cmrtk&hl=en&fs=1" type="application/x-shockwave-flash"  width="425" height="344" >
+</body>
+</html>
+
+Example:
+<embed src="http://www.youtube.com/v/BHtGcZ9XqjY"
+        type="application/x-shockwave-flash"
+         allowscriptaccess="always" 
+         allowfullscreen="true" width="480" height="385"/>
+
+HTML <bgsound> Tag
+
+The HTML <bgsound> tag is used to play a soundtrack in the background. This tag is for Internet Explorer only.
+
+Specific Attributes
+The HTML <bgsound> tag also supports following additional attributes:
+Attribute	Value	Description
+loop 	number	Lets you replay a background soundtrack a certain number of times.
+src 	URL	Specifies the path of the sound file.
+
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML bgsound Tag</title>
+</head>
+<body>
+<bgsound src="/html/yourfile.mdi"/>
+<p>This does create any result on the screen but it plays sound file in the background.</p>
+</body>
+</html>
+
+<source>
+The HTML <source> tag is used to specify multiple media resources on media elements (such as <audio> and <video>). 
+
+Syntax: <source>....................</source>
+
+Attributes
+Attribute 	Value 		Description
+media 	media_query 	Specifies the type of media resource
+src 	URL 		Specifies the URL of the media file
+type 	MIME_type 	Specifies the MIME type of the media resource.
+
+Note: The media attribute is not supported in any of the major browsers.
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<audio controls="controls">
+<source src="good_enough.mp3" type="audio/mpeg" />
+Your browser does not support the audio element.
+</audio>
+</body>
+</html>
+
+Example
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+	
+Working with Source Tag
+</title>
+</head>
+<body>
+<video controls='controls'>
+<source src="oceans.mp4" type="video/mp4" />
+Your browser does not support the Video element.
+</video>
+</body>
+</html>
+
+
+HTML5-MULTIMEDIA 
+It is a new standard for media content. Playing video and audio is easier than ever
+
+HTML5 <audio> Tag
+It is used to specify audio on an HTML document. It is a paired tag.
+
+Note:
+Any text inside between <audio> and </audio> will be displayed in browsers that do not support audio.
+
+Syntax: 
+<audio>....................</audio>
+
+Attributes
+Attribute 	Value 		Description 
+controls  	controls 		Specifies that audio controls should be displayed
+loop  	loop 		Specifies that the audio will start over again
+src 	Path 		Specifies the URL of the audio file
+muted	muted		Specified the audio should be muted
+
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<audio controls="controls">
+  <source src="song.ogg"  type="audio/ogg" />
+   Your browser does not support the audio element.
+</audio>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+  <body>
+    <audio src="song.ogg" controls="controls" autoplay="autoplay" loop="loop">
+      <p>Your browser does not support the audio playback. Please upgrade to a modern 	browser.</p>
+    </audio>
+  </body>
+</html>
+
+Example: (from Web)
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+  <body>
+    <audio src="http://sound26.mp3pk.com/indian/raone/raone01(www.songs.pk).mp3"       controls="controls" autoplay="autoplay" loop="loop">
+      <p>Your browser does not support the audio playback. Please upgrade to a modern    browser.</p>
+    </audio>
+  </body>
+</html>
+
+Example:(wav)
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+  <body>
+    <audio src="Windows XP Shutdown.wav"  controls="controls" autoplay="autoplay" loop="loop">
+      <p>Your browser does not support the audio playback. Please upgrade to a modern browser.</p>
+    </audio>
+  </body>
+</html>
+
+Audio With JS
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<audio id="demo" src="good_enough.mp3" controls='controls'></audio>
+<div>
+  <button onclick="document.getElementById('demo').play()">Play the Audio</button>
+  <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
+  <button onclick="document.getElementById('demo').volume+=0.1">Increase Volume</button>
+  <button onclick="document.getElementById('demo').volume-=0.1">Decrease Volume</button>
+</div> 
+</body>
+</html>
+
+What is Ogg?
+Ogg is a free, open container format maintained by the Xiph.Org Foundation. The creators of the Ogg format state that it is unrestricted by software patents and is designed to provide for efficient streaming and manipulation of high quality digital multimedia.
+
+What is WebM?
+The WebM Project is dedicated to developing a high-quality, open video format for the web that's freely available to everyone.
+
+<video>
+It is used to specify video on an HTML document. It is a paired tag.
+
+Syntax: 
+<video>..........................</video>
+
+Note: 
+Any text between the <video> and </video> tags will be displayed in browsers that do not support video.
+
+Attributes:
+Attribute 	Value 	Description
+autoplay	autoplay 	Specifies that the video will start playing
+controls 	controls 	Specifies that video controls should be displayed
+src	 URL 	Specifies the URL of the video file
+width	 pixels 	Sets the width of the video player
+height	 pixels 	Sets the height of the video player
+loop	 loop 	Specifies that the video will start over again
+muted 	 muted 	Specifies that the audio output of the video should be muted
+poster 	 URL 	Spe. an image to be shown while the video is downloading, or until the 		user hits the play button
+
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<video width="300" height="250" controls="controls" autoplay="autoplay">
+  <source src="movie.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<video width="300" height="250" controls="controls" poster="http://t1.gstatic.com/images?q=tbn:ANd9GcQUc6Vt3q5h6tcyn3229tN6u7fcG9Z0WXl0fFYKUvnmj1GBNvpi">
+  <source src="movie.mp4"  />
+    Your browser does not support the video tag.
+</video>
+</body>
+</html>
+
+Video with JS
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<video id="demo" controls='controls'>
+<source src="video.mp4" type="video/mp4" >
+</video>
+<div>
+  <button onclick="document.getElementById('demo').play()">Play the Video</button>
+  <button onclick="document.getElementById('demo').pause()">Pause the Video</button>
+  <button onclick="document.getElementById('demo').volume+=0.1">Increase Volume</button>
+  <button onclick="document.getElementById('demo').volume-=0.1">Decrease Volume</button>
+</div>
+</body>
+</html>

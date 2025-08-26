@@ -1,0 +1,142 @@
+Data integrity Constraints in ORACLE
+
+What is Data Integrity in Oracle?
+Data integrity means the data contained in the database is accurate, consistent, and reliable. To provide data integrity, RDBMS provides us a set of integrity constraints that ensures that the data entered into the database is going to be accurate, consistent, and reliable. This is the reason why the end-user can trust the data stored in the database.
+This data integrity again classified into two types are as follows
+1.Declarative / pre-defined data integrity (using constraints)
+2.Procedural/ user-defined data integrity (using triggers)
+
+Declarative / Pre-define Data Integrity:
+This data integrity can be implemented with help of "constraints". These are again of three types,
+1.Entity integrity
+2.Referential integrity
+3.Domain integrity
+Entity Integrity: It ensures that each row is uniquely identified in a table. To implement this mechanism, we use the primary key or unique constraint.
+
+Referential Integrity: It ensures that to create a relationship between tables. To implement this mechanism, we use the foreign key (referential key).
+
+Domain integrity: Domain is nothing but a column. It ensures that to check values with user define conditions before accepting values into a column. To perform this mechanism we use check, default, not null constraints.
+
+Constraints in Oracle
+The Constraints in Oracle are basically used to restrict the insertion of unwanted data in the database. That means they are mainly used to maintain data integrity. We can create the constraint on single or multiple columns of a table in Oracle
+
+Types of Constraints available in Oracle
+1.NOT NULL Constraint
+2.UNIQUE KEY Constraint
+3.CHECK KEY Constraint
+4.PRIMARY KEY Constraint
+5.FOREIGN KEY Constraint (REFERENCES Key).
+6.DEFAULT Constraint
+
+How to create Constraints in Oracle?
+All databases are supporting the following two types of methods to define constraints.
+
+Column Level:
+In this method, we are defining constraints on individual columns. The following is the syntax to define constraints at the column level.
+CREATE TABLE <TN>(<COLUMN NAME1> <DATATYPE>[SIZE] <CONSTRAINT TYPE>,......);
+
+Table Level:
+In this method, we are defining constraints after all columns are declared i.e. at the end of the table definition. The following is the syntax to define constraints at the table level.
+CREATE TABLE <TN>(<COLUMN NAME1> <DATATYPE>[SIZE], <COLUMNNAME2> <DATATYPE>[SIZE],....
+<CONSTRAINT TYPE> (<COLUMN NAME1>, <COLUMN NAME2>,.....
+..));
+
+NOT NULL Constraint in Oracle:
+By default, the database column stores NULL value means no value in the data row. By defining NOT NULL Constraint to the table column, the default behavior of the database column changes and it does not accept NULL values.
+In Oracle, a table can contain any number of NOT NULL Constraints. The NOT NULL Constraints can be defined to string as well as numeric data types such as INT, VARCHAR, etc. The NOT NULL constraint does not support "table-level". It can only be applied at the column level.
+syntax:
+CREATE TABLE <TN>(<COLUMN NAME1> <DATATYPE>[SIZE] <CONSTRAINT TYPE>,......);
+		
+CHECK Constraint in Oracle:
+The Check Constraint in Oracle is used to enforce domain integrity. Domain integrity means the values that are going to store in a table column must be followed by some defined rules such as range, type, and format.
+In other words, we can say that Check Constraint ensures the valid entries for a given column value
+by restricting the type of the value, the format of the data, or the range of possible values.
+The CHECK Constraint in Oracle can be applied to single or multiple columns of a table. The CHECK Constraint can be defined while creating a new table or using ALTER TABLE statement for the already existing table.
+The CHECK Constraint in Oracle is used to check values with the user-defined conditions before accepting values into a column. The Check Constraints in Oracle can be created at two different levels
+1.Column-Level Check Constraints: When we create the check constraints at the column level then they are applied only to that column of the table.
+2.Table-level Check Constraints: When we create the check constraints at the table level, then it can be referred from any column(s) within that table.
+A table can contain any number of check constraints and will apply to any column data type like integer, character, and decimal, date, etc.
+
+How to add constraints to an existing table in oracle?
+syntax.
+ALTER TABLE <TN> ADD CONSTRAINT <CONSTRAINT KEY NAME>
+<CONSTRAINT TYPE> (<COLUMN NAME>);
+
+How to drop constraints from an existing table in Oracle?
+Syntax
+Q-ALTER TABLE <TN> DROP CONSTRAINT <CONSTRAINT KEY NAME>;
+
+How to Rename a Constraint in Oracle?
+Syntax: ALTER TABLE <TN> RENAME CONSTRAINT < OLD CONSTRAINT NAME> TO <NEW CONSTRAINT NAME>;
+
+How to disable and enable constraints in oracle?
+Syntax: ALTER TABLE <TN> DISABLE / ENABLE CONSTRAINT <CONSTRAINT KEY NAME>;
+
+Default Constraint in Oracle
+As the name suggests the DEFAULT Constraint in Oracle is used to set a default value for a data column. If the value for the column in the data row is not specified, the default value will be added to the data row column. In simple words, we can say that Default constraints are used to insert a default value to a column when the user doesn't specify a value.
+syntax to add Default Constraint using 
+CREATE Table statement.
+<COLUMN NAME> <DATATYPE>[SIZE] DEFAULT <VALUE / EXPRESSION>
+
+Default constraint using ALTER table statement in Oracle:
+Syntax
+ALTER TABLE <TN> MODIFY <COLUMN NAME>
+DEFAULT <VALUE / EXPRESSION>;
+
+UNIQUE Constraint in Oracle
+When we want a column or columns not to accept any duplicate values, then we need to use UNIQUE Constraint for that column or columns in Oracle. That means the UNIQUE Constraint in Oracle is useful to restrict storing of duplicate data row values in a given column or combination of columns. But it accepts NULL values in that column.
+
+Multiple columns in a single table can have the UNIQUE Constraint. The unique constraint can be either at the column level or at the table level.
+applied either
+
+Primary Key in Oracle:
+
+The Primary Key in Oracle is the combination of UNIQUE and NOT NULL Constraint. That means it will not allow either NULL or Duplicate values into a column or columns on which the primary key constraint is applied. Using the primary key, we can enforce entity integrity i.e. using the primary key we can uniquely identify each record in a table.
+
+In Oracle, a table can contain only 1 Primary Key which can be either on a single column or multiple columns i.e. the composite primary key. The Primary Key constraint in Oracle can be applied to numeric and string data types such as INT, VARCHAR, etc.
+
+The Primary Key Constraint can be applied either at the column level or at the table level. As it is allowing the Primary Key to be applied at the table level, so we have the option to create a composite primary key i.e. Primary Key based on multiple columns.
+
+Imposing Primary Key Constraints at Column Level in Oracle:-
+Syntax: CREATE TABLE <TN>(<COLUMN NAME1> <DATATYPE>[SIZE] <CONSTRAINT TYPE>,......);
+ 
+Imposing Primary Key Constraints at Tabel Level in Oracle:-
+Syntax: CREATE TABLE <TN>(<COLUMN NAME1> <DATATYPE>[SIZE] ...., CONSTRAINT <CONSTRAINT KEY NAME> <CONSTRAINT TYPE> (<COLUMN NAME>));
+ 
+Foreign Key Constraint in Oracle:-
+
+Creating the relationships between the database tables is one of the most important concepts in a database. The relationship between multiple tables provides a mechanism for linking the data stores in multiple tables and retrieving them in an efficient manner.
+
+In order to create a link between two tables, we must specify a Foreign Key in one table that references a column in another table. That means the Foreign Key constraint in Oracle is used for binding two tables with each other and then verifying the existence of one table data in other tables.
+
+Note: A foreign key in one TABLE points to either a primary key or a unique key in another table in Oracle. The foreign key constraints are basically used to enforce referential integrity.
+
+How to Create Foreign Key Constraint in Oracle
+To Create a Foreign Key Constraint in Oracle, we require the following things
+1. We require two tables for linking with each other and those two tables must have a common column for binding the tables.
+2. The common column that is present in both the tables need not have the same name but their data type must be the same.
+3. The common column that is present under the parent table or master table is known as the reference key column and moreover, the reference key column should not contain any duplicate values. So, we need to impose either UNIQUE or PRIMARY key constraint on that column.
+4. The common column which is present in the child or detailed table is known as the Foreign key column and we need to impose a Foreign key constraint on the column which refers to the reference key column of the master table.
+5. Foreign key column values should be matched with the primary key or unique key column values only. Generally, the primary key or Unique key is not allowed duplicate values whereas the foreign key is allowed duplicate & null values.
+
+Imposing FOREIGN KEY Constraints at Column Level in Oracle.
+
+Syntax: <COMMON COLUMN NAME OF CHILD> <Data Type>[SIZE] REFERENCES <PARENT TABLE NAME>(<COMMON COLUMN NAME OF PARENT>)
+
+Imposing FOREIGN KEY Constraints at Table Level in Oracle.
+
+Syntax: CREATE TABLE <TN>(<COL1><DT>[SIZE],<COL2><DT>[SIZE],.
+FOREIGN
+KEY(<COL1>,<COL2>,........) REFERENCES <PARENT TABLE NAME>(<COL1>,<COL2>,
+..);
+
+What is the difference between Primary Key and Foreign Key Constraint in Oracle? 
+Primary Key in Oracle:
+1. The Primary Key Constraint in Oracle is uniquely identifying a record in a table.
+2.Primary Key constraint neither accepts null values nor duplicate values on the column on which it is applied.
+3.We can create only one Primary Key on a table in Oracle and that primary key constraint can be created either on a single column or multiple columns.
+
+Foreign Key in Oracle:
+1.The Foreign Key in Oracle is a column in a table that is a unique key (either primary or unique key) in another table.
+2.A Foreign Key can accept both null and duplicate values.
+3.We can create more than one Foreign key on a table in Oracle.

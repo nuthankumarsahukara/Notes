@@ -1,0 +1,28 @@
+Synonyms in ORACLE
+	A synonym is an alternative name for objects such as tables, views, sequences, stored procedures, and other database objects. You generally use synonyms when you are granting access to an object from another schema and you don't want the users to have to worry about knowing which schema owns the object.
+Syntax
+CREATE [OR REPLACE] [PUBLIC] SYNONYM [schema .]synonym_name
+FOR [schema.] object_name;
+
+PUBLIC It means that the synonym is a public synonym and is accessible to all users.
+Schema The appropriate schema. If this phrase is omitted, Oracle assumes that you are referring to your own schema.
+object_name The name of the object for which you are creating the synonym. 
+It can be one of the following:
+table, view, sequence,stored procedure, function,package,materialized view,java class schema object, user-defined object ,synonym
+
+Example:	create synonym samp for employee;
+	create public synonym emp for employee;
+	create sequence sq minvalue 1 maxvalue 5 start with 1 increament by 1;
+	create synonym sys_sq for sq; 
+
+Drop synonym :-
+	Once a synonym has been created in Oracle, you might at some point need to drop the synonym.
+Syntax:DROP [PUBLIC] SYNONYM [schema .] synonym_name [force];
+
+Example: drop synonym sys_sq;
+
+PUBLIC:-
+	Allows you to drop a public synonym. If you have specified PUBLIC, then you don't specify a schema.
+
+force:
+	It will force Oracle to drop the synonym even if it has dependencies. It is probably not a good idea to use force as it can cause invalidation of Oracle objects.

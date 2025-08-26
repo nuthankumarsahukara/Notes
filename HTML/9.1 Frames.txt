@@ -1,0 +1,107 @@
+Frames
+Frames can be used to embed multiple HTML files in a single Page or Window. Frames are developed by Netscape. In HTML the following list of frame tags existed..!!
+
+Tag 		Description
+<frame>		Deprecated
+<frameset>	Deprecated
+<noframes> 	Deprecated
+<iframe>html5	Defines an inline frame
+
+<frameset>
+Using this tag we can divided the web page as multiple frames. In each frame we can display another web site. Frameset tag is a paired tag. 
+
+Syntax: 
+<frameset>--------------</frameset>
+
+Attributes		Parameters
+rows		pix, %
+cols		pix, %
+border		pix
+bordercolor	any color name/HexaDecimalCode
+
+<frame> 
+This tag is used to called external webpages. It contains src property to specify the path of external web page. Using frames we can place and view multiple files in a single window. Each and every frame will have its own scrollbars.It is a non-paired tag.
+
+Syntax: <frame>
+
+Attributes	Parameters
+src		File path, External Res. 
+name		any name
+scrolling		yes, no,default
+
+Example
+<frameset rows= "50%, 50%">
+<frame src="http://www.myweb.com">
+<frame src="http://www.etours.com">
+</frameset>
+
+Advantages:
+1. Frames are useful in a site whose contents are expected to change frequently.
+2. Frames can give a targeted area of your site a functional coherence.
+3. Frames can be used as a shortcut for scrolling within a single page
+
+Example:
+<frameset rows= "50%, 50%" cols="50%,50%">
+<frame src="https://www.google.com">
+<frame src="https://www.gmail.com">
+<frame src="https://www.nareshit.com">
+<frame src="https://www.nareshit.in">
+</frameset>
+
+Note: ***We dont have body part in the frames.
+
+YES - Turns the scroll bar on.
+NO - Turns the scroll bar off.
+AUTO - Web page detect if needed.
+
+Example:
+<FRAMESET ROWS="50%,50%">
+<FRAME SRC="http://www.nareshit.com" SCROLLING="YES">
+<FRAME SRC="http://www.india.com" SCROLLING="NO">
+</FRAMESET> 
+
+Frame Errors
+The majority of browsers commonly support frames. there are some old browser versions that do not. In these cases, you are able to specify an error message if for some reason the frame fails to load. 
+
+To specify any message if the frame fails to load, insert the tag <noframes>. The BODY tags should be placed between the two tags, and within the body tags, should be the HTML that will replace the frames. 
+
+Syntax: <noframes>------------</noframes>
+
+Example:
+<FRAMESET ROWS="50%,50%">
+<FRAME SRC="http://www.licindia.com">
+<FRAME SRC="http://www.yatra.com">
+</FRAMESET>
+</HEAD>
+<NOFRAMES> <BODY>
+Sorry, your browser does not support frames.
+</BODY> 
+</NOFRAMES>
+
+Frame Border
+The frame border is  separates different frames on a web page. You are able to modify the appearance of the border.
+
+Border Width
+To change the width of the borders on your page, insert the line BORDER="#".
+
+Syntax:   <FRAMESET  BORDER="#">
+
+Example:
+<FRAMESET ROWS="50%,50%" border=20>
+<FRAME SRC="http://www.nareshit.com">
+<FRAME SRC="http://www.india.com">
+</FRAMESET>
+
+Dis-advantages:
+1. Frames are Not "Search Engine Friendly"
+2. Frames are Not "URL Friendly"
+3. Frames are Not as Accessible
+4. Bookmarks
+5. Accessibility
+6. Design
+7. Linking Issues
+8. The user's back button often doesn't work.
+9. Frames often reduce the amount of usable space on the page.
+10. The URL in the address bar always stays the same
+11. Frames create problems with printing.
+12. Some browsers do not support frames properly at all.

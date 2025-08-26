@@ -1,0 +1,26 @@
+package com.nuthan.hi;
+	a.java
+	ab.java   
+	ac.java
+package com.nuthan.hello;
+	b.java
+	ba.java
+	bc.java
+
+import com.nuthan.hi.a;
+
+public class Sample
+{
+	public static void main(String args[])
+	{
+		------------------
+		------------------
+		------------------
+		------------------
+	}
+}	
+
+
+
+
+

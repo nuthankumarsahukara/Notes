@@ -1,0 +1,79 @@
+Higher Order Components
+	It is a component that takes another components as input and return a new component with extra features added to Original component.
+
+function Component(props){
+   return(
+	<p>Hello {props.name}</p>
+   )
+}
+
+function App(){
+   return(
+	<Component name="Datapro" />
+    )
+}
+
+Why Use HOCs?
+---->Code reusability
+---->Separation of concerns
+---->Add common logic (like authentication, logging, styling)
+---->Useful for cross-cutting concerns
+
+Example :
+
+You're creating a HOC called AuthCheck that wraps a component (like User) and conditionally shows either:
+
+---->The original component (User) if authenticated, or
+---->A fallback component (Login) if not authenticated.
+
+function AuthCheck(Component){
+    let authenticated=false/true;
+    return(props)=>{
+        if(authenticated){
+            return <Component {...props}/>
+        }
+        else{
+            return <Login/>
+        }
+    }
+}
+
+--->Component: This is the component you're wrapping (e.g., User).
+--->authenticated: A hardcoded variable simulating login status.
+--->If the user is "authenticated", it renders the wrapped component.
+--->If not, it renders the <Login /> component.
+
+function Login(){
+    return(
+        <>
+            <h1>This is Login Component</h1>
+        </>
+    )
+}
+
+function User(props){
+    return(
+        <>
+            <h1>This is User Component</h1>
+            <h1>Hello {props.username}</h1>
+        </>
+    )
+}
+
+--->AuthCheck(User) wraps the User component.
+--->It returns a new component (AuthChecked) that includes the authentication logic.
+
+let AuthChecked=AuthCheck(User);
+
+---->You're using the wrapped component AuthChecked.
+---->Passing prop username="Datapro" — note: your User component is expecting name, so either change username to name, or modify the prop usage.
+
+function App(){
+    return(
+        <>
+            <AuthChecked username="Datapro"/>
+        </>
+    )
+}
+
+export default App;

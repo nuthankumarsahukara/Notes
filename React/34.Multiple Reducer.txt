@@ -1,0 +1,211 @@
+In Redux, using multiple reducers helps separate concerns and manage different slices of your application state. To bring them together, you use combineReducers(), which merges them into a single root reducer.
+
+What Is combineReducers()?
+It's a utility from Redux that lets you combine multiple reducer functions into one.
+
+Why Multiple Reducers?
+---->Better separation of concerns
+---->Easier to manage and debug
+---->Scalable structure for large apps
+
+Benefits of Multiple Reducers
+---->Cleaner code
+---->Separation of concerns
+---->Easier to maintain and scale
+
+Example:
+
+Store.js
+import { combineReducers, createStore } from "redux";
+
+const initialState = {
+    balance: 0,
+    fullName: "",
+    mobile: null,
+};
+
+
+function accountReducer(state = initialState, action) {
+    switch (action.type) {
+        case "account/deposit":
+            return { ...state, balance: state.balance + action.payload };
+        case "account/withdraw":
+            return { ...state, balance: state.balance - action.payload };
+        case "mobileUpdate":
+            return { ...state, mobile: action.payload };
+        case "nameUpdate":
+            return { ...state, fullName: action.payload };
+        case "account/reset":
+            return initialState;
+        default:
+            return state;
+    }
+}
+
+function transactionReducer(state=[],action){
+    switch(action.type){
+        case "Add" :
+            return[...state,{
+                id:action.payload.id,
+                amount:action.payload.amount,
+                type:action.payload.type,
+                date:action.payload.date}]
+        default :
+            return state;
+    }
+}
+const rootReducer=combineReducers(
+    {
+        account:accountReducer,
+        transaction:transactionReducer
+    }
+)
+const store = createStore(rootReducer);
+
+export default store;
+
+action.js
+
+export function deposit(amount){
+    return{
+        type:'account/deposit',
+        payload : amount
+    }
+}
+
+export function withdraw(amount){
+    return{
+        type:'account/withdraw',
+        payload : amount
+    }
+}
+
+export function name_action(name){
+    return{
+        type:'nameUpdate',
+        payload : name
+    }
+}
+
+export function mobile_action(mobile){
+    return{
+        type:'mobileUpdate',
+        payload : mobile
+    }
+}
+
+App.js
+
+import { useState } from 'react';
+import {useSelector,useDispatch} from 'react-redux';
+import {deposit,withdraw,name_action,mobile_action} from './action'
+function App(){
+    const data= useSelector((state)=>{return state;});
+    console.log(data);
+    const dispatch = useDispatch();
+    
+    const [name,setName] = useState('');
+    const [balance,setBalance] =useState('');
+    const [mobile,setMobile] =useState('');
+    const [transactionId,setTransactionId]=useState(1);
+
+    const handleWithDraw = () => {
+        dispatch(withdraw(Number(balance)));
+        setTransactionId(transactionId+1);
+        dispatch({type:"Add",payload :{
+            id:transactionId,amount:balance,date:new Date(),type:"Debit"
+        }})
+        setBalance('');
+    }
+    const handleDeposit = () => {
+        dispatch(deposit(Number(balance)));
+        setTransactionId(transactionId+1);
+        dispatch({type:"Add",payload :{
+            id:transactionId,amount:balance,date:new Date(),type:"Credit"
+        }})
+        setBalance('');
+    }
+    const handleName = () => {
+        dispatch(name_action(name));
+        setName('');
+    }
+    const handleMobile = () => {
+        dispatch(mobile_action(Number(mobile)));
+        setMobile('');
+    }
+    const handleReset = () =>{
+        dispatch({type:'account/reset'})
+    }
+    return(
+        <>
+            <div>
+                <h1>🏦 Bank Account</h1>
+                <h1>Name :{data.account.fullName}</h1>
+                <h1>Balance :₹{data.account.balance}</h1>
+                <h1>Mobile Number :{data.account.mobile}</h1>
+                <div style={{paddingTop : "50px",margin : "5px"}}>
+                    Amount:<input type="tel"
+                    value={balance}
+                    onChange={(e)=>{setBalance(e.target.value)}}
+                    pattern='[0-9]'
+                    />&nbsp;
+                    <button onClick={handleDeposit}>Deposit</button>&nbsp;
+                    <button onClick={handleWithDraw}>WithDraw</button>
+                </div><br/>
+                <div style={{margin : "5px"}}>
+                    Name :<input type="text"
+                    value={name}
+                    onChange={(e)=>{setName(e.target.value)}}
+                    />&nbsp;
+                    <button onClick={handleName}>Update Name</button>
+                </div><br/>
+                <div style={{margin : "5px"}}>                    
+                    Phone Number :<input type="tel"
+                    value={mobile}
+                    onChange={(e)=>{setMobile(e.target.value)}}
+                    />&nbsp;
+                    <button onClick={handleMobile}>Update Phone Number</button>
+                </div>
+                <br/>
+                <button onClick={handleReset} style={{margin : "5px"}}>Reset</button>
+            </div>
+            <table border={"5px"} align={"center"} width={"75%"} rules={"all"}>
+                <thead>
+                    <tr>
+                        <th>Transaction Id</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                        {
+                            data.transaction.map((tr,index)=>(
+                                <tr key={tr.id}>
+                                    <td>{tr.id}</td>
+                                    <td>{tr.date.toString()}</td>
+                                    <td>{tr.type}</td>
+                                    <td>{tr.amount}</td>
+                                </tr>
+                            ))
+                        }
+                </tbody>
+            </table>
+        </>
+    )
+}
+
+export default App;
+
+index.js
+
+import App from './App';
+import {Provider} from 'react-redux';
+import Store from './Store';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+        <Provider store={Store}>
+                <App/>
+        </Provider>
+);
+

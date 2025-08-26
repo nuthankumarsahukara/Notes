@@ -1,0 +1,202 @@
+In Spring Framework, IoC (Inversion of Control) and DI (Dependency Injection) are core concepts used to manage object creation and wiring.
+
+IoC: Spring controls the creation and lifecycle of objects.
+DI: Spring injects the required dependencies into a class (via constructor, setter, or field).
+
+Bean : A Spring Bean is an object that is managed by the Spring IoC (Inversion of Control) container.
+
+Using XML Configuration:
+<bean id="studentBean" class="com.example.Student"/>
+
+You can also inject values:
+<bean id="studentBean" class="com.example.Student">
+    <property name="id" value="101" />
+    <property name="name" value="Alice" />
+</bean>
+
+Using Annotations (@Component, @Service, @Repository, @Controller):
+@Component
+public class Student {
+   ...
+}
+
+How Beans Are Created?
+Spring creates Beans when:
+--->The application starts (for singleton scope)
+--->You explicitly request it (for prototype scope)
+--->They are injected somewhere using @Autowired, XML, or @Bean method
+
+
+Bean Lifecycle
+
+1. Instantiation – Object is created
+2. Dependency Injection – Properties are set
+3. Initialization – @PostConstruct or init-method is called
+4. Ready to Use
+5. Destruction – @PreDestroy or destroy-method is called
+
+Bean Scopes
+
+Scope			Description
+singleton		(default) One shared bean for the app
+prototype		A new bean is created each time it's needed
+request		One bean per HTTP request (web only)
+session		One bean per HTTP session (web only)
+
+<bean id="studentBean" class="com.example.Student" scope="prototype"/>
+
+Dependency Injection in Beans
+
+Type		Annotation / Config
+Constructor DI	@Autowired on constructor
+Setter DI	@Autowired on setter
+Field DI		@Autowired on field
+
+How to Access a Bean?
+Using ApplicationContext:
+
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+Student s = context.getBean("studentBean", Student.class);
+
+Using Spring Boot:
+
+@Autowired
+private Student student;
+
+Summary :-
+--->Spring Bean = Java Object managed by Spring
+--->Created via XML, Annotations, or Java config
+--->Supports different scopes and injection types
+--->Used everywhere in Spring: Service layers, DAOs, Controllers
+
+
+Example :-
+
+Student.java
+public class Student {
+    private int id;
+    private String name;
+    private Course course;
+
+    // Constructor
+    public Student(int id, String name, Course course) {
+        this.id = id;
+        this.name = name;
+        this.course = course;
+    }
+
+    public void displayStudentInfo() {
+        System.out.println("Student ID: " + id);
+        System.out.println("Student Name: " + name);
+        course.displayCourseInfo();
+    }
+}
+
+Course.java
+public class Course {
+    private String courseName;
+    private int duration;
+
+    // Constructor
+    public Course(String courseName, int duration) {
+        this.courseName = courseName;
+        this.duration = duration;
+    }
+
+    public void displayCourseInfo() {
+        System.out.println("Course Name: " + courseName);
+        System.out.println("Duration: " + duration + " months");
+    }
+}
+
+Spring Configuration (applicationContext.xml)
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define Course Bean -->
+    <bean id="courseBean" class="com.spring.Course">
+        <constructor-arg value="Java Full Stack" />
+        <constructor-arg value="6" />
+    </bean>
+
+    <!-- Define Student Bean with DI -->
+    <bean id="studentBean" class="com.spring.Student">
+        <constructor-arg value="101" />
+        <constructor-arg value="Alice" />
+        <constructor-arg ref="courseBean" />
+    </bean>
+
+</beans>
+
+App.java
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+        Student student = (Student) context.getBean("studentBean");
+        student.displayStudentInfo();
+    }
+}
+
+IoC: Spring controls object creation using XML config.
+DI: Course object is injected into Student via constructor.
+
+
+By UserInput :-
+
+package com.datapro;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) {
+        // Initialize Spring Context
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter student ID: ");
+        int studentId = scanner.nextInt();
+        scanner.nextLine();  // Consume the newline character after the integer input
+
+        System.out.print("Enter student name: ");
+        String studentName = scanner.nextLine();
+
+   
+        System.out.print("Enter course name: ");
+        String courseName = scanner.nextLine();
+
+        System.out.print("Enter course duration (in months): ");
+        int courseDuration = scanner.nextInt();
+
+        Course course=context.getBeanCourse.class,courseName,courseDuration);
+        Student student=context.getBean(Student.class,studentId,studentName,course);	
+        userStudent.displayStudentInfo();
+        scanner.close();
+    }
+}
+
+applicationContext.xml
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Prototype beans (empty initially) -->
+    <bean id="course" class="com.example.Course" scope="prototype"/>
+    <bean id="student" class="com.example.Student" scope="prototype"/>
+</beans>
+
+
+

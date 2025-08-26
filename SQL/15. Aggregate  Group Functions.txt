@@ -1,0 +1,27 @@
+Oracle Aggregate / Group Functions
+Oracle Aggregate function is a type of function which operates on specified column and returns a single row result. These functions are mostly used in a query which contains GROUP BY clause in a SELECT statement where GROUP BY clause groups the rows as per specified condition and AGGREGATE function performs aggregation on the grouped data.
+	•It returns a single row result based on groups of rows conditions.
+	•Aggregate functions can be used in SELECT statement.
+	•Aggregate functions can be used in HAVING clause as a condition.
+	•It returns one result per group as an output.
+	•The group of rows can be the whole table or the rows split into many groups.
+
+Syntax of Oracle Aggregate Functions
+GroupFunctionName (DISTINCT / ALL ColumnName)
+
+Guidelines to Use:
+-->DISTINCT keyword is used to ignore duplicate values and function consider only non-duplicate values.
+-->ALL keyword is used to consider all values for the aggregate operation including duplicates.
+-->CHAR, VARCHAR2, NUMBER or DATE data types can be used for argument.
+-->All group function except COUNT(*) function ignore NULLs. The NVL function can be a better option to substitute a value for NULLS.
+-->No single row column(s) should be used with group function in SELECT statement without GROUP BY clause.
+
+Important Aggregate Functions:
+Functions		Description
+AVG()		It returns an average value of given expression.
+SUM()		It returns the sum value of given expression.
+MAX ()		It returns maximum value of given expression.
+MIN ()		It returns minimum value of given expression.
+COUNT()		It returns total no of rows for the given expression.
+STDDEV ()	It returns the standard deviation of the column.
+VARIANCE ( )	It returns the variance.

@@ -1,0 +1,141 @@
+Subqueries in Oracle
+In Oracle, a subquery is a query within a query. We can create subqueries within our SQL statements. These subqueries can reside in the WHERE clause, in the FROM clause, or in the SELECT clause.
+
+A query inside another query is called a subquery or nested query in Oracle. The subquery is having two more queries. those are as follows,
+1. Inner / Child / Sub query
+2. Outer / Parent/Main query
+
+Syntax: SELECT * FROM <TN> WHERE <CONDITION> (SELECT * FROM .................);
+
+As per the execution process of the subquery, it is again classified into two categorized.
+1. Non-Correlated Subqueries: In non-correlated subqueries, first, the inner query will execute and return value, and later outer query will execute.
+2. Correlated Subqueries: In Correlated subqueries first outer query will execute and return value and later inner query will execute.
+
+The Non-Correlated Subqueries are again classified into 4 types are as follows.
+1. Single Row Subquery
+2. Multiple Row Subquery
+3. Multiple Column Subquery
+4. Inline View Subquery
+
+Oracle Single Row Subquery:-
+When a Subquery returns a single value is called a Single Row Subquery. In Single Row Subquery we can use operators such as =, <, >, <=, >=,!=.
+syntax: 
+SELECT * FROM <TN> WHERE <COL> > (SELECT <COL1>,<COL2>,....... FROM <TN>);
+
+Examples:
+1.Display Who is getting the first high salary from the Employee table?
+select * from employee where sal=(select max(sal) from employee);
+
+2.Display Whose employee job is the same as the job of 'SMITH'?
+select * from employee where job=(select job from employee where ename='SMITH');
+
+3.Display Whose salary is more than the max salary of the job is "SALESMAN"?
+select * from employee where sal>(select max(sal) from employee where job='SALESMAN');
+
+4.Display Whose employee job is same as the job of "JOHN" and who are earning Salary more than "JOHN" salary?
+select from employee where job=(select job from employee where ename='JOHN') and sal> (select sal from employee where ename='JOHN');
+
+5.Display senior employee?
+SELECT * FROM EMPLOYEE WHERE HIREDATE=(SELECT MIN(HIREDATE) FROM EMPLOYEE);
+
+6.Find the second-highest Salary from the Employee table? 
+SELECT MAX(SAL) FROM EMPLOYEE WHERE SAL<(SELECT MAX(SAL) FROM EMPLOYEE);
+
+7.Display employee details who are getting the Second highest Salary in the Employee table?
+SELECT * FROM EMPLOYEE WHERE SAL=(SELECT MAX(SAL) FROM EMPLOYEE WHERE SAL< (SELECT MAX(SAL) FROM EMPLOYEE));
+
+8.Display employee details who are getting 3rd highest Salary in Employee table?
+SELECT * FROM EMPLOYEE WHERE SAL= (SELECT MAX(SAL) FROM EMPLOYEE WHERE SAL< (SELECT MAX(SAL) FROM EMPLOYEE WHERE SAL< (SELECT MAX(SAL) FROM EMPLOYEE)));
+
+9.Display employs who are in "SALES' department.
+SELECT * FROM EMPLOYEE WHERE DEPTNO=(SELECT DEPTNO FROM DEPT WHERE DNAME='SALES');
+
+10.Display the Total salary in 'SALES' department.
+SELECT SUM(SAL) FROM EMPLOYEE WHERE DEPTNO=(SELECT DEPTNO FROM DEPT WHERE DNAME='SALES');
+
+11.To update employee salary with max. salary of Employee table whose empno is 1801? UPDATE EMPLOYEE SET SAL=(SELECT MAX(SAL) FROM EMPLOYEE) WHERE EMPNO=1801;
+
+12.Delete employee details from the Employee table whose job is the same as the job of 'TARAN'?
+DELETE FROM EMPLOYEE WHERE JOB= (SELECT JOB FROM EMPLOYEE WHERE ENAME='TARAN');
+
+
+Multiple Row Subquery in Oracle
+When a Subquery returns more than one value is called a Multiple Row Subquery in Oracle. In this Multiple Row Subquery, we can use the operators such as IN, ANY, ALL.
+Syntax:SELECT * FROM <TN> WHERE <COL> IN (SELECT <COL1>,<COL2>,....... FROM <TN>);
+
+Multiple Row Subquery  Example:
+1.Employee details whose employee job is same as the job of the employee "SMITH", and "SHIVA"?
+SELECT * FROM EMPLOYEE WHERE JOB IN (SELECT JOB FROM EMPLOYEE WHERE ENAME='SMITH' OR ENAME='SHIVA');
+
+2.Display employee details who are getting min, max salaries?
+SELECT * FROM EMPLOYEE WHERE SAL IN(
+SELECT MIN(SAL) FROM EMPLOYEE
+UNION
+SELECT MAX(SAL) FROM EMPLOYEE);
+
+3.Display all employees, whose salary is more than any "SALESMAN" salary?
+SELECT * FROM EMPLOYEE WHERE SAL>ANY (SELECT SAL FROM EMPLOYEE WHERE JOB='SALESMAN');
+
+4.Display all employees, whose salary is more than all "SALESMAN" salary?
+SELECT * FROM EMPLOYEE WHERE SAL>ALL (SELECT SAL FROM EMPLOYEE WHERE JOB='SALESMAN');
+
+Multiple Column Subquery in Oracle
+Multiple columns values of the inner query compared with multiple columns values of the outer query is called Multiple Column Subquery in Oracle.
+syntax: 
+SELECT * FROM <TN> WHERE(<COL1>,<COL2>,............) IN(SELECT <COL1>,<COL2>,....... FROM <TN>);
+
+Multiple Column Subquery Examples:-
+1.Display all employs who are earning Job wise maximum salaries
+SELECT * FROM EMPLOYEE WHERE (JOB, SAL) IN (SELECT JOB, MAX(SAL) FROM EMPLOYEE GROUP BY JOB);
+
+2.Display employee whose JOB, MGR is same as the JOB, MGR of the employee "TARUN"?
+SELECT * FROM EMPLOYEE WHERE (JOB, MGR) IN(SELECT JOB, MGR FROM EMPLOYEE WHERE ENAME='TARUN');
+
+Inline View Subquery in Oracle
+It is special type of subquery in Oracle Providing a select query in place of table name in select statement.
+syntax:
+SELECT * FROM <TABLE NAME>; - SQL SELECT QUERY
+SELECT * FROM (<SELECT QUERY>); -INLINE VIEW
+
+Note:
+1.Generally, Subquery is not allowed to use "order by" clause. So that we use "inline view”.
+2.Generally, Column alias names are not allowed to use in "where" clause Condition. So that we use "inline view”.
+
+Inline View Subquery Examples:-
+
+1.Display employees whose annual salary is more than 25000?
+SELECT * FROM (SELECT ENAME, SAL, SAL*12 ANNUSAL FROM EMPLOYEE) WHERE ANNUSAL>25000;
+
+2.Display the first five highest salaries from Employee table by using ROWNUM along with inline view? 
+Select * FROM (SELECT * FROM EMPLOYEE ORDER BY SAL DESC) WHERE ROWNUM<=5;
+
+3.Display 5th highest salary of employee from Employee table by using ROWNUM along with inline view?
+SELECT * FROM (SELECT * FROM EMPLOYEE ORDER BY SAL DESC) WHERE ROWNUM<=5 MINUS
+SELECT * FROM (SELECT * FROM EMPLOYEE ORDER BY SAL DESC) WHERE ROWNUM<=4;
+
+4.Display 1st, 3rd, 5th, 7th, 9th rows from employee table by using ROWNUM alias name along with inline view? 
+SELECT * FROM (SELECT ROWNUM R, EMPLOYEE.* FROM EMPLOYEE) WHERE R IN(1,3,5,7,9);
+
+5.Display first row and last row from employee table by using ROWNUM alias name along with inline view?
+SELECT * FROM (SELECT ROWNUM R, EMPLOYEE.* FROM EMPLOYEE) WHERE R=1 OR R=(SELECT COUNT(*) FROM EMPLOYEE);
+
+Correlated Subqueries:
+A correlated subquery is evaluated once for each row processed by the parent statement. A correlated subquery is one way of reading every row in a table and comparing values in each row against related data. It is used whenever a subquery must return a different result or set of results for each candidate row considered by the main query. In other words, you can use a correlated subquery to answer a multipart question whose answer depends on the value in each row processed by the parent statement.
+Syntax:	SELECT column1, column2, .... FROM table1 outer WHERE column1 operator
+	(SELECT column1, column2 FROM table2 WHERE expr1 = outer.expr2);
+
+Correlated Subqueries:-
+1.Find all the employees who earn more than the average salary in their department.
+select ename, sal, deptno from employee outer where sal>(select avg(sal) from employee where deptno=outer.deptno);
+
+2.Find the employees who earn highest salary in their department.
+select ename,sal,job,deptno from employee outer where sal=(select max(sal) from employee where deptno=outer.deptno);
+
+3.Find the employees who earn lowest salary in their department.
+select ename,sal,job,deptno from employee outer where sal=(select min(sal) from employee where deptno=outer.deptno);
+
+4.Ex of using EXIST operator : Find employees who have at least one person reporting to them.
+select empno, ename, job, deptno from employee outer where exists( select 'x' from employee where mgr=outer.empno);
+
+5.Example of using NOT EXIST operator: Find all departments that do not have any employees.
+select deptno, dname from dept d where not exists (select 'x' from employee where deptno=d.deptno);

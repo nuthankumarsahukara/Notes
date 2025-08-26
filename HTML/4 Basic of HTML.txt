@@ -1,0 +1,164 @@
+HTML Tags Ordered by Category
+1 Basic HTML
+2 Formatting
+3 Forms and Input
+4 Frames
+5 Images
+6 Audio / Video
+7 Links
+8 Lists
+9 Tables
+10 Semantics
+
+1 Basic HTML:
+1 <!DOCTYPE>  	
+2 <html> 		
+3 <title> 		
+4 <body> 		
+5 <h1> to <h6> 	
+6 <p> 		
+7 <br> 		
+8 <hr> 		
+9 <!--...--> 
+
+Headings in html:
+In html, we are having six heading styles. All the headings are paired tags. Each and every heading will have their own predefined styles.
+
+Syntax:
+<h1>--------------------------</h1>
+<h2>--------------------------</h2>
+<h3>--------------------------</h3>
+<h4>--------------------------</h4>
+<h5>--------------------------</h5>
+<h6>--------------------------</h6>
+
+Out of all heading styles, biggest heading style is h1 and smallest is h6.
+
+Attributes		Parameters
+align			left, right, center
+
+Example
+<html>
+<head>
+<title>
+Headings in HTML..!!
+</title>
+</head>
+<body>
+<h1>Welcome to Datapro Technologies in Header One</h1>
+<h2>Welcome to Datapro Technologies in Header Two</h2>
+<h3>Welcome to Datapro Technologies in Header Three</h3>
+<h4>Leader in IT Training in Header Four</h4>
+<h5>Welcome to Datapro Technologies in Header Five</h5>
+<h6>Welcome to Datapro Technologies in Header Six</h6>
+</body>
+</html>
+
+Paragraph tag:
+It is used to divide the text into different paragraphs. It is a paired tag.
+
+Syntax: <p>-------------</p>
+
+Attributes		Parameters
+align			left, right, center, justify
+
+Example
+<html>
+<head>
+<title>
+Paragraph tag
+</title>
+</head>
+<body>
+<p align="center"> Welcome to Datapro</p>
+<p align="left">Welcome to Datapro  </p>
+<p align="right">Welcome to Datapro </p>
+<p align="justify">Some text...</p>
+</body>
+</html>
+
+<br> tag
+br stands for break. It is used to break a line and shift the following text to a new line. It is a non-paired tag.
+
+Syntax:	
+<br/> or <br>
+
+Example:
+<html>
+<title>
+Welcome to HTML
+</title>
+<body>
+To break<br />lines<br />in a<br />paragraph,<br />use the br element.
+</body>
+</html>
+
+&nbsp;
+It stands for Non-Breaking Space. It is used to add more than one space between the words. It is a special Characters or entity
+
+Syntax: 
+&nbsp;
+
+Example:
+<!doctype html>
+<html>
+<title>
+Special Character	
+</title>
+<body>
+This is example using special &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp codes<br>
+a &lt b <br/>
+&copy &trade;&amp;&142
+</body>
+</html>
+
+HR tag: (Horizontal Rule)
+hr tag is used to draw a line across the web page. It is non-paired tag.
+
+Syntax: <hr> or <hr/>
+
+Attributes 	Parameters
+color		ColorName/HexaColorCode
+size		pix
+width		% or pix	
+align		left, right, center
+noshade		noshade
+
+Note:
+1. The default width of the horizontal rule is 100%
+2. The default alignment of the hr is center.
+3. noshade attribute will be applied only when we are not specifying the color of the horizontal rule.
+
+Example
+<html>
+<title>
+hr tag
+</title>
+<head>
+<b><h1 align="center">I am Learning Web Language HTML</b></h1>
+</head>
+<body>
+<p>Datapro </p>
+<hr  size="4pix" width=20% align="right" noshade="noshade">
+<p>Leader in IT Training.</p>
+<hr>
+<p>Dwarakanagar-Visakhapatnam.</p>
+</body>
+</html>
+
+Example9
+<html>
+<Title>
+Welcome to Datapro 
+</Title>
+<Head>
+<b><h1 align="center">I am Learning Web Language HTML</b></h1>
+</Head>
+<body>
+<p>Datapro</p>
+<hr  color="pink" size=18pix width=20% align="right">
+<p>Leader in IT Training.</p>
+<hr size=28pix color="red">
+<p>Dwarakanagar Visakhapatnam</p>
+</body>
+</html>

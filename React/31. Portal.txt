@@ -1,0 +1,138 @@
+What is a Portal?
+A Portal allows rendering a component outside its parent hierarchy in the DOM.
+
+Syntax:
+	ReactDOM.createPortal(child, container)
+	
+	child: The React element to render.
+	container: A DOM node (e.g. document.getElementById('portal-root')).
+
+Use Cases:
+-->Modals
+-->Tooltips
+-->Dropdowns
+-->Popovers
+-->Context menus
+
+--->Portals don’t break React hierarchy, but render outside the DOM hierarchy.
+--->Event bubbling still works through portals.
+--->Ideal when you need to avoid CSS stacking/overflow issues.
+
+
+Example:
+
+In public/index.html:
+
+<div id="root"></div>
+<div id="portal-root"></div>
+
+In Component:
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Modal({ children }) {
+  return ReactDOM.createPortal(
+    <div className="modal">{children}</div>,
+    document.getElementById('portal-root')
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Modal>Nuthan</Modal>
+    </>
+  );
+}
+
+export default App;
+
+In Props:
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Modal(props) {
+  return ReactDOM.createPortal(
+    <div className="modal">{props.content}</div>,
+    document.getElementById('portal-root')
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Modal content="Nuthan" />
+    </>
+  );
+}
+
+export default App;
+
+Model Example:-
+
+import './App.css';
+import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+const { useState, default: React } = require("react");
+
+function Modal(props){
+    return(
+        ReactDOM.createPortal(
+        <div className='model-overlay'>
+            <div className='content'>
+                <h1>This is Model heading</h1>
+                <p>This is Model content</p>
+                <button className='btn btn-danger' onClick={props.close}>Close</button>
+            </div>
+        </div>,document.body
+        )
+    )
+}
+
+function App(){
+    const[showModal,setShowModal]=useState(false);
+    
+    function toggleModal(){
+        setShowModal(!showModal)
+    }
+    
+    return(
+        <>
+            <div className="app">
+            <button className='btn btn-primary m-4' onClick={toggleModal}>Open Model</button>
+            {showModal && <Modal close={toggleModal}/>}
+            </div>
+        </>
+    )
+}
+
+export default App;
+
+App.css
+
+.model-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.app{
+    position: relative;
+}
+

@@ -1,0 +1,216 @@
+Constructors
+Constructors are the implicit method of an object that can be referred with the same name as that of the object type. Whenever the object is referred for the first time, this constructor will be called implicitly. We can also initialize the objects using these constructor. In most case, this initialization assigns values to the object's members. The constructor can be defined explicitly by defining the member in object type body with the same name of the object type. While an ordinary function returns some type, a constructor function returns self as result.
+
+Declaration and Initialization of Object Type
+Like other components in PL/SQL, object types are also needed to be declared before using them in the program.
+
+Once the object type is created it can be used in subprogram declarative section to declare a variable of that object type. Whenever any variable is declared in the subprogram as object type, at run-time a new instance of the object type will be created, and this newly created instance can be referred to the variable name. By this way, a single object type can store multiple values under different instances.
+
+Syntax:
+DECLARE
+<variable_name> <object_type_name>;
+BEGIN
+END;
+/
+Once the variable is declared as an object type in a subprogram, it will be atomically null i.e. the entire object itself a null. It needs to be initialized with values to use them in the program. They can be initialized using constructors.
+
+Constructors are the implicit method of an object that can be referred with the same name as that of the object type. The below syntax shows the initialization of the object type.
+Syntax:
+DECLARE
+<variable_name> <object_type_name>;
+BEGIN
+<variable_name>: <object_type_name>();
+END;
+
+Create Object in Oracle
+An Object type cannot be created at subprogram level, They can be created only at the schema level. Once the object type is defined in the schema, then the same can be used in subprograms. The object type can be created using 'CREATE TYPE'. The type body can be created only after creating its object type.
+
+Syntax: 
+CREATE TYPE <object_type_name> AS OBJECT (
+<attribute_1> <datatype>,
+);
+
+CREATE TYPE BODY <object_type_name> AS OBJECT
+(
+MEMBER PROCEDURE | FUNCTION] <member_name> 
+IS
+	<declarative section>
+BEGIN
+	<execution part>
+END;
+);
+/
+
+Example:-
+object creation
+
+create type ctor_test as object(
+txt varchar2(300),
+constructor function  ctor_test(pat varchar2, repeat number) return self as result,
+member procedure print
+);
+/
+
+object body:
+
+create type body ctor_test as
+
+constructor function ctor_test(pat varchar2, repeat number) return self as result 
+is begin
+	for i in 1 .. repeat loop
+		txt:= txt || pat;
+	end loop;
+	return;
+	end;
+member procedure print is begin
+	dbms_output.put_line(txt);
+end print;
+
+end;
+/
+
+calling the constructor:
+
+declare
+	a ctor_test;
+	b ctor_test;
+begin
+	a:=ctor_test('Datapro',5);
+	b:=ctor_test('vizag',5);
+	
+	a.print;
+	b.print;
+end;
+/	 
+
+Example 2:
+
+object creation:
+create type hai as object (
+	ename varchar2(100),
+	constructor function hai return self as result,
+	member procedure print
+);
+/
+
+object body creation:-
+create type body hai as
+
+constructor function hai return self as result
+is begin
+	ename:='datapro';
+return;
+end;
+member procedure print is begin
+	dbms_output.put_line(ename);
+end print;
+
+end ;
+/
+
+constructor calling
+decalre 
+	a hai;
+	b hai;
+begin
+	a:=hai();
+	b:=hai();
+	
+	a.print;
+	b.print;
+end;
+/
+
+Constructor Overloading:With same name with different signature  
+-----------------------------------
+object creation:-
+create or replace type obj_cons is object 
+(
+	obj_var1 varchar2(30),
+	constructor function obj_cons return self as result,
+	constructor function obj_cons(obj_var1 varchar2)return self as result
+) instantiable not final;
+/
+
+object body:-
+create or replace type body obj_cons is
+constructor function obj_cons return self as result is
+begin
+	self.obj_var1:='Default constructor ';
+	return;
+end obj_cons;
+constructor function obj_cons(obj_var1 varchar2)return self as result is
+begin
+	self.obj_var1:=obj_var1;
+	return;
+end obj_cons;
+end;
+/
+
+calling the constructor:-
+
+declare 
+	a obj_cons:=obj_cons();
+	b obj_cons:=obj_cons('overloading constructor !');
+begin
+	dbms_output.put_line(a.obj_var1);
+	dbms_output.put_line(b.obj_var1);
+end;
+/
+
+
+Example 2:
+
+create table empyz(eno number(4),ename varchar2(20),salary number,manager number(3));
+
+step 1: create object type and  object type body:
+
+create or replace type emp_object as object(
+emp_no number,
+emp_name varchar2(50),
+salary number,
+manager number,
+constructor function emp_object return self as result,
+member procedure insert_records,
+member procedure display_records);
+/
+
+create or replace type body emp_object as 
+constructor function emp_object return self as result
+is begin
+dbms_output.put_line('Default Constructor fired ..');
+self.emp_no:=1000;
+self.emp_name:='Raju';
+self.salary:=5000;
+self.manager:=1001;
+return;
+end; 
+
+member procedure insert_records
+is begin
+insert into empyz values(emp_no,emp_name,salary,manager);
+end;
+
+member procedure display_records
+is begin
+dbms_output.put_line('Employee Number'||emp_no);
+dbms_output.put_line('Employee Name'||emp_name);
+dbms_output.put_line('Employee Salary'||salary);
+dbms_output.put_line('Employee Manger'||manager);
+end;
+
+end;
+/
+
+step 2: Creating anonymous block to call created object type through implicit constructors
+
+declare 
+	emp_det emp_object;
+begin
+	emp_det:=emp_object();
+	
+	emp_det.insert_records;
+	emp_det.display_records;
+end;
+/
+ 

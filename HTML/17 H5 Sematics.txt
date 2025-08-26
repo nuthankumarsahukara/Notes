@@ -1,0 +1,115 @@
+HTML5 <bdo> Tag
+bdo stands for Bi-Directional Override. The <bdo> tag is used to override the current text direction. This can be useful when displaying hebrew, arabic, and other languages/scripts that are written from right to left. It is a paired tag.
+
+Syntax: <bdo>......................</bdo>
+
+Attributes
+Attribute	Value	Description
+dir	ltr    	Specifies the text direction
+	rtl	Specifies the text direction
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+</head>
+<body>
+<bdo dir="ltr">
+How to override text direction? 
+I think you already know!
+</bdo>
+<br/>
+<bdo dir="rtl">
+How to override text direction? 
+I think you already know!
+</bdo>
+ </body>
+</html>
+
+<bdi>
+Bi-directional Isolation. This can be useful when displaying right-to-left text (such as Arabic) inside left-to-right text (such as English) when the text-direction is unknown. It is a paired tag.
+
+Syntax: 
+<bdi>..............................</bdi>
+
+Attributes 
+Element-Specific Attributes are None.
+
+Example:
+<!DOCTYPE HTML>
+<body>
+<ul>
+ <li>User <bdi>hrefs</bdi>: 60 points</li>
+ <li>User <bdi>jdoe</bdi>: 80 points</li>
+ <li>User <bdi>إيان</bdi>: 90 points</li>
+</ul>
+ </body>
+</html>
+
+<ruby>
+It used for specifying Ruby annotations, which is used in East Asian typography. It is a paired tag.
+
+Syntax: 
+<ruby>--------------------</ruby>
+
+Attributes:
+Element-Specific Attributes None.
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+ <p>...<ruby>漢<rt>かん</rt>字<rt>じ</rt></ruby>...</p>
+</body>
+</html>
+
+<rt> (Ruby Text)
+It marks the Ruby Text component of a ruby annotation.Ruby annotations are used in East Asian typography. It is a paired tag. 
+
+Syntax: 
+<rt>..................</rt>
+
+Attributes:
+Element-Specific Attributes None.
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<ruby>
+ <rt> </rt>
+</ruby>
+</body>
+</html>
+
+<rp>
+The HTML <rp> is used in ruby annotations for the benefit of browsers that don't support ruby annotations. It is  a paired tag.
+
+Syntax:
+<rp>---------------------</rp>
+
+Attributes:
+Element-Specific Attributes None.
+
+Example:
+<!DOCTYPE html>
+<html>
+<body>
+<ruby>
+ <rt><rp>(</rp><rp>)</rp></rt>
+</ruby>
+</body>
+</html>
+
+Example:
+<body style="font: 75% Lucida Grande, Trebuchet MS">
+    きのうの豪雨で山の水源地は<ruby>氾濫<rp>（</rp>
+    <rt>はんらん</rt><rp>）</rp></ruby>し、濁流
+    <ruby>滔々<rp>（</rp><rt>とうとう</rt><rp>）</rp>
+    </ruby>と下流に 集り、猛勢一挙に橋を破壊し、どうどうと 
+    響きをあげる激流が、<ruby>木葉微塵<rp>（</rp>
+    <rt>こっぱみじん</rt><rp>）</rp></ruby>に<ruby>橋桁
+    <rp>（</rp><rt>はしげた</rt><rp>）</rp></ruby>
+    を跳ね飛ばしていた。
+  </body>

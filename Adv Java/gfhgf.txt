@@ -1,0 +1,15 @@
+Login.jsp
+
+session.setAttribute("loggedInUser",  rs.getString("name"));
+
+Table.jsp
+
+<%
+	String loggedInUser = (String) session.getAttribute("loggedInUser");
+	if (loggedInUser == null) {
+	    out.println("<h2>You need to log in to access this page.</h2>");
+	    out.println("<meta http-equiv='refresh' content='2; URL=Login.jsp'>");
+	    return;
+	}
+%>
+

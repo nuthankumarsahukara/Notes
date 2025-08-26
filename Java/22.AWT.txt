@@ -1,0 +1,309 @@
+AWT: Abstract Windowing Toolkit
+When a user want to interact with Application, the user has to provide some information to the application and it can be done in two ways
+1.Character user Interface
+2.Graphical user Interface
+
+Character user Interface: A character user interface (CUI) is a type of user interface that uses text-based input and output to communicate with a computer program. It is also known as a command-line user interface or non graphical user interface.
+
+Graphical user Interface:
+GUI stands for Graphical User Interface, which is a way for users to interact with electronic devices using visual indicators and graphical icons. GUIs are often used instead of text-based user interfaces, which require users to type text commands or navigate using text.
+
+GUIs can be found on websites, mobile devices, and desktop computers:
+
+collections of the all peer class is called as a PEER Service
+
+AWT components are designrd in c language,so it is platform dependent.
+
+component ---- PEER Class -----os
+
+How to create Frame In AWT:
+//Creating an object
+import java.awt.*;
+class Myframe1
+{
+	public static void main(String args[])
+	{
+		Frame f=new Frame("Welcome To AWT");
+		//f.setTitle("Welcome");
+		f.setSize(600,300);
+		f.setVisible(true);
+	}
+}
+
+Layout: It arrange the components to fit in the container
+AWT has 5 types of layouts
+Border Layout
+FLow Layout
+Grid Layout
+GridBag Layout
+Card Layout
+In AWT (Abstract Window Toolkit), various layout managers are used to arrange components in a container in a specific way. Here's an overview of the layout managers you mentioned:
+
+1.  Border Layout 
+   The  BorderLayout  divides the container into five regions:  North ,  South ,  East ,  West , and  Center . Each region can hold one component, and the layout adjusts the size and position of components based on the container's size. Components in the  Center  region will expand to fill the available space, while others are resized according to their own preferred sizes.
+
+Example: 
+import java.awt.*;
+
+class MyFrame2 extends Frame
+{
+	Button b1,b2,b3,b4,b5;
+	public MyFrame2()
+	{
+		super("Welcome to AWT");
+		b1=new Button("A");
+		b2=new Button("B");
+		b3=new Button("C");
+		b4=new Button("D");
+		b5=new Button("E");
+		add(b1,BorderLayout.NORTH);
+		add(b2,BorderLayout.SOUTH);
+		add(b3,BorderLayout.EAST);
+		add(b4,BorderLayout.WEST);
+		add(b5,BorderLayout.CENTER);
+		setSize(400,500);
+		setVisible(true);
+	}
+	public static void main(String args[])
+	{
+		new MyFrame2();
+		
+	}
+}
+
+2.  Flow Layout 
+   The  FlowLayout  manager arranges components in a left-to-right flow, like words on a page. When the container's width is filled, it wraps the components to the next line. It can be used with three alignment options:  left ,  center , and  right . 
+
+Example 1:
+
+//Creating an object
+import java.awt.*;
+class MyFrame3 extends Frame
+{
+	Button b1;
+	Label la;
+	TextField tf;
+	TextArea ta;
+	List l;
+	Choice c;
+	Checkbox cb1,cb2,cb3,cb4;
+	CheckboxGroup cg;
+	public MyFrame3()
+	{
+		super("Welcome to AWT");
+		b1=new Button("Hello");
+		la=new Label("King is King");
+		tf=new TextField("Datapro");
+		ta=new TextArea();
+		l=new List(5);
+		l.add("Sun");
+		l.add("Mon");
+		l.add("Tue");
+		l.add("Wed");
+		l.add("Thu");
+		l.add("Fri");
+		l.add("Sat");
+
+		c=new Choice();
+		c.add("Sun");
+		c.add("Mon");
+		c.add("Tue");
+		c.add("Wed");
+		c.add("Thu");
+		c.add("Fri");
+		c.add("Sat");
+		cb1=new Checkbox("Male");
+		cb2=new Checkbox("FeMale",true);
+
+		cg=new CheckboxGroup();
+		cb3=new Checkbox("Male",true,cg);
+		cb4=new Checkbox("FeMale",cg,false);
+
+		add(b1);	
+		add(la);
+		add(tf);
+		add(ta);
+		add(l);
+		add(c);
+		add(cb1);
+		add(cb2);
+		add(cb3);
+		add(cb4);
+		FlowLayout fl=new FlowLayout();
+		setLayout(fl);
+		setSize(400,500);
+		setVisible(true);
+	}
+	public static void main(String args[])
+	{
+		new MyFrame3();
+		
+	}
+}
+ 
+Example 2:
+   import java.awt.*;
+   public class FlowLayoutExample {
+       public static void main(String[] args) {
+           Frame frame = new Frame("Flow Layout Example");
+           frame.setLayout(new FlowLayout(FlowLayout.CENTER));
+           
+           frame.add(new Button("Button 1"));
+           frame.add(new Button("Button 2"));
+           frame.add(new Button("Button 3"));
+           frame.add(new Button("Button 4"));
+           
+           frame.setSize(400, 300);
+           frame.setVisible(true);
+       }
+   }
+ 
+3.  Grid Layout 
+   The  GridLayout  manager arranges components in a grid of rows and columns. All components have the same size, and the layout adjusts to fill the grid. You define the number of rows and columns when initializing the layout.
+Example:
+   import java.awt.*;
+   public class GridLayoutExample {
+       public static void main(String[] args) {
+           Frame frame = new Frame("Grid Layout Example");
+           frame.setLayout(new GridLayout(2, 3)); // 2 rows, 3 columns
+           
+           frame.add(new Button("Button 1"));
+           frame.add(new Button("Button 2"));
+           frame.add(new Button("Button 3"));
+           frame.add(new Button("Button 4"));
+           frame.add(new Button("Button 5"));
+           frame.add(new Button("Button 6"));
+           
+           frame.setSize(400, 300);
+           frame.setVisible(true);
+       }
+   }
+
+  4.  GridBag Layout 
+   The  GridBagLayout  is a more flexible and complex layout manager. It allows you to specify the row and column position of components in a grid, and components can span multiple rows or columns. You control their alignment, resizing behavior, and other properties by using  GridBagConstraints .
+
+Example:
+   import java.awt.*;
+   public class GridBagLayoutExample {
+       public static void main(String[] args) {
+           Frame frame = new Frame("GridBag Layout Example");
+           frame.setLayout(new GridBagLayout());
+           GridBagConstraints gbc = new GridBagConstraints();
+           
+           gbc.gridx = 0;
+           gbc.gridy = 0;
+           frame.add(new Button("Button 1"), gbc);
+           
+           gbc.gridx = 1;
+           gbc.gridy = 0;
+           frame.add(new Button("Button 2"), gbc);
+           
+           gbc.gridx = 0;
+           gbc.gridy = 1;
+           frame.add(new Button("Button 3"), gbc);
+           
+           gbc.gridx = 1;
+           gbc.gridy = 1;
+           frame.add(new Button("Button 4"), gbc);
+           
+           frame.setSize(400, 300);
+           frame.setVisible(true);
+       }
+   }
+  5.  Card Layout 
+   The  CardLayout  allows you to stack components like a deck of cards, where only one card is visible at a time. You can switch between different cards (components) by invoking methods like  next() ,  previous() , or  show() .
+
+Example:   
+   import java.awt.*;
+   public class CardLayoutExample {
+       public static void main(String[] args) {
+           Frame frame = new Frame("Card Layout Example");
+           CardLayout cardLayout = new CardLayout();
+           Panel panel = new Panel();
+           panel.setLayout(cardLayout);
+           
+           panel.add(new Button("Card 1"), "Card 1");
+           panel.add(new Button("Card 2"), "Card 2");
+           panel.add(new Button("Card 3"), "Card 3");
+           
+           frame.add(panel);
+           
+           // Show the second card
+           cardLayout.show(panel, "Card 2");
+           
+           frame.setSize(400, 300);
+           frame.setVisible(true);
+       }
+   }
+Summary of Layout Managers:
+
+1.  BorderLayout : Divides the container into five regions (North, South, East, West, Center).
+2.  FlowLayout : Components are arranged in a line and wrap to the next line when space is insufficient.
+3.  GridLayout : Components are arranged in a grid with equal-sized cells.
+4.  GridBagLayout : Flexible grid layout allowing components to span multiple rows and columns, with precise control over positioning and resizing.
+5.  CardLayout : Displays one component at a time, simulating a deck of cards, with easy navigation between them.
+
+
+Notepad Example:
+import java.awt.*;
+import java.awt.event.*;
+class Notepad
+{
+	public Notepad()
+	{
+	Frame f =new Frame("Nuthan Notepad - Notepad");
+	TextArea ta =new TextArea();
+	MenuBar mb= new MenuBar();	
+	Menu file=new Menu ("File");
+		
+	MenuItem fnew=new MenuItem("New",new MenuShortcut(KeyEvent.VK_F5));
+	MenuItem fnewwin=new MenuItem("New WIndow");
+	MenuItem fopen=new MenuItem("Open");
+	MenuItem fsave=new MenuItem("Save");
+	MenuItem fsaveas=new MenuItem("Save As");
+	MenuItem fprint=new MenuItem("Print");
+	MenuItem fexit =new MenuItem("Exit");
+	mb.add(file);
+	
+	file.add(fnew);
+	file.add(fnewwin);
+	file.add(fopen);
+	file.addSeparator();
+	file.add(fsave);
+	file.add(fsaveas);
+	file.addSeparator();
+	file.add(fprint);
+	file.add(fexit);
+
+	Menu format=new Menu("Format");
+	MenuItem fwordwrap=new MenuItem("Word Wrap");
+	MenuItem ffont=new MenuItem("Font...");
+	mb.add(format);
+
+	format.add(fwordwrap);
+	format.add(ffont);
+
+	Menu view=new Menu("View");
+	Menu vzoom=new Menu("Zoom");
+	MenuItem zoomin=new MenuItem("Zoom In");
+	MenuItem zoomout=new MenuItem("Zoom Out");
+	mb.add(view);
+	view.add(vzoom);
+	vzoom.add(zoomin);
+	vzoom.add(zoomout);
+	
+
+	f.add(ta);
+	f.setMenuBar(mb);
+	f.setSize(1000,500);
+	f.setVisible(true);
+	}
+	
+	public static void main(String Args[])
+	{
+		new Notepad();
+	}
+}
+
+
+

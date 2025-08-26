@@ -1,0 +1,106 @@
+useContext is a React Hook that allows you to access values from a React Context directly in your components without having to pass props manually at every level of the component tree.
+
+Basic Steps to Use useContext
+1. Create a Context
+
+import React, { createContext } from 'react';
+export const MyContext = createContext(); 
+
+2. Provide the Context
+Wrap your component tree (or a part of it) in the MyContext.Provider and pass the value you want to share.
+
+<MyContext.Provider value={{ username: 'john_doe' }}>
+  <MyComponent />
+</MyContext.Provider>
+
+3. Consume the Context with useContext
+In any child component, use the useContext hook to access the shared value.
+
+import React, { useContext } from 'react';
+import {MyContext} from './App' 
+
+const MyComponent = () => {
+  const context = useContext(MyContext);
+  return <p>Username: {context.username}</p>;
+};
+
+Why Use useContext?
+--->Avoid prop drilling (passing props through many layers)
+--->Easy to access shared state/data
+--->Cleaner code in deeply nested components
+
+
+Example:- AppPage->HomePage->ProductList->ProductPage
+import HomePage from "./HomePage";
+import {createContext} from "react";
+
+export const MyContext=createContext();
+
+1.App.js
+
+function App(){
+  let data={
+    name :"Nuthan",
+    age :25,
+    place :"Vizag"
+  }
+
+  return(
+    <>
+      <h1>This is App Page Component</h1>
+      <MyContext.Provider value={data}>
+        <HomePage/>
+      </MyContext.Provider>      
+    </>
+  )
+}
+
+export default App;
+
+2.Hompage.js
+
+import ProductList from "./ProductList";
+
+function HomePage(){
+    return (
+        <>
+            <h1>This is Homepage Component</h1>
+            <ProductList/>
+        </>
+    )
+}
+
+export default HomePage;
+
+3.ProductList.js
+
+import ProductPage from "./ProductPage";
+
+function ProductList(){
+    return (
+        <>
+            <h1>This is ProductList Component</h1>
+            <ProductPage />
+        </>
+    )
+}
+export default ProductList;
+
+4.ProductPage.js
+
+import { useContext } from "react";
+import { MyContext } from "./App";
+
+function ProductPage(){
+    let data=useContext(MyContext);
+    return (
+        <>
+            <h1>This is Product page Component</h1>
+            <p>Name :{data.name}</p>
+            <p>Age :{data.age}</p>
+            <p>Place :{data.place}</p>
+        </>
+    )
+}
+
+export default ProductPage;

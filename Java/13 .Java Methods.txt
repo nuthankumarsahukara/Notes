@@ -1,0 +1,124 @@
+Java Methods :-
+Methods in Java are blocks of code that perform a specific task, and they are used to organize code and make it more modular and reusable. we will explore the basics of Java methods, including how to define them, how to pass parameters, and how to return values.
+
+Two Types of Methods:
+1.Predefined Method 
+	Predefined methods are methods that are already written in a programming language and can be used by the programmer without needing to be created. They are also known as built-in methods or standard library methods. 
+
+2.Userdefined Method
+	The method written by the user or programmer is known as a user-defined method. These methods are modified according to the user requirement.
+
+How many ways we can define Methods in java :-
+We can Define in 4 ways
+1.With Arguments and With Return Type
+2.Without Arguments and With Return Type 
+3.With Arguments and Without Return Type
+4.Without Arguments and Without Return Type
+
+Defining a Java Method
+	Syntax: 	accesspecifier returntype method_name(Arguments)
+		{
+			Statements;
+			return value;
+		}
+In order to define a method in Java, you use the keyword "public" (or "private" or "protected") followed by the return type of the method, then the name of the method, and finally a set of parentheses containing any parameters the method may take. For example, here is a simple function that takes no parameters and returns nothing:
+	public void sayHello() {  
+	  System.out.println("Hello, world!");  
+	}  
+
+In this case, the function is called "sayHello", it takes no parameters (i.e., the parentheses are empty), and it returns nothing (i.e., the return type is "void"). To call this function from another part of your code, you simply write its name followed by a set of parentheses, like this:
+	sayHello(); 
+
+Example:
+class MethodWOPWOR
+{
+	//Instance Method
+	public void add(){
+		int a=10,b=20;
+		System.out.println("The Sum is "+(a+b));				
+	}
+	//Static Method
+	public static void sub(){
+		int a=30,b=20;
+		System.out.println("The Sub is "+(a-b));	
+	}
+	public static void main(String args[])
+	{
+		//Object Creation for Instance Method
+		MethodWOPWOR obj=new MethodWOPWOR();
+		//Calling method by using Object Name			
+		obj.add();
+		//Without creating the object calling the method i.e static method
+		sub();
+	}
+}
+
+Passing Parameters to a Java Method
+
+Methods can also take one or more parameters, which are passed in as values when the method is called. To define a method that takes one or more parameters, you simply list them inside the parentheses when you define the method. Here's an example of a function that takes two parameters (both of type "int")
+
+	public void add(int a, int b) {  
+	 	System.out.println(a + b);  
+	}  
+
+In this case, the function is called "add", it takes two parameters (both of type "int"), and it prints their sum. To call this function and pass in two values, you would write:
+	 add(5, 7);  
+In this case, the values 5 and 7 are passed in as the values of the "a" and "b" parameters.
+
+Returning Values from a Java Method:-
+
+Methods in Java can also return a value, which is specified by the return type of the function. To define a function that returns a value, you simply specify the return type (which can be any data type, including objects) before the function name, like this:
+	public int doubleValue(int a) {  
+	  return a * 2;  
+	}  
+In this case, the function is called "doubleValue", it takes one parameter (an integer), and it returns twice the value of that parameter. To call this function and get the result, you would write:
+	int result = doubleValue(5);  
+In this case, the value 5 is passed in as the value of the "a" parameter, and the result of the function (10) is assigned to the "result" variable.
+
+Methods are an important part of any programming language, and Java is no exception. With Java methods, you can organize your code into modular, reusable blocks, and pass in values and return results as needed. By mastering the basics of Java methods, you will be well on your way to becoming a skilled Java programmer. Functions in Java are also commonly known as methods, and they play a key role in structuring and organizing code. By encapsulating blocks of code into methods, you can create reusable and modular code that can be called from other parts of the program.
+
+Java methods can take zero or more parameters as input, and they can return a value or perform an action without returning a value. The return type of a function is specified by placing the data type of the return value before the name of the method.
+
+Here's an example Java program with input and output that demonstrates Java methods:
+MethodExample.java
+	import java.util.Scanner;  
+	public class MethodExample {  
+	    public static void main(String[] args) {  
+	        Scanner scanner = new Scanner(System.in);  	          
+	        System.out.print("Enter a number: ");  
+	        int num1 = scanner.nextInt();  	          
+	        System.out.print("Enter another number: ");  
+	        int num2 = scanner.nextInt();  
+	        int sum = add(num1, num2);  
+	        System.out.println("The sum of " + num1 + " and " + num2 + " is " + sum + ".");  
+	}
+	  public static int add(int a, int b) {  
+	        return a + b;  
+	    }  
+	}  
+Output:
+
+Enter a number: 5
+Enter another number: 7
+The sum of 5 and 7 is 12.
+
+MethodOveloading :
+Method Overloading allows different methods to have the same name, but different signatures where the signature can differ by the number of input parameters or type of input parameters, or a mixture of both.
+
+Method overloading in Java is also known as Compile-time Polymorphism.
+
+Example:
+
+public class MathOperations {  
+    public int add(int a, int b) {  
+        return a + b;  
+    }  
+    public double add(double a, double b, double c) {  
+        return a + b + c;  
+    } 
+    public static void main(String args[]) {
+        MathOperations mo=new MathOperations();
+        System.out.println(mo.add(10,20));
+        System.out.println(mo.add(12.56,15.36,85.65)); 
+}
+}  

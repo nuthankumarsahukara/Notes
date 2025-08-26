@@ -1,0 +1,49 @@
+What is Java?
+Java is a popular programming language, created in 1995 .
+It is owned by Oracle, and more than 3 billion devices run Java.
+
+--->JAVA  was developed by James Gosling at Sun Microsystems Inc in the year 1995 and later acquired by Oracle Corporation. It is a simple programming language. Java makes writing, compiling, and debugging programming easy. It helps to create reusable code and modular programs. 
+--->Java is a class-based, object-oriented programming language and is designed to have as few implementation dependencies as possible. 
+--->A general-purpose programming language made for developers to write once run anywhere that is compiled 
+--->Java code can run on all platforms that support Java.
+--->Java applications are compiled to byte code that can run on any Java Virtual Machine. The syntax of Java is similar to c/c++.
+
+--->It is a programming language created in 1991. James Gosling, Mike Sheridan, and Patrick Naughton, a team of Sun engineers known as the Green team initiated the Java language in 1991. 
+--->Sun Microsystems released its first public implementation in 1996 as Java 1.0. It provides no-cost -run-times on popular platforms. 
+--->Java1.0 compiler was re-written in Java by Arthur Van Hoff to strictly comply with its specifications. With the arrival of Java 2, new versions had multiple configurations built for different types of platforms.
+--->In 1997, Sun Microsystems approached the ISO standards body and later formalized Java, but it soon withdrew from the process. 
+--->At one time, Sun made most of its Java implementations available without charge, despite their proprietary software status. Sun generated revenue from Java through the selling of licenses for specialized products such as the Java Enterprise System.
+
+Usages of  Java :-
+
+•Mobile applications (specially Android apps)
+•Desktop applications
+•Web applications
+•Web servers and application servers
+•Games
+•Database connection  And much, much more!
+
+Why Use Java?
+
+•Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)
+•It is one of the most popular programming languages in the world
+•It has a large demand in the current job market
+•It is easy to learn and simple to use
+•It is open-source and free
+•It is secure, fast and powerful
+•It has huge community support (tens of millions of developers)
+•Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
+•As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa
+
+Features Of java :
+Easy to learn
+Platform independent
+OOP(object oriented Program)
+--->class,object,inheritance,Abstaction,polymorishm,encapusation
+Robust
+Automatic memory management
+Security
+High performance
+Scalabity
+Simplified Syntax
+Multithreading

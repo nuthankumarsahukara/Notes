@@ -1,0 +1,31 @@
+HTML5 <iframe> Tag:
+iframes defines an inline frame. It enables you present another HTML document within the same window. Typically the iframe takes up a small portion of the document. Inline frames are often used in audio, video & advertising. It is a paired tag.
+
+Syntax: 
+<iframe>-------------</iframe>
+
+Attributes	Parameters
+src		The path of url/image
+scrolling		auto, yes, no
+align		left,right
+height		pix or %
+width		pix or %
+name		name 
+frameborder	1,0
+
+Example:
+<html>
+<body>
+<iframe src="http://www.datpro.in">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+</body>
+</html>
+
+Example:
+<!doctype html>
+<body>
+<iframe src='devstories.webm' scrolling='no' align="right" width="100px" height="100px" name='html5logo'  frameborder='0'>
+<p>OOPs Your Browser not supporting iframe tag..</p>
+</iframe>
+</body>

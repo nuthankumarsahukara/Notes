@@ -1,0 +1,27 @@
+HTML Span Tag
+Generally HTML span tag is used to apply the inline styles on some specific character, words or other HTML elements. It is a paired tag.
+
+Syntax: 
+ <span>-----------------</span>
+
+Example:
+<body>
+<span >Welcome to SPAN </span>
+</body>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML forms</title>
+</head>
+<body>
+  <span >Welcome to Span tag.....!!!</span><br>
+  <span >Welcome to Span tag.....!!!</span><br>
+  <span >Welcome to Span tag.....!!!</span>
+</body>
+</html>
+

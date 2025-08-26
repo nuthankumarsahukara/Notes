@@ -1,0 +1,424 @@
+CSS3 Web Fonts:
+@font-face
+The CSS3 @font-face Rule:Your "own" fonts are defined in the CSS3 @font-face rule. Before CSS3, web designers had to use fonts that were already installed on the user's computer. With CSS3, web designers can use whatever font they likes.  
+
+Note: 
+Firefox, Chrome, Safari, and Opera support fonts of type .ttf (True Type Fonts) and .otf (OpenType Fonts).
+
+Note: 
+Internet Explorer 9+ supports the new @font-face rule, but it only supports fonts of type .eot (Embedded OpenType).
+
+Syntax:
+@font-face
+{
+font-properties
+}
+
+Different Font Formats
+TrueType Fonts (TTF)
+TrueType is a font standard developed in the late 1980s, by Apple and Microsoft.
+
+OpenType Fonts (OTF)
+OpenType is a format for scalable computer fonts. It was built on TrueType, and is a registered trademark of Microsoft. 
+
+The Web Open Font Format (WOFF)
+WOFF is a font format for use in web pages. It was developed in 2009, and is now a W3C Recommendation. All Browsers Compatable
+
+SVG Fonts/Shapes
+SVG fonts allow SVG to be used as glyphs when displaying text. 
+
+Embedded OpenType Fonts (EOT)
+EOT fonts are a compact form of OpenType fonts designed by Microsoft for use as embedded fonts on web pages.
+
+CSS3 Font Descriptors
+The following table lists all the font descriptors that can be defined inside the @font-face rule:
+
+Example:
+<!DOCTYPE HTML>
+<head>
+<style type="text/css"> 
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Light.ttf')    
+}
+div
+{
+font-family:myFirstFont;
+}
+</style>
+</head>
+<body>
+<div>
+With CSS3, We can declare user defined fonts as per the requirements.
+</div>
+</body>
+
+Example:
+<!DOCTYPE HTML>
+<head>
+<style type="text/css"> 
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Light.ttf')   
+}
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Bold.ttf')    
+font-weight:bold;
+}
+div
+{
+font-family:myFirstFont;
+}
+</style>
+</head>
+<body>
+<div>
+With CSS3, websites can <b>finally</b> use fonts other than the pre-selected "web-safe" fonts.
+</div>
+</body>
+
+CSS3 Transitions
+With CSS3, we can add an effect when changing from one style to another, without using Flash animations or JavaScripts.
+
+A transition is such a property of CSS3, which is used to animate the object, without using flash or any other animation application. With this feature of CSS3 You can change the shape and size of your object with animated effects. 
+
+How does it work?
+CSS3 transitions are effects that let an element gradually change from one style to another.
+
+Transition Properties
+Property		Description	
+transition		Shorthand property for setting all transition properties 
+transition-duration	Defines the length of time that a transition takes.Default 0	
+transition-delay 	Specifies when the transition effect will start
+
+CSS3 transition Property:
+The transition property is a shorthand property for the four transition properties: transition-property, transition-duration, transition-timing-function, and transition-delay.
+
+Syntax
+transition: property duration timing-function delay;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:blue;
+transition:width 2s;
+}
+div:hover
+{
+width:300px;
+}
+</style>
+</head>
+<body>
+<div></div>
+<p>Hover over the div element above, to see the transition effect.</p>
+</body>
+</html>
+
+CSS3 transition-duration Property
+It specifies how many seconds (s) or milliseconds (ms) a transition effect takes to complete.
+
+Syntax
+transition-duration: time;
+
+Value	Description
+time	Specifies how many seconds or milliseconds a transition effect takes to 		complete. 
+	
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:blue;
+transition:width 2s;
+transition-duration:5s;
+}
+div:hover
+{
+width:300px;
+}
+</style>
+</head>
+<body>
+<div></div>
+<p>Hover over the div element above, to see the transition effect.</p>
+</body>
+</html>
+
+CSS3 transition-delay Property
+It specifies when the transition effect will start. The transition-delay value is defined in seconds (s) or milliseconds (ms).
+
+Syntax
+transition-delay: time;
+
+Value	Description
+time	Specifies the number of seconds or milliseconds to wait before the 	transition effect will start.
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:blue;
+transition:width 2s;
+transition-duration:5s;
+transition-delay:2s;
+}
+div:hover
+{
+width:300px;
+}
+</style>
+</head>
+<body>
+<div></div>
+<p>Hover over the div element above, to see the transition effect.</p>
+<p><b>Note:</b> The transition effect will wait 2 seconds before starting.</p>
+</body>
+</html>
+CSS3 Transition-timing-function
+
+ease :Default value. Specifies a transition effect with a slow start, then fast, then end slowly (equivalent to cubic-bezier(0.25,0.1,0.25,1))
+
+linear :Specifies a transition effect with the same speed from start to end (equivalent to cubic-bezier(0,0,1,1))
+
+ease-in :Specifies a transition effect with a slow start (equivalent to cubic-bezier(0.42,0,1,1))
+
+ease-out :Specifies a transition effect with a slow end (equivalent to cubic-bezier(0,0,0.58,1))
+
+ease-in-out :Specifies a transition effect with a slow start and end (equivalent to cubic-bezier(0.42,0,0.58,1))
+
+cubic-bezier(n,n,n,n) :Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1
+
+Example:
+<html>
+<head>
+<title>Image</title>
+<style>
+img{
+filter:grayscale(1);
+height:300px;
+width:250px;
+transition:5s;
+transition-timing-function:ease;
+}
+img:hover{
+filter:grayscale(0);
+height :400px;
+width:350px;
+<!--transform: rotate(360deg);-->
+}
+h1{
+background-image:url('https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=612x612&w=0&k=20&c=i4HYO7xhao7CkGy7Zc_8XSNX_iqG0vAwNsrH1ERmw2Q=');
+background-size:cover;
+background-clip:text;
+color:transparent;
+font-size:100px;
+margin:0px;
+}
+
+.box{
+height:100px;
+width:150px;
+background-color:red;
+transition:5s;
+transition-timing-function:ease;
+}
+.box:hover{
+width:300px;
+}
+.box1{
+height:100px;
+width:150px;
+background-color:blue;
+transition:5s;
+transition-timing-function:linear;
+}
+.box1:hover{
+width:300px;
+}
+.box2{
+height:100px;
+width:150px;
+background-color:pink;
+transition:5s;
+transition-timing-function:ease-in;
+}
+.box2:hover{
+width:300px;
+}
+.box3{
+height:100px;
+width:150px;
+background-color:yellow;
+transition:5s;
+transition-timing-function:ease-out;
+}
+.box3:hover{
+width:300px;
+}
+.box4{
+height:100px;
+width:150px;
+background-color:silver;
+transition:5s;
+transition-timing-function:ease-in-out;
+}
+.box4:hover{
+width:500px;
+}
+
+.box5{
+height:100px;
+width:150px;
+background-color:green;
+transition:5s;
+transition-timing-function:cubic-bezier(0.5,1,1,0.5);
+}
+.box5:hover{
+width:500px;
+}
+</style>
+</head>
+<body>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg" />
+<h1> Good Morning</h1>
+<div class="box">ease</div>
+<div class="box1">linear</div>
+<div class="box2">ease-in</div>
+<div class="box3">ease-out</div>
+<div class="box4">ease-in-out</div>
+<div class="box5">cubic-bezier(Manual)</div>
+</body>
+</html>
+
+CSS3 Animations
+With CSS3, we can create animations, which can replace animated images, Flash animations, and JavaScripts in many web pages. With this feature of CSS3 You can change the object into one style to another style in animated way.
+
+@keyframes rule.
+The @keyframes rule is where the animation is created. Specify a CSS style inside the @keyframes rule and the animation will gradually change from the current style to the new style.
+
+CSS3 animation
+When the animation is created in the @keyframe, bind it to a selector, otherwise the animation will have no effect. Bind the animation to a selector by specifying at least these two CSS3 animation properties:
+
+    1 Specify the name of the animation
+    2 Specify the duration of the animation
+
+What are Animations in CSS3?
+An animation is an effect that lets an element gradually change from one style to another.You can change as many styles you want, as many times you want. Specify when the change will happen in percent, or the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete. 
+
+CSS3 Animation Properties
+Property		Description	
+@keyframes	Specifies the animation	
+animation		A shorthand property for all the the animation properties
+animation-name	Specifies the name of the @keyframes animation	
+animation-duration	Specifies how many seconds or milliseconds an animation takes to 				complete one cycle
+animation-direction 	Specifies whether or not the animation should play in reverse on 				alternate cycles
+animation-delay 	Specifies when the animation will start
+animation-iteration-count  Specifies the number of times an animation should be played
+
+
+CSS3 Animation Properties
+animation
+animation-name
+animation-duration	
+animation-direction 
+animation-delay 
+animation-iteration-count
+
+CSS3 @keyframes Rule
+With the @keyframes rule, you can create animations. The animation is created by gradually changing from one set of CSS styles to another. During the animation, you can change the set of CSS styles many times.
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s infinite;
+}
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+@-moz-keyframes mymove /* Firefox */
+{
+from {top:0px;}
+to {top:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 animation Property:
+The animation property is a shorthand property for six of the animation properties: animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, and animation-direction.
+
+Syntax
+animation: name duration timing-function delay iteration-count direction;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:10px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s infinite;
+}
+@keyframes mymove
+{
+from {left:0px;}
+to {left:200px;}
+}
+@-moz-keyframes mymove /*Firefox*/
+{
+from {left:0px;}
+to {left:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

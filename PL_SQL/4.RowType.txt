@@ -1,0 +1,57 @@
+Table Data Accessing in PL/SQL
+
+SELECT INTO statement is the simplest and fastest way to fetch a single row from a table into variables. 
+Syntax:
+ select list INTO variable_list FROM table_name WHERE condition;
+
+Variable Attributes in PL/SQL.
+
+%TYPE:-
+The %TYPE attribute is used to declare variables according to the already declared variable or database column. It is used when you are declaring an individual variable, not a record. The data type and precision of the variable declared using %TYPE attribute is the same as that of the column that is referred from a given table.
+
+Syntax: <var_name> <tab_name>.<column_name>%TYPE;
+
+Example:-
+declare
+eno employee.empno%type;
+enm employee.ename%type;
+jb employee.job%type;
+begin
+eno:=&eno;
+select ename,job into enm,jb from employee where empno=eno;
+dbms_output.put_line(enm || 'is working as ' || jb);
+end;
+
+%ROWTYPE:-
+The %ROWTYPE attribute is used to declare a record type that represents a row in a table. The record can store an entire row or some specific data selected from the table. A column in a row and corresponding fields in a record have the same name and data types.
+Syntax <var_name> <tab_name>%ROWTYPE;
+
+Example 1:
+	
+declare
+eno employee.empno%type;
+emp employee%rowtype;
+
+begin
+eno:=&eno;
+select ename,job,sal into emp.ename,emp.job,emp.sal from employee where empno=eno;
+dbms_output.put_line(emp.ename || 'is working as ' || emp.job ||' earning sal ' ||to_char(emp.sal));
+end;
+
+Example 2:
+	
+declare
+eno employee.empno%type;
+emp employee%rowtype;
+
+begin
+eno:=&eno;
+select ename,job,comm into emp.ename,emp.job,emp.comm from employee where empno=eno;
+if emp.comm is null then
+update employee set comm=100 where empno=eno;
+dbms_output.put_line(emp.ename || 'is working as ' || emp.job ||' his commission updated');
+else 
+dbms_output.put_line('No Update');
+end if; 
+end;
+

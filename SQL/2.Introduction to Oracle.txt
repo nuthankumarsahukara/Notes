@@ -1,0 +1,27 @@
+What is the Oracle database?
+Oracle database is a relational database management system. It is also called OracleDB, or simply Oracle. It is produced and marketed by Oracle Corporation. It was created in 1977 by Lawrence Ellison and other engineers. It is one of the most popular relational database engines in the IT market for storing, organizing, and retrieving data.
+
+Oracle database was the first DB that designed for enterprise grid computing and data warehousing. Enterprise grid computing provides the most flexible and cost-effective way to manage information and applications. It uses SQL queries as a language for interacting with the database.
+
+Oracle has come up in a range of versions till now starting from Oracle v2 till Oracle 24ai. With each version, it has come up with improvements or enhancements. Version numbers labeled with software follows a custom numbering pattern, like "c", stands for "Cloud" in Oracle 19c while in previous releases, "g" stands for "Grid" in Oracle 10g and "i" for "Internet" in Oracle 9i.
+
+
+Oracle Release Versions
+Year	Version		Features
+1979	Oracle 1.0	Not Public released
+1980	Oracle 2.0	First Public released,Basic SQL functionalities.
+1982	Oracle 3.0	First Portable DB.
+1984	Oracle 4.0	Introduced read consistency.
+1986	Oracle 5.0	Introduced client-server architecture.
+1988	Oracle 6.0	Introduced PL/SQL
+1992	Oracle 7.0	Integrity Constraints introduced,Varchar data 			type changed into Varchar2, Stored procedures, 			functions, and triggers 
+1997	Oracle 8.0 	Object-Oriented Features, Table partitioning, 			Instead Triggers
+1998	Oracle 8i(Internet)	Rollup, cube methods, Columns increased per 			table up to 1000
+2001	Oracle 9i		Renaming Column, ANSI Joins
+2004	Oracle 10g	Introduced Admin side operations, flashback 					query, Indicate of (grid technologies)	clauses, 					regular expressions
+2007	Oracle 11g	Read-only tables, virtual tables, integer data 					type, using sequence, enables and disables 					triggers.
+2013	Oracle 12c(Cloud technology)Truncate table cascade, multiple 					indexes, Invisible column, sequence session, new 					auto- increment by using Identity.
+2018	Oracle18c	Polymorphic Table Functions, Active Directory 			Integration
+2019	Oracle19c	Active Data Guard DML Redirection, Automatic 			Index Creation,SQL Queries on Object Stores
+2020	Oracle21c 	Blockchain Tables, Multilingual Engine - 			JavaScript Execution in the Database, Binary 			JSON Data Type,
+2024 	Oracle24ai 	AI Vector Search[13] , JSON Relational 			Duality,[14] JSON 	Schema Validation, 			Transactional Microservices Support, 						OKafka, Operational Property Graphs, Support 			for SQL/PGQ,Schema Privileges, Developer Role, 			In-database SQL Firewall

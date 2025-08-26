@@ -1,0 +1,359 @@
+CSS Units
+CSS supports a number of measurements including absolute units such as inches, centimeters, points, and so on, as well as relative measures such as percentages and em units. 
+
+em (ems, the height of the element's font), An em is a unit of measurement in the field of typography, equal to the currently specified point size. 
+
+Syntax: em;
+
+Example:
+<html>
+<head>
+<style type="text/css">
+p 
+{
+letter-spacing: 7em;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p>This text is not easy to read on page.</p>
+</body>
+</html>
+
+ex (x-height, the height of the letter "x")
+This value defines a measurement relative to a font's x-height. 
+
+Syntax: ex;
+
+Example:
+<html>
+<head>
+<style type="text/css">
+p 
+{
+font-size: 24pt; 
+line-height: 3ex;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p>This text is not easy to read on page.</p>
+</body>
+</html>
+
+Defines a measurement in screen pixels.
+px (pixels, relative to the canvas resolution)
+
+Syntax: px;
+
+Example:
+<html>
+<head>
+<style type="text/css">
+p 
+{
+padding: 25px;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p>This text is not easy to read on page.</p>
+</body>
+</html>
+
+Absolute length units are highly dependent on the output medium, and so are less useful than relative units. The following absolute units are available:
+
+in (inches; 1in=2.54cm)
+Defines a measurement in inches.
+
+Syntax: in
+
+Example:
+<html>
+<head>
+<style type="text/css">
+p 
+{
+word-spacing: .15in;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p>This text is not easy to read on page.</p>
+</body>
+</html>
+
+cm (centimeters; 1cm=10mm)
+Defines a measurement in centimeters
+
+Syntax: cm;
+
+div 
+{
+margin-bottom: 2cm;
+}
+
+mm (millimeters)
+Defines a measurement in millimeters
+
+Syntax:mm;
+
+<html>
+<head>
+<style type="text/css">
+p
+{
+word-spacing: 15mm;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p >This text is not easy to read on page.</p>
+</body>
+</html>
+
+pt
+Defines a measurement in points. A point is defined as 1/72nd of an inch. pt (points; 1pt=1/72in)
+(72pt =  1in)
+Syntax:pt;
+
+<html>
+<head>
+<style type="text/css">
+body 
+{
+font-size: 18pt;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p >This text is not easy to read on page.</p>
+</body>
+</html>
+
+pc (picas; 1pc=12pt)
+Defines a measurement in picas. A pica is equivalent to 12 points; thus, there are 6 picas per inch.
+
+Syntax: pc;
+
+<html>
+<head>
+<style type="text/css">
+p
+{
+font-size: 20pc;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p >This text is not easy to read on page.</p>
+</body>
+</html>
+
+% 
+Defines a measurement as a percentage relative to another value, typically an enclosing element.
+
+Example:
+<html>
+<head>
+<style type="text/css">
+p 
+{
+font-size: 16pt; 
+line-height: 125%;
+}
+</style>
+</head>
+<body>
+<h1>CSS Units!</h1>
+<p >This text is not easy to read on page.</p>
+</body>
+</html>
+
+Setting Backgrounds using CSS:
+1. background-color
+2. background-image
+3. background-repeat
+4. background-attachment
+5. background-position
+
+1. The background-color property is used to set the background color of an element.
+2. The background-image property is used to set the background image of an element.
+3. The background-repeat property is used to control the repetition of an image in the background.
+4. The background-position property is used to control the position of an image in the background.
+5. The background-attachment property is used to control the scrolling of an image in the background.
+
+1 background-color Porperty:
+The background-color property is used to set the background color of an element.
+Syntax:
+background-color:colorName/ColorCode/HexaCode;
+or
+background:colorName/ColorCode/HexaCode;
+
+Example:
+<head>
+<style type='text/css'>
+div
+{
+background-color:#FFFF00;
+}
+</style>
+<body>
+<div>Working with Typography...!!</div>
+</body>
+
+Example2:
+<head>
+<style type='text/css'>
+div
+{
+background:red;
+}
+</style>
+<body>
+<div>Working with Typography...!!</div>
+</body>
+
+Example:
+<p style="background-color:yellow;">
+This text has a yellow background color.
+</p>
+
+2. The background-image property is used to set the background image of an element.
+
+Syntax:
+background-image:url('ImgPath');
+or
+background:url('ImgPath');
+
+Example1:
+<head>
+<style type='text/css'>
+body
+{
+background-image:url("html5.png");
+}
+</style>
+<body>
+<div>Working with Typography...!!</div>
+</body>
+
+Example2:
+<head>
+<style type='text/css'>
+body
+{
+background:url("html5.png");
+}
+</style>
+<body>
+<div>Working with Typography...!!</div>
+</body>
+
+Example3:
+<p style="background-color:yellow;background-image:url('html.png')">This text has a yellow background color.
+</p>
+
+3. The background-repeat property is used to control the repetition of an image in the background.
+
+Syntax:
+background-repeat:no-repeat;
+or
+background:no-repeat;
+
+Property Values
+Value		Description	
+repeat		The background image repeated both vertically and 		horizontally. 	
+repeat-x		The background image repeated only horizontally	
+repeat-y		The background image repeated only vertically	
+no-repeat	The background-image not repeated	
+
+Example:
+<head>
+<style>
+body
+{
+background-image:url('water.gif');
+background-repeat:no-repeat;
+}
+</style>
+</head>
+<body>
+<p>repeat-x will repeat a background image only vertically.</p>
+</body>
+
+Example:
+<style>
+<body background="chrome.png" style="background-repeat:no-repeat;background-attachment:fixed;margin:100;text-align:justify">
+</style>
+
+4. The background-attachment property is used to control the scrolling of an image in the background.
+
+Syntax:
+background-attachment:fixed;
+or
+background:fixed;
+
+Example:
+<body background="html5.png" style="background-repeat:no-repeat;background-attachment:fixed;text-align:justify">
+Some Text...
+Some Text...
+</body>
+
+5. The background-position property is used to control the position of an image in the background.
+
+Syntax:
+background-position:left/center/right;
+or
+background:center;
+
+Example:
+<html>
+<head>
+<style type="text/css">
+body
+{ 
+background-image:url('water.gif');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:center; 
+}
+</style>
+</head>
+</body>
+</html>
+
+6. background-size: The background-size property specifies the size of the background images.
+
+Syntax:
+background-size:auto;
+
+Property Values
+Value		Description	
+auto		The background size of auto specifies height and width of 		the actual image size. 	
+cover		The background size will cover entire element.	
+contain		The background size will cover the contain of element with 		specific height and width of the image.	
+
+Example:
+<html>
+<head>
+<style type="text/css">
+body
+{ 
+background-image:url('water.gif');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:center; 
+background-size:contain;
+}
+</style>
+</head>
+</body>
+</html>

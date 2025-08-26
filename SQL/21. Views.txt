@@ -1,0 +1,136 @@
+Views in Oracle
+	Views are known as logical tables. They represent the data of one of more tables. A view derives its data from the tables on which it is based. These tables are called base tables. Views can be based on actual tables or another view also.
+	Whatever DML operations you performed on a view they actually affect the base table of the view. You can treat views same as any other table. You can Query, Insert, Update and delete from views, just as any other table. Views are very powerful and handy since they can be treated just like any other table but do not occupy the space of a table.
+Uses of views
+1.Simplifying data retrieval
+Views help simplify data retrieval significantly. First, you build a complex query, test it carefully, and encapsulate the query in a view. Then, you can access the data of the underlying tables through the view instead of rewriting the whole query again and again.
+
+2.Maintaining logical data independence
+You can expose the data from underlying tables to the external applications via views. Whenever the structures of the base tables change, you just need to update the view. The interface between the database and the external applications remains intact. The beauty is that you don't have to change a single line of code to keep the external applications up and running.
+
+3.Implementing data security
+Views allow you to implement an additional security layer. They help you hide certain columns and rows from the underlying tables and expose only needed data to the appropriate users.
+	Oracle provides you the with GRANT and REVOKE commands on views so that you can specify which actions a user can perform against the view. Note that in this case, you don't grant any privileges on the underlying tables because you may not want the user to bypass the views and access the base tables directly.
+
+CREATE VIEW syntax :-
+CREATE [OR REPLACE] [FORCE] VIEW view name [(column_aliases)]
+AS defining-query [WITH READ ONLY] [WITH CHECK OPTION]
+
+Force:-
+Usually, you create a new view based on existing tables. However, sometimes, you may want to create a view based on the tables that you will create later or the tables that you don't have sufficient privileges to access at the time of creating the view. In these cases, you can use the FORCE option.
+
+column-aliases:-
+	Typically, the column names of a view derived from the select list of the defining query. However, the column names of the defining query may contain functions or expressions that you cannot use for the view definition.
+
+To solve this problem, you have two options:
+1.Use column aliases that adhere to the naming rules in the SELECT clause of the defining query.
+2.Explicitly specify column aliases for the view's columns between the CREATE VIEW and AS clauses.
+
+AS defining-query
+The defining query is a SELECT statement that defines the columns and rows of the view.
+
+WITH READ ONLY
+The WITH READ ONLY clause prevents the underlying tables from changes through the view.
+
+WITH CHECK OPTION
+The WITH CHECK OPTION clause protects the view from any changes to the underlying table that would produce rows which are not included in the defining query.
+
+Example for view:-
+
+create Basic view:
+	create view emp_view as select empno,ename,job from employee;
+	desc emp_view;
+	select * from emp_view;
+
+Create view service months of the Employee ?
+create view employee_service as select empno,ename || ' ' || job ename_job,
+floor(months_between(current_date,hiredate)) service from employee;
+
+Create view service years of the Employee ?
+create view employee_service as select empno,ename || ' ' || job ename_job,
+floor(months_between(current_date,hiredate)/12) service from employee;
+
+To use column aliases in the query ?
+create view employee_service(employee_id,ename_job,service) as select empno,ename || ' ' || job ename_job,floor(months_between(current_date,hiredate)/12) service from employee;
+
+The following query returns employees whose years of service are >5?
+select * from employee_service where service>5;
+
+how to create the view with join?
+craete view emp_data as 
+select employee.empno,employee.ename,employee.deptno,department.deptno,	department.deptname from employee inner join department on employee.deptno=department.deptno;
+
+If you want create the view for read only?
+create view v1 as select * from employee with read only;
+create view employee_details as select empno,ename,sal from employee with read only;
+
+how to create the force table in view?
+create force view v2 as select * from dingdong;
+
+DROP VIEW statement syntax:-
+DROP VIEW schema_name.view_name [CASCADE CONSTRAINT];
+Example:drop view emp_view;
+
+CASCADE CONSTRAINT
+Third, if a view has any constraint, you must specify the CASCADE CONSTRAINT clause to drop all referential integrity constraints that refer to primary key and unique keys in the view. If you don't do so, then the DROP VIEW statement will fail in case such constraints exist.
+
+Updatable View
+A view behaves like a table because you can query data from it. However, you cannot always manipulate data via views. A view is updatable if the statement against the view can be translated into the corresponding statement against the underlying table.
+Let's consider the following database tables:
+
+   Cars			BRANDS
+CAR ID			BRAND_ID
+CAR NAME    		 BRAND NAME
+BRAND_ID
+
+In database , a car belongs to one brand while a brand has one or many cars. The relationship between brand and car is a one-to-many.
+
+Craete a new view named cars_master:
+create view cars_master as select car_id,car_name from cars;
+
+delete a row from the cars via the cars_master ?
+delete from cars_master where car_id=15;
+ 
+Update a row from the cars via the cars_master ?
+update cars_master set car_name="XXXXX" where car_id=10;
+
+Insert a row from the cars via the cars_master?
+insert into cars_master(car_names) values('yyyyyyy');
+
+create a join view named all_cars based on the cars and brand table?
+create view all_cars as select cars_id,cars_name,c.brand_id,brand_name from cars c inner join brands b on b.brand_id=c.brand_id;
+
+Insert a row from the cars via the all_cars view?
+insert into all_cars(car_name,brand_id) values ('audi a5', 1);
+
+Delete a row from the cars via the all_cars view brand_name is honda?
+delete from all_cars where brand_name="honda";
+
+how many views are there in schema?
+select * from user_views;
+
+updatable columns of a join in view?
+select * from user_updatable_columns where table_name='all_cars';
+
+without check options:
+create view audi_cars as select car_id,car_name,brand_id from cars where brand_id=1;
+insert into audi_cars(car_name,brand_id) values('tata tigor',5);
+
+with check options:
+create view bmw_cars as select car_id,car_name,brand_id from cars where brand_id=2 with check option;
+insert into bmw_cars(car_name,brand_id) values('tata harrier',5);
+
+updatable join view restrictions:
+1.The SQL statement e.g., INSERT, UPDATE, and DELETE, is only allowed to modify data from a single base table.
+2.For an INSERT statement, all columns listed in the INTO clause must belong to a key-preserved table. For an UPDATE statement, all columns in the SET clause must belong to a key-preserved table. 
+3.For a DELETE statement, if the join results in more than one key-preserved table, the Oracle deletes from the first table in the FROM clause.
+
+Besides these restrictions, Oracle also requires that the defining-query does not contain any of the following elements:
+1.Aggregate functions e.g., AVG, COUNT, MAX, MIN, and SUM.
+2.DISTINCT operator.
+3.GROUP BY clause.
+4.HAVING clause.
+5.Set operators e.g., UNION, UNION ALL, INTERSECT, and MINUS.
+6.START WITH or CONNECT BY clause
+7.ROWNUM pseudo-column
+

@@ -1,0 +1,133 @@
+PL/SQL - Object Oriented
+Object-Oriented Programming is especially suited for building reusable components and complex applications. They are organized around "objects" rather than "actions" i.e. the programs are designed to work and interact with the entire object rather than the single action. This concept allows the programmer to populate and manipulate the details at object entities level.
+Eg: Bank account
+
+Object Attributes :Acct Number,Balance, etc
+
+Object Methods : Calculating interest, projecting quarterly balance,
+
+PL/SQL allows defining an object type, which helps in designing object-oriented database in Oracle. An object type allows you to create composite types. Using objects allow you to implement real world objects with specific structure of data and methods for operating it. Objects have attributes and methods. Attributes are properties of an object and are used for storing an object's state; and methods are used for modeling its behavior.
+
+ Create Object in Oracle
+An Object type cannot be created at subprogram level, They can be created only at the schema level. Once the object type is defined in the schema, then the same can be used in subprograms. The object type can be created using 'CREATE TYPE'. The type body can be created only after creating its object type.
+
+Syntax:
+CREATE TYPE <object_type_name> AS OBJECT
+(
+<attribute_1> <datatype>,
+object
+);
+
+CREATE TYPE BODY <object_type_name> AS OBJECT   --Object body
+
+MEMBER PROCEDURE | FUNCTION] <member_name> IS
+<declarative section>
+BEGIN --Method
+<execution part>
+END;
+
+
+Example:
+
+Employee Table:-
+       create table emp(empno number,
+	         	Name varchar2(20),
+		sal number(10,2),
+		streetno varchar2(20),
+		locality varchar2(20),
+		city varchar2(20),
+		pin varchar2(7),
+		country varchar2(20));	
+
+Customers Table:-
+       create table cust(custcode number,
+	         	Name varchar2(20),
+		Bal number(10.2),
+		streetno varchar2(20),
+		locality varchar2(20),
+		city varchar2(20),
+		pin varchar2(7),
+		country varchar2(20));
+
+Creating the object with comman attribute:
+-----------------------------------------------------------
+Create type address	as object(streetno varchar2(20),
+			locality varchar2(20),
+			city varchar2(20),
+			pin varchar2(7),
+			country varchar2(20));
+
+To Show the Attribute:- desc address
+
+ create table emp(empno number,
+	         	Name varchar2(20),
+		sal number(10,2),
+		emp_add address);	
+
+create table cust(custcode number,
+	         	Name varchar2(20),
+		Bal number(10.2),
+		cust_add address);	
+
+To insert into the object :-
+
+insert into emp values(12345,'Datapro',50000,address('1-2','dwk','vizag','530016','India'));
+
+insert into cust values(12345,'Datapro',50000,address('1-2','dwk','vizag','530016','India'));
+
+To update the object of single attribute:-
+
+update emp set emp.emp_add.city='Mumbai' where emp emp.empno=101;
+
+To View object:-
+select * from emp;
+
+To select empno,name,city given following statement:-
+select e.empno,e.name,e.emp_add.city from emp e;
+
+
+To Create object with attribute and functions:-
+-----------------------------------------
+
+create type stud as object(
+	maths number(3),
+	phy number(3),
+	chem number(3),
+	member function tot return number,
+	member function result return varchar2
+);
+/
+create type body stud as
+	member function tot return number is
+		begin
+			return maths+phy+chem;
+		end tot;
+	member function result return varchar2 is
+		t number;
+		begin
+		t:=maths+phy+chem;
+		if maths < 35 or phy < 35 or chem <35 then
+		 	return('Fail');
+		elsif t<150 then
+			return('Third');
+		elsif t>=150 and t<=180 then 
+			return( 'Second');
+		else 
+			return('First');
+		end if;
+	end result;
+end;
+/
+
+Create the Table With object:
+
+create table students (rollno number (5),
+		Name varchar2(20),
+		marks stud);
+To insert into into table
+insert into students values(101,'Nuthan',stud(99,85,98));
+
+To view the table with object function
+select s.rollno,s.name,s.marks.maths,s.marks.phy,s.marks.chem,s.marks.tot(),s.marks.result()
+from students s;
+

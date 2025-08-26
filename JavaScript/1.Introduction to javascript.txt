@@ -1,0 +1,174 @@
+		Introduction To JavaScript
+
+What is Scripting Language?
+It is loosely or weakly typed or light weight programming. Scripts are becoming more popular due to the emergence of web-based applications. 
+
+Advantages of Scripting Languages:
+1 Easy to learn and use
+2 Minimum programming knowledge or experience required
+3 Allow complex tasks to be performed in relatively few steps
+4 Editing and running code is fast.
+
+Limitations of Scripting Languages:
+1. Because of code executes on the users computer, in some cases it can be exploited for malicious purposes. (Security Issues)
+2. Not always able to work across different browsers. (Inconsistant)
+
+Types of Scripts:
+Scripts are Classified into the following two types:
+1. Client Side Scripts
+2. Server Side Scripts
+
+1. Client Side Scripts
+The script which is running within the browser is called as client side scripting.
+Example:
+1. Live Script
+2. JavaScript 
+3. Type Script
+4. VB Script
+5. AJAX (Asynchronous Javascript and XML)
+6. HTML/XHTML/CSS
+7. Dart (Google)
+8. Brython
+
+2. Server Side Scripts
+The Script which is running within the web server is called as server side scripting. 
+Example:
+PYTHON ==> Simple HTTP Server (NO-1),WSGI
+ASP ==>IIS (Internet Information Services)
+JSP ==>Apache Tomcat, Sun Java System Web Server, Nginx
+PHP ==> Apache http,Nginx,WampServer
+RUBY==> Puma, WebRick,Unicorn
+NodeJS ==> Server Side Java Script, Apache, IIS
+
+What is JavaScript? Who Developed?
+JavaScript is the world's most popular programming language.JavaScript is the programming language of the Web. JavaScript is easy to learn. It was created by Brendan Eich at Netscape in December 1995 under the name of LiveScript. JavaScript’s official name is ECMAScript.
+(European Computer Manufacturer's Association). JavaScript became an ECMA standard (ECMA-262/ES1)
+
+Why Study JavaScript?
+JavaScript is one of the 3 languages all web developers must learn:
+1. HTML to define the content of web pages
+2. CSS to specify the layout of web pages
+3. JavaScript to program the behavior of web pages
+
+Every version of JavaScript:
+1 The Original JavaScript ES1 ES2 ES3 (1997-1999)
+2 The First Main Revision ES5-ECMAScript (2009)
+3 The Second Revision ES6- ECMAScript (2015)
+4 The Yearly Additions (2016, 2017) 
+5. ECMAScript 2016/2017 was not called ES7/ES8
+
+Features of JavaScript
+1. It gives HTML designers a programming tool 
+2. JavaScript can react to events 
+3. Detecting the user's browser, OS, screen size,etc..!!
+4. JavaScript can be used to validate data 
+5. Open and cross-platform
+
+What JavaScript can Do?
+1. JavaScript Can Change HTML Content
+2. JavaScript Can Change HTML Attribute Values
+3. JavaScript Can Change HTML Styles (CSS)
+4. JavaScript Can Hide HTML Elements
+5. JavaScript Can Show HTML Elements
+
+DOM(Document Object Model) is a programming interface for HTML and XML documents that treats the document as a tree structure of nodes. It allows programs and scripts to dynamically access, update, and manipulate the content, structure, and style of a document. Essentially, the DOM provides a way for JavaScript (or other scripting languages) to interact with the elements and content of a webpage, enabling dynamic and interactive web experiences. 
+
+Code editors:
+A code editor is the place where programmers spend most of their time. There are two main types of code editors: IDEs and lightweight editors.
+
+IDE:
+Integrated Development Environment refers to a powerful editor with many features that usually operates on a “whole project.” It is a full-scale “development environment.”
+1 Visual Studio Code (cross-platform, free).
+2 WebStorm (cross-platform, paid).
+
+Lightweight Editors:
+"Lightweight Editors" are not as powerful as IDEs, but they’re fast, elegant and simple.
+1 Atom (cross-platform, free).
+2 Sublime Text (cross-platform, shareware).
+3 Notepad and Notepad++ (Windows, free).
+4 Vim and Emacs are also cool if you know how to use them.
+
+JavaScript Syntax:
+JavaScript consists of JavaScript statements that are placed within the following:
+
+Syntax:
+<script>
+Statements;
+Statements;
+Statements;
+</script> 
+
+Example:
+<!DOCTYPE html>
+<head>
+<script>
+document.write("Welcome to JavaScript"); 
+</script>
+</head>
+
+Example:
+<!DOCTYPE html>
+<head>
+<script>
+document.write("Welcome to LiveScript"); 
+document.write("Welcome to JavaScript"); 
+</script>
+</head>
+
+Example:
+<!DOCTYPE html>
+<head>
+<script>
+document.write("Welcome to LiveScript"); 
+document.write("<br/>")
+document.write("Welcome to JavaScript"); 
+</script>
+</head>
+
+Single and Double quotes in JavaScript
+You can write the above code with single quotes too and it will give the same result. However, if the text contains double quotes that have to be displayed, you should use single quotes to surround the text as in:
+
+Example:
+<!doctype html>
+<head>
+<script>
+document.write("Welcome to JavaScript"); 
+document.write("<br/>"); 
+document.write('Welcome to JavaScript'); 
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script>
+document.write("Welcome to JavaScript"); 
+document.write("<br/>"); 
+document.write('Welcome to JavaScript'); 
+document.write("<br/>"); 
+document.write("Welcome to 'Java' Script"); 
+document.write("<br/>"); 
+document.write('Welcome to "Java" Script'); 
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script>
+document.write("Welcome to "Java" Script"); 
+document.write("<br/>"); 
+document.write('Welcome to 'Java' Script'); 
+</script>
+</head>
+output:error
+
+Example:
+<!doctype html>
+<head>
+<script>
+document.write("Welcome to \"Java\" Script"); 
+document.write("<br/>"); 
+document.write('Welcome to \'Java\' Script'); 
+</script>
+</head>

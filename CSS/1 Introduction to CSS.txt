@@ -1,0 +1,198 @@
+What is CSS?
+Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.;
+	
+Why CSS?
+1 CSS easy Manage a lot of Websites page Layout.
+2 CSS save a lot of Time.
+3 CSS Sheets make Global change to all website pages.
+
+Features of CSS:
+1. Flexibility
+2. Codes Rendering
+3. Accessibility
+4. Easy Manage
+5. Global Change
+6. CSS Save a lot of time
+7. Easy Maintenance
+8. Inline Styles
+9. Internal Style Sheets
+10. External Style Sheets
+11. Page Load Faster
+12. Superior styles to HTML 
+13. Multiple Device Compatibility
+14. Global web standards 
+
+CSS Versions:
+CSS1.0 ==> 1996
+CSS2.0 ==> 1998
+CSS3.0 ==> 2008
+CSS3.x ==> 2016
+
+Bootstrap: Mobile Front-End Framework for Responsive Web Design, One Website can able to fit on any device..!!
+LESS ==> Linear CSS
+SASS ==> Syntatically Awesome Style Sheets
+
+CSS Syntax:
+Selector: A selector is an HTML tag at which style will be applied. This could be any tag like <h1> or <table> etc.
+
+Property: A property is a type of attribute of HTML tag. Put simply, all the HTML attributes are converted into CSS properties. They could be color or border etc.
+
+Value: Values are assigned to properties. For example color property can have value either red or #F1F1F1 etc.
+
+Syntax as follows:
+selector { 
+property: value
+ }
+
+Example: Table border as follows:
+table{
+ border :1px solid #C0lorCode; 
+}
+
+Basic Examples:
+
+<html>
+<head>
+<style type="text/css">
+	h1 {color: green}
+ 	h2 {color: #dda0dd}
+ 	p {color: rgb(0,0,255)}
+</style>
+</head>
+<body>
+ 	<h1>This is header 1</h1>
+ 	<h2>This is header 2</h2>
+ 	<p>This is a paragraph</p>
+</body>
+</html>
+
+Example2
+<body background="chrome.png" style="background-repeat:no-repeat;background-attachment:fixed;margin:100;text-align:justify">
+ 	
+Example3
+<style>
+<img src="fr.jpg" width="100" style="position:absolute;top:100;left:100"  >
+</style>
+
+Three Ways to Insert CSS (Types of Style Sheets)
+There are three ways of inserting a style sheet:
+Inline styles
+Internal style sheet
+External style sheet 
+
+Examples for Inline Style sheets:
+<p style="color: red">Hi I am in RED color</p> 
+This will make that specific paragraph red. 
+<span style="color:blue">Hi I am sky in Blue color</span> 
+This will make that text style in blue color.
+
+2. <b p style="color: green">Hi I am in Bold </b> </p>
+<span style="color:lightblue">Hi I am sky in Blue color</span> 
+
+Examples for Internal Style Sheets or Page Level Style Sheets
+1. 
+<html>
+<head>
+<style type="text/css">
+p
+{
+color:red;
+text-align:center;
+} 
+</style>
+</head>
+<body>
+<p>Hello World!</p>
+<p>This paragraph is styled with CSS.</p>
+</body>
+</html>
+
+2. 
+<html>
+<head>
+<style type="text/css">
+p
+{
+color:pink;
+text-align:right;
+background-color:green;
+} 
+</style>
+</head>
+<body>
+<p>Welcome to CSS</p>
+<p>This paragraph is styled with CSS.</p>
+</body>
+</html>
+
+EXTERNAL STYLE SHEETS
+
+Example1:
+Step 1
+Prepare CSS file
+Step 2
+Prepare HTML file
+
+Step 1
+h1 {color: green}
+h2 {color: #dda0dd}
+p {color: rgb(0,0,255)}
+
+Step 2
+<html>
+<head>
+<link rel="stylesheet" href="one.css">
+</head>
+<body>
+ 	<h1>This is header 1</h1>
+ 	<h2>This is header 2</h2>
+ 	<p>This is a paragraph</p>
+</body>
+</html>
+
+
+Example2:
+Step 1
+Prepare CSS file
+Step 2
+Prepare HTML file
+
+.cls{
+border:1px solid blue;
+width:100;
+height:100;
+background-color:red;
+}
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cls">
+Hello
+</div>
+</body>
+
+
+3.
+strong 
+{
+color: red;
+text-decoration: underline;
+}
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Sample document</title>
+  <link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    <p>
+      <strong>C</strong>ascading
+      <strong>S</strong>tyle
+      <strong>S</strong>heets
+    </p>
+  </body>
+</html>

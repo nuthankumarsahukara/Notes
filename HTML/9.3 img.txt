@@ -1,0 +1,81 @@
+HTML <img> tag:
+It is used to insert images in the web page. It is a non-paired tag or an empty tag.
+
+Syntax:	<img> or <img/>
+
+Attribute 	Value 	Description
+align 	top
+	bottom
+	middle
+	left
+	right 	Specifies the alignment of an image according to surrounding elements
+alt 	text 	Specifies an alternate text for an image
+border 	pixels 	Specifies the width of the border around an image
+height 	pixels 	Specifies the height of an image
+src 	URL 	Specifies the URL of an image
+width 	pixels 	Specifies the width of an image
+vspace 	pixels 	Specifies the whitespace on top and bottom of an image
+hspace 	pixels 	Specifies the whitespace on left and right side of an image
+
+		
+Note:
+1. In the image tag, the left and right alignments applied to the image.
+2. The top, middle and bottom alignments applied to the text along with the image.
+
+Example:
+<html>
+<Title>
+Welcome to Datapro
+</Title>
+<Head>
+<b><h1 align="center">I am Learning Web Language HTML</b></h1>
+</Head>
+<body>
+<img src="firefox35.png" width=250 height=250 alt="SubbaRaju" vspace="60%" hspace="60%" border=20pix>
+</body>
+</html>
+
+Example
+<html>
+<Title>
+Welcome to Datapro
+</Title>
+<Head>
+<b><h1 align="center">I am Learning Web Language HTML</b></h1>
+</Head>
+<body>
+<p>Insert an image from another folder:</p>
+<img src="/Images/Opera.png" alt="Sunset" width="24" height="39" />
+<p>Insert an image from a web site:</p>
+<img src="http://st1.india.com/uploaded_images/colleges/widget_35445_4_288X162.jpg" alt="Certified" width="100" height="100" />
+</body>
+</html>
+
+Example:
+<html>
+<Title>
+Welcome to Datapro
+</Title>
+<Head>
+<b><h1 align="center">I am Learning Web Language HTML</b></h1>
+</Head>
+<body>
+<p>An image 
+<img src="chrome.png" alt="GoogleChrome" align="bottom" width="64" height="64" />
+with align="bottom".</p>
+
+<p>An image
+<img src="chrome.png" alt="GoogleChrome" align="middle" width="64" height="64" /> 
+with align="middle".</p>
+
+<p>An image 
+<img src="chrome.png" alt="GoogleChrome" align="top" width="64" height="64" />
+with align="top".</p>
+
+<p><b>NOTE:</b> align="bottom" is default!</p>
+<p><img src="chrome.png" alt="GoogleChrome" width="64" height="64" />
+An image before the text.</p>
+<p>An image after the text. 
+<img src="chrome.png" alt="GoogleChrome" width="64" height="64" /></p>
+</body>
+</html>

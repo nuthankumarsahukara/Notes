@@ -1,0 +1,139 @@
+PL/SQL in ORACLE
+PL/SQL is a block structured language. The programs of PL/SQL are logical blocks that can contain any number of nested sub-blocks. PL/SQL stands for "Procedural Language extension of SQL" that is used in Oracle. PL/SQL is integrated with Oracle database (since version 7). The functionalities of PL/SQL usually extended after each release of Oracle database. Although PL/SQL is closely integrated with SQL language, yet it adds some programming constraints that are not available in SQL.
+
+PL/SQL-Basic Syntax:-
+
+DECLARE
+<declarations section>
+BEGIN
+<executable command(s)>
+EXCEPTION
+<exception handling>
+END;
+
+Example:-
+DECLARE
+message varchar2(20):= 'Hello, World!';
+BEGIN
+dbms_output.put_line(message);
+END;
+/
+
+PL/SQL Comments :-
+Program comments are explanatory statements that can be included in the PL/SQL code that you write and helps anyone reading its source code. All programming languages allow some form of comments.
+
+The PL/SQL supports single-line and multi-line comments. All characters available inside any comment are ignored by the PL/SQL compiler. The PL/SQL single-line comments start with the delimiter -- (double hyphen) and multi-line comments are enclosed by /* and */.
+
+PL/SQL Program Units
+A PL/SQL unit is any one of the following -
+	PL/SQL block
+	Function
+	Package
+	Package body
+	Procedure
+	Trigger
+	Type
+	Type body
+
+PL/SQL-DBMS Output :-
+The DBMS_OUTPUT is a built-in package that enables you to display output, debugging information, and send messages from PL/SQL blocks, subprograms, packages, and triggers.
+DBMS OUTPUT Subprograms
+S.No	Subprogram & Purpose
+1.	DBMS_OUTPUT.DISABLE;
+	Disables message output.
+2	DBMS_OUTPUT.ENABLE(buffer_size IN INTEGER DEFAULT 20000);
+	Enables message output. A NULL value of buffer_size represents unlimited buffer size.
+3	DBMS_OUTPUT.GET_LINE (line OUT VARCHAR2, status OUT INTEGER);
+	Retrieves a single line of buffered information.
+4	DBMS_OUTPUT.GET_LINES (lines OUT CHARARR, numlines IN OUT INTEGER);
+	Retrieves an array of lines from the buffer.
+5	DBMS_OUTPUT.NEW_LINE;
+	Puts an end-of-line marker.
+6	DBMS_OUTPUT.PUT(item IN VARCHAR2);
+	Places a partial line in the buffer.
+7	DBMS_OUTPUT.PUT_LINE(item IN VARCHAR2);
+	Places a line in the buffer.
+
+PL/SQL User Input:-
+In PL/SQL, user can be prompted to input a value using & character. & can be used to prompt input for different data types.
+
+1. Numeric value -
+& is used to input numeric values from the user.
+Syntax: &value
+
+2. Text Value -
+& can also be used to input text values from the user.
+Syntax: '&value'
+
+How to write & execute PL/SQL Program
+1. open the run sql command/sql plus and edit filename.sql
+2.. Type your code in a text editor, like Notepad, Notepad+, or EditPlus, etc.
+3.Save the file with the . sql extension in the home directory.
+4.Launch the SQL*Plus command prompt from the directory where you created your PL/SQL file.
+5.Type @file_name at the SQL*Plus command prompt to execute your program.
+
+Example:
+
+1. Basic Program:
+	
+begin
+
+dbms_output.put_line('Welcome to PL/SQL');
+
+end;
+
+2.Variable Declaration:-
+
+declare 
+x number(5);
+begin
+x:=100;
+dbms_output.put_line('The value of X is '|| to_char(x));
+end;
+
+3.Addition Code:
+
+declare 
+x number(5);
+y number(5);
+z number(5);
+
+begin
+x:=100;
+y:=150;
+z:=x+y;
+dbms_output.put_line('The value of X is '|| to_char(z));
+end;
+
+4.User Inputs:
+
+declare 
+x number(5);
+y number(5);
+z number(5);
+
+begin
+x:=&x;
+y:=&y;
+z:=x+y;
+dbms_output.put_line('The value of X is '|| to_char(z));
+end;
+
+5.Employee Details
+
+declare 
+empno number(3);
+ename varchar2(25);
+job varchar2(15);
+sal number(10);
+
+begin
+empno:=&empno;
+ename:='&ename';
+job:='&job';
+sal:=&sal;
+dbms_output.put_line('The value of Emp No is '|| to_char(empno));
+dbms_output.put_line('The value of Emp Name is '|| ename);
+dbms_output.put_line('The value of Emp Job is '|| job);
+dbms_output.put_line('The value of Emp Salay is '|| to_char(sal));
+end;

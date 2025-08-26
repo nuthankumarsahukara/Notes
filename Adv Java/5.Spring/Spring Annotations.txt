@@ -1,0 +1,60 @@
+ Core Spring Framework Annotations
+
+Annotation	Description
+@Component	Generic stereotype for any Spring-managed component.
+@Controller	Marks a class as a Spring MVC controller.
+@Service		Marks a service class (business logic layer).
+@Repository	Marks a DAO (Data Access Object) class. Enables 				exception translation.
+@Autowired	Automatically injects dependencies by type.
+@Qualifier	Specifies which bean to inject when multiple candidates exist.
+@Primary		Marks a bean as the primary candidate for autowiring.
+@Value		Injects values into fields from property files or expressions.
+@PostConstruct	Runs after the bean is initialized.
+@PreDestroy	Runs just before the bean is destroyed.
+
+Spring Configuration Annotations
+
+Annotation	Description
+@Configuration	Marks a class as a source of bean definitions.
+@Bean		Declares a bean manually in Java config.
+@PropertySource	Loads a property file into the environment.
+@Import		Allows importing other configuration classes.
+
+Spring MVC Annotations
+
+Annotation	Description
+@RequestMapping	Maps HTTP requests to handler methods (GET, POST, etc.).
+@GetMapping, @PostMapping, @PutMapping, @DeleteMapping	
+Shortcut annotations for @RequestMapping.
+@PathVariable	Binds a URI template variable to a method parameter.
+@RequestParam	Binds a query parameter to a method parameter.
+@RequestBody	Binds the HTTP request body to a method parameter.
+@ResponseBody	Returns data directly in the response (typically JSON).
+@ModelAttribute	Binds form data to model objects.
+@SessionAttributes	Stores attributes in the session.
+
+Spring Security Annotations
+
+Annotation		Description
+@EnableWebSecurity	Enables Spring Security's web security support.
+@Secured	Restricts 		access based on roles.
+@PreAuthorize /
+@PostAuthorize		Pre/post-authorization checks with SpEL (Spring Expression 			Language).
+@RolesAllowed		Similar to @Secured but from JSR-250.
+
+ Spring Testing Annotations
+
+Annotation	Description
+@RunWith(SpringRunner.class)	Integrates Spring with JUnit.
+@SpringBootTest	Loads full Spring application context for tests.
+@WebMvcTest	Loads only the web layer for testing controllers.
+@DataJpaTest	Loads only JPA-related components for repository testing.
+
+
+Spring Boot Specific Annotations
+
+Annotation		Description
+@SpringBootApplication	Combines @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+@EnableAutoConfiguration	Enables Spring Boot’s auto-configuration.
+@ComponentScan		Scans for Spring components (beans).
+@ConfigurationProperties	Binds external config to Java objects

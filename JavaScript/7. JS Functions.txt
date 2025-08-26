@@ -1,0 +1,271 @@
+Define Function?
+A function is a block of code that will be executed only by an occurence of an event at that time fuction is called. A function can called from anywhere within the HTML page.  Function can define in the beginning of the <head> Tag.
+
+A function is a group of reusable code which can be called anywhere in your program. This eliminates the need of writing same code again and again. This will help programmers to write modular code. This benefit is also known as "code reusability". 
+
+Function are two types there are
+1.pre-defined functions
+2.user defined functions
+
+Syntax
+//function declaration
+function functionName(parameters) 
+{
+code to be executed
+code to be executed
+return type;
+}
+
+//function calling
+functionName(parameter)
+
+How many Ways function written in UserDefined:
+
+1.With Parameter and with Return type
+2.Without Parameter and with Return type
+3.With Parameter and without Return type
+4.Without Parameter and without Return type
+
+Example:
+<!DOCTYPE html>
+<html>
+    <title>Java-Script Functions...!!</title>
+    <script type="text/javascript">
+    //function body Part
+    //Logical Implementation Part
+    //This is Called Part
+    //Declaring Arguments
+    //Function is return type
+    function WishMe()
+    {
+      window.alert("Welcome to Functions...!!")
+      alert("FunctionsAreCodeReusability...!!")
+    }
+    </script>
+</head>
+<body>
+  <!--Function Calling Part -->
+  <!--Passing Parameters -->
+  <!--Tail Part of the function -->
+<p>Click the Following button to call the function....!!</p>
+<button onclick="WishMe()">ClickHere.!</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function popup() 
+{
+alert("Hello World")
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="popup()" value="popup">
+</body>
+
+Calling a Function with Arguments
+When you call a function, you can pass along some values to it, these values are called arguments or parameters. These arguments can be used inside the function. You can send as many arguments as you like, separated by commas (,)
+
+Syntax:
+function myFunction(var1,var2)
+{
+JS Statements
+JS Statements
+JS Statements
+}
+
+The return Statement
+The return statement is used to specify the value that is returned from the function. So, functions that are going to return a value must use the return statement. A JavaScript function can have an optional return statement.
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+return ("Hello world!");
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write(myFunction())
+</script>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function addition(x,y)
+{
+return x+y;
+}
+</script>
+<script>
+document.write("Addtion of two Number: "+addition(4,5));
+</script>
+
+Example:
+<!doctype html>
+<head>
+<p>Click the button to call a function with arguments</p>
+<script type="text/javascript">
+function myFunction(name,job)
+{
+alert("Welcome " + name + ", the " + job);
+}
+</script>
+<head>
+<body>
+<button onclick="myFunction('Subbaraju','SoftwareEngineer')">ClickMe</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<p>Click one of the buttons to call a function with arguments</p>
+<script type="text/javascript">
+function myFunction(name,job)
+{
+alert("Welcome " + name + ", the " + job);
+}
+</script>
+</head>
+<body>
+<button onclick="myFunction('Smith','SQL Developer')">Click forSmith</button>
+<button onclick="myFunction('Scott','Programmer')">Click for Scott</button>
+</body>
+
+The Lifetime of JavaScript Variables
+Local JavaScript Variables
+A variable declared within a JavaScript function becomes LOCAL and can only be accessed within that function. (the variable has local scope). You can have local variables with the same name in different functions.
+
+Example:
+<!doctype html>
+<script>
+function Scope_Local()
+{
+var x;
+x = 5;
+-------------
+-------------
+}
+
+Example:
+<!DOCTYPE html>
+<html>
+    <title>Java-Script Functions...!!</title>
+    <script type="text/javascript">
+	var a=10,b=20
+    function Display1()
+    {
+      //Local Scope Variables
+      //These are within the function
+      var a=10,b=20
+      document.write("The Result is: "+(a+b))
+    }
+    </script>
+</head>
+<body>
+<button onclick="Display1()">HiTMe</button>
+</body>
+</html>
+
+Global JavaScript Variables
+Variables declared outside a function become GLOBAL, all scripts and functions on the web page can access it. Global variables are deleted when you close the page.
+
+Example:
+<!DOCTYPE html>
+    <script type="text/javascript">
+    //Global Scope
+    b=1
+    function Display1()
+    {
+      //Local Scope Variables
+      //These are within the function
+      var a=10,b=20
+      document.write("The Result is: "+(a+b))
+    }
+    function Display2()
+    {
+      //Local Scope Variables
+      //These are within the function
+      var a=10
+      document.write("The Result is: "+(a+b))
+    }
+    </script>
+</head>
+<body>
+  <button onclick="Display1()">HiTMe</button>
+  <button onclick="Display2()">HiTMe</button>
+</body>
+
+Example:
+<!doctype html>
+<script>
+//Global Scope
+year = 1997; 
+function local_globalvariable () 
+{ 
+//LocalScope
+month = 2; 
+} 
+local_globalvariable (); 
+document . write ("year=" + year + " and month="+ month);
+</script>	
+
+Example:
+<!doctype html>
+<body>
+<script>
+//Global Scope
+year = 2012; 
+function local_globalvariable() 
+{ 
+//Local Scope
+month = 8; 
+}
+function local_global_variable() 
+{ 
+//Local Scope
+month = 9; 
+}
+local_globalvariable(); 
+document . write ("year=" + Year + " and month="+ month);
+document.write("<br/>");
+local_global_variable(); 
+document . write ("year=" + Year + " and month="+ month);
+</script>	
+</body>
+
+BackGround Colors:
+//document is an object represents webpage
+// bgColor is the Property of doc object
+Example:
+<!DOCTYPE html>
+<html>
+    <title>Java-Script Functions...!!</title>
+    <script type="text/javascript">
+    function BgColorRed()
+    {
+      document.bgColor='red'
+    }
+    function BgColorBlue()
+    {
+      document.bgColor='blue'
+    }
+    function BgColorWhite()
+    {
+      document.bgColor='white'
+    }
+    </script>
+</head>
+<body>
+<p>Click the following button to display Background Color..!!</p>  
+<input type="submit" onclick="BgColorRed()" value="RedBg"/>
+<input type="submit" onclick="BgColorBlue()" value="BlueBg"/>
+<input type="submit" onclick="BgColorWhite()" value="WhiteBg"/>
+</body>

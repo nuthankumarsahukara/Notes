@@ -1,0 +1,497 @@
+	 CSS3 animation-duration Property:
+It defines how many seconds or milliseconds an animation takes to complete one cycle.
+
+Syntax
+animation-duration: time;
+
+Value		Description	
+time		Specifies the length an animation takes to finish. Default value is 0, 			meaning there will be no animation
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove infinite;
+animation-duration:1s;
+}
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 animation-iteration-count Property
+It defines how many times an animation should be played.
+
+Syntax
+animation-iteration-count: value;
+
+Value		Description
+n		A number that defines how many times an animation should be played
+infinite		Specifies that the animation should be played infinite times (for ever)
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s;
+animation-iteration-count:3;
+}
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+@-moz-keyframes mymove /* Firefox */
+{
+from {top:0px;}
+to {top:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 animation-direction Property
+The animation-direction property defines whether or not the animation should play in reverse on alternate cycles. If the animation-direction value is "alternate", the animation will be played as normal every odd time (1,3,5,etc..) and backwards every even time (2,4,6,etc...).
+
+Syntax
+animation-direction: value;
+
+Value	Description	
+normal	Default value.The animation should be played as normal	
+alternate	The animation should play in reverse on alternate cycles	
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:myfirst 5s infinite;
+animation-direction:alternate;
+}
+@keyframes myfirst
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+@-moz-keyframes myfirst /* Firefox */
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+</body>
+</html>
+
+
+CSS3 Multiple Columns
+You can create multiple columns for laying out text - like in newspapers!
+1. column-count
+2. column-gap 
+3. column-rule
+5. column-rule-color
+6. column-rule-style
+7. column-rule-width
+8. column-span
+9. column-width
+10. columns
+
+
+New Multiple Columns Properties
+Property		Description	
+column-count	Specifies the no. of columns an element should bedivided.	
+column-gap	Specifies the gap between the columns	
+column-rule	A shorthand property for setting all the column-rule-*Propers.	
+column-rule-color	Specifies the color of the rule between columns	
+column-rule-style	Specifies the style of the rule between columns	
+column-rule-width	Specifies the width of the rule between columns	
+column-span	Specifies how many columns an element should span across	
+column-width	Specifies the width of the columns	
+columns		A shorthand property for setting column-width,column-		count
+
+CSS3 Create Multiple Columns
+The column-count property specifies the number of columns an element should be divided into:
+
+
+Syntax
+column-count: number|auto;
+
+Value	Description	
+number	The optimal number of columns into which the content of the element will be flowed	
+auto	The number of columns will be determined by other properties 
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+-moz-column-count:3;
+column-count:3;
+}
+</style>
+</head>
+<body>
+<div class="newspaper">
+About RIAs
+Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+CSS3&4 Specify the Gap Between Columns
+The column-gap property specifies the gap between the columns:
+
+Syntax
+column-gap: length|normal;
+
+Value	Description	
+length	A specified length that will set the gap between the columns	
+normal	Specifies a normal gap between the columns.
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+-moz-column-count:3;
+column-count:3;
+-moz-column-gap:40px;
+column-gap:40px;
+}
+</style>
+</head>
+<body>
+<div class="newspaper">
+About RIAs
+Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+CSS3 column-rule Property
+It is a shorthand property for setting all the column-rule-* properties. The column-rule property sets the width, style, and color of the rule between columns.
+
+Syntax
+column-rule: column-rule-width column-rule-style column-rule-color;
+
+Value		Description
+column-rule-width	Sets the width of the rule between columns
+column-rule-style	Sets the style of the rule between columns
+column-rule-color	Sets the color of the rule between columns
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+-moz-column-count:3; 
+column-count:3;
+
+-moz-column-gap:40px;
+column-gap:40px;
+
+-moz-column-rule:4px outset #ff00ff;
+column-rule:4px outset #ff00ff;
+}
+</style>
+</head>
+<body>
+<div class="newspaper">
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+
+
+CSS3 column-rule-color Property
+The column-rule-color property specifies the color of the rule between columns.
+
+Syntax
+column-rule-color: color;
+
+Value		Description	
+color		Specifies the color of the rule. 
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+column-count:3;
+-moz-column-count:3;
+column-gap:40px;
+-moz-column-gap:40px;
+column-rule-style:outset;
+-moz-column-rule-style:outset;
+column-rule-color:#ff0000;
+-moz-column-rule-color:#ff0000;
+}
+</style>
+</head>
+<body>
+<body>
+<div class="newspaper">
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+CSS3 column-rule-style Property
+The column-rule-style property specifies the style of the rule between columns.
+
+Syntax
+column-rule-style: none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset;
+
+Value	Description	
+none	Defines no rule	
+hidden	Defines a hidden rule	
+dotted	Defines a dotted rule	
+dashed	Defines a dashed rule	
+solid	Defines a solid rule	
+double	Defines a double rule	
+groove	Specifies a 3D grooved rule. 
+ridge	Specifies a 3D ridged rule. 
+inset	Specifies a 3D inset rule. 
+outset	Specifies a 3D outset rule. 
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+-moz-column-count:3;
+column-count:3;
+
+-moz-column-gap:40px;
+column-gap:40px;
+
+-moz-column-rule-style:dotted;
+column-rule-style:dotted;
+}
+</style>
+</head>
+<body>
+<body>
+<div class="newspaper">
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+CSS3 column-rule-width Property
+The column-rule-width property specifies the width of the rule between columns.
+
+Syntax
+column-rule-width: thin|medium|thick|length;
+
+Value	Description
+thin	Defines a thin rule	
+medium	Defines a medium rule	
+thick	Defines a thick rule	
+length	Specifies the width of the rule
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+-moz-column-count:4; 
+column-count:4;
+
+-moz-column-gap:40px;
+column-gap:40px;
+
+-moz-column-rule-style:outset;
+column-rule-style:outset;
+
+-moz-column-rule-width:3px; 
+column-rule-width:3px;
+}
+</style>
+</head>
+<body>
+<body>
+<div class="newspaper">
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+CSS3 column-span Property
+The column-span property specifies how many columns an element should span across.
+
+Syntax
+column-span: 1|all;
+
+Value	Description	
+1	The element should span across one column	
+all	The element should span across all columns
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+-webkit-column-count:3;
+column-count:3;
+}
+h2
+{
+-webkit-column-span:all;
+column-span:all;
+}
+</style>
+</head>
+<body>
+<div class="newspaper">
+<h2>RIAs Rich Internet applications (RIAs) in Web Environment</h2>
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+CSS3 column-width Property
+The column-width property specifies the width of the columns.
+
+Syntax
+column-width: auto|length;
+
+Value	Description	
+auto	The column width will be determined by the browser	
+length	A length that specifies the width of the columns
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+-moz-column-width:100px; /* Firefox */
+column-width:100px;
+}
+</style>
+</head>
+<body>
+<div class="newspaper">
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+CSS3 columns Property
+It is a shorthand property for setting column-width and column-count.
+
+Syntax
+columns: column-width column-count;
+
+Value		Description
+column-width	The width of the columns
+column-count	The number of columns
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+.newspaper
+{
+columns:100px 3;
+-moz-columns:100px 3;
+}
+</style>
+</head>
+<body>
+<div class="newspaper">
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>

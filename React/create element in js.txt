@@ -1,0 +1,23 @@
+In JS :-
+
+let h1 =document.createElement('h1');
+h1.innerHTML ="Welcome to JS";
+document.body.appendChild(h1);
+
+
+IN React Js:-
+
+let heading =React.createElement(
+	'h1',{
+	id:'head'
+	},
+	'This is React JS Demo'
+)
+
+let wrapper=React.createElement(
+	'div',{ },
+	[heading,para]
+)
+let ele=document.getElementById('root');
+let root=ReactDOM.createRoot(ele);
+root.render(heading);

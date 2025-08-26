@@ -1,0 +1,73 @@
+React Children Props 
+
+What is `children` Prop in React?  
+- The `children` prop is a special prop in React used to pass components or elements inside a component’s opening and closing tags.  
+- It allows for flexible component composition and reusability.  
+
+Basic Usage of `children` Props
+
+const Container = (props) => {
+    return (
+        <div style={{ border: "2px solid black", padding: "10px" }}>
+            {props.children}
+        </div>
+    );
+};
+
+const App = () => {
+    return (
+        <Container>
+            <h2>Hello, React!</h2>
+            <p>This is inside the Container component.</p>
+        </Container>
+    );
+};
+export default App;
+
+
+Accessing `children` in Functional and Class Components  
+
+Functional Component Example  
+
+const Wrapper = ({ children }) => {
+    return <div className="wrapper">{children}</div>;
+};
+
+Class Component Example
+
+class Box extends React.Component {
+    render() {
+        return <div className="box">{this.props.children}</div>;
+    }
+}
+
+Using `React.Children` Utility Methods 
+React provides utility methods to work with `children`:  
+
+1. React.Children.map – Iterates over children like Array.map() 
+
+const List = ({ children }) => {
+    return (
+        <ul>
+            {React.Children.map(children, (child) => (
+                <li>{child}</li>
+            ))}
+        </ul>
+    );
+};
+
+2. React.Children.count – Returns the number of children  
+const CountChildren = ({ children }) => {
+    return <p>Total Children: {React.Children.count(children)}</p>;
+};
+
+
+3. React.Children.only  – Ensures only one child is passed  
+
+const SingleChild = ({ children }) => {
+    return <div>{React.Children.only(children)}</div>;
+};
+
+Note: Throws an error if more than one child is passed.
+
+ 

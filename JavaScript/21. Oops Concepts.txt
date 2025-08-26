@@ -1,0 +1,333 @@
+In JavaScript, Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects." These objects can contain data in the form of properties (also called attributes) and functions (called methods). The four main OOP concepts in JavaScript are:
+
+1.Class: A blueprint for creating objects that defines the properties and methods the objects will have.
+2.Object: An instance of a class that contains actual data for properties and the implementation of methods.
+3.Encapsulation : Hiding the internal details of an object and exposing only the necessary methods.
+4. Inheritance : A subclass inheriting properties and methods from a superclass.
+5.Abstraction : Providing a simplified interface and hiding the complex logic.
+6.Polymorphism : The ability to treat objects of different classes as objects of a common superclass, and allowing methods to behave differently based on the object type.
+
+1. Class 
+A class is a blueprint for creating objects. It defines the properties (attributes) and methods (functions) that the objects created from the class will have. Classes in JavaScript are syntactic sugar over prototypes and provide a simpler, more readable way to work with objects and inheritance.
+
+Class Declaration: It is defined using the class keyword followed by the class name.
+
+Constructor: The constructor() method is used to initialize objects when a new instance of the class is created.
+
+Methods: Methods inside a class define the behavior (functions) of objects.
+
+Example of a Class:
+
+class Car {
+  // Constructor to initialize the object
+  constructor(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+
+  // Method to display car details
+  getDetails() {
+    return  this.year + ' ' + this.make + ' ' + this.model;
+  }
+
+  // Method to simulate car honking
+  honk() {
+    document.writeln(this.make+' '+this.model+' '+' is honking');
+  }
+}
+
+2. Object in JavaScript
+An object is an instance of a class. It is a collection of properties (key-value pairs) and methods (functions). Objects in JavaScript can be created directly using object literals or by using a class to create instances.
+
+Object Literal: You can create an object directly using curly braces {}.
+Object Instance: When a class is used, an object is an instance created by calling the class constructor.
+Creating an Object (Instance of a Class): After defining a class, you can create an object by using the new keyword followed by the class name.
+
+Example:
+Create an instance (object) of the Car class
+const myCar = new Car('Toyota', 'Camry', 2022);
+
+// Accessing properties
+document.writeln(myCar.make);    // Toyota
+document.writeln(myCar.model);   // Camry
+document.writeln(myCar.year);    // 2022
+
+// Calling methods
+document.writeln(myCar.getDetails());  // 2022 Toyota Camry
+myCar.honk();  // Toyota Camry is honking!
+
+Key Points:
+Class:
+1.A class is a template or blueprint for creating objects.
+2.It defines properties (attributes) and methods (behavior).
+3.Classes are defined using the class keyword.
+
+Object:
+1.An object is an instance of a class.
+2.It holds data (properties) and methods (functions).
+3.Objects can be created using class constructors (new ClassName()) or object literals ({}).
+
+Example with Both Concepts (Class and Object):
+
+// Define a class
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // Method to greet
+  greet() {
+    document.writeln(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+// Create an object (instance of the Person class)
+const person1 = new Person('Alice', 30);
+const person2 = new Person('Bob', 25);
+
+// Access object properties
+document.writeln(person1.name);  // Alice
+document.writeln(person2.age);   // 25
+
+// Call methods on the objects
+person1.greet();  // Hello, my name is Alice and I am 30 years old.
+person2.greet();  // Hello, my name is Bob and I am 25 years old.
+
+3.  Encapsulation 
+Encapsulation is the practice of keeping fields (properties) private inside a class and only exposing them through public methods. This helps in hiding the internal implementation details and only exposing the necessary information.
+
+ Example: 
+class Person {
+  constructor(name, age) {
+    let _name = name;  // private property
+    let _age = age;    // private property
+    
+    this.getName = function() { return _name; }; // public method
+    this.getAge = function() { return _age; };   // public method
+    this.setName = function(name) { _name = name; }; // public method
+    this.setAge = function(age) { _age = age; };    // public method
+  }
+}
+
+const person = new Person('John', 30);
+document.writeln(person.getName()); // John
+document.writeln(person.getAge());  // 30
+
+person.setName('Mike');
+person.setAge(35);
+
+document.writeln(person.getName()); // Mike
+document.writeln(person.getAge());  // 35
+
+4.Inheritance 
+Inheritance allows a class to inherit properties and methods from another class. In JavaScript, inheritance is achieved through prototypes or by using the `extends` keyword in classes.
+
+ Example: 
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+     document.writeln(this.name + ' makes a sound.');
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);  // Calling the parent class constructor
+    this.breed = breed;
+  }
+
+  speak() {
+     document.writeln(this.name + ' barks.');
+  }
+}
+
+const dog = new Dog('Buddy', 'Golden Retriever');
+dog.speak();  // Buddy barks.
+
+Here, the `Dog` class inherits from the `Animal` class. The `speak()` method is overridden in the `Dog` class, demonstrating method overriding.
+
+ inheritance can be categorized into several types based on how objects and their properties/methods are shared and inherited across different objects. There are primarily two types of inheritance in JavaScript:
+
+1. Prototype-based Inheritance
+In JavaScript, inheritance works through prototypes. Every object in JavaScript has a prototype object, which is another object that it inherits methods and properties from.
+
+When a property or method is called on an object, JavaScript first checks if it exists on the object itself. If not, it looks at the object's prototype, and if it doesn't exist there, it looks at the prototype of the prototype, and so on, until it finds the property or reaches the end of the prototype chain.
+
+This is how most inheritance works in JavaScript, and it's often referred to as prototype-based inheritance.
+Example:
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.sayHello = function() {
+  console.log(`Hello, my name is ${this.name}`);
+};
+
+function Dog(name, breed) {
+  Animal.call(this, name);  // Inherit properties from Animal
+  this.breed = breed;
+}
+
+// Inherit methods from Animal
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+const dog = new Dog('Buddy', 'Golden Retriever');
+dog.sayHello();  // Output: Hello, my name is Buddy
+
+2. Class-based Inheritance (ES6)
+With the introduction of ES6, JavaScript now supports class-based inheritance. This provides a more formal, easier-to-understand way of working with inheritance using the class and extends keywords, which work similarly to classical OOP languages like Java, Python, etc.
+Even though JavaScript classes are syntactical sugar over prototype-based inheritance, they provide a more familiar structure for developers from other OOP languages.
+
+Example:
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);  // Call the parent class's constructor
+    this.breed = breed;
+  }
+}
+
+const dog = new Dog('Buddy', 'Golden Retriever');
+dog.sayHello();  // Output: Hello, my name is Buddy
+
+Single Inheritance: JavaScript supports single inheritance, meaning an object can inherit from only one prototype (or class). However, through the prototype chain, it can indirectly inherit from multiple levels.
+
+Mixin Inheritance: This is a pattern where a class or object is augmented with methods from another class or object, which allows for a form of multiple inheritance (though not directly supported by JavaScript itself).
+
+Example of mixin:
+
+const CanFly = {
+  fly() {
+    document.write("Flying!");
+  }
+};
+
+class Bird {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Object.assign(Bird.prototype, CanFly); // Mix in CanFly methods
+
+const bird = new Bird("Sparrow");
+bird.fly();  // 
+
+Output: Flying!
+
+5.  Abstraction 
+Abstraction is the concept of hiding the complex implementation details and exposing only the necessary parts of the object. It allows users to interact with an object without needing to understand its internal workings.
+
+Example: 
+class Car {
+  constructor(make, model) {
+    this.make = make;
+    this.model = model;
+  }
+  
+  // Abstract method
+  start() {
+      throw new Error("This method must be implemented by the subclass");
+  }
+//Normal method
+  drive() {
+     document.writeln('Driving the car...');
+  }
+}
+
+class ElectricCar extends Car {
+  start() {
+     document.writeln('Starting the electric car...');
+  }
+}
+
+const electricCar = new ElectricCar('Tesla', 'Model 3');
+electricCar.start(); // Starting the electric car...
+electricCar.drive(); // Driving the car...
+
+
+Here, the base class `Car` has a method `start()`, but we abstract it further in the `ElectricCar` subclass, providing a more specific implementation.
+
+class Animal {
+  // Simulating an abstract method
+  speak() {
+    throw new Error("This method must be implemented by the subclass");
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("The dog barks");
+  }
+}
+
+class Cat extends Animal {
+  speak() {
+    console.log("The cat meows");
+  }
+}
+
+const dog = new Dog();
+dog.speak();  // The dog barks
+
+const cat = new Cat();
+cat.speak();  // The cat meows
+
+const animal = new Animal();
+animal.speak();  // Error: This method must be implemented by the subclass
+
+
+6. Polymorphism 
+Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables a subclass to provide a specific implementation of a method that is already provided by its superclass.
+
+Types of Polymorphism in JavaScript:
+
+Compile-time Polymorphism (Method Overloading): JavaScript does not support traditional method overloading (where the same method name is used with different argument types or numbers). However, polymorphism can still be mimicked by checking arguments and providing different behavior based on the number or type of arguments passed.
+
+Runtime Polymorphism (Method Overriding): JavaScript allows runtime polymorphism through method overriding in classes or objects. This means that an object can be treated as an instance of a parent class, and the correct method will be called based on the actual object type.
+
+ Example: 
+class Shape {
+  draw() {
+     document.writeln('Drawing a shape');
+  }
+}
+
+class Circle extends Shape {
+  draw() {
+     document.writeln('Drawing a circle');
+  }
+}
+
+class Square extends Shape {
+  draw() {
+     document.writeln('Drawing a square');
+  }
+}
+
+const shapes = [new Circle(), new Square()];
+shapes.forEach(shape => shape.draw());
+Output:
+Drawing a circle
+Drawing a square
+
+
+Here, the `draw()` method is implemented differently in `Circle` and `Square` classes, demonstrating polymorphism. Both objects are treated as `Shape` objects, but each object responds to the `draw()` method in its own way.
+
+ 

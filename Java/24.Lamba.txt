@@ -1,0 +1,52 @@
+Lambda Expressions in Java
+Lambda expressions were introduced in Java 8 and are a way to provide inline implementation of functional interfaces (interfaces with a single abstract method).
+
+They help you write concise, readable, and functional-style code, especially when working with collections, streams, and event listeners.
+
+Syntax of Lambda Expression
+(parameters) -> expression
+	or
+(parameters) -> { statements }
+
+Example:
+	(int a, int b) -> a + b
+
+1.Example with Functional Interface
+
+@FunctionalInterface
+interface MathOperation {
+    int operate(int a, int b);
+}
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        // Lambda expression to implement the operate method
+        MathOperation add = (a, b) -> a + b;
+        MathOperation mul = (a, b) -> a * b;
+
+        System.out.println("Addition: " + add.operate(10, 5));
+        System.out.println("Multiplication: " + mul.operate(10, 5));
+    }
+}
+
+2.Usage with Collections
+
+List<String> list = Arrays.asList("Apple", "Banana", "Mango", "Grapes");
+list.forEach(fruit -> System.out.println(fruit));  // Lambda in forEach
+
+
+3.With Streams API
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+numbers.stream()
+       .filter(n -> n % 2 == 0)
+       .forEach(n -> System.out.println("Even: " + n));
+
+
+Benefits of Lambda in Java
+--->Reduces boilerplate code
+--->Improves readability
+--->Enables functional programming
+--->Works well with Streams API and Collections
+--->Encourages the use of functional interfaces (Runnable, Callable, Comparator, etc.)
+

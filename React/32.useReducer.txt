@@ -1,0 +1,124 @@
+useReducer is a React hook used for managing complex state logic in a functional component. It is often preferred when the state is complex or when the state depends on previous values. It provides more control over how state updates happen compared to useState.
+
+--->useReducer is typically used for managing complex state logic, especially when state changes depend on previous state values or involve multiple sub-values.
+
+--->It’s a more structured approach than useState for handling state, and often preferred in larger components or when state transitions are more complicated.
+
+Syntax :
+	const [state, dispatch] = useReducer(reducer, initialState);
+
+state: The current state value.
+dispatch: A function that you call to trigger state updates.
+reducer: A function that determines how the state should change based on the action.
+initialState: The initial state of the component.
+
+Reducer Function:
+--->The reducer function is responsible for determining how to update the state based on the action type.
+--->It usually contains a switch or if-else statement to handle different action types.
+
+
+When to Use useReducer:
+
+--->When the state is an object or array and updates need to be made based on complex logic.
+--->When actions have to be dispatched from multiple places in the component.
+--->When state updates depend on previous state values (e.g., toggling between values, complex calculations).
+
+Comparison with useState:
+
+useState: Simple and works well for single state variables, but can become harder to manage when dealing with complex or deeply nested states.
+
+useReducer: More useful when you have more complex state transitions or when managing multiple sub-values of state.
+
+Action Object:
+--->An action is usually an object that contains at least a type property that specifies the action’s purpose, and can optionally contain additional data.
+
+Example :-
+
+import {useReducer} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+function App(){
+    function count(state,input){
+        console.log(state,input)
+        return state+input;
+    }
+    let [counter,dispatch]=useReducer(count,0)
+    return(
+        <div className="mt-5 d-flex justify-content-center align-items-center">
+            <button className="ms-4 me-4 btn btn-primary" onClick={
+                ()=>{dispatch(-1)}
+            }>-</button>
+            <h1>Counter : {counter}</h1>
+            <button className="ms-4 me-4 btn btn-primary" onClick={
+                () => dispatch(1)
+            }>+</button>
+        </div>
+    )
+}
+
+export default App;
+
+Using the if Else logic
+
+import {useReducer} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+function App(){
+    function count(state,action){
+        if(action.type==="INC")
+            return state+1;
+        else if(action.type==="DEC")
+            return state-1;
+        else if(action.type==="RESET")
+            return 0;
+        else
+            return state;
+    }
+    let [counter,dispatch]=useReducer(count,0)
+    return(
+        <div className="mt-5 d-flex justify-content-center align-items-center">
+            <button className="ms-4 me-4 btn btn-primary" onClick={
+                ()=>{dispatch({type:"DEC"})}
+            }>-</button>
+            <h1>Counter : {counter}</h1>
+            <button className="ms-4 me-4 btn btn-primary" onClick={
+                () =>{dispatch({type:"INC"})}
+            }>+</button>
+            <button className="ms-4 me-4 btn btn-danger" onClick={
+                () =>{dispatch({type:"RESET"})}
+            }>RESET</button>
+        </div>
+    )
+}
+
+export default App;
+
+using switch case :
+
+import {useReducer} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+function App(){
+    function count(state,action){
+        switch(action.type){
+            case "INC" : return state+1;
+            case "DEC" : return state-1;
+            case "RESET" : return 0;
+            default : return state;
+        }
+    }
+    let [counter,dispatch]=useReducer(count,0)
+    return(
+        <div className="mt-5 d-flex justify-content-center align-items-center">
+            <button className="ms-4 me-4 btn btn-primary" onClick={
+                ()=>{dispatch({type:"DEC"})}
+            }>-</button>
+            <h1>Counter : {counter}</h1>
+            <button className="ms-4 me-4 btn btn-primary" onClick={
+                () =>{dispatch({type:"INC"})}
+            }>+</button>
+            <button className="ms-4 me-4 btn btn-danger" onClick={
+                () =>{dispatch({type:"RESET"})}
+            }>RESET</button>
+        </div>
+    )
+}
+
+export default App;

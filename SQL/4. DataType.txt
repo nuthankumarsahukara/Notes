@@ -1,0 +1,61 @@
+Oracle data types
+	Code 		Data Type
+	1		VARCHAR2(size [BYTE | CHAR])
+	1		NVARCHAR2(size)
+	2		NUMBER[(precision [, scale]]) and int
+	8		LONG
+	12		DATE
+	21		BINARY_FLOAT
+	22		BINARY DOUBLE
+	23		RAW(size)
+	24		LONG RAW
+	69		ROWID
+	96		CHAR [(size [BYTE | CHAR])]
+	96		NCHAR[(size)]
+	112		CLOB
+	112		NCLOB
+	113		BLOB
+	114		BFILE
+	180		TIMESTAMP [(fractional_seconds]]
+	181 		TIMESTAMP [(fractional_seconds)] WITH TIME ZONE
+	182		INTERVAL YEAR [(year_precision)] TO MONTH
+	183		INTERVAL DAY(day_precision)TO SECOND(fractional_seconds) 
+	208		UROWID [(size)]
+	231		TIMESTAMP [(fractional_seconds)] WITH LOCAL TIMEZONE
+
+
+Character data types:-
+1.Character data types consist of CHAR, NCHAR, VARCHAR2, NVARCHAR2, and VARCHAR.
+2.The NCHAR and NVARCHAR2 data types are for storing Unicode character strings.
+3.The fixed-length character data types are CHAR, NCHAR and the variable-length character data types are VARCHAR2, NVARCHAR2.
+4.VARCHAR is the synonym of VARCHAR2. However, you should not use VARCHAR because Oracle may change its semantics in the future.
+5.For character data types, you can specify their sizes either in bytes or characters.
+
+Number data types:-
+1.The NUMBER data type has precision p and scale s. The precision ranges from 1 to 38 while the scale range from -84 to 127.
+2.If you don't specify the precision, the column can store values including fixed-point and floating-point numbers. The default value for the scale is zero.
+3.The INT data type automatically creates number(38) sized field.
+
+Datetime and Interval data types:-
+1.Datetime data types are DATE, TIMESTAMP, TIMESTAMP WITH TIME ZONE, and TIMESTAMP WITH LOCAL TIME ZONE. The values of a datetime data type are datetimes.
+2.The interval data types are INTERVAL YEAR TO MONTH and INTERVAL DAY TO SECOND. The values of interval data type are intervals.
+
+RAW and LONG RAW data types:-
+1.The RAW and LONG RAW data types are for storing binary data or byte strings e.g., the content of documents, sound files, and video files.
+2.The RAW data type can store up to 2000 bytes while the LONG RAW data type can store up to 2GB.
+
+BFILE Datatype:-
+	BFILE data type stores a locator to a large binary file which locates outside the database. The locator consists of the directory and file names.
+
+BLOB Datatype:-
+	BLOB stands for binary large object. You use the BLOB data type to store binary objects with the maximum size of (4 gigabytes - 1) * (database block size).
+
+CLOB Datatype:-
+	CLOB stands for character large object. You use CLOB to store single-byte or multibyte characters with the maximum size is (4 gigabytes – 1) * (database block size).
+Note that CLOB supports both fixed-with and variable-with character sets.
+
+NCLOB Datatype:-
+	NCLOB is similar to CLOB except that it can store the Unicode characters.
+
+UROWID Datatype:-
+	The UROWID is primarily for values returned by the ROWID pseudo-column. Its values are base 64 strings that represent the unique address of rows in a table.

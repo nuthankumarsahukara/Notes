@@ -1,0 +1,311 @@
+CSS - Cursors:
+The cursor property of CSS allows you to specify the type of cursor that should be displayed to the user.
+auto		Shape of the cursor depends on the context area it is 		over. 
+crosshair 		A crosshair or plus sign
+default	  	An arrow
+pointer   		A pointing hand 
+move	  	The I bar
+e-resize  	The cursor indicates that an edge of a box is to be moved 
+ne-resize 	The cursor indicates that an edge of a box is to be moved up
+nw-resize		The cursor indicates that an edge of a box is to be moved up 
+n-resize se-resize 	moved down and sw-resize moved down and left 
+s-resize		moved down (south)
+w-resize		moved left (west)
+text		The I bar
+wait		An hour glass
+help		A question mark or balloon	
+
+
+Examples:
+<p>Move the mouse over the words to see the cursor change:</p>
+<div style="cursor:auto">Auto</div>
+<div style="cursor:crosshair">Crosshair</div>
+<div style="cursor:default">Default</div>
+<div style="cursor:pointer">Pointer</div>
+<div style="cursor:move">Move</div>
+<div style="cursor:e-resize">e-resize</div>
+<div style="cursor:ne-resize">ne-resize</div>
+<div style="cursor:nw-resize">nw-resize</div>
+<div style="cursor:n-resize">n-resize</div>
+<div style="cursor:se-resize">se-resize</div>
+<div style="cursor:sw-resize">sw-resize</div>
+<div style="cursor:s-resize">s-resize</div>
+<div style="cursor:w-resize">w-resize</div>
+<div style="cursor:text">text</div>
+<div style="cursor:wait">wait</div>
+<div style="cursor:help">help</div>
+
+What are Pseudo-Elements?
+A CSS pseudo-element is used to style specified parts of an element. Style the first letter, or line, of an element, Insert content before, or after, the content of an element.
+
+Syntax
+selector::pseudo-element 
+{
+property:value;
+}
+
+The ::first-line Pseudo-element
+It is used to add a special style to the first line of a text.
+
+Example:
+<head>
+<style>
+p::first-line 
+{
+color: #ff00ff;
+font-variant: small-caps;
+}
+p::first-line 
+{
+color: #ff00ff;
+font-variant: small-caps;
+}
+</style>
+</head>
+<body>
+<p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+</body>
+
+The ::first-letter Pseudo-element
+The ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+
+Example:
+<head>
+<style>
+p::first-letter 
+{
+color: #ff0000;
+font-size: xx-large;
+}
+</style>
+</head>
+<body>
+<p>You can use the ::first-letter pseudo-element to add a special effect to the first character of a text!</p>
+</body>
+
+CSS - The ::before Pseudo-element
+The ::before pseudo-element can be used to insert some content before the content of an element.
+
+Example:
+<head>
+<style>
+h1::before {
+content: url(smiley.png);
+}
+</style>
+</head>
+<body>
+<h1>This is a heading</h1>
+<p>The ::before pseudo-element inserts content before the content of an element.</p>
+</body>
+
+CSS - The ::after Pseudo-element
+The ::after pseudo-element can be used to insert some content after the content of an element.
+
+Example:
+<head>
+<style>
+h1::after {
+content: url(smiley.png);
+}
+</style>
+</head>
+<body>
+<h1>This is a heading</h1>
+<p>The ::after pseudo-element inserts content after the content of an element.</p>
+</body>
+
+CSS - The ::selection Pseudo-element
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+
+Example:
+<head>
+<style>
+::-moz-selection { /* Code for Firefox */
+    color: red;
+    background: yellow;
+}
+
+::selection {
+    color: red;
+    background: yellow;
+}
+
+</style>
+</head>
+<body>
+<h1>Select some text on this page:</h1>
+<p>This is a paragraph.</p>
+<div>This is some text in a div element.</div>
+</body>
+
+
+Advanced Cascading Style Sheets
+CSS3 Backgrounds
+CSS3 contains several new background properties, which allow greater control of the background element.
+
+Property		Description	
+background-size	Specifies the size of the background images
+background-origin	Specifies the positioning area of the background images	
+background-clip	Specifies the painting area of the background images	
+
+background-size:
+The background-size property specifies the size of the background image. Before CSS3, the background image size was determined by the actual size of the image. In CSS3 it  is possible to specify the size of the background image, which allows us to re-use background images in different contexts.
+
+Syntax
+background-size: length|percentage|cover|contain;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+body
+{
+background:url(img_flwr.gif);
+background-size:280px 260px;
+background-repeat:no-repeat;
+padding-top:40px;
+}
+</style>
+</head>
+<body>
+<p>
+CSS-Image
+</p>
+<p>Original image: <img src="img_flwr.gif" alt="Flowers" width="250" height="200" /></p>
+</body>
+</html>
+
+Example:(Stretch the background-image)
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+div
+{
+background:url(img_flwr.gif);
+background-size:100% 100%;
+-moz-background-size:100% 100%;
+background-repeat:no-repeat;
+}
+</style>
+</head>
+<body>
+<div>
+
+With CSS you define the colors and sizes in "styles". Then as you write your documents you refer to the styles. Therefore: if you change a certain style it will change the look of your entire site.
+
+Another big advantage is that CSS offers much more detailed attributes than plain HTML for defining the look and feel of your site.
+
+    CSS stands for Cascading Style Sheets
+    Styles define how to display HTML elements
+    Styles were added to HTML 4.0 to solve a problem
+    External Style Sheets can save a lot of work
+    External Style Sheets are stored in CSS files
+
+</div>
+<p></p>
+<div>
+With CSS you define the colors and sizes in "styles". Then as you write your documents you refer to the styles. Therefore: if you change a certain style it will change the look of your entire site.
+
+Another big advantage is that CSS offers much more detailed attributes than plain HTML for defining the look and feel of your site.
+
+    CSS stands for Cascading Style Sheets
+    Styles define how to display HTML elements
+    Styles were added to HTML 4.0 to solve a problem
+    External Style Sheets can save a lot of work
+    External Style Sheets are stored in CSS files
+</div>
+</body>
+</html>
+
+CSS3 Multiple Background Images
+CSS3 allows you to use several background images for an element.
+
+Syntax:
+background-image:url(img1),url(img2);
+
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+body
+{
+background-image:url(img_flwr.gif),url(xmas-tree.gif);
+}
+</style>
+</head>
+<body>
+</body>
+</html>
+
+background-clip: This property specifies the painting area of the background.
+
+Syntax:
+background-clip: border-box|padding-box|content-box;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style> 
+div{
+border:2px solid red;
+padding:30px;
+background-image:url('chrome.png');
+background-repeat:no-repeat;
+background-clip:border-box;
+width:350px;
+}
+</style>
+</head>
+<body>
+<div>
+Cascading Style Sheets were developed as a means for creating a consistent approach to providing style information for web documents. CSS has various levels and profiles. Each level of CSS builds upon the last. CSS3 has all advance features.
+<p> Cascading Style Sheets were developed as a means for creating a consistent approach to providing style information for web documents. typically adding new features and typically denoted as CSS 1, CSS 2, CSS 3, and CSS 4.  </p>
+</div>
+</body>
+</html>
+
+Note: border porperty change to dotted and observe output.
+
+background-origin Property:
+The background-origin property specifies, what the background-position property should be relative to.
+
+Syntax
+background-origin: padding-box|border-box|content-box;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style> 
+div
+{
+border:2px solid red;padding:30px;
+background-image:url('chrome.png');
+background-repeat:no-repeat;
+background-position:center;
+background-origin:border-box;
+}
+</style>
+</head>
+<body>
+<div>
+Google Chrome is a browser that combines a minimal design with sophisticated technology to make the Web faster, safer, and easier. Use one box for everything type in the address bar and get suggestions for both search and Web pages. 
+</div>
+</body>
+</html>

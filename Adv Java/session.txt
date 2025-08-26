@@ -1,0 +1,22 @@
+@PostMapping("/login")
+public String handleLogin(@RequestParam("username") String username,
+                          @RequestParam("password") String password,
+                          HttpSession session,
+                          Model model) {
+    Login user = repos.findByUsernameAndPassword(username, password);
+
+    if (user != null) {
+        session.setAttribute("username", username); // Store in session
+        return "redirect:/list";
+    } else {
+        model.addAttribute("error", "Invalid username or password");
+        return "login";
+    }
+}
+
+
+
+HttpSession session) {
+    if (session.getAttribute("username") == null) {
+        return "redirect:/login";
+    }

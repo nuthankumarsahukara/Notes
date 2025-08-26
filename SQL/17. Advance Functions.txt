@@ -1,0 +1,132 @@
+Advanced Functions in ORACLE
+BFILENAME function returns a BFILE locator for a physical LOB binary file. This function is often used in PL/SQL to access the data within the BFILE.
+Syntax: BFILENAME( 'directory', 'filename')
+
+directory (mandatory): This is the directory database object that is an alias for the actual directory on the database server.
+filename (mandatory): This is the filename string, which is just the name of the file to refer to.
+
+How Can You Create a Directory in Oracle?
+The directory parameter needs to be a directory object, not a string that represents a directory. Syntax: CREATE DIRECTORY dirname AS 'path';
+
+Example :	create table emp_resume(eid number(3),resume bfile);
+	create directory my_doc as 'C:/docs';
+	insert into emp_resume(empno,resume) values	(100,bfilename('my_doc','DataproResume.docx'));	
+
+CARDINALITY function returns the number of elements in a nested table.
+Syntax: CARDINALITY( nested_table_column)
+
+COALESCE function returns the first non-null expression in the list. If all expressions evaluate to null, then the COALESCE function will return null.
+Syntax: COALESCE( expr1, expr2, ... expr_n )
+
+Example: 	select  coalesce (1,NULL) from dual;
+	select coalesce(NULL,NULL,162) from dual;
+	select coalesce(1,1/0) from dual;
+exprl, expr2, ... expr_n
+The expressions to test for non-null values. The expressions must all be the same datatype.
+
+NVL function lets you substitute a value when a null value is encountered.
+Syntax: NVL( string1, replace_with)
+
+Example:	select nvl(1,NULL) from dual;
+	select nvl(NULL,NULL,162) from dual;
+	select nvl(1,1/0) from dual;
+
+DECODE function has the functionality of an IF-THEN-ELSE statement.
+Syntax: DECODE( expression, search, result [, search, result]... [, default] )
+
+expression
+The value to compare. It is automatically converted to the data type of the first search value before comparing.
+
+search
+The value that is compared against expression. All search values are automatically converted to the data type of the first search value before comparing.
+
+result
+The value returned, if expression is equal to search.
+
+default
+Optional. If no matches are found, the DECODE function will return default. If default is omitted, then the DECODE function will return NULL (if no matches are found).
+
+Returns:-
+1.The DECODE function returns a value that is the same datatype as the first result in the list. 
+2.If the first result is NULL, then the return value is converted to VARCHAR2.
+3.If the first result has a datatype of CHAR, then the return value is converted to VARCHAR2. 
+4.If no matches are found, the default value is returned.
+5.If default is omitted and no matches are found, then NULL is returned.
+
+Example: 	select ename,decode(job,'clerk','Accounts Verify','Manager','Head of the department')
+	from employee;
+	select ename,decode(job,'clerk','Accounts Verify','Manager','Head of the  			department','unknow')from employee;
+	select ename,decode(job,'clerk','Accounts Verify','Manager','Head of the  			department',job)from employee;
+
+EMPTY_BLOB function can be used to initialize a LOB column to EMPTY in an INSERT statement or UPDATE statement or it can be used initalize a LOB variable.
+Syntax: EMPTY_BLOB ()
+
+Example: 	create table emp_photos(eid number(3), photo blob);
+	insert into emp_photos values(100 ,empty_blob());
+	select * from emp_photos;
+
+EMPTY_CLOB function can be used to initialize a LOB column to EMPTY in an INSERT statement or UPDATE statement or it can be used initalize a LOB variable.
+Syntax: EMPTY_CLOB ()
+
+Example: 	create table emp_document(eid number(3), document clob);
+	insert into emp_photos values(100 ,empty_clob());
+	select * from emp_document;
+
+GROUP_ID function will return 0. When a duplicated group is found, the GROUP_ID function will return a value >0.
+Syntax:	SELECT column1, column2, ... column_n, GROUP_ID()
+	FROM tables
+	WHERE conditions
+	GROUP BY column 1, column2, ... column_n;
+
+Example:	select deptno,sum(sal) from employee group by deptno;
+	select deptno,sum(sal),group_id() from employee group by deptno;	
+	select deptno,job,sum(sal),group_id() from employee group by 
+	rollup(deptno,job);
+	select deptno,job,sum(sal),group_id() from employee group by  
+	rollup(deptno,job) having group_id()>1;
+	
+LNNVL (logical not null value) function is used in the WHERE clause of a SQL statement to evaluate a condition when one of the operands may contain a NULL value.
+Syntax: LNNVL( condition)
+
+The LNNVL function will return the following:
+Condition 			Evaluates To LNNVL Return Value
+TRUE			              FALSE
+FALSE			              TRUE
+UNKNOWN		              TRUE
+
+Example :	select count(*) from employee where comm>0;
+	select count(*) from employee where lnnvl(comm>0);
+
+NANVL function lets you substitute a value for a floating point number such as BINARY_FLOAT or BINARY_DOUBLE, when a Nan (Not a number) value is encountered. This is most commonly used to convert Nan (Not a number) values into either NULL or 0.
+Syntax: NANVL( value, replace_with)
+
+value : The BINARY_FLOAT or BINARY_NUMBER to test for a Nan (Not a number). 
+replace_with :The value returned if value is Nan (not a number).
+
+Example: 	create table emp(eid number(3), salary binary_float);
+	insert into emp values (100,9345451.461);
+	insert into emp values (101,'NaN');
+	insert into emp values (102,'NaN');
+	select * from emp;
+	select no,nanvl(salary,0) from emp;
+
+NULLIF function compares expr1 and expr2. If expr1 and expr2 are equal, the NULLIF function returns NULL. Otherwise, it returns expr1.
+Syntax: NULLIF( expr1, expr2)
+expr1 :First value to compare. Must be either a numeric value or a value that is the same datatype as expr2.
+expr2 :Second value to compare. Must be either a numeric value or a value that is the same datatype as expr1.
+
+Example:	select nullif(12,12) from dual;
+	select nullif(12,13) from daul;
+	select nullif('apples','apples') from dual;
+	select nullif('apples,'oranges') from dual;
+	select nullif(NULL,12) from dual;
+
+NVL2 function extends the functionality found in the NVL function. It lets you substitutes a value when a null value is encountered as well as when a non-null value is encountered.
+Syntax:NVL2( string1, value_if_not_null, value_if_null )
+
+string1 :The string to test for a null value.
+value_if_not_null : The value returned if string] is not null.
+value_if_null : The value returned if string] is null.
+
+Example:	select empno,comm,nvl2(comm,100,0) from employee;
+	select empno,comm,nvl2(comm,1000,100) from employee;

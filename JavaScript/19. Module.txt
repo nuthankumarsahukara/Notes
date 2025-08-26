@@ -1,0 +1,87 @@
+Modules in ES6 allow you to split your code into separate files and reuse functions, classes, or variables in other files using `import` and `export`.
+
+Exporting from a Module
+
+Named Export
+
+You can export multiple functions, variables, or classes individually.
+
+export function add(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b) {
+    return a - b;
+}
+
+Importing Named Exports
+
+import { add, subtract } from './math.js';
+
+console.log(add(10, 5));      // Output: 15
+console.log(subtract(10, 5)); // Output: 5
+
+You must use `{}` when importing named exports.
+`import add from './math.js';` (Incorrect for named exports)
+
+Default Export
+A module can have only one default export
+
+export default function multiply(a, b) {
+    return a * b;
+}
+
+
+Importing a Default Export
+
+import multiply from './calculator.js';
+
+console.log(multiply(4, 5)); // Output: 20
+
+No `{}` needed for default exports**.  
+You can **rename** the import:  
+
+import mul from './calculator.js';
+console.log(mul(4, 5)); // Output: 20
+
+
+Combining Named and Default Exports
+You can mix named exports and a default export in a single module.
+
+export function divide(a, b) {
+    return a / b;
+}
+
+export function mod(a, b) {
+    return a % b;
+}
+
+export default function multiply(a, b) {
+    return a * b;
+}
+
+import multiply, { divide, mod } from './mathOperations.js';
+
+console.log(multiply(10, 2)); // Output: 20
+console.log(divide(10, 2));   // Output: 5
+console.log(mod(10, 3));      // Output: 1
+
+
+Default export comes first, followed by named exports inside `{}`.
+
+Import All as an Object (`* as`)**
+You can import all exports from a module as an **object**.
+
+import * as mathOps from './mathOperations.js';
+
+console.log(mathOps.default(4, 5)); // Output: 20 (default export - multiply)
+console.log(mathOps.divide(10, 2)); // Output: 5
+console.log(mathOps.mod(10, 3));    // Output: 1
+
+Useful when importing many functions from a module
+
+Named Export :- export function name() {}
+Named Import :- import { name } from 'file.js' 
+Default Export :- export default function() {} 
+Default Import :- import anyName from 'file.js'
+Import Everything :- import * as obj from 'file.js'

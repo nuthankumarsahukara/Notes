@@ -1,0 +1,90 @@
+HTML Anchor Tag
+<a> Tag:
+It defines a hyperlink, which is used to link resources from one page to another. Links are used to navigate easily from webpage to webpage or webpage to website, etc., It is a paired tag.
+
+Syntax:	<a>--------------</a>
+
+In html, links are classified into two types:
+	1.) Internal links
+	2.) External links
+
+Internal Links:
+Linking within the page or within the website is called as internal linking.
+
+External Links:
+Linking to external files (other documents, sites, webpages, etc.,) is called as external linking.To create links, we use anchor tag. It is a paired tag.
+
+Attributes
+Attribute 	Value 		Description
+href 		URL 		Specifies the URL of the page the link goes to
+name 		section_name 	Specifies the name of an anchor
+title		Any Value	It describes the 								link and shows description 							when hovering over the link.
+target 				_blank (NewTab.NewPage)
+				_parent (default)
+
+
+Text Links
+A text link allows the programmer to create text that acts as a link, so that when it is clicked on by a user, it will transfer them to another web page. 
+
+Example
+<html>
+<Title>
+Welcome to Datapro
+</Title>
+<Head>
+<body>
+<a href="http://www.datapro.in">Goto DataPro Application</a>
+</body>
+</html>
+
+Target Page
+The target page feature, allows a link to be created that when clicked on, will open a new browser window, so that the user will then have two windows in front of them, one, being the page with the link, and the other, the page the link went to. 
+
+Example
+<html>
+<Title>
+Welcome to Datapro
+</Title>
+<Head>
+<body>
+<a href="http://www.datapro.in" target="_blank">goto Datapro App</a>
+</body>
+</html>
+
+Picture Links
+A picture link allows the programmer to create a picture that acts as a link, so that when it is clicked on by a user, it will transfer them to another web page. 
+
+Picture Link
+This tag allows you to make pictures into links. The tag looks like <A HREF="url">. The starting tag is <A HREF="url"> and the closing tag is </A>. Between these two tags is where you put the picture tag.
+
+Example:
+	<html>
+	<body>
+	<A HREF="http://www.datapro.in">
+	<IMG SRC="logo.png">
+	</A>
+	</body>
+	</html>
+
+HTML Mailto Link:
+Link can also be used to link in the E-Mail address. href attributes value is set with mailto followed by E-Mail address. When click on E-Mail link, it will open E-Mail application. E-Mail link is used to inform where to send E-Mail, Subject of E-Mail and Text Message.
+
+Example:
+<!doctype html>
+<body>
+<h1>POP Mail Link..</h1>
+<a href="mailto:ksrajupy@gmail.com">ClickMail</a>
+<h6>Thank You</h6>
+</body>
+
+
+HTML tel Link:
+Link can also be used to link in the phone number. href attributes value is set with tel followed by phone number. When click on tel link, it will open Dialer application. Tel link is used whom to call .
+
+Example:
+<!doctype html>
+<body>
+<h1>POP Tel Link..</h1>
+<a href="tel:+919999999999">ClickMail</a>
+<h6>Thank You</h6>
+</body>

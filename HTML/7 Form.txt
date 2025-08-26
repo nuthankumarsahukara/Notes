@@ -1,0 +1,216 @@
+What is a Web Form?
+It is an HTML form on a web page that lets visitors enter their information. It has the following alias names:
+1. Webforms
+2. htmlforms
+3. Input forms
+4. Select forms
+etc..............!!
+
+Uses of Web Forms
+Forms can resemble paper or database forms because web users fill out the forms using checkboxes, radio buttons, or text fields. 
+
+The <form> Element
+It defines a form that is used to collect user input. It represents a document section that contains interactive controls to submit information to a web server. It is a paired tag.
+
+Syntax:
+<form> .................................</form>
+
+Form Attributes:
+Attributes	Parameters
+name		any name
+method		To specify the type of method what we are using to 				submit form values. The possible methods are get and 		post.
+action		we can specify the page name to which page you 				want to submit control values 
+target 		Specify the target window or frame where the result of 		the script will be displayed. It takes values like _blank, 		_self, _parent etc.
+enctype		You can use the enctype attribute to specify how the 				browser encodes the data before it sends it to the server.
+
+Possible values are:
+application/x-www-form-urlencoded - This is the standard method most forms use in simple scenarios.
+
+mutlipart/form-data - This is used when you want to upload binary data in the form of files like image, word file etc.
+
+HTML Form Tags
+Tag 		Description
+<form> 		Defines an HTML form for user input
+<input> 		Defines an input control
+<textarea> 	Defines a multiline input control(text area)
+<button> 		Defines a clickable button
+<select> 		Defines a drop-down list
+<optgroup> 	Defines a group of related options in a drop-down list
+<option> 		Defines an option in a drop-down list
+<label> 		Defines a label for an <input> element
+<fieldset> 	Groups related elements in a form
+<legend> 		Defines a caption for a <fieldset> element
+
+==================================================
+Fieldname	Keyword		Syntax
+==================================================
+text box		text		<input type="text">
+password box	password		<input type="password">
+checkbox		checkbox		<input type="checkbox">
+radio button	radio		<input type="radio">
+submit button	submit		<input type="submit">
+reset button	reset		<input type="reset">
+text area		textarea		<textarea></textarea>
+==================================================
+
+Input Fields Attributes and  Parameters
+Attributes	Parameters
+name		any name
+value		any value
+placeholder	Any Value (HTML5)
+size		pixels
+maxlength	number (HTML5)
+minlength		number (HTML5)
+readonly		true, false
+disabled		disabled
+rows		number
+cols		number
+checked		checked
+multiple		true, false
+
+Example:
+<body>
+<form>
+First name: <input type="text" name="FirstName" value="SubbaRaju" /><br />
+Last name: <input type="text" name="LastName" value="Datapro" /><br />
+Password: <input type="password" name="password"  value="ramarama"/><br/>
+CheckBox: <input type="checkbox" name="checkbox"  value="check"/><br/>
+RadioButton: <input type="radio" name="Radio"  value="Male"/><br/>
+Reset: <input type="reset" name="Reset"  value="ClickMe"/><br/>
+TextArea: <input type="textarea" name="TextArea"  value="Ramarama"/><br/>
+<input type="submit" value="Submit" />
+</form>
+</body>
+
+<textarea> Tag Attributes
+It is multiline text box for more information...!!
+Attributes    Value	     Description
+cols	  "Number"    Define the Specify number of character visible in one line of Text Area
+rows	  "Number"   Define the Specify number of lines visible in  text area.
+name	  "Message"  Specify unique name for the input element.
+
+Example4
+<html>
+<title>
+Welcome to Forms Programming
+</title>
+<head>
+<center><h1>DataPro</h1></center>
+</head>
+<body>
+<textarea rows=6 cols=20>
+DataPro offering all software courses like QA Unix HTML Oracel Sqlserver Java .NET Sharepoint Testing Tools Android..
+</textarea>
+
+HTML <select> Tag
+It is used to create a drop-down list. The <option> tags inside the <select> element define the available options in the list.  It is a paired tag.
+
+Syntax:
+<select>.......................</select>
+
+Attributes
+Attribute 	Value 	Description
+disabled 	disabled 	Specifies that a drop-down list should be disabled
+multiple 	multiple 	Specifies that multiple options can be selected at once
+name 	name 	Defines a name for the drop-down list
+size	number 	Defines the number of visible options in a drop-down list
+
+HTML <optgroup> Tag
+It is used to group related options in a drop-down list. If you have a long list of options, groups of related options are easier to handle for a user. It is a paired tag.
+
+Syntax:
+<optgroup>.................................</optgroup> 
+
+Attributes
+Attribute 	Value 	Description
+disabled 	disabled 	Specifies that an option-group should be disabled
+label 	text 	Specifies a label for an option-group
+
+HTML <option> Tag
+It defines an option in a select list.  It is a paired tag.
+
+Syntax
+<option>....................................</option> 
+
+Attributes
+Attribute 	Value 	Description
+disabled 	disabled 	Specifies that an option should be disabled
+label 	text 	Specifies a shorter label for an option
+selected 	selected 	Specifies that an option should be pre-selected when the page loads
+value 	text 	Specifies the value to be sent to a server
+
+Example:
+<html>
+<body>
+<select>
+<optgroup label="Swedish Cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+</optgroup>
+</select>
+ </body>
+</html>
+
+Example:
+<html>
+<body>
+<select>
+<optgroup label="Swedish Cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+</optgroup>
+<optgroup label="Select Your Hobby">
+<option value="cricket">Cricket</option>
+<option value="WatchTV">Watch Tv </option>
+<option value="PlayGame">Play Game</option>
+<option value="Reading">Reading</option>
+<option value="Int">Internet Surfing</option>
+</optgroup>
+</select>
+</form >
+</body>
+</html>
+
+List Box:
+HTML <select> multiple Attribute
+The multiple attribute is a boolean attribute. It specifies that multiple options can be selected at once.
+
+Syntax
+<select multiple> 
+
+Example:
+<html>
+<body>
+<form>
+<select name="cars" multiple>
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="opel">Opel</option>
+<option value="audi">Audi</option>
+</select>
+<input type="submit"  value="NextPage">
+</form>
+</body>
+</html>
+
+HTML <select> size Attribute
+The size attribute specifies the number of visible options in a drop-down list.
+
+Syntax
+<select size="number">
+
+Attribute Values
+Value 	Description
+number 	The number of visible options in the drop-down list. Default value is 1. If the multiple attribute is present, the default value is 4
+
+Example:
+<html>
+<body>
+<select size="3">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="opel">Opel</option>
+<option value="audi">Audi</option>
+</select>
+</body>
+</html>

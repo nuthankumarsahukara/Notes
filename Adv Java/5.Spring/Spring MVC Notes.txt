@@ -1,0 +1,36 @@
+What is Spring MVC?
+Spring MVC (Model-View-Controller) is a framework within the Spring ecosystem for building web applications. It separates application logic into three interconnected components:
+
+Model: Data and business logic
+View: User interface
+Controller: Handles user input and interactions
+
+Spring MVC Architecture
+
+Client --> DispatcherServlet --> Controller --> Service --> DAO --> DB
+                          ↓
+                       ViewResolver
+                          ↓
+                        View (JSP)
+Key Components:
+
+DispatcherServlet: Front controller that routes requests to appropriate handlers.
+Controller: Handles HTTP requests (@Controller or @RestController)
+Model: Stores data passed between controller and view.
+ViewResolver: Resolves logical view names to actual views (e.g., JSP).
+Service Layer: Business logic (annotated with @Service)
+DAO Layer: Database access logic (@Repository)
+
+ Spring MVC Annotations
+
+@Controller: Marks a class as a Spring MVC controller.
+
+@RequestMapping: Maps HTTP requests to handler methods.
+
+@GetMapping, @PostMapping, @PutMapping, @DeleteMapping: Shortcuts for @RequestMapping.
+
+@RequestParam: Binds query parameters to method arguments.
+@PathVariable: Binds URI template variables to method arguments.
+@ModelAttribute: Binds form data to model objects.
+@ResponseBody: Sends data (e.g., JSON) directly in the response.
+@RestController: Combines @Controller and @ResponseBody.

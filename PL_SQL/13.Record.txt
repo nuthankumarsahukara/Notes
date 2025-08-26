@@ -1,0 +1,143 @@
+PL/SQL - Records
+Records in PL/SQL. A record is a data structure that can hold data items of different kinds. Records consist of different fields, similar to a row of a database table.
+
+For example, you want to keep track of your books in a library. You might want to track the following attributes about each book, such as Title, Author, Subject, Book ID. A record containing a field for each of these items allows treating a BOOK as a logical unit and allows you to organize and represent its information in a better way.
+
+PL/SQL can handle the following types of records -
+•Table-based
+•Cursor-based records
+•User-defined records
+
+Table-Based Records and Cursor-Based records
+The %ROWTYPE attribute enables a programmer to create table-based and cursorbased records.
+
+User-Defined Records
+PL/SQL provides a user-defined record type that allows you to define the different record structures. These records consist of different fields.
+
+Defining a Record Syntax
+TYPE
+type_name IS RECORD
+(field_namel datatypel [NOT NULL] [:= DEFAULT EXPRESSION],
+field_name2 datatype2 [NOT NULL] [:= DEFAULT EXPRESSION],
+...
+field_nameN datatypeN [NOT NULL] [:= DEFAULT EXPRESSION); 
+record-name type_name;
+
+Accessing Fields
+To access any field of a record, we use the dot (.) operator. The member access operator is coded as a period between the record variable name and the field that we wish to access.
+
+Nested record
+A record can contain a field which is another record. Nesting records is a powerful way to structure your program data and hide complexity in your code.
+
+Example:-
+
+usage of record:-
+
+declare 
+	type books is record
+	(title varchar2(25),
+	author varchar2(25),
+	subject varchar2(25),
+	book_id number);
+
+	book1 books;
+	book2 books;
+
+begin
+	book1.title:='The History';
+	book1.author:='King';
+	book1.subject:='War';
+	book1.book_id:=1502; 
+
+	book2.title:='The Lion';
+	book2.author:='King';
+	book2.subject:='Animal';
+	book2.book_id:=1503; 
+
+	dbms_output.put_line('Book 1 Title :'||book1.title);
+	dbms_output.put_line('Book 1 Author :'||book1.author);
+	dbms_output.put_line('Book 1 Subject :'||book1.subject);
+	dbms_output.put_line('Book 1 Book_ID :'||book1.book_id);
+
+	dbms_output.put_line('Book 2 Title :'||book2.title);
+	dbms_output.put_line('Book 2 Author :'||book2.author);
+	dbms_output.put_line('Book 2 Subject :'||book2.subject);
+	dbms_output.put_line('Book 2 Book_ID :'||book2.book_id);
+end;
+/
+
+example records as subprogram parameters
+
+declare
+	type books123 is record
+	(title varchar2(25),
+	author varchar2(25),
+	subject varchar2(25),
+	book_id number);
+
+	book1 books123;
+	book2 books123;
+	
+	procedure printbook(book books123) is
+	begin
+		dbms_output.put_line('Book  Title :'||book.title);
+		dbms_output.put_line('Book  Author :'||book.author);
+		dbms_output.put_line('Book  Subject :'||book.subject);
+		dbms_output.put_line('Book  Book_ID :'||book.book_id);
+	end;
+begin	
+	book1.title:='The History';
+	book1.author:='King';
+	book1.subject:='War';
+	book1.book_id:=1502; 
+
+	book2.title:='The Lion';
+	book2.author:='King';
+	book2.subject:='Animal';
+	book2.book_id:=1503; 
+
+	printbook(book1);
+	printbook(book2);
+end;
+/
+
+Example Nested Record:
+
+declare
+	type address is record(
+	street varchar2(25),
+	city varchar2(25),
+	state varchar2(25),
+	pincode varchar2(6)
+	);
+	
+	type customer is record(
+	customer_name varchar2(20),
+	ship_to address,
+	bill_to address
+	);
+
+	cus customer;
+begin
+	cus.customer_name:='john';
+	cus.ship_to.street:='DWK';
+	cus.ship_to.city:='Vizag';
+	cus.ship_to.state:='AP';
+	cus.ship_to.pincode:='530016';
+
+	cus.bill_to:=cus.ship_to;
+
+	dbms_output.put_line(cus.customer_name);
+	dbms_output.put_line(cus.ship_to.street);
+	dbms_output.put_line(cus.ship_to.city);
+	dbms_output.put_line(cus.ship_to.state);
+	dbms_output.put_line(cus.ship_to.pincode);
+
+	dbms_output.put_line(cus.customer_name);
+	dbms_output.put_line(cus.bill_to.street);
+	dbms_output.put_line(cus.bill_to.city);
+	dbms_output.put_line(cus.bill_to.state);
+	dbms_output.put_line(cus.bill_to.pincode);
+
+end;
+/

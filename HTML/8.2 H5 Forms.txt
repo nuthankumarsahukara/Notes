@@ -1,0 +1,154 @@
+1. color
+2. email
+3. number
+4. range
+5. search
+6. tel
+7. url
+
+Input Type:
+The color type is used for input fields that should contain a color. With Color input type, you no longer need a complex Javascript color picker.
+
+Syntax: Input type="color"
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Select Required Color...!! </label> <br/>
+<input type="color" name="clr"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: email 
+The email type is used for input fields that should contain an e-mail address. The email INPUT tag gives a way to request email addresses in your web form.
+
+Syntax: Input type="email"
+
+Example
+<!doctype html>
+<body>
+<form>
+<label>Enter Valid Email ID...!! </label> <br/>
+<input type="email" name="eid" /> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: number
+The number type is used for input fields that should contain a numeric value.
+
+Syntax: Input type="number"
+
+Attributes
+Use the following attributes to specify restrictions:
+max - Specifies the maximum value allowed
+min - Specifies the minimum value allowed
+step - Specifies the legal number intervals
+value - Specifies the default value
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Enter/Select Valid Number...!! </label> <br/>
+<input type="number" name="nm" value="0" min="5" step="5" max="50"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: range 
+The range type is used for input fields that should contain a value from a range of numbers. You can also set restrictions on what numbers are accepted.
+
+Syntax:Input type="range"
+
+Attributes
+Use the following attributes to specify restrictions:
+1. max - Specifies the maximum value allowed
+2. min - Specifies the minimum value allowed
+3. step - Specifies the legal number intervals
+4. value - Specifies the default value
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Select Valid Number Range...!! </label> <br/>
+<input type="range" name="rg" value="0" min="5" step="5" max="50"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: search
+In HTML5, we can define a textbox as search box instead of a normal textbox.  Notice, there is a blue "cross" sign appears in the textbox when,you input something in the search box, when you click on the "cross", your input string will be clear and you can start to type a new string.
+
+Syntax:
+Input type="search"
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Enter Valid Search Keyword...!! </label> <br/>
+<input type="search" name="sr"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: tel
+Input fields that accept phone numbers use the "tel" type. The main advantage to using this type of field then is to optimize the keyboard on mobile devices. There is a new attribute that can help you to enforce your preferred format. It's called the pattern element.
+
+Syntax:Input type="tel"
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Enter Valid Mobile Number:..!! </label> <br/>
+<input type="tel" name="tno" required="required" pattern='[0-9]{10}' title="In-ValidMobileNumber" /> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+Webforms 2.0 tel-InputType
+</title>
+</head>
+<body>
+<form action="nit.html">
+<input type='tel' 
+pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' 
+title='Phone Number (Format: +99(99)9999-9999)'>
+ <input type="submit"  value="ClickMe"/>
+</form>
+</body>
+</html>
+
+Input Type: url 
+The url type is used for input fields that should contain a URL address. The value of the url field is automatically validated when the form is submitted.
+
+Syntax:Input type="url"
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Enter Valid URL:..!!</label> <br/>
+<input type="url" name="ul"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+

@@ -1,0 +1,155 @@
+Java JDBC :-
+JDBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database. It is a part of JavaSE (Java Standard Edition). JDBC API uses JDBC drivers to connect with the database. There are four types of JDBC drivers:
+
+JDBC-ODBC Bridge Driver
+Native Driver
+Network Protocol Driver
+Thin Driver
+	
+We can use JDBC API to access tabular data stored in any relational database. By the help of JDBC API, we can save, update, delete and fetch data from the database. It is like Open Database Connectivity (ODBC) provided by Microsoft.
+
+	Java API
+ 	        |	
+	        |
+	Java Application----------->JDBC Driver------>DataBase         
+
+The current version of JDBC is 4.3. It is the stable release since 21st September, 2017. It is based on the X/Open SQL Call Level Interface. The java.sql package contains classes and interfaces for JDBC API. A list of popular interfaces of JDBC API are given below:
+	Driver interface
+	Connection interface(url,username,password)
+	Statement interface(create table,view data)
+	PreparedStatement interface(insert,update)
+	ResultSet interface(select command)
+	ResultSetMetaData interface (Column Name,Column count,Column Type Name)
+	DatabaseMetaData(Driver Name,Driver Version,Database User Name)
+	
+A list of popular classes of JDBC API are given below:
+	1.DriverManager class
+	2.Blob class
+	3.Clob class
+	4.Types class
+
+Why Should We Use JDBC
+Before JDBC, ODBC API was the database API to connect and execute the query with the database. But, ODBC API uses ODBC driver which is written in C language (i.e. platform dependent and unsecured). That is why Java has defined its own API (JDBC API) that uses JDBC drivers (written in Java language).
+
+We can use JDBC API to handle database using Java program and can perform the following activities:
+1.Connect to the database
+2.Execute queries and update statements to the database
+3.Retrieve the result received from the database.
+
+JDBC Driver:-
+JDBC Driver is a software component that enables java application to interact with the database. There are 4 types of JDBC drivers:
+JDBC-ODBC bridge driver
+Native-API driver (partially java driver)
+Network Protocol driver (fully java driver)
+Thin driver (fully java driver)
+
+1) JDBC-ODBC bridge driver
+The JDBC-ODBC bridge driver uses ODBC driver to connect to the database. The JDBC-ODBC bridge driver converts JDBC method calls into the ODBC function calls. This is now discouraged because of thin driver.
+
+In Java 8, the JDBC-ODBC Bridge has been removed.
+
+Oracle does not support the JDBC-ODBC Bridge from Java 8. Oracle recommends that you use JDBC drivers provided by the vendor of your database instead of the JDBC-ODBC Bridge.
+
+Advantages:
+1.easy to use.
+2.can be easily connected to any database.
+
+Disadvantages:
+1.Performance degraded because JDBC method call is converted into the ODBC function calls.
+2.The ODBC driver needs to be installed on the client machine.
+
+2) Native-API driver
+The Native API driver uses the client-side libraries of the database. The driver converts JDBC method calls into native calls of the database API. It is not written entirely in java.
+
+Advantage:
+1.performance upgraded than JDBC-ODBC bridge driver.
+
+Disadvantage:
+1.The Native driver needs to be installed on the each client machine.
+2.The Vendor client library needs to be installed on client machine.
+
+3) Network Protocol driver
+The Network Protocol driver uses middleware (application server) that converts JDBC calls directly or indirectly into the vendor-specific database protocol. It is fully written in java.
+
+Advantage:
+1.No client side library is required because of application server that can perform many tasks like auditing, load balancing, logging etc.
+
+Disadvantages:
+1.Network support is required on client machine.
+2.Requires database-specific coding to be done in the middle tier.
+3.Maintenance of Network Protocol driver becomes costly because it requires database-specific coding to be done in the middle tier.
+
+4) Thin driver
+The thin driver converts JDBC calls directly into the vendor-specific database protocol. That is why it is known as thin driver. It is fully written in Java language.
+
+Advantage:
+1.Better performance than all other drivers.
+2.No software is required at client side or server side.
+
+Disadvantage:
+3.Drivers depend on the Database.
+
+
+Java Database Connectivity with 5 Steps
+
+There are 5 steps to connect any java application with the database using JDBC. These steps are as follows:
+Register the Driver class
+Create connection
+Create statement
+Execute queries
+Close connection
+
+1) Register the driver class
+The forName() method of Class class is used to register the driver class. This method is used to dynamically load the driver class.
+
+Syntax of forName() method
+public static void forName(String className)throws ClassNotFoundException  
+
+Example to register the OracleDriver class
+Here, Java program is loading oracle driver to esteblish database connection.
+
+Class.forName("oracle.jdbc.driver.OracleDriver");  
+
+2) Create the connection object
+The getConnection() method of DriverManager class is used to establish connection with the database.
+
+Syntax of getConnection() method
+1) public static Connection getConnection(String url)throws SQLException  
+2) public static Connection getConnection(String url,String name,String password)  
+throws SQLException  
+
+Example to establish connection with the Oracle database
+Connection con=DriverManager.getConnection(  
+"jdbc:oracle:thin:@localhost:1521:xe","system","password");  
+
+3) Create the Statement object
+The createStatement() method of Connection interface is used to create statement. The object of statement is responsible to execute queries with the database.
+
+Syntax of createStatement() method
+public Statement createStatement()throws SQLException  
+
+Example to create the statement object
+Statement stmt=con.createStatement();  
+
+4) Execute the query
+The executeQuery() method of Statement interface is used to execute queries to the database. This method returns the object of ResultSet that can be used to get all the records of a table.
+
+Syntax of executeQuery() method
+public ResultSet executeQuery(String sql)throws SQLException  
+
+Example to execute query
+ResultSet rs=stmt.executeQuery("select * from emp");  
+  
+while(rs.next()){  
+System.out.println(rs.getInt(1)+" "+rs.getString(2));  
+}  
+
+5) Close the connection object
+By closing connection object statement and ResultSet will be closed automatically. The close() method of Connection interface is used to close the connection.
+
+Syntax of close() method
+public void close()throws SQLException  
+
+Example to close connection
+con.close();  
+

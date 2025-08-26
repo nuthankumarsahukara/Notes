@@ -1,0 +1,216 @@
+JavaScript Operators
+JavaScript operators are symbols that are used to perform operations on operands.There are following types of operators in JavaScript.
+
+1 Arithmetic Operators
+2 Assignment Operators
+3 JavaScript String Operators
+4 JavaScript Incrementing and Decrementing Operators
+5 JavaScript Logical Operators
+6 JavaScript Comparison Operators
+
+JavaScript Arithmetic Operators
+Arithmetic operators are used to perform arithmetic operations on the operands.
+
+Operator		Description		Example
++		Addition			10+20 = 30
+-		Subtraction		20-10 = 10
+*		Multiplication		10*20 = 200
+/		Division			20/10 = 2
+%		Modulus (Remainder)	20%10 = 0
+++		Increment		var a=10; a++; Now a = 11
+--		Decrement		var a=10; a--; Now a = 9
+
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x = 10;
+    var y = 4;
+    document.write(x + y); // display: 14
+    document.write("<br>");
+    
+    document.write(x - y); // Prints: 6
+    document.write("<br>");
+    
+    document.write(x * y); // Prints: 40
+    document.write("<br>");
+    
+    document.write(x / y); // Prints: 2.5
+    document.write("<br>");
+    
+    document.write(x % y); // Prints: 2
+    </script>
+</body>
+
+
+JavaScript Assignment Operators
+The assignment operators are used to assign values to variables.
+Operator 	Description 	Example 	Is The Same As
+= 	Assign 			x = y 	x = y
++= 	Add and assign 		x += y 	x = x + y
+-= 	Subtract and assign 	x -= y 	x = x - y
+*= 	Multiply and assign 		x *= y 	x = x * y
+/= 	Divide and assign quotient 	x /= y 	x = x / y
+%= 	Divide and assign modulus 	x %= y 	x = x % y
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x;    // Declaring Variable
+    x = 10;
+    document.write(x + "<br>"); // Prints: 10
+    
+    x = 20;
+    x += 30;
+    document.write(x + "<br>"); // Prints: 50
+     
+    x = 50;
+    x -= 20;
+    document.write(x + "<br>"); // Prints: 30
+     
+    x = 5;
+    x *= 25;
+    document.write(x + "<br>"); // Prints: 125
+     
+    x = 50;
+    x /= 10;
+    document.write(x + "<br>"); // Prints: 5
+     
+    x = 100;
+    x %= 15;
+    document.write(x); // Prints: 10
+    </script>
+</body>
+
+JavaScript String Operators
+There are two operators which can also used be for strings.
+
+Operator 	Description 		Example 		Result
++ 	Concatenation 		str1 + str2 	Concatenation of str1 and str2
++= 	Concatenation assignment 	str1 += str2 	Appends the str2 to the str1
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var str1 = "Hello";
+    var str2 = " World!";
+    document.write(str1 + str2 + "<br>"); // Outputs: Hello World!
+    str1 += str2; 
+    document.write(str1); // Outputs: Hello World!
+    </script>
+</body>
+
+JavaScript Incrementing and Decrementing Operators
+The increment/decrement operators are used to increment/decrement a variable's value.
+Operator 	Name 		Effect
+++x 	Pre-increment 	Increments x by one, then returns x
+x++ 	Post-increment 	Returns x, then increments x by one
+--x 	Pre-decrement 	Decrements x by one, then returns x
+x-- 	Post-decrement 	Returns x, then decrements x by one
+
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x; // Declaring Variable
+    x = 10;
+    document.write(++x); // Prints: 11
+    document.write("<p>" + x + "</p>");   // Prints: 11
+     
+    x = 10;
+    document.write(x++); // Prints: 10
+    document.write("<p>" + x + "</p>");   // Prints: 11
+     
+    x = 10;
+    document.write(--x); // Prints: 9
+    document.write("<p>" + x + "</p>");   // Prints: 9
+     
+    x = 10;
+    document.write(x--); // Prints: 10
+    document.write("<p>" + x + "</p>");   // Prints: 9
+    </script>
+</body>
+
+
+JavaScript Logical Operators
+The logical operators are typically used to combine conditional statements.
+
+Operator 	Name 	Example 	Result
+&& 	And 	x && y 	True if both x and y are true
+|| 	Or 	x || y 	True if either x or y is true
+! 	Not 	!x 	True if x is not true
+
+Example:
+<!doctype html>
+   <body>   
+      <script type = "text/javascript">
+            var a = true;
+            var b = false;
+            var linebreak = "<br />";
+      
+            document.write("(a && b) => ");
+            result = (a && b);
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write("(a || b) => ");
+            result = (a || b);
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write("!(a && b) => ");
+            result = (!(a && b));
+            document.write(result);
+            document.write(linebreak);
+      </script>      
+   </body>
+
+JavaScript Comparison Operators
+The comparison operators are used to compare two values in a Boolean fashion.
+
+Operator 		Name 			Example 		
+== 		Equal 			x == y 		
+=== 		Identical 			x === y 		
+!= 		Not equal 		x != y 	
+!== 		Not identical 		x !== y 	
+< 		Less than 		x < y 	
+> 		Greater than 		x > y 	
+>= 		Greater than or equal to 	x >= y 	
+<= 		Less than or equal to 	x <= y 	
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x = 25;
+    var y = 35;
+    var z = "25";
+    document.write(x == z);  // Prints: true, Checks only values
+    document.write("<br>");
+    
+    document.write(x === z); // Prints: false,Checks including data types
+    document.write("<br>");
+    
+    document.write(x != y);  // Prints: true
+    document.write("<br>");
+    
+    document.write(x !== z); // Prints: true
+    document.write("<br>");
+    
+    document.write(x < y);   // Prints: true
+    document.write("<br>");
+    
+    document.write(x > y);   // Prints: false
+    document.write("<br>");
+    
+    document.write(x <= y);  // Prints: true
+    document.write("<br>");
+    
+    document.write(x >= y);  // Prints: false
+    </script>
+</body>
+

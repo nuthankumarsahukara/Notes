@@ -1,0 +1,63 @@
+Pseudo column in Oracle SQL:
+A pseudo-column behaves like a table column but is not actually stored in the table. You can select from pseudo-columns, but you cannot insert, update, or delete their values. A pseudo-column is also similar to a function without arguments.
+They are..
+1 SYSDATE and SYSTIMESTAMP
+2 UID and User
+3 CURRVAL and NEXTVAL
+4 LEVEL
+5 ROWID
+6 ROWNUM
+7 ORA ROWSCN
+
+SYSDATE and SYSTIMESTAMP :
+Return the current DATE and TIMESTAMP:
+
+UID and USER:
+Return the User ID and Name of a database user:
+
+Sequences (Autonumber) in Oracle:
+In Oracle, you can create an autonumber field by using sequences. A sequence is an object in Oracle that is used to generate a number sequence. This can be useful when you need to create a unique number to act as a primary key.
+Syntax: CREATE SEQUENCE sequence_name
+MINVALUE value
+MAXVALUE value
+START WITH value
+INCREMENT BY value
+CYCLE
+CACHE value;
+
+CURRVAL and NEXTVAL
+A sequence is a schema object that generates sequential numbers. When you create a sequence, you can specify its initial value and an increment. CURRVAL returns the current value in a specified sequence.
+
+Before you can reference CURRVAL in a session, you must use NEXTVAL to generate a number. A reference to NEXTVAL stores the current sequence number in CURRVAL. NEXTVAL increments the sequence and returns the next value. To obtain the current or next value in a sequence, you must use dot notation, as follows:
+sequence_name.CURRVAL
+sequence_name.NEXTVAL
+
+After creating a sequence, you can use it to generate unique sequence numbers for transaction processing. However, you can use CURRVAL and NEXTVAL only in a SELECT list, the VALUES clause, and the SET clause. In the following example, you use a sequence to insert the same employee number into two tables:
+INSERT INTO emp VALUES (empno_seq.NEXTVAL, my_ename, ...);
+INSERT INTO sals VALUES (empno_seq.CURRVAL, my_sal, ...);
+If a transaction generates a sequence number, the sequence is incremented immediately whether you commit or roll back the transaction.
+
+LEVEL
+You use LEVEL with the SELECT CONNECT BY statement to organize rows from a database table into a tree structure. LEVEL returns the level number of a node in a tree structure. The root is level 1, children of the root are level 2, grandchildren are level 3, and so on.
+In the START WITH clause, you specify a condition that identifies the root of the tree. You specify the direction in which the query walks the tree (down from the root or up from the branches) with the PRIOR operator.
+
+Syntax:select column_name,.. from Table_Name start with column_name=value connect by prior column_name=column_name;
+
+Example: select level,ename,job,manager from employee start with empno=9999 connect by prior empno=manager;
+
+ROWNUM: Oracle engine maintains the number of each record inserted by users in table. By the help of
+ROWNUM clause we can access the data according to the record inserted.
+* ROWID:For each row in the database, the ROWID pseudocolumn returns a row\'s address. The ROWID
+contains 3 information about row address:
+•FileNo: FileNo means Table Number.
+•DataBlockNo : DataBlockNo means the space assigned by the oracle SQL engine to save the record. 
+•RecordNo : Oracle engine maintains the record number for each record.
+
+ORA_ROWSCN returns the system change number (SCN) of the last change inside the block containing a row. It can return the last modification for the row if the table is created with the
+option ROWDEPENDENCIES (default is NOROWDEPENDENCIES).
+The function SCN_TO_TIMESTAMP allows you to convert SCN to timestamp.
+
+Syntax:SELECT SCN_TO_TIMESTAMP(ORA_ROWSCN) FROM Table_Name
+   WHERE Column_Name= Value;
+
+Note: SCN_TO_TIMESTAMP(ORA_ROWSCN) last modify the data.

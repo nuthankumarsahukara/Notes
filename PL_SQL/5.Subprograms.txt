@@ -1,0 +1,212 @@
+PL/SQL Subprograms
+PL/SQL subprograms are named PL/SQL blocks that can be invoked with a set of parameters. PL/SQL provides two kinds of subprograms -
+1.Functions - These subprograms return a single value; mainly used to compute and return a value. 
+2.Procedures - These subprograms do not return a value directly; mainly used to perform an action.
+
+Advantages of PL/SQL Subprograms
+1.Subprograms let you extend the PL/SQL language. Procedures act like new statements. Functions act like new expressions and operators.
+2.Subprograms break a program down into manageable, well-defined modules.
+3.Subprograms promote reusability.
+4.Subprograms promote maintainability.
+
+Parts of a PL/SQL Subprogram
+
+Parts & Description
+
+1.Declarative Part :
+It is an optional part. However, the declarative part for a subprogram does not start with the DECLARE keyword. It contains declarations of types, cursors, constants, variables, exceptions, and nested subprograms. These items are local to the subprogram and cease to exist when the subprogram completes execution.
+
+2.Executable Part:
+This is a mandatory part and contains statements that perform the designated action.
+
+3.Exception-handling
+This is again an optional part. It contains the code that handles run-time errors.
+
+Parameter Modes in PL/SQL Subprograms
+
+1.IN
+An IN parameter lets you pass a value to the subprogram. It is a read-only parameter. Inside the subprogram, an IN parameter acts like a constant. It cannot be assigned a value. You can pass a constant, literal, initialized variable, or expression as an IN parameter. You can also initialize it to a default value; however, in that case, it is omitted from the subprogram call. It is the default mode of parameter passing. Parameters are passed by reference.
+
+2.OUT
+An OUT parameter returns a value to the calling program. Inside the subprogram, an OUT parameter acts like a variable. You can change its value and reference the value after assigning it. The actual parameter must be variable and it is passed by value.
+
+3.IN OUT
+An IN OUT parameter passes an initial value to a subprogram and returns an updated value to the caller. It can be assigned a value and the value can be read.
+The actual parameter corresponding to an IN OUT formal parameter must be a variable, not a constant or an expression. Formal parameter must be assigned a value. Actual parameter is passed by value.
+
+PL/SQL Stored Procedure :-
+The PL/SQL stored procedure or simply a procedure is a PL/SQL block which performs one or more specific tasks.
+
+Create Procedure Syntax:
+CREATE [OR REPLACE] PROCEDURE procedure_name [(parameter [,parameter]) ]
+IS
+[declaration_section]
+BEGIN
+executable_section
+[EXCEPTION
+exception_section]
+END [procedure_name];
+
+Executing a Standalone Procedure
+A standalone procedure can be called in two ways -
+	Using the EXECUTE keyword
+	Calling the name of the procedure from a PL/SQL block
+
+Example:
+1. creating procedure
+create procedure sample
+is 
+begin
+dbms_output.put_line('Welcome to Procedure Sub Program');
+end;
+/
+
+2. calling the procedure in pl/sql
+begin
+sample;
+end;
+
+In Example:-
+create procedure delemp(eno in number)
+is 
+begin
+delete from employee where empno=eno;
+dbms_output.put_line('The employee deleted');
+end;
+/
+
+calling: delemp(1701) ;
+
+Out Example :
+create procedure sqr(x in number , y out number)
+is 
+begin
+y:=x*x;
+end;
+/
+
+to call sqr
+decalre 
+a number(3);
+b number(3);
+begin
+a:=&a;
+sqr(a,b);
+dbms_output.put_line('The square root value is '|| to_char(b));
+end;
+
+In Out Example: 
+create procedure sqr1(x in out number)
+is 
+begin
+x:=x*x;
+end;
+/
+
+calling it
+
+declare 
+a number;
+begin
+a:=&a;
+sqr(a);
+dbms_output.put_line('The square root value is  '|| to_char(a));
+end; 
+
+
+Deleting a Standalone Procedure
+DROP PROCEDURE procedure-name;
+
+Example: drop procedure sample;
+
+PL/SQL Function
+The PL/SQL Function is very similar to PL/SQL Procedure. The main difference between procedure and a function is, a function must always return a value, and on the other hand a procedure may or may not return a value. Except this, all the other things of PL/SQL procedure are true for PL/SQL function too.
+
+Syntax:
+CREATE [OR REPLACE] FUNCTION function_name [parameters]
+[(parameter_name [IN | OUT | IN OUT] type [,...])]
+RETURN return_datatype
+{IS | AS}
+BEGIN
+< function_body>
+END [function_name];
+
+Example:
+reate or replace function dataFun
+return varchar2
+is 
+msg varchar2(100) :='Welcome to functions';
+begin
+dbms_output.put_line(msg);
+return msg;
+end;
+/
+
+calling : select dataFun() from dual;
+
+
+Example :
+create function sum_sal
+return number
+is tot number;
+begin
+select sum(sal) into tot from employee;
+return tot;
+end;
+
+calling:
+
+declare 
+tot number;
+begin
+tot:=sum_sal;
+dbms_output.put_line('The total salary of employee is '||to_char(tot));
+end;
+
+example2: Reverse Number
+create function rev_no(num number)
+return number
+is 
+rev number;
+dig number;
+temp number;
+begin
+rev:=0;
+temp:=num;
+while temp>0
+loop
+dig:=mod(temp,10);
+rev:=rev*10+dig;
+temp:=floor(temp/10);
+end loop;
+return rev;
+end;
+
+calling: select rev_no(1234) from dual;
+
+PL/SQL Recursive Functions
+We have seen that a program or subprogram may call another subprogram. When a subprogram calls itself, it is referred to as a recursive call and the process is known as recursion.
+
+Example:
+create or replace function factorial (n in number) return number is
+begin
+    if n = 0 then
+        return 1;
+    else
+        return n * factorial(n - 1);
+    end if;
+end;
+/
+
+Calling the funtion :-
+
+declare
+    result number;
+    a number;
+begin
+    a:=&a;
+    result := factorial(a);
+    dbms_output.put_line('Factorial of 5 is: ' || result);
+end;
+/
+

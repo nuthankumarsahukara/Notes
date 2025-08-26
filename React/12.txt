@@ -1,0 +1,48 @@
+function App(){
+	return(
+	<div> 
+		<h1>Backgound color change by using react js</h1>
+	<input type="color" onclick=
+{ (e)=>{
+	document.body.style.background=e.target.value
+	}/>
+	</div>
+	
+)
+
+}
+
+let [counter,setCounter] =useState(0)
+
+<button disabled ={counter===0} onclick={
+	()=>{if (counter>0){ setCounter(counter-1)}}
+	}>-</button>
+<p>{counter}</p>
+<button disabled ={counter===stock} onclick={
+	()=>{if (counter<stock){ setCounter(counter+1)}}
+	}>+</button>
+
+
+In React, props destructuring is a way to extract specific properties from the props object in a component, making the code cleaner and more readable. It can be done in functional components and class components.
+
+let prod1{
+	id:1,
+	name:"Lenovo Keyboard",
+	aprice :1500,
+	dprice:1200
+}
+
+return(
+	<product id={prod1.id} name={prod1.name} aprice={prod1.aprice} dprice={prod1.dprice} />	
+)
+
+function Product (p){
+	return(
+		<>
+			<h1>Product Id :{p.id}</h1>
+			<h1>Product Namae :{p.name}</h1>
+			<h1>Product aprice :{p.aprice}</h1>
+			<h1>Product dprice :{p.dprice}</h1>
+		</>
+	)
+}

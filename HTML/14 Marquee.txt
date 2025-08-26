@@ -1,0 +1,113 @@
+Marquee tag:
+Using this  tag we can create a scrolling text or scrolling image from left to right, right to left, top to bottom, bottom to top. It is a Paired tag. 
+
+Syntax:	
+<marquee>-------------</marquee>
+
+Marquee Tag Attributes:
+Attributes Values	Description
+behavior	"slide"	Start and stop as soon as text touches the Margin.
+	"scroll"	Start completely and off one side (Default)
+	"alternate" Text bounce as soon as  touch both sidemargin
+bgcolor	ColorCode Specifies the color as background
+direction	"left"	  Left to Right
+	"right"   	  Right to Left
+	"up"	  Bottom to Top		
+	"down"	  Top to Botoom
+width	"size_px"	Specifies width in marquee.
+height	"size_px" Specifies height in marquee
+loop	"number"  Loop Continues in limited times.
+scrollamount "number" Specifies Speed to scroll on the text.
+
+Note:
+1.The default behavior of marquee tag is scroll
+2.Its behavior differ from browser to browser
+
+NOTE:
+The <marquee> tag deprecated in HTML5. Do not use this element, instead you can use JavaScript and CSS to create such effects.
+
+Example1:
+<html>
+<head>
+<title>
+Marquee tag
+</title>
+</head>
+<body>
+<marquee>datapro.in</marquee>
+</body>
+</html>
+
+Example2:
+<html>
+<head>
+<title>
+Welcome to datapro.in
+</title>
+</head>
+<body>
+<marquee behavior="scroll">datapro.in in SCROLL</marquee>
+<marquee behavior="slide">datapro.in in SLIDE</marquee>
+<marquee behavior="alternate">datapro.in in ALTERNATE</marquee>
+<marquee behavior="scroll" direction="up">Upside Text Scrolling</marquee>
+</body>
+</html>
+
+Example3:
+<html>
+<head>
+<title>
+marquee Tag.
+</title>
+</head>
+<body>
+<marquee behavior="scroll" bgcolor="red" scrollamount=3 direction="up" height=200pix width=200pix>datapro.in in SCROLL</marquee>
+<marquee behavior="slide" bgcolor="pink" scrollamount=3 direction="down" height=200pix width=200pix>datapro.in in SLIDE</marquee>
+<marquee behavior="alternate" bgcolor="yellow" scrollamount=3 direction="right" height=200pix width=200pix>datapro.in in ALTERNATE</marquee>
+</body>
+</html>
+
+Example:
+<marquee behavior="scroll" direction="left" scrollamount="3">Slow Speed scroll speed</marquee>
+<marquee behavior="scroll" direction="left" scrollamount="10">Medium Speed scroll speed</marquee>
+<marquee behavior="scroll" direction="left" scrollamount="17">Fast Speed scroll speed</marquee>
+
+Example:
+<marquee behavior="scroll" direction="left" id="marquee1"><p>Press Button</p></marquee>
+<input type="button" value="Stop Marquee" onClick="document.getElementById('marquee1').stop();">
+<input type="button" value="Start Marquee" onClick="document.getElementById('marquee1').start();">
+
+Example:
+<hr/>
+<marquee behavior="scroll" direction="left" scrollamount="6" id="marquee1">marquee slow/medium/fast speed using button</marquee> <hr/>
+<input type="button" value="Slower" onClick="document.getElementById('marquee1').setAttribute('scrollamount', 1, 0);">
+<input type="button" value="Medium" onClick="document.getElementById('marquee1').setAttribute('scrollamount', 5, 0);">
+<input type="button" value="Faster" onClick="document.getElementById('marquee1').setAttribute('scrollamount', 10, 0);">
+
+More Advanced:
+<marquee style="z-index:2;position:absolute;left:18px;top:97px;font-family:Cursive;font-size:14pt;color:#ff0000;height:200px;"scrollamount="3" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:1px;top:89px;font-family:Cursive;font-size:14pt;color:#ff0000;height:100px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:111px;top:7px;font-family:Cursive;font-size:14pt;color:#ff0000;height:302px;"scrollamount="4" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:225px;top:83px;font-family:Cursive;font-size:14pt;color:#ff0000;height:371px;"scrollamount="3" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:105px;top:53px;font-family:Cursive;font-size:14pt;color:#ff0000;height:317px;"scrollamount="2" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:168px;top:69px;font-family:Cursive;font-size:14pt;color:#ff0000;height:369px;"scrollamount="1" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:130px;top:117px;font-family:Cursive;font-size:14pt;color:#ff0000;height:289px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:176px;top:57px;font-family:Cursive;font-size:14pt;color:#ff0000;height:78px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:16px;top:57px;font-family:Cursive;font-size:14pt;color:#ff0000;height:56px;"scrollamount="5" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:300px;top:86px;font-family:Cursive;font-size:14pt;color:#ff0000;height:194px;"scrollamount="2" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:292px;top:10px;font-family:Cursive;font-size:14pt;color:#ff0000;height:251px;"scrollamount="6" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:278px;top:74px;font-family:Cursive;font-size:14pt;color:#ff0000;height:154px;"scrollamount="1"direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:241px;top:72px;font-family:Cursive;font-size:14pt;color:#ff0000;height:82px;"scrollamount="3" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:276px;top:32px;font-family:Cursive;font-size:14pt;color:#ff0000;height:70px;"scrollamount="8" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:272px;top:15px;font-family:Cursive;font-size:14pt;color:#ff0000;height:334px;"scrollamount="11" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:90px;top:38px;font-family:Cursive;font-size:14pt;color:#ff0000;height:167px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:275px;top:108px;font-family:Cursive;font-size:14pt;color:#ff0000;height:375px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:22px;top:76px;font-family:Cursive;font-size:14pt;color:#ff0000;height:12px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:89px;top:54px;font-family:Cursive;font-size:14pt;color:#ff0000;height:366px;"scrollamount="2" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:26px;top:72px;font-family:Cursive;font-size:14pt;color:#ff0000;height:358px;"scrollamount="1" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:3px;top:44px;font-family:Cursive;font-size:14pt;color:#ff0000;height:130px;"scrollamount="3" direction="down">datapro.in</marquee> 
+<marquee style="z-index:2;position:absolute;left:300px;top:108px;font-family:Cursive;font-size:14pt;color:#ff0000;height:375px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:335px;top:76px;font-family:Cursive;font-size:14pt;color:#ff0000;height:125px;"scrollamount="7" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:400px;top:54px;font-family:Cursive;font-size:14pt;color:#ff0000;height:366px;"scrollamount="2" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:355px;top:72px;font-family:Cursive;font-size:14pt;color:#ff0000;height:358px;"scrollamount="1" direction="down">datapro.in</marquee>
+<marquee style="z-index:2;position:absolute;left:380px;top:44px;font-family:Cursive;font-size:14pt;color:#ff0000;height:375px;"scrollamount="3" direction="down">datapro.in</marquee>

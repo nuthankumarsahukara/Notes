@@ -1,0 +1,81 @@
+Tight Coupling in Java occurs when a class is highly dependent on the structure or implementation of another class. This means a change in one class directly affects the other.
+
+// Engine class
+class Engine {
+    public void start() {
+        System.out.println("Engine Started");
+    }
+}
+
+// Car class is tightly coupled to Engine
+class Car {
+    Engine engine = new Engine(); // Direct instantiation
+
+    public void startCar() {
+        engine.start();
+        System.out.println("Car Started");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.startCar();
+    }
+}
+
+
+Why is this Tight Coupling?
+The Car class creates an Engine object using new Engine().
+
+If you want to switch to a different engine (e.g., ElectricEngine), you'll have to modify the Car class, breaking the Open/Closed Principle.
+
+ Loose Coupling Example in Java
+We achieve loose coupling by programming to an interface, not an implementation. This way, classes depend on abstractions, not concrete classes.
+
+// Engine interface
+interface Engine {
+    void start();
+}
+
+
+// PetrolEngine class
+class PetrolEngine implements Engine {
+    public void start() {
+        System.out.println("Petrol Engine Started");
+    }
+}
+
+// ElectricEngine class
+class ElectricEngine implements Engine {
+    public void start() {
+        System.out.println("Electric Engine Started");
+    }
+}
+
+
+// Car class loosely coupled to Engine interface
+class Car {
+    private Engine engine;
+
+    // Inject the engine through the constructor
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void startCar() {
+        engine.start();
+        System.out.println("Car Started");
+    }
+   public static void main(String[] args) {		 
+	Car obj1 = new Car(new PetrolEngine());
+	obj1.startCar();
+   }
+}
+
+Benefits of Loose Coupling:
+
+--->Flexibility: Easily switch between engine types without changing the Car class.
+--->Maintainability: Easier to test and update.
+--->Scalability: Add new engine types without touching existing classes.

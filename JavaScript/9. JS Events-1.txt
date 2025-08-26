@@ -1,0 +1,260 @@
+onmousemove Event:
+The onmousemove event occurs when a user moves the mouse pointer over an element.
+
+Syntax
+In HTML:
+<element onmousemove="SomeJavaScriptCode">
+
+In JavaScript:
+object.onmousemove="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script>
+function bigImg(x)
+{
+x.style.height="84px";
+x.style.width="84px";
+}
+function normalImg(x)
+{
+x.style.height="32px";	
+x.style.width="32px";
+}
+</script>
+</head>
+<body>
+<img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="html.png" alt="Logo" width="32" height="32" />
+</body>
+
+onmouseover and onmouseout:
+These two event types will help you to create nice effects with images or even with text as well. The onmouseover event occurs when you bring your mouse over any element and the onmouseout occurs when you take your mouse out from that element.
+
+Syntax
+In HTML:
+<element onmouseover="SomeJavaScriptCode">
+
+In JavaScript:
+object.onmouseover="SomeJavaScriptCode"
+
+Syntax
+In HTML:
+<element onmouseout="SomeJavaScriptCode">
+
+In JavaScript:
+object.onmouseout="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function over() 
+{
+alert("Mouse Over");
+}
+function out() 
+{
+alert("Mouse Out");
+}
+</script>
+</head>
+<body>
+<div onmouseover="over()" onmouseout="out()">
+<h2> This is inside the division </h2>
+</div>
+</body>
+
+Example:
+<!doctype html>
+<body>
+<h1 onmouseover="style.color='red'" 
+onmouseout="style.color='black'">
+Mouse over this text
+</h1>
+</body>
+
+Example:
+<!doctype html>
+<body>
+<a href="http://www.datapro.in/" 
+onmouseover="document.bgColor='#FFFF00'"
+onmouseout="document.bgColor='#FFFFEE'">
+Move your mouse over me!
+</a>
+</body>
+
+onresize Event
+The onresize event occurs when the size of an element has changed.
+
+Syntax
+In HTML:
+<element onresize="SomeJavaScriptCode">
+
+In JavaScript:
+object.onresize="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script>
+function showMsg()
+{
+alert("Hi!! changed the size of the Browser Window!");
+}
+</script>
+</head>
+<body onresize="showMsg()">
+<p>Try to resize the browser window.</p>
+</body>
+
+HTML onchange Event:
+The onchange attribute fires the moment when the value of the element is changed. The onchange attribute can be used with the <input>, <textarea>, and <select> elements.
+
+Syntax
+ <element onchange="script"> 
+
+Attribute Values 
+Value	Description
+script	The script to be run on onchange
+
+Example:
+<!doctype html>
+<head>
+<script>
+function checkField(val)
+{
+alert("The input value has changed. The new value is: " + val);
+}
+</script>
+</head>
+<body>
+Enter text: 
+<input type="text" name="txt" value="Nuthan" onchange="checkField(this.value)">
+<p>Modify the text in the input field, then click outside the field to fire onchange.</p>
+</body>
+
+HTML onselect Event
+The onselect attribute fires after some text has been selected in an element. The onselect attribute can be used within: 
+<input type="file">, <input type="password">, 
+<input type="text">, and <textarea>.
+
+Syntax
+ <element onselect="script"> 
+	
+Attribute Values
+Value	Description
+script	The script to be run on onselect
+
+Examples:
+<!doctype html>
+<head>
+<script>
+function showMsg()
+{
+alert("You have Selected My Text!");
+}
+</script>
+</head>
+<body>
+Some text: 
+<input type="text" value="sraju!!" onselect="showMsg()">
+</body>
+</html>
+
+Form Events:
+onblur:The onblur event occurs when an object loses focus. Onblur is most often used with form validation code (When the user leaves a form field).
+
+Note: The onblur event is the opposite of the onfocus event.
+
+Syntax
+In HTML:
+<element onblur="SomeJavaScriptCode">
+
+In JavaScript:
+object.onblur="SomeJavaScriptCode"
+
+Supported JS objects: 
+Document, Window.
+
+Example:
+<!doctype html>
+<head>
+<script>
+function upperCase()
+{
+var x=document.getElementById("fname");
+x.value=x.value.toUpperCase();
+}
+function lowerCase()
+{
+var x=document.getElementById("fname");
+x.value=x.value.toLowerCase();
+}
+</script>
+</head>
+<body>
+Enter your name: <input type="text" id="fname" onblur="upperCase()" />
+</body>
+
+onfocus Event:
+The onfocus event occurs when an element gets focus. Onfocus is most often used with <input>, <select>, and <a>.
+
+Note: The onfocus event is the opposite of the onblur event.
+
+Syntax
+In HTML:
+<element onfocus="SomeJavaScriptCode">
+
+In JavaScript:
+object.onfocus="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function setStyle(x)
+{
+document.getElementById(x).style.background="yellow";
+}
+</script>
+</head>
+<body>
+<form action="html5.png" name="myform" id="form1">
+<label>First name: </label> <br/>
+<input type="text" id="fname" onfocus="setStyle(this.id)" />
+<br />
+<label>Last name: </label> <br/>
+<input type="text" id="lname" onfocus="setStyle(this.id)" /> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+HTML onsubmit Event :
+The onsubmit attribute fires when a form is submitted. The onsubmit attribute is only used within: <form>.
+
+Syntax
+ <form onsubmit="script"> 
+
+Attribute Values
+Value	Description
+script	The script to be run on onsubmit
+
+Example:
+<!doctype html>
+<head>
+<script>
+function checkForm()
+{
+alert("The form is submitted");
+}
+</script>
+</head>
+<body>
+<form action="nit.html" onsubmit="checkForm()">
+First name: <input type="text" name="fname"><br>
+Last name: <input type="text" name="lname"><br>
+<input type="submit" value="Submit">
+</body>
+</html>

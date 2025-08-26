@@ -1,0 +1,132 @@
+Oracle Joins:-
+	Join is a query that is used to combine rows from two or more tables, views, or materialized views. It retrieves data from multiple tables and we can creates a new table. There may be at least one join condition either in the FROM clause or in the WHERE clause for joining two tables. It compares two columns from different tables and combines pair of rows, each containing one row from each table, for which join condition is true.
+Types of Joins
+1.Equi joins and Non-Equi joins
+2.Inner Joins (Simple Join)
+3.Outer Joins
+	Left Outer Join (Left Join)
+	Right Outer Join (Right Join)
+	Full Outer Join (Full Join)
+4.Self Joins
+5.Cross Joins (Cartesian Products)
+6.Natural Joins
+7.Anti joins
+8.Semi joins
+
+EQUI JOIN:-
+	Oracle Equi join returns the matching column values of the associated tables. It uses a comparison operator in the WHERE clause to refer equality This is represented by (=) sign. . Equijoin also can be performed by using JOIN keyword followed by ON keyword and then specifying names of the columns along with their associated tables to check equality.
+Syntax 1:
+SELECT column_list FROM table1, table2.... WHERE table1.column name= table2.column_name;
+
+Example:	select empno,ename,job,department.deptno,department.deptname from employee,department 
+	where employee.deptno=department.deptno;
+
+Syntax 2 : SELECT * FROM table1 JOIN table2 [ON (join_condition)]
+Example: select employee.empno,employee.ename,employee.job,department.deptno,
+department.deptname from employee join department on employee.deptno = department.deptno;
+
+Non-Equi Join
+An nonequi join is an inner join statement that uses an unequal operation (i.e.: <>, >, <, !=, BETWEEN, etc.) to match rows from different tables.
+
+Syntax 1:
+SELECT column_list FROM table1,table2....WHERE table1.column name<> table2.column_name;
+Example:	select empno,ename,job,dept.deptno,dept.deptname from employee,department 
+	where employee.deptno<>department.deptno;
+
+Syntax 2 : SELECT * FROM table1 JOIN table2 [ON (join_condition)]
+Example: select employee.empno,employee.ename,employee.job,department.deptno,
+department.deptname from employee join department on employee.deptno <> department.deptno;
+
+Inner Join:-
+Inner Join is the simplest and most common type of join. It is also known as simple join. It returns all rows from multiple tables where the join condition is met. The INNER join is such a join when equijoins and nonequijoins are performed, rows from the source and target tables are matched using a join condition formulated with equality and inequality operators, respectively.
+
+Syntax :SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+
+Example:	select employee.empno,employee.ename,employee.deptno,department.deptno,
+	department.deptname from employee inner join department on 		employee.deptno=department.deptno;
+
+Outer Join:
+An outer join is similar to equijoin but it gets also the non-matched rows from the table. It is categorized in Left Outer Join, Right Outer Join and Full Outer Join by Oracle 9i ANSI/ISO 1999 standard.
+
+Left Outer Join:-
+Left Outer Join returns all rows from the left (first) table specified in the ON condition and only those rows from the right (second) table where the join condition is met.
+
+Syntax:SELECT columns FROM table1 LEFT [OUTER] JOIN table2 ON table1.column = 	table2.column;
+
+Example:	select employee.empno,employee.ename,employee.deptno,department.deptno,
+	department.deptname from employee left outer join department on 				employee.deptno=department.deptno;
+
+Right Outer Join:-
+Right Outer Join returns all rows from the right (first) table specified in the ON condition and only those rows from the left (second) table where the join condition is met.
+
+Syntax:SELECT columns FROM table1 RIGHT [OUTER] JOIN table2 ON table1.column = 	table2.column;
+
+Example:	select employee.empno,employee.ename,employee.deptno,department.deptno,
+	department.deptname from employee right outer join department on 				employee.deptno=department.deptno;
+
+Full Outer Join:-
+Full Outer Join returns all rows from the right table and left table specified in the ON condition and where the join condition is met.
+
+Syntax:SELECT columns FROM table1 FULL [OUTER] JOIN table2 ON table1.column = 	table2.column;
+
+Example:	select employee.empno,employee.ename,employee.deptno,department.deptno,
+	department.deptname from employee full outer join department on 		employee.deptno=department.deptno;
+
+SELF JOIN:-
+Self Join is a specific type of Join. In Self Join, a table is joined with itself (Unary relationship). A self join simply specifies that each rows of a table is combined with itself and every other row of the table.
+
+Syntax : 	SELECT a.column_name, b.column_name... FROM table1 a, table1 b
+	WHERE a.common_filed = b.common_field;
+Example:	select e1.ename||' Works for '||e2.ename "Employee and their Manger"  from
+	employee e1, employee e2 where e1.manager =e2.empno;
+
+Cross Join (Cartesian Products) :
+The CROSS JOIN specifies that all rows from first table join with all of the rows of second table. If there are "x" rows in table1 and "y" rows in table2 then the cross join result set have x*y rows. It normally happens when no matching join columns are specified. In simple words you can say that if two tables in a join query have no join condition, then the Oracle returns their Cartesian product.
+
+Syntax: SELECT * FROM table1 CROSS JOIN table2;
+			(or)
+	             SELECT * FROM table1, table2;
+
+Example: 	select employee.ename,department.deptname from employee cross join dept;
+	select * from employee,department;
+
+Anti Join :-
+Anti-join is used to make the queries run faster. It is a very powerful SQL construct Oracle offers for faster queries. Anti-join between two tables returns rows from the first table where no matches are found in the second table. It is opposite of a semi-join. An anti-join returns one copy of each row in the first table for which no match is found. Anti-joins are written using the NOT EXISTS or NOT IN constructs.
+
+Syntax: 	SELECT columns FROM table_1 WHERE NOT EXISTS ( SELECT values FROM table_2
+	WHERE table_2.column = table_1.column);
+
+Example:	select d.deptno,d.deptname from department d where not exists(select 1 from 			employee e where e.deptno=d.deptno) order by d.deptno;
+
+	select empno,ename,job from employee where deptno not in 
+	(select deptno from department);
+	
+	select empno,ename,job,deptno from employee where deptno not in 
+	(select deptno from department);
+
+Semi Join:-
+1.Semi-join is introduced in Oracle 8.0. It provides an efficient method of performing a WHERE EXISTS sub-query.
+2.A semi-join returns one copy of each row in first table for which at least one match is found.
+3.Semi-joins are written using the EXISTS construct.
+
+Syntax:	SELECT columns FROM table_1 WHERE EXISTS (SELECT values FROM table_2
+	WHERE table_2.column = table_1.column);
+
+Example:	select d.deptno,d.deptname from department d where exists (select 1 from 
+	employee 	e where e.deptno=d.deptno) order by d.deptno;
+	
+	select d.deptno,d.deptname from department d where exists (select 1 from 
+	employee 	e where e.deptno<>d.deptno) order by d.deptno;
+	
+	select d.deptno,d.deptname from department d where exists (select 1 from 
+	employee 	e where e.deptno>60) order by d.deptno;
+
+Natural Join:-
+1.The join is based on all the columns in the two tables that have the same name and data types.
+2.The join creates, by using the NATURAL JOIN keywords.
+3.It selects rows from the two tables that have equal values in all matched columns.
+4.When specifying columns that are involved in the natural join, do not qualify the column name with a table name or table alias.
+
+Syntax: SELECT table1.column, table2.column FROM table1 NATURAL JOIN table2;
+
+Example:select empno,ename,deptno from employee natural join department;

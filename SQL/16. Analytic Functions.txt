@@ -1,0 +1,71 @@
+Analytic Functions in ORACLE
+Analytical functions are used to do 'analyze' data over multiple rows and return the result in the current row. Aggregate functions group the rows and return the output for the entire result set. However, analytical functions return the aggregated output but they do not group the result set. They return the value for each row in the result set.
+
+The general syntax of the analytic function is:
+Function(arg1,..., argn) OVER ( [PARTITION BY <...>] [ORDER BY <...>] [<window_clause>])
+
+OVER:
+The scope of an analytical function is defined in an OVER clause. OVER is compulsory for all analytical functions. If you do not give any arguments after OVER, it will assume the scope as ALL.
+
+PARTITION BY:
+As the aggregate functions use GROUP BY to group rows, analytical functions use PARTITION BY.
+
+ORDER BY:
+It is used to specify the order of records in the selected partition. This is different from the ORDER BY clause of the main query which comes after WHERE.
+
+CORR function returns the coefficient of correlation of a set of number pairs.
+Syntax: CORR(n,m) [ over (analytic_clause) ]
+
+COVAR_POP function returns the population covariance after discarding nulls. The function performs the following calculation.
+Syntax: COVAR_POP (expr1, expr2) [ OVER (analytic_clause) ]
+
+COVAR_SAMP function returns the sample covariance after discarding nulls. If there are no records in the set after discarding nulls, the return value is NULL.
+Syntax: COVAR_SAMP(expr1, expr2) [ OVER (analytic_clause) ]
+
+CUME_DIST aggregate function is predictive, returning the cumulative distribution of the specified value in a set. The CUME_DIST analytic function is order sensitive so the ORDER BY clause is mandatory. Omitting a partitioning clause from the OVER clause means the whole result set is treated as a single partition.
+Syntax: CUME_DIST() OVER ([ query_partition_clause ] order_by_clause)
+
+DENSE_RANK function returns the rank of a row in a group of rows. It is very similar to the RANK function. However, the RANK function can cause non-consecutive rankings if the tested values are the same. Whereas, the DENSE_RANK function will always result in consecutive rankings.
+
+DENSE_RANK Function Syntax #1 - Used as an Aggregate Function
+DENSE_RANK( expression 1, ... expression_n ) WITHIN GROUP ( ORDER BY expression1, ... expression_n)
+
+DENSE_RANK Function Syntax #2 - Used as an Analytic Function
+DENSE_RANK() OVER ( [query_partition_clause] ORDER BY clause)
+
+FIRST_VALUE function returns the first value in an ordered set of values from an analytic window. It is similar to the LAST VALUE and NTH VALUE functions.
+Syntax: FIRST_VALUE
+{ (expr) [ {RESPECT | IGNORE} NULLS ]
+| (expr [{RESPECT | IGNORE} NULLS ])
+}
+OVER (analytic_clause)
+
+LAG function is an analytic function that lets you query more than one row in a table at a time without having to join the table to itself. It returns values from a previous row in the table.
+Syntax:
+LAG (expression [, offset [, default] ] )
+OVER ( [query_partition_clause ] order_by_clause)
+
+LAST_VALUE function returns the last value in an ordered set of values from an analytic window. It is similar to the FIRST VALUE and NTH VALUE functions.
+Syntax:
+LAST_VALUE
+{(expr) [ { RESPECT | IGNORE} NULLS ]
+| (expr [ { RESPECT | IGNORE } NULLS ])
+OVER (analytic_clause)
+
+LEAD function is an analytic function that lets you query more than one row in a table at a time without having to join the table to itself. It returns values from the next row in the table.
+Syntax:
+LEAD (expression [, offset [, default] ] )
+OVER ( [query_partition_clause ] order_by_clause)
+
+LISTAGG function concatenates values of the measure_column for each GROUP based on
+the order_by_clause.
+Syntax:
+LISTAGG (measure_column [, 'delimiter'])
+WITHIN GROUP (order_by_clause) [OVER (query_partition_clause)]
+
+NTH_VALUE function returns the nth value in an ordered set of values from an analytic window. It is similar to the FIRST VALUE and LAST VALUE functions except the NTH_VALUE lets you find a specific position in the analytic window such as 2nd, 3rd, or 4th value.
+Syntax:
+NTH_VALUE (measure_column, n)
+[FROM FIRST | FROM LAST]
+[RESPECT NULLS | IGNORE NULLS]
+OVER ([query_partition_clause] [order_by_clause])

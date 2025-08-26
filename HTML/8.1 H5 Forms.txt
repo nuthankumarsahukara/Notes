@@ -1,0 +1,145 @@
+What is a Webform?
+A Webform (HTML form) on a web page allows a user to enter data that is sent to a server for processing. These forms contains checkboxes, radio buttons, or text fields.  Webforms are defined in formal programming languages such as HTML, Perl, Php, Java or .NET.
+
+Web 1.0 was an early stage of the conceptual evolution of the World Wide Web, centered around a top-down approach to the use of the web and its user interface. 
+
+Web 2.0 was coined in 1999 to describe web sites that use technology beyond the static pages of earlier web sites. web 2.0 suggests a new version of the World Wide Web, it does not refer to an update to any technical specification. Web 2.0 include social networking sites, blogs, wikis, video sharing sites, hosted services, web applications, Web 2.0 offers all users the same freedom to contribute.
+
+Key features of Web 2.0 
+Free Classification of Information
+Rich User Experience
+User as a Contributor
+Long Tail
+User Participation
+Basic Trust
+Dispersion.
+
+New <input> Types in HTML5 (Web forms 2.0) (Advanced Forms)
+
+Web Forms 2.0 has been integrated into HTML5. These features were originally part of a WHATWG specification called Web Forms 2.0, based upon existing work at the W3C. That specification has now been rolled into HTML5.
+
+HTML5 has several new input types for forms. These new features allow better input control and validation. HTML5 defines a variety of new input types: sliders, number spinners, popup calendars, color choosers, autocompleting suggest boxes, and more..!!
+
+HTML5 defines 13 new values for the type attribute of the HTML <input> element (search, tel, url, email, datetime, date, month, week, time, datetime-local, number, range, and color). In that 6 are date pickers and 7 are new text types.
+
+1. color(color chooser)
+2. date(popup calendar)
+3. datetime(datetime chooser)
+4. datetime-local(datetime chooser)
+5. email(Email Entry)
+6. month(month chooser)
+7. number(spinner)
+8. range(slider)
+9. search(Search Query Input)
+10. tel(Telephone Input)
+11. time(TimeSelector)
+12. url(URL Entry)
+13. week(WeekChooser)
+
+Note: All major browsers support all the new input types.If they are not supported, they will behave as regular text fields.
+
+Date pickers:
+1. date
+2. datetime
+3. datetime-local
+4. month
+5. time
+6. week
+
+In RealTime the following Applications are required date pickers..!!
+E-commerce, Ticket Booking, Appointments, Greetings, Training Schedules, Banking, Finance Applications, Registration forms, Birth certificates, school Admissions...!!
+
+Input Type: date 
+It allows the user to select a date. A Date and time field can be easily found in many web forms. Typical applications are like ticket booking, appointment booking, ordering food Items and etc.
+
+Syntax: Input type="Name of Input"
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Select valid Date..!!</label> <br/>
+<input type="date" name="dt"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: datetime
+The datetime type allows the user to select a date and time (with time zone). You can choose date and time with time zone. Input value is represented in UTC/GMT time.
+
+Syntax: Input type="name of the Type"
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label>Select Valid Date&Time..!!</label> <br/>
+<input type="datetime" name="dtm"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: datetime-local 
+The datetime-local type allows the user to select a date and time (no time zone).
+
+Syntax: Input type=name
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid Date&Time-Local..!!</label> <br/>
+<input type="datetime-local" name="dtm"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: month 
+The month type allows the user to select a month and year.
+
+Syntax: Input type=name
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid Month&Year..!!</label> <br/>
+<input type="month" name="mn"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: time 
+The time type allows the user to select a time. The time will be collected with the hour, minutes, seconds, and fractions of seconds. No timezone will be set.
+
+Syntax:Input type=name
+
+Example:
+<!doctype html>
+<body>
+<form>
+<label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid TIME..!!</label> <br/>
+<input type="time" name="tm"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>
+
+Input Type: week 
+The week type allows the user to select a week and year. The week will be collected without any timezone information.
+
+Syntax:Input type=name
+
+Example:
+<body>
+<form>
+<label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid WEEK & YEAR..!!</label> <br/>
+<input type="week" name="wk"/> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>

@@ -1,0 +1,35 @@
+JDK (Java Development Kit)
+Definition: A software development kit required to develop Java applications.
+
+Role: It provides tools like the compiler (javac), debugger, and other utilities necessary for developing, compiling, and running Java programs.
+
+Contains: JRE + development tools (e.g., compiler, debugger, etc.).
+
+Usage: Used by developers to write, compile, and debug Java code.
+
+How To Downloaded the JDK Software:
+
+https://www.oracle.com/in/java/technologies/downloads/
+ 
+JRE (Java Runtime Environment)
+Definition: A runtime environment that allows you to run Java applications.
+
+Role: It provides the libraries, Java Virtual Machine (JVM), and other components necessary for running Java programs, but it does not include development tools like the compiler.
+
+Contains: JVM + standard Java libraries and supporting files.
+
+Usage: Used by users or environments that only need to run Java applications.
+
+JVM (Java Virtual Machine)
+Definition: A virtual machine that executes Java bytecode.
+
+Role: It acts as an abstract computing machine that enables Java programs to be executed on any platform (platform independence). It interprets or compiles bytecode into machine code specific to the host operating system.
+
+Contains: A virtual runtime engine for executing Java bytecode (but doesn't include the entire JRE).
+
+Usage: Responsible for running Java applications by converting bytecode into native machine code.
+
+Comparison of Roles:-
+JDK: Developer's toolkit for writing and compiling Java code.
+JRE: Runtime environment that supports running Java programs.
+JVM: The core engine that runs Java bytecode, making Java platform-independent.

@@ -1,0 +1,38 @@
+Child to Parent Communication
+--->In React, data flow is unidirectional (Parent → Child).
+--->To send data from Child to Parent, we use a callback function.
+
+Steps to Pass Data from Child to Parent:
+1.Parent component defines a function.
+2.This function is passed to the Child component as a prop.
+3.The Child component calls this function and sends data to it.
+4.Parent receives the data via the function and updates state if needed.
+
+Syntax:
+
+Parent Component :
+
+function Parent() {
+  const [msg, setMsg] = useState("");
+  const myFunction = (data) => {
+    // Handle data from child
+    setMsg(data);
+  };
+
+  return (
+    <Child sendData={myFunction} />
+    <p>Message from Child: {msg}</p>
+  );
+}
+
+Child Component :
+
+function Child(props) {
+  const handleClick = () => {
+    props.sendData("Hello from Child");
+  };
+
+  return (
+    <button onClick={handleClick}>Send to Parent</button>
+  );
+}

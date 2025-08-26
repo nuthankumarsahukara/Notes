@@ -1,0 +1,26 @@
+Transaction Control Language (TCL) Commands in Oracle
+COMMIT Command in Oracle:
+The commit statement completes the transaction and saves the changes in the database permanently. The transaction can be inserted, updated, or deleted queries. Once we execute the commit statement, we cannot revert back the changes. The commit statements can be executed after the transaction statement. This command is used to make a transaction permanent in the database. These are of two types.
+1.Implicit Commit: These transactions are committed by the system (oracle database) by default. 
+Example:DDL commands
+2.Explicit commit: These transactions are committed by the user as per requirement. Example: DML commands
+Syntax: Commit;
+ 
+ROLLBACK Command in Oracle:
+The Rollback command in Oracle is used to undo the transactions that have not already been saved permanently to the database and get back to the initial state from where the transaction was started. So, if you want to restore the data into its previous state, then you need to use the ROLLBACK command at any time after the DML queries have been written but remember once the COMMIT statement has been executed then you cannot ROLLBACK the data. So, this command is used to cancel transactions. But once a transaction is committed then we cannot "rollback(cancel)".
+Syntax : ROLLBACK [to <save point>]
+
+SAVEPOINT Command in Oracle
+The SAVEPOINT statement in Oracle is used to save a transaction temporarily. We can save multiple SAVEPOINT in a single transaction. We can ROLLBACK the transaction to a given SAVEPOINT and the transaction after that SAVEPOINT are revert back to its previous state. We cannot ROLLBACK to a SAVEPOINT after the COMMIT statement.
+Syntax: SAVEPOINT <pointer name>;
+
+AUTOCOMMIT:
+You don't require to execute a COMMIT statement every time whenever an INSERT, UPDATE or DELETE command is executed. You just need to set AUTOCOMMIT ON to execute COMMIT Statement automatically in Oracle. It is going to be executed for each DML statement. set auto-commit on using the following syntax.
+Syntax: SET AUTOCOMMIT ON/OFF;
+
+SET TRANSACTION Command in Oracle:
+Using SET TRANSACTION in Oracle to begin a transaction is optional. A new transaction begins implicitly with the first DIML statement that you execute after you make a database connection or with the first DML statement that you execute following a COMMIT or a ROLLBACK. You need to use SET TRANSACTION only when you want transaction attributes such as READ ONLY that are not the default.
+The SET TRANSACTION marks the beginning of a transaction. Any changes you make to your data following the beginning of a transaction are not made permanent until you issue a COMMIT. Furthermore, those changes are not visible to other users until you've issued a COMMIT.
+Syntax: SET TRANSACTION [ READ ONLY | READ WRITE] [ NAME 'transaction_name']; Transaction Types in Oracle:
+1.SET TRANSACTION READ WRITE: It is the default transaction type specified as a read/write transaction. It allows us to issue statements such as UPDATE and DELETE.
+2.SET TRANSACTION READ ONLY: It is a read-only transaction that does not allow the INSERT,UPDATE and the DELETE DML statements.

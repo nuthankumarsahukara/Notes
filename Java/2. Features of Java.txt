@@ -1,0 +1,46 @@
+Features of Java:
+
+Simple:-
+	java is very easy to learn,and its syntax is simple, clean and easy to understand . java language is a simple programing language. java is an object oriented programming language.
+
+Object-Oriented:-
+	Object,class,Inheritance,Polymorphism,Abstraction,Encapsulation
+
+Portable:-
+	Java is portable because it facilites you to carry the java bytecode to any platform. it doesn't required any implementtion.
+
+Platform independent:-
+	Java is platform Indendendent because it is different from other language like c,c++ etc which are compiled into platform specific machines while java is a write once,run anywhere language. a platform is the hardware or software enviroment in which a program runs.
+
+Secured:-
+	java is best know for its security with java we can develop virus-free Systems.Java is secured beacuse
+-> No explicit pointer
+->Java program run inside a virtual machine Sandbox.
+->Classloader :- Classloader in java is a part of the JRE which is used to load java classes into the java virtual machine Dynamically.
+->byte code
+->security manager
+	
+Robust:-
+	Robust is strong Java is robust because 
+->it uses strong memory management
+->There is a lack of pointers that avoids security problems.
+->Java provides automatic garbage collection
+
+Architecture neutral:-
+	Java is Architecture neutral because there are no implementation dependent features. for example the size of primitive type is fixed.
+
+Interpreted:-
+	Java is  a Interpreter is a computer program (system software) that implements the JVM It is responsible for reading and executing the program.
+
+High Performance:-
+	Java is faster than other traditional interpreted programming language because java bytecode is close to native code.
+
+Multithreaded:-
+	A thread is like a seperate program,executing concurrently.we can write java program that deal with many tasks at once by defining multiple threads. the main advantage of multi-threading is that it doesn't occupy memory for each thread .it shares a common memory area threads are important for multi-media ,Web applications.
+
+Distributed:-
+	java is distributed because it facilites user to create distributed application in java.RMI(Remote Method Involcation) and EJB (Enterprise Java Beans) are used for creating distributed application.the features of java makes us able to access files by calling the methods from any machine on the internet.
+
+Dynamic:-
+	java is a Dynamic language. it supports the dynamic loading of classes. it means classes are loaded on demand it also supports function from its native languages.
+->java supports dyamic compilation and automatic memory management (Garbage Collection).

@@ -1,0 +1,31 @@
+Microservices is an architectural approach to build a collection of logic, data layers, and loosely coupled applications. Every microservices deals with one business function end-to-end independently from other microservices. 
+Microservices present simple and understandable APIs to communicate with each other through lightweight common protocols such as HTTP. With the increasing demand for Microservices Architecture Patterns in the industry the popularity of Spring Boot is also increasing because when it comes to Microservices Development , Spring Boot is the first choice of every developer. Spring Boot is a microservice-based framework that makes a production-ready application in significantly less time. By using Spring Boot, you can make your microservices smaller and it will run faster. For this reason, Spring Boot has become the standard for Java microservices. In this article, we will create a simple Microservice using Spring Boot.
+
+Characteristics of Microservices
+---->Loose Coupling
+---->High Cohesion
+---->Independent Deployment
+---->Technology Agnostic
+---->Scalable and Resilient
+
+Tools & Technologies
+---->Spring Boot: Simplifies microservice creation.
+---->Spring Cloud: Adds microservice patterns (service discovery, config server, etc.).
+---->Eureka: Service Registry (Discovery Server).
+---->Feign: Declarative REST client.
+---->Spring Cloud Config: Centralized configuration management.
+---->Zuul / Spring Cloud Gateway: API Gateway.
+---->Hystrix / Resilience4j: Circuit Breaker and fault tolerance.
+---->RabbitMQ/Kafka: Messaging queues for async communication.
+
+ Advantages
+---->Independent deployment
+---->Better scalability
+---->Fault isolation
+---->Technology flexibility
+
+Challenges
+---->Complex management
+---->Distributed tracing and debugging
+---->Data consistency (eventual consistency)
+---->Deployment overhead

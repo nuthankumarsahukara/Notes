@@ -1,0 +1,91 @@
+Control Statements in PL/SQL
+Control statements are most important in PL/SQL.
+Control Statements are elements in a program that control the flow of program execution.
+IF Statement
+
+1. IF-THEN Statement :-
+Syntax :-
+	IF condition THEN
+	Statement;
+	END IF;
+Example :- Number is positive:
+	declare
+	a number(5);
+	begin
+	a:=&a;
+	if a>0 then
+	dbms_output.put_line('Number is Positive');
+	end if; 
+	end;
+
+2. IF-THEN-ELSE Statement 
+Syntax:-
+	IF condition THEN
+	[Statements to execute when condition is TRUE] 
+	ELSE
+	[Statements to execute when condition is FALSE] 
+	END IF;
+
+Example:
+	declare
+ 	 num number(3);
+	begin
+	num:=&num;
+  	if mod(num, 2) = 0 then
+    	dbms_output.put_line(num || ' is even');
+  	else
+    	dbms_output.put_line(num || ' is odd');
+  	end if;
+	end;
+
+3. IF-THEN-ELSIF statement
+Syntax
+	IF Condition1 THEN
+	Statements to execute when condition1 is TRUE
+	ELSIF condition2 THEN
+	Statements to execute when condition2 is TRUE 
+	END IF;
+
+Example:
+	declare
+  	marks number(3); 
+	begin
+	marks:=&marks;
+  	if marks >= 90 then
+    	dbms_output.put_line('Grade A');
+  	elsif marks >= 80 then
+   	dbms_output.put_line('Grade B');
+ 	elsif marks >= 70 then
+    	dbms_output.put_line('Grade C');
+ 	elsif marks >= 60 then
+    	dbms_output.put_line('Grade D');
+	elsif marks>=50  then
+	dbms_output.put_line('Grade F');
+	elsif marks<50  then
+	dbms_output.put_line('Fail');
+  	end if;
+	end;
+
+4. IF-THEN-ELS-IF-ELSE Statement
+Syntax:-
+	IF condition1 THEN
+	Statements to execute when condition1 is TRUE
+	ELSIF condition2 THEN
+	Statements to execute when condition2 is TRUE
+	ELSE
+	Statements to execute when both condition1 and condition2 are FALSE
+	END IF;
+
+Example:
+	declare
+	a number(5);
+	begin
+	a:=&a;
+	if a>0 then
+	dbms_output.put_line('Number is Positive');
+	elsif a<0 then
+	dbms_output.put_line('Number is Negative');
+	else
+	dbms_output.put_line('Number is Zero');
+	end if; 
+	end;

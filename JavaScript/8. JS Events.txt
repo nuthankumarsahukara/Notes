@@ -1,0 +1,197 @@
+WORKING WITH JAVASCRIPT Events
+By using JavaScript, we have the ability to create dynamic web pages. Events are actions that can be detected by JavaScript.  Every element on a web page has certain events which can trigger a JavaScript. Events are normally used in combination with functions.
+
+EXAMPLES:
+Clicking a button
+A page is finished loading
+An image is finished loading
+Moving the mouse-cursor over an element
+Entering an input field
+Submitting a Form
+A key Stroke .......!!
+
+Events in JavaScript.
+Event 		Description  
+click 		Occurs when the user clicks on a link or form element
+error		Occurs when an error happens during loading of doc 	
+focus 		Occurs when input focus is given to a form element.  
+load 		Occurs when a page is loaded into Navigator 
+mouseout  	Occurs when the user moves the pointer off 
+mouseover  	Occurs when the user moves the pointer over
+reset 		when the user clears a form using the Reset button  
+select  		Occurs when the user selects a form element's field  
+submit  		Occurs when a form is submitted
+unload  		Occurs when the user leaves a page 
+
+onClick: The onclick event occurs when the user clicks on an element.
+
+Syntax
+In HTML:
+<element onclick="SomeJavaScriptCode">
+
+In JavaScript:
+object.onclick="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script>
+function displayDate()
+{
+document.getElementById("demo").innerHTML=Date();
+}
+</script>
+</head>
+<body>
+<p>Click the button to execute the <h3>displayDate()</h3></p>
+<button id="myBtn" onclick="displayDate()">ClickMe</button>
+<p id="demo"></p>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function MyMsg()
+{
+alert("Welcome to JSEvents");
+}
+</script>
+</head>
+<body>
+<p>Click the button to display the alert Msg ..</p>
+<button  onclick="MyMsg()"><img src='html5.png' width=10px height=10px> </button>
+<input type='submit' value="ClickMe" onclick="MyMsg()">
+<input type='button' value="ClickMe" onclick="MyMsg()" >
+</body>
+
+ondblclick Event:
+The ondblclick event occurs when the user double-clicks on an element.
+
+Syntax:
+In Html
+<element ondblclick="SomeJavaScriptCode">
+
+Syntax:
+In JavaScript:
+object.ondblclick="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function MyColor()
+{
+document.getElementById("col").style.color="#FF0099";
+}
+</script>
+</head>
+<body>
+<p id="col">Double Click the button to Chage the Color of the Text...!</p>
+<button ondblclick="MyColor()">DClickMe</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script>
+function copyText()
+{
+document.getElementById("field2").value=document.getElementById("field1").value;
+}
+</script>
+</head>
+<body>
+Field1: <input type="text" id="field1" value="Hello World!" /><br />
+Field2: <input type="text" id="field2" />
+<br /><br />
+<button ondblclick="copyText()">Copy Text</button>
+</body>
+		
+onload:
+The onload event occurs when an object has been loaded. onload is most often used within the <body> element to execute a script once a web page has completely loaded all content (including images, script files, CSS files, etc.).
+
+Syntax
+In HTML:
+<element onload="SomeJavaScriptCode">
+
+In JavaScript:
+object.onload="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script>
+function load()
+{
+alert("Page is loaded");
+}
+</script>
+</head>
+<body onload="load()">
+<h1>Hello World!</h1>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script>
+function loadImage()
+{
+alert("Image is loaded Successfully");
+}
+</script>
+</head>
+<body>
+<img src="html5.png" onload="loadImage()" width="100" height="132" />
+</body>
+
+onbeforeunload Event:
+The onbeforeunload event occurs once a page has unloaded (or the browser window has been closed). onunload occurs when the user navigates away from the page (by clicking on a link, submitting a form, closing the browser window, etc.)
+
+Syntax
+In HTML:
+<element onbeforeunload="SomeJavaScriptCode">
+
+In JavaScript:
+object.onbeforeunload="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<title>onbeforeunload</title>
+</head>
+<body onbeforeunload>
+<h1>Welcome to my World</h1>
+<p>Close this window or press F5 to reload the page.</p>
+</body>
+
+onerror Event
+The onerror event is triggered if an error occurs while loading an external file (e.g. a document or an image).
+
+Syntax
+In HTML:	
+<element onerror="SomeJavaScriptCode">
+
+In JavaScript:
+object.onerror="SomeJavaScriptCode"
+
+onerror is Supported by the Following HTML Tags:
+<img>, <object>, <script>, <style> 
+
+Example:
+<!doctype html>
+<head>
+<script>
+function imgError()
+{
+alert('The image could not be loaded.');
+}
+</script>
+</head>
+<body>
+<img src="water1.gif" onerror="imgError()">
+<p> Image that does not exist, therefore the onerror event occurs.</p>
+<p> If Image Existed NO Message displayed</p>
+</body>
+

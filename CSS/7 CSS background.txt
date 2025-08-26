@@ -1,0 +1,358 @@
+background-clip: This property specifies the painting area of the background.
+
+Syntax:
+background-clip: border-box|padding-box|content-box;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style> 
+div
+{
+width:300px;
+height:300px;
+padding:50px;
+background-color:lightblue;
+background-clip:content-box;
+border:4px solid #FF0000;
+text-align:justify;
+}
+</style>
+</head>
+<body>
+<div>
+Cascading Style Sheets were developed as a means for creating a consistent approach to providing style information for web documents. CSS has various levels and profiles. Each level of CSS builds upon the last. CSS3 has all advance features.
+<p> Cascading Style Sheets were developed as a means for creating a consistent approach to providing style information for web documents. typically adding new features and typically denoted as CSS 1, CSS 2, CSS 3, and CSS 4.  </p>
+</div>
+</body>
+</html>
+
+Note: border porperty change to dotted and observe output.
+
+background-origin Property:
+The background-origin property specifies, what the background-position property should be relative to.
+
+Syntax
+background-origin: padding-box|border-box|content-box;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style> 
+div
+{
+border:2px solid red;padding:30px;
+background-image:url('chrome.png');
+background-repeat:no-repeat;
+background-position:left;
+background-origin:border-box;
+}
+</style>
+</head>
+<body>
+<div>
+Google Chrome is a browser that combines a minimal design with sophisticated technology to make the Web faster, safer, and easier. Use one box for everything type in the address bar and get suggestions for both search and Web pages. 
+</div>
+</body>
+</html>
+
+CSS3 Borders
+With CSS3, you can create rounded borders, add shadow to boxes, and use an image as a border - without using a design program, like Photoshop. following border properties:
+
+1. border-radius
+2. box-shadow
+3. border-image
+
+
+CSS3 Rounded Corners
+Adding rounded corners in CSS2 was tricky. We had to use different images for each corner. In CSS3, creating rounded corners is easy. In CSS3, the border-radius property is used to create rounded corners:
+
+
+New Border Properties
+Property		Description	
+border-image	A shorthand property for setting all the border-image-*properties	
+border-radius	A shorthand property for setting all the four border-*-radius properties
+box-shadow	Attaches one or more drop-shadows to the box
+
+border-radius: It  is a shorthand property for setting the four border-*-radius properties
+
+Syntax
+border-radius: 1-4 length|% /px  1-4 length|%;
+
+JavaScript syntax:	
+object.style.borderRadius="5px"
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+div
+{
+border:2px solid #b2b2b2;
+padding:10px 40px; 
+background:#ccddcc;
+width:300px;
+border-radius:25px;
+</style>
+</head>
+<body>
+<div>The border-radius property allows you to add rounded corners to elements.</div>
+</body>
+</html>
+
+CSS3 Box Shadow
+The box-shadow property attaches one or more drop-shadows to the box.
+
+Syntax
+box-shadow: h-shadow v-shadow blur spread-color inset;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+div
+{
+width:300px;height:100px;
+background-color:red;
+box-shadow: 10px(-ve left,+ve right)  10px(-ve top,+ve bottom) 5px(box shadow) #990099;
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+Example
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+div
+{
+width:300px;
+height:100px;
+background-color:yellow;
+box-shadow: 10px 10px 50px 20px pink inset
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 Border Image
+The border-image property is a shorthand property for setting the border-image-source, border-image-slice, border-image-width, border-image-outset and border-image-repeat properties.
+
+Syntax
+border-image: source slice width outset repeat;
+
+Value			Description	
+border-image-source	The path to the image to be used as a border	
+border-image-slice		The inward offsets of the image-border	
+border-image-width	The widths of the image-border	
+border-image-outset	The amount by which the border image area 			extends beyond the border box	
+border-image-repeat	Whether the image-border should be 						repeated,rounded or stretched
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+div
+{
+border:15px solid transparent;
+width:250px;
+padding:10px 20px;
+}
+#round
+{
+border-image:url(https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-stone-path-in-forest-free-image.jpg?w=600&quality=80) 30 30 round;
+}
+#stretch
+{
+border-image:url(https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-stone-path-in-forest-free-image.jpg?w=600&quality=80) 30 30 stretch;
+}
+</style>
+</head>
+<body>
+<div id='round'>Here, the image is tiled (repeated) to fill the area.</div>
+<br>
+<div id='stretch'>Here, the image is stretched to fill the area.</div>
+</body>
+</html>
+
+CSS3 text-overflow Property:
+The text-overflow property specifies what should happen when text overflows the containing element.
+
+Syntax
+text-overflow: clip|ellipsis;
+
+JavaScript syntax:	
+object.style.textOverflow="ellipsis"
+
+Value	Description	
+clip	Clips the text	
+ellipsis	Render an ellipsis ("...") to represent clipped text	
+
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style> 
+div.testx
+{
+white-space:nowrap; 
+width:12em; 
+overflow:hidden; 
+border:1px solid #ff0000;
+}
+</style>
+</head>
+<body>
+<p>This div uses "text-overflow:ellipsis":</p>
+<div class="test" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+<p>This div uses "text-overflow:clip":</p>
+<div class="test" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+</body>
+</html>
+
+Text-Shadow:
+It applies shadow to text. You specify the horizontal shadow, the vertical shadow, the blur distance, and the color of the shadow:
+
+Syntax
+text-shadow: h-shadow v-shadow blur color;
+
+JavaScript syntax:	
+object.style.textShadow="2px 2px #ff0000"
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+h1
+{
+text-shadow: 5px 5px 5px #FF0011;
+}
+</style>
+</head>
+<body>
+<h1>NuthanTechnologies!</h1>
+</body>
+</html>
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+h1
+{
+text-shadow:-10px -10px red
+}
+</style>
+</head>
+<body>
+<h1>ITTechnologies!</h1>
+</body>
+</html>
+
+
+CSS3 word-break Property
+The word-break property specifies line breaking rules for non-CJK scripts.
+
+Note: 
+CJK scripts are Chinese, Japanese and Korean ("CJK") scripts.
+
+Syntax
+word-break: normal|break-all|;
+
+
+Value		Description
+normal		Breaks non-CJK scripts according to their own rules
+break-all		Lines may break between any two characters for non-CJK scripts
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+p.test1
+{
+width:11em; 
+border:1px solid #ff0000;
+word-break:hyphenate;
+}
+p.test2
+{
+width:11em; 
+border:1px solid #0000ff;
+word-break:break-all;
+}
+</style>
+</head>
+<body>
+<p class="test1"> This paragraph contains some text. This line will-break-at-hyphenates.</p>
+<p class="test2"> This paragraph contains some text: The lines will break at any character.</p>
+</body>
+</html>
+
+CSS3 word-wrap Property
+It allows long words to be able to be broken and wrap onto the next line
+
+JavaScript syntax:	
+object.style.wordWrap="break-word"
+
+Syntax
+word-wrap: normal|break-word;
+
+Value		Description
+normal		Break words only at allowed break points
+break-word	Allows unbreakable words to be broken
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css"> 
+p.test
+{
+width:11em; 
+border:1px solid #00dd00;
+word-wrap:break-word;
+}
+</style>
+</head>
+<body>
+<p class="test"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+</body>
+</html>

@@ -1,0 +1,87 @@
+Lazy Loading in React JS
+	Lazy loading is a design pattern that delays the loading of non-critical resources at page load time. Instead, these resources are loaded only when needed.
+
+Why Lazy Load?
+--->Improves initial load time
+--->Reduces bundle size
+--->Enhances performance
+--->Great for code-splitting in large apps
+
+Key Concepts :-
+lazy() ---->	Used to dynamically import a component
+<Suspense> </Suspense> ---->Wrapper that shows fallback UI while the component loads
+fallback ---->Element shown while waiting for the lazy component to load
+
+Lazy Loading can done by two ways
+
+1.Conditional rendering
+2.With Routing
+
+Steps for implementing lazy loading.
+1. Import lazy, suspense from react library.
+2. To which component we have to implement we have to call the lazy function and assigned it to one variable.
+Ex: const Form = lazy( () => import("./Form");
+3. Depending upon the condition we have to add that variable in between the Suspense component.
+Ex: <Suspense><Form /></Suspense>
+
+Example for Conditional rendering :-
+
+import { lazy,Suspense,useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
+const LazyComponent=lazy(()=>import('./FormHanding'));
+function App(){
+    let[show,setShow]=useState(false);
+    return(
+        <>
+            <div className="text-center">
+                <h1>Lazy Loading In React Js</h1>
+                <button className="btn btn-primary" onClick={
+                    ()=>{setShow(true)}
+                }>Form Open</button>
+            </div>
+            {show && (
+            <Suspense fallback={<h1 className="text-center">Loading...</h1>}>
+                <LazyComponent />
+            </Suspense>   
+            )}     
+        </>
+    )
+}
+
+export default App;
+
+Example for Routing :-
+
+import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'; 
+import React,{Suspense} from 'react';
+import './App.css';
+const Home = React.lazy(() => import('./Home'));
+const AboutUs = React.lazy(() => import('./AboutUs'));
+const ContactUs = React.lazy(() => import('./ContactUs'));
+function Header(){
+    return(
+        <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">AboutUs</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+        </ul>
+    )
+}
+function App(){
+    return(
+        <>
+            <BrowserRouter>
+                <Header/>
+                <Suspense fallback={<div>Loading page...</div>}>
+                <Routes>
+                    <Route path='/' element={<Home />}/>
+                    <Route path='/about' element={<AboutUs />}/>
+                    <Route path='/contact' element={<ContactUs />}/>
+                </Routes>
+                </Suspense>
+            </BrowserRouter>
+        </>
+    )
+}
+
+export default App; 

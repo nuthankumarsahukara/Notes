@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>JS Database</title>
+</head>
+<body>
+<form action="https://sheetdb.io/api/v1/tyt7tnpn4xpbb"  method="post" id="sheetdb-form">
+Student Id:<input type="text" name="data[StudentId]" pattern="[0-9]{5}"> <br/><br/>
+Student Name:<input type="text" name="data[StudentName]"><br/><br/>	
+Student Father Name:<input type="text" name="data[StudentFatherName]"><br/><br/>
+Student Mother Name:<input type="text" name="data[StudentMotherName]"><br/><br/>
+Student Class:<input type="text" name="data[StudentClass]"><br/><br/>
+Student Address:<input type="text" name="data[StudentAddress]"><br/><br/>
+<input type="submit" />
+<script>
+var form=document.getElementById("sheetdb-form");
+form.addEventListener("submit",e=>{
+e.preventDefault();
+fetch(form.action,{
+	method:"POST",
+	body: new FormData(document.getElementById("sheetdb-form")),
+	}).then(alert("You data entered successfully........."));
+	location.reload();
+	
+})
+</script>
+</form>	
+<body>
+</html>
+
+<!---
+(html)=>{
+		window.open('msg.html','_blank');
+	}
+--->

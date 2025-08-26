@@ -1,0 +1,348 @@
+Collections in Java:
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+Java Collections can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.
+
+Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, TreeSet).
+Diagram:
+ 
+1.Collections are mainly used to create a group of elements if the size is unknow
+2.Collections are Homeogenious (or) Hetrogenious based on the user requiredment.
+3.Collections accepts only object type of data.   
+
+		          Array	           Collections
+Super Class	Java.Lang.Array	     Java.Util.Collection
+Size		      Know		  Unknow
+Memory Allocation	      Static		  Dynamic
+Type Of Elements	Primitive & 	Object Type & Homeogenious/
+		Homogenious	            Hetrogenious
+Getsize		    Length	              Size()
+
+List:   
+1.A list is the interface used to accepts list of object.
+2.List have indexes to maintain the objects in order of insertion
+3.List accepts duplicate values.
+4.List interface have three subclasses
+	a)Vector : A vector is  thread Safe
+	b)Arraylist: An Arraylist is not thread Safe 
+	An Arraylist allocates 10 memory location by default
+	c)LinkedList : 
+		A)A linkedlist allocates memory dynamically at time of adding a 		    new object to the collection.
+		B)LinkedList is not threadsafe
+Create of object list:
+List listobject=new Arraylist();
+	(or)
+Arraylist listobject = new Arraylist();
+
+Add the value in elements
+In Array To added element
+	arrayName[indexnumber]=value;
+In list to add elemt
+	Listobject
+->Add new element in end of the list.
+	Listobject.set(index no, val) -> modify element in the given index.
+	Listobject.add(index no, val)-> it add new element in given index.
+	Listobject.get(value)-> to get value of index.
+	Listobject.remove(index no (or) value)->To remove the element
+	Listobject.size() ->To returns the number of elements in the list.
+
+To Print Collection in some ways
+1.System.out.println(listobject)
+2.By using for loop
+3.By using foreach
+	For(object x:listobject){
+	Syso(x);
+	}
+4.By using iterator
+	Iterator io =obj.name.iterator();
+
+Iterator have 2 functions:
+
+hasNext()->to return true if element present in the next block.
+next()->to return an element in the given block.
+
+Vector Example:
+
+import java.util.*;  
+class VectorEx
+{
+	public static void main(String arg[])
+	{
+		List v=new Vector();
+		v.add(1);
+		v.add(10.23);
+		v.add("Nuthan");
+		v.add(98485461611l);
+		v.add(10.23231354);
+		v.add(15);
+		v.set(1,15.232);
+		v.add(3,"Kumar");
+		for(int i=0;i<v.size();i++){
+			System.out.println(v.get(i));
+		}
+	}
+}
+
+ArrayList Example:
+
+import java.util.*;
+class ArrayListEx{
+	public static void main(String args[])
+	{
+		ArrayList al=new ArrayList();
+		al.add(15.223);
+		al.add("Data");
+		al.add(65231321613l);
+		al.add("hii");
+		al.set(1,"DataPro");
+		al.add(3,"Computers");
+		for(Object x:al)
+			System.out.println(x);
+	}
+}
+
+
+Linkedlist Example:
+
+import java.util.*;
+class LinkedListEx
+{
+	public static void main(String args[])
+	{
+		LinkedList ll=new LinkedList();
+		ll.add(102);
+		ll.add("Nuthan");
+		ll.add("Kumar");
+		ll.add(102);
+		ll.add("NuthAn");
+		Iterator io =ll.iterator();
+		while(io.hasNext())
+			System.out.println(io.next());
+	}
+}
+
+Set Interface:-
+	Set Interface in Java is present in java.util package. It extends the Collection interface. It represents the unordered set of elements which doesn't allow us to store the duplicate items. We can store at most one null value in Set. Set is implemented by HashSet, LinkedHashSet, and TreeSet.
+
+Set can be instantiated as:
+
+Set s1 = new HashSet();  
+Set s2 = new LinkedHashSet();  
+Set s3 = new TreeSet();  
+
+Adding Elements: The add() method adds elements to the HashSet. It automatically ensures that duplicates are not allowed. In this example, even though "Apple" is added twice, it only appears once in the set.
+
+Contains Check: The contains() method checks whether a specific element is present in the HashSet.
+
+Removing Elements: The remove() method removes a specified element from the set.
+
+HashSet
+HashSet class implements Set Interface. It represents the collection that uses a hash table for storage. Hashing is used to store the elements in the HashSet. It contains unique items.
+
+Example:-
+
+import java.util.*;  
+public class TestJavaCollection7{  
+public static void main(String args[]){  
+//Creating HashSet and adding elements  
+HashSet set=new HashSet<String>();  
+set.add("Ravi");  
+set.add("Vijay");  
+set.add("Ravi");  
+set.add("Ajay");  
+//Traversing elements  
+Iterator itr=set.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Vijay
+Ravi
+Ajay
+
+LinkedHashSet
+LinkedHashSet class represents the LinkedList implementation of Set Interface. It extends the HashSet class and implements Set interface. Like HashSet, It also contains unique elements. It maintains the insertion order and permits null elements.
+
+Example:-
+
+import java.util.*;  
+public class TestJavaCollection8{  
+public static void main(String args[]){  
+LinkedHashSet set=new LinkedHashSet<String>();  
+set.add("Ravi");  
+set.add("Vijay");  
+set.add("Ravi");  
+set.add("Ajay");  
+Iterator itr=set.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ravi
+Vijay
+Ajay
+
+SortedSet Interface:-
+
+SortedSet is the alternate of Set interface that provides a total ordering on its elements. The elements of the SortedSet are arranged in the increasing (ascending) order. The SortedSet provides the additional methods that inhibit the natural ordering of the elements.
+
+The SortedSet can be instantiated as:
+
+SortedSet set = new TreeSet(); 
+ 
+TreeSet
+Java TreeSet class implements the Set interface that uses a tree for storage. Like HashSet, TreeSet also contains unique elements. However, the access and retrieval time of TreeSet is quite fast. The elements in TreeSet stored in ascending order.
+
+Example:
+
+import java.util.*;  
+public class TestJavaCollection9{  
+public static void main(String args[]){  
+//Creating and adding elements  
+TreeSet set=new TreeSet();  
+set.add("Ravi");  
+set.add("Vijay");  
+set.add("Ravi");  
+set.add("Ajay");  
+//traversing elements  
+Iterator itr=set.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ajay
+Ravi
+Vijay
+
+Generices:
+The Generics are mainly use in collections to specify the type of object.
+Generics are denoted By Angular Brackets(<>)
+We must give a class name to specific the type of collection in between angular brackets
+Generics are mainly used to avoid manual conversation of data.
+
+Example:
+import java.util.*;
+class TreeSetEx
+{
+	public static void main(String arg[])
+	{
+		SortedSet<Integer> ts=new TreeSet<Integer>();
+		ts.add(1);
+		ts.add(95);
+		ts.add(21);
+		ts.add(5);
+		ts.add(21);
+		ts.add(152);
+		//ts.add("Nuthan");
+		for(Object x:ts)
+			System.out.println(x);
+	}
+}
+
+Map: The map interface in Java is a structure that holds a set of key-value pairs where each key is unique and points to one value only. It is a component of the java.util package and is being widely used in Java programming to structure and get data in an ordered manner. A Map is useful if you have to search, update or delete elements on the basis of a key.
+
+object_name.put (key,value)- add element in the map
+object_name.replace(key_value,value) =replace element in the map;
+object_name.clear()=delete all element in the map
+object_name.remove(key_value)=delete specific key Value
+
+HashMap :HashMap is the implementation of Map, but it doesn't maintain any order.
+
+Example:
+import java.util.HashMap;
+
+public class HashMapEx {
+    public static void main(String[] args) {
+        // Creating a HashMap
+        HashMap hashMap = new HashMap();
+
+        // Adding entries to HashMap
+        hashMap.put(105,"Apple");
+        hashMap.put(6,"Banana");
+        hashMap.put(45,"Cherry");
+        hashMap.put(52,"Date");
+
+        // Printing the HashMap (Order is not guaranteed)
+        System.out.println("HashMap: " + hashMap);
+    }
+}
+
+Output:
+HashMap: {52=Date, 6=Banana, 105=Apple, 45=Cherry}
+
+LinkedHashMap :LinkedHashMap is the implementation of Map. It inherits HashMap class. It maintains insertion order.
+Example:
+import java.util.*;
+
+public class HashMapEx {
+    public static void main(String[] args) {
+        // Creating a LinkedHashMap
+        LinkedHashMap  linkedHashMap= new LinkedHashMap();
+
+        // Adding entries to HashMap
+         linkedHashMap.put(105,"Apple");
+         linkedHashMap.put(6,"Banana");
+         linkedHashMap.put(45,"Cherry");
+         linkedHashMap.put(52,"Date");
+
+        // Printing the LinkedHashMap (Order is guaranteed)
+        System.out.println("LinkedHashMap: " +  linkedHashMap);
+    }
+}
+
+Output:
+LinkedHashMap: {105=Apple, 6=Banana, 45=Cherry, 52=Date}
+
+TreeMap :TreeMap is the implementation of Map and SortedMap. It maintains ascending order.
+
+Example:
+import java.util.TreeMap;
+
+public class TreeMapEx {
+    public static void main(String[] args) {
+        // Creating a TreeMap
+        TreeMap treeMap = new TreeMap<>();
+
+        // Adding entries to TreeMap
+        treeMap..put(105,"Apple");
+        treeMap.put(6,"Banana");
+        treeMap.put(45,"Cherry");
+        treeMap.put(52,"Date");
+
+        // Printing the TreeMap (Keys are sorted)
+        System.out.println("TreeMap: " + treeMap);
+    }
+}
+Output:
+TreeMap: {6=Banana, 45=Cherry, 52=Date, 105=Apple}
+
+Descending order:-
+import java.util.*;
+
+public class TreeMapEx1 {
+    public static void main(String[] args) {
+        // Creating a TreeMap
+        TreeMap treeMap = new TreeMap(Collections.reverseOrder());
+
+        // Adding entries to TreeMap
+        treeMap.put(105,"Apple");
+        treeMap.put(6,"Banana");
+        treeMap.put(45,"Cherry");
+        treeMap.put(52,"Date");
+
+        // Printing the TreeMap (Keys are sorted)
+        System.out.println("TreeMap: " + treeMap);
+    }
+}
+
+Output:
+TreeMap: {105=Apple, 52=Date, 45=Cherry, 6=Banana}

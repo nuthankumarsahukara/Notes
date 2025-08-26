@@ -1,0 +1,151 @@
+Packages in PL/SQL
+PL/SQL package is a logical grouping of a related subprogram (procedure/function) into a single element. A Package is compiled and stored as a database object that can be used later.
+
+Components of Packages:-
+
+PL/SQL package has two components.
+1.Package Specification
+2.Package Body
+
+Package Specification
+Package specification consists of a declaration of all the public variables, cursors, objects, procedures, functions,and exception.
+
+Package Body
+It consists of the definition of all the elements that are present in the package specification. It can also have a definition of elements that are not declared in the specification, these elements are called private elements and can be called only from inside the package.
+ 
+Benefits of using Package
+Following are some of the benefits of packages in PL/SQL:
+1.REUSABILITY Whenever a package is created, it is compiled and stored in the database. So, you write the code once which can be reused by other applications.
+
+2.OVERLOADING Two or more >procedures or functions can be created in a package with the same name. 
+
+3.CREATING MODULES A large application can be created by simply creating modules (or subprograms) clearly defined and easy to work.
+
+4.IMPROVES PERFORMANCE Package code gets loaded inside the SGA(system global area) of Oracle at first call itself due to which other subsequent calls will work very fast.
+
+5.GLOBAL DECLARATION If the objects(procedures, functions, variables, constants, exceptions, cursor etc) are declared globally in a package, they can be easily used when required.
+
+Package specification or declaration Syntax
+
+CREATE OR REPLACE PACKAGE <package_name> IS/AS 
+FUNCTION <function_name> (<list of arguments>) 
+RETURN <datatype>;
+PROCEDURE <procedure_name> (<list of arguments>); 
+- code statements
+END <package_name>;
+
+Example:- create or replace package pack_calc is 
+ 	function add(a number,b number) return number ;
+	function sub(a number,b number) return number ;
+	function mul(a number,b number) return number ;
+	function div(a number,b number) return number ;
+	end pack_calc;
+
+Package Body Syntax:-
+
+CREATE OR REPLACE PACKAGE BODY <package_name> IS/AS
+FUNCTION <function_name> (<list of arguments>) RETURN <datatype>IS/AS 
+- local variable declaration;
+BEGIN
+	- executable statements;
+EXCEPTION
+	- error handling statements;
+END <function_name>;
+
+PROCEDURE <procedure_name> (<list of arguments>)IS/AS 
+- local variable declaration;
+BEGIN
+	- executable statements;
+EXCEPTION
+	- error handling statements;
+END <procedure_name>;
+	
+END <package_name>;
+
+Example:-	create or replace package body pack_calc is
+	function add(a number, b number) return number is
+	begin
+	return a+b;
+	end;
+
+	function sub(a number, b number) return number is
+	begin
+	return a-b;
+	end;
+
+	function mul(a number, b number) return number is
+	begin
+	return a*b;
+	end;
+
+	function div(a number, b number) return number is
+	begin
+	return a/b;
+	end;
+	
+	end pack_calc;
+
+Syntax for referring a package object:
+Packagename.objectname;
+
+Example:
+	declare 
+	x number;
+	y number;
+	begin
+	x:=&x;
+	y:=&y;
+	
+	dbms_output.put_line('The Addition is '||pack_calc.add(x,y));
+	dbms_output.put_line('The Substraction is '||pack_calc.sub(x,y));
+	dbms_output.put_line('The Multiplication is '||pack_calc.mul(x,y));
+	dbms_output.put_line('The Division is '||pack_calc.div(x,y));	
+
+	end;
+
+With Table Package Example:
+
+create the package declaration:
+	
+create or replace package pkg_emp is
+ procedure updateRecord(eno employee.empno%type);
+ function deleteRecord(enm employee.ename%type);
+ return boolean;
+end pkg_emp;
+
+create the package body:
+ create or replace package body pkg_emp is 
+ procedure updateRecord(eno employee.empno%type) is
+ begin
+ update employee set comm=100 where empno=eno;
+ if sql%found then
+	dbms_output.put_line('Record Updated');
+ else
+	dbms_output.put_line('Record Not Updated');
+ end if;
+ end updateRecord;
+
+ function deleteRecord(enm employee.ename%type) return boolean is
+ begin
+ delete from employee where ename=enm;
+ return sql%found;
+ end deleteRecord;
+
+end pkg_emp;
+	
+calling the Package:
+
+declare 
+	eno employee.empno%type;
+	e_comm employee.comm%type;
+	enm employee.ename%type;
+begin
+	eno:=&eno;
+	enm:='&enm';
+	pkg_emp.updateRecord(eno);
+	if pkg_emp.deleteRecord(enm) then
+		dbms_output.put_line('Record Deleted');
+	else
+		dbms_output.put_line('Record Not Deleted');
+	end if;
+end;
