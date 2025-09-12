@@ -32,9 +32,7 @@ end loop;
 dbms_output.put_line('The sum loop is  :'|| s);
 end;
 
-2.
-
-FOR LOOP allows you to execute code repeatedly for a fixed number of times.
+2.FOR LOOP allows you to execute code repeatedly for a fixed number of times.
 Syntax:
 FOR loop_counter IN [REVERSE] lowest_number..highest_number LOOP
 {...statements...}

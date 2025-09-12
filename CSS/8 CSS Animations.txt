@@ -200,6 +200,7 @@ width:300px;
 <p><b>Note:</b> The transition effect will wait 2 seconds before starting.</p>
 </body>
 </html>
+
 CSS3 Transition-timing-function
 
 ease :Default value. Specifies a transition effect with a slow start, then fast, then end slowly (equivalent to cubic-bezier(0.25,0.1,0.25,1))

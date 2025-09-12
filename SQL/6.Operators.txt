@@ -10,9 +10,9 @@ Operator		Description 			Example
 
 +  	 Addition Adds values on either side of the operator	a+b
 -   	Subtraction Subtracts right hand operand from left hand operand	a-b
-     *	Multiplication - Multiplies values on either side of the operator 	a*b
-     /	Division - Divides left hand operand by right hand operand		a/b
-     %	Modulus - Divides left hand operand by right hand operand 		a%b	
+*	Multiplication - Multiplies values on either side of the operator 	a*b
+/	Division - Divides left hand operand by right hand operand		a/b
+%	Modulus - Divides left hand operand by right hand operand 		a%b	
 	and returns remainder
 
 Assignment Operator in Oracle

@@ -34,11 +34,10 @@ To select data from a table and insert it into another table. It requires the da
 
 Syntax :INSERT INTO target_table (col1, col2, col3)
 SELECT col1,
-col2,
+col2,	
 col3
 FROM source table
 WHERE condition;
-
 
 INSERT ALL statement: Insert multiple rows into a table 
 Syntax:

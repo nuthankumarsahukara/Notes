@@ -132,7 +132,7 @@ BEGIN
 END [function_name];
 
 Example:
-reate or replace function dataFun
+create or replace function dataFun
 return varchar2
 is 
 msg varchar2(100) :='Welcome to functions';

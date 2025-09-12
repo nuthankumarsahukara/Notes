@@ -8,7 +8,7 @@ Why Lazy Load?
 --->Great for code-splitting in large apps
 
 Key Concepts :-
-lazy() ---->	Used to dynamically import a component
+lazy() ---->Used to dynamically import a component
 <Suspense> </Suspense> ---->Wrapper that shows fallback UI while the component loads
 fallback ---->Element shown while waiting for the lazy component to load
 
@@ -37,7 +37,7 @@ function App(){
                 <h1>Lazy Loading In React Js</h1>
                 <button className="btn btn-primary" onClick={
                     ()=>{setShow(true)}
-                }>Form Open</button>
+                }>Form Open</button> 
             </div>
             {show && (
             <Suspense fallback={<h1 className="text-center">Loading...</h1>}>

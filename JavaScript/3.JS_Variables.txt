@@ -6,7 +6,7 @@ A JavaScript variable is simply a name of storage location. There are some rules
 3. Names must not begin with a digits
 4. Names can also begin with $ and _ 
 5. Reserved words (like JavaScript keywords) cannot be used as names
-6. You declare JavaScript variables with the var keyword
+6. You declare JavaScript variables with the var,let,const keyword
 7. Names are case sensitive (y and Y are different variables)
 8. Names Should not contain an whitespaces
 

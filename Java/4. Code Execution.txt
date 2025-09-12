@@ -66,9 +66,9 @@ default
 protected
 public
 
-private	:private members are accessible only inside the class.so it provides data hiding
-default	:default members are accessible anywhere in the same package.but it is not 		                    accessible outside the package.
-protected	:protected members are accessible anywhere in the same package and outside the 		 	package only in the derived/child/sub class.
+private	:private members are accessible only inside the class.so it provides 	data hiding
+default	:default members are accessible anywhere in the same package.but 	it is not accessible outside the package.
+protected	:protected members are accessible anywhere in the same package 	and outside the package only in the derived/child/sub class.
 public	:public members are accessible anywhere in the program
 
 
@@ -82,15 +82,15 @@ void	:main method does not return any value.
 
 main	:every program starts and ends with main
 
-String object[]	:it is only for command line argument.it can collect any type of data in 				string format.
+String object[]	:it is only for command line argument.it can collect any 		type of data in string format.
 
 
 how to print the output ?
 
 System.out.println	:it is used to print the output onto the monitor.
 
-System	:it is a class of java.lang package ,java.lang is the default package in java
-out	:it is an object of PrintStream class,but defined as static field in System class
+System	:it is a class of java.lang package ,java.lang is the default package 	in java
+out	:it is an object of PrintStream class,but defined as static field in 	System class
 println	:it is the method of PrintStream class
 
 The execution of a Java program consists of five steps which are

@@ -8,7 +8,7 @@ Syntax :-
 	IF condition THEN
 	Statement;
 	END IF;
-Example :- Number is positive:
+Example :- 
 	declare
 	a number(5);
 	begin

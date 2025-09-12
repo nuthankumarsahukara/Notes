@@ -58,11 +58,13 @@ JavaScript and HTML DOM:(Document Object Model)
 JavaScript Objects:
     Array object	    Boolean object
     Date object	    Math object
-    String object	    Number object    RegExp object
+    String object	    Number object    
+    RegExp object
     
 Browser Objects: 
     Window object	    Navigator object
-    Screen object	    History object	    Location object
+    Screen object	    History object	    
+    Location object
 
 JavaScript Array
 The Array object is used to store multiple values in a single variable
@@ -117,6 +119,75 @@ document.write("Number of Elements in an Array is: " +MyArr.length);
 <p>Click the button to display the array Length ... </p>
 <button onclick="MyArrayLen()"> Click_Array </button>
 </body>
+
+Example 2 :
+<!doctype html>
+<html>
+<head>
+<title>Array Example</title>
+</head>
+<body>
+<script>
+	let a=[10,20,30,40,50];
+	//single element calling
+	document.write('The value of a[0] :'+a[0]+'<br/>');
+	
+	document.write('The Array Length is '+a.length+'<br/>');
+	document.write('<h1>For Loop </h1>');	
+	//all element calling by for loop
+	for(let i=0;i<a.length;i++){
+		document.write('The value of a['+i+'] :'+a[i]+'<br/>');
+	}
+	
+	document.write('<h1>For Each </h1>');
+	//all element calling by for each
+	/* arrayname.forEach((arrayname (values),index)=>{
+
+	}); */
+	a.forEach((a,index)=>{
+		document.write('The value of a['+index+'] :'+a+'<br/>');
+	});
+
+	document.write('<h1>ForIn</h1>');
+	//all element calling by for each
+	for(let x in a){
+		document.write('The value of a['+x+'] :'+a[x]+'<br/>');
+	}
+		
+	document.write('<h1>For Of</h1>');
+	//all element calling by for each
+	for(let x of a){
+		document.write(x+'<br/>');
+	}
+	document.write('<br/>');
+
+	for(let [index,value] of a.entries()){
+		document.write('The value of a['+index+'] :'+value+'<br/>');
+	}
+</script>
+</body>
+</html>
+
+Example 3:
+
+<!doctype html>
+<html>
+<head>
+<title>ArrayExample</title>
+</head>
+<body>
+<script>
+	let a=[];
+	let end=+(prompt('Enter the arraySize :'));
+	for(let i=0;i<end;i++){
+		a[i]=prompt('Enter the value of a['+i+'] :');
+	}
+	for(let j=0;j<a.length;j++){
+		document.write('The value of a['+j+'] is '+a[j]+'<br/>');
+	}
+</script>
+</body>
+</html>
 
 2: Regular:
 var myNames=new Array();

@@ -24,4 +24,4 @@ Year	Version		Features
 2018	Oracle18c	Polymorphic Table Functions, Active Directory 			Integration
 2019	Oracle19c	Active Data Guard DML Redirection, Automatic 			Index Creation,SQL Queries on Object Stores
 2020	Oracle21c 	Blockchain Tables, Multilingual Engine - 			JavaScript Execution in the Database, Binary 			JSON Data Type,
-2024 	Oracle24ai 	AI Vector Search[13] , JSON Relational 			Duality,[14] JSON 	Schema Validation, 			Transactional Microservices Support, 						OKafka, Operational Property Graphs, Support 			for SQL/PGQ,Schema Privileges, Developer Role, 			In-database SQL Firewall
+2024 	Oracle24ai 	AI Vector Search[13] , JSON Relational 					Duality,[14] JSON 	Schema Validation, 					Transactional Microservices Support, 						OKafka, Operational Property Graphs, Support 					for SQL/PGQ,Schema Privileges, Developer Role, 			In-database SQL Firewall

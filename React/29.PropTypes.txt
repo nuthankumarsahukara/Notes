@@ -21,7 +21,7 @@ Type	      Example			Description
 string	   name: PropTypes.string		Text data
 number	   age: PropTypes.number		Numeric value
 bool	   isAdmin: PropTypes.bool		Boolean true/false
-arrayOf(...)   hobbies: PropTypes.arrayOf		Array of specific type
+arrayOf(...)   hobbies: PropTypes.arrayOf	Array of specific type
 	    (PropTypes.string)	
 shape({...})   address: PropTypes.shape({...})	Object with defined keys/types
 func	    onClick: PropTypes.func		A function

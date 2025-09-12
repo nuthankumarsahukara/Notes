@@ -92,6 +92,7 @@ ex:    	int a=10 ->instance Variable
 Static Variables: Declared with the static keyword; shared among all instances of a class.
 ex:	static int a =10
 	{
+	  We no need create the object we can access it.by class Name
 	     -----------------
 	}
 how to define / declare a variable  ?
@@ -125,51 +126,87 @@ string+string=string
 
 Example:
 
-class OperatorOverloaded
+public class OperatorOverloadingEx
 {
-	public static void main(String args[])
+	public static void main(String a[])
 	{
-		int ia=10,ib=20;
-		float fa=15.26f,fb=12.5454f;
-		double da=15354.54546,db=1515.5435;
-		String sa="Nuthan",sb="Kumar";
+		int aa=10;
+		int ab=20;
+		float ba=30.662f;
+		float bb=315.626f;
+		long ca=4561891651651l;
+		long cb=313183213211565l;	
+		double da=5451.4321564;
+		double db=2616.1651616;
+		String sa="Datapro";
+		String sb="Vizag";
 
-		System.out.println("Int + int = int ("+(ia+ib)+")");
-		System.out.println("Int + float = float ("+(ia+fb)+")");
-		System.out.println("Int + double = double ("+(ia+da)+")");
-		System.out.println("Int + String = String ("+(ia+sb)+")");
-		System.out.println("float + float = float ("+(fa+fb)+")");
-		System.out.println("float + int = float ("+(fa+ib)+")");
-		System.out.println("float + double = double ("+(fa+ib)+")");
-		System.out.println("float + String = String ("+(fa+sa)+")");
-		System.out.println("double + double = double ("+(da+db)+")");
-		System.out.println("double + int = double ("+(da+ib)+")");
-		System.out.println("double + float = double ("+(da+fa)+")");
-		System.out.println("double + String = String ("+(da+sb)+")");
-		System.out.println("String + String = String ("+(sa+sb)+")");
-		System.out.println("String + int = String ("+(sa+ib)+")");
-		System.out.println("String + float = String ("+(sa+fb)+")");
-		System.out.println("String + double = String ("+(sa+db)+")");
+		System.out.println("Int + Int = "+(aa+ab)+"(Int)");  
+		System.out.println("Int + Float = "+(aa+ba)+"(Float)"); 
+		System.out.println("Int + Double = "+(aa+da)+"(Double)");
+		System.out.println("Int + Long = "+(aa+ca)+"(Long)");   
+		System.out.println("Int + String = "+(aa+sa)+"(String)");
+		System.out.println();
+
+		System.out.println("Float + Int = "+(bb+ab)+"(Float)");  
+		System.out.println("Float + Float = "+(bb+ba)+"(Float)"); 
+		System.out.println("Float + Double = "+(bb+da)+"(Double)");
+		System.out.println("Float + Long = "+(bb+ca)+"(Float)");   
+		System.out.println("Float + String = "+(bb+sb)+"(String)");
+		System.out.println();   
+
+		System.out.println("Double + Int = "+(da+ab)+"(Double)");  
+		System.out.println("Double + Float = "+(da+ba)+"(Double)"); 
+		System.out.println("Double + Double = "+(db+da)+"(Double)");
+		System.out.println("Double + Long = "+(da+ca)+"(Double)");   
+		System.out.println("Double + String = "+(da+sb)+"(String)"); 
+		System.out.println();   
+
+		System.out.println("Long + Int = "+(cb+ab)+"(Long)");  
+		System.out.println("Long + Float = "+(cb+ba)+"(Float)"); 
+		System.out.println("Long + Double = "+(cb+da)+"(Double)");
+		System.out.println("Long + Long = "+(cb+ca)+"(Long)");   
+		System.out.println("Long + String = "+(cb+sb)+"(String)"); 
+		System.out.println();
+
+		System.out.println("String + Int = "+(sa+ab)+"(String)");  
+		System.out.println("String + Float = "+(sa+ba)+"(String)"); 
+		System.out.println("String + Double = "+(sa+da)+"(String)");
+		System.out.println("String + Long = "+(sa+ca)+"(String)");   
+		System.out.println("String + String = "+(sa+sb)+"(String)");       
 	}
 }
 
 output:
-Int + int = int (30)
-Int + float = float (22.545399)
-Int + double = double (15364.54546)
-Int + String = String (10Kumar)
-float + float = float (27.8054)
-float + int = float (35.260002)
-float + double = double (35.260002)
-float + String = String (15.26Nuthan)
-double + double = double (16870.08896)
-double + int = double (15374.54546)
-double + float = double (15369.805460228881)
-double + String = String (15354.54546Kumar)
-String + String = String (NuthanKumar)
-String + int = String (Nuthan20)
-String + float = String (Nuthan12.5454)
-String + double = String (Nuthan1515.5435)
+Int + Int = 30(Int)
+Int + Float = 40.662003(Float)
+Int + Double = 5461.4321564(Double)
+Int + Long = 4561891651661(Long)
+Int + String = 10Datapro(String)
+
+Float + Int = 335.626(Float)
+Float + Float = 346.288(Float)
+Float + Double = 5767.058163480078(Double)
+Float + Long = 4.561892E12(Float)
+Float + String = 315.626Vizag(String)
+
+Double + Int = 5471.4321564(Double)
+Double + Float = 5482.094157056128(Double)
+Double + Double = 8067.597318(Double)
+Double + Long = 4.561891657102433E12(Double)
+Double + String = 5451.4321564Vizag(String)
+
+Long + Int = 313183213211585(Long)
+Long + Float = 3.131832E14(Float)
+Long + Double = 3.1318321321701644E14(Double)
+Long + Long = 317745104863216(Long)
+Long + String = 313183213211565Vizag(String)
+
+String + Int = Datapro20(String)
+String + Float = Datapro30.662(String)
+String + Double = Datapro5451.4321564(String)
+String + Long = Datapro4561891651651(String)
+String + String = DataproVizag(String)
 
 Java Type Casting:-
 

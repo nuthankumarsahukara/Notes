@@ -9,8 +9,8 @@ Follow these guidelines for creating indexes:-
 
 view index statement:- view index with already exists table with primary key and foreign key and still we didn't create any index too on table;
 
-syntax: 	select index_name,index_type,visibility,status from all_indexes where table_name='<TN>';
-Example: 	select index_name,index_type,visibility,status from all_indexes where table_name='dept';
+syntax: 	select index_name,index_type,visibility,status from all_indexes where index_name='<IN>';
+Example: 	select index_name,index_type,visibility,status from all_indexes where index_name='DOB_EMAIL_INDEX';
 
 CREATE INDEX statement:-
 To create a new index for a table, you use the CREATE INDEX statement as follows:
