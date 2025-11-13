@@ -233,7 +233,7 @@ JavaScript provides different data types to hold different types of values. Ther
 1. Primitive Data Types
 2. Non Primitive(reference) Data Types
 
-JavaScript is a dynamic type language, means you don't need to specify type of the variable because it is dynamically used by JavaScript engine. You need to use var here to specify the data type. It can hold any type of values such as numbers, strings etc.
+JavaScript is a dynamic type language, means you don't need to specify type of the variable because it is dynamically used by JavaScript engine. You need to use var,let,const here to specify the data type. It can hold any type of values such as numbers, strings etc.
 
 Example:
 var a=40;//holding number  
@@ -393,6 +393,71 @@ document.writeln("<br/> object :"+JSON.stringify(laptop));
 </script>
 </body>
 </html>
+
+Example:
+<!doctype html>
+<html>
+<head>
+<title>Object Example</title>
+</head>
+<body>
+<script>
+let person={
+	name:"Vinod",
+	age:35,
+	job:"Software Developer",
+	job_location :"Hyderabad",
+	"Home Town" :"Vizag"
+}
+
+document.write("The Datatype is "+typeof person+"<br/>");
+document.write(person+"<br/>");
+
+//singleElement
+document.write("Person Name :"+person.name+"<br/>");
+document.write("Person Job Location :"+person.job_location+"<br/>");
+document.write("Person Home Town :"+person["Home Town"]+"<br/>");
+
+//allElements
+document.write("Person :"+JSON.stringify(person)+"<br/>");
+
+//modify the data
+person.name="Vinod Kumar";
+person.age=38;
+person["Home Town"]="Visakhapatnam";
+
+document.write("Person :"+JSON.stringify(person)+"<br/>");
+
+//delete the element in the oject
+//delete person.name;
+//delete person["Home Town"];
+
+Object.freeze(person);//we cant add new element,modify,delete in person
+person.job_location="Mumbai";
+person.job="Software Tester";
+
+document.write("Person :"+JSON.stringify(person)+"<br/>");
+
+
+Object.seal(person)//we cant add new element in person
+person.sal=45000;
+person.job_location="Chennai";
+document.write("Person :"+JSON.stringify(person)+"<br/>");
+
+document.write("Object.isFrozen(person) : "+Object.isFrozen(person)+'<br/>');
+
+document.write("Object.isSealed(person) : "+Object.isSealed(person)+'<br/>');
+
+
+document.write("Keys :"+Object.keys(person)+'<br/>');
+
+document.write("Values :"+Object.values(person)+'<br/>');
+
+document.write("Entries :"+Object.entries(person)+'<br/>');
+</script>
+</body>
+</html>
+
 
 Dynamic Types:
 JavaScript has dynamic types. This means that the same variable can be used as different types:

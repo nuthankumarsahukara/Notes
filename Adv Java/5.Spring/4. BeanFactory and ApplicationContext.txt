@@ -184,11 +184,3 @@ When Injected		At object creation		After object is created
 Mandatory Dependency	Yes (best for required)	No (best for optional)
 Readability		Clear dependencies upfront	Less obvious
 Flexibility			Less(immutable dependencies)More flexible
-
-
-
-
-
-
-
-

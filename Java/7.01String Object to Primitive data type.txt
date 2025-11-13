@@ -52,3 +52,33 @@ Key Points
 - Use the parse method from the appropriate wrapper class (e.g., Integer, Double).
 - Ensure that the string format is valid to avoid runtime exceptions.
 - For boolean, it will return true for the string "true" (case insensitive), and false for any other value.
+
+Example :
+
+public class WrapperClassEx
+{
+	public static void main(String args[])
+	{
+		//unboxing
+		String a="10";
+		String b="20";
+	
+		int ia=Integer.parseInt(a);
+		int ib=Integer.parseInt(b);
+
+		System.out.println("a + b :"+(a+b));
+		System.out.println("ia + ib :"+(ia+ib));
+
+		//autoboxing
+
+		float fa=15.562f;
+		float fb=16.462f;
+
+		String sa=Float.toString(fa);
+		String sb=Float.toString(fb);
+
+		System.out.println("fa + fb :"+(fa+fb));
+		System.out.println("sa + sb :"+(sa+sb));
+		
+	}
+}

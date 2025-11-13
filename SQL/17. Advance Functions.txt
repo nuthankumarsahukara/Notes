@@ -53,8 +53,7 @@ Returns:-
 4.If no matches are found, the default value is returned.
 5.If default is omitted and no matches are found, then NULL is returned.
 
-Example: 	select ename,decode(job,'clerk','Accounts Verify','Manager','Head of the department')
-	from employee;
+Example: 	select ename,decode(job,'clerk','Accounts Verify','Manager','Head of the department')from employee;
 	select ename,decode(job,'clerk','Accounts Verify','Manager','Head of the  			department','unknow')from employee;
 	select ename,decode(job,'clerk','Accounts Verify','Manager','Head of the  			department',job)from employee;
 

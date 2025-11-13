@@ -46,7 +46,7 @@ object creation
 
 create type ctor_test as object(
 txt varchar2(300),
-constructor function  ctor_test(pat varchar2, repeat number) return self as result,
+constructor function  ctor_test(pattern varchar2, repeat number) return self as result,
 member procedure print
 );
 /
@@ -55,10 +55,10 @@ object body:
 
 create type body ctor_test as
 
-constructor function ctor_test(pat varchar2, repeat number) return self as result 
+constructor function ctor_test(pattern varchar2, repeat number) return self as result 
 is begin
 	for i in 1 .. repeat loop
-		txt:= txt || pat;
+		txt:= txt || pattern;
 	end loop;
 	return;
 	end;

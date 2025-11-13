@@ -28,7 +28,7 @@ Example:	create table members(
 create index for single column:		
 create index idx1 on members(first_name);
 
-create index for single column:		
+create index for mulitiple column:		
 create index idx2 on members(first_name,last_name);
 
 Removing an index :-

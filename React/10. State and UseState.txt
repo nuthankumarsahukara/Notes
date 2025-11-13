@@ -155,4 +155,61 @@ function ItemList() {
 
 export default ItemList;
 
+Ex:- State update without button
 
+import { useState } from "react";
+
+function App(){
+  let [person,setPerson]=useState(
+    {name:"Nuthan",age :25,place:"Vizag"}
+  )
+  return(
+    <>
+      <h3>Name : {person.name}</h3>
+      <h3>Age :{person.age}</h3>
+      <h3>Place : {person.place}</h3>
+
+      Name : <input type="text" onChange={(e) =>
+          setPerson({ ...person, name: e.target.value })
+        } /><br/><br/>
+      Age : <input type="number" onChange={(e) =>
+          setPerson({ ...person, age: e.target.value })}/><br/><br/>
+      Place : <input type="text" onChange={(e) =>
+          setPerson({ ...person, place: e.target.value })}/><br/><br/>
+    </>
+  )
+}
+
+export default App;
+
+Ex:- State update with Button
+
+
+import { useState } from "react";
+
+function App(){
+  let [person,setPerson]=useState(
+      {name:"Nuthan",age :25,place:"Vizag"}
+  )
+
+  let [name,setName]=useState("");
+  let [age,setAge]=useState(0);
+  let [place,setPlace]=useState("");
+
+  return(
+    <>
+      <h3>Name : {person.name}</h3>
+      <h3>Age :{person.age}</h3>
+      <h3>Place : {person.place}</h3>
+
+      Name : <input type="text" onChange={(e) =>setName(e.target.value)} />
+      <button onClick={()=>{setPerson({...person,name:name})}}>Update Name</button><br/><br/>
+      Age : <input type="number" onChange={(e) =>setAge(e.target.value)}/>
+      <button onClick={()=>{setPerson({...person,age:age})}}>Update Age</button><br/><br/>
+      Place : <input type="text" onChange={(e) =>setPlace(e.target.value)}/>
+      <button onClick={()=>{setPerson({ ...person, place: place })}}>Update Place</button><br/><br/>
+    </>
+  )
+}
+
+export default App;

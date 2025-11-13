@@ -1,4 +1,5 @@
 Introduction to HTML:
+HTML->HyperText MarkUp Language
 It is the standard markup language used to create web pages. 
 
 Features of HTML:-
@@ -23,6 +24,8 @@ HTML 4.01 	1998
 XHTML 		1999
 HTML5 		2008-2014 (W3C + WHATWG)
 HTML5.x 	2016
+
+Latest Version of HTML is  HTML5
 
 HISTORY of HTML :(Web-1.0)
 As per W3C(world wide web consortium) standards:

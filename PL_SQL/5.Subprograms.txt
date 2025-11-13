@@ -146,7 +146,7 @@ calling : select dataFun() from dual;
 
 
 Example :
-create function sum_sal
+create or replace function sum_sal
 return number
 is tot number;
 begin
@@ -206,7 +206,7 @@ declare
 begin
     a:=&a;
     result := factorial(a);
-    dbms_output.put_line('Factorial of 5 is: ' || result);
+    dbms_output.put_line('Factorial of '|| a ||' is: ' || result);
 end;
 /
 

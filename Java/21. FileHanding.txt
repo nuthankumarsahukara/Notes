@@ -91,7 +91,7 @@ public class CreateFile
 	public static void main(String args[])throws IOException
 	{
 		//Defining the file path
-		String filepath="E:/nuthan/demo123.html";
+		String filepath="E:/nuthan/demo.html";
 		//Converting filepath into fileObject
 		File fo=new File(filepath);
 		//Creating/oprning a file using FileWriter

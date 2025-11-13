@@ -8,7 +8,7 @@ Why we Use ?
 
 Component based Architecture
 
-uses virtual DOM for fast rendering The virtual DOM provides a mechanism that abstarcts manuak DOM manipulations away from the developer,helping us to write more predictable code.it does so by comparing two render tress to determine exactly what has changed,only updating what is necessary on the actual DOM.
+uses virtual DOM for fast rendering The virtual DOM provides a mechanism that abstarcts manual DOM manipulations away from the developer,helping us to write more predictable code.it does so by comparing two render tress to determine exactly what has changed,only updating what is necessary on the actual DOM.
 
 Features of ReactJS:
 
@@ -26,6 +26,7 @@ Prerequisites:-
 
 HTML
 CSS
+Bootstrap
 Javascript
 Modules,classes,Arrow Functions,Map,Filter,async/await
 

@@ -36,3 +36,53 @@ function Child(props) {
     <button onClick={handleClick}>Send to Parent</button>
   );
 }
+
+
+In Class Component Example:-
+
+User.js
+
+import React from "react";
+
+class User extends React.Component{
+
+    handleClick= () =>{
+        this.props.data("Hello This is Message from Child Component");
+    }
+    render(){
+    return(
+        <>
+            <button onClick={this.handleClick}>Send Data to Parent Component</button>
+        </>
+    )
+}
+}
+
+export default User;
+
+App.js
+
+import React from "react";
+import User from './user';
+
+class App extends React.Component{
+  state = { 
+    message : "",
+  };
+
+  data=(d)=>{
+    this.setState({message : d});
+  }
+
+  render(){
+    return(
+      <>
+        <h1>From Child Component to Parent Component Example</h1>
+        <User data={this.data}/>
+        <h3>{this.state.message}</h3>
+      </>
+    )
+  }
+}
+
+export default App;

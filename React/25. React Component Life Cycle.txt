@@ -22,7 +22,7 @@ Method				Purpose
 static getDerivedStateFromProps()	Called on every update
 shouldComponentUpdate()		Return true or false to allow/disallow update
 render()				Re-render UI
-getSnapshotBeforeUpdate()		Capture info (like scroll position) before 				update
+getSnapshotBeforeUpdate()		Capture info (like scroll position) before 					update
 componentDidUpdate()		Invoked after update is done
 
 3. Unmounting Phase
@@ -167,7 +167,7 @@ class ChildProps extends Component{
     }
     componentDidMount(){
         console.log("componentDidMount");
-        fetch('https://fakestoreapi.com/products/1')
+        fetch('https://fakestoreapi.com/products/12')
         .then(response => response.json())
         .then(json => {console.log(json)
                         this.setState({...this.state,product:json.title})

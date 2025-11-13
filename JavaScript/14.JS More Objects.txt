@@ -97,7 +97,7 @@ string.endsWith(searchvalue,length)
 Parameter Values
 Parameter 	Description
 searchvalue 	Required. The string to search for
-length 		Optional. Specify the length of the string to search. If omitted, the default 			value is the length of the string
+length 		Optional. Specify the length of the string to search. If 		omitted, the default value is the length of the string
 
 Example:
 <head>
@@ -322,8 +322,8 @@ Method 		Description
 toExponential(x) 	Converts a number into an exponential notation
 toFixed(x) 	Formats a number with x numbers of digits after the decimal point
 toPrecision(x) 	Formats a number to x length 
-toString() 		Converts a Number object to a string
-valueOf() 		Returns the primitive value of a Number object
+toString() 	Converts a Number object to a string
+valueOf() 	Returns the primitive value of a Number object
 
 Example:
 <html>
@@ -382,13 +382,13 @@ Character		Description
 \D             		a non-digit
 \w             		a word character (a-z, A-Z, 0-9, _)
 \W             		a non-word character
-[aeiou]        	matches a single character in the given set
+[aeiou]        		matches a single character in the given set
 
 RegExp Object Properties
 Property 		Description
 global 		Specifies if the "g" modifier is set
 ignoreCase 	Specifies if the "i" modifier is set
-lastIndex 		The index at which to start the next match
+lastIndex 	The index at which to start the next match
 multiline 		Specifies if the "m" modifier is set
 source 		The text of the RegExp pattern
 

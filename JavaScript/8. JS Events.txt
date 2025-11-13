@@ -161,9 +161,14 @@ Example:
 <head>
 <title>onbeforeunload</title>
 </head>
-<body onbeforeunload>
+<body onbeforeunload="return msg()">
 <h1>Welcome to my World</h1>
-<p>Close this window or press F5 to reload the page.</p>
+<a href="https://www.datapro.in">Click here to go to datapro.in</a>
+<script>
+function msg() {
+  return "Write something clever here...";
+}
+</script>
 </body>
 
 onerror Event

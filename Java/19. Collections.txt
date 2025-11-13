@@ -117,7 +117,7 @@ class LinkedListEx
 		ll.add("NuthAn");
 		Iterator io =ll.iterator();
 		while(io.hasNext())
-			System.out.println(io.next());
+			System.out.println(io.next()+"");
 	}
 }
 

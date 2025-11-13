@@ -163,8 +163,8 @@ return true;
 <body>
 You are? 
 <form name="form1" method="post" action='form.html'>
-<input type="radio" id="male" value="male">Male 
-<input type="radio" id="female" value="female">Female 
+<input type="radio" id="male" name="gender" value="male">Male 
+<input type="radio" id="female" name="gender" value="female">Female 
 <input type="submit" onclick="return validate();" value='Submit'>
 </form>
 </body>

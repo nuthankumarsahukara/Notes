@@ -77,7 +77,7 @@ insert into cust values(12345,'Datapro',50000,address('1-2','dwk','vizag','53001
 
 To update the object of single attribute:-
 
-update emp set emp.emp_add.city='Mumbai' where emp emp.empno=101;
+update emp e set e.emp_add.city='Mumbai' where e.empno=101;
 
 To View object:-
 select * from emp;

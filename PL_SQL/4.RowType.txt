@@ -35,7 +35,7 @@ emp employee%rowtype;
 begin
 eno:=&eno;
 select ename,job,sal into emp.ename,emp.job,emp.sal from employee where empno=eno;
-dbms_output.put_line(emp.ename || 'is working as ' || emp.job ||' earning sal ' ||to_char(emp.sal));
+dbms_output.put_line(emp.ename || ' is working as ' || emp.job ||' earning sal ' ||to_char(emp.sal));
 end;
 
 Example 2:

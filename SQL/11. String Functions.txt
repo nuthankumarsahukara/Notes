@@ -152,9 +152,8 @@ $		Matches the end of a string. If used with a 		match_parameter of 'm', it matc
 |		Used like an "OR" to specify more than one alternative.
 []		Used to specify a matching list where you are trying to 		match any one of the characters in the list.
 Value		Description
-[^]		Used to specify a nonmatching list where you are trying to match
-		any character except for the ones in the list.
-()		Used to specify a nonmatching list where you are trying to match
+[^]		Used to specify a nonmatching list where you are trying to 		match any character except for the ones in the list.
+()		Used to specify a nonmatching list where you are trying to 		match
 {m}		Matches m times.
 {m,}		Matches at least m times.
 {m,n}		Matches at least m times, but no more than n times.

@@ -198,7 +198,7 @@ document.write("NaN is boolean "+ b5 +"<br />");
 </head>
 
 JavaScript - The Date Object
-The Date object is a datatype built into the JavaScript language. Date objects are created with the new Date( ). Once a Date object is created, a number of methods allows you to operate on it. Most methods simply allows you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC.
+The Date object is a datatype built into the JavaScript language. Date objects are created with the new Date(). Once a Date object is created, a number of methods allows you to operate on it. Most methods simply allows you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC.
 
 There are four ways of instantiating a date:
 var x = new Date();

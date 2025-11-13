@@ -75,28 +75,24 @@ window.screenX
 window.screenY
 
 Example:
+<!doctype html>
+<html>
 <head>
-<script type='text/javascript'>
-document.write(window.screenX);
-document.write("<br/>");
-document.write(window.screenY);
-</script>
+<title>Browser Example</title>
 </head>
-
-Example:
-<head>
+<body onclick="showCoords(event)">
+<h1>Screen X and Screen y</h1>
+<p id="demo"></p>
 <script>
-function myFunction() 
-{
-    var myWindow = window.open("", "myWin","width=200,height=100");
-    myWindow.document.write("<br>ScreenX: " + myWindow.screenX);
-    myWindow.document.write("<br>ScreenY: " + myWindow.screenY + "</p>");
+function showCoords(event) {
+  let x = event.screenX;
+  let y = event.screenY;
+  let text = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = text;
 }
 </script>
-</head>
-<body>
-<button onclick="myFunction()">OpenWin</button>
 </body>
+</html>
 
 Navigator Object
 It contains information about the browser.
@@ -466,17 +462,6 @@ Return Full URL:
 The full URL of this document is: 
 <script>
 document.write(document.URL);
-</script>
-</body>
-</html>
-
-<head>
-<title>My WebPage</title>
-</head>
-<body>
-The title of the document is: 
-<script type='text/javascript'>
-document.write(document.title);
 </script>
 </body>
 </html>

@@ -10,7 +10,7 @@ Input Type:
 The color type is used for input fields that should contain a color. With Color input type, you no longer need a complex Javascript color picker.
 
 Syntax: Input type="color"
-
+	
 Example:
 <!doctype html>
 <body>

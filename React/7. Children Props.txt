@@ -70,4 +70,59 @@ const SingleChild = ({ children }) => {
 
 Note: Throws an error if more than one child is passed.
 
- 
+ Ex:-
+import React from "react";
+
+const List = ({ children }) => {
+    <ul>
+        {React.Children.map(children, (child) => (
+            <li>{child}</li>
+        ))}
+    </ul>
+};
+
+
+function user(props){
+    return(
+        <>
+            <h1>Name : {props.name}</h1>
+            <h1>Age : {props.age}</h1>
+            <h1>Place : {props.place}</h1>
+            <p>Total Children: {React.Children.count(props.children)}</p>
+            <div>{React.Children.only(props.children)}</div>
+            
+            <hr/>
+            <List>
+                <span>Apple</span>
+                <span>Banana</span>
+                <span>Mango</span>
+            </List>
+        </>
+    )
+}
+
+export default user;
+
+App.js
+import User from './user';
+
+function App(){
+  return(
+    <>
+        <User name="Nuthan" age={25} place="Vizag">
+          {/* <h1>Welcome to prop children</h1> */}
+          <p>Welcome to react class</p>
+        </User>
+
+        <User name="Kumar" age={30} place="Bangalore">
+        <div>
+          <p>Child 1</p>
+          <p>Child 2</p>
+        </div>
+      </User>
+    </>
+  )
+}
+
+
+export default App;

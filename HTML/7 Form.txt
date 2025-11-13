@@ -18,7 +18,7 @@ Syntax:
 Form Attributes:
 Attributes	Parameters
 name		any name
-method		To specify the type of method what we are using to 				submit form values. The possible methods are get and 		post.
+method		To specify the type of method what we are using to 				submit form values. The possible methods are get and 				post.
 action		we can specify the page name to which page you 				want to submit control values 
 target 		Specify the target window or frame where the result of 		the script will be displayed. It takes values like _blank, 		_self, _parent etc.
 enctype		You can use the enctype attribute to specify how the 				browser encodes the data before it sends it to the server.

@@ -1,6 +1,6 @@
 HTML Tags Ordered by Category
 1 Basic HTML
-2 Formatting
+2 Formatting Tags
 3 Forms and Input
 4 Frames
 5 Images

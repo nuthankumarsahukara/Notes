@@ -59,7 +59,8 @@ function FetchApi() {
 
 export default FetchApi;
 
-	
+AXIOS API :	
+
 -->A promise-based HTTP client for the browser and Node.js.
 -->Used to make HTTP requests (GET, POST, PUT, DELETE, etc.).
 -->Supports automatic JSON data transformation, interceptors, and error handling.

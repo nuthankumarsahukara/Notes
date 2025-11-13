@@ -1,3 +1,6 @@
+In HTML :-
+<h1>Welcome To HTML</h1>
+
 In JS :-
 
 let h1 =document.createElement('h1');

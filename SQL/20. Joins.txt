@@ -96,7 +96,7 @@ Anti-join is used to make the queries run faster. It is a very powerful SQL cons
 Syntax: 	SELECT columns FROM table_1 WHERE NOT EXISTS ( SELECT values FROM table_2
 	WHERE table_2.column = table_1.column);
 
-Example:	select d.deptno,d.deptname from department d where not exists(select 1 from 			employee e where e.deptno=d.deptno) order by d.deptno;
+Example:	select d.deptno,d.deptname from department d where not exists(select 1 from employee e where e.deptno=d.deptno) order by d.deptno;
 
 	select empno,ename,job from employee where deptno not in 
 	(select deptno from department);

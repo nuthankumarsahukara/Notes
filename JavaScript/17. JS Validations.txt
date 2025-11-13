@@ -89,9 +89,9 @@ HTML constraint validation is based on:
 
 Constraint Validation HTML Input Attributes
 Attribute 	Description
-disabled 	Specifies that the input element should 	be disabled
-max 	Specifies the maximum value of an input 	element
-min 	Specifies the minimum value of an input 	element
+disabled 	Specifies that the input element should be disabled
+max 	Specifies the maximum value of an input element
+min 	Specifies the minimum value of an input element
 pattern 	Specifies the value pattern of an input element
 required 	Specifies that the input field requires an element
 type  	Specifies the type of an input element

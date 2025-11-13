@@ -1,6 +1,11 @@
+What is JSX ?
+	JSX is a JavaScript syntax extension that allows you to write HTML-like code directly within your JavaScript files,making it easier to describe the structure of user interfaces in frameworks like React. It is not the same as HTML, but is a syntax that is compiled or transformed into valid JavaScript before being executed.
+
 JSX Rules:
 1. Component should start with a Capital letter.
 2. In JSX Whatever elements are there we have to return in single or if more than required we have to use React fragments or single div tag.
 3. Should follow camel case for attributes, events, properties, and CSS.
+Example (firstName,onClick,textAlign)
 4. Closing tag is compulsory for components or elements. The self-closing tag is required for some of the HTML tags like image tags, input tags, etc.
+Example :<img/>,<br/>,<input/>
 5. Should not use Javascript keywords as an attribute in JSX like class, tab, or for. Instead of that, we have to use className, htmlFor, tabIndex, etc.

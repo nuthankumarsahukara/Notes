@@ -1,0 +1,46 @@
+How Create Project In Eclipse IDE ?
+
+Step 1 : Open the Eclipse IDE 
+Step 2 : In File Menu
+	menu -> New ->Project ->Java Project ->Next
+	
+Step 3 :	Enter the Project Name
+	Click on Next Button
+	Click on Finish Button
+
+Step 4 :	After click the Finish Button
+	you will appear the dialog box
+	select the checkbox (Remember my decision ) 
+	click on Open Perspective 
+
+Step 5 :	After you will find the project on the left side of the IDE 
+
+Step 6 :	Right Click on the project
+	Select New
+	Select Class
+	After entering the class Name
+	click on finish Button
+	then java file appear on the IDE.
+
+How to add the Driver class in the project ?
+
+step 1 :Download the required driver class from the internet.
+	https://www.oracle.com/in/database/technologies/appdev/jdbc-downloads.html
+	Select the ojdbc 17.jar then it will download the jar file
+step 2 : Come Back to IDE
+step 3 : Right Click on the project
+	Select the Build Path
+	Select Configure the Build Path
+Step 4 : After selecting the Configure the Build Path you will appear the diaglog box
+	select the libaries from the menu bar
+	select on the ModulePath
+	Right side of the view select the Add External JAR's
+	Select the jar file you download it.
+	After Selecting the Jar File
+	Click on Apply and Close
+Step 5 : After you will find the project on the left side of the IDE In that you will 	see the Referenced Libraries folder
+	In that you will see your jar file 
+
+	
+
+	
