@@ -1,0 +1,57 @@
+Java Full Stack Course
+
+Front End :
+1.HTML
+	Introduction to HTML,Basic of HTML,Pre Formating Tag,
+	Video and Audio Tags,Anchor Tag,List,Table,Forms,
+	HTML5 Forms,Sematic Tags,Frames,Marquee
+2.CSS
+	Introduction to CSS,Types of Styling,Selector,Text Properites
+	Font Properites,Box Model,Image Properites,list Properites,
+	Table Properites,Flex Box,Transition,Animation,Media Query,Grid
+3.Bootstrap
+	Introduction to Bootstarp,How to Import the bootstrap,Card
+	NavBar,Form Validation,Slider,Colors,Images,Flex,Grid 
+4.JavaScript
+	Introduction to JavaScript,Variables,DataTypes,Operators
+	Conditional Statements(if,ifelse,ifelse,nested if,nested ifelse,switch)
+	Loop Statements(for,while,do-while,for in,for of ,for each)
+	Functions,Events,Exceptions,Objects(Javascript Objects and 
+	Browser Objects,DOM Objets),Validations,Modules,Synchronous 
+	and Asynchronous,OOPS Concepts
+5.React JS
+	Introduction to React JS,Components,JSX Rules,CSS Styling,Props
+	Map,Different Types of Functions,Children Props,React Fragment
+	Event Handling,State and UseState Hook,Conditional Rendering,
+	VDOM,UseEffect Hook,React Router,List and Key,UseRef Hook,
+	Custom Hook,props Drilling,useContent Hook,useMemo Hook,Child to 
+	parents Props,React Component Life Cycle,API,Lazy load,PropTypes,
+	Portal,useReducer Hook,Redux,Redux Thunk,Redux ToolKit
+
+BackEnd :
+1.Core Java
+	Introduction to Java,Features of Java,JDK JVM JRE,
+	Variables,DataTypes,Operators,Scanner Class,Wrapper Classes
+	Conditional Statements(if,ifelse,ifelse,nested if,nested ifelse,switch)
+	Loop Statements(for,while,do-while,for Each), Arrays, String,
+	String Methods,String Buffer,String Builder,Methods,Constructor,
+	OOPS Concepts,Package,Collections,Exception Handlind,File
+	Handling,Lamba,MultiThread
+2.Adv Java
+	JDBC,Servlets,JSP
+3.Frames Works
+	Hibernate,Spring,Spring Boot,Spring MVC
+
+DataBase :
+ SQL 
+	Introduction to Database,Introduction to SQL,DDL DML DQL TCL 	DCL,Datatypes,Operators,Constraints,Identity,Pseudo Columns,
+	String Function,Math Function,Date and Time Function,
+	Conversion Function,Aggregate Function,Analytic Function,
+	SubQueries,Synonym,Joins,Views,Index
+PL/SQL
+	Introduction to PL/SQL,Conditional Statement,Loop Statement,Row 
+	Type,Sub Programs,Function,Procedure,Package,Cursor,Triggers
+	Exception handling,Object,Constructor,Inheritance,Record,
+	Collections
+
+	
