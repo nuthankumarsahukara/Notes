@@ -167,23 +167,23 @@ B		Matches character classes.
 \W		Matches a nonword character.
 \s		Matches a whitespace character.	
 \S		Matches a non-whitespace character.
-\A		Matches the beginning of a string or matches at the end 		of a string before a newline character.
+\A		Matches the beginning of a string or matches at the end 			of a string before a newline character.
 \Z		Matches at the end of a string.
 *?		Matches the preceding pattern zero or more occurrences.
 +?		Matches the preceding pattern one or more occurrences.
 ??		Matches the preceding pattern zero or one occurrence.
 {n}?		Matches the preceding pattern n times.
 (n.)?		Matches the preceding pattern at least n times.
-{n.m}?		Matches the preceding pattern at least n times, but not 		more than m times.
+{n.m}?		Matches the preceding pattern at least n times, but not 			more than m times.
 
 match_parameter
 Optional. It allows you to modify the matching behavior for the REGEXP_INSTR function. It can be a combination of the following:
 Value		Description
 'c'		Perform case-sensitive matching.
 'i'		Perform case-insensitive matching.
-'n'		Allows the period character (.) to match the newline 		character. By default, the period is a wildcard.
-'m'		expression is assumed to have multiple lines, where A is 		the start of a line 	and $ is the end of a line, regardless 				of the position of those characters in expression. By 		default, expression is assumed to be a single line.
-'X'		Whitespace characters are ignored. By default, 		whitespace characters are matched like any other 		character.
+'n'		Allows the period character (.) to match the newline 			character. By default, the period is a wildcard.
+'m'		expression is assumed to have multiple lines, where A is 			the start of a line 	and $ is the end of a line, regardless 			of the position of those characters in expression. By 			default, expression is assumed to be a single line.
+'X'		Whitespace characters are ignored. By default, 				whitespace characters are matched like any other 			character.
 
 REGEXP_REPLACE
 REGEXP_REPLACE function is an extension of the REPLACE function. This function, introduced in Oracle 10g, will allow you to replace a sequence of characters in a string with another set of characters using regular expression pattern matching.

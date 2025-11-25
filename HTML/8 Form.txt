@@ -310,27 +310,27 @@ Message:		Description:
 2xx: Successful
 Message:			Description:
 200 OK			The request is OK (this is the standard response 			for successful (HTTP requests)
-201 Created		The request has been fulfilled, and a new 			resource is created. 
-202 Accepted		The request has been accepted for processing, 			but the processing has not been completed
+201 Created		The request has been fulfilled, and a new 					resource is created. 
+202 Accepted		The request has been accepted for processing, 					but the processing has not been completed
 
 3xx: Redirection
 Message:			Description:
-300 Multiple Choices	A link list. The user can select a link  and go to 			that location. 
+300 Multiple Choices	A link list. The user can select a link  and go to 				that location. 
 301 Moved Permanently 	The requested page has moved to a newURL 
-302 Found		The requested page has moved temporarily to a 			new URL 
-303 See Other		The requested page can be found under a 			different URL
+302 Found		The requested page has moved temporarily to a 					new URL 
+303 See Other		The requested page can be found under a 					different URL
 
 4xx: Client Error
 Message:			Description:
-400 Bad Request		The request cannot be fulfilled due to bad 			syntax
-401 Unauthorized		The request was a legal request,but the server 			is refusing to respond to it.
-404 Not Found		The requested page could not be found but may 			be available again in the future.
+400 Bad Request		The request cannot be fulfilled due to bad 					syntax
+401 Unauthorized		The request was a legal request,but the server 					is refusing to respond to it.
+404 Not Found		The requested page could not be found but may 					be available again in the future.
 
 5xx: Server Error
 Message:			Description:
-500 Internal Server Error	A generic error message, given when no more 			specific message is suitable.
-502 Bad Gateway		The server was acting as a gateway or proxy and 			received an invalid response from the upstream 			server
-503 Service Unavailable	The server is currently unavailable (overloaded or 			down)
+500 Internal Server Error	A generic error message, given when no more 					specific message is suitable.
+502 Bad Gateway		The server was acting as a gateway or proxy 			and received an invalid response from the 			upstream server
+503 Service Unavailable	The server is currently unavailable (overloaded 					or down)
 
 
 1xx ==>199 ==> Information Related Messages

@@ -19,7 +19,7 @@ You don't require to execute a COMMIT statement every time whenever an INSERT, U
 Syntax: SET AUTOCOMMIT ON/OFF;
 
 SET TRANSACTION Command in Oracle:
-Using SET TRANSACTION in Oracle to begin a transaction is optional. A new transaction begins implicitly with the first DIML statement that you execute after you make a database connection or with the first DML statement that you execute following a COMMIT or a ROLLBACK. You need to use SET TRANSACTION only when you want transaction attributes such as READ ONLY that are not the default.
+Using SET TRANSACTION in Oracle to begin a transaction is optional. A new transaction begins implicitly with the first DML statement that you execute after you make a database connection or with the first DML statement that you execute following a COMMIT or a ROLLBACK. You need to use SET TRANSACTION only when you want transaction attributes such as READ ONLY that are not the default.
 The SET TRANSACTION marks the beginning of a transaction. Any changes you make to your data following the beginning of a transaction are not made permanent until you issue a COMMIT. Furthermore, those changes are not visible to other users until you've issued a COMMIT.
 Syntax: SET TRANSACTION [ READ ONLY | READ WRITE] [ NAME 'transaction_name']; Transaction Types in Oracle:
 1.SET TRANSACTION READ WRITE: It is the default transaction type specified as a read/write transaction. It allows us to issue statements such as UPDATE and DELETE.

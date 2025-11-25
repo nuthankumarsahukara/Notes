@@ -70,7 +70,7 @@ function App() {
 
 export default App;
 
-Model Example:-
+Modal Example:-
 
 import './App.css';
 import ReactDOM from 'react-dom';

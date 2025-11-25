@@ -2,12 +2,12 @@ Selectors:
 Styles Reusability 
 
 Types of Selectors:
-1. Tag/Type Selectors
+1. Tag/Type/Element Selectors
 2. ID Selectors
 3. Class Selectors
 4. Grouping Selectors
 5. Universal Selectors
-6.Child Selectors
+->Child Selectors
 
 Type/Tag selectors
 A type selector matches the name of a document language element type. A type selector matches every instance of the element type in the document tree.

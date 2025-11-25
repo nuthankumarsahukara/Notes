@@ -390,6 +390,8 @@ document.writeln("object :"+JSON.stringify(laptop));
 Object.freeze(laptop);
 laptop.price=10000;
 document.writeln("<br/> object :"+JSON.stringify(laptop));
+
+
 </script>
 </body>
 </html>

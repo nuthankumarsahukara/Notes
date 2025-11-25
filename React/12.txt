@@ -36,6 +36,8 @@ return(
 	<product id={prod1.id} name={prod1.name} aprice={prod1.aprice} dprice={prod1.dprice} />	
 )
 
+with props
+
 function Product (p){
 	return(
 		<>
@@ -43,6 +45,20 @@ function Product (p){
 			<h1>Product Namae :{p.name}</h1>
 			<h1>Product aprice :{p.aprice}</h1>
 			<h1>Product dprice :{p.dprice}</h1>
+		</>
+	)
+}
+
+
+with props destructuring
+
+function Product ({id,name,aprice,dprice}){
+	return(
+		<>
+			<h1>Product Id :{id}</h1>
+			<h1>Product Namae :{name}</h1>
+			<h1>Product aprice :{aprice}</h1>
+			<h1>Product dprice :{dprice}</h1>
 		</>
 	)
 }

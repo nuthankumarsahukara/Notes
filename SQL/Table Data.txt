@@ -1,0 +1,71 @@
+Department Table :
+
+create table department(
+deptno number(2) primary key,
+deptname varchar2(15));
+
+INSERT INTO department VALUES (,);
+INSERT INTO department VALUES (,);
+INSERT INTO department VALUES (,);
+INSERT INTO department VALUES (,);
+INSERT INTO department VALUES (,);
+
+Employee Table :
+
+create table employee(
+empno number(4) primary key,
+ename varchar2(20),
+job varchar2(20),
+manager number(4),
+hiredate date,
+sal number(7,2),
+comm number(7,2),
+deptno number(2), foreign key(deptno) references department(deptno));
+
+
+Insert Data :-
+
+INSERT INTO EMPLOYEE VALUES 
+(9999, 'king', 'CEO', NULL, '25-MAY-2011', 9000, NULL, 10);
+
+INSERT INTO EMPLOYEE VALUES 
+(1652, 'John', 'Manager', 9999, '25-JUN-2015', 4800, NULL, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1653, 'ganesh', 'Manager', 9999, '02-JUN-2012', 5000, NULL, 30);
+
+INSERT INTO EMPLOYEE VALUES 
+(1651, 'Vinod', 'Manager', 9999, '24-JAN-2012', 4300, NULL, 10);
+
+INSERT INTO EMPLOYEE VALUES 
+(1701, 'Teja', 'clerk', 1651, '04-JUL-2018', 2500, NULL, 10);
+
+INSERT INTO EMPLOYEE VALUES 
+(1702, 'Kumar', 'clerk', 1652, '23-AUG-2017', 2500, NULL, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1703, 'sai', 'clerk', 1653, '28-FEB-2019', 2500, NULL, 30);
+
+INSERT INTO EMPLOYEE VALUES 
+(1901, 'Rahul', 'salesman', 1652, '28-OCT-2019', 3200, 950, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1902, 'smith', 'salesman', 1652, '15-MAR-2015', 3500, 1200, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1903, 'kalyan', 'salesman', 1652, '11-NOV-2023', 2800, 250, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1904, 'Mahesh', 'salesman', 1652, '11-OCT-2022', 3000, 0, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1704, 'krishna', 'clerk', 1652, '02-JUL-2017', 2200, NULL, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1705, 'tarun', 'clerk', 1653, '20-AUG-2019', 2100, NULL, 30);
+
+INSERT INTO EMPLOYEE VALUES 
+(1801, 'shiva', 'analyst', 1652, '02-JUL-2017', 4000, NULL, 20);
+
+INSERT INTO EMPLOYEE VALUES 
+(1802, 'satya', 'analyst', 1653, '02-JUL-2017', 4000, NULL, 30);

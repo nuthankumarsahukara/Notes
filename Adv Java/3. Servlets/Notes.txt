@@ -135,8 +135,3 @@ public void service(ServletRequest request, ServletResponse response)
 The web container calls the destroy method before removing the servlet instance from the service. It gives the servlet an opportunity to clean up any resource for example memory, thread etc. The syntax of the destroy method of the Servlet interface is given below:
 
 public void destroy()  
-
-
-
-
-

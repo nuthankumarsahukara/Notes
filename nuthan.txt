@@ -183,7 +183,7 @@ select regexp_replace('datapro is a great resource','^(\S*)','Datapro') from dua
 
 select regexp_replace('123datapro is a great123 resource','\d','*') from dual;
 
-select regexp_replace('Anderson','a|i|e|o|u','*');
+select regexp_replace('Anderson','a|i|e|o|u','*') from dual;;
 
 select regexp_substr('datapro is a great resource','(\S*)(\s)') from dual;
 
