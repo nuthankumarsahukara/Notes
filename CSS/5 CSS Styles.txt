@@ -33,6 +33,12 @@ list-style-type:square;
 <li>Physics</li>
 </ul>
 
+<ul style="list-style-type:disc;">
+<li>Maths</li>
+<li>Social Science</li>
+<li>Physics</li>
+</ul>
+
 <ol style="list-style-type:decimal;">
 <li>Maths</li>
 <li>Social Science</li>
@@ -231,6 +237,31 @@ background-color:green;
 color:white;
 }
 
+nth child :-
+
+The nth child pseudo-class matches any element that is the nth child of its parent.
+
+This pseudo-class matches elements based on the indexes of the elements in the child list of their parents.
+
+n can be a number/index, a keyword (odd or even), or a formula (like an + b).
+
+ex:-
+
+tr:nth-child(even) {
+  background-color: red;
+}
+
+tr:nth-child(odd) {
+  background-color: blue;
+}
+
+tr:nth-child(1) {
+  background-color: purple;
+}
+
+tr:nth-child(2n+1) {
+  background-color: purple;
+}
 
 CSS Box Model
 The CSS box model is essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.

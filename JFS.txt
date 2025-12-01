@@ -44,7 +44,8 @@ BackEnd :
 
 DataBase :
  SQL 
-	Introduction to Database,Introduction to SQL,DDL DML DQL TCL 	DCL,Datatypes,Operators,Constraints,Identity,Pseudo Columns,
+	Introduction to Database,Introduction to SQL,DDL DML DQL TCL 	
+	DCL,Datatypes,Operators,Constraints,Identity,Pseudo Columns,
 	String Function,Math Function,Date and Time Function,
 	Conversion Function,Aggregate Function,Analytic Function,
 	SubQueries,Synonym,Joins,Views,Index

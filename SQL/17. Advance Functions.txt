@@ -68,7 +68,7 @@ EMPTY_CLOB function can be used to initialize a LOB column to EMPTY in an INSERT
 Syntax: EMPTY_CLOB ()
 
 Example: 	create table emp_document(eid number(3), document clob);
-	insert into emp_photos values(100 ,empty_clob());
+	insert into emp_document values(100 ,empty_clob());
 	select * from emp_document;
 
 GROUP_ID function will return 0. When a duplicated group is found, the GROUP_ID function will return a value >0.
@@ -91,7 +91,7 @@ The LNNVL function will return the following:
 Condition 			Evaluates To LNNVL Return Value
 TRUE			              FALSE
 FALSE			              TRUE
-UNKNOWN		              TRUE
+UNKNOWN		              	      TRUE
 
 Example :	select count(*) from employee where comm>0;
 	select count(*) from employee where lnnvl(comm>0);
@@ -115,9 +115,9 @@ expr1 :First value to compare. Must be either a numeric value or a value that is
 expr2 :Second value to compare. Must be either a numeric value or a value that is the same datatype as expr1.
 
 Example:	select nullif(12,12) from dual;
-	select nullif(12,13) from daul;
+	select nullif(12,13) from dual;
 	select nullif('apples','apples') from dual;
-	select nullif('apples,'oranges') from dual;
+	select nullif('apples','oranges') from dual;
 	select nullif(NULL,12) from dual;
 
 NVL2 function extends the functionality found in the NVL function. It lets you substitutes a value when a null value is encountered as well as when a non-null value is encountered.

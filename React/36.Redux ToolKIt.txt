@@ -59,7 +59,7 @@ const data ={
    intitialstate,
    reducers: {
      updateMobile :(State,action) =>{
-      state.mobile=action.playload;
+      state.mobile=action.payload;
       },
     },
 });
@@ -67,7 +67,7 @@ const data ={
 4.Configure Slice using ConfigureStore method
    const store =configureStore({
       reducer: {
-          user : userSlice.reduce,
+          user : userSlice.reducer,
       },
 });
 

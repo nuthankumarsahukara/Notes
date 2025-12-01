@@ -4,11 +4,11 @@ create table department(
 deptno number(2) primary key,
 deptname varchar2(15));
 
-INSERT INTO department VALUES (,);
-INSERT INTO department VALUES (,);
-INSERT INTO department VALUES (,);
-INSERT INTO department VALUES (,);
-INSERT INTO department VALUES (,);
+INSERT INTO department VALUES (10,'Accounts');
+INSERT INTO department VALUES (20,'Sales');
+INSERT INTO department VALUES (30,'Operations');
+INSERT INTO department VALUES (40,'Production');
+INSERT INTO department VALUES (50,'Markerting');
 
 Employee Table :
 

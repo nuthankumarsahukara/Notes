@@ -1,0 +1,11 @@
+How to add driverclass jar file in servlet
+
+1. right click on the project folder
+2. select show in ->System Explore
+3. After the You will goto Project Location in the This pc
+4. Click on the Project Folder
+5. projectfolder -> src -> main -> webapp -> WEB-INF-> Lib
+6. In Lib folder you need to add ojdbc.jar file here
+7. come to eclipse goto the project folder
+8. right click on the project folder and select Refresh
+9. Then you can see jar file in lib folder

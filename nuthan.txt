@@ -313,7 +313,7 @@ select to_clob('hello world') from dual;
 
 select to_clob(ename) from dual;
 
-select t0_date('070923','ddmmyy') from dual;
+select to_date('070923','ddmmyy') from dual;
 
 select to_dsinterval('100 12:30:45') from dual;
 
@@ -380,9 +380,9 @@ Analystic function:
 
 select deptno,avg(sal) from employee group by deptno;
 
-selct deptno,avg(sal) over (partition by deptno) from employee;
+select deptno,avg(sal) over (partition by deptno) from employee;
 
-selct deptno,avg(sal) over (partition by deptno order by sal) from employee;
+select deptno,avg(sal) over (partition by deptno order by sal) from employee;
 
 select corr(sal,comm) from employee;
 

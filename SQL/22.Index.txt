@@ -109,10 +109,10 @@ SELECT * FROM employees WHERE emp_name = 'John';
 Oracle uses the emp_name_idx to locate matching rows quickly.
 
 Query Performance Before vs After
-Operation			Without Index	With Index
+Operation		Without Index	With Index
 Table scan time		High		Low
 CPU & I/O usage		High		Reduced
-Query performance		Slow		Fast
+Query performance	Slow		Fast
 
 
 Example for Composite Index

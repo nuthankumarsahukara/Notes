@@ -77,3 +77,29 @@ Access with useLocation():
 
 const location = useLocation();
 console.log(location.state.fromHome);
+
+function Home() {
+    const navigate = useNavigate();
+
+    function goToAbout() {
+        navigate("/about", { state: { fromHome: true } });
+    }
+
+    return (
+        <>
+            <h1>This is Home Page</h1>
+            <button onClick={goToAbout}>Go to About Page</button>
+        </>
+    );
+}
+
+function About() {
+    const location = useLocation();
+    return (
+        <>
+            <h1>This is About Page</h1>
+            <p>State received: {location.state?.fromHome ? "Came from Home" : "No state"}</p>
+        </>
+    );
+}
+

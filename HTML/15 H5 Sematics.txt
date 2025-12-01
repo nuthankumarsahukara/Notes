@@ -32,15 +32,15 @@ Semantics are classified into the following three types:
 1. General Semantics:-
 Tag 		Description
 <section> 	Defines a section in a document
-<article> 		Defines an article
+<article> 	Defines an article
 <header> 	Defines a header for a document or section
-<footer> 		Defines a footer for a document or section
-<hgroup> 		Groups a set of <h1> to <h6> elements 
-<aside> 		Defines content  of related surrounding content 
+<footer> 	Defines a footer for a document or section
+<hgroup> 	Groups a set of <h1> to <h6> elements 
+<aside> 	Defines content  of related surrounding content 
 <command> 	Defines a command button
 <details> 	Def. additional details that the user can view/hide
 <summary> 	Defines a visible heading for a <details> element
-<figure> 		Spe. self-contained content, like photos, code,listings, etc.
+<figure> 	Spe. self-contained content, like photos, code,listings, etc.
 <figcaption> 	Defines a caption for a <figure> element
 <nav> 		Defines navigation links
 <wbr> 		Defines a possible line-break
