@@ -3,7 +3,7 @@ Oracle database is a relational database management system. It is also called Or
 
 Oracle database was the first DB that designed for enterprise grid computing and data warehousing. Enterprise grid computing provides the most flexible and cost-effective way to manage information and applications. It uses SQL queries as a language for interacting with the database.
 
-Oracle has come up in a range of versions till now starting from Oracle v2 till Oracle 24ai. With each version, it has come up with improvements or enhancements. Version numbers labeled with software follows a custom numbering pattern, like "c", stands for "Cloud" in Oracle 19c while in previous releases, "g" stands for "Grid" in Oracle 10g and "i" for "Internet" in Oracle 9i.
+Oracle has come up in a range of versions till now starting from Oracle v2 till Oracle 26ai. With each version, it has come up with improvements or enhancements. Version numbers labeled with software follows a custom numbering pattern, like "c", stands for "Cloud" in Oracle 19c while in previous releases, "g" stands for "Grid" in Oracle 10g and "i" for "Internet" in Oracle 9i.
 
 
 Oracle Release Versions

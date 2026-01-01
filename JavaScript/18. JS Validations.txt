@@ -135,7 +135,7 @@ myWindow = window.open("", "", "width=400, height=200");
 }
 function closeWin() 
 {
-myWindow.close();
+Window.close();
 }
 </script>
 </head>
@@ -268,6 +268,141 @@ Password:<br/>
 <input type='submit' value="Login">
 </body>
 
+Student Form Example:-
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Validation Form</title>
+
+    <script>
+        function validateForm() {
+
+            var name = document.getElementById("name").value;
+            var roll = document.getElementById("roll").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var dob = document.getElementById("dob").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var course = document.getElementById("course").value;
+
+            // Name validation
+            if (name === "") {
+                alert("Student name is required");
+                return false;
+            }
+            if (!/^[A-Za-z ]+$/.test(name)) {
+                alert("Name should contain only letters");
+                return false;
+            }
+
+            // Roll number validation
+            if (roll === "") {
+                alert("Roll number is required");
+                return false;
+            }
+            if (isNaN(roll)) {
+                alert("Roll number must be numeric");
+                return false;
+            }
+
+            // Email validation
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (email === "") {
+                alert("Email is required");
+                return false;
+            }
+            if (!email.match(emailPattern)) {
+                alert("Invalid email format");
+                return false;
+            }
+
+            // Mobile validation
+            if (!/^\d{10}$/.test(mobile)) {
+                alert("Mobile number must be 10 digits");
+                return false;
+            }
+
+            // Date of Birth validation
+            if (dob === "") {
+                alert("Date of Birth is required");
+                return false;
+            }
+
+            var dobDate = new Date(dob);
+            var today = new Date();
+
+            var age = today.getFullYear() - dobDate.getFullYear();
+            var m = today.getMonth() - dobDate.getMonth();
+
+            if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                alert("Student must be at least 18 years old");
+                return false;
+            }
+
+            // Gender validation
+            if (gender == null) {
+                alert("Please select gender");
+                return false;
+            }
+
+            // Course validation
+            if (course === "") {
+                alert("Please select a course");
+                return false;
+            }
+
+            alert("Student registration successful ✅");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name"><br><br>
+
+    Roll No:
+    <input type="text" id="roll"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    Mobile:
+    <input type="text" id="mobile"><br><br>
+
+    Date of Birth:
+    <input type="date" id="dob"><br><br>
+
+    Gender:
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female<br><br>
+
+    Course:
+    <select id="course">
+        <option value="">--Select--</option>
+        <option>Java</option>
+        <option>Python</option>
+        <option>UI Development</option>
+    </select><br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>
+
+
 Style Object
 The Style object represents an individual style statement.
 
@@ -343,3 +478,4 @@ document.getElementById("my").style.textShadow="5px 5px 1px #ff0000,10px 10px 1p
 <p id="my">This is an example paragraph.</p>
 <button type="button" onclick="myFunction()">Add shadow</button>
 </body>
+

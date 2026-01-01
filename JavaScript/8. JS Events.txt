@@ -19,9 +19,9 @@ load 		Occurs when a page is loaded into Navigator
 mouseout  	Occurs when the user moves the pointer off 
 mouseover  	Occurs when the user moves the pointer over
 reset 		when the user clears a form using the Reset button  
-select  		Occurs when the user selects a form element's field  
-submit  		Occurs when a form is submitted
-unload  		Occurs when the user leaves a page 
+select  	Occurs when the user selects a form element's field  
+submit  	Occurs when a form is submitted
+unload  	Occurs when the user leaves a page 
 
 onClick: The onclick event occurs when the user clicks on an element.
 

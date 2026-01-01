@@ -69,7 +69,7 @@ export default ProductPage;
 
 In the above example:
 -->App needs ProductPage to access data object.
--->But HomePage and ProductList are just passing the prop down — they don't use it .
+-->But HomePage and ProductList are just passing the prop down — they don't use it.
 -->This is props drilling
 
 Problems with Props Drilling:-

@@ -7,6 +7,7 @@ JavaScript operators are symbols that are used to perform operations on operands
 4 JavaScript Incrementing and Decrementing Operators
 5 JavaScript Logical Operators
 6 JavaScript Comparison Operators
+7 JavaScript Tenary Operators
 
 JavaScript Arithmetic Operators
 Arithmetic operators are used to perform arithmetic operations on the operands.

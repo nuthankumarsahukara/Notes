@@ -18,10 +18,10 @@ Syntax:
 Form Attributes:
 Attributes	Parameters
 name		any name
-method		To specify the type of method what we are using to 				submit form values. The possible methods are get and 				post.
-action		we can specify the page name to which page you 				want to submit control values 
-target 		Specify the target window or frame where the result of 		the script will be displayed. It takes values like _blank, 		_self, _parent etc.
-enctype		You can use the enctype attribute to specify how the 				browser encodes the data before it sends it to the server.
+method		To specify the type of method what we are using to submit form 		values. The possible methods are get and post.
+action		we can specify the page name to which page you want to submit 		control values 
+target 		Specify the target window or frame where the result of 	the 				script will be displayed. It takes values like _blank,_self, 				_parent etc.
+enctype		You can use the enctype attribute to specify how the browser 		encodes the data before it sends it to the server.
 
 Possible values are:
 application/x-www-form-urlencoded - This is the standard method most forms use in simple scenarios.
@@ -31,26 +31,26 @@ mutlipart/form-data - This is used when you want to upload binary data in the fo
 HTML Form Tags
 Tag 		Description
 <form> 		Defines an HTML form for user input
-<input> 		Defines an input control
+<input> 	Defines an input control
 <textarea> 	Defines a multiline input control(text area)
-<button> 		Defines a clickable button
-<select> 		Defines a drop-down list
+<button> 	Defines a clickable button
+<select> 	Defines a drop-down list
 <optgroup> 	Defines a group of related options in a drop-down list
-<option> 		Defines an option in a drop-down list
-<label> 		Defines a label for an <input> element
+<option> 	Defines an option in a drop-down list
+<label> 	Defines a label for an <input> element
 <fieldset> 	Groups related elements in a form
-<legend> 		Defines a caption for a <fieldset> element
+<legend> 	Defines a caption for a <fieldset> element
 
 ==================================================
 Fieldname	Keyword		Syntax
 ==================================================
-text box		text		<input type="text">
-password box	password		<input type="password">
-checkbox		checkbox		<input type="checkbox">
+text box	text		<input type="text">
+password box	password	<input type="password">
+checkbox	checkbox	<input type="checkbox">
 radio button	radio		<input type="radio">
 submit button	submit		<input type="submit">
 reset button	reset		<input type="reset">
-text area		textarea		<textarea></textarea>
+text area	textarea	<textarea></textarea>
 ==================================================
 
 Input Fields Attributes and  Parameters
@@ -60,13 +60,13 @@ value		any value
 placeholder	Any Value (HTML5)
 size		pixels
 maxlength	number (HTML5)
-minlength		number (HTML5)
-readonly		true, false
-disabled		disabled
+minlength	number (HTML5)
+readonly	true, false
+disabled	disabled
 rows		number
 cols		number
 checked		checked
-multiple		true, false
+multiple	true, false
 
 Example:
 <body>

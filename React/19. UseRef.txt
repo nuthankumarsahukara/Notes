@@ -44,21 +44,92 @@ Storing values across renders without triggering re-renders.
 Keeping track of previous props or state values.
 
 Ex:-
-import {useRef} from 'react';
+import { useEffect, useRef, useState } from "react";
+
 function App(){
-  const count=useRef(0);
-  const text=useRef(null);
+  let counter=useRef(0);
+  let text=useRef("");
+
+  let[count,setCount]=useState(0);
+  useEffect(()=>{
+    console.log("useEffect is Calling....");
+  })
   return(
     <>
-        <h1 ref={text}>Count : 0 </h1>
-        <button onClick={
-          ()=>{
-            count.current++;
-            text.current.innerText= "Count :"+count.current;
-          }
-        }>Count Update</button>
+      <h1>By Using useState </h1>
+      <h3>Count :{count}</h3>
+      <button onClick={()=>setCount(count--)}>Minus</button>
+      <button onClick={()=>setCount(count++)}>Plus</button>
+
+      <h1>By Using useRef</h1>
+      <h3 ref={text}>Counter : 0</h3>
+      <button onClick={()=>{
+        counter.current--;
+        text.current.innerText="Counter : "+counter.current;
+      }}>Minus</button>
+      <button onClick={()=>{
+        counter.current++;
+        text.current.innerText="Counter : "+counter.current;
+      }}>Plus</button>
     </>
   )
+}
+
+export default App;
+In Class Component :
+
+import  { Component, createRef } from "react";
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    // useState equivalent
+    this.state = {
+      count: 0
+    };
+
+    // useRef equivalent
+    this.counter = 0;
+    this.text = createRef();
+  }
+
+  componentDidUpdate() {
+    console.log("useEffect is Calling....");
+  }
+
+  render() {
+    return (
+      <>
+        <h1>By Using state</h1>
+        <h3>Count : {this.state.count}</h3>
+
+        <button onClick={() =>
+          this.setState({ count: this.state.count - 1 })
+        }>Minus</button>
+
+        <button onClick={() =>
+          this.setState({ count: this.state.count + 1 })
+        }>Plus</button>
+          
+
+        <h1>By Using ref</h1>
+        <h3 ref={this.text}>Counter : 0</h3>
+
+        <button onClick={() => {
+          this.counter--;
+          this.text.current.innerText = "Counter : " + this.counter;
+        }}>Minus </button>
+
+        <button onClick={() => {
+          this.counter++;
+          this.text.current.innerText =
+            "Counter : " + this.counter;
+        }}>Plus</button>
+      </>
+    );
+  }
 }
 
 export default App;

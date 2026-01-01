@@ -123,9 +123,9 @@ const Car = () => {
 export default Car;
 
 
-Feature		CSS Stylesheets			CSS Modules
-Scope		Global (Affects all components)	Local (Scoped to component)
-Naming Conflicts	Possible				Avoided (auto-generated class names)
+Feature		CSS Stylesheets				CSS Modules
+Scope		Global (Affects all components)		Local (Scoped to component)
+Naming Conflicts	Possible			Avoided (auto-generated class names)
 Ease of Use	Simple, like traditional CSS		Requires import styles and styles.className syntax
 Performance	Can be overridden by later styles	More optimized for modular Components
-Best for		Global styles (e.g., fonts, layout)	Component-specific styles
+Best for	Global styles (e.g., fonts, layout)	Component-specific styles

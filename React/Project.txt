@@ -18,14 +18,14 @@ To Run the Server
 To create Vite Project
 	->npx create-vite project_name
 	->Select FrameWork (React JS)
-	->Select Variant (JavaScript+tsx)
+	->Select Variant (JavaScript+ReactJS)
 After creating the project
 	->cd project_name
 	->npm install
 	->npm run dev
 In vite project file are saved in file_name.jsx
 The flow of the react program
-	->app.js ----> main.js ---->index.html
+	->app.jsx ----> main.jsx ---->index.html
 To Stop The server
 	->press ctrl + c;
 	->Terminate batch job (Y/N)? y

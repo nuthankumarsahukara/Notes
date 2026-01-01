@@ -7,7 +7,7 @@ pointer   		A pointing hand
 move	  	The I bar
 e-resize  	The cursor indicates that an edge of a box is to be moved 
 ne-resize 	The cursor indicates that an edge of a box is to be moved up
-nw-resize		The cursor indicates that an edge of a box is to be moved up 
+nw-resize	The cursor indicates that an edge of a box is to be moved up 
 n-resize se-resize 	moved down and sw-resize moved down and left 
 s-resize		moved down (south)
 w-resize		moved left (west)
@@ -145,7 +145,7 @@ CSS3 Backgrounds
 CSS3 contains several new background properties, which allow greater control of the background element.
 
 Property		Description	
-background-size	Specifies the size of the background images
+background-size		Specifies the size of the background images
 background-origin	Specifies the positioning area of the background images	
 background-clip	Specifies the painting area of the background images	
 

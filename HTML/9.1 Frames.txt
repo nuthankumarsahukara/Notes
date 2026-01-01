@@ -27,7 +27,7 @@ Syntax: <frame>
 Attributes	Parameters
 src		File path, External Res. 
 name		any name
-scrolling		yes, no,default
+scrolling	yes, no,default
 
 Example
 <frameset rows= "50%, 50%">

@@ -10,7 +10,7 @@ object_name The name of the object for which you are creating the synonym.
 It can be one of the following:
 table, view, sequence,stored procedure, function,package,materialized view,java class schema object, user-defined object ,synonym
 
-Example:	create synonym samp for employee;
+Example:create synonym samp for employee;
 	create public synonym emp for employee;
 	create sequence sq minvalue 1 maxvalue 5 start with 1 increament by 1;
 	create synonym sys_sq for sq; 

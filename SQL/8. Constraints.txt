@@ -8,9 +8,9 @@ This data integrity again classified into two types are as follows
 
 Declarative / Pre-define Data Integrity:
 This data integrity can be implemented with help of "constraints". These are again of three types,
-1.Entity integrity
-2.Referential integrity
-3.Domain integrity
+1.Entity integrity (pK,unique)
+2.Referential integrity (fk)
+3.Domain integrity (check,default,not null)
 Entity Integrity: It ensures that each row is uniquely identified in a table. To implement this mechanism, we use the primary key or unique constraint.
 
 Referential Integrity: It ensures that to create a relationship between tables. To implement this mechanism, we use the foreign key (referential key).

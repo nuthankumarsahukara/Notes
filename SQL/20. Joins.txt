@@ -77,7 +77,7 @@ Self Join is a specific type of Join. In Self Join, a table is joined with itsel
 
 Syntax : 	SELECT a.column_name, b.column_name... FROM table1 a, table1 b
 	WHERE a.common_filed = b.common_field;
-Example:	select e1.ename||' Works for '||e2.ename "Employee and their Manger"  from
+Example:	select e1.ename||' Works for '||e2.ename "Employee and their Manager"  from
 	employee e1, employee e2 where e1.manager =e2.empno;
 
 Cross Join (Cartesian Products) :

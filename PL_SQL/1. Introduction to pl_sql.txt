@@ -67,8 +67,8 @@ Syntax: '&value'
 
 How to write & execute PL/SQL Program
 1. open the run sql command/sql plus and edit filename.sql
-2.. Type your code in a text editor, like Notepad, Notepad+, or EditPlus, etc.
-3.Save the file with the . sql extension in the home directory.
+2. Type your code in a text editor, like Notepad, Notepad+, or EditPlus, etc.
+3. Save the file with the . sql extension in the home directory.
 4.Launch the SQL*Plus command prompt from the directory where you created your PL/SQL file.
 5.Type @file_name at the SQL*Plus command prompt to execute your program.
 

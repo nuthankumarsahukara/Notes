@@ -389,12 +389,12 @@ Property 		Description
 global 		Specifies if the "g" modifier is set
 ignoreCase 	Specifies if the "i" modifier is set
 lastIndex 	The index at which to start the next match
-multiline 		Specifies if the "m" modifier is set
+multiline 	Specifies if the "m" modifier is set
 source 		The text of the RegExp pattern
 
 RegExp Object Methods
 Method 		Description
-compile() 		Compiles a regular expression
+compile() 	Compiles a regular expression
 exec() 		Tests for a match in a string. Returns the first match
 test() 		Tests for a match in a string. Returns true or false
 

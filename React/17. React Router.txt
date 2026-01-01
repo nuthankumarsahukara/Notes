@@ -65,41 +65,82 @@ const { id } = useParams();
   <Route path="settings" element={<Settings />} />
 </Route>
 
-In Dashboard.jsx, include:
-<Outlet />
+In About.js, include:
+function About(){
+  const nav = useNavigate();
+  return(
+    <>
+      <h1>Welcome to About Us Component</h1>
+      <Outlet/>
+      <button onClick={()=>nav("profile")}>Profile</button>
+      <button onClick={()=>nav("settings")}>Order</button>
+    </>
+  )
+}
+
 
 8. 404 Page (No Match)
 <Route path="*" element={<NotFound />} />
 
 9. Navigation with State
-navigate("/about", { state: { fromHome: true } });
-Access with useLocation():
-
-const location = useLocation();
-console.log(location.state.fromHome);
+import { BrowserRouter,Routes,Route,Outlet,useNavigate,useLocation } from "react-router-dom";
 
 function Home() {
-    const navigate = useNavigate();
-
-    function goToAbout() {
-        navigate("/about", { state: { fromHome: true } });
-    }
-
-    return (
-        <>
-            <h1>This is Home Page</h1>
-            <button onClick={goToAbout}>Go to About Page</button>
-        </>
-    );
+  return <h1>Home Component</h1>;
 }
 
 function About() {
-    const location = useLocation();
-    return (
-        <>
-            <h1>This is About Page</h1>
-            <p>State received: {location.state?.fromHome ? "Came from Home" : "No state"}</p>
-        </>
-    );
+  const navigate = useNavigate();
+
+  const sendData = () => {
+    navigate("profile", {
+      state: {
+        name: "Nuthan",
+        age: 22
+      }
+    });
+  };
+
+  return (
+    <>
+      <h1>About Component</h1>
+      <button onClick={sendData}>Go to Profile with State</button>
+      <Outlet />
+    </>
+  );
 }
+
+function Profile() {
+  const location = useLocation();
+  const { name, age } = location.state || {};
+
+  return (
+    <>
+      <h1>Profile Component</h1>
+      <p>Name: {name}</p>
+      <p>Age: {age}</p>
+    </>
+  );
+}
+
+function PageNotFound() {
+  return <h1>404 Page Not Found</h1>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}>
+          <Route path="profile" element={<Profile />} />
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
 

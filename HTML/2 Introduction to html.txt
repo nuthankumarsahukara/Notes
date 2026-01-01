@@ -1,54 +1,67 @@
 Introduction to HTML:
-HTML->HyperText MarkUp Language
-It is the standard markup language used to create web pages. 
+
+-->HTML (HyperText Markup Language) is the standard markup language used to create and design web pages on the Internet.
+-->It is not a programming language, but a markup language that uses tags to define content and structure.
+-->HTML allows you to add text, images, links, tables, forms, videos, and other content to web pages.
+-->Web browsers (like Chrome, Firefox, Edge) interpret HTML code to display the web page to users.
 
 Features of HTML:-
-1.HTML is highly flexible
-2.HTML is user friendly
-3.HTML is an open technology
-4.HTML is consistent and efficient
-5. It takes less time to load the web pages
+1.Highly flexible – Can be used to create a variety of web content.
+2.User friendly – Easy to learn and use for beginners.
+3.Open technology – Free to use and supported by all browsers.
+4.Consistent and efficient – Works across multiple platforms and browsers.
+5.Fast loading – Web pages take less time to load.
 
 Limitations of HTML:
-1. It can create only static and plain pages
-2. Need to write lot of code 
-3. Security features are not good in HTML.
-4. We cant find out error easily. 
+1.Can create only static and plain web pages.
+2.Requires writing a lot of code for complex designs.
+3.Security features are weak.
+4.Error detection is not easy.
 
--Versions of HTML
-Version 		Year
-HTML 		1991
-HTML 2.0 	1995
-HTML 3.2 	1997
-HTML 4.01 	1998
-XHTML 		1999
-HTML5 		2008-2014 (W3C + WHATWG)
-HTML5.x 	2016
+Versions of HTML
+----------------
+Version 	Year		Remarks
+HTML		1991	First version of HTML
+HTML 2.0	1995	Standardized basic HTML features
+HTML 3.2	1997	Added support for tables, applets, and more formatting
+HTML 4.01	1998	Improved structure, introduced CSS support
+XHTML		1999	XML-based version of HTML, stricter syntax
+HTML5	     2008–2014	Modern version, supports multimedia, graphics, APIs
+			(by W3C + WHATWG)
+HTML5.x		2016	Minor updates and extensions to HTML5
 
-Latest Version of HTML is  HTML5
+The Latest Version of HTML is HTML5
 
 HISTORY of HTML :(Web-1.0)
 As per W3C(world wide web consortium) standards:
-First time, Sir Tim Berners Lee implemented
-1989 GML ==> Generalized Markup Language
-1991 SGML ==> Standard Generalized Markup Language
-1994 HTML ==> Hyper Text Markup Language
-1998 ==> XML+HTML=XHTML =>  Extended Hyper Text Markup Language, features are: SMS, MMS, Email, Web-Services, 
 
-After 10 Years(Web2.0)
-www.whatwg.org (Mozilla+Apple+Opera) present(Apple, Google, Mozilla, Microsoft)
-Web Hypertext Application Technology Working Group
-2008 => HTML5 ==> Advanced Hyper Text Markup Language for Better webApps.
+-->Sir Tim Berners-Lee is the inventor of the World Wide Web (WWW).
+-->He implemented the first website and developed HTML in 1989–1990 while working at CERN (European Organization for Nuclear Research).
+-->He also developed the first web browser called WorldWideWeb (later renamed Nexus).
+-->His work made it possible to access, share, and link information globally through the Internet.
 
-After 8 Years
-2016 ==> HTML5.1, Advanced Hyper Text Markup Language for all Gadgets and Widgets  (Small E-Devices or Smart Components)
+1989: GML(Generalized Markup Language)
+1991: SGML(Standard Generalized Markup Language)
+1994: HTML(HyperText Markup Language)
+1998: XHTML(Extended HTML)–Combination of XML + HTML
+Features: SMS, MMS, Email, Web Services
 
+Web 2.0 and WHATWG
+After 10 years (~2008)
+Formation of WHATWG (Web Hypertext Application Technology Working Group)
+Members: Mozilla, Apple, Opera, Google, Microsoft
+Goal: Improve HTML for modern web applications
+
+3️.HTML5 and Beyond
+2008: HTML5 – Advanced HTML for better web apps
+Supports multimedia, graphics, APIs, responsive design
+2016: HTML5.1 – Enhanced HTML5 for all devices, including smart devices, gadgets, and widgets
 
 Define a Tag:
 The text placed between left angular brace " < " and right angular brace " > " is called as TAG.
 
 Syntax:	<------>
-Example:	<html>
+Example: <html>
 
 Tags are classified into two types:
 1. Paired Tags:
@@ -62,10 +75,25 @@ Note:The closing tag starts with a forward slash("/")
 
 2. Non-Paired Tags:
 The tags that have only opening tags but no closing tags are called as Non-paired tags.
+->Unpaired tags are self-closing and do not require a closing tag.
+
 Examples:
 <br> or <br/>	<hr> or <hr/>    <img> or <img/>
 
-1. Empty Tags 2. Self-Closed Tags 3. Forcefully Closed Tags
+1. Empty Tags 
+-->Empty tags are tags that do not have any content inside them.
+-->They are mostly used for formatting or inserting elements in the web page.
+Example:- <br>,<hr>
+
+2. Self-Closed Tags
+-->Self-closed tags are tags that do not need a separate closing tag because they close themselves.
+-->Usually used in XHTML or HTML5 with a slash at the end.
+Example:-<img/>,<br/>,<hr/> 
+
+3. Forcefully Closed Tags
+-->These are tags that are meant to be paired, but the browser automatically closes them if the closing tag is missing.
+-->Often used in older HTML versions or for convenience.
+Example: <p>This is a paragraph.  <!-- Closing tag omitted, browser closes it automatically -->
 
 Structure of html:
 <html>
@@ -113,29 +141,55 @@ Syntax:
 
 NOTE: The start tag is also called the opening tag, and the end tag the closing tag.
 
-HTML editors
-There are many software packages available to develop HTML. The software packages can be grouped into two main categories:
+HTML Editors
+------------
+To create and develop HTML web pages, software editors are used. These editors are mainly grouped into two categories:
 
-1 text-based (or code-based) Editors
-2 WYSIWYG (what you see is what you get) Editors/IDE
+1️.Text-based (Code-based) Editors
 
-1 text-based (or code-based) Editors
-You can create web pages with a basic text editor like Windows Notepad, Unix VI, Linux ViM etc..!!
-VI ==> VIsual Editor
-ViM ==> Visually Improved Editor
+-->These are basic text editors where you write HTML code manually.
+-->Require knowledge of HTML syntax.
 
-2 WYSIWYG (what you see is what you get) Editors/IDE:
-There are several popular WYSIWYG editors available:
-1 Macromedia Dreamweaver
-2 Microsoft FrontPage
-3 Adobe Go Live
-4 WebStorm
-5 PyCharm
-6 SublimeText
-7 Brackets
-8 Edit++, Notepad++
-9 ATOM
-10 Visual Studio Code
+Examples :
+	Windows: Notepad
+	Unix/Linux: VI, ViM
+	VI: Visual Editor
+	ViM: Visually Improved Editor
+
+Advantages:
+	-->Lightweight and simple
+	-->Full control over code
+
+Disadvantages:
+	-->No visual preview
+	-->Requires knowledge of HTML
+
+2️.WYSIWYG Editors (What You See Is What You Get) / IDE
+
+-->These editors allow you to design web pages visually, and the HTML code is generated automatically.
+-->Ideal for beginners or designers who prefer drag-and-drop features.
+
+Popular WYSIWYG editors / IDEs:
+
+Macromedia Dreamweaver
+Microsoft FrontPage
+Adobe Go Live
+WebStorm
+PyCharm
+Sublime Text
+Brackets
+Edit++, Notepad++
+ATOM
+Visual Studio Code
+
+Advantages:
+	-->Visual design interface
+	-->Faster development
+	-->Error-free code generation
+
+Disadvantages:
+	-->Less control over exact code
+	-->Heavy software compared to simple text editors
 
 How to Create a WebPage?
 Step1: Launch any Text Editor or IDE 
@@ -145,12 +199,10 @@ Step4:Right click on the saved file, open with any Web Browser or Double Click o
 
 Example:
 <html>
-<head>
-<title>
-My First Page
-</title>
-</head>
-<body>
-Welcome to HTML World.!!
-</body>
+	<head>
+		<title>My First Page</title>
+	</head>
+	<body>
+		Welcome to HTML World.!!
+	</body>
 </html>

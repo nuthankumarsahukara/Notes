@@ -1,42 +1,35 @@
 Shortcut Keys-In Web Browsers:
 The following shorcut keys frequently we are using to complete task quickly..!!
-Ctrl+N==> Open a new window 
-Ctrl+T==> Open a new tab 
-Ctrl+W==> Close the current window/tab 
-Ctrl+R or F5 ==>Refresh Web Page
-Ctrl+u ==> View Source code
-Esc ==> Stop the loading the web page
-Alt+<-- Backward History
-Alt+--> Forward History
-Alt+Home Go to your homepage 
-Alt+D  focus to the address bar to type new URL 
-To zoom in, increasing the size     Ctrl ++ 
-To zoom out, decreasing the size, Ctrl+- 
-To reset size back to normal         Ctrl+0 
-Bookmark This Page  Ctrl + D  
-Complete .com Address  Ctrl + Enter
-Pervious Tab Ctrl+Shift+Tab
-Change from one Tab to another Tab Ctrl+Tab
+Ctrl + N	Open a new window
+Ctrl + T	Open a new tab
+Ctrl + W	Close the current window/tab
+Ctrl + R or F5	Refresh the current web page
+Ctrl + U	View the source code of the page
+Esc		Stop loading the web page
+Alt + ←		Go backward in browsing history
+Alt + →		Go forward in browsing history
+Alt + Home	Go to your homepage
+Alt + D		Focus on the address bar to type a new URL
+Ctrl + +	Zoom in (increase page size)
+Ctrl + -	Zoom out (decrease page size)
+Ctrl + 0	Reset zoom to default (normal size)
+Ctrl + D	Bookmark the current page
+Ctrl + Enter	Complete a .com address automatically
+Ctrl + Shift + Tab	Move to the previous tab
+Ctrl + Tab	Switch to the next tab
 
 HTML Comments
-The comment tag is used to insert comments in the source code. Comments are not displayed in the browsers.
+-->HTML comments are notes or explanations written in the HTML code that are not displayed on the web page.
+-->They are useful for documenting code, leaving reminders, or temporarily disabling parts of code.
+-->In HTML, a comment begins with <!-- And ends with -->. 
 
-You can use comments to explain your code, which can help you when you edit the source code at a later date. This is especially useful if you have a lot of code. 
-
-In HTML, a comment begins with <!-- And ends with -->. 
-
-Example of a single line comment:
-<!--This is a small comment-->
-
-Example:
-<!-----This comment will not appear in the Web Page---->
+Syntax: <!--This is a small comment-->
+Example: <!-----This comment will not appear in the Web Page---->
 
 Example:
 <html>
 <head>
-<title>
-Welcome to HTML
-</title>
+<title> Comments in HTML </title>
 </head>
 <body>
 <!--  DataPro, Leader in IT Training-->
@@ -52,8 +45,7 @@ Generally HTML document has the following 3 parts:
 1. HTML version information
 The <!DOCTYPE> declaration must be the very first thing in your HTML doc, before the <html> tag. The <!DOCTYPE> declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in.
 
-NOTE:
-The <!DOCTYPE> declaration is NOT case sensitive
+NOTE: The <!DOCTYPE> declaration is NOT case sensitive
 
 Example:HTML-4.01
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -81,10 +73,12 @@ Example:
 <!doctype html>
 <html>
 <head>
-<title>
-Welcome to Web Page
-</title>
+<title> Welcome to Web Page </title>
 </head>
+<body>
+	Title Example
+</body>
+</html>
 
 <link> Tag:
 It defines a link between a document and an external resource. It is used to link to external style sheets. It is non-paired tag.
@@ -96,22 +90,23 @@ Syntax:
 <link href="PathOfResource" rel="Relation of Resource" type="Type Of Resource"/>
 
 Attributes
-Attribute 		Value 	Description
-href 		URL Specifies the location of the linked document
-rel 		alternate	Provides a link to an alternate version of the 				document Stylesheet Imports a style sheet.
+Attribute 	Value 		Description
+href 		URL 		Specifies the location of the linked document
+rel 		alternate	Provides a link to an alternate version of the
+				document Stylesheet Imports a style sheet.
 type		text/type	It is an Optional Attribute
 
 How to Add a Favicon to your Web-Site
-Favicons are also called shortcut icons.It is a graphic image associated with a particular Web page and/or Web site.  To add a favicon to your Web site.The format of the image must be one of PNG (a W3C standard), GIF (Graphic Interchange Format) , or ICO. The format for the  image you have chosen must be 16x16 pixels or 32x32 pixels. 
+	Favicons are also called shortcut icons.It is a graphic image associated with a particular Web page and/or Web site.  To add a favicon to your Web site.The format of the image must be one of PNG (a W3C standard), GIF (Graphic Interchange Format) , or ICO. The format for the  image you have chosen must be 16x16 pixels or 32x32 pixels. 
 
 Example:
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="html5.png" type="image/ico" href="icon">
+	<link rel="html5.png" type="image/ico" href="icon">
 </head>
 <body>
-Welcome to FavIcons..!!
+	Welcome to FavIcons..!!
 </body>
 </html>
 
@@ -172,10 +167,11 @@ Example:
 Character encoding tells browsers and validators what set of characters to use when rendering web pages. Unicode Transformation Format-8. It is a universal encoding that will support most of the character like greece, hebrew, japanese, etc
 
 What is Unicode?
-Unicode provides a unique number for every character,
-no matter what the platform,
-no matter what the program,
-no matter what the language.
+Unicode is a standard that assigns a unique number to every character, regardless of:
+Platform (Windows, Mac, Linux, etc.)
+Program (Word, HTML, Excel, etc.)
+Language (English, Hindi, Chinese, Arabic, etc.)
+This ensures that text is displayed consistently across different devices and software.
 
 Syntax: HTML 4.0
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

@@ -259,7 +259,7 @@ tr:nth-child(1) {
   background-color: purple;
 }
 
-tr:nth-child(2n+1) {
+tr:nth-child(3n+1) {
   background-color: purple;
 }
 

@@ -113,11 +113,11 @@ fetch vs axios
 Feature / Aspect	fetch()			axios
  Built-in		Yes (native JS API)	No (needs to be installed)
  Install		Not required		npm install axios
- Response	Needs 	.json() to parse		Parses JSON automatically (res.data)
+ Response		Needs .json() to parse	Parses JSON automatically (res.data)
  Error Handling	Only catches network errors	Catches HTTP errors too (e.g. 404)
- Timeout		Not supported by default	Supported with config
+ Timeout	Not supported by default	Supported with config
  Req/Resp 	Interceptors Not available	Supported (can modify requests/responses)
- Upload/Download Progress	Hard to implement	Easy with onUploadProgress
+ Upload/Download Progress Hard to implement	Easy with onUploadProgress
  
 Using fetch
 fetch('https://api.example.com/data')

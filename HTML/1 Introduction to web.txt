@@ -1,95 +1,103 @@
 Basics of Web:
-Define Web?
-Collection of e-resoruces is called web. Sir Tim Berners-Lee invented the World Wide Web in 1989.
+Define Web ?
+The Web is a collection of electronic resources (e-resources) that are accessed through the Internet.
+The World Wide Web (WWW) was invented by Sir Tim Berners-Lee in 1989.
 
 Define W3C?
-World Wide Web Consortium, It is an organization to maintain web standards, It was founded by Tim Berners-Lee @ 1994.
+W3C (World Wide Web Consortium) is an international organization that develops and maintains web standards.
+It was founded by Tim Berners-Lee in 1994.
 
 Define INTERNET?
-INTERnational NETwork
-OR
-INTERconnected NETwork
-OR
-A network of networks based on the TCP/IP communications protocol.Father of Internet is Dr. Vint Cerf.
+	The Internet is a network of networks that allows people to send messages, browse websites, watch videos, download files, and access online services from anywhere in the world.The Father of the Internet is Dr. Vint Cerf.
 
-Define TCP?
-Transmission Control Protocol
-OR
-It is connectvity between computers in a NETWORK(LAN).That facilitates the exchange of messages.
+-->Worldwide connection of computers
+-->Uses TCP/IP protocols
+-->Enables communication (email, chat, video calls)
+-->Provides information (websites, online learning)
+-->Supports services (online shopping, banking)
 
-Define IP?
-Internet Protocol
-OR
-It is connectvity between networks (WAN)
+Ex:-Using Google, WhatsApp, YouTube, or online classes requires the Internet.
 
-Define Protocol?
-Collection of rules between sender & receiver
-OR
-It is a standard set of rules that allow electronic devices to communicate with each other.
+Define TCP ?
+TCP (Transmission Control Protocol)
+It provides reliable communication between computers in a network (LAN) and ensures proper transmission of data.
 
-Define Email/WebMail?
-It is a method of exchanging messages between people using electronic devices.
-OR
-Webmail is a way of sending and receiving emails from a web browser.
+Define IP ?
+IP (Internet Protocol)
+It provides connectivity between networks (WAN) and is responsible for addressing and routing data packets.
+
+Define Protocol ?
+A protocol is a collection of rules followed by the sender and receiver to ensure proper communication.
+(or)
+It is a standard set of rules that allows electronic devices to communicate with each other over a network.
+
+Define Email / WebMail ?
+Email is a method of exchanging messages electronically between people using devices.
+
+Webmail is a way of sending and receiving emails through a web browser.
 
 Mail communications are classified into the following two types:
 1. Online Mail Communications
 2. Offline Mail Communications
 
 1. Online Mail Communications
-These are popularly known as web mails. First web mail concept developed by an Indian Mr. Sabeer Bhatia, ie. https://www.hotmail.com
-Example:
-Gmail, Yahoomail, Hotmail, AOL Mail, GMX Mail, Outlook.com...........!!
+-->Online mail communications are popularly known as Web Mails.
+-->Web mail services allow users to send, receive, and manage emails through a web browser using an Internet connection.
+-->The first web mail service, Hotmail, was developed by an Indian, Mr. Sabeer Bhatia.
+
+Example:Gmail, Yahoomail, Hotmail,Outlook ..etc,
 
 2. Offline Mail Communications
-These are popularly known as POP mails. POP stands for Post Office Protocol. These are special softwares. 
-Example:
-MSOutlookExpress
-MozillaThunderBird
-PoP3 Server.
+-->Offline mail communications are popularly known as POP mails.
+-->POP stands for Post Office Protocol.
+-->In this method, emails are downloaded from the mail server to the user’s computer and can be read without an Internet connection.
+-->These are handled using special email software applications.
+
+Example:- MSOutlookExpress ,MozillaThunderBird, PoP3 Server.
 
 Define SMTP?
-Simple Mail Transfer Protocol. 
-OR
-Cross mail domain communications
+SMTP (Simple Mail Transfer Protocol) is a standard Internet protocol used for sending emails between mail clients and mail servers, and between different mail servers (cross mail domain communication).
 
 Define MIME?
-Multipurpose Internet Mail Extensions 
-OR
-It is an Internet standard that extends the format of email messages, like pictures, audio, video, and various types of documents and files in the e-mail. It supports UNICODE format Data..!!
+MIME (Multipurpose Internet Mail Extensions) is an Internet standard that extends the email format to support non-text content such as images, audio, video, documents, and other file types.
+It also supports Unicode and multiple character sets.
 
 Define HTTP/HTTPs
-HTTP:
-Hypertext Transfer Protocol.
-HTTP transmits the data over port number 80.
-No Data Encryption
-Google does not give the preference 
+HTTP (Hypertext Transfer Protocol) is an application-layer protocol used for transferring web pages and data between a web browser (client) and a web server on the Internet.
+It is not secure because data is sent in plain text.
+-->Uses port number 80
+-->No Data Encryption
+-->Not preferred by Google
 
-HTTPS:
-Hypertext Transfer Protocol Secure.
-HTTPS transmits the data over port number 443
-SSL that provides the encryption of the data.
-Google gives preferences to the HTTPS
+HTTPS (Hypertext Transfer Protocol Secure) is the secure version of HTTP.
+It uses SSL/TLS encryption to protect data during transmission, ensuring confidentiality, integrity, and authentication.
+-->Uses port number 443
+-->Data Encryption
+-->Preferred by Google
 
-URL
-URN==>  Uniform Resource Name
-URI  ==>  Uniform Resource Identifier
-URL  ==> Uniform Resource Locator
-It is a unique address to identify a person or an organization in the World Wide Web
+Uniform Resource Identifiers (URIs)
+
+URN --> Uniform Resource Name
+	A URN is a unique name that identifies a resource independently of its location on the Internet.
+
+URI --> Uniform Resource Identifier
+	A URI is a string of characters that identifies a resource on the Internet, either by name, location, or both.
+
+URL --> Uniform Resource Locator
+	A URL is a unique address used to identify a resource on the World Wide Web.
 
 Example:
 https://www.datapro.in
 
-http ==> Hyper Text Transfer Protocol (Common Language between Client & Server)
-S ==> SSL ==> Secure Sockets Layer.
-:// ==> Delimiters
-www ==> Default Domain or Sub Domain
-. ==> Period or Embedded Character
-Datapro ==> Primary Level Domain (PLD)
-in ==> Top Level Domain (TLD)
+Explanation:
+1.https → HyperText Transfer Protocol Secure (protocol used to access the website securely)
+:// → Delimiter (separates the protocol from the rest of the URL)
+www → Subdomain (optional part of the domain, often used for websites)
+datapro → Primary Level Domain (PLD) (main name of the website)
+.in → Top Level Domain (TLD) (represents country code or type of organization, here .in = India ,.com → Commercial Domain,.org → Organization Domain,edu → Education Domain,.gov → Government Domain,.net → Network Domain,.mil → Military Domain)
 
 Web Browser
-It is client side light weight software, it takes http request from client to server, It renders(bring) http response from server to client.
+A web browser is a client-side lightweight software that sends HTTP requests to the server and displays the HTTP response to the user.
 1. Google Chrome
 2. Mozilla Fire Fox Browser
 3. EDGE Browser
@@ -99,15 +107,25 @@ It is client side light weight software, it takes http request from client to se
 7. Lion
 
 WebPage:
-It is e-document developed on HTML. It is classified into the following two types:
-1. Static Web Pages
-These are written in languages such as: HTML, CSS, JavaScript,etc.
+A web page is an electronic document developed using HTML.
 
+Types of Web Pages:
+1. Static Web Pages 
 2. Dynamic Web Pages
-These are written in languages such as:JSP, CGI, AJAX, ASP, PYTHON, etc.
+
+Static Web Pages
+-->Written using HTML, CSS.
+-->Content does not change dynamically.
+-->Same content is shown to all users
+-->No database is used
+
+Dynamic Web Pages
+-->Written using Java, PHP, Python, JavaScript, etc.
+-->Content changes based on user interaction.
+-->Connected to a database
 
 WebSite
-Collection of web pages is called website.
+A collection of web pages is called a website.
 
 Full Stack
-A full stack means combination of client and Server development
+Full Stack refers to the combination of client-side (frontend) and server-side (backend) development.

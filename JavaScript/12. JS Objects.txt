@@ -57,7 +57,7 @@ JavaScript and HTML DOM:(Document Object Model)
 
 JavaScript Objects:
     Array object	    Boolean object
-    Date object	    Math object
+    Date object	    	    Math object
     String object	    Number object    
     RegExp object
     
