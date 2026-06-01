@@ -10,10 +10,10 @@ React components go through 3 main phases:
 When the component is being created and inserted into the DOM
 
 Method				Purpose
-constructor()			Initialize state and bind methods
+constructor()				Initialize state and bind methods
 static getDerivedStateFromProps()	Sync state from props (rarely used)
 render()				Returns JSX to render UI
-componentDidMount()		Called once after the component is 						mounted
+componentDidMount()			Called once after the component is mounted
 
 2. Updating Phase
 When props or state change, the component re-renders
@@ -22,7 +22,7 @@ Method				Purpose
 static getDerivedStateFromProps()	Called on every update
 shouldComponentUpdate()		Return true or false to allow/disallow update
 render()				Re-render UI
-getSnapshotBeforeUpdate()		Capture info (like scroll position) before 					update
+getSnapshotBeforeUpdate()		Capture info (like scroll position) before update
 componentDidUpdate()		Invoked after update is done
 
 3. Unmounting Phase
@@ -232,8 +232,8 @@ function MyComponent() {
 }
 
 
-Phase	Class Methods			Functional Hook
-Mount	constructor, componentDidMount	useEffect(() => {}, [])
+Phase			Class Methods			Functional Hook
+Mount		constructor, componentDidMount	useEffect(() => {}, [])
 Update	shouldComponentUpdate, 		useEffect(() => {}, [deps])
-	componentDidUpdate	
-Unmount	componentWillUnmount		useEffect(() => { return () => {} }, [])
+		componentDidUpdate	
+Unmount	componentWillUnmount	useEffect(() => { return () => {} }, [])

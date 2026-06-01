@@ -1,0 +1,48 @@
+===============================================
+			     Number of approaches to develop Python Program
+			================================================
+=>A Program is collection of Optimized Instructions.
+=>In Python Program, during Program development, we develop set of Optimized Instructions 
+    and we must save them on Some File Name with an extension .py (FileName.py)
+=>In Python Programming, we can develop program in two ways. They are
+			1. By Using Interactive Approach
+			2. By Using Batch Mode Approach
+---------------------------------------------------------------------------------------------------------------------
+1. By Using Interactive Approach
+---------------------------------------------------------------------------------------------------------------------
+=>In Mode Development, A Programmer can Issue one statement at a time and programmer 
+   gets result of that statement at a time. 
+=>This Mode of Development is useful for Testing One Instruction at a time and not useful for 
+    Big application development bcoz in that enviroment, we are unable save the code and not possible to re-use in other part of Project.
+Example:   Python Command Prompt
+---------------------------------------------------------------------------------------------------------------------
+2. By Using Batch Mode Approach
+---------------------------------------------------------------------------------------------------------------------
+=>In this Mode of develop, we develop Set of Instructions and saving on some file name with 
+   extension .py and we execute. More Over, we can that code in other part of Project.
+
+
+
+Examples:      Python  IDLE Shell
+			
+NOTE" "python" and "py" are tools for Running the Python Program from Windows Command Prompt.
+			python   filename .py
+					(OR)
+			py   filename.py
+      --------------------------------------------------------------------------------------------------------
+
+
+			Third Party  IDES
+			----------------------------
+			Edit Plus
+			Pycharm
+			Jupiter Note Book
+			Spider
+			atom
+			Google Clab
+			Sub Lime Text
+			VS CODE
+			................ Many More
+
+
+---------------------------------------------------------------------------------------------------------------------

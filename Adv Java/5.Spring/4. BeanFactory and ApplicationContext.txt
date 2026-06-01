@@ -29,12 +29,12 @@ Common implementations:
 
 Summary 
 
-Feature			BeanFactory		ApplicationContext
-Instantiation		Lazy			Eager
-Annotation Support		No			Yes
-Internationalization (i18n)	No			Yes
-Event Handling		No			Yes
-Bean Post Processors	Manual			Automatic
+Feature			   BeanFactory		ApplicationContext
+Instantiation				Lazy				Eager
+Annotation Support			No				Yes
+Internationalization (i18n)		No				Yes
+Event Handling				No				Yes
+Bean Post Processors			Manual				Automatic
 Use Case			Lightweight apps/testing	Enterprise-level applications
 
 

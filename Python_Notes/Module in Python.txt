@@ -1,0 +1,105 @@
+Module in Python
+-------------
+A module in Python is a file that contains Python code (functions, classes, variables, etc.) and can be reused in other Python programs.
+
+Types of Modules:
+---------------
+Built-in Modules – Provided by Python (e.g., math, random)
+User-Defined Modules – Created by the programmer
+Third-Party Modules – Installed externally using pip (e.g., numpy, pandas)
+
+Advantages of Modules
+------------------
+-->Code reusability
+-->Better organization
+-->Easier maintenance
+-->Avoids code duplication
+
+Creating a Module
+---------------
+
+def add(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+Using a Module
+------------
+
+import mymodule
+
+print(mymodule.add(10, 5))
+print(mymodule.sub(10, 5))
+
+Import Specific Functions
+---------------------
+from mymodule import add
+
+print(add(20, 10))
+
+Import with Alias
+--------------
+import mymodule as m
+
+print(m.add(5, 3))
+
+Built-in Modules
+-------------
+Python provides many built-in modules:
+
+Module		Purpose
+------	------
+math		Mathematical operations
+random		Generate random values
+datetime	Date and time handling
+os		Operating system operations
+sys		System-specific parameters
+re		Regular expressions
+
+
+Math Module in Python
+-------------------
+The math module is a built-in Python module that provides mathematical functions and constants.
+1.Square Root (sqrt())
+2.Power (pow())
+3.Ceiling (ceil()) : Returns the smallest integer greater than or equal to the given number.
+4.Floor (floor()) : Returns the largest integer less than or equal to the given number.
+5.Factorial (factorial()) 
+6.Absolute Value (fabs())
+7.Mathematical Constants (pi,e)
+
+import math
+
+print("Square Root:", math.sqrt(64))
+print("Power:", math.pow(2, 5))
+print("Ceil:", math.ceil(5.3))
+print("Floor:", math.floor(5.8))
+print("Factorial:", math.factorial(6))
+print("PI Value:", math.pi)
+
+Random Module in Python
+--------------------
+The random module is a built-in Python module used to generate random numbers, random selections, and random sequences.
+
+1.random() :Returns a random float between 0.0 and 1.0.
+2.randint() :Returns a random integer between the specified range.
+3.randrange() :Returns a random number from a range.
+4.choice() :Selects a random element from a list.
+5.shuffle() :Shuffles the elements of a list.
+6.uniform() : Returns a random floating-point number within a range.
+
+import random
+
+print("Random Float:", random.random())
+print("Random Integer:", random.randint(1, 100))
+
+print(random.randrange(1, 20, 2))
+
+print(random.uniform(1.5, 5.5))
+
+colors = ["Red", "Blue", "Green", "Yellow"]
+print("Random Color:", random.choice(colors))
+
+random.shuffle(colors)
+print("Shuffled Colors:", colors)

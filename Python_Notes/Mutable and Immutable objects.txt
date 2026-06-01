@@ -1,0 +1,1790 @@
+Mutable and Immutable objects
+-------------------------
+Mutable Object
+------------
+-->A Mutbale Object is one, whose content can be changed at Same Address.
+
+Examples:  list , set,  dict, bytearray...etc
+
+Immutable Object
+--------------
+-->In Immutbale Object is one, which will satisfy the following Properties.
+a) Content Can't Modified at Same Address.(Value can be modified and Modified value can be placed in different address and existing memory space collected by Garbage Collector) 
+
+b) objects does not support item assignment.
+
+Examples:  int ,float ,bool ,str ,complex, tuple, set, frozenset,bytes
+
+2) bytes
+-------
+-->'bytes' is one of the pre-defined class and treated as Sequence Data Type.
+-->The real time implementation or the purpose of bytes data type is that "To send the data between to devices in the for form cipher Text / Encrypted format(End-to-End Encryption)".
+-->To achieve the real time implementation or the purpose of bytes, the bytes data type stores the Numerical Possitive Integer values  from the range (0,256) only.
+-->bytes data type does not contain any symbolic notation for storing data directly but we can convert other type of values into bytes by using  bytes().
+Syntax: varname=bytes(object)
+	->here varname is of type <class,'bytes'>
+-->An object bytes data type allows us to perform Indexing and Slicing Operations.
+-->An object of bytes maintains Insertion Order ( In whichever Order, we insert the data, In the same order the data will be displayed )
+-->An object bytes  belongs to  immutable
+
+Example:
+-------
+>>l=[15,10,65,525,98]
+>>print(l,type(l))
+	[15, 10, 65, 525, 98] <class 'list'>
+>>b=bytes(l)
+	ValueError: bytes must be in range(0, 256)
+
+>>a=[10,20,98,78,245,255];
+>>print(a,type(a))
+	[10, 20, 98, 78, 245, 255] <class 'list'>
+>>b=bytes(a)
+>>print(b,type(b))
+	b'\n\x14bN\xf5\xff' <class 'bytes'>
+>>print(b[0]);
+	10
+>>print(b[1])
+	20
+>>print(b[2])
+	98
+>>print(b[-5])
+	20
+>>print(b[-1])
+	255
+>>print(b[-50])
+	IndexError: index out of range
+>>print(b[6])
+	IndexError: index out of range
+
+>>print(b[0:4])
+	b'\n\x14bN'
+
+
+>>for i in b:
+...   print(i)
+...
+	10
+	20
+	98
+	78
+	245
+	255
+
+>>for i in b[0:4] :
+...    print(i)
+...
+ 	10
+	20
+	98
+	78
+>>for i in b[:] :
+... print(i)
+...
+	10
+	20	
+	98
+	78
+	245
+	255
+>>for i in b[2: ] :
+...  print(i)
+...    
+	98
+	78
+	245
+	255
+>>for i in b[ :5] :
+...  print(i)
+...    
+	10
+	20
+	98
+	78
+	245
+
+>>for i in b[::-1] :
+...  print(i)
+...    
+	255
+	245
+	78
+	98
+	20
+	10
+
+>>a=[10,15,20,35]
+>>print(a)
+	[10, 15, 20, 35]
+>>b=bytes(a)
+>>print(b,type(b),id(b))
+	b'\n\x0f\x14#' <class 'bytes'> 1723279662496
+>>print(b[0])
+	10
+>>b[0]=125;
+	TypeError: 'bytes' object does not support item assignment
+>>for i in b :
+... print(i)
+...
+	10
+	15
+	20
+	35
+
+3) bytearray
+----------
+-->'bytearray' is one of the pre-defined class and treated as Sequence Data Type.
+-->The real time implementation or the purpose of bytearray data type is that "To send the data between to devices in the for form cipher Text / Encrypted format(End-to-End Encryption)".
+-->To achieve the real time implementation or the purpose of bytearray, the bytes data type stores  the Numerical Possitive Integer values  from the range (0,256) only.
+-->bytearray data type does not contain any symbolic notation for storing data directly but we can convert other type of values into bytearray by using  bytearray().
+	Syntax: varname=bytearray(object)
+		  here varname is of type <class,'bytearray'>
+-->An object bytearray data type allows us to perform Indexing and Slicing Operations.
+-->An object of bytearray maintains Insertion Order ( In whichever Order, we insert the data, In the  same order the data will be displayed )
+-->An object bytearray  belongs to mutable
+
+NOTE:- The Functionality of bytearray is exatcly similar to bytes but an object of bytes 
+belongs to Immutable where an object bytearray is mutable.
+
+>>a=[10,220,98,154,100,255]
+>>print(a,type(a));
+	[10, 220, 98, 154, 100, 255] <class 'list'>
+>>b=bytearray(l);
+>>print(b,type(b));
+	bytearray(b'\n\xdcb\x9ad\xff') <class 'bytearray'>
+>>print(b[0]);
+	10
+>>print(b[2]);
+	98
+>>print(b[-2]);
+	100
+>>b[0]=153;
+>>print(b[0]);
+	153
+>>for i in b :
+... print(i);
+...
+	153
+	220
+	98
+	154
+	100
+	255
+
+>>for i in b[0:3]:
+... print(i)
+...
+	153
+	220
+	98
+>>for i in b[0:]:
+... print(i)
+...
+	153
+	220
+	98
+	154
+	100
+	255
+>>for i in b[:]:
+... print(i)
+...
+	153
+	220
+	98
+	154
+	100
+	255
+>>for i in b[1:]:
+... print(i);
+...
+	220
+	98
+	154
+	100
+	255
+
+5. str()
+------
+-->str() converted all types of values into str type value
+	Syntax:- varname=str(int/float/bool/complex)
+
+>>a=10
+>>print(a,type(a));
+	10 <class 'int'>
+>>b=str(a);
+>>print(b,type(b))
+	10 <class 'str'>
+
+>>a=20.56
+>>print(a,type(a))
+	20.56 <class 'float'>
+>>b=str(a);
+>>print(b,type(b))
+	20.56 <class 'str'>
+
+>>a=True
+>>print(a,type(a))
+	True <class 'bool'>
+>>b=str(a)
+>>print(b,type(b))
+	True <class 'str'>
+
+>>a=10+5j
+>>print(a,type(a))
+	(10+5j) <class 'complex'>
+>>b=str(a)
+>>print(b,type(b))
+	(10+5j) <class 'str'>
+
+4) range
+-------
+-->'range' is one of the pre-defined class and treated as Sequence Data Type.
+-->The purpose of range data type is that " To store Sequence of Number Integer values by maintaining Equal Interval of Value."
+-->On the object of range, we can perform Both Indexing and Slicing Operations.
+-->An object of range belongs to Immutbale bcoz 'range' object does not support item assignment
+-->An object of range maintains Insertion Order.
+-->To generate of range of values, we have 3 sytaxes.
+
+Syntax 1 :varname=range(Value)
+-->This Syntax generates range of values from 0 to Value-1
+
+>>a=range(10)
+>>print(a,type(a))
+	range(0, 10) <class 'range'>
+>>for i in a :
+... print(i);
+...    
+	0
+	1
+	2
+	3
+	4
+	5
+	6
+	7
+	8
+	9
+>>for i in range(6) :
+...  print(i);
+...    
+	0
+	1
+	2
+	3
+	4
+	5
+
+Syntax 2: varname=range(BeginValue, EndValue);
+
+>>a=range(1,6);
+>>print(a,type(a))
+	range(1, 6) <class 'range'>
+>>for i in a:
+... print(i);
+...    
+	1
+	2
+	3
+	4
+	5
+>>for i in range(1,4) :
+... print(i);
+...
+	1
+	2
+	3
+
+NOTE : Syntax-1 and Syntax-2 always generates range of values in forward direction by maintaining equal interval of value 1 by default.
+
+Syntax-3: varname=range(BeginValue, EndValue,Step)
+
+-->This Syntax generates range of values from BeginValue to EndValue-1 by maintaining Interval value based on the value of "step"
+
+>>for i in range(10,25,2) :
+...  print(i)
+...    
+	10
+	12
+	14
+	16
+	18
+	20
+	22
+	24
+>>for i in range(10,50,3) :
+...  print(i);
+...    
+	10
+	13
+	16
+	19
+	22
+	25
+	28
+	31
+	34
+	37
+	40
+	43
+	46
+	49
+>>for i in range(-1,-10,-1) :
+... print(i);
+...
+	-1
+	-2
+	-3
+	-4
+	-5
+	-6
+	-7
+	-8
+	-9
+>>for i in range(10,0) :
+...   print(i)
+...
+>>for i in range(10,0,-1) :
+...  print(i)
+...
+	10
+	9
+	8
+	7
+	6
+	5
+	4
+	3
+	2
+	1
+>>n=9
+>>for i in range(1,13) :
+... print(n," * ",i," = ",n*i);
+...
+	9  *  1  =  9
+	9  *  2  =  18
+	9  *  3  =  27
+	9  *  4  =  36
+	9  *  5  =  45
+	9  *  6  =  54
+	9  *  7  =  63
+	9  *  8  =  72
+	9  *  9  =  81
+	9  *  10  =  90
+	9  *  11  =  99
+	9  *  12  =  108
+
+>>r=range(15)
+>>for i in r[2::-1]:
+... print(i)
+...    
+	2
+	1
+	0
+>>for v in range(100,111,2)[::-2]:
+... print(v)
+...    
+	110
+	106
+	102
+>>for v in range(100,111,2)[::-3]:
+...  print(v)
+...  
+	110
+	104
+
+III . List  Category Data Types(Collections or Data Structures )
+-----------------------------------------------------
+
+->The purpose of List  Category Data Types is that "To store Multiple Values either of same type or Different type or both the types in single object with Unique and Duplicate Values".
+
+We have 2 data types in List  Category. They are :
+	1. list (mutable)
+	2. tuple (immutable)
+
+1.List(Mutable)
+------------
+-->'list' is one of the pre-defined class and treated as List Data Type.
+-->The purpose of list data type is that "To store Multiple Values either of same type or Different type or both the types in single object with Unique and Duplicate Values".
+-->The Elements or Data in list must be organized or Stored in  Square Brackets [ ] and 
+Elements must be separated by Comma.
+Syntax:   varname=[ Val1,Val2.....Val-n ]
+	   Here varname is an object of list type.
+-->An object of list maintains Insertion Order
+-->On the object of list, we can perform Both Indexing and Slicing Operations.
+-->We can convert One type values into list type value by using list()
+	Syntax:- varname= list(object)
+-->An object of list belongs to Mutable bcoz list object allows us to update the values.
+-->with list data type, we can create two types of list objects. They are
+	a) Empty List
+	b) Non-Empty List
+
+a) Empty List
+-----------
+--> Empty List is one which does not contain any elements and whose length is 0
+	Syntax:- varname=[] (OR) varname= list()
+
+>>a=[]
+>>print(a,type(a))
+	[] <class 'list'>
+>>len(c)
+	0
+
+b) Non-Empty List
+---------------
+-->Non-Empty List is one which  contains  elements and whose length is >0
+	 varname=[Val1,Val2....Val-n] (OR) varname= list((10,20,30,10,20))
+
+>>a=[10,20,30,15,10,15,65,98]
+>>len(a)
+	8
+>>print(a,type(a))
+	[10, 20, 30, 15, 10, 15, 65, 98] <class 'list'>
+>>b=[10,10.26,'Nuthan',98,15.262626,'Datapro']
+>>print(b,type(b))
+	[10, 10.26, 'Nuthan', 98, 15.262626, 'Datapro'] <class 'list'>
+>>len(b)
+	6
+
+>>a=(10,25,35,65,48)
+>>print(a,type(a))
+	(10, 25, 35, 65, 48) <class 'tuple'>
+>>b=list(a)
+>>print(b,type(b))
+	[10, 25, 35, 65, 48] <class 'list'>
+>>print(b[0])
+	10
+>>print(b[1])
+	25
+>>print(b[5])
+	IndexError: list index out of range
+>>print(b[4])
+	48
+>>print(b[-5])
+	10
+>>print(b[-2])
+	65
+
+>>print(b[0:3])
+	[10, 25, 35]
+>>print(b[:4])
+	[10, 25, 35, 65]
+>>print(b[2:])
+	[35, 65, 48]
+>>print(b[0:4:2])
+	[10, 35]
+
+>>print(b)
+	[10, 25, 35, 65, 48]
+>>b[0]=100
+>>b[1]=200
+>>b[2]=300
+>>print(b)
+	[100, 200, 300, 65, 48]
+
+>>a="Python is a Programming Language"
+>>print(a,type(a))
+	Python is a Programming Language <class 'str'>
+>>b=list(a)
+>>print(b,type(b))
+	['P', 'y', 't', 'h', 'o', 'n', ' ', 'i', 's', ' ', 'a', ' ', 'P', 'r', 'o', 'g', 'r', 'a', 	'm', 'm', 'i', 'n', 'g', ' ', 'L', 'a', 'n', 'g', 'u', 'a', 'g', 'e'] <class 'list'>
+>>c=a.split()
+>>print(c,type(c))
+	['Python', 'is', 'a', 'Programming', 'Language'] <class 'list'>
+
+
+>>a=[10,20,30,40,50];
+>>print(a,type(a))
+	[10, 20, 30, 40, 50] <class 'list'>
+>>b=bytes(a)
+>>print(b,type(b))
+	b'\n\x14\x1e(2' <class 'bytes'>
+>>print(b[0])
+	10
+>>c=bytearray(a)
+>>print(c,type(c))
+	bytearray(b'\n\x14\x1e(2') <class 'bytearray'>
+>>for i in c[3:] :
+... print(i);
+...    
+	40
+	50
+
+Pre-defined Functions in list 
+----------------------
+->On list object, we can perform Both Indexing and Slicing Operation. Along with these operations, we can also perform many more operations by using pre-defined functions of list.
+
+1) append()
+---------
+-->This Function is used for adding the value(s) at the end of list object.
+	Syntax:  listobj.append(value)
+-->We can add only single element at once.multiple elements can't be inserted.
+
+>>a=[10,20,30]
+>>print(a,type(a))
+	[10, 20, 30] <class 'list'>
+>>a.append(40)
+>>a.append(50)
+>>print(a)
+	[10, 20, 30, 40, 50]
+>>a.append(40,50)
+	TypeError: list.append() takes exactly one argument (2 given)
+>>a.append(40)
+>>a.append(50)
+>>print(a)
+	[10, 20, 30, 40, 50, 40, 50]
+
+>>b=[]
+>>print(b,type(b))
+	[] <class 'list'>
+>>b.append('Hai')
+>>b.append(10.25)
+>>b.append(10)
+>>print(b,type(b))
+	['Hai', 10.25, 10] <class 'list'>
+
+2) insert()
+--------
+-->This Function is used for Inserting value(s) at specified Index in list object
+	Syntax: listobj.insert(index, Value)
+
+>>a=[10,20,30,40,60]
+>>print(a)
+	[10, 20, 30, 40, 60]
+>>a.insert(4,50);
+>>print(a)
+	[10, 20, 30, 40, 50, 60]
+>>a.insert(1,15);
+>>print(a)
+	[10, 15, 20, 30, 40, 50, 60]
+
+-->Even we specify wrong Index, value added at end / last
+
+>>print(a)
+	[10, 15, 20, 30, 40, 50, 60]
+>>a.insert(100,85)
+>>print(a)
+	[10, 15, 20, 30, 40, 50, 60, 85]
+
+3.clear()
+-------
+-->This Function is used for removing all the elements of list
+	Syntax: listobj.clear()
+
+>>print("Before Clear : ",a)
+	Before Clear :  [10, 15, 20, 30, 40, 50, 60, 85]
+>>a.clear()
+>>print("After Clear : ",a)
+	After Clear :  []
+
+4.remove() ->Based on Value
+-----------------------
+-->This Function is used for removing First Occurence of Specified value.
+-->If the Value does not exist in list object then we get ValueError
+	Syntax :  listobj.remove(Value)
+
+>>a=[10,59,98,78,10,15,65,98]
+>>print(a,type(a))
+	[10, 59, 98, 78, 10, 15, 65, 98] <class 'list'>
+>>a.remove(10)
+>>print(a)
+	[59, 98, 78, 10, 15, 65, 98]
+>>a.remove(98)
+>>print(a)
+	[59, 78, 10, 15, 65, 98]
+
+>>print(a)
+	[59, 78, 10, 15, 65, 98]
+>>a.remove(1000)
+	ValueError: list.remove(x): x not in list
+
+5) pop(index) -> Based Index
+------------------------
+-->This Function is used for removing Value of List based on Index and it can be either +ve or -ve
+-->If we give Invalid Index then we get IndexError
+	Syntax : listobj.pop(Index)
+
+>>print(a)
+	[59, 78, 10, 15, 65, 98]
+>>a.pop(1)
+	78
+>>print(a)
+	[59, 10, 15, 65, 98]
+>>a.pop(4)
+	98
+>>print(a)
+	[59, 10, 15, 65]
+>>a.pop(4)
+	IndexError: pop index out of range
+
+6) pop()
+------
+-->This function is used for removing always last element (-1 Index based element) 
+-->When we call pop() upon  empty list then we get IndexError.
+	Syntax : listobj.pop()
+
+>>print(a)
+	[59, 10, 15, 65]
+>>a.pop()
+	65
+>>print(a)
+	[59, 10, 15]
+>>a.pop()
+	15
+>>print(a)
+	[59, 10]
+
+del  operator
+----------
+-->Here "del" operator is used for deleting the elements of any object contains more elements either based on INDEXING or SLICING or TOTAL OBJECT with Content
+
+Syntax1:  del object[ Index ]
+-------------------------
+>>a=[10,25.565,'Hai',98.45,91,74,984.62,'Hello']
+>>print(a)
+	[10, 25.565, 'Hai', 98.45, 91, 74, 984.62, 'Hello']
+>>del a[1]
+>>print(a)
+	[10, 'Hai', 98.45, 91, 74, 984.62, 'Hello']
+>>del a[6]
+>>print(a)
+	[10, 'Hai', 98.45, 91, 74, 984.62]
+>>del a[6]
+	IndexError: list assignment index out of range
+
+Syntax2:  del object[ BeginIndex:End Index ]
+-------------------------------------
+
+>>a=[10,25.565,'Hai',98.45,91,74,984.62,'Hello']
+>>print(a)
+	[10, 25.565, 'Hai', 98.45, 91, 74, 984.62, 'Hello']
+>>del a[0:2]
+>>print(a)
+	['Hai', 98.45, 91, 74, 984.62, 'Hello']
+>>del a[3:]
+>>print(a)
+	['Hai', 98.45, 91]
+>>del a[ :2]
+>>print(a)
+	[91]
+
+Syntax3:  del object
+-----------------
+>>a=[10,25.565,'Hai',98.45,91,74,984.62,'Hello']
+>>print(a)
+	[10, 25.565, 'Hai', 98.45, 91, 74, 984.62, 'Hello']
+>>del a
+>>print(a)
+	NameError: name 'a' is not defined
+
+7) count()
+--------
+-->This Function is used for counting number of occurences of a specified value.
+-->If a specified value does not exist in list object then we get 0.
+	Syntax: listobj.count(Value)
+
+>>a=[1,5,92,98,66,1,62,45,98,6,1,5,98,45,15]
+>>print(a,type(a))
+	[1, 5, 92, 98, 66, 1, 62, 45, 98, 6, 1, 5, 98, 45, 15] <class 'list'>
+>>a.count(1)
+	3
+>>a.count(5)
+	2
+>>a.count(98)
+	3
+>>a.count(45)
+	2
+>>a.count(10)
+	0
+
+8) index()
+--------
+-->This Function is always used for finding First Occurence Index of the specified value.
+-->If a specified value does not exist in list object then we get ValueError.
+	Syntax: listobj.index(Value)
+
+>>b=[10,25,98,78,45,10,15,25]
+>>print(b,type(b))
+	[10, 25, 98, 78, 45, 10, 15, 25] <class 'list'>
+>>b.index(25)
+	1
+>>b.index(10)
+	0
+>>b.index(45)
+	4
+>>b.index(25)
+1
+>>b.index(100)
+	ValueError: list.index(x): x not in list
+>>for i,v in enumerate(b) :
+... print(i,"------>",v);
+...
+	0 ------> 10
+	1 ------> 25
+	2 ------> 98
+	3 ------> 78
+	4 ------> 45
+	5 ------> 10
+	6 ------> 15
+	7 ------> 25
+
+9. copy()
+-------
+Copy Techniques in Python
+---------------------
+-->In Python Programming, we have 2 types of Copy Techniques . They are
+	1. Shallow Copy
+	2. Deep Copy
+
+1. Shallow Copy
+-------------
+The Properties of Shallow Copy are
+	a) Intial Content of Both the Objects are Same
+	b) Address of Both the Objects are Different
+	c) Modifications are Indepedent (Whatever the changes we do on one object, they 	   are not reflecting on other object,Works independently because no nested objects)
+	  For simple (non-nested) data → modifications are independent
+	d)For nested objects -> modifications will reflect 
+-->To Implement Shallow Copy, we use copy().	
+	Syntax: object2=object1.copy()
+
+--->This Function is used for copying the content of one list object to other list object- (Implementing Shallow Copy)
+	Syntax : listobj2=listobj1.copy();
+
+
+(non-nested) data → modifications are independent
+-----------------------------------------
+>>a=[5,25,98,45]
+>>print(a,type(a),id(a))
+	[5, 25, 98, 45] <class 'list'> 2780679687168
+>>b=a.copy()
+>>print(b,type(b),id(b))
+	[5, 25, 98, 45] <class 'list'> 2780638471936
+>>a[1]=50;
+>>print(a,type(a))
+	[5, 50, 98, 45] <class 'list'>
+>>print(b,type(b))
+	[5, 25, 98, 45] <class 'list'>
+
+By Using Method
+-------------
+
+>>import copy
+>>a=[10,20,30,40,50]
+>>b=copy.copy(a)
+>>print(a,type(a),id(a))
+	[10, 20, 30, 40, 50] <class 'list'> 2780679764800
+>>print(b,type(b),id(b))
+	[10, 20, 30, 40, 50] <class 'list'> 2780679418368
+>>a[0]=15
+>>print(a,type(a),id(a))
+	[15, 20, 30, 40, 50] <class 'list'> 2780679764800
+>>print(b,type(b),id(b))
+	[10, 20, 30, 40, 50] <class 'list'> 2780679418368
+
+nested objects -> modifications will reflect 
+-----------------------------------
+>>a=[[10,20],[30,40]]
+>>print(a,type(a),id(a))
+	[[10, 20], [30, 40]] <class 'list'> 2780679648192
+>>b=a.copy()
+>>print(b,type(b),id(b))
+	[[10, 20], [30, 40]] <class 'list'> 2780679504320
+>>a[0][0]=99;
+>>print(a,type(a),id(a))
+	[[99, 20], [30, 40]] <class 'list'> 2780679648192
+>>print(b,type(b),id(b))
+	[[99, 20], [30, 40]] <class 'list'> 2780679504320
+
+By using the copy()
+---------------
+>>import copy
+>>a=[[1,2],[3,4]]
+>>print(a,type(a),id(a))
+	[[1, 2], [3, 4]] <class 'list'> 2780638471936
+>>b=copy.copy(a);
+>>print(b,type(b),id(b))
+	[[1, 2], [3, 4]] <class 'list'> 2780679684992
+>>a[0][0]=15
+>>print(a)
+	[[15, 2], [3, 4]]
+>>print(b)
+	[[15, 2], [3, 4]]
+>>print(a,type(a),id(a))
+	[[15, 2], [3, 4]] <class 'list'> 2780638471936
+>>print(b,type(b),id(b))
+	[[15, 2], [3, 4]] <class 'list'> 2780679684992
+
+Slice Based Copy ---always considered as Shallow Copy
+	Syntax:  object2=object[Begin:End:Step]
+	Syntax:  object2=object[Begin:End]
+	Syntax:  object2=object[ : : ]
+
+2. Deep Copy
+-----------
+-->The Properties of Deep Copy are
+	a) Intial Content of Both the Objects are Same
+	b) Address of Both the Objects are Same When using the assigment operator (=) 
+	c) Modifications are Depedent When using the assigment operator (=) ( Whatever the 	   changes we do on one object,they are reflecting on other object)
+	d)To implement Deep Copy, we use Assigment Operator ( = )
+		Syntax: Object2=Object1
+	e) Address is different When using the copy.deepcopy(object)
+	f) Modifications are Indepedent When using the copy.deepcopy(object)(Whatever the 	   changes we do on one object, they are not reflecting on other object)
+		Syntax:
+			import copy
+			object2 = copy.deepcopy(object1)
+
+By using the copy.deepcopy()
+-----------------------
+>>import copy
+>>a=[10,54,98,45,65,98]
+>>print(a,type(a),id(a))
+	[10, 54, 98, 45, 65, 98] <class 'list'> 2010445492672
+>>b=copy.deepcopy(a)
+>>print(b,type(b),id(b))
+	[10, 54, 98, 45, 65, 98] <class 'list'> 2010445579648
+>>a[2]=195;
+>>print(a,type(a),id(a))
+	[10, 54, 195, 45, 65, 98] <class 'list'> 2010445492672
+>>print(b,type(b),id(b))
+	[10, 54, 98, 45, 65, 98] <class 'list'> 2010445579648
+>>b[2]=165;
+>>print(a,type(a),id(a))
+	[10, 54, 195, 45, 65, 98] <class 'list'> 2010445492672
+>>print(b,type(b),id(b))
+	[10, 54, 165, 45, 65, 98] <class 'list'> 2010445579648
+
+By using Assigment Operator
+-----------------------
+>>a=[10,25,65,95,98,88]
+>>print(a,type(a),id(a))
+	[10, 25, 65, 95, 98, 88] <class 'list'> 2010444835904
+>>b=a;
+>>print(b,type(b),id(b))
+	[10, 25, 65, 95, 98, 88] <class 'list'> 2010444835904
+>>a[0]=100;
+>>print(a,type(a),id(a))
+	[100, 25, 65, 95, 98, 88] <class 'list'> 2010444835904
+>>print(b,type(b),id(b))
+	[100, 25, 65, 95, 98, 88] <class 'list'> 2010444835904
+>>b[0]=10;
+>>print(a,type(a),id(a))
+	[10, 25, 65, 95, 98, 88] <class 'list'> 2010444835904
+>>print(b,type(b),id(b))
+	[10, 25, 65, 95, 98, 88] <class 'list'> 2010444835904
+
+Concept		Address		Copy Level	Changes Reflect
+------		------		--------	-------------
+Assignment (=)	Same			no copy	Yes
+Shallow Copy		Different		Outer only	Sometimes
+Deep Copy		Fully Different	Full copy	No
+
+10) reverse()
+----------
+-->This function is used for obtaining reverse of given elements of list in itself(back to front and vice-versa)
+	Syntax : listobj.reverse();
+
+>>a=[10,25,98,78,65,5];
+>>print(a)
+	[10, 25, 98, 78, 65, 5]
+>>a.reverse()
+>>print(a)
+	[5, 65, 78, 98, 25, 10]
+>>print(a.reverse())
+	None
+>>a.reverse()
+>>print(a)
+	[5, 65, 78, 98, 25, 10]
+>>a.reverse()
+>>print(a)
+	[10, 25, 98, 78, 65, 5]
+
+11) sort()
+--------
+--> listobj.sort() -> Gives in ASCending Order of list object in itself.
+-->listobj.sort(reverse=False) -> Gives in ASCending Order of list object in itself.
+-->listobj.sort(reverse=True) -> Gives in DESCending Order of list object in itself.
+
+>>a=[9,54,12,65,8,78,32,1,6]
+>>print(a,type(a),id(a))
+	[9, 54, 12, 65, 8, 78, 32, 1, 6] <class 'list'> 2010445594432
+>>a.sort()
+>>print(a,type(a),id(a))
+	[1, 6, 8, 9, 12, 32, 54, 65, 78] <class 'list'> 2010445594432
+>>a.sort(reverse=True);
+>>print(a,type(a),id(a))
+	[78, 65, 54, 32, 12, 9, 8, 6, 1] <class 'list'> 2010445594432
+>>a.sort(reverse=False);
+>>print(a,type(a),id(a))
+	[1, 6, 8, 9, 12, 32, 54, 65, 78] <class 'list'> 2010445594432
+>>a=[1,6,'Hello',"Hai","Datapro",98,54,556,'Bat','apple','cat',15.262,98.65]
+>>print(a,type(a),id(a))
+	[1, 6, 'Hello', 'Hai', 'Datapro', 98, 54, 556, 'Bat', 'apple', 'cat', 15.262, 98.65] 	<class 'list'> 2010445723328
+>>a.sort()
+	TypeError: '<' not supported between instances of 'str' and 'int'
+>>a=["bat","Cat","Vizag","Datapro","hello"]
+>>print(a)
+	['bat', 'Cat', 'Vizag', 'Datapro', 'hello']
+>>a.sort()
+>>print(a)
+   	['Cat', 'Datapro', 'Vizag', 'bat', 'hello']
+
+12) extend()
+----------
+-->This Function is used for extednding or meging or adding all the values of listobj2 to listobj1.
+	Syntax: listobj1.extend(listobj2)
+
+>>a=[10,20,30]
+>>print(a)
+	[10, 20, 30]
+>>b=[40,50,60]
+>>print(b)
+	[40, 50, 60]
+>>a.extend(b)
+>>print(a)
+	[10, 20, 30, 40, 50, 60]
+>>print(b)
+	[40, 50, 60]
+
+>>a=[10,20,"Datapro","Sai",25.6]
+>>print(a)
+	[10, 20, 'Datapro', 'Sai', 25.6]
+>>b=[30,40,50,"Vinod","Devi","Durga"]
+>>print(b)
+	[30, 40, 50, 'Vinod', 'Devi', 'Durga']
+>>c=[165,98,"Rahul"]
+>>print(c)
+	[165, 98, 'Rahul']
+>>a.extend(b,c)
+	TypeError: list.extend() takes exactly one argument (2 given)
+
+>>a=a+b+c;
+>>print(a)
+[10, 20, 'Datapro', 'Sai', 25.6, 30, 40, 50, 'Vinod', 'Devi', 'Durga', 165, 98, 'Rahul']
+>>print(b)
+	[30, 40, 50, 'Vinod', 'Devi', 'Durga']
+>>print(c)
+	[165, 98, 'Rahul']
+
+>>a=[10,20,30,40]
+>>b=[50,60,70,80]
+>>print(a+b);
+	[10, 20, 30, 40, 50, 60, 70, 80]
+>>print(a)
+	[10, 20, 30, 40]
+>>print(b)
+	[50, 60, 70, 80]
+
+Inner (OR) Nested list
+------------------
+-->The Process of Defining One List in another List is called Inner or Nested List
+Syntax: lstobj1=[ Val1,Val2...[Val11,Val12...Val1n]...[Val21,Val22...Val2n]...Val-n ]
+	Here [Val11,Val12....Val1n] is called One Inner OR Nested List
+	      [Val21,Val22...Val2n]  is called another Inner OR Nested List
+-->All the pre-defined Functions of List can be applied on Inner or Nested list.
+-->On Inner or Nested List we can perform Index and Slicing Operations.
+
+>>a=[10,20,30,[1,2,3],40,50,[4,5,6]];
+>>print(a,type(a),id(a))
+	[10, 20, 30, [1, 2, 3], 40, 50, [4, 5, 6]] <class 'list'> 2662802312128
+>>print(a[0])
+	10
+>>a[1]
+	20
+>>a[2]
+	30
+>>a[3]
+	[1, 2, 3]
+>>a[3][0]=111
+>>a[3]
+	[111, 2, 3]
+>>print(a[3],type(a[3]))
+	[111, 2, 3] <class 'list'>
+>>print(a[6],type(a[6]))
+	[4, 5, 6] <class 'list'>
+>>a.append(15)
+>>print(a)
+	[10, 20, 30, [111, 2, 3], 40, 50, [4, 5, 6], 15]
+>>a.count(10)
+	1
+>>a.append(10)
+>>print(a)
+>>[10, 20, 30, [111, 2, 3], 40, 50, [4, 5, 6], 15, 10]
+>>a.count(a)
+	0
+>>a.count(10)
+	2
+>>print(a)
+	[10, 20, 30, [111, 2, 3], 40, 50, [4, 5, 6], 15, 10]
+>>a.clear()
+>>print(a)
+	[]
+>>a=[10,20,[1,2,3],40,50,[4,5,6]]
+>>print(a)
+	[10, 20, [1, 2, 3], 40, 50, [4, 5, 6]]
+>>del a[2]
+>>print(a)
+	[10, 20, 40, 50, [4, 5, 6]]
+>>a[4].clear()
+>>print(a)
+	[10, 20, 40, 50, []]
+
+>>a=[[1,2,3],[4,5,6],[7,8,9]]
+>>print(a)
+	[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>for i in a :
+... print(i)
+	[1, 2, 3]
+	[4, 5, 6]
+	[7, 8, 9]
+
+2. tuple
+-------
+-->'tuple' is one of the pre-defined class and treated as List Data Type.
+-->The purpose of tuple data type is that "To store Multiple Values either of same type or Different type or both the types in single object with Unique and Duplicate Values".
+-->The Elements or Data in tuple must be organized or Stored in braces ( ) and Elements must be separated by Comma.
+	Syntax: varname=( Val1,Val2.....Val-n )
+	here varname is an object of tuple type.
+-->An object of tuple maintains Insertion Order
+-->On the object of tuple, we can perform Both Indexing and Slicing Operations.
+-->We can convert One type values intotuple type value by using tuple()
+	Syntax: varname= tuple(object)
+-->An object of tuple belongs to Immutable bcoz tuple object  does not support Item Assigment.
+-->with tuple data type, we can create two types of tuple objects. They are
+	a) Empty tuple
+	b) Non-Empty tuple
+
+a)Empty tuple
+-----------
+-->Empty tuple is one which does not contain any elements and whose length is 0
+	Syntax: varname=() 	(OR) varname=tuple()
+
+>>a=()
+>>print(a,type(a),id(a))
+	() <class 'tuple'> 140707983568600
+
+b) Non-Empty tuple
+----------------
+-->Non-Empty tuple  is one which  contains  elements and whose length is>0
+Syntax:	varname=(Val1,Val2....Val-n)
+				(OR)
+		varname=tuple ([10,20,30,10,20])
+				(OR)
+		varname= Val1,Val2....Val-n
+
+NOTE:
+-->The Functionality of tuple is extarctly similar to list but an object of list belongs to mutable where as an object tuple belongs to immutable.
+
+>>a=(10,20,30,40,50)
+>>print(a,type(a),id(a))
+	(10, 20, 30, 40, 50) <class 'tuple'> 1418329968736
+>>b=(10,35.23,'Datapro','Vizag',98,15166)
+>>print(b,type(b),id(b))
+	(10, 35.23, 'Datapro', 'Vizag', 98, 15166) <class 'tuple'> 1418331457952
+
+>>b[0]
+	10
+>>b[2]
+	'Datapro'
+>>b[1]
+	35.23
+>>b[0:]
+	(10, 35.23, 'Datapro', 'Vizag', 98, 15166)
+>>b[2:]
+	('Datapro', 'Vizag', 98, 15166)
+>>b[ :5]
+	(10, 35.23, 'Datapro', 'Vizag', 98)
+>>b[:]
+	(10, 35.23, 'Datapro', 'Vizag', 98, 15166)
+
+>>b[0]=100
+	TypeError: 'tuple' object does not support item assignment
+
+>>a=[10,25.65,10+5j,'Datapro',True]
+>>print(a,type(a),id(a))
+	[10, 25.65, (10+5j), 'Datapro', True] <class 'list'> 1418330385472
+>>b=tuple(a)
+>>print(b,type(b),id(b))
+	(10, 25.65, (10+5j), 'Datapro', True) <class 'tuple'> 1418289521248
+
+Pre-defined Function in tuple
+-----------------------
+-->We know that on the object of tuple we can perform Both Indexing and Slicing Operations.
+-->Along with  these operations, we can also perform other operations by using the following pre-defined Functions.
+
+1)index() 
+-------
+-->This Function is always used for finding First Occurence Index of the specified value.
+-->If a specified value does not exist in list object then we get ValueError.
+	Syntax: tupleobj.index(Value)
+
+>>print(b)
+	(10, 25.65, (10+5j), 'Datapro', True)
+>>b.index(10)
+	0
+>>b.index('Datapro')
+	3
+>>b.index(True)
+	4
+>>b.index(0)
+	ValueError: tuple.index(x): x not in tuple
+
+2)count()
+-------
+-->This Function is used for counting number of occurences of a specified value.
+-->If a specified value does not exist in list object then we get 0.
+	Syntax: tupleobj.count(Value)
+
+>>print(b)
+	(10, 25.65, (10+5j), 'Datapro', True)
+>>b.count(10)
+	1
+>>b.count(25)
+	0
+>>b.count(True)
+	1
+
+The Functions not present in tuple
+	append(),insert(),remove(),clear(),pop(index),pop(),reverse(),sort(),copy(),extend().
+
+NOTE: By Using  del Operator we can't delete values of tupple object By using Indexing and slicing but we can delete entire object
+
+>>print(b)
+	(10, 25.65, (10+5j), 'Datapro', True)
+>>del b[0]
+	TypeError: 'tuple' object doesn't support item deletion
+>>del b[1:3]
+	TypeError: 'tuple' object does not support item deletion
+>>del b
+>>print(b)
+	NameError: name 'b' is not defined
+
+Inner (OR) Nested tuple
+--------------------
+-->The Process of Defining One tuple in another tuple is called Inner or Nested tuple
+Syntax : tplobj1=(Val1,Val2...(Val11,Val12...,Val1n)...(Val21,Val22...Val2n)...Val-n )
+	 Here (Val11,Val12....Val1n) is called One Inner OR Nested tuple
+	 (Val21,Val22...Val2n)  is called another Inner OR Nested tuple
+ 	 (Val1,Val2...(Val11,...Val1n)...(Val21,..Val2n)...Val-n ) is called Outer tuple
+-->All the pre-defined Functions of tuple can be applied on Inner or Nested tuple.
+-->On Inner or Nested tuple we can perform Index and Slicing Operations.
+
+>>a=(10,20,30,(10.26,98.65,98.5),40,50,('Datapro','NareshIt'),60)
+>>print(a,type(a),id(a))
+	(10, 20, 30, (10.26, 98.65, 98.5), 40, 50, ('Datapro', 'NareshIt'), 60) <class 	'tuple'> 1418330862224
+>>a[0];
+	10
+>>a[2]
+	30
+>>a[3]
+	(10.26, 98.65, 98.5)
+>>a[3][1]
+	98.65
+>>a[6]
+	('Datapro', 'NareshIt')
+>>a[6][2]
+	IndexError: tuple index out of range
+>>a[0:3]
+	(10, 20, 30)
+>>a[0:]
+	(10, 20, 30, (10.26, 98.65, 98.5), 40, 50, ('Datapro', 'NareshIt'), 60)
+>>a[5:]
+	(50, ('Datapro', 'NareshIt'), 60)
+
+>>a=(10,20,30,(10.25,65.62),[5,8,1],('Sai','Tarun','Vinod'),40,50);
+>>print(a,type(a),id(a))
+	(10, 20, 30, (10.25, 65.62), [5, 8, 1], ('Sai', 'Tarun', 'Vinod'), 40, 50) <class 	'tuple'> 1418331554080
+>>print(a[4],type(a[4]))
+	[5, 8, 1] <class 'list'>
+>>a[4].append(5)
+>>print(a[4],type(a[4]))
+	[5, 8, 1, 5] <class 'list'>
+>>print(a,type(a),id(a))
+	(10, 20, 30, (10.25, 65.62), [5, 8, 1, 5], ('Sai', 'Tarun', 'Vinod'), 40, 50) <class 	'tuple'> 1418331554080
+>>a.append(56)
+	AttributeError: 'tuple' object has no attribute 'append'
+>>print(a[4],type(a[4]),type(a))
+	[5, 8, 1, 5] <class 'list'> <class 'tuple'>
+>>print(a[3],type(a[3]),type(a))
+	(10.25, 65.62) <class 'tuple'> <class 'tuple'>
+
+NOTE:
+-----
+-->One can define One List in another List
+-->One can define One Tuple in another Tuple
+-->One can define One List in another Tuple ( tuple of lists)
+-->One can define One tuple in another List (list of tuples)
+
+Set
+---
+-->'set' is one of the pre-defined class and treated as set data type.
+-->The purpose of set data type is that "To store Multiple Values either Simiar Type or Different Type or Both the Types in Single Object with Unique Values".
+-->The elements of set must be written within Curly braces {  } and Elements must separted by comma.
+-->An Object of set never maintains Insertion Order bcoz PVM can display any one of the possibility of elements of set object.
+-->On the object of set, we can't perform Indexing and Slicing Operations bcoz set object never maintains Insertion Order.
+-->An object of set belongs to both Immutable bcoz set' object does not support item assignment and mutable in the case of add()
+-->we can create two types of set objects. They are
+	a) Empty set
+	b) Non-Empty set
+
+a) Empty set:
+-----------
+-->An Empty  set is one, which does not contain any elements and whose length is 0
+	Syntax :setobj=set()
+
+>>a=set()
+>>print(a,type(a),id(a))
+	set() <class 'set'> 2524802642016
+
+b) Non-Empty set:
+----------------
+-->A Non-Empty set is one, which  contains  elements and whose length is >0
+	Syntax : setobj={ val1, val2, ....val-n }
+
+>>a={10,20,30,40,50,60,10,25,30,45};
+>>print(a,type(a),id(a))
+	{40, 10, 45, 50, 20, 25, 60, 30} <class 'set'> 2524803407584
+>>a={10,25.5,'Hello','Devi',981551,10,25.5,'Hai'}
+>>print(a,type(a),id(a))
+	{'Hello', 10, 'Hai', 'Devi', 25.5, 981551} <class 'set'> 2524803407808
+>>a={10,15.2,10+5j,[10,20,30],98484,10,25}
+	TypeError: cannot use 'list' as a set element (unhashable type: 'list')
+
+>>print(a)
+	{'Hello', 10, 'Hai', 'Devi', 25.5, 981551}
+>>0a[0]
+	TypeError: 'set' object is not subscriptable
+>>a[0:5]
+	TypeError: 'set' object is not subscriptable
+
+>>print(a)
+	{'Hello', 10, 'Hai', 'Devi', 25.5, 981551}
+>>len(a)
+	6
+>>b=set()
+>>print(b,type(b),id(b))
+	set() <class 'set'> 2524803407136
+>>len(b)
+	0
+
+>>print(a)
+	{'Hello', 10, 'Hai', 'Devi', 25.5, 981551}
+>>a[0]="Hai";
+	TypeError: 'set' object does not support item assignment
+
+Pre-Defined Functions in set
+-----------------------
+-->On the object of set, we can perform different Operations by using the pre-defined functions present in set object.
+
+1.clear()
+-------
+-->This Function is used for removing all the elements of set object.
+	Syntax : setobj.clear()
+
+>>a={10,20,30,40,50}
+>>print(a,type(a))
+	{50, 20, 40, 10, 30} <class 'set'>
+>>a.clear()
+>>print(a)
+	set()
+
+2.add()
+------
+-->This Function is used for adding the values to the set object.
+ 	Syntax : setobj.add(value)
+
+>>a={10,20,305.5,"Datapro",45+10j}
+>>print(a,type(a),id(a))
+	{305.5, 20, 'Datapro', 10, (45+10j)} <class 'set'> 2524803408256
+>>a.add(100)
+>>print(a,type(a),id(a))
+	{305.5, 20, 'Datapro', 100, 10, (45+10j)} <class 'set'> 2524803408256
+>>a.add(50,98)
+	TypeError: set.add() takes exactly one argument (2 given)
+>>a.add("Rahul")
+>>print(a,type(a),id(a))
+	{305.5, 20, 'Datapro', 100, 'Rahul', 10, (45+10j)} <class 'set'> 2524803408256
+
+
+3.remove()
+--------
+-->This Function is used for removing the Value(Key) from set object
+-->If the specified Value  does not exist  in the set object then we get KeyError
+	Syntax : setobj.remove(value)
+
+>>print(a)
+	{305.5, 20, 'Datapro', 100, 'Rahul', 10, (45+10j)}
+>>a.remove(20)
+>>print(a)
+	{305.5, 'Datapro', 100, 'Rahul', 10, (45+10j)}
+>>a.remove(100,10);
+	TypeError: set.remove() takes exactly one argument (2 given)
+>>a.remove('Rahul')
+>>print(a)
+	{305.5, 'Datapro', 100, 10, (45+10j)}
+>>a.remove('datapro')
+	KeyError: 'datapro
+
+4.discard()
+---------
+-->This Function is used for removing the Value(Key) from set object
+-->If the specified Value  does not exist  in the set object then we never get any error
+	Syntax :  setobj.discard(Value)
+
+>>print(a)
+	{305.5, 'Datapro', 100, 10, (45+10j)}
+>>a.discard(10)
+>>print(a)
+	{305.5, 'Datapro', 100, (45+10j)}
+>>a.discard(100,'Datapro')
+	TypeError: set.discard() takes exactly one argument (2 given)
+>>a.discard('Datapro')
+>>print(a)
+	{305.5, 100, (45+10j)}
+>>a.discard(100)
+>>print(a)
+	{305.5, (45+10j)}
+>>a.discard(10)
+>>print(a)
+	{305.5, (45+10j)}
+
+5.pop()
+------
+-->This Function is used for removing Any Arbitrary Element from set object
+-->When we call pop() upon empty set object then we get KeyError.
+	Syntax : setobj.pop()
+
+>>a={10,98,45,78,10.25,'Hello','Hai'}
+>>print(a)
+	{98, 10.25, 'Hello', 'Hai', 10, 45, 78}
+>>a.pop()
+	98
+>>print(a)
+	{10.25, 'Hello', 'Hai', 10, 45, 78}
+>>a.pop()
+	10.25
+>>print(a)
+	{'Hello', 'Hai', 10, 45, 78}
+>>a.pop()
+	'Hello'
+>>print(a)
+	{'Hai', 10, 45, 78}
+>>a.pop()
+	'Hai'
+>>a.pop()
+	10
+>>a.pop()
+	45
+>>a.pop()
+	78
+>>a.pop()
+	KeyError: 'pop from an empty set'
+
+6.copy()
+-->This Function is used for Copying the content of One set object to another set object.
+	Syntax : setobj2=setobj1.copy()
+
+>>a={10,20,30,40,50,32.62,5.62}
+>>print(a,type(a),id(a))
+	{32.62, 50, 20, 5.62, 40, 10, 30} <class 'set'> 2524803407808
+>>b=a.copy()
+>>print(b,type(b),id(b))
+	{32.62, 50, 20, 5.62, 40, 10, 30} <class 'set'> 2524803410272
+>>a.add(150)
+>>print(a,type(a),id(a))
+	{32.62, 50, 20, 5.62, 150, 40, 10, 30} <class 'set'> 2524803407808
+>>print(b,type(b),id(a))
+	{32.62, 50, 20, 5.62, 40, 10, 30} <class 'set'> 2524803407808
+>>print(b,type(b),id(b))
+	{32.62, 50, 20, 5.62, 40, 10, 30} <class 'set'> 2524803410272
+
+7. isdisjoint()
+-----------
+-->This Function returns True provided there is no common element otherwise it returns False
+	Syntax : setobj1.isdisjoint(setobj2)
+
+>>a={10,20,30,40,50}
+>>b={60,70,80,90,100}
+>>c={10,50,70,80,100}
+>>print(type(a),type(b),type(c))
+	<class 'set'> <class 'set'> <class 'set'>
+>>a.isdisjoint(b)
+	True
+>>a.isdisjoint(c)
+	False
+
+8.issubset()
+---------
+-->This Function returns True Provded All elements of SetObj1 must present in setobj2 
+otherwise it returns False.
+	Syntax : setobj1.issubset(setobj2)
+
+>>a={10,20,30,40,50}
+>>b={10,50}
+>>c={15,30,10}
+>>print(a,type(a),b,type(b),c,type(c))
+	{50, 20, 40, 10, 30} <class 'set'> {10, 50} <class 'set'> {10, 30, 15} <class 'set'>
+>>a.issubset(b)
+	False
+>>b.issubset(a)	
+	True
+>>a.issubset(c)
+	False
+
+9.issuperset()
+-----------
+-->This Function returns True provided setobj1 contains all the elements setobj2 otherwise it returns False
+	Syntax : setobj1.issuperset(setobj2)
+
+>>a={10,20,30,40,50}
+>>b={10,50}
+>>c={15,30,10}
+>>print(a,type(a),b,type(b),c,type(c))
+	{50, 20, 40, 10, 30} <class 'set'> {10, 50} <class 'set'> {10, 30, 15} <class 'set'>
+>>a.issuperset(b)
+	True
+>>b.issuperset(a)
+	False
+>>a.issuperset(c)
+	False
+
+10. union()
+--------
+-->This Function obtains all the Unique elements  of setobj1 and setobj2 and result placed in setobj3.
+	Syntax : setobj3=setobj1.union(setobj2)
+
+>>a={"Sai","Tarun","Rama Krishna"}
+>>b={"Vinod","Sai","Rahul","Dinesh","Tarun"}
+>>c=a.union(b)
+>>print(c)	
+	{'Dinesh', 'Rahul', 'Tarun', 'Vinod', 'Sai', 'Rama Krishna'}
+
+11.intersection()
+-------------
+-->This Function obtains Common Value from both setobj1 and setobj2.
+-->If common elements are not existing then this function gives empty set(set())
+
+>>a={"Sai","Tarun","Rama Krishna"}
+>>b={"Vinod","Sai","Rahul","Dinesh","Tarun"}
+>>c={"Tejesh","Venkata Rao"}
+>>a.intersection(b)
+	{'Tarun', 'Sai'}
+>>a.intersection(c)
+	set()
+
+12.difference():
+-------------
+-->This Function removes the common elements from both setobj1 and setobj2 , Takes 
+    remaining elements from setobj1 and placed in setobj3.
+	Syntax :  setobj3=setobj1.difference(setobj2)
+
+>>a={"Sai","Tarun","Rama Krishna"}
+>>b={"Vinod","Sai","Rahul","Dinesh","Tarun"}
+>>c={"Tejesh","Venkata Rao"}
+>>a.difference(c)
+	{'Tarun', 'Sai', 'Rama Krishna'}
+>>b.difference(a)
+	{'Dinesh', 'Vinod', 'Rahul'}
+>>c.difference(a)
+	{'Tejesh', 'Venkata Rao'}
+
+13.symmetric_difference()
+----------------------
+-->This Function removes the common elements from both setobj1 and setobj2,Takes remaining elements from both setobj1 and setobj2 and placed in setobj3.
+	Syntax : setobj3=setobj1.symmetric_difference(setobj2)
+
+>>a={'Sai','Tarun','Rama krishna'}
+>>b={'Sai','Tarun','Lakshmi','Ganesh',"Gowri"}
+>>print(a,type(a))
+	{'Rama krishna', 'Sai', 'Tarun'} <class 'set'>
+>>print(b,type(b))
+	{'Lakshmi', 'Ganesh', 'Gowri', 'Sai', 'Tarun'} <class 'set'>
+>>c=a.symmetric_difference(b)
+>>print(c,type(c))
+	{'Lakshmi', 'Rama krishna', 'Ganesh', 'Gowri'} <class 'set'>
+
+Bitwise Operation
+--------------
+>>a={'Sai','Tarun','Rama krishna'}
+>>b={'Sai','Tarun','Lakshmi','Ganesh',"Gowri"}
+>>print(a-b)
+	{'Rama krishna'}
+>>print(a&b)
+	{'Sai', 'Tarun'}
+>>print(a^b)
+	{'Lakshmi', 'Rama krishna', 'Ganesh', 'Gowri'}
+>>print(a|b)
+	{'Lakshmi', 'Ganesh', 'Gowri', 'Rama krishna', 'Sai', 'Tarun'}
+
+>>a={10,20,30,40}
+>>b={15,10,25,20}
+>>c={10,25,45,55}
+>>a.union(b,c)
+	{40, 10, 45, 15, 20, 55, 25, 30}
+>>a.union(b).union(c)
+	{40, 10, 45, 15, 20, 55, 25, 30}
+>>a.intersection(b,c)
+	{10}
+>>a.intersection(b).intersection(c)
+	{10}
+>>a.difference(b,c)
+	{40, 30}
+>>a.difference(b).difference(c)
+	{40, 30}
+
+14. update()
+----------
+-->This Function is used for adding / updating all the values of setobj2 to setobj1 .
+	Syntax :  setobj1.update(setobj2)
+
+>>a={10,20,30,40,50}
+>>b={98,45,91,65,4}
+>>print(a,type(a))
+	{50, 20, 40, 10, 30} <class 'set'>
+>>print(b,type(b))
+	{65, 98, 4, 91, 45} <class 'set'>
+>>c=a.update(b);
+>>print(c,type(c))
+	None <class 'NoneType'>
+>>print(a)
+	{65, 98, 4, 40, 10, 45, 50, 20, 91, 30}
+
+>>a={10,20,30}
+>>b={10,20,30}
+>>a.update(b)
+>>print(a)
+	{20, 10, 30}
+>>print(b)
+	{10, 20, 30}
+
+Nested or Inner Properties of Set
+----------------------------
+-->We can define 
+	a)  Defining set inside of another set  NOT POSSIBLE 
+	b)  Defining set inside of another Tuple  POSSIBLE
+	c)  Defining set inside of another List NOT POSSIBLE
+	d)  Defining tuple inside of Another Set POSSIBLE 
+	e)  Defining  list inside of another set NOT POSSIBLE
+
+>>a={10,20,30,40,{1,2,3,4},50}
+	TypeError: cannot use 'set' as a set element (unhashable type: 'set')
+>>a={10,20,30,40,[1,2,3,4],50}
+	TypeError: cannot use 'list' as a set element (unhashable type: 'list')
+>>a={10,20,30,40,(1,2,3,4),50}
+>>print(a,type(a))
+	{(1, 2, 3, 4), 50, 20, 40, 10, 30} <class 'set'>
+
+>>a=[10,20,30,{1,2,3,4},50]
+>>print(a,type(a))
+	[10, 20, 30, {1, 2, 3, 4}, 50] <class 'list'>
+>>a=(10,20,30,{1,2,3},40,50)
+>>print(a,type(a))
+	(10, 20, 30, {1, 2, 3}, 40, 50) <class 'tuple'>
+>>a={10,20,30,(10,20,{1,2,3}),40,50}
+	TypeError: cannot use 'tuple' as a set element (unhashable type: 'set')
+>>a={10,20,30,(10,20,[1,2,3]),40,50}
+	TypeError: cannot use 'tuple' as a set element (unhashable type: 'list')
+
+frozenset
+--------
+-->'frozenset' is one of the pre-defined class and treated as set data type.
+-->The purpose of frozenset data type is that "To store Multiple Values either Simiar Type or Different Type or Both the Types in Single Object with Unique Values".
+-->The elements of frozenset must be obtained from different objects like set,tuple and list.
+	Syntax:frozensetobj=frozenset(set/list/tuple)
+-->An Object of frozenset never maintains Insertion Order bcoz PVM can display any one of the possibility of elements of frozenset object.
+-->On the object of frozenset, we can't perform Indexing and Slicing Operations bcoz frozenset object never maintains Insertion Order.
+-->An object of frozenset belongs to  Immutable bcoz frozenset' object does not support item assignment and not possible to modify/Change.
+-->we can create two types of frozenset objects. They are
+	a) Empty frozenset
+	b) Non-Empty frozenset
+
+a) Empty frozenset:
+----------------
+-->An Empty frozenset is one, which does not contain any elements and whose length is 0
+	Syntax:frozensetobj=frozenset()
+
+>>a=frozenset()
+>>print(a,type(a))
+	frozenset() <class 'frozenset'>
+
+b) Non-Empty frozenset:
+--------------------
+-->A Non-Empty frozenset is one, which  contains  elements and whose length is >0
+	Syntax:frozensetobj=frozenset( { val1, val2, ....val-n } )
+	Syntax:frozensetobj=frozenset( ( val1, val2, ....val-n ) )
+	Syntax:frozensetobj=frozenset( [ val1, val2, ....val-n ] )
+
+Note: The Functionality of Frozenset is extactly similar to Set but set object belogs to both Mutable and Immutable where as frozenset object belongs to immutable.
+
+>>a={10,20,30,40,50}
+>>print(a,type(a))
+	{50, 20, 40, 10, 30} <class 'set'>
+>>b=frozenset(a)
+>>print(b,type(a))
+	frozenset({50, 20, 40, 10, 30}) <class 'set'>
+>>print(b,type(b))
+	frozenset({50, 20, 40, 10, 30}) <class 'frozenset'>
+
+>>a=(102,54,51,8541,55)
+>>print(a,type(a))
+	(102, 54, 51, 8541, 55) <class 'tuple'>
+>>b=frozenset(a)
+>>print(b,type(b))
+	frozenset({102, 51, 54, 55, 8541}) <class 'frozenset'>
+
+>>a=[15,55,26,9551,45]
+>>print(a,type(a))
+	[15, 55, 26, 9551, 45] <class 'list'>
+>>b=frozenset(a)
+>>print(b,type(b))
+	frozenset({45, 9551, 15, 55, 26}) <class 'frozenset'>
+
+>>len(b)
+	5
+>>b.add(15)
+	AttributeError: 'frozenset' object has no attribute 'add'
+>>b[0]
+	TypeError: 'frozenset' object is not subscriptable
+>>b[0:2]
+	TypeError: 'frozenset' object is not subscriptable
+>>b[1]="Nuthan";
+	TypeError: 'frozenset' object does not support item assignment
+>>b.remove(15)
+	AttributeError: 'frozenset' object has no attribute 'remove'
+
+Pre-Defined Functions in frozenset 
+----------------------------
+-->frozenset  contains the following Functions
+	a) copy()
+	b) isdisjoint()
+	c) issuperset()
+	d) issubset()
+	e) union()
+	f) intersection()
+	g) difference()
+	h) symmertic_difference()
+
+a)copy()
+------
+>>a=frozenset({10,20,30,40,50})
+>>print(a,type(a),id(a))
+	frozenset({50, 20, 40, 10, 30}) <class 'frozenset'> 2504075747936
+>>b=a.copy()
+>>print(b,type(b),id(b))
+	frozenset({50, 20, 40, 10, 30}) <class 'frozenset'> 2504075747936
+
+-->In General Immutable Object content is Not Possible to copy( in the case of tuple). Where as in the frozenset, we are able to copy its content to another frozenset object. Here Original frozenset object and copied frozenset object contains Same Address and Not at all possible to Modify / Change their content.
+
+-->frozenset  does not contain the following Functions
+	a) clear()
+	b) add()
+	c) remove()
+	d) discard()
+	e) pop()
+	f) update()
+
+Dict Categeory Data Types ( Collection Data Types or Data Structures)
+---------------------------------------------------------
+-->'dict' is one of the pre-defined class and treated as Dict Data Type.
+-->The purpose of dict data type is that "To store (Key,value) in single variable"
+-->In (Key,Value), the value of Key is Unique and Value of Value may or may not be unique.
+-->The (Key,value) must be organized or stored in the object of dict within Curly Braces {} and they separated by comma.
+-->An object of dict does not support Indexing and Slicing bcoz Values of Key itself considered as Indices.
+-->In the object of dict, Values of Key are treated as Immutable and Values of Value are treated as mutable.
+-->Originally an object of dict is mutable bcoz we can add (Key,Value) externally.
+-->We have two types of dict objects. They are
+	a) Empty dict
+	b) Non-empty dict
+
+a)Empty dict
+----------
+-->Empty dict is one, which does not contain any (Key,Value) and whose length is 0
+	Syntax :dictobj1= { }  (or) dictobj=dict()
+Syntax for adding (Key,Value) to empty dict:
+------------------------------------
+    		dictobj[Key1]=Val1
+		dictobj[Key2]=Val2
+		---		
+		dictobj[Key-n]=Val-n
+Here Key1,Key2...Key-n are called Values of Key and They must be Unique
+Here Val1, Val2...Val-n are called Values of Value and They may or may not be unique.
+
+>>a={}
+>>print(a,type(a))
+	{} <class 'dict'>
+>>a=dict()
+>>print(a,type(a))
+	{} <class 'dict'>
+>>len(a)
+	0
+>>a[10]="Sai"
+>>a[20]="Vinod"
+>>a[30]="Rahul"
+>>a[40]="Shiva"
+>>a[50]="Raju"
+>>print(a)
+	{10: 'Sai', 20: 'Vinod', 30: 'Rahul', 40: 'Shiva', 50: 'Raju'}
+>>print(a[10])
+	Sai
+>>print(a[15])
+	KeyError: 15
+>>a[50]="Raju Kumar"
+>>print(a)
+	{10: 'Sai', 20: 'Vinod', 30: 'Rahul', 40: 'Shiva', 50: 'Raju Kumar'}
+>>a[60]="Rani";
+>>print(a)
+	{10: 'Sai', 20: 'Vinod', 30: 'Rahul', 40: 'Shiva', 50: 'Raju Kumar', 60: 'Rani'}
+
+b) Non-Empty dict
+---------------
+-->Non-Empty dict is one, which contains  (Key,Value) and whose length is >0
+	Syntax: dictobj1= { Key1:Val1,Key2:Val2......Key-n:Valn}
+			
+Here Key1,Key2...Key-n are called Values of Key and They must Unique
+Here Val1, Val2...Val-n are called Values of Value and They may or may not be unique.
+
+>>a={1:1,2:2,3:3,4:4,5:5}
+>>print(a,type(a))
+	{1: 1, 2: 2, 3: 3, 4: 4, 5: 5} <class 'dict'>
+>>len(a)
+	5
+>>a[1]=100
+>>print(a)
+	{1: 100, 2: 2, 3: 3, 4: 4, 5: 5}
+>>print(a[2])
+	2
+>>a[6]=85
+>>print(a);
+	{1: 100, 2: 2, 3: 3, 4: 4, 5: 5, 6: 85}
+
+>>d=dict()
+>>print(d,type(d),id(d))
+	{} <class 'dict'> 2103276207872
+>>d[10]="Mango"
+>>d[20]="Apple"
+>>d[30]="Orange"
+>>d[40]="Kiwi"
+>>d[50]="Sberry"
+>>print(d)
+	{10: 'Mango', 20: 'Apple', 30: 'Orange', 40: 'Kiwi', 50: 'Sberry'}
+>>d[10]="Guava";
+>>print(d)
+	{10: 'Guava', 20: 'Apple', 30: 'Orange', 40: 'Kiwi', 50: 'Sberry'}
+
+NoneType Datatype
+----------------
+-->'NoneType' is one the pre-defined class and treated as None type Data type
+-->"None" is keyword acts as value for <class,'NoneType'>
+-->The value of 'None' is not False, Space , empty  , 0 
+-->An object of NoneType class can't be created explicitly.
+
+>>a=[]
+>>print(a.clear())
+	None
+>>s=set()
+>>print(s.clear())
+	None
+>>d=dict()
+>>print(d.clear())
+	None
+>>dd={1:100,2:250}
+>>print(dd.get(100))
+	None

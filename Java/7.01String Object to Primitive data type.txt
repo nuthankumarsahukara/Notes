@@ -8,13 +8,13 @@ Since J2SE 5.0, autoboxing and unboxing feature convert primitives into objects 
 
 Primitive Type  	Wrapper class
 boolean		Boolean
-char		Character
-byte		Byte
-short		Short
-int		Integer
-long		Long
-float		Float
-double		Double
+char			Character
+byte			Byte
+short			Short
+int			Integer
+long			Long
+float			Float
+double			Double
 
 Common Conversions
 

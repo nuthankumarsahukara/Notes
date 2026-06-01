@@ -1,0 +1,78 @@
+	=================================
+				Literals and Its Types
+			=================================
+=>A Literal is nothging but a value passing as input to the program.
+=>In Python Programming, Primarly, Literals are classified into 5 types. They are
+
+			1. Integer Literals------Example---> 234    567   23  
+			2. String Literals--------Examples--->"Python", "Rossum", "Ram"
+			3. Float Literals---------Examples----> 34.56    4.5    99.99   0.999
+			4. Boolean Literals-----Examples-----> True   False
+			5. Date Literals-----------Examples:----> 29-08-2022, 17-08-2022...etc
+------------------------------------------------------------------------------------------------------------------------------
+			Identifiers  or Variables
+------------------------------------------------------------------------------------------------------------------------------
+=>We know that all types of Literals are stored in main memory by allocating Sufficient amount of Memory with help of Data Types. To Process the Data / Literals stored in main memory, we must give distinct names to the created memory space and these distinct names makes us to identify the values and they are also called IDENTIFIERS.
+=>Duting Program Execution IDENTIFIER Values can be changed / Varying   and hence IDENTIFIERs are called VARIABLES.
+=>Hence All Types of LITERALS Must Be stored in the form of VARIABLES.
+=>In Python Programming All Variables are called Objects.
+---------------------------------
+Definition of Variable
+---------------------------------
+=>A Variable is one of the Identifier whose can value(s) can be changed during Program 
+    execution.
+=>In Programming Language to do any data processing, we must use Variables / Obejcts (Python).
+------------------------------------------------------------------------------------------------------------------------
+		Rules for Using Variables or Identifiers in Python Program
+------------------------------------------------------------------------------------------------------------------------		
+=>To Use Variables in Python Programming, We use the following Rules. 
+
+1. A Variable  Name is a combination of 
+   Alphabets, Digits and a Special Symbol Under Score( _ ).
+2. First Letter of the Variable Names must starts Either with Alphabet or Special Symbol Under 
+    Score ( _ )
+			Examples:
+			-----------------
+					sal=23------valid
+					$sal=45----Invalid
+					@name="python"----Invalid
+					-sal=45-----Invalid
+					2sal=56----Invalid
+					456=3.4---Invalid
+					_sal_=45--valid
+					_=56---valid
+					__=5.6--valid
+					--=45----invalid
+
+3. Within the variable name, No special symbols are allowed except Under Score ( _ )
+			Examples:
+						tot  sal=45----Invalid
+						tot_marks=456--valid
+						tot#sal=56-----NameError
+
+
+4. No Keywords to be used as Variable Names ( bcoz Keywords are the Reserved Words and 
+    they give special Meaning to the compilers) . 
+		Example:
+		--------------
+					if=45---------Invalid
+					else=67---invalid
+					for=4.5----Invalid
+					if1=56--Valid
+					_else=67--valid
+					_for_=5.6--valid
+
+  Note:All Class Name can be used as Variable Names bcoz Class Names are not Keywords
+
+5. All Variable Name are Case Sensitive
+	Examples:
+	----------------
+	>>> age=99----------------Valid
+	>>> AGE=98---------------Valid
+	>>> Age=97---------------Valid
+	>>> aGe=96--------------Valid
+	>>> print(age,AGE,Age,aGe)-----	99 98 97 96
+	>>> a=12
+	>>> A=13
+	>>> print(a,A)----------	12 13
+---------------------------------------------------------------------------------------

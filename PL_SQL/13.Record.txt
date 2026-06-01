@@ -104,7 +104,7 @@ end;
 Example Nested Record:
 
 declare
-	type address is record(
+	type address111 is record(
 	street varchar2(25),
 	city varchar2(25),
 	state varchar2(25),
@@ -113,8 +113,8 @@ declare
 	
 	type customer is record(
 	customer_name varchar2(20),
-	ship_to address,
-	bill_to address
+	ship_to address111,
+	bill_to address111
 	);
 
 	cus customer;
@@ -141,3 +141,4 @@ begin
 
 end;
 /
+

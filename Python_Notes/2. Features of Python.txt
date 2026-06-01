@@ -1,0 +1,136 @@
+Features of Python
+--------------- 
+->Features of a langauge are nothing but Services or Facilities provided by Language 
+Developers and these features are used by Language Programmers for developing Real Time Applications.
+
+->Python Programming Provides 11 Features. They are
+1. Simple
+2. FreeWare and Open Source
+3. Plat Form Independent
+4. Dynamically Typed
+5. Interpreted 
+6. High Level Programming 				
+7. Both Functional and Object Oriented Programming Languaage
+8. Robust (Strong)
+9.Extensible
+10.Embedded 
+11. Support Third Part APIs(Modules) Such as numpy,pandas,matplotlib, scipy, scikit, seaborn, nlp keras...etc
+
+1. Simple
+--------
+-->Python has a very easy and readable syntax, similar to English.
+-->It reduces complexity and helps beginners learn quickly.
+
+->Rich Set of Modules
+-------------------	
+Python provides a large number of built-in modules, so developers can reuse pre-defined code.
+
+Definition of Module: A module is a collection of functions, variables, and classes.
+
+->Garbage Collection (Automatic Memory Management)
+--------------------------------------------
+Python provides an in-built Garbage Collector.A Garbage Collector is a background program that:
+	->Runs automatically
+	->Collects unused memory
+	->Improves performance
+Hence, Python provides automatic memory management.
+
+->User-Friendly Syntax
+-------------------
+Python syntax is easy to read and write, helping programmers:
+-->Write code faster
+-->Reduce errors
+-->Improve productivity
+
+2. Freeware & Open Source
+----------------------
+-->Python is completely free to use and open-source.
+-->You can download, modify, and distribute it without cost.
+
+Python Distributions
+----------------
+Customized versions of CPython are called Python distributions.
+
+Examples:
+	Jython → Java-based applications
+	IronPython → .NET (C#) applications
+	MicroPython → Microcontrollers
+	Anaconda Python → Data Science / Big Data
+	Stackless Python → Concurrency
+
+3. Platform Independent
+--------------------
+	Python programs can run on different platforms like Windows, Linux, and Mac without modification.
+
+4.Dynamically Typed
+-----------------
+	No need to declare variable data types explicitly.
+Example:
+Static Typed Languages
+-------------------
+	->Data types must be declared explicitly
+	->Example: C, C++, Java
+		int a = 10;
+		String b = "Datapro";
+Dynamically Typed Languages
+-----------------------
+	->No need to declare data types
+	->Python automatically assigns type
+	->Example:Python,JavaScript
+		a = 10 #integer
+		a = "Nuthan" #String
+In Python:
+	->All values are stored as objects
+	->Every object belongs to a class
+
+5.Interpreted Language
+-------------------
+	Python executes code line-by-line using an interpreter, making debugging easier.
+
+Python follows both compilation and interpretation:
+
+Execution Process
+--------------
+Compilation : Source code (.py) → Bytecode (.pyc)
+Execution : Bytecode is executed line-by-line
+
+PVM (Python Virtual Machine)
+------------------------
+PVM is a program that:
+	->Reads bytecode line-by-line
+	->Converts it into machine code
+	->Executes the program
+
+6.High-Level Programming Language
+-----------------------------
+	Python abstracts low-level details like memory management, allowing developers to focus on logic.
+
+7.Supports Multiple Programming Paradigms
+-----------------------------------
+Python supports:
+	->Object-Oriented Programming (OOP)
+	->Functional Programming
+	->Procedural Programming
+
+8.Robust (Strongly Typed)
+---------------------
+	Python handles errors efficiently and supports exception handling, making programs stable and reliable.
+
+9.Extensible
+----------
+	Python can be extended with other languages like C and C++ for performance improvements.
+
+10. Embedded
+------------
+	Python can be embedded into other applications (like C/C++ programs) to provide scripting capabilities.
+
+11. Rich Library Support (Third-Party APIs)
+------------------------------------
+Python has a huge ecosystem of libraries such as:
+	->NumPy – numerical computing
+	->Pandas – data analysis
+	->Matplotlib / Seaborn – data visualization
+	->SciPy – scientific computing
+	->Scikit-learn – machine learning
+	->Keras – deep learning
+	->NLP libraries – text processing	

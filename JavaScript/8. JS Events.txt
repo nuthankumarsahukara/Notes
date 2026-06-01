@@ -171,6 +171,32 @@ function msg() {
 </script>
 </body>
 
+Example 2:
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>onbeforeunload Event Example</h3>
+
+<form id="myForm">
+    Name: <input type="text" name="text" /><br/><br/>
+    Place: <input type="text" name="place" /><br/><br/>
+    <button type="reset">Reset</button>
+</form>
+
+<script>
+    window.onbeforeunload = function(event) {
+        // Most modern browsers will ignore the custom string and 
+        // show a generic message like "Changes you made may not be saved."
+        const message = "Are you sure you want to leave?";
+        event.returnValue = message; 
+        return message;
+    };
+</script>
+
+</body>
+</html>
+
 onerror Event
 The onerror event is triggered if an error occurs while loading an external file (e.g. a document or an image).
 

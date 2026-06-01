@@ -44,3 +44,130 @@ Distributed:-
 Dynamic:-
 	java is a Dynamic language. it supports the dynamic loading of classes. it means classes are loaded on demand it also supports function from its native languages.
 ->java supports dyamic compilation and automatic memory management (Garbage Collection).
+
+
+
+Features of Java
+1. Simple
+
+Java is easy to learn and use. Its syntax is clean, simple, and understandable.
+Java removes complex features like pointers, operator overloading, and multiple inheritance (via classes), making it developer-friendly.
+Java is an Object-Oriented Programming Language (OOP).
+
+2. Object-Oriented
+
+Java follows OOP principles, which help in writing reusable, maintainable, and scalable applications.
+
+OOP concepts in Java:
+
+Object
+
+Class
+
+Inheritance
+
+Polymorphism
+
+Abstraction
+
+Encapsulation
+
+3. Portable
+
+Java is portable because it uses bytecode.
+Once Java code is compiled, the bytecode can run on any platform that has a JVM, without modification.
+
+➡️ No need to rewrite code for different platforms.
+
+4. Platform Independent
+
+Java follows the principle “Write Once, Run Anywhere (WORA)”.
+Unlike C and C++, which generate platform-dependent machine code, Java generates platform-independent bytecode.
+
+A platform consists of hardware and software where a program runs (OS + CPU).
+
+5. Secured
+
+Java is well known for its strong security features. It helps in building virus-free and secure systems.
+
+Security features in Java:
+
+No explicit pointers
+
+Java programs run inside a JVM sandbox
+
+ClassLoader: Loads classes dynamically and prevents unauthorized access
+
+Bytecode verification
+
+Security Manager: Controls access to system resources
+
+6. Robust
+
+Java is a robust (strong) language because it handles errors efficiently.
+
+Reasons:
+
+Strong memory management
+
+No pointer arithmetic
+
+Automatic Garbage Collection
+
+Exception handling mechanism
+
+7. Architecture Neutral
+
+Java is architecture neutral because it does not depend on the hardware architecture.
+The size of primitive data types (int, float, etc.) is fixed across all platforms.
+
+8. Interpreted
+
+Java uses both compiler and interpreter:
+
+Source code is compiled into bytecode
+
+JVM interprets and executes the bytecode line by line
+
+This makes Java platform independent.
+
+9. High Performance
+
+Java provides high performance using JIT (Just-In-Time) Compiler, which converts bytecode into native machine code at runtime.
+Java is faster than traditional interpreted languages.
+
+10. Multithreaded
+
+Java supports multithreading, which allows multiple tasks to run simultaneously.
+
+Advantages:
+
+Better CPU utilization
+
+Threads share the same memory
+
+Useful for multimedia, games, and web applications
+
+11. Distributed
+
+Java supports distributed applications.
+
+Technologies used:
+
+RMI (Remote Method Invocation)
+
+EJB (Enterprise Java Beans)
+
+Java allows calling methods and accessing resources from remote machines over a network.
+
+12. Dynamic
+
+Java is dynamic because it supports:
+
+Dynamic class loading
+
+Runtime linking
+
+Automatic memory management (Garbage Collection)
+
+Classes are loaded on demand, improving flexibility and efficiency.

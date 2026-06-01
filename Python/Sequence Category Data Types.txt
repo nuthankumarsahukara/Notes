@@ -1,0 +1,279 @@
+ Sequence Category Data Types
+--------------------------
+->The purpose of Sequence Category Data Types is that " To Sequence of Values ".
+->We have  4 data types in Sequence Category. They are
+	1. str
+	2. bytes
+	3. bytearray
+	4. range
+
+1) str 
+-----
+-->What is String
+-->Definition of String
+-->Notations of String
+-->Types of Strings
+-->Syntax for Storing Strings
+-->Memmory management of str data
+-->Operation on Strings
+		a) Indexing
+		b) Slicing 
+-->Programming Examples
+
+What is String
+------------
+-->"str" is one of the pre-defined class and treated as Sequence Data Type,
+-->The purpose of str data type is that " To store Text Data or Numeric Data or Alpha-numeric Data and special symbols enclosed within Single or Double Quotes or Tripple Single or Tripple Double Quotes."
+
+Definition of String
+---------------
+	A String  is sequnece or Collection of Characters or Numbers or Alpha-numeric Data and special symbols enclosed within Single or Double Quotes or Tripple Single or Tripple Double Quotes.
+
+Types of Strings
+-------------
+In Python Programming, We have 2 types of str data. They are
+	1. Single Line String Data
+	2. Multi Line String Data
+
+1. Single Line String Data
+---------------------
+-->Single Line string data always enclosed within Double or Single Quotes.
+-->Double or Single Quotes are not useful for organizing Multi Line String Data.
+	Syntax : "Datapro Computers" (or) 'Datapro Computers'
+
+2.Multi Line String Data
+--------------------
+-->With Tripple Double Quotes or Tripple Single Quotes we can organize Multi Line String data and also we can organize Single Line String data.
+	Syntax: """
+			Welcome to Datapro
+			Welcome to Vizag
+			Welcome to Core Python Classes
+		 """
+				(or)
+		'''
+			Welcome to Datapro
+			Welcome to Vizag
+			Welcome to Core Python Classes		
+		'''
+
+Example :
+--------
+>>a="Datapro"
+>>print(a)
+	Datapro
+>>print(type(a))
+	<class 'str'>
+>>b='Vizag'
+>>print(b)
+	Vizag
+>>print(type(b))
+	<class 'str'>
+>>c="""
+    Welcome to Datapro
+    Welcome to Vizag
+    Welcome to Core Python Classes
+"""
+>>print(c)
+
+    Welcome to Datapro
+    Welcome to Vizag
+    Welcome to Core Python Classes
+
+>>print(type(c))
+	<class 'str'>
+>>d='''
+    Welcome to Hyderabad
+    Welcome to FilmCity
+'''
+>>print(d)
+
+    Welcome to Hyderabad
+    Welcome to FilmCity
+
+>>print(type(d))
+	<class 'str'>
+>>e='1232%^hello'
+>>print(e ,type(e))
+	1232%^hello <class 'str'>
+
+Operation on Strings
+-----------------
+-->On str data, we can perform Two Types of Operations. They are
+	1. Indexing
+	2. Slicing
+1. Indexing
+---------
+-->The process of obtaining single Character / Value from given str object by passing Valid Index is called  Indexing.
+Syntax:-strobj [ Index ]
+-->Here Index can be either +Ve Index or -Ve Index.
+-->If we enter Invalid Index then we get IndexError
+-->Here +ve Starting from 0 to (n-1) (forward order)
+-->Here -ve Starting from -1 to -n (backward order)
+
+Example:
+-------
+>>a="Python"
+>>print(a,type(a))
+	Python <class 'str'>
+>>print(a[0])
+	P
+>>print(a[1])
+	y
+>>print(a[2])
+	t
+>>print(a[3])
+	h
+>>print(a[4])
+	o
+>>print(a[5])
+	n	
+>>print(a[6])
+    	print(a[6])
+	IndexError: string index out of range
+
+>>print(a[-1])
+	n
+>>print(a[-2])
+	o
+>>print(a[-6])
+	P
+>>print(a[-7])
+	print(a[-7])
+	IndexError: string index out of range
+
+2.Slicing
+-------
+-->The Process of Obtaining Range of Characters / Sub String from the Given Main String is called Slicing Operation.
+-->Slicing Operation Contains 5 Syntaxes. They are
+
+Syntax 1:strobj [ BEGIN INDEX : END INDEX ]
+
+->This Syntax gives Range of Characters / Sub String from BEGIN INDEX to END INDEX-1 provided BEGIN INDEX < END INDEX Otherwise No Result will come ( ' ' will come)
+
+Example:
+>>a="Python"
+>>print(a[1:5])
+	ytho
+>>print(a[0:2])
+	Py
+>>print(a[0:7])
+	Python
+>>print(a[0:6])
+	Python
+>>print(a[5:1])
+	Whitespace will be Displayed
+
+Syntax 2: strobj [BEGIN INDEX :   ]  
+->In This Syntax, we are specifying BEGIN INDEX and we did't specify END INDEX.
+->If we don't specify END INDEX then PVM takes END INDEX as Last Character Index 
+   len(strobj)-1
+
+Example:
+-------
+>>a='python';
+>>print(a,type(a))
+	python <class 'str'>
+>>print(a[1:])
+	ython
+>>print(a[6:])
+
+>>print(a[5:])
+	n
+>>print(a[0:])
+	python
+
+Syntax 3: strobj [ : END INDEX  ]  
+
+->In This Syntax, we are specifying END INDEX and we did't specify BEGIN INDEX.
+->If we don't specify BEGIN  INDEX then PVM takes BEGIN INDEX as First Character Index (0)
+
+Example:
+-------
+>>a="Java";
+>>print(a,type(a))
+	Java <class 'str'>
+>>print(a[:2])
+	Ja
+>>print(a[:5])	
+	Java
+>>print(a[:10])
+	Java
+>>print(a[ :-1])
+	Jav
+>>print(a[ :-3])
+	J
+
+Syntax 4 : strobj [  :  ]  
+
+-->In This Syntax, we are not specifying Both BEGIN INDEX and  END INDEX.
+-->If we don't specify BEGIN  INDEX then PVM takes BEGIN INDEX as First Character Index (0) and If we don't specify END INDEX then PVM takes END INDEX as Last Character Index (OR) len(strobj)-1
+-->=>Simply This syntax gives Total Str object value as Result / Output
+
+Example:
+-------
+>>a="Python is Programming Language";
+>>print(a,type(a));
+	Python is Programming Language <class 'str'>
+>>print(a[:])
+	Python is Programming Language
+>>b="Java"
+>>print(b,type(b));
+	Java <class 'str'>
+>>print(b[:])
+	Java
+
+Note : Syntax1, Syntax2,Syntax3 and Syntax4 allows to slice the data of str object in FORWARD DIRECTION with default STEP Value 1
+
+Syntax 5 : strobj [BEGIN INDEX  : END INDEX: STEP  ]
+
+Rule-1: Here BEGIN INDEX , END INDEX, STEP values can be either +VE or -VE
+Rule-2: If STEP Value is +VE Then PVM Takes Range of Characters from BEGIN INDEX to 
+END INDEX-1 in FORWARD DIRECTION Provided BEGIN INDEX < END INDEX Otherwise we get No Result (' ').
+Rule-3: If STEP Value is -VE Then PVM Takes Range of Characters from BEGIN INDEX to END INDEX+1 in BACKWARD DIRECTION Provided BEGIN INDEX > END INDEX Otherwise we get No Result ('  ').
+Rule-4: When we obtain range of characters in FORWARD Direction if END INDEX is 0 then we never get any result
+Rule-5: When we obtain range of characters in BACKWARD Direction if END INDEX is -1 then we never get any result
+
+Examples:
+--------
+>>a="Java is Server-side Programming Language"
+>>print(a,type(a))
+	Java is Server-side Programming Language <class 'str'>
+>>print(a[0:8:1])
+	Java is 
+>>print(a[0:8:2])
+	Jv s
+>>print(a[5:0:2])
+	(empty data)
+>>print(a[-1:-6:1])
+	(empty data)
+>>print(a[-1:-6:-1])
+	egaug
+>>print(a[-6:-1:-1])
+	(empty data)
+>>print(a[::2])
+	Jv sSre-iePormigLnug
+>>print(a[::-2])
+	eaga nmagr dsrve iaa
+
+Special Features:
+--------------
+>>a="MADAM"
+>>print(a,type(a))
+	MADAM <class 'str'>
+>>print(a[::1] == a[::-1])
+	True
+>>b="sir"
+>>print(b,type(b))
+	sir <class 'str'>
+>>print(b[::1]==b[::-1])
+	False
+>>c="Level"
+>>print(c,type(c))
+	Level <class 'str'>
+>>print(c[::1] == c[::-1])
+	False
+>>d="racecar"
+>>print(d==d[::-1])
+	True
+
+

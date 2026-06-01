@@ -49,8 +49,7 @@ CREATE TABLE <TN>(<COLUMN NAME1> <DATATYPE>[SIZE] <CONSTRAINT TYPE>,......);
 		
 CHECK Constraint in Oracle:
 The Check Constraint in Oracle is used to enforce domain integrity. Domain integrity means the values that are going to store in a table column must be followed by some defined rules such as range, type, and format.
-In other words, we can say that Check Constraint ensures the valid entries for a given column value
-by restricting the type of the value, the format of the data, or the range of possible values.
+In other words, we can say that Check Constraint ensures the valid entries for a given column value by restricting the type of the value, the format of the data, or the range of possible values.
 The CHECK Constraint in Oracle can be applied to single or multiple columns of a table. The CHECK Constraint can be defined while creating a new table or using ALTER TABLE statement for the already existing table.
 The CHECK Constraint in Oracle is used to check values with the user-defined conditions before accepting values into a column. The Check Constraints in Oracle can be created at two different levels
 1.Column-Level Check Constraints: When we create the check constraints at the column level then they are applied only to that column of the table.

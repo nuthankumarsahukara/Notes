@@ -5,19 +5,19 @@ Syntax:
 <marquee>-------------</marquee>
 
 Marquee Tag Attributes:
-Attributes Values	Description
-behavior	"slide"	Start and stop as soon as text touches the Margin.
-	"scroll"	Start completely and off one side (Default)
-	"alternate" Text bounce as soon as  touch both sidemargin
-bgcolor	ColorCode Specifies the color as background
-direction	"left"	  Left to Right
-	"right"   	  Right to Left
-	"up"	  Bottom to Top		
-	"down"	  Top to Botoom
-width	"size_px"	Specifies width in marquee.
-height	"size_px" Specifies height in marquee
-loop	"number"  Loop Continues in limited times.
-scrollamount "number" Specifies Speed to scroll on the text.
+Attributes Values		Description
+behavior	"slide"		Start and stop as soon as text touches the Margin.
+		"scroll"		Start completely and off one side (Default)
+		"alternate" 	Text bounce as soon as  touch both sidemargin
+bgcolor		ColorCode 	Specifies the color as background
+direction	"left"	  	Left to Right
+		"right"   	Right to Left
+		"up"	  	Bottom to Top		
+		"down"	  	Top to Botoom
+width		"size_px"	Specifies width in marquee.
+height		"size_px" 	Specifies height in marquee
+loop		"number"  	Loop Continues in limited times.
+scrollamount 	"number" 	Specifies Speed to scroll on the text.
 
 Note:
 1.The default behavior of marquee tag is scroll

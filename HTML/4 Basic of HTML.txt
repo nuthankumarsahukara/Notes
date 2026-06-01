@@ -122,7 +122,7 @@ color		ColorName/HexaColorCode
 size		pix
 width		% or pix	
 align		left, right, center
-noshade		noshade
+noshade	noshade
 
 Note:
 1. The default width of the horizontal rule is 100%

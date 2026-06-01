@@ -1,0 +1,428 @@
+Functions in Python
+---------------
+Index
+-----
+-->Purpose of Functions
+-->Advatnages of Functions
+-->Definition of Function
+-->Part of Functions
+-->Phases in Functions
+-->Syntax for Defining Functions 
+	-->Programming Examples
+-->Parameters and Arguments 
+	-->Programming Examples
+-->Types of Arguments
+	1. Possitional Arguments
+	2. Default Arguments
+	3. Keyword Arguments
+	4. Variable Length Arguments
+	5. Keyword Length Arguments
+		-->Programming Examples
+-->Local Variables and Global Variables
+	-->Programming Examples
+-->global Keyword
+-->globals()
+	-->Programming Examples
+-->Anonymous Functions  (or) Lambda Functions in Python
+	-->Programming Examples
+-->Special Functions in Funtions
+	a) filter() with Normal Function and Anonymous Function
+	b) map() with Normal Function and Anonymous Function
+	c) reduce() with Normal Function and Anonymous Function
+	-->Programming Examples
+       
+Types of Languages in the context Functions in Python
+-------------------------------------------
+-->In the context Functions in Python, we have 2 types of Programming Languages. They are
+	1. Un-Structured Programming Languages.
+	2. Structured Programming Languages.
+1. Un-Structured Programming Languages.
+-->Un-Structured Programming Languages DOES NOT Contain the concept of FUNCTIONS.
+-->Since Un-Structured Programming Languages DOES NOT Contain the concept of FUNCTIONS, hence their applications conatins the following Limitations.
+	i) Application Development Time is More
+	ii) Application Memory Space is More
+	iii) Application Execution Time is More
+	iv) Application Performnace is Degraded
+	v) Redundency of the code is More
+Examples:  GW-BASIC
+-->To Overcome the above problems, Industry is recommended to FUNCTIONS concept which is available in Structured Programming Languages.
+
+2. Structured Programming Languages.
+------------------------------
+-->Structured Programming Languages Contain the concept of FUNCTIONS.
+-->Since Structured Programming Languages Contain the concept of FUNCTIONS, whose Applications / Programs contains the following Advantages. 
+	i) Application Development time is Less
+	ii) Application Memory Space is Less
+	iii) Application Execution Time is Less
+	iv) Application Performance is Enhanced ( Improved)
+	v) Redundency of the code is Minimized
+
+Examples: C, C++, JAVA, PYTHON,...etc
+					
+Functions in Python
+---------------
+=>The purpose of Functions in Python is that " To Perform certain Operation and Provides 
+    Code Re-Usability".
+
+Definition of Function
+-----------------
+-->Sub Program of Main Program is Called Function
+				(OR)
+-->A Part of Main Program is Called Function.
+Examples:  withdraw() , deposit(), balenq()..etc are the parts of ATM Project.
+
+Parts of Functions
+--------------
+-->At the time of dealing with Functions Concept, we must ensure that there must exist 2 Parts. they are
+		1) Function Definition
+		2) Function Call(s)
+-->Function Definition exist Only Once
+-->Function Definition executes by Calling Function Call(s). In otherwords Function Definition
+are executing by calling it through Function Calls otherwise Function Definition will not execute.
+-->For Every Function call, There must exist a Function Definition Otherwise we get NameError.
+
+Phases in Functions
+----------------
+-->At time of Function Execution, we must ensure that it should 3 Phases. They are
+	1. Every Function takes INPUT
+	2. Every Function Must PROCESS the input
+	3. Every Function Must give OUTPUT / RESULT 
+
+Parameters and Arguments 
+----------------------
+-->Parameters are the variables list used in Function Heading and they are used for storing 
+the values coming from Function Calls and these Parameters are called Formal parameters.
+-->Arguments are the Variables used in Function Call and we can arguments values direction in Function Calls.
+-->The relation between Arguments and Parameters is that " Every value of Argument passing to Parameter."
+
+Types of Arguments and Parameters
+-----------------------------
+-->Based on Passing the data or values of Arguments to Parameters, the Arguments or Parameters are classified into 5 types. They are
+	1. Posstional Arguments
+	2. Default Arguments
+	3. Keyword Arguments
+	4. Variable Length Arguments
+	5. Keyword Variable Length Arguments
+
+1)Possitional Arguments (or) Parameters
+
+-->The Concept of Possitional Parameters (or) arguments says that "The Number of Arguments(Actual arguments ) must be equal to the number of formal parameters ".
+-->This Parameter mechanism also recommends Order and Meaning of Parameters for Higher accuracy.
+-->To pass the Specific Data from Function Call to Function Definition then we must take Possitional Argument Mechanism. 
+-->The default Argument Passing Mechanism is Possitional Arguments (or) Parameters. 
+
+Syntax for Function Definition :
+-------------------------
+	def functionname(parm1,param2.....param-n):
+		----------
+		----------
+
+Syntax for Function Call:
+--------------------
+	functionname(arg1,arg2....arg-n)
+
+=>Here the values of arg1,arg2...arg-n are passing to param-1,param-2..param-n respectively.
+
+2) Default  Parameters (or) arguments
+-------------------------------
+-->When there is a Common Value for family of Function Calls then Such type of Common Value(s) must be taken  as default parameter with common value (But not recommended to pass by using Posstional Parameters)
+
+Syntax: for Function Definition with Default Parameters
+	def functionname(param1,param2,....param-n-1=Val1, Param-n=Val2):
+          ------	  
+	  ------
+	Here param-n-1 and param-n are called "default Parameters"
+   and param1,param-2... are called "Possitional parameters"
+
+Rule-: When we use default parameters in the function definition, They must be used as last Parameter(s) otherwise we get Error(SyntaxError: non-default argument (Possitional ) follows default argument).
+
+3) Keyword Parameters (or) arguments
+-------------------------------
+-->In some of the circumstances, we know the function name and formal parameter names and we don't know the order of formal Parameter names and to pass the data / values accurately we must use the concept of Keyword Parameters (or) arguments.
+-->The implementation of Keyword Parameters (or) arguments says that all the formal parameter names used as arguments in Function call(s) as keys.
+
+Syntax for function definition:
+-------------------------
+	def functionname(param1,param2...param-n):
+         -------
+	 -------
+Syntax for function call:
+--------------------	
+	functionname(param-n=val-n,param1=val1,param-n-1=val-n-1,......)
+
+Here param-n=val-n,param1=val1,param-n-1=val-n-1,...... are called Keywords arguments.
+
+4) Variables Length Parameters (or) arguments
+-------------------------------------
+-->When we have familiy of multiple function calls with Variable number of values / arguments then with normal python programming, we must define mutiple function defintions. This process leads to more development time. To overcome this process, we must use the concept of Variable length Parameters .
+-->To Impelement,  Variable length Parameters concept, we must define single Function Definition and takes a formal Parameter preceded with a symbol called astrisk ( * param) and the formal parameter with astrisk symbol is called Variable length Parameters  and whose purpose is to hold / store any number of values coming from similar function calls and whose type is <class, 'tuple'>.
+Syntax for function definition with Variables Length Parameters:
+----------------------------------------------------
+	def functionname(list of formal params,  *param1,param2=value) :
+	   --------
+	   --------
+-->Here *param is called Variable Length parameter and it can hold any number of argument values (or) variable number of argument values and *param type is <class,'tuple'>
+
+-->Rule:- The *param must always written at last part of Function Heading and it must be only one (but not multiple)
+
+-->Rule:- When we use Variable length and default parameters  in function Heading, we use default parameter as last and before we use variable length parameter and in function calls, we should not use default parameter as Key word argument bcoz Variable number of values are treated as Posstional Argument Value(s) 
+
+5) Key Word Variables Length Parameters (or) arguments
+----------------------------------------------
+-->When we have familiy of multiple function calls with Key Word Variable number of values / arguments then with normal python programming, we must define mutiple function defintions. This process leads to more development time. To overcome this process, we must use the concept of Keyword Variable length Parameters .
+-->To Implement, Keyword Variable length Parameters concept, we must define single Function Definition and takes a formal Parameter preceded with a symbol called double astrisk ( ** param) and the formal parameter with double astrisk symbol is called Keyword Variable length Parameters  and whose purpose is to hold / store any number of (Key,Value)  coming from similar function calls and whose type is <class, 'dict'>.
+
+Syntax for function definition with Keyword Variables Length Parameters:
+-----------------------------------------------------------
+	def functionname(list of formal params,  **param) :
+	     -------
+	     -------
+
+-->Here **param is called Keyword Variable Length parameter and it can hold any number of Key word argument values (or) Keyword variable number of argument values and **param type is <class,'dict'>
+
+-->Rule:- The **param must always written at last part of Function Heading and it must be only one (but not multiple)
+
+Final Syntax:
+----------
+	def funcname(PosFormal parms, *Varlenparams, default params, **kwdvarlenparams):
+	    ------
+            ------		
+			
+Global variables and Local Variables
+----------------------------
+-->Local Variables are those which are defined / used Inside of Function Body.
+-->Local Variables can be used for storing temporary result of Function.
+-->The Values of Local Variables can be used inside of same Function Definition but not possible to access in other part of the program and in other Function Definition. 
+
+-->Global variables are those which are used for Representing Common values for Multiple Different Function calls and Saves the Memory Space.
+-->Global variables must be defined before all function calls. So that we can access the global variable values in all the function definitions. Otherwise we can't access.
+
+	Syntax:
+		Var1=Val1
+		Var2=Val2
+		-------------
+		Var-n=Val-n
+
+		def functionname1(.....):
+			var22=val22
+		 	var23=val23
+			------------------
+		def functionname2(.....):
+			var32=val32
+			var33=val33
+
+-->here Var1,Var2...Var-n are called  Global variables for functiondefinition1() and functiondefinition2()
+-->here Var22,Var23... are called  Local Varbales  functiondefinition1()
+-->here Var32,Var33... are called  Local Varbales  in functiondefinition2()
+
+global keyword  
+------------
+-->When we want MODIFY the GLOBAL VARIABLE values in side of function defintion  then global variable names must be preceded with 'global' keyword otherwise we get "UnboundLocalError: local variable names referenced before assignment"
+
+Syntax:
+-----------
+	var1=val1
+	var2=val2
+	var-n=val-n    #  var1,var2...var-n are called global variable names.
+	------------------
+	def fun1():
+	------------------------
+		global var1,var2...var-n
+		# Modify var1,var2....var-n
+	--------------------------
+	def fun2():
+	------------------------
+	        global var1,var2...var-n
+	     # Modify var1,var2....var-n
+	--------------------------
+
+
+Examples:
+-----------------------
+#globalvarex1.py
+a=10
+def  access1():
+	print("Val of a=",a) # Here we are accessing the global variable 'a' and No Need to use global kwd.
+
+#main program
+access1()
+---------------------------------------
+#globalvarex2.py
+a=10
+def  access1():
+	global a  # refering global Varaible before its updation / Modification
+	a=a+1 # Here we are modifying the global variable value then we need to use global						keyword.
+	print("Val of a inside of access1()=",a) # 11
+#main program
+print("Val of a in main before access1():",a) # 10
+access1()
+print("Val of a in main after access1():",a) # 11
+---------------------------------------------------------------------------------
+Examples:
+------------------
+#globalvarex3.py
+def  update1():
+	global a,b # refering global Variables.
+	a=a+1  #updating global Variable a 
+	b=b+1  #updating global Variable b 
+def update2():
+	global a,b  # refering global Variables.
+	a=a*10 #updating global Variable a 
+	b=b*10 #updating global Variable b 
+
+#main program
+a,b=1,2  # here a and b are called Global Variables
+print("Val of a={} and Value of b={} in main program before update functions :".format(a,b))
+#  Val of a=1 and Value of b=2 in main program before update functions :
+update1()
+print("Val of a={} and Value of b={} in main program after update1():".format(a,b))
+#Val of a=2 and Value of b=3 in main program after update1():
+update2()
+print("Val of a={} and Value of b={} in main program after update2():".format(a,b))
+#Val of a=20 and Value of b=30 in main program after update1():
+
+global and local variables and globals()
+------------------------------
+-->When we come acrosss same global Variable names and Local Vraiable Names in same function definition then PVM gives preference for local variables but not for global variables.
+-->In this context, to extract / retrieve the values of global variables names along with local variables, we must use globals() and it returns an object of <class,'dict'> and this dict object stores all global variable Names as Keys and global variable values as values of value.
+
+Syntax :-
+	var1=val1
+	var2=val2
+	--------------
+	var-n=val-n  # var1, var2...var-n are called global Variables
+	def functionname():
+       ------------------------
+      var1=val11
+      var2=val22
+      -----------------
+      var-n=val-nn  #  var1, var2...var-n are called local Variables
+       # Extarct  the global variables values
+      dictobj=globals()
+      ------------------------
+      globalval1=dictobj['var1']  #  or  dictobj.get("var1") or globals()['var1']
+      globalval2=dictobj['var2']  # or dictobj.get("var2") or globals()['var2']
+
+Anonymous Functions  (or) Lambda Functions in Python
+-------------------------------------------
+-->Anonymous Functions are those which does not contain any name
+-->The Purpose of Anonymous Functions is that " To Perform Instant Operations "
+-->Instant Operations are those which are used at point of time only and no longer interested to use in other part of Project.
+-->To develop Instant Operation by using Anonymous Functions, we use a key word lambda. In Otherwords to define Anonymous Functions, we use lambda keyword. hence Anonymous Functions are called Lambda Functions.
+-->Anonymous Functions contains Single Executable Statement but never contains multiple block of statements.
+-->Anonymous Functions returns the result automatically or implcitly (No need to use return statement).
+
+	Syntax: varname=lambda params-list : Statement    
+
+Explanation:
+----------
+-->Varname is one of the valid variable name and treated as Function Name and it is an object of <class, 'function'>
+-->lambda is a keyword and it is used for defining Anonymous Functions.
+-->params-list represents list of variable names used for holding the values coming from Function Calls
+-->Statement represents Single Executable Statement and whose values returns automatically or implicitly.
+
+Function for addition of two numbers
+------------------------------
+def   sumop(a,b):					kvr=lambda a,b:a+b
+      c=a+b
+      return c
+
+#main program					#main program
+res=sumop(10,20)					res=kvr(100,200)
+print(res)  # 30					print(res) # 300
+
+
+Special Functions in Python
+----------------------
+=>As part of Python Programming, we have 3 special Functions. They are
+	1. filter()
+	2. map()
+	3. reduce()
+
+1) filter()
+--------
+-->filter() is used for  "Filtering out some elements from list of elements by applying to function".
+	Syntax : varname=filter(FunctionName, Iterable_object)
+Explanation:
+---------
+-->here 'varname' is an object of type <class,'filter'> and we can convert into any iteratable object by using type casting functions.
+-->"FunctionName" represents either Normal function or anonymous functions.
+-->"Iterable_object" represents Sequence, List, set and dict types.
+-->The execution process of filter() is that  " Each Value of Iterable object sends to Function Name. If the function return True then the element will be filtered. if the Function returns False then that element will be neglected/not filtered ". This process will be continued until all elements of Iterable object completed.
+
+
+def  posfun(n):
+	if n>0:
+		return True
+	else:
+		return False
+
+def  negfun(n):
+	if n<0:
+		return True
+	else:
+		return False
+
+
+#main program
+lst=[10,-20,34,-56,12,0,-45]
+fobj1=filter(posfun,lst)
+fobj2=filter(negfun,lst)
+print("Type of fobj=",type(fobj1)) # Type of fobj= <class 'filter'>
+print("Content of fobj=",fobj1) # Content of fobj= <filter object at 0x0000023E630D64A0>
+
+#Convert filter object into list object
+pslist=list(fobj1)
+nslist=tuple(fobj2)
+print("\nGiven List of Elements:{}".format(lst))
+print("\nPossitive List of Elements:{}".format(pslist))
+print("\nNegative List of Elements:{}".format(nslist))
+
+2) map()
+------
+-->map() is used for obtaining new Iterable object from existing iterable object by applying old iterable elements to the function.
+-->In otherwords, map() is used for obtaining new list of elements  from existing existing list of elements by applying old list  elements to the function.
+	Syntax:- varname=map(FunctionName,Iterable_object)
+-->here 'varname' is an object of type <class,map'> and we can convert into any iteratable object by using type casting functions.
+-->"FunctionName" represents either Normal function or anonymous functions.
+-->"Iterable_object" represents Sequence, List, set and dict types.
+-->The execution process of map() is that " map() sends every element of iterable object to the specified function, process it and returns the modified value (result) and new list of elements will be obtained". This process will be continued until all elements of Iterable_object completed.
+
+#MapEx1.py
+def  hike(sal):
+	sal=sal+sal*(20/100)
+	return sal
+
+oldsallist=[3.4,5.6,7.8,1.2,3.7]
+m=map(hike,oldsallist)
+print("type of m=",type(m)) # type of m= <class 'map'>
+print("content of m=",m)
+print("-------------------------------------------------")
+newsallist=list(m) # Converting map object into list.
+print("\nOld Sal List=",oldsallist)
+print("\nNew Sal List=",newsallist)
+
+3.reduce()
+--------
+reduce() is used for obtaining a single element / result from given iterable object by applying to a function.
+ 	Syntax: varname=reduce(function-name,iterable-object)
+=>here varname is an object of int, float,bool,complex,str only
+=>The reduce() belongs to a pre-defined module called" functools".
+
+Internal Flow of reduce()
+--------------------
+step-1:- reduce() selects two First values of Iterable object and place them in First var and Second var .
+step-2:- The function-name(lambda or normal function) utilizes the values of First var and                    Second var  applied to the specified logic and obtains the result.
+Step-3:- reduce () places the result of function-name in First variable and reduce() selects the succeeding element of Iterable object and places in second variable.
+Step-4: Repeat  Step-2 and Step-3 until all elements completed in Iterable object and returns the result of First Variable
+
+#reduceex1.py
+import functools
+def sumop(k,v):
+	return k+v
+
+#main program
+print("Enter List of Values separated by space:")
+lst=[int(val) for val in input().split() if not val.isalpha()]
+res=functools.reduce(sumop,lst)
+print("sum({})={}".format(lst,res))

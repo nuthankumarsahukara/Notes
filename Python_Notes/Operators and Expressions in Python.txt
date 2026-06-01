@@ -1,0 +1,420 @@
+Operators and Expressions in Python
+-----------------------------
+index
+----
+	=>Purpose of Operators and Expressions in Python
+	=>Types of Operators
+	=>Table of Operators and Meanings
+	=>Programming Examples
+
+-->An Operator is a Symbol, which is used used perform some operation on the data.
+-->If any two or more Objects or variables connected with an operator then it is called Expression.
+-->In Python Programming, we have 7 types of Operators. They are
+	1. Arithmetic Operators
+	2. Assigment Operator
+	3. Relational Operators
+	4. Logical Operators
+	5. Bitwise Operators (Most Imp)
+	6. Membership Operators
+		a) in
+		b) not in
+	7. Identity Operators
+		a) is 
+		b) is not
+
+Note:- Python programming does not contain
+		a) Post and Pre-Increment and decrement Operators (  ++   -- )
+		b) ternary Operator ( ? : )
+-->In place of  ternary Operator , Python contains some other ternary operator
+    " expr1  if Test Cond  else  expr2 "
+
+1. Arithmetic Operators
+--------------------
+-->The purpose of Arithmetic Operators is that "To perform Arithmetic Operations such as 
+    Addition, Subtraction, Multiplication ..etc"
+-->If any Arithmetic Operator connected with two or more Variables then it is Called Arithmetic Expression
+-->In Python Programming, we have 7 Arithmetic Operators. They are given in the following 
+   Table.
+
+Sno	Symbol(Operator)	Meaning	Examples a=10,b=3
+---	--------------	------	-----------------
+1.		+		Addition	print(a+b)------13
+2.		-		Subtraction	print(a-b)------7
+3.		*		Multiplication	print(a * b)----30
+4		/		Division		print(10/3)---3.3333333333335(Float Quotient)
+5		//		Floor Division	print(10//3)---3 (Integer Quotient ) 
+6		%		Modulo 	print(10%3)---1 (Gives Remainder)
+7		**		Exponetiation	print(10**3)--1000
+
+ArithmeticOperator.py
+------------------
+
+a=int(input('Enter the first number : '))
+b=int(input('Enter the second number : '))
+
+print('The value of ',a,'and ',b,' sum is ',(a+b));
+print('The value of ',a,'and ',b,' sub is ',(a-b));
+print('The value of ',a,'and ',b,' mul is ',(a*b));
+print('The value of ',a,'and ',b,' div is ',(a/b));
+print('The value of ',a,'and ',b,' floor div is ',(a//b));
+print('The value of ',a,'and ',b,' mod is ',(a%b));
+print('The value of ',a,'and ',b,' exp is ',(a**b));
+
+
+Output:
+Enter the first number : 10
+Enter the second number : 5
+The value of  10 and  5  sum is  15
+The value of  10 and  5  sub is  5
+The value of  10 and  5  mul is  50
+The value of  10 and  5  div is  2.0
+The value of  10 and  5  floor div is  2
+The value of  10 and  5  mod is  0
+The value of  10 and  5  exp is  100000
+
+2. Assigment Operator 
+------------------
+-->The purpose of assignment operator is that "To assign or transfer Right Hand Side (RHS) Value /  Expression Value to the Left Hand Side (LHS) Variable "
+-->The Symbol for Assigment Operator is single equal to ( = ).
+-->In Python Programming,we can use Assigment Operator  in two ways.
+	1. Single Line Assigment
+	2. Multi Line Assigment
+
+1. Single Line Assigment:
+--------------------
+	syntax : LHS Varname= RHS Value
+		  LHS Varname= RHS Expression
+-->With Single Line Assigment at a time we can assign one RHS Value / Expression to the single LHS Variable Name.
+
+>>a=10
+>>b=20
+>>c=a+b;
+>>print(a,b,c)
+	10 20 30
+
+2. Multi Line Assigment:
+-------------------
+	Syntax: Var1,Var2.....Var-n= Val1,Val2....Val-n
+					(or)	
+		 Var1,Var2.....Var-n= Expr1,Expr2...Expr-n
+
+Here The values of Val1, Val2...Val-n are assigned to Var1,Var2...Var-n Respectively.
+Here The values of Expr1, Expr2...Expr-n are assigned to Var1,Var2...Var-n Respectively.
+
+>>a,b=10,20
+>>print(a,b)
+	10 20
+>>c,d,e=a+b,a-b,a*b;
+>>print(c)
+	30
+>>print(d)
+	-10
+>>print(e)	
+	200
+
+swap.py
+------
+a=int(input('Enter the a value :'))
+b=int(input('Enter the b value :'))
+print('Before Swaping : {} {}'.format(a,b))
+a,b=b,a;
+print('After Swaping : {} {}'.format(a,b))
+
+output :
+------
+Enter the a value :5
+Enter the b value :7
+Before Swaping : 5 7
+After Swaping : 7 5
+
+3. Relational Operators
+-------------------
+-->The purpose of Relational Operators is that " To compare Two or More number of values of Variables / Objects".
+-->If two or More Variables or Objects Connected with Relational Operators then it is called Relational Expression.
+-->The Releation Expressions always gives either True or False  as a Result.
+-->The Releation Expressions are called Single Test Conditions.
+-->In Python Programming, we have 6 relational Operators and They are given in the following table.
+
+SNo		Symbol			Meaning		Examples
+---		------		------		--------
+1		>			Greater Than	    	print(10>4)---------True
+2.		<			Less Than		print(10<5)-------False
+3.		==			Equality		print(10==10)---True
+4.		!=			Not Equal to		print(10!=12)---True
+5.		>=			Greater Than		print(10>=2)-----True
+6.		<=			Less than		print(10<=4)-------False
+
+
+Example:
+-------					
+a=int(input('Enter the a value :'))
+b=int(input('Enter the b value :'))
+
+print('The value of a is ',a)
+print('The value of b is ',b)
+
+print('a>b :' ,(a>b))
+print('a<b :' ,(a<b))
+print('a==b :' ,(a==b))
+print('a!=b :' ,(a!=b))
+print('a>=b :' ,(a>=b))
+print('a<=b :' ,(a<=b))
+
+4. Logical Operators 
+----------------
+-->The Purpose of Logical Operators  is that "To Compare Two or More Relational Expressions Results".
+-->If two or more  Relational Expressions  connected with  Logical Operators  then it is called Logical Expression and whose result can be either True or False.
+-->Every Logical Expression is called Compound Condition.
+-->In Python Programming, we have 3 types of  Logical Operators. They are
+	1. and    
+	2. or    
+	3. not  
+
+1.and
+----
+-->The Functionality of "and" operator can be expressed in the following Truth table.
+	RelExpr1       RelExpr2	   RelExpr1 and  RelExpr2
+	True		False			False
+	False		True			False
+	False		False			False
+	True		True			True
+	
+2.or
+----
+-->The Functionality of "and" operator can be expressed in the following Truth table.
+	RelExpr1       RelExpr2	   RelExpr1 or RelExpr2
+	True		False			True
+	False		True			True
+	True		True			True
+	False		False			False
+
+3.not
+----
+-->The Functionality of 'not' operator is shown in the following table
+	  RelExpr1     not  RelExpr1	   
+ 	    True		False
+	    False		True
+
+Example:
+-------
+a=30
+
+print('The value of a is ',a);
+
+print("Logical AND (a>15 and a<50) : ",(a>15 and a<50))
+print("Logical AND (a>15 and a<30) : ",(a>15 and a<30))
+
+print("Logical OR (a>15 or a<30) : ",(a>15 or a<30))
+print("Logical OR (a>15 or a<50) : ",(a>15 or a<50))
+print("Logical OR (a>150 or a>300) : ",(a>150 or a>300))
+
+print("Logical NOT (not(a==30)) :",not(a==30))
+print("Logical NOT (not(a==50)) :",not(a==50))
+	
+Bitwise Operators (Most Imp)
+-------------------------
+-->The purpose of Bitwise Operators is that "To perform the operations on the data in the form of Bits"
+-->Bitwise Operators are applicable only on Integer Data But not on Floating Point Values bcoz Floating Point Values does not contain Certainity.
+-->Since these Operators are performing the operations Bit by Bit then hence named as 
+Bitwise Operators.
+-->In Python Programming, we have 6 Bitwise Operators. They are
+	1. Bitwise Left Shift Operator ( << )
+	2. Bitwise Right Shift Operator ( >> )
+	3. Bitwise OR Operator ( | )
+	4. Bitwise AND Operator ( & )
+	5. Bitwise Complement Operator ( ~ )
+	6. BitWise XOR Operator ( ^ )
+
+1. Bitwise Left Shift Operator ( << )
+-------------------------------
+-->This Operator is used for Shiffting No.of Bits towards Left Side by adding Number of Zeros (Depending on No.of Bits) at Right Side.
+	Syntax : Varname=  Given Number << No. of Bits
+
+2. Bitwise Right Shift Operator ( >> )
+-------------------------------
+-->This Operator is used for Shiffting No.of Bits towards Right Side by adding Number of Zeros (Depending on No.of Bits) at Left Side.
+	Syntax : Varname=  Given Number >> No. of Bits
+
+3. Bitwise OR Operator ( | )
+-----------------------
+-->The Functionality of Bitwise OR Operator ( | ) can be expressed with the following Truth 
+    table.
+	--------------------------------------------
+		Var1		Var2		Var1 | Var2
+	--------------------------------------------
+		0		0			0
+		1		0			1
+		0		1			1
+		1		1			1		
+	--------------------------------------------
+
+4.Bitwise AND Operator ( & )
+-->The Functionality of Bitwise AND Operator ( & ) can be expressed with the following Truth table.
+	Syntax:-    varname= Var1 & Var2
+	--------------------------------------------
+		Var1		Var2		Var1 & Var2
+	--------------------------------------------
+		0		0			0
+		1		0			0
+		0		1			0
+		1		1			1		
+	--------------------------------------------
+
+5. Bitwise Complement Operator ( ~ )
+------------------------------
+-->The Operator is Used for obtaining Complement of Given Number.
+-->Complement of a Number is nothing Inverting the Bits.
+-->Inverting the Bits is Nothing But 0 becomes 1 and 1 becomes 0.
+-->The Formula for Bitwise Complement Operator ( ~ ) = - (Given Number+ 1)
+	Syntax: varname= ~ Number
+
+6. BitWise XOR Operator ( ^ )
+-------------------------
+-->The Functionality of Bitwise XOR Operator ( ^ ) can be expressed with the following Truth table.
+	Syntax: varname= Var1 ^ Var2
+	--------------------------------------------
+		Var1		Var2		Var1 ^ Var2
+	--------------------------------------------
+		0		0			0
+		1		0			1
+		0		1			1
+		1		1			0		
+	--------------------------------------------
+
+6. Membership Operators
+--------------------
+-->The purpose of Membership Operators is that "To Check whether the value present in Iterable Object or not".
+-->An Iterable object is one which contains two or More Values (Sequence, List ,Set, Dict)
+-->In Python Programming, we have two types of Membership operators. They are
+	1. in
+	2. not in
+
+1. in
+----
+-->"in" operator returns True provided "value" present in Iterable-Object
+-->"in" operator returns False provided "value" not present in Iterable-Object
+	Syntax : Value in Iterable-Object
+2. not in
+-------
+-->"not in" operator returns True provided "value" not present in Iterable-Object
+-->"not in" operator returns False provided "value" present in Iterable-Object
+	Syntax : Value not in Iterable-Object
+
+Identity Operators
+---------------
+-->The purpopse of Identity Operators is that "To compare the memory address of two objects".
+-->In Python Programming, we have two types of  Identity Operators. They are
+	1. is
+	2. is not
+
+1. is
+----
+-->"is" operator Return True Provided Memory Address / Ids of Both Object1 and Object2 are Same( Identical ).
+=>"is" operator Return False Provided Memory Address / Ids of Both Object1 and Object2 are Different.
+	 Syntax : Object1  is  Object2
+
+2. is not
+-------
+-->"is not " operator Return True Provided Memory Address / Ids of Both Object1 and Object2 are Different
+-->"is not " operator Return False Provided Memory Address / Ids of Both Object1 and Object2 are Same.
+	Syntax : Object1  is not  Object2
+
+>>> a=None
+>>> b=None
+>>> print(a,id(a))--------------None 140719935854584
+>>> print(b,id(b))--------------None 140719935854584
+>>> a is b------------------True
+>>> a is not b------------False
+
+>>>d1={10:"Apple",30:"Mango"}
+>>> d2={10:"Apple",30:"Mango"}
+>>> print(d1,id(d1))
+	{10: 'Apple', 30: 'Mango'} 2636962681792
+>>> print(d2,id(d2))
+	{10: 'Apple', 30: 'Mango'} 2636962681920
+>>> d1 is d2
+	False
+>>> d1 is not d2
+	True
+
+>>> s1="Rossum"
+>>> s2="Rossum"
+>>> print(s1,id(s1))----------Rossum 2636962954800
+>>> print(s2,id(s2))----------Rossum 2636962954800
+>>> s1 is s2-----------------True
+>>> s1 is not s2-----------False
+>>> s1="Ram"
+>>> s2="ram"
+>>> s1 is s2----------False
+>>> s1 is not s2---------True
+
+
+>>> s1={10,20,30,40}
+>>> s2={10,20,30,40}
+>>> print(s1,id(s1))
+	{40, 10, 20, 30} 2636966858528
+>>> print(s2,id(s2))
+	{40, 10, 20, 30} 2636962884608
+>>> s1 is s2
+	False
+>>> s1 is not  s2
+	True
+
+Special IMP POINTS
+-----------------
+-->In int data type case  0 to 256 in multiple object then they contain Same Address . If the values are More than 256 then they contain different Address.
+-->In int data type case  -1 to -5 in multiple object then they contain Same Address . If the values are Less than -5 then they contain different Address. 
+
+>>> a=9
+>>> b=9
+>>> print(a,id(a))
+	9 2636957417968
+>>> print(b,id(b))
+	9 2636957417968
+>>> a is b
+	True
+>>> a is not b
+	False
+
+>>> a=-1
+>>> b=-1
+>>> print(a,id(a))
+	-1 2636957417648
+>>> print(b,id(b))
+	-1 2636957417648
+>>> a is b
+	True
+>>> a is not b
+	False
+
+>>> a=-6
+>>> b=-6
+>>> print(a,id(a))
+	-6 2636958461264
+>>> print(b,id(b))
+	-6 2636958457616
+>>> a is b
+	False
+>>> a is not b
+	True
+
+Python Ternary Operator
+--------------------
+-->The name of Python Ternary Operator is " if else Operator"
+Syntax: varname= Expr1 if  Test Cond  else  Expr2
+
+Explanation:
+---------
+-->Here 'if' 'else' are the keywords
+-->Here Test Cond represents either Relation Expression or Logical Expression and It evaluates either True or False.
+-->If the result of Test Cond is True then PVM Executes Expr1 and whose Result Placed in varname.
+-->If the result of Test Cond is False then PVM Executes Expr2 and whose Result Placed in varname.
+-->At any Point of time, PVM Executes either Expr1 or Expr2 and whose Result Placed in varname.
+
+a=11
+b=13
+c= a if a>b else b
+print(c,'is the biggest number among the',a,'and',b)
+
+d= a if(a%2==0) else (b if b % 2 == 0 else "No Even Number")
+print(d);

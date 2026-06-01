@@ -87,7 +87,7 @@ Advantage:
 2.No software is required at client side or server side.
 
 Disadvantage:
-3.Drivers depend on the Database.
+1.Drivers depend on the Database.
 
 
 Java Database Connectivity with 5 Steps

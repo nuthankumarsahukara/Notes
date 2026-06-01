@@ -245,7 +245,7 @@ JavaScript has five primitive data types. These are the most simple forms of dat
 
 Data Type	Description
 String		Represents sequence of characters e.g. "JS"
-Number		Represents numeric values e.g. 100
+Number	Represents numeric values e.g. 100
 Boolean		Represents boolean value either false or true
 Undefined	Represents undefined value
 Null		Represents null i.e. no value at all
@@ -488,7 +488,7 @@ document.write(x +"<br/>");
 </body>
 
 HTML <noscript> Tag
-It is used to provide an alternate content for users that have disabled scripts in their browser or have a browser that doesn’t support client-side scripting. It is a paired tag.
+It is used to provide an alternate content for users that have disabled scripts in their browser or have a browser that doesn t support client-side scripting. It is a paired tag.
 
 Syntax: 
 <noscript>..............</noscript>

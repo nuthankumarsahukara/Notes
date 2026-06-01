@@ -1,0 +1,155 @@
+Exception Handling in Python
+-----------------------
+What is Exception Handling?
+	Exception handling is used to handle runtime errors in a program without stopping the execution unexpectedly.
+
+-->An exception is an error that occurs during program execution.
+
+Example:
+	Division by zero
+	Invalid input
+	File not found
+
+Why Exception Handling is Important ?
+-------------------------------
+-->Prevents program crash
+-->Makes code safer
+-->Helps display user-friendly error messages
+-->Improves debugging
+
+Exception Handling Keywords
+----------------------
+Keyword		Purpose
+-------		------
+try		Code that may produce error
+except		Handles the error
+else		Executes if no exception occurs
+finally		Executes always
+raise		Used to create exception manually
+
+Basic Syntax
+-----------
+	try:
+    		# risky code
+	except:
+    		# handling code
+
+Example 1: Simple Exception Handling
+try:
+    a = 10
+    b = 0
+    print(a / b)
+
+except:
+    print("Cannot divide by zero")
+
+Output
+Cannot divide by zero
+
+
+Types of Exceptions
+-----------------
+Exception		Description
+-------		---------
+ZeroDivisionError	Dividing by zero
+ValueError		Invalid value
+TypeError		Wrong datatype
+IndexError		Invalid index
+KeyError		Invalid dictionary key
+FileNotFoundError	File not found
+NameError		Variable not defined
+
+Handling Specific Exception
+----------------------
+try:
+    num = int(input("Enter number: "))
+    print(num)
+
+except ValueError:
+    print("Please enter integer value")
+
+Multiple Exceptions
+---------------
+try:
+    a = int(input("Enter A: "))
+    b = int(input("Enter B: "))
+    print(a / b)
+
+except ValueError:
+    print("Invalid Input")
+
+except ZeroDivisionError:
+    print("Division by zero not allowed")
+
+Using else
+--------
+else block executes when no exception occurs.
+
+try:
+    a = 10
+    b = 2
+    print(a / b)
+
+except ZeroDivisionError:
+    print("Error")
+
+else:
+    print("Division successful")
+
+Using finally
+----------
+finally block always executes whether exception occurs or not.
+
+try:
+    print(10 / 0)
+
+except ZeroDivisionError:
+    print("Error occurred")
+
+finally:
+    print("Program completed")
+
+Raising Exception Manually
+----------------------
+Using raise keyword.
+-----------------
+age = -5
+
+if age < 0:
+    raise ValueError("Age cannot be negative")
+
+User Defined Exception
+-------------------
+class InvalidAgeError(Exception):
+    pass
+
+age = -1
+
+try:
+    if age < 0:
+        raise InvalidAgeError("Invalid Age")
+
+except InvalidAgeError as e:
+    print(e)
+
+----------------
+try:
+    try:
+        print(10 / 0)
+    except ZeroDivisionError:
+        print("Inner Exception")
+
+except:
+    print("Outer Exception")
+
+Advantages of Exception Handling
+---------------------------
+-->Prevents abnormal termination
+-->Maintains normal program flow
+-->Easy debugging
+-->Improves code readability
+
+Disadvantages
+------------
+-->Slightly slower execution
+-->Too many exception blocks make code complex

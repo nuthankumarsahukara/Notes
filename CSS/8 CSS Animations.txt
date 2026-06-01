@@ -334,7 +334,7 @@ An animation is an effect that lets an element gradually change from one style t
 
 CSS3 Animation Properties
 Property		Description	
-@keyframes	Specifies the animation	
+@keyframes		Specifies the animation	
 animation		A shorthand property for all the the animation properties
 animation-name	Specifies the name of the @keyframes animation	
 animation-duration	Specifies how many seconds or milliseconds an animation takes to 				complete one cycle

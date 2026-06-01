@@ -153,7 +153,7 @@ column-rule-style	Specifies the style of the rule between columns
 column-rule-width	Specifies the width of the rule between columns	
 column-span	Specifies how many columns an element should span across	
 column-width	Specifies the width of the columns	
-columns		A shorthand property for setting column-width,column-		count
+columns		A shorthand property for setting column-width,column-count
 
 CSS3 Create Multiple Columns
 The column-count property specifies the number of columns an element should be divided into:

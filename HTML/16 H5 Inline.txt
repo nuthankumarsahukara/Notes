@@ -52,10 +52,10 @@ Attributes:
 Attribute 		Value 	Description
 form 		form_id 	Speci one or more forms 
 high 		number 	Spe the range that is considered to be a high 
-low 		number   Spe the range that is considered to be low 
+low 		number   	Spe the range that is considered to be low 
 max 		number 	Specifies the maximum value of the range
 min 		number 	Specifies the minimum value of the range
-optimum 		number 	What value is the optimal value for the gauge
+optimum 	number 	What value is the optimal value for the gauge
 value	 	number 	Specifies the current value of the gauge
 
 Example:

@@ -38,7 +38,7 @@ address addresstype
 )not final;
 /
 
-create type business_persontype123 under persontype123(
+create type business_persontype under persontype(
 title varchar2(10),
 company varchar2(10)
 );
@@ -149,6 +149,7 @@ begin
 	t1:= tabletop(20,10,'wood');
 	t2:= tabletop(20,20,'steel');
 	r1:=rectangle(10,200);
+	r1:=r1.enlarge(5);
 	t1.display;
 	t2.display;
 	r1.display;

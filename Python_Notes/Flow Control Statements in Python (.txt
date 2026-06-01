@@ -1,0 +1,340 @@
+Flow Control Statements in Python (OR) Control Structures in Python
+-------------------------------------------------------
+Purpose of Flow Control Statements in Python
+=>Types of Control Statements in Python
+	I) Conditional or Selection or Branching Statements
+		1. Simple if statement
+		2. if..else statement
+		3. if..elif..else statement
+		4. Nested if statement
+		5. match case statement (Python 3.10 Version Onwards)
+		=>Programming Examples
+	II) Looping or Iterating or Repeatative Statements
+		1. while loop  or   while..else loop
+		2. for loop      or   for..else loop
+		=>Programming Examples
+	III) Transfer Flow Control Statements
+		1. break
+		2. continue
+		3. pass
+		=>Programming Examples
+	=>Inner or Nested Loops
+		a) while loop in while Loop
+		b) for loop in for loop
+		c) while loop in for loop
+		d) for loop in while loop
+	=>Programming Examples	
+
+Flow Control Statements in Python (OR) Control Structures in Python
+-------------------------------------------------------
+-->The Purpose of Flow Control Statements in Python is that "To Perform certain Operation 
+Either ONCE (True--X-Operation and False--Y-Operation) OR Repeatedly for finite number of Times Until Condtion Becomes False".
+=>In Python Programming, Flow Control Statements in Python are classfied into 3 types. They are
+	1. Conditional or Selection or Branching Statements
+	2. Looping or Iterating or Repeatative Statements
+	3. Transfer Flow Control Statements
+
+I) Conditional OR Selection OR Branching Statements
+------------------------------------------
+-->The purpose of  Conditional OR Selection OR Branching Statements is that " To Perform certain Operation Only Once depends Condition Evaluation".
+
+-->In Otherwords, If the test condition is True then perform X-Operation or perform 
+Y-Operation in the case of False Only Once.".
+
+-->In Python Programming, we have 4 Conditional  Statements. They are
+	1. Simple  if statement
+	2. if...else statement
+	3. if..elif..else statement
+	4. match case statement (Python 3.10 Version inwords)
+
+1.Simple If Statement
+------------------
+	Syntax :
+			if(Condition) : 
+				statement 1
+				statement 2
+				...
+				statement n
+			remaing Program
+		here : is indentation Symbol
+-->Here 'if' is a keyword
+-->Here Test Condition can either True or False
+-->If the test condition is true then pvm executes indentation block of statement and later execute the other statement in program
+-->>If the test condition is false then pvm executes other statement in program without  executing indentation block of statement
+
+2. if...else statement
+-----------------
+		syntax :
+			if(Condition) : 
+				statement 1
+				statement 2
+				...
+				statement n
+			else :
+				statement 1
+				statement 2
+				...
+				statement n
+
+			remaing Program
+-->Here 'if' and 'else' are the Keywords
+-->If the test condition is true then pvm executes indentation block of if statement and later execute the other statement in program
+-->If the test condition is false then pvm executes indentation block of else statement and later execute the other statement in program
+
+3. if..elif..else statement
+---------------------
+		Syntax :
+			if(Condition 1) : 
+				statement 1
+				statement 2
+				...
+				statement n
+			elif(Condition 2) : 
+				statement 1
+				statement 2
+				...
+				statement n
+			elif(Condition 3) : 
+				statement 1
+				statement 2
+				...
+				statement n
+			else :
+				statement 1
+				statement 2
+				...
+				statement n
+			remaing Program
+
+-->If Test Condition-1 is True, then Python Virtual Machine (PVM) executes Block of stmts-1 and then executes the remaining statements.
+-->If Test Condition-1 is False and Test Condition-2 is True, then PVM executes Block of stmts-2 and then the remaining statements.
+-->This process continues until all test conditions are evaluated.
+-->If all test conditions become False, then PVM executes the else block statements and then the remaining program statements.
+-->At a time, only one block of statements will be executed.
+-->Writing the else block is optional.
+
+4.Nested If
+----------
+		Syntax : 
+			if (condition)  :
+				if(condition) :
+					statement 1
+					statement 2
+					...
+					statement n
+			remaing Program
+-->Nested if means writing if statement inside another if statement.
+-->It is used we want to check multiple conditions one inside another.
+-->If Test Condition-1 is True and Test Condition-2 is True, then PVM executes Block of stmts and then the remaining statements.
+-->If Test Condition-1 is False and Test Condition-2 is True, then PVM will not executes Block of stmts and the remaining statements will exectued.
+-->If Test Condition-1 is True and Test Condition-2 is False, then PVM will not executes Block of stmts and the remaining statements will exectued.
+  
+Nested If-else
+------------
+		Syntax : 
+			if (condition)  :
+				if(condition) :
+					statement 1
+					statement 2
+					...
+					statement n
+				else :
+					statement 1
+					statement 2
+					...
+					statement n
+			else :
+				statement 1
+				statement 2
+				...
+				statement n
+			remaing Program
+		
+-->Nested if-else means writing if-else statement inside another if-else statement.
+-->It is used we want to check multiple conditions one inside another.
+-->If Test Condition-1 is True and Test Condition-2 is True, then PVM executes Block of stmts and then the remaining statements.
+-->If Test Condition-1 is False and Test Condition-2 is True, then PVM will executes else Block of stmts and then the remaining statements will exectued.
+-->If Test Condition-1 is True and Test Condition-2 is False, then PVM will executes else Block of stmts and then the remaining statements will exectued.
+
+5.Match case statement.
+--------------------
+-->Here "match case" is one the new feature in Python 3.10 Version onwards
+-->match case statement is recommeded to take in deciding Pre-designed Conditions in 
+   Menu Driven Applications.
+
+	Syntax:
+		match(Choice Expr):
+			case Choice Label1:
+				Block of Stements-1
+			case Choice Label2:
+				Block of Stements-2
+			case Choice Label3:
+				Block of Stements-3
+			---
+			case Choice Label-n:
+				Block of Stements-n
+			case _:  # Default Case Block
+				default Block of Statements
+		Other Statements in Program
+
+-->Here "match" and "case" are the keywords
+-->"Choice Expr" represents either int or str or bool
+-->If "Choice Expr" is matching with "case label1" then PVM executes Block of Staements-1 and later executes Other statements in program.
+-->If "Choice Expr" is matching with "case label2" then PVM executes Block of Staements-2 and later executes Other statements in program.
+-->In General "Choice Expr" is trying match with case label-1, case label-2,....case label-n then PVM executes corresponding block of statements and later executes Other statements in program.
+-->If "Choice Expr" is not matching with  any  of the specified case labels then PVM executes Default Block of Staements which are written under default case block (case _ ) and later executes Other statements in program.
+-->Writing default case block is optional and If we write then it must be written at last (Otherwise we get SyntaxError)
+-->When we represent multiple case labels under one case then those case labels must be combined with Bitwise OR Operator ( | )  .
+
+Looping OR Iterative or Repeatative Statements
+---------------------------------------
+-->The purpose of Looping OR Iterative or Repeatative Statements "To Performs Certain 
+Operation Repeatedly for Finite Number of Times Until Test Condition becomes False".
+-->In Python Programming, we have two types of Looping Statements. They are
+	1. while loop (OR) while..else loop
+	2. for  loop (OR) for..else loop 
+-->In order to deal with any looping statement or Looping Programming related applications, we must ensure that there must exist 3 points. They are
+	a) Initlization Part ( Where to start)
+	b) Conditional Part ( Where to stop)
+	c) Updation part ( How much to move forward and backward)
+
+1.for loop (or) for ...else  loop
+-------------------------
+	Syntax 1 : for varname in  Iterable_object:
+			Indentation block of stmts
+			---
+		  Other statements in Program
+	Syntax 2 : for varname in  Iterable_object:
+			Indentation block of stmts
+			---
+		     else:
+			else block of statements
+			---
+		  Other statements in Program
+
+-->Here 'for','in' and 'else' are keywords
+-->Here Iterable_object can be Sequence(bytes,bytearray,range,str),list(list,tuple), set(set,frozenset) and dict.
+-->The execution process of for loop is that " Each of Element of Iterable_object selected , placed in varname and executes Indentation block of statements".This Process will be repeated until all elements of Iterable_object completed.
+=>After execution of Indentation block of statements of for loop , PVM executes else block of statements which are written under else block and later PVM executes Other statements in Program.
+=>Writing else block is optional.
+		
+2. While loop or While..else loop
+---------------------------
+	Syntax 1: while(condition):
+			Indentation block of stmts
+			---
+		     Other statements in Program
+
+	Syntax 2 : while(condition):
+			Indentation block of stmts
+			---
+		     else:
+			else block of statements
+			---
+		    Other statements in Program
+
+-->Here 'while' and 'else' are called Keywords
+-->Here Test Condition either 'True' or 'False'
+-->If the Test Cond is True then PVM executes Indentation Block of statements and once again PVM Control goes to Test Cond. If once again Test Cond is True then PVM
+executes Indentation Block of statements. This Process repeated for finite number of times until Test Cond becomes false.
+-->Once Test Cond becomes false, PVM executes else block of statements which are written else block(if present) and later executes Other Statements in Program.
+
+Transfer Flow Control Statements
+---------------------------
+-->The purpose of Transfer Flow Control Statements in python is that " To transfer the 
+control of PVM from one part of the program to another part of the program ".
+-->In Python, we have 3 types of Transfer Flow Control Statements. They are
+	1. break
+	2. continue
+	3. pass
+
+1. break
+-------
+-->break is a keyword
+-->The purpose of break statement is that "To terminate the execution of loop logically when certain condition is satisfied and PVM control comes of corresponding loop and executes other statements in the program".
+-->when break statement takes place inside for loop or while loop then PVM will not execute corresponding else block(bcoz loop is not becming False)  but it executes other statements in the program
+	Syntax1 : for varname  in Iterable_object:
+			if (test cond):
+		             break
+	
+	Syntax2: while(Test Cond-1):
+			 if (test cond-2):
+			     break
+
+2. continue
+---------
+-->continue is a keyword
+-->continue statement is used for making the PVM to go to the top of the loop without executing the following statements which are written after continue statement for that current Iteration only.
+-->continue statement to be used always inside of loops.
+-->when we use continue statement inside of loop then else part of corresponding loop also executes provided loop condition becomes false.
+	Syntax1 : for varname  in Iterable_object:
+			if (test cond):
+		             continue
+	
+	Syntax2: while(Test Cond-1):
+			 if (test cond-2):
+			     continue
+
+3.pass
+-----
+-->pass is a keyword
+-->In Python, pass is a null statement. It means “do nothing”.
+-->It is used when a statement is syntactically required, but you don’t want to write code yet.
+
+Why use pass?
+-->Avoids syntax errors
+-->Creates placeholder code
+-->Useful during development
+
+Inner OR Nested  Loops
+--------------------
+-->The Process of Defining One Loop inside of another loop is called Inner Loop.
+-->The execution Process of Inner OR Nested  Loops is that " For Every value of Outer Loop inner loop executed for finite number of times until Cond becomes false".
+-->We can use inner loops in ways. They are
+
+Syntax-1 : for loop inside for loop	
+	for  varname1  in Iterable_object1:  # Outer for loop
+		-----
+		for  varname2  in Iterable_object2:  # Inner for loop
+			-----
+		else:
+			-----
+	else:
+		----		
+	Other statemenmts in Program
+
+Syntax-2 : while loop inside while loop
+	
+	while (condition):  # Outer while loop
+		-----
+		while(condition):  # Inner while loop
+			-----
+		else:
+			-----
+	else:
+		----		
+	Other statemenmts in Program
+
+Syntax-3 :for loop inside of while loop	
+	
+	for  varname1  in Iterable_object1:  # Outer for loop
+		-----
+		while (condition):  # Inner while loop
+			-----
+		else:
+			-----
+	else:
+		----		
+	Other statemenmts in Program
+
+Syntax-4 :while loop inside of for loop	
+	
+	while(condition):  # Outer While loop
+		-----
+		for  varname1  in Iterable_object1  # Inner for loop
+			-----
+		else:
+			-----
+	else:
+		----		
+	Other statemenmts in Program

@@ -25,8 +25,8 @@ HTML		1991	First version of HTML
 HTML 2.0	1995	Standardized basic HTML features
 HTML 3.2	1997	Added support for tables, applets, and more formatting
 HTML 4.01	1998	Improved structure, introduced CSS support
-XHTML		1999	XML-based version of HTML, stricter syntax
-HTML5	     2008–2014	Modern version, supports multimedia, graphics, APIs
+XHTML	1999	XML-based version of HTML, stricter syntax
+HTML5	2008–2014	Modern version, supports multimedia, graphics, APIs
 			(by W3C + WHATWG)
 HTML5.x		2016	Minor updates and extensions to HTML5
 

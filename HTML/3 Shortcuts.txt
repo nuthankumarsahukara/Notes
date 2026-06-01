@@ -1,4 +1,5 @@
-Shortcut Keys-In Web Browsers:
+Shortcut Keys-In Web Browsers
+--------------------------
 The following shorcut keys frequently we are using to complete task quickly..!!
 Ctrl + N	Open a new window
 Ctrl + T	Open a new tab
@@ -6,10 +7,10 @@ Ctrl + W	Close the current window/tab
 Ctrl + R or F5	Refresh the current web page
 Ctrl + U	View the source code of the page
 Esc		Stop loading the web page
-Alt + ←		Go backward in browsing history
-Alt + →		Go forward in browsing history
+Alt + ←	Go backward in browsing history
+Alt + →	Go forward in browsing history
 Alt + Home	Go to your homepage
-Alt + D		Focus on the address bar to type a new URL
+Alt + D	Focus on the address bar to type a new URL
 Ctrl + +	Zoom in (increase page size)
 Ctrl + -	Zoom out (decrease page size)
 Ctrl + 0	Reset zoom to default (normal size)
@@ -111,7 +112,7 @@ Example:
 </html>
 
 Meta Info
-Tag 		Description
+Tag 			Description
 <head> 		Defines information about the document
 <meta> 		Defines metadata about an HTML document
 
@@ -125,7 +126,7 @@ It provides metadata about the HTML document. Metadata will not be displayed on 
 5. meta charset
 6. meta viewport
 
-1. meta keywords: Define keywords for search engines:
+1. meta keywords: Define keywords for search engines.
 
 Syntax:
 <meta name="keywords" content="required list of keywords">

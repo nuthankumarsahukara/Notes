@@ -1,0 +1,168 @@
+File Handling in Python
+------------------
+->File handling is used to create, read, write, append, and manage files.
+->File handling is the process of storing and retrieving data from files permanently
+	Syntax : file = open("file_name.txt", "mode")
+
+Common Modes
+-------------
+Mode	Description
+----	---------
+r	Read (default)
+w	Write (creates file if not exists, overwrites existing content)
+a	Append (adds data to end of file)
+x	Create a new file
+r+	Read and Write
+w+	Write and Read
+a+	Append and Read
+rb	Read Binary
+wb	Write Binary
+
+2. Writing to a File
+----------------
+file = open("demo.txt", "w")
+file.write("Welcome to Python")
+file.close()
+
+
+3. Appending Data
+---------------
+file = open("demo.txt", "a")
+file.write("\nLearning File Handling")
+file.close()
+
+
+4. Reading a File
+--------------
+Read Entire File
+-------------
+file = open("demo.txt", "r")
+print(file.read())
+file.close()
+
+Read Specific Characters
+---------------------
+file = open("demo.txt", "r")
+print(file.read(10))
+file.close()
+
+Read One Line
+-----------
+file = open("demo.txt", "r")
+print(file.readline())
+file.close()
+
+Read All Lines
+-----------
+file = open("demo.txt", "r")
+print(file.readlines())
+file.close()
+
+
+5. Using with Statement
+--------------------
+Automatically closes the file.
+
+with open("demo.txt", "r") as file:
+    print(file.read())
+
+6. File Pointer Functions
+-------------------
+tell()
+----
+->Returns current position.
+
+file = open("demo.txt", "r")
+print(file.tell())
+file.close()
+
+seek()
+-----
+->Moves pointer to specified position.
+
+file = open("demo.txt", "r")
+file.seek(5)
+print(file.read())
+file.close()
+
+7. Creating a File
+--------------
+file = open("newfile.txt", "x")
+file.close()
+
+8. Deleting a File
+--------------
+import os
+
+os.remove("demo.txt")
+
+Check Before Delete
+----------------
+import os
+
+if os.path.exists("demo.txt"):
+    os.remove("demo.txt")
+else:
+    print("File not found")
+
+9. Check File Exists
+----------------
+import os
+
+if os.path.exists("demo.txt"):
+    print("File Exists")
+else:
+    print("File Not Found")
+
+10. Rename a File
+--------------
+import os
+
+os.rename("demo.txt", "python.txt")
+
+11. Working with Binary Files
+------------------------
+Write Binary
+----------
+file = open("image.bin", "wb")
+file.write(b"Hello")
+file.close()
+
+Read Binary
+---------
+file = open("image.bin", "rb")
+print(file.read())
+file.close()
+
+12. Exception Handling in File Handling
+-------------------------------
+try:
+    file = open("demo.txt", "r")
+    print(file.read())
+except FileNotFoundError:
+    print("File does not exist")
+finally:
+    print("Execution Completed")
+
+13. Copy Data from One File to Another
+---------------------------------
+with open("source.txt", "r") as f1:
+    data = f1.read()
+
+with open("target.txt", "w") as f2:
+    f2.write(data)
+
+14. Count Words in a File
+---------------------
+with open("demo.txt", "r") as file:
+    data = file.read()
+    words = len(data.split())
+
+print("Total Words:", words)
+
+15. Count Lines in a File
+-------------------
+with open("demo.txt", "r") as file:
+    lines = file.readlines()
+
+print("Total Lines:", len(lines))

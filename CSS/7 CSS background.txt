@@ -98,12 +98,14 @@ The border-image property is a shorthand property for setting the border-image-s
 Syntax
 border-image: source slice width outset repeat;
 
-Value			Description	
-border-image-source	The path to the image to be used as a border	
+Value			  	Description	
+border-image-source 	The path to the image to be used as a border	
 border-image-slice		The inward offsets of the image-border	
-border-image-width	The widths of the image-border	
-border-image-outset	The amount by which the border image area 						extends beyond the border box	
-border-image-repeat	Whether the image-border should be 							repeated,rounded or stretched
+border-image-width		The widths of the image-border	
+border-image-outset		The amount by which the border image area extends beyond the
+				border box	
+border-image-repeat		Whether the image-border should be repeated,rounded or 
+				stretched
 
 Example:
 <!DOCTYPE HTML>
@@ -231,7 +233,7 @@ word-break: normal|break-all|;
 
 Value		Description
 normal		Breaks non-CJK scripts according to their own rules
-break-all		Lines may break between any two characters for non-CJK scripts
+break-all	Lines may break between any two characters for non-CJK scripts
 
 Example:
 <!DOCTYPE HTML>

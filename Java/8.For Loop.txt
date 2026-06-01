@@ -60,6 +60,15 @@ Output:
 Java Nested for Loop
 If we have a for loop inside the another loop, it is known as nested for loop. The inner loop executes completely whenever outer loop executes.
 
+Syntax:
+-------
+	for(initialization; condition; increment/decrement){ //outer for loop
+		for(initialization; condition; increment/decrement){ //inner for loop
+			Statement
+			--------
+		}
+	}
+
 Example:
 
 NestedForExample.java

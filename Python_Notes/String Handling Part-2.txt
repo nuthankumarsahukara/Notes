@@ -1,0 +1,138 @@
+String Handling Part-2
+------------------
+-->On String Data, we can perform Indexing, Slicing Operations and with these operations, we can also perform different type of operations by using pre-defined functions present in str object.
+
+Pre-defined Functions in str object
+----------------------------
+1.capitalize()
+----------
+->This Function is used for capitalizing the first letter First word of a given Sentence only.
+	     Syntax : strobj.capitalize()
+				(OR)
+			strobj=strobj.capitalize()
+>>s="python is a programming language"
+>>print(s)
+	python is a programming language
+>>print(s.capitalize());
+	Python is a programming language
+
+2) title()
+-------
+-->This is used for obtaining Title Case of a Given Sentence  (OR) Making all words First Letters are capital.
+	Syntax:  s.title()
+	            (OR)
+	          s=s.title()
+>>s="python is a programming language"
+>>print(s)
+	python is a programming language
+>>print(s.capitalize());
+	Python is a programming language
+>>print(s.title());
+	Python Is A Programming Language
+
+3) index()
+--------
+-->This Function obtains Index of the specified Value
+-->If the specified value does not exist then we get ValueError
+Syntax:        strobj.index(Value) (or) indexvalue=strobj.index(value)
+
+>>s="python is a programming language"
+>>print(s)
+	python is a programming language
+>>print(s.index("P")); 
+	ValueError: substring not found
+>>print(s.index("p"));
+	0
+>>print(s.index("a"));
+	10
+
+enumerate()
+---------
+-->enumerate() is one the general function, which is used for finding Index and Value of an Iterable object.
+
+>>s="python is a programming language"
+>>for i,v in enumerate(s):
+... print("Index :",i,", value :",v)
+
+Index : 0 , value : p
+Index : 1 , value : y
+Index : 2 , value : t
+Index : 3 , value : h
+Index : 4 , value : o
+Index : 5 , value : n
+Index : 6 , value :  
+Index : 7 , value : i
+Index : 8 , value : s
+Index : 9 , value :  
+Index : 10 , value : a
+Index : 11 , value :  
+Index : 12 , value : p
+Index : 13 , value : r
+Index : 14 , value : o
+Index : 15 , value : g
+Index : 16 , value : r
+Index : 17 , value : a
+Index : 18 , value : m
+Index : 19 , value : m
+Index : 20 , value : i
+Index : 21 , value : n
+Index : 22 , value : g
+Index : 23 , value :  
+Index : 24 , value : l
+Index : 25 , value : a
+Index : 26 , value : n
+Index : 27 , value : g
+Index : 28 , value : u
+Index : 29 , value : a
+Index : 30 , value : g
+Index : 31 , value : e
+
+isalpha() :
+-------
+	This Function returns True provided str object contains Purely Alphabets otherwise returns False.
+	Syntax: strobj.isalpha()
+
+>>s="python"
+>>print(s.isalpha())
+	True
+>>s="python123"
+>>print(s.isalpha())
+	False
+
+isdigit() :
+-------
+This Function returns True provided given str object contains purely digits otherwise returns False
+	Syntax: strobj.isdigit()
+
+>>s="python123"
+>>print(s.isdigit())
+	False
+>>s="123"
+>>print(s.isdigit())
+	True
+
+isalnum()
+-->This Function returns True provided str object contains either Alpabets OR Numerics or Alpha-Numerics only otherwise It returns False.
+	Syntax: strobj. isalphanum()
+
+>>s="Python123"
+>>print(s.isalnum())
+	True
+>>s="Python"
+>>print(s.isalnum())
+	True
+>>s="@Python"
+>>print(s.isalnum())
+	False
+
+isspace()
+-------
+-->This Function returns True provided str obj contains purely space otherwise it returns False.
+    Syntax: strobj.isspace()
+
+>>s=" "
+>>print(s.isspace())
+	True
+>>s=""
+>>print(s.isspace())
+	False

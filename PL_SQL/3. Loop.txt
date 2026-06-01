@@ -131,8 +131,7 @@ end;
 
 
 Case statement
-The PL/SQL CASE Statement provides facility to execute a sequence of statements based on a
-selector. A selector may be variable, function or an expression.
+The PL/SQL CASE Statement provides facility to execute a sequence of statements based on a selector. A selector may be variable, function or an expression.
 Syntax
 CASE [expression]
 WHEN condition1 THEN result1 

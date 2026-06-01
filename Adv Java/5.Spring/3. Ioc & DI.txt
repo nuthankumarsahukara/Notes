@@ -41,7 +41,7 @@ Scope			Description
 singleton		(default) One shared bean for the app
 prototype		A new bean is created each time it's needed
 request		One bean per HTTP request (web only)
-session		One bean per HTTP session (web only)
+session			One bean per HTTP session (web only)
 
 <bean id="studentBean" class="com.example.Student" scope="prototype"/>
 

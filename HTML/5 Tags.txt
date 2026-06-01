@@ -5,9 +5,9 @@ HTML Presentational Tags: * are IMP tags (more usage in Web)
 7 <cite> 		8 <code>*	
 9 <del> 		10 <dfn> 		
 11 <em> 		12 <font>	 		
-13 <i> 			14 <ins> 		
+13 <i> 		14 <ins> 		
 15 <kbd>*		16 <pre>*	
-17 <q> 			18 <s> 		
+17 <q> 		18 <s> 		
 19 <samp> 		20 <small> 		
 21 <strike> 		22 <strong> 		
 23 <sub>* 		24 <sup>*	

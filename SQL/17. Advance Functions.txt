@@ -91,7 +91,7 @@ The LNNVL function will return the following:
 Condition 			Evaluates To LNNVL Return Value
 TRUE			              FALSE
 FALSE			              TRUE
-UNKNOWN		              	      TRUE
+UNKNOWN		              TRUE
 
 Example :	select count(*) from employee where comm>0;
 	select count(*) from employee where lnnvl(comm>0);

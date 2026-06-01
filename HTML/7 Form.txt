@@ -30,7 +30,7 @@ mutlipart/form-data - This is used when you want to upload binary data in the fo
 
 HTML Form Tags
 Tag 		Description
-<form> 		Defines an HTML form for user input
+<form> 	Defines an HTML form for user input
 <input> 	Defines an input control
 <textarea> 	Defines a multiline input control(text area)
 <button> 	Defines a clickable button
@@ -65,7 +65,7 @@ readonly	true, false
 disabled	disabled
 rows		number
 cols		number
-checked		checked
+checked	checked
 multiple	true, false
 
 Example:

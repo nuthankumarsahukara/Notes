@@ -8,7 +8,6 @@ JavaScript supports different kinds of loops:
 5 for/of - loops through the values of an iterable object
 6 forEach() method calls a function once for each element in an array.
 
-
 for Loop
 A for loop enables a particular set of conditions to be executed repeatedly until a condition is satisfied.
 

@@ -208,9 +208,9 @@ Syntax:
 Attributes
 Attribute 	Value 		Description 
 controls  	controls 		Specifies that audio controls should be displayed
-loop  	loop 		Specifies that the audio will start over again
-src 	Path 		Specifies the URL of the audio file
-muted	muted		Specified the audio should be muted
+loop  		loop 		Specifies that the audio will start over again
+src 		Path 		Specifies the URL of the audio file
+muted		muted		Specified the audio should be muted
 
 
 Example:
@@ -302,12 +302,12 @@ Attributes:
 Attribute 	Value 	Description
 autoplay	autoplay 	Specifies that the video will start playing
 controls 	controls 	Specifies that video controls should be displayed
-src	 URL 	Specifies the URL of the video file
-width	 pixels 	Sets the width of the video player
-height	 pixels 	Sets the height of the video player
-loop	 loop 	Specifies that the video will start over again
-muted 	 muted 	Specifies that the audio output of the video should be muted
-poster 	 URL 	Spe. an image to be shown while the video is downloading, or until the 		user hits the play button
+src	 	URL 		Specifies the URL of the video file
+width	 	pixels 		Sets the width of the video player
+height	 	pixels 		Sets the height of the video player
+loop	 	loop 		Specifies that the video will start over again
+muted 	 	muted 		Specifies that the audio output of the video should be muted
+poster 	 	URL 		Spe. an image to be shown while the video is downloading, or 				until the user hits the play button
 
 
 Example:

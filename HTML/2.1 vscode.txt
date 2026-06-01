@@ -57,7 +57,7 @@ The World Wide Web Consortium (W3C) recommends using these 16 standard color nam
 Black	Gray	Silver	White
 Yellow	Lime	Aqua	Fuchsia
 Red	Green	Blue	Purple
-Maroon	Olive	Navy	Teal
+MaroonOlive	Navy	Teal
 
 Color Values
 
@@ -96,35 +96,35 @@ Example:
 </html>
 
 Entities:
-
+-------
 HTML5 SPECIAL CHARACTERS
 	Character entities can be typed as either a numbered entity or a named entity. All character entities begin with an ampersand (&) and end with a semicolon (;). Although every character entity has a numbered version, not everyone has a named version. While a few are listed in the following table to give you an idea of what they look like.
 
-Number 	Entity 	Description
-
+Number 	Entity 		Description
+------	-----		---------
 &#169; 	&copy; 	COPYRIGHT SIGN
-&#174; 	&reg; 	REGISTERED SIGN
-&#60;	&lt;	Less than symbol
-&#62;	&gt;	Greater than symbol
-&#8364; &euro; 	EURO SIGN
-&#8482; &trade; TRADEMARK
-&#8592; &larr; 	LEFTWARDS ARROW
-&#8593; &uarr; 	UPWARDS ARROW
-&#8594; &rarr; 	RIGHTWARDS ARROW
-&#8595; &darr; 	DOWNWARDS ARROW
-&#9824; &spades; BLACK SPADE SUIT
-&#9827; &clubs; BLACK CLUB SUIT
-&#9829; &hearts; BLACK HEART SUIT
-&#9830; &diams; BLACK DIAMOND SUIT
-&#8704; &forall; FOR ALL
-&#8706; &part; 	PARTIAL DIFFERENTIAL
-&#8707; &exist; THERE EXISTS
-&#8709; &empty; EMPTY SETS
-&#8711; &nabla; NABLA
-&#8712; &isin; 	ELEMENT OF
-&#913; 	&Alpha; GREEK CAPITAL LETTER ALPHA
+&#174; 	&reg; 		REGISTERED SIGN
+&#60;		&lt;		Less than symbol
+&#62;		&gt;		Greater than symbol
+&#8364; 	&euro; 	EURO SIGN
+&#8482; 	&trade; 	TRADEMARK
+&#8592; 	&larr; 		LEFTWARDS ARROW
+&#8593; 	&uarr; 	UPWARDS ARROW
+&#8594; 	&rarr; 		RIGHTWARDS ARROW
+&#8595;	&darr; 	DOWNWARDS ARROW
+&#9824; 	&spades; 	BLACK SPADE SUIT
+&#9827; 	&clubs; 	BLACK CLUB SUIT
+&#9829; 	&hearts; 	BLACK HEART SUIT
+&#9830; 	&diams; 	BLACK DIAMOND SUIT
+&#8704; 	&forall; 	FOR ALL
+&#8706; 	&part; 	PARTIAL DIFFERENTIAL
+&#8707; 	&exist; 	THERE EXISTS
+&#8709; 	&empty; 	EMPTY SETS
+&#8711; 	&nabla; 	NABLA
+&#8712; 	&isin; 		ELEMENT OF
+&#913; 	&Alpha; 	GREEK CAPITAL LETTER ALPHA
 &#914; 	&Beta; 	GREEK CAPITAL LETTER BETA
-&#915; 	&Gamma; GREEK CAPITAL LETTER GAMMA
+&#915; 	&Gamma; 	GREEK CAPITAL LETTER GAMMA
 
 Using Emojis in HTML:
 

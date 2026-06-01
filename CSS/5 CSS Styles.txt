@@ -474,13 +474,13 @@ padding:0.5cm 3cm;
 </html>
 
 Flex Box :- 
-align-content	Modifies the behavior of the flex-wrap property. It is 				similar to align-items,but instead of aligning flex items, it 				aligns flex lines
+align-content	Modifies the behavior of the flex-wrap property. It is similar to align-			items,but instead of aligning flex items, it aligns flex lines
 align-items	Vertically aligns the flex items when the items do not use 				all available space on the cross-axis
-display		Specifies the display behavior (the type of rendering box) 			for an element
-flex-direction	Specifies the direction of the flex items inside a flex 				container
-flex-flow		A shorthand property for flex-direction and flex-wrap
-flex-wrap		Specifies whether the flex items should wrap or not, if 				there is not enough room for them on one flex line
-justify-content	Horizontally aligns the flex items when the items do not 				use all available space on the main-axis
+display		Specifies the display behavior (the type of rendering box) for an element
+flex-direction	Specifies the direction of the flex items inside a flex container
+flex-flow	A shorthand property for flex-direction and flex-wrap
+flex-wrap	Specifies whether the flex items should wrap or not, if there is not enough 		room for them on one flex line
+justify-contentHorizontally aligns the flex items when the items do not use all available 		space on the main-axis
 
 Example:
 

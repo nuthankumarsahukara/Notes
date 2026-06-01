@@ -1,8 +1,10 @@
 Form Handling in ReactJS
-🔰 What is Form Handling?
+--------------------
+What is Form Handling?
 Form handling in React refers to how you manage form inputs, store values in state, and handle form submission/validation using React's component architecture.
 
-🛠️ Key Concepts
+ Key Concepts
+------------
 1. Controlled Components
 React uses controlled components where the form input value is controlled by React state.
 
@@ -55,19 +57,21 @@ function LoginForm() {
 }
  
 Best Practices
+-----------
 ->Use one onSubmit instead of onClick for the form.
 ->Keep validation in one place for better readability.
 ->Use a single setError() call if validating multiple fields.
 
-Optionally use form libraries like Formik or react-hook-form for complex forms.
-
- Common Mistakes to Avoid
-❌ Calling onClick={handleSubmit()} instead of onClick={handleSubmit}
-❌ Updating state multiple times in a row for validation
-❌ Forgetting to call e.preventDefault() on form submit
+Common Mistakes to Avoid
+---------------------
+-->Calling onClick={handleSubmit()} instead of onClick={handleSubmit}
+-->Updating state multiple times in a row for validation
+-->Forgetting to call e.preventDefault() on form submit
 
 
 Uncontrolled Components in ReactJS
+-----------------------------
+
 What Are Uncontrolled Components?
 Uncontrolled components are form elements in React that manage their own state internally (like regular HTML elements) rather than through React useState.
 
@@ -75,10 +79,10 @@ Instead of using React state, you access the input values using refs.
 
 Controlled vs Uncontrolled
 
-Feature	Controlled Component	Uncontrolled Component
-Value Managed By	React state (useState)	DOM (accessed via ref)
+Feature		Controlled Component				Uncontrolled Component
+Value Managed By	React state (useState)			DOM (accessed via ref)
 Real-time Access	Yes (every keystroke updates state)	No (you get value only when needed)
-React's Way	✅ Recommended	⚠️ Use when necessary
+React's Way		Recommended					Use when necessary
 
 Example: Uncontrolled Component
 
@@ -105,20 +109,76 @@ function UncontrolledForm() {
     </form>
   );
 }
-✅ When to Use Uncontrolled Components
-When you don't need to respond to input changes in real-time.
 
-For quick forms or legacy code integration.
+When to Use Uncontrolled Components
+--------------------------------
+-->When you don't need to respond to input changes in real-time.
+-->For quick forms or legacy code integration.
+-->When working with 3rd-party DOM libraries.
 
-When working with 3rd-party DOM libraries.
-
-❌ Limitations of Uncontrolled Components
-Less flexible.
-
-Harder to validate dynamically.
-
-Not the “React way” — React encourages state-driven UI.
+Limitations of Uncontrolled Components
+-------------------------------
+-->Less flexible.
+-->Harder to validate dynamically.
+-->Not the “React way” — React encourages state-driven UI.
 
 
-.
 
+
+const { useState} = require("react");
+
+function App(){
+    let [uname,setUname]=useState("");
+    let [pwd,setPwd]=useState("");
+    let [errors,setErrors]=useState({});
+
+    let validate = () => {
+        const errors = {};
+        // Email validation
+        if (!uname) {
+            errors.uname = "Email is required";
+        } else if (!/\S+@\S+\.\S+/.test(uname)) {
+            errors.uname = "Email is invalid";
+        }
+
+        // Password validation
+        if (!pwd) {
+            errors.pwd = "Password is required";
+        } else if (pwd.length < 6) {
+            errors.pwd = "Password must be at least 6 characters";
+        }
+
+        setErrors(errors);
+
+        return Object.keys(errors).length === 0;
+    };
+
+    let handleData = (event) =>{
+        event.preventDefault();
+        if (validate()) {
+            console.log("Data Submitted :",{uname,pwd});
+            console.log("Username :"+uname);
+            console.log("Password : "+pwd);
+            setUname("");
+            setPwd("");
+        }
+    }
+    return(
+        <>
+            <div style={{display:"flex",justifyContent:"center",marginTop:"130px"}}>
+                <form style={{border : "3px solid black",padding:"15px",borderRadius:"15px"}} onSubmit={handleData} autoComplete="off">
+                    <h1 align='center'>Form Validation</h1>
+                    <label htmlFor="uname">Username :</label> <br/>
+                    <input type="text" id="uname" value={uname} onChange={(e)=>setUname(e.target.value)} style={{padding:"8px", borderRadius:"12px",width:"90%",fontSize:"20px"}}/> <br/> 
+                    {errors.uname && <span style={{ color: "red", fontSize: "12px" }}>{errors.uname}</span>} <br/>
+                    <label htmlFor="pwd">Password :</label> <br/>
+                    <input type="password" id="pwd" value={pwd} onChange={(e)=>setPwd(e.target.value)} style={{padding:"8px", borderRadius:"12px",width:"90%",fontSize:"20px"}}/><br/>
+                    {errors.uname && <span style={{ color: "red", fontSize: "12px" }}>{errors.pwd}</span>} <br/><br/>
+                    <button type="submit" style={{width:"100%",padding:"10px",backgroundColor:"green",borderRadius:"12px",color:"white",border:"none"}}>Login</button>
+                </form>
+            </div>
+        </>
+    )
+}
+
+export default App;

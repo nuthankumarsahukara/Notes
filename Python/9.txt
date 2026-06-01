@@ -1,0 +1,1854 @@
+================================================
+				Mutable and Immutable objects
+		================================================
+---------------------------------------
+=>Mutable Object
+---------------------------------------
+=>A Mutbale Object is one, whose content can be changed at Same Address.
+
+Examples:  list , set,  dict, bytearray...etc
+
+-----------------------------------------
+=>Immutable Object
+-----------------------------------------
+=>An Immutbale Object is one, which will satisfy the following Properties.
+			a) Content Can't Modified at Same Address.(Value can be modified and Modified value can be placed in different address and existing memory space collected by Garbage Collector) 
+			b) objects does not support item assignment.
+
+Exanples:    int   float  bool     str   complex, tuple, set, frozenset,bytes
+			
+===========================X========================================
+
+	============================================
+						2) bytes
+		============================================
+Properties:
+-------------------
+=>'bytes' is one of the pre-defined class and treated as Sequence Data Type.
+=>The real time implementation or the purpose of bytes data type is that "To send the data 
+    between to devices in the for form cipher Text / Encrypted format(End-to-End Encryption)".
+=>To achieve the real time implementation or the purpose of bytes, the bytes data type stores 
+     the Numerical Possitive Integer values  from the range (0,256) only.
+=>bytes data type does not contain any symbolic notation for storing data directly but we can 
+    convert other type of values into bytes by using  bytes().
+		Syntax:
+		-----------        varname=bytes(object)
+		here varname is of type <class,'bytes'>
+	
+=>An object bytes data type allows us to perform Indexing and Slicing Operations.
+=>An object of bytes maintains Insertion Order ( In whichever Order, we insert the data, In the 
+   same order the data will be displayed )
+=>An object bytes  belongs to  immutable
+-----------------------------------------------------------------------------------------------------------------------
+Examples:
+-----------------------------------------------------------------------------------------------------------------------
+>>> l=[10,20,30,256,0,45]
+>>> print(l,type(l))-------------[10, 20, 30, 256, 0, 45] <class 'list'>
+>>> b=bytes(l)--------------ValueError: bytes must be in range(0, 256)
+>>> l=[-10,20,30,255,0,45]
+>>> print(l,type(l))------------[-10, 20, 30, 255, 0, 45] <class 'list'>
+>>> b=bytes(l)-----------ValueError: bytes must be in range(0, 256)
+--------------------------------------------
+>>> l=[10,20,30,255,0,45]
+>>> print(l,type(l))----------------[10, 20, 30, 255, 0, 45] <class 'list'>
+>>> b=bytes(l)
+>>> print(b,type(b))------------b'\n\x14\x1e\xff\x00-' <class 'bytes'>
+>>> b[0]-------------------10
+>>> b[-1]-----------------45
+>>> b[-5]----------------20
+>>> b[-50]--------------IndexError: index out of range
+>>> b[0:4]---------------b'\n\x14\x1e\xff'
+>>> for k in b:
+...     print(k)
+...
+			10
+			20
+			30
+			255
+			0
+			45
+>>> for k in b[0:4]:
+...     print(k)
+			...
+			10
+			20
+			30
+			255
+>>> for k in b[::-1]:
+...     print(k)
+				...
+				45
+				0
+				255
+				30
+				20
+				10
+-----------------------------------------------------------------------------------------
+>>> l1=[10,20,30,40]
+>>> b1=bytes(l1)
+>>> print(b1,type(b1),id(b1))----------------b'\n\x14\x1e(' <class 'bytes'> 2465659515648
+>>> b1[0]------------------------10
+>>> for k in b1:
+...     print(k)
+			...
+			10
+			20
+			30
+			40
+>>> b1[0]=125  # Trying to Update the value of bytes object
+			TypeError: 'bytes' object does not support item assignment
+==================================X===================================
+
+	============================================
+						3) bytearray
+		============================================
+Properties:
+-------------------
+=>'bytearray' is one of the pre-defined class and treated as Sequence Data Type.
+=>The real time implementation or the purpose of bytearray data type is that "To send the data 
+    between to devices in the for form cipher Text / Encrypted format(End-to-End Encryption)".
+=>To achieve the real time implementation or the purpose of bytearray, the bytes data type stores  the Numerical Possitive Integer values  from the range (0,256) only.
+=>bytearray data type does not contain any symbolic notation for storing data directly but we can  convert other type of values into bytearray by using  bytearray().
+		Syntax:
+		-----------        varname=bytearray(object)
+		here varname is of type <class,'bytearray'>
+	
+=>An object bytearray data type allows us to perform Indexing and Slicing Operations.
+=>An object of bytearray maintains Insertion Order ( In whichever Order, we insert the data, In 
+    the  same order the data will be displayed )
+=>An object bytearray  belongs to  mutable
+------------------------------------------------------------------------------------------------------------------
+NOTE:-  The Functionality of bytearray is exatcly similar to bytes but an object of bytes 
+              belongs to Immutable where an object bytearray is mutable.
+----------------------------------------------------------------------------------------------------------------------
+Examples:
+-----------------------------------------------------------
+>>> l=[10,20,30,256,0,45]
+>>> print(l,type(l))------------------------------[10, 20, 30, 256, 0, 45] <class 'list'>
+>>> b=bytearray(l)----------------ValueError: byte must be in range(0, 256)
+>>> l=[-10,20,30,256,0,45]
+>>> print(l,type(l))---------------[-10, 20, 30, 256, 0, 45] <class 'list'>
+>>> b=bytearray(l)-----------------ValueError: byte must be in range(0, 256)
+>>> l=[10,20,30,255,0,45]
+>>> print(l,type(l))----------------[10, 20, 30, 255, 0, 45] <class 'list'>
+>>> b=bytearray(l)
+>>> print(b,type(b),id(b))----bytearray(b'\n\x14\x1e\xff\x00-') <class 'bytearray'> 2465659124720
+>>> for val in b:
+...     print(val)
+				...
+				10
+				20
+				30
+				255
+				0
+				45
+>>> b[0]---------------------------10
+>>> b[1]---------------------------20
+>>> b[-1]-------------------------45
+>>> b[0]=123  # We are Updating the values of bytearray object
+>>> print(b,type(b),id(b))---bytearray(b'{\x14\x1e\xff\x00-') <class 'bytearray'> 2465659124720
+>>> for val in b:
+...     print(val)
+			...
+			123
+			20
+			30
+			255
+			0
+			45
+
+>>> for val in b[0:4]:
+...     print(val)
+			...
+			123
+			20
+			30
+			255
+================================X=======================================
+
+==================================
+						5. str()
+			===================================
+=>str() converted all types of values into str type value
+=>Syntax:-     varname=str(int/float/bool/complex)
+-------------------------------------------------------------------------------------------------------
+Examples:
+------------------------------------------------------------------------------------------------------
+>>> a=10
+>>> print(a,type(a))-------------------10 <class 'int'>
+>>> b=str(a)
+>>> print(b,type(b))------------------10 <class 'str'>
+>>> b-----------------------------------'10'
+---------------------------------------
+>>> a=12.34
+>>> print(a,type(a))---------------------12.34 <class 'float'>
+>>> b=str(a)
+>>> print(b,type(b))-------------------12.34 <class 'str'>
+>>> b---------------------------------------'12.34'
+---------------------------------------------------------------
+>>> a=True
+>>> print(a,type(a))-------------------------True <class 'bool'>
+>>> b=str(a)
+>>> print(b,type(b))-------------------------True <class 'str'>
+>>> b--------------------------------------------'True'
+---------------------------------------------------------------------------
+>>> a=2-3.4j
+>>> print(a,type(a))----------------------------(2-3.4j) <class 'complex'>
+>>> b=str(a)
+>>> print(b,type(b))---------------------------(2-3.4j) <class 'str'>
+>>> b----------------------------------------------'(2-3.4j)'
+==================================X======================================
+
+===========================================
+					4) range
+			===========================================
+Properties
+--------------------
+=>'range' is one of the pre-defined class and treated as Sequence Data Type.
+=>The purpose of range data type is that " To store Sequence of Number Integer values by 
+    maintaining Equal Interval of Value."
+=>On the object of range, we can perform Both Indexing and Slicing Operations.
+=>An object of range belongs to Immutbale bcoz 'range' object does not support item 
+    assignment
+=>An object of range maintains Insertion Order.
+=>To generate of range of values, we have 3 sytaxes.
+---------------------
+Syntax-1			varname=range(Value)
+---------------------
+=>This Syntax generates range of values from 0 to Value-1
+Examples:
+-----------------------
+>>> r=range(10)
+>>> print(r,type(r))-------------range(0, 10) <class 'range'>
+>>> for v in r:
+...     print(v)
+				...
+				0
+				1
+				2
+				3
+				4
+				5
+				6
+				7
+				8
+				9
+>>> for v in range(6):
+...     print(v)
+				...
+				0
+				1
+				2
+				3
+				4
+				5
+----------------------------------------------------------------------------------------------------------------------------
+Syntax-1:			varname=range(BeginValue, EndValue)
+---------------------
+=>This Syntax generates range of values from BeginValue to EndValue-1.
+Examples:
+------------------
+>>> r=range(10,21)
+>>> print(r,type(r))--------------range(10, 21) <class 'range'>
+>>> for v in r:
+...     print(v)
+			...
+			10
+			11
+			12
+			13
+			14
+			15
+			16
+			17
+			18
+			19
+			20
+>>> for k in range(50,56):
+...     print(k)
+			...
+			50
+			51
+			52
+			53
+			54
+			55
+>>> for k in range(50,56):
+...     print(k,end=" ")            50 51 52 53 54 55
+
+=>NOTE, Syntax-1 and Syntax-2 always generates range of values in forward direction by maintaining equal interval of value 1 by default.
+
+---------------------------------------------------------------------------------------------------------------------------
+Syntax-3:			varname=range(BeginValue, EndValue,Step)
+---------------------
+This Syntax generates range of values from BeginValue to EndValue-1 by maintaining Interval value based on the value of "step"
+
+Examples:
+-------------------------
+>>> r=range(10,21,2)
+>>> print(r,type(r))
+range(10, 21, 2) <class 'range'>
+>>> for v in r:
+...     print(v)
+				...
+				10
+				12
+				14
+				16
+				18
+				20
+>>> for v in range(10,51,10):
+...     print(v)
+				...
+				10
+				20
+				30
+				40
+				50
+---------------------------------------------------------------------------------------------------------------------
+Examples
+---------------------------------------------------------------------------------------------------------------------------
+Q1)  0   1    2   3    4    5    6     7     8    9-------range(10)
+
+>>> for v in range(10):
+...     print(v)
+				...
+				0
+				1
+				2
+				3
+				4
+				5
+				6
+				7
+				8
+				9
+---------------------------------------------------------------------------------------------------------------------------
+Q2)  10    11    12    13    14    15------range(10,16)
+
+>>> for v in range(10,16):
+...     print(v)
+...
+10
+11
+12
+13
+14
+15
+---------------------------------------------------------------------------------------------------------------------------
+Q3) 100    101   102   103   104  105-----range(100,106)
+
+>>> for v in range(100,106):
+...     print(v)
+...
+100
+101
+102
+103
+104
+105
+---------------------------------------------------------------------------------------------------------------------------
+Q4)  -1    -2    -3    -4    -5 ------------- range(-1,-6,-1)
+
+>>> for v in range(-1,-6,-1):
+...     print(v)
+...
+			-1
+			-2
+			-3
+			-4
+			-5
+---------------------------------------------------------------------------------------------------------------------------
+Q5)  10   9   8    7   6    5    4   3   2   1-----------range(10,0,-1)
+>>> for v in range(10,0,-1):
+...     print(v)
+...
+				10
+				9
+				8
+				7
+				6
+				5
+				4
+				3
+				2
+				1
+----------------------------------------------------------------------------------------------------------------------------
+Q6)  -5 -4  -3   -2  -1 -------------------- range(-5, 0,1)
+
+>>> for v in range(-5, 0,1):
+...     print(v)
+...
+-5
+-4
+-3
+-2
+-1
+		(OR)
+>>> for v in range(-5, 0):
+...     print(v)
+...
+-5
+-4
+-3
+-2
+-1
+--------------------------------------------------------------------------------------------------------------------------
+Q8)  50   40   30   20   10-----range(50,0,-10 )    or   range(50,9,-10)    or range(50,11,-10)
+
+>>> for v in range(50,0,-10):
+...     print(v)
+...
+50
+40
+30
+20
+10
+>>> for v in range(50,9,-10):
+...     print(v)
+...
+50
+40
+30
+20
+10
+-------------------------------------------------------------------------------------------------------------------------
+Q9)   -5  -4   -3  -2  -1   0    1    2    3   4    5---range(-5,6,1)  or range(-5,6)
+
+>>> for v in range(-5,6,1):
+...     print(v)
+...
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+>>> for v in range(-5,6):
+...     print(v)
+...
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+-------------------------------------------------------------------------------------------------------------------------
+Q10)   1000   900   800  700   600  500-----range(1000,400,-100)
+>>> for v in range(1000,400,-100):
+...     print(v)
+...
+1000
+900
+800
+700
+600
+500
+-----------------------------------------------------------------------------------------------------------
+Q11)  1000   2000   3000  4000  5000----range(1000,5001,1000)
+>>> for v  in range(1000,5001,1000):
+...     print(v)
+...
+1000
+2000
+3000
+4000
+5000
+------------------------------------------------------------------------------------------------------
+>>> n=9
+>>> for i in range(1,11):
+...     print(n,"x",i,"=",n*i)
+...
+9 x 1 = 9
+9 x 2 = 18
+9 x 3 = 27
+9 x 4 = 36
+9 x 5 = 45
+9 x 6 = 54
+9 x 7 = 63
+9 x 8 = 72
+9 x 9 = 81
+9 x 10 = 90
+--------------------------------------------------------------------------------------------------------
+>>> n=19
+>>> for i in range(1,11):
+...     print(n,"x",i,"=",n*i)
+...
+19 x 1 = 19
+19 x 2 = 38
+19 x 3 = 57
+19 x 4 = 76
+19 x 5 = 95
+19 x 6 = 114
+19 x 7 = 133
+19 x 8 = 152
+19 x 9 = 171
+19 x 10 = 190
+==============================X========================================
+>>> for v in r[::-1]:
+...     print(v)
+...
+15
+14
+13
+12
+11
+10
+>>> for v in r[::2]:
+...     print(v)
+...
+10
+12
+14
+----------------------------------
+>>> for v in r[2::-1]:
+...     print(v)
+...
+12
+11
+10
+======================================
+>>> range(100,111)[-1]------------110
+>>> range(100,111)[3]--------------103
+>>> for v in range(100,111)[::-2]:
+...     print(v)
+			...
+			110
+			108
+			106
+			104
+			102
+			100
+>>> for v in range(100,111,2)[::-2]:
+...     print(v)
+				...
+				110
+				106
+				102
+===================================================================
+
+	      III . List  Category Data Types(Collections or Data Structures )
+		=========================================================
+=>The purpose of List  Category Data Types is that "To store Multiple Values either of same 
+    type or Different type or both the types in single object with Unique and Duplicate Values".
+=>We have 2 data types in List  Category. They are
+
+			1. list (mutable)
+			2. tuple (immutable)
+
+========================================
+					list 
+			========================================
+=>'list' is one of the pre-defined class and treated as List Data Type.
+=>The purpose of list data type is that "To store Multiple Values either of same 
+    type or Different type or both the types in single object with Unique and Duplicate Values".
+=>The Elements or Data in list must be organized or Stored in  Square Brackets [ ] and 
+    Elements must be separated by Comma.
+		Syntax:   varname=[ Val1,Val2.....Val-n ]
+		here varname is an object of list type.
+=>An object of list maintains Insertion Order
+=>On the object of list, we can perform Both Indexing and Slicing Operations.
+=>We can convert One type values into list type value by using list()
+		Syntax:-     varname= list(object)
+=>An object of list belongs to Mutable bcoz list object allows us to update the values.
+=>with list data type, we can create two types of list objects. They are
+			a) Empty List
+			b) Non-Empty List
+-------------------------------
+a) Empty List
+-------------------------------
+=> Empty List is one which does not contain any elements and whose length is 0
+=>Syntax:-       varname=[]
+				(OR)
+			varname= list()
+--------------------------------------------------------------
+b) Non-Empty List
+-------------------------------
+=> Non-Empty List is one which  contains  elements and whose length is>0
+=>Syntax:-       varname=[Val1,Val2....Val-n]
+				(OR)
+			varname= list( (10,20,30,10,20)  )
+-----------------------------------------------------------------------------------------------------------------------------
+Examples:
+-----------------------------------------------------------------------------------------------------------------------------
+>>> l1=[10,20,30,40,50,60,10]
+>>> print(l1,type(l1))----------------[10, 20, 30, 40, 50, 60, 10] <class 'list'>
+>>> l2=[10,"Rossum",34.56,True,2+3j,10,"Python"]
+>>> print(l2,type(l2))------------[10, 'Rossum', 34.56, True, (2+3j), 10, 'Python'] <class 'list'>
+>>> len(l1)---------------7
+>>> len(l2)------------7
+>>> l3=[]
+>>> print(l3,type(l3))-------------[] <class 'list'>
+>>> len(l3)-------------0
+>>> l4=list()
+>>> print(l4,type(l4))-------------[] <class 'list'>
+>>> len(l4)----------------------0
+---------------------------------------------------
+>>> t1=(10,20,30,10,20)
+>>> print(t1,type(t1))---------------------(10, 20, 30, 10, 20) <class 'tuple'>
+>>> l5=list(t1)
+>>> print(l5,type(l5))---------------[10, 20, 30, 10, 20] <class 'list'>
+>>> l5[0]---------------10
+>>> l5[-1]---------------20
+>>> l5[-2]----------------10
+>>> l5[1:4]---------------[20, 30, 10]
+>>> l5[::-1]-----------------[20, 10, 30, 20, 10]
+----------------------------------------------------------------------------
+>>> l1=[10,"Rossum",34.56,"Python"]
+>>> print(l1,type(l1),id(l1))----------[10, 'Rossum', 34.56, 'Python'] <class 'list'> 1628265121408
+>>> l1[0]--------------10
+>>> l1[0]=101
+>>> print(l1,type(l1),id(l1))---[101, 'Rossum', 34.56, 'Python'] <class 'list'> 1628265121408
+>>> l1[0:2]------------[101, 'Rossum']
+>>> l1[0:2]=[201,"VAN"]
+>>> print(l1,type(l1),id(l1))-----------[201, 'VAN', 34.56, 'Python'] <class 'list'> 1628265121408
+-------------------------------------
+>>> s="Python is an oop lang"
+>>> print(s,type(s))
+Python is an oop lang <class 'str'>
+>>> l=list(s)
+>>> print(l,type(l))
+	['P', 'y', 't', 'h', 'o', 'n', ' ', 'i', 's', ' ', 'a', 'n', ' ', 'o', 'o', 'p', ' ', 'l', 'a', 'n', 'g'] <class 'list'>
+>>> l1=s.split()
+>>> print(l1,type(l1))---------------['Python', 'is', 'an', 'oop', 'lang'] <class 'list'>
+-----------------------------------------------------------------------------------------------------------------------------
+>>> l1=[10,20,30,40]
+>>> b=bytes(l1)
+>>> print(b,type(b))
+b'\n\x14\x1e(' <class 'bytes'>
+>>> ba=bytearray(l1)
+>>> print(ba,type(ba))
+bytearray(b'\n\x14\x1e(') <class 'bytearray'>
+----------------
+>>> l2=list(b)
+>>> l3=list(ba)
+>>> print(l2,type(l2))----------------[10, 20, 30, 40] <class 'list'>
+>>> print(l3,type(l3))-------------[10, 20, 30, 40] <class 'list'>
+===============================================================
+
+========================================
+					Pre-defined Functions in list 
+			========================================
+=>On list object, we can perform Both Indexing and Slicing Operation. Along with these 
+    operations, we can also perform many more operations by using pre-defined functions of list.
+-------------------------------------------------------------------------------------------------------------------------------
+1) append()
+-------------------------------------------------------------------------------------------------------------------------------
+=>Syntax:  listobj.append(value)
+=>This Function is used for adding the value(s) at the end of  list object.
+Examples:
+--------------------
+>>> l1=[10,"KVR"]
+>>> print(l1,type(l1),id(l1))-----------[10, 'KVR'] <class 'list'> 1628265121600
+>>> l1.append("Python")
+>>> print(l1,type(l1),id(l1))----------[10, 'KVR', 'Python'] <class 'list'> 1628265121600
+>>> l1.append(12.45)
+>>> print(l1,type(l1),id(l1))-----[10, 'KVR', 'Python', 12.45] <class 'list'> 1628265121600
+----------------------------
+>>> l1=[]
+>>> print(l1,type(l1),id(l1))--------[] <class 'list'> 1628265121408
+>>> l1.append(10)
+>>> l1.append("Ram")
+>>> l1.append("Hyd")
+>>> l1.append(45.67)
+>>> print(l1,type(l1),id(l1))---[10, 'Ram', 'Hyd', 45.67] <class 'list'> 1628265121408
+-------------------------------------------------------------------------------------------------------------------------------
+2) insert():
+-------------------------------------------------------------------------------------------------------------------------------
+Syntax:    listobj.insert(index, Value)
+=>This Function is used for Inserting value(s) at specified Index in list object
+-----------------
+Examples
+-----------------
+>>> l1=[10,"Rossum",34.56,True]
+>>> print(l1,type(l1),id(l1))------------[10, 'Rossum', 34.56, True] <class 'list'> 1628265121536
+>>> l1.insert(2,"Python")
+>>> print(l1,type(l1),id(l1))------[10, 'Rossum', 'Python', 34.56, True] <class 'list'> 1628265121536
+>>> l1[3]=55.55
+>>> print(l1,type(l1),id(l1))---[10, 'Rossum', 'Python', 55.55, True] <class 'list'> 1628265121536
+-----------------------------
+>>> l1=[10,"Rossum",34.56,True]
+>>> print(l1,type(l1),id(l1))
+[10, 'Rossum', 34.56, True] <class 'list'> 1628265121408
+>>> l1.insert(100,"HYD") # Even we specify wrong Index, value added at end / last
+>>> print(l1,type(l1),id(l1))---[10, 'Rossum', 34.56, True, 'HYD'] <class 'list'> 1628265121408
+---------------------------------------------------------------------------------------------------------------------------------
+3) clear()
+---------------------------------------------------------------------------------------------------------------------------------
+=>Syntax:   listobj.clear()
+=>This Function is used for removing all the elements of list
+--------------------
+Examples:
+------------------
+>>> l1=[10,"Rossum",34.56,True]
+>>> print(l1,type(l1),id(l1))---------[10, 'Rossum', 34.56, True] <class 'list'> 1628265121536
+>>> len(l1)----------4
+>>> l1.clear()
+>>> print(l1,type(l1),id(l1))--------[] <class 'list'> 1628265121536
+>>> len(l1)----------0
+---------------------------------------------------------------------------------------------------------------------------------
+4) remove()---Based on Value
+---------------------------------------------------------------------------------------------------------------------------------
+Syntax:   listobj.remove(Value)
+=>This Function is used for removing First Occurence of Specified value.
+=>If the Value does not exist in list object then we get ValueError
+----------------
+Examples
+----------------
+>>> l1=[10,"Rossum",34.56,True]
+>>> print(l1,type(l1),id(l1))-------------[10, 'Rossum', 34.56, True] <class 'list'> 1628260912448
+>>> l1.remove(34.56)
+>>> print(l1,type(l1),id(l1))---[10, 'Rossum', True] <class 'list'> 1628260912448
+>>> l1.remove("Rossum")
+>>> print(l1,type(l1),id(l1))---[10, True] <class 'list'> 1628260912448
+>>> l1.remove("Rossum")---ValueError: list.remove(x): x not in list
+>>> l1=[10,20,30,10,30,50,10]
+>>> print(l1,type(l1),id(l1))---[10, 20, 30, 10, 30, 50, 10] <class 'list'> 1628265121536
+>>> l1.remove(10)
+>>> print(l1,type(l1),id(l1))---[20, 30, 10, 30, 50, 10] <class 'list'> 1628265121536
+>>> l1.remove(10)
+>>> print(l1,type(l1),id(l1))---[20, 30, 30, 50, 10] <class 'list'> 1628265121536
+>>> l1.remove(10)
+>>> print(l1,type(l1),id(l1))----[20, 30, 30, 50] <class 'list'> 1628265121536
+-----------------------------------
+>>> l1=list()
+>>> print(l1)-------------[]
+>>> l1.remove("anuj")---------ValueError: list.remove(x): x not in list
+>>> list().remove("hyd")-----ValueError: list.remove(x): x not in list
+>>> [].remove(10)-----------ValueError: list.remove(x): x not in list
+-----------------------------------------------------------------------------------------------------------------------
+5) pop(index)-----Based Index
+-----------------------------------------------------------------------------------------------------------------------
+=>Syntax:    listobj.pop(Index)
+=>This Function is used for removing Value of List based on Index and it can be either +ve or 
+    -ve
+=>If we give Invalid Index then we get IndexError
+-----------------
+Examples:
+-----------------
+>>> l1=[10,"Rossum",34.56,True,10,"Anuj"]
+>>> print(l1)------------[10, 'Rossum', 34.56, True, 10, 'Anuj']
+>>> l1.pop(-2)-----------10
+>>> print(l1)----------[10, 'Rossum', 34.56, True, 'Anuj']
+>>> l1.pop(4)----------'Anuj'
+>>> print(l1)
+[10, 'Rossum', 34.56, True]
+>>> l1.pop(40)-------------IndexError: pop index out of range
+>>> list().pop(0)-----------IndexError: pop from empty list
+>>> [].pop(3)--------------IndexError: pop from empty list
+>>> [10,20,30,40,10].pop(3)------40
+---------------------------------------------------------------------------------------------------------------------------------
+6) pop()
+---------------------------------------------------------------------------------------------------------------------------------
+=>Syntax:   listobj.pop()
+=>This function is used for removing always last element (-1 Index based element) 
+=>When we call pop() upon  empty list then we get  IndexError.
+
+Examples:
+------------------
+>>> l1=[10,"Rossum",34.56,True,10]
+>>> print(l1,type(l1),id(l1))----[10, 'Rossum', 34.56, True, 10] <class 'list'> 1628265126976
+>>> l1.pop()-------10
+>>> print(l1,type(l1),id(l1))---[10, 'Rossum', 34.56, True] <class 'list'> 1628265126976
+>>> l1.insert(2,"Python")
+>>> print(l1,type(l1),id(l1))---[10, 'Rossum', 'Python', 34.56, True] <class 'list'> 1628265126976
+>>> l1.pop()----True
+>>> print(l1,type(l1),id(l1))---[10, 'Rossum', 'Python', 34.56] <class 'list'> 1628265126976
+>>> l1.pop()---34.56
+>>> print(l1,type(l1),id(l1))--[10, 'Rossum', 'Python'] <class 'list'> 1628265126976
+>>> l1.pop()---'Python'
+>>> print(l1,type(l1),id(l1))----[10, 'Rossum'] <class 'list'> 1628265126976
+>>> l1.pop()--------'Rossum'
+>>> print(l1,type(l1),id(l1))---[10] <class 'list'> 1628265126976
+>>> l1.pop()----10
+>>> print(l1,type(l1),id(l1))------[] <class 'list'> 1628265126976
+>>> l1.pop()----IndexError: pop from empty list
+>>> [].pop()---IndexError: pop from empty list
+>>> list().pop()---IndexError: pop from empty list
+>>> [10,20,30,40].pop()-----40
+------------------------------------------------------------------------------------------------------------------
+NOTE:   del  operator                  
+------------------------------------------------------------------------------------------------------------------
+Syntax1:     del    object[ Index ]
+Syntax2:     del    object[ BeginIndex:End Index ]
+Syntax3:     del    object
+=>Here "del" operator is used for deleting the elements of any object contains more elements 
+   either based on INDEXING or SLICING or TOTAL OBJECT with Content
+-------------------
+Examples:
+-------------------
+>>> l1=[10,"Rossum",34.56,True,10,"HYD","Python"]
+>>> print(l1,id(l1))---------[10, 'Rossum', 34.56, True, 10, 'HYD', 'Python'] 1628261237440
+>>> del l1[3]
+>>> print(l1,id(l1))----[10, 'Rossum', 34.56, 10, 'HYD', 'Python'] 1628261237440
+>>> del l1[2]
+>>> print(l1,id(l1))------[10, 'Rossum', 10, 'HYD', 'Python'] 1628261237440
+>>> del l1[2:4]
+>>> print(l1,id(l1))------[10, 'Rossum', 'Python'] 1628261237440
+>>> del l1[::2]
+>>> print(l1,id(l1))-------['Rossum'] 1628261237440
+>>> l1=[10,"Rossum",34.56,True,10,"HYD","Python"]
+>>> print(l1,id(l1))------[10, 'Rossum', 34.56, True, 10, 'HYD', 'Python'] 1628265126976
+>>> del l1
+>>> len(l1)----NameError: name 'l1' is not defined. Did you mean: 'l2'?
+------------------------------------------------------------------------------------------------------------------
+7) count()---Tomorrow class
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+count()
+index()
+copy()
+reverse()
+sort()
+extend()
+
+7) count():
+------------------------------------------------------------------------------------------------------------------
+Syntax:-   listobj.count(Value)
+=>This Function is used for counting number of occurences of a specified value.
+=>If a specified value does not exist in list object then we get 0.
+Examples:
+--------------
+>>> l1=[10,20,10,20,30,40,50,10,30,20,10]
+>>> print(l1)-----------------[10, 20, 10, 20, 30, 40, 50, 10, 30, 20, 10]
+>>> l1.count(10)------------4
+>>> l1.count(20)----------3
+>>> l1.count(30)----------2
+>>> l1.count(40)------------1
+>>> l1.count(400)-------------0
+>>> [10,10,10,10].count(10)-----------4
+>>> [].count(10)-------------------0
+>>> list().count("KVR")-------------0
+----------------------------------------------------------------------------------------------------
+8) index()
+----------------------------------------------------------------------------------------------------
+Syntax:--   listobj.index(Value)
+=>This Function is always used for finding First Occurence Index of the specified value.
+=>>If a specified value does not exist in list object then we get ValueError.
+Examples
+----------------
+>>> l1=[10,20,10,20,30,40,10]
+>>> print(l1)-----------[10, 20, 10, 20, 30, 40, 10]
+>>> l1.index(10)---------0
+>>> l1.index(20)--------1
+>>> l1.index(30)--------4
+>>> l1.index(40)--------5
+>>> for i,v in enumerate(l1):
+...     print(i,"--->",v)
+...
+			0 ---> 10
+			1 ---> 20
+			2 ---> 10
+			3 ---> 20
+			4 ---> 30
+			5 ---> 40
+			6 ---> 10
+>>> l1.index(400)--------ValueError: 400 is not in list
+----------------------------------------------------------
+>>> l1=["Ram","Raj",30,"Ram",34.56]
+>>> print(l1)-----------------------['Ram', 'Raj', 30, 'Ram', 34.56]
+>>> l1.index("Ram")------------0
+>>> l1.index(30)----------------2
+>>> l1.index(34.56)----------4
+>>> for i,v in enumerate(l1):
+...     print(i,"--->",v)
+...
+				0 ---> Ram
+				1 ---> Raj
+				2 ---> 30
+				3 ---> Ram
+				4 ---> 34.56
+---------------------------------------------------------------------------------------------------------------------------------
+9) copy()
+---------------------------------------------------------------------------------------------------------------------------------
+=>Syntax:       listobj2=listobj1.copy()
+=>This Function is used for copying the content of one list object to other list object 
+    (Implementing Shallow Copy)
+-------------------------
+Examples:
+-----------------------
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))----------[10, 'RS', 22.22] <class 'list'> 1469197418304
+>>> l2=l1.copy()  # Shalow Copy
+>>> print(l2,type(l2),id(l2))-----------[10, 'RS', 22.22] <class 'list'> 1469197144704
+---------------------------------------------------------
+>>> l1.append("Python")
+>>> l2.insert(2,"R")
+>>> print(l1,type(l1),id(l1))----------[10, 'RS', 22.22, 'Python'] <class 'list'> 1469197418304
+>>> print(l2,type(l2),id(l2))----------[10, 'RS', 'R', 22.22] <class 'list'> 1469197144704
+------------------------------------------------------
+Deep Copy Examples
+------------------------------------------------------
+Examples
+------------------
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))-------------------------[10, 'RS', 22.22] <class 'list'> 1469197176064
+>>> l2=l1 # Deep Copy
+>>> print(l2,type(l2),id(l2))---------------------[10, 'RS', 22.22] <class 'list'> 1469197176064
+>>> l1.append("Python")
+>>> print(l1,type(l1),id(l1))---------------[10, 'RS', 22.22, 'Python'] <class 'list'> 1469197176064
+>>> print(l2,type(l2),id(l2))------------[10, 'RS', 22.22, 'Python'] <class 'list'> 1469197176064
+>>> l2.insert(2,"Hyd")
+>>> print(l1,type(l1),id(l1))--------[10, 'RS', 'Hyd', 22.22, 'Python'] <class 'list'> 1469197176064
+>>> print(l2,type(l2),id(l2))---------[10, 'RS', 'Hyd', 22.22, 'Python'] <class 'list'> 1469197176064
+---------------------------------------------------------------------------------------
+NOTE: Slice Based Copy ---always considered as Shallow Copy
+Syntax:      object2=object[Begin:End:Step]
+Syntax:      object2=object[Begin:End]
+Syntax:      object2=object[ : : ] 
+
+-------------------------------------------------------------------------------------------
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))------------[10, 'RS', 22.22] <class 'list'> 1469197144704
+>>> l2=l1[0:2] # Slice Based Copy 
+>>> print(l2,type(l2),id(l2))----------[10, 'RS'] <class 'list'> 1469197418304
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))----------------------[10, 'RS', 22.22] <class 'list'> 1469197176064
+>>> l2=l1[::]  # Slice Based Copy
+>>> print(l2,type(l2),id(l2))-----------[10, 'RS', 22.22] <class 'list'> 1469197144704
+>>> l1.append("Python")
+>>> l2.insert(2,"R")
+>>> print(l1,type(l1),id(l1))---------[10, 'RS', 22.22, 'Python'] <class 'list'> 1469197176064
+>>> print(l2,type(l2),id(l2))--------[10, 'RS', 'R', 22.22] <class 'list'> 1469197144704
+---------------------------------------------------------------------------------------------------------------------------------
+10) reverse()
+---------------------------------------------------------------------------------------------------------------------------------
+=>Syntax:     listobj.reverse()
+=>This function is used for obtaining reverse of given elements of list in itself(back to front 
+    and vice-versa)
+=>Examples:
+-----------------
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))---------[10, 'RS', 22.22] <class 'list'> 1469197144704
+>>> l1.reverse()
+>>> print(l1,type(l1),id(l1))-----[22.22, 'RS', 10] <class 'list'> 1469197144704
+		(OR)
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))----[10, 'RS', 22.22] <class 'list'> 1469197176064
+>>> l1=l1[::-1]  # Slice based reverse
+>>> print(l1,type(l1),id(l1))-------[22.22, 'RS', 10] <class 'list'> 1469197418304
+---------------------------------------------------------------------------------------------------------------------------------
+11) sort()--Most Imp
+---------------------------------------------------------------------------------------------------------------------------------
+Syntax:-     listobj.sort() -----Gives in ASCending Order of list object in itself.
+				(OR
+		   listobj.sort(reverse=False)-------Gives in ASCending Order of list object in itself.
+		   listobj.sort(reverse=True)--------Gives in DESCending Order of list object in itself.
+
+Examples:
+---------------------------
+>>> l1=[10,20,-34,11,0,-1,23,15]
+>>> print(l1,type(l1),id(l1))----------[10, 20, -34, 11, 0, -1, 23, 15] <class 'list'> 1469197176064
+>>> l1.sort()
+>>> print(l1,type(l1),id(l1))-----[-34, -1, 0, 10, 11, 15, 20, 23] <class 'list'> 1469197176064
+>>> l1.reverse()
+>>> print(l1,type(l1),id(l1))----[23, 20, 15, 11, 10, 0, -1, -34] <class 'list'> 1469197176064
+-------------------------------
+>>> l1=[10,20,-34,11,0,-1,23,15]
+>>> print(l1,type(l1),id(l1))--------[10, 20, -34, 11, 0, -1, 23, 15] <class 'list'> 1469197418304
+>>> l1.sort(reverse=True)
+>>> print(l1,type(l1),id(l1))----[23, 20, 15, 11, 10, 0, -1, -34] <class 'list'> 1469197418304
+--------------------------------
+>>> l1=[10,20,-34,11,0,-1,23,15]
+>>> print(l1,type(l1),id(l1))------------[10, 20, -34, 11, 0, -1, 23, 15] <class 'list'> 1469197176064
+>>> l1.sort(reverse=False)
+>>> print(l1,type(l1),id(l1))----[-34, -1, 0, 10, 11, 15, 20, 23] <class 'list'> 1469197176064
+---------------------------
+>>> l1=["banana","kiwi","apple","sberry","orange"]
+>>> print(l1,type(l1),id(l1))---['banana', 'kiwi', 'apple', 'sberry', 'orange'] <class 'list'> 
+											1469197418304
+>>> l1.sort()
+>>> print(l1,type(l1),id(l1))---['apple', 'banana', 'kiwi', 'orange', 'sberry'] <class 'list'> 
+								1469197418304
+>>> l1=["banana","kiwi","apple","sberry","orange"]
+>>> print(l1,type(l1),id(l1))---['banana', 'kiwi', 'apple', 'sberry', 'orange'] <class 'list'> 
+						1469197176064
+>>> l1.sort(reverse=True)
+>>> print(l1,type(l1),id(l1))----['sberry', 'orange', 'kiwi', 'banana', 'apple'] <class 'list'> 
+                                              1469197176064
+---------------------------------------------------------------------------------------------------------------------------------
+12) extend()
+---------------------------------------------------------------------------------------------------------------------------------
+=>Syntax:-     listobj1.extend(listobj2)
+=>This Function is used for extednding or meging or adding all the values of listobj2 to listobj1.
+
+Examples:
+------------------
+>>> l1=[10,"Janaki Ram"]
+>>> print(l1,type(l1),id(l1))------[10, 'Janaki Ram'] <class 'list'> 1469197176064
+>>> l2=["Python","R","ML"]
+>>> l1.extend(l2)
+>>> print(l1,type(l1),id(l1))----[10, 'Janaki Ram', 'Python', 'R', 'ML'] <class 'list'> 1469197176064
+----------------------------------
+>>> l1=[10,20]
+>>> l2=["Python","R"]
+>>> l3=[1.2,0.2]
+>>> print(l1)-------------[10, 20]
+>>> print(l2)----------['Python', 'R']
+>>> print(l3)------------[1.2, 0.2]
+>>> l1.extend(l2,l3)-------TypeError: list.extend() takes exactly one argument (2 given)
+#We can this Problem By using Operator " + "
+>>> l1=l1+l2+l3
+>>> print(l1)----------[10, 20, 'Python', 'R', 1.2, 0.2]
+>>> print(l2)----------['Python', 'R']
+>>> print(l3)---------[1.2, 0.2]
+---------------------------------
+>>> l1=[10,20,30,40]
+>>> l2=[10,20,30,40]
+>>> l1.extend(l2)
+>>> print(l1)-----------[10, 20, 30, 40, 10, 20, 30, 40]
+>>> print(l2)-----------[10, 20, 30, 40]
+----------------------------------------
+>>> l1=[10,20,30,40]
+>>> l2=[10,20,30,40]
+>>> print(l1+l2)-------------[10, 20, 30, 40, 10, 20, 30, 40]
+---------------------------------------------------------------------------------------------------------------------------------
+
+=======================================================
+				Copy Techniques in Python
+		=======================================================
+=>In Python Programming, we have 2 types of Copy Techniques . They are
+			
+			1. Shallow Copy
+			2. Deep Copy
+-----------------------------
+1. Shallow Copy
+-----------------------------
+=>The Properties of Shallow Copy are
+			a) Intial Content of Both the Objects are Same
+			b) Address of Both the Objects are Different
+			c) Modifications are Indepedent ( Whatever the changes we do on one object, 
+			    they are not reflecting on other object)
+=>To Implement Shallow Copy, we use copy().	
+
+=>Syntax:-           object2=object1.copy()
+
+Examples:
+---------------------
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))----------[10, 'RS', 22.22] <class 'list'> 1469197418304
+>>> l2=l1.copy()  # Shalow Copy
+>>> print(l2,type(l2),id(l2))-----------[10, 'RS', 22.22] <class 'list'> 1469197144704
+---------------------------------------------------------
+>>> l1.append("Python")
+>>> l2.insert(2,"R")
+>>> print(l1,type(l1),id(l1))----------[10, 'RS', 22.22, 'Python'] <class 'list'> 1469197418304
+>>> print(l2,type(l2),id(l2))----------[10, 'RS', 'R', 22.22] <class 'list'> 1469197144704
+------------------------------------------------------------------------------------------------------------------------------
+2. Deep Copy
+------------------------------------------------------------------------------------------------------------------------------
+=>The Properties of Deep Copy are
+			a) Intial Content of Both the Objects are Same
+			b) Address of Both the Objects are Same
+			c) Modifications are Depedent ( Whatever the changes we do on one object, 
+			    they are  reflecting on other object)
+=>To implement Deep Copy, we use Assigment Operator ( = )
+
+=>Syntax:     Object2=Object1
+
+Examples
+------------------
+>>> l1=[10,"RS",22.22]
+>>> print(l1,type(l1),id(l1))-------------------------[10, 'RS', 22.22] <class 'list'> 1469197176064
+>>> l2=l1 # Deep Copy
+>>> print(l2,type(l2),id(l2))---------------------[10, 'RS', 22.22] <class 'list'> 1469197176064
+>>> l1.append("Python")
+>>> print(l1,type(l1),id(l1))---------------[10, 'RS', 22.22, 'Python'] <class 'list'> 1469197176064
+>>> print(l2,type(l2),id(l2))------------[10, 'RS', 22.22, 'Python'] <class 'list'> 1469197176064
+>>> l2.insert(2,"Hyd")
+>>> print(l1,type(l1),id(l1))--------[10, 'RS', 'Hyd', 22.22, 'Python'] <class 'list'> 1469197176064
+>>> print(l2,type(l2),id(l2))---------[10, 'RS', 'Hyd', 22.22, 'Python'] <class 'list'> 1469197176064
+---------------------------------------------------------------------------------------------------------------------
+
+=======================================================
+					Inner (OR) Nested list
+		=======================================================
+=>The Process of Defining One List in another List is called Inner or Nested List
+
+=>Syntax:-   lstobj1=[ Val1,Val2........[Val11,Val12....Val1n].....[Val21,Val22...Val2n]...................Val-n ]
+=>Here  [Val11,Val12....Val1n] is called One Inner OR Nested List
+	      [Val21,Val22...Val2n]  is called another Inner OR Nested List
+         [ Val1,Val2........[Val11,Val12....Val1n].....[Val21,Val22...Val2n]...................Val-n ] is called Outer List
+=>All the pre-defined Functions of List can be applied on Inner or Nested list.
+=>On Inner or Nested List we can perform Index and Slicing Operations.
+-------------------------
+Examples:
+-------------------------
+>>> sf=[10,"RS",[17,18,16],[78,66,79],"OUCET"]
+>>> print(sf,type(sf))
+[10, 'RS', [17, 18, 16], [78, 66, 79], 'OUCET'] <class 'list'>
+>>> sf[0]--------------10
+>>> sf[1]------------'RS'
+>>> print(sf[2],type(sf[2]),type(sf))-------------[17, 18, 16] <class 'list'> <class 'list'>
+>>> print(sf[3],type(sf[3]),type(sf))------------[78, 66, 79] <class 'list'> <class 'list'>
+>>> sf[2][0]-----------17
+>>> sf[-3][-3]-----------17
+>>> sf[-3][1:]----------[18, 16]
+>>> sf[-4][::-1]----------'SR'
+>>> sf[-2][::-1]---------[79, 66, 78]
+>>> print(sf,type(sf)------------[10, 'RS', [17, 18, 16], [78, 66, 79], 'OUCET'] <class 'list'>
+>>> sf[2].append(15)
+>>> print(sf,type(sf))---------[10, 'RS', [17, 18, 16, 15], [78, 66, 79], 'OUCET'] <class 'list'>
+>>> sf[3].insert(1,80)
+>>> print(sf,type(sf))--------[10, 'RS', [17, 18, 16, 15], [78, 80, 66, 79], 'OUCET'] <class 'list'>
+>>> sf[2].clear()
+>>> print(sf,type(sf))------[10, 'RS', [], [78, 80, 66, 79], 'OUCET'] <class 'list'>
+>>> del sf[3]
+>>> print(sf,type(sf))------[10, 'RS', [], 'OUCET'] <class 'list'>
+>>> sf[2].append(12)
+>>> print(sf,type(sf))----------[10, 'RS', [12], 'OUCET'] <class 'list'>
+---------------------------------------------------
+l1=[[10,20,30],[40,50,60],[70,80,90]]
+>>> print(l1,type(l1))-------------[[10, 20, 30], [40, 50, 60], [70, 80, 90]] <class 'list'>
+>>> for val in l1:
+...     print(val)
+...
+				[10, 20, 30]
+				[40, 50, 60]
+				[70, 80, 90]
+==================================X=============================================
+
+=============================================
+							2. tuple
+				=============================================
+=>'tuple' is one of the pre-defined class and treated as List Data Type.
+=>The purpose of tuple data type is that "To store Multiple Values either of same 
+     type or Different type or both the types in single object with Unique and Duplicate Values".
+=>The Elements or Data in tuple must be organized or Stored in  braces  ( )  and 
+    Elements must be separated by Comma.
+		Syntax:   varname=( Val1,Val2.....Val-n )
+		here varname is an object of tuple type.
+=>An object of tuple maintains Insertion Order
+=>On the object of tuple, we can perform Both Indexing and Slicing Operations.
+=>We can convert One type values intotuple type value by using  tuple()
+		Syntax:-     varname= tuple(object)
+=>An object of tuple belongs to Immutable bcoz tuple object  does not support Item Assigment.
+=>with tuple data type, we can create two types of tuple objects. They are
+			a) Empty tuple
+			b) Non-Empty tuple
+-------------------------------
+a) Empty tuple
+-------------------------------
+=> Empty tuple is one which does not contain any elements and whose length is 0
+=>Syntax:-       varname=( )
+				(OR)
+			varname=tuple()
+--------------------------------------------------------------
+b) Non-Empty tuple
+------------------------------------------------------------------
+=> Non-Empty tuple  is one which  contains  elements and whose length is>0
+=>Syntax:-       varname=(Val1,Val2....Val-n)
+				(OR)
+			varname=tuple ( [10,20,30,10,20]  )
+				(OR)
+			 varname= Val1,Val2....Val-n
+---------------------
+NOTE:
+---------------------
+=>The Functionality of tuple is extarctly similar to list but an object of list belongs to mutable where as an object tuple belongs to immutable.
+===============================================================================
+Examples
+---------------------------
+>>> t1=(10,20,30,40,50,60,10,20)
+>>> print(t1,type(t1))-----------------(10, 20, 30, 40, 50, 60, 10, 20) <class 'tuple'>
+>>> t2=(10,"RS",34.56,"Python",2+3j,True)
+>>> print(t2,type(t2))--------(10, 'RS', 34.56, 'Python', (2+3j), True) <class 'tuple'>
+>>> t2[0]-----------------10
+>>> t2[1]------------------'RS'
+>>> t2[1:4]----------------('RS', 34.56, 'Python')
+>>> t2[::-1]--------------(True, (2+3j), 'Python', 34.56, 'RS', 10)
+-------------------------------------------------
+>>> t2=(10,"RS",34.56,"Python",2+3j,True)
+>>> print(t2,type(t2))------------(10, 'RS', 34.56, 'Python', (2+3j), True) <class 'tuple'>
+>>> t2[0]=110-----TypeError: 'tuple' object does not support item assignment
+-----------------------------------------------------------
+>>> t1=10,"KVR",34.56,"Hyd"
+>>> print(t1,type(t1))---------------(10, 'KVR', 34.56, 'Hyd') <class 'tuple'>
+>>> l1=[10,"RS",67.89,"Python"]
+>>> print(l1,type(l1))-----------[10, 'RS', 67.89, 'Python'] <class 'list'>
+>>> t1=tuple(l1)
+>>> print(t1,type(t1))---------(10, 'RS', 67.89, 'Python') <class 'tuple'>
+---------------------------------------------------------------------
+=============================================
+						Pre-defined Function in tuple
+				=============================================
+=>We know that on the object of tuple we can perform Both Indexing and Slicing Operations.
+=>Along with  these operations, we can also perform other operations by using the following pre-defined  Functions.
+
+1)index()
+2)count()
+-------------------
+Examples:
+------------------
+>>> t1=(10,"RS",45.67)
+>>> print(t1,type(t1))------------(10, 'RS', 45.67) <class 'tuple'>
+>>> t1.index(10)---------0
+>>> t1.index("RS")------1
+>>> t1=(10,"RS",45.67)
+>>> print(t1,type(t1))-------(10, 'RS', 45.67) <class 'tuple'>
+>>> t1.count(10)-------1
+>>> t1.count(100)------0
+---------------------------
+The Functions not present in tuple
+---------------------------
+append()
+insert()
+remove()
+clear()
+pop(index)
+pop()
+reverse()
+sort()
+copy()
+extend()
+---------------------------------------
+NOTE:-   By Using  del Operator we can't  delete values of tupple object By using Indexing and   slicing 
+               but we can delete entire object
+Examples:
+---------------
+>>> t1=(10,-34,0,10,23,56,76,21)
+>>> print(t1,type(t1))--------------(10, -34, 0, 10, 23, 56, 76, 21) <class 'tuple'>
+>>> del t1[0]------TypeError: 'tuple' object doesn't support item deletion
+>>> del t1[0:4]----TypeError: 'tuple' object does not support item deletion
+>>> del t1  # Here we are removing complete object.
+>>> print(t1,type(t1))-----NameError: name 't1' is not defined. 
+===========================================================================
+======================================================
+					Inner (OR) Nested tuple
+		=======================================================
+=>The Process of Defining One tuple in another tuple is called Inner or Nested tuple
+
+=>Syntax:-  tplobj1=( Val1,Val2........(Val11,Val12....Val1n).....(Val21,Val22...Val2n)...................Val-n )
+=>Here  (Val11,Val12....Val1n) is called One Inner OR Nested tuple
+	      (Val21,Val22...Val2n)  is called another Inner OR Nested tuple
+ ( Val1,Val2........(Val11,Val12....Val1n).....(Val21,Val22...Val2n)...................Val-n ) is called Outer tuple
+=>All the pre-defined Functions of tuple can be applied on Inner or Nested tuple.
+=>On Inner or Nested tuple we can perform Index and Slicing Operations.
+----------------------------------------------------------------------------------------------------------
+>>> sf=(10,"RS",(17,18,16),(78,66,79),"OUCET")
+>>> print(sf,type(sf))------------(10, 'RS', (17, 18, 16), (78, 66, 79), 'OUCET') <class 'tuple'>
+>>> print(sf[0])-----10
+>>> print(sf[2],type(sf[2]),type(sf))---------(17, 18, 16) <class 'tuple'> <class 'tuple'>
+>>> print(sf[0:3])------------(10, 'RS', (17, 18, 16))
+---------------------------------------------------------------------------
+>>> sf=(10,"RS",[17,18,16],(78,66,79),"OUCET")
+>>> print(sf,type(sf))----------------(10, 'RS', [17, 18, 16], (78, 66, 79), 'OUCET') <class 'tuple'>
+>>> print(sf[2],type(sf[2]),type(sf))------------[17, 18, 16] <class 'list'> <class 'tuple'>
+>>> sf[2].append(12)
+>>> print(sf[2],type(sf[2]),type(sf))------------[17, 18, 16, 12] <class 'list'> <class 'tuple'>
+>>> print(sf,type(sf))---------(10, 'RS', [17, 18, 16, 12], (78, 66, 79), 'OUCET') <class 'tuple'>
+>>> sf[3].append(12)---AttributeError: 'tuple' object has no attribute 'append'
+-------------------------------------------------------
+>>> sf=[10,"RS",[17,18,16],(78,66,79),"OUCET"]
+>>> print(sf,type(sf))-------------[10, 'RS', [17, 18, 16], (78, 66, 79), 'OUCET'] <class 'list'>
+>>> print(sf[2],type(sf[2]),type(sf))--------[17, 18, 16] <class 'list'> <class 'list'>
+>>> print(sf[3],type(sf[3]),type(sf))-------(78, 66, 79) <class 'tuple'> <class 'list'>
+-----------------------------------------------------------------------------------------------------------
+NOTE:
+--------
+=>One can define One List in another List
+=>One can define One Tuple in another Tuple
+=>One can define One List in another Tuple ( tuple of lists)
+=>One can define One tuple in another List (list of tuples)
+---------------------------------------------------------------------------------------------------------
+
+===========================================================
+			Set Category Data Types (Collections or Data Structures )
+		===========================================================
+=>The purpose of Set  Category Data Types is that "To store Multiple Values either of same 
+    type or Different type or both the types in single object with Unique Values".
+=>We have 2 data types in set  Category. They are
+			1) set  ( Mutable and Immutable )
+			2) frozenset ( Immutable )
+-----------------------------------------------------------------------------------------------------------------------------
+
+=====================================
+					set 
+			=====================================
+=>'set' is one of the pre-defined class and treated as set data type.
+=>The purpose of set data type is that "To store Multiple Values either Simiar Type or      
+    Different Type or Both the Types in Single Object with Unique  Values".
+=>The elements of set must be written within Curly braces {  } and Elements must separted by 
+    comma.
+=>An Object of set never maintains Insertion Order bcoz PVM can display any one of the 
+    possibility of elements of set object.
+=>On the object of set, we can't perform Indexing and Slicing Operations bcoz set object 
+    never maintains Insertion Order.
+=>An object of set belongs to both Immutable bcoz set' object does not support item 
+    assignment and mutable in the case of add()
+=>we can create two types of set objects. They are
+			a) Empty set
+			b) Non-Empty  set
+a) Empty set:
+------------------------
+=>An Empty  set is one, which does not contain any elements and whose length is 0
+=>Syntax:        setobj=set()
+
+b) Non-Empty set:
+------------------------
+=>A Non-Empty set is one, which  contains  elements and whose length is >0
+=>Syntax:         setobj={ val1, val2, ....val-n }
+=================================x===================================
+Examples:
+----------------------------------------------------------
+>>> s1={10,20,30,40}
+>>> print(s1,type(s1))---------------{40, 10, 20, 30} <class 'set'>
+>>> s2={10,20,10,20,10,30,15,12,-34}
+>>> print(s2,type(s2))------------------{20, -34, 10, 12, 30, 15} <class 'set'>
+>>> s3={10,"Rossum","Python",34.56,True}
+>>> print(s3,type(s3))---------------------{True, 34.56, 'Rossum', 10, 'Python'} <class 'set'>
+---------------------------------------------
+>>> s3={10,"Rossum","Python",34.56,True}
+>>> print(s3,type(s3))-----------------{True, 34.56, 'Rossum', 10, 'Python'} <class 'set'>
+>>> s3={10,20,30,40,10,50,20}
+>>> print(s3,type(s3))--------------------------{50, 20, 40, 10, 30} <class 'set'>
+>>> s3[0]-----------------TypeError: 'set' object is not subscriptable
+>>> s3[2:4]-------------TypeError: 'set' object is not subscriptable
+---------------------------------------------------------------------
+>>> s3={10,20,30,40,10,50,20}
+>>> print(s3,type(s3))--------------------{50, 20, 40, 10, 30} <class 'set'>
+>>> len(s3)-----------------5
+>>> s4={}
+>>> print(s4,type(s4))--------------{} <class 'dict'>
+>>> s5=set()
+>>> print(s5,type(s5))---------------set() <class 'set'>
+>>> len(s5)--------------0
+-------------------------------------------------------------------------------------
+>>> s3={10,20,30,40,10,50,20}
+>>> print(s3,type(s3),id(s3))---------------{50, 20, 40, 10, 30} <class 'set'> 2227059430720
+>>> s3[0]=100------------TypeError: 'set' object does not support item assignment
+>>> s3.add(23.45)
+>>> print(s3,type(s3),id(s3))---{50, 20, 23.45, 40, 10, 30} <class 'set'> 2227059430720
+-----------------------------------------------------
+=====================================
+				Pre-Defined Functions in  set 
+			=====================================
+=>On the object of set, we can perform different Operations by using the pre-defined functions 
+   present in set object.
+---------------------------------------------------------------------------------------------------------------------------
+1) clear():
+---------------------------------------------------------------------------------------------------------------------------
+=>Syntax:    setobj.clear()
+=>This Function is used for removing all the elements of set object.
+-------------------
+Examples:
+-------------------
+>>> s3={10,"KVR","PYTHON","DSC",34.56,True}
+>>> print(s3,type(s3))------------{'KVR', True, 34.56, 'PYTHON', 'DSC', 10} <class 'set'>
+>>> len(s3)-------------------6
+>>> s3.clear()
+>>> print(s3,type(s3))---------set() <class 'set'>
+>>> len(s3)-------------0
+>>> s=set()
+>>> s.clear()-------------------No Output
+>>> print(s.clear())---------None
+---------------------------------------------------------------------------------------------------------------------------
+2) add()
+---------------------------------------------------------------------------------------------------------------------------
+=>Syntax:setobj.add(value)
+=>This Function is used for adding the values to the set object.
+-----------------------
+Examples:
+-----------------------
+>>> s3={10,"KVR","PYTHON"}
+>>> print(s3,type(s3),id(s3))----------{'KVR', 10, 'PYTHON'} <class 'set'> 1804736794848
+>>> s3.add(23.45)
+>>> print(s3,type(s3),id(s3))---{'KVR', 10, 'PYTHON', 23.45} <class 'set'> 1804736794848
+>>> s3.add("HYD")
+>>> print(s3,type(s3),id(s3))--{10, 'HYD', 'KVR', 'PYTHON', 23.45} <class 'set'> 1804736794848
+--------------------------------------------------------------------------------------------------------
+3) remove()---------Based on Value
+--------------------------------------------------------------------------------------------------------
+=>Syntax:     setobj.remove(Value)
+=>This Function is used for removing the Value(Key) from set object
+=>If the specified Value  does not exist  in the set object then we get KeyError
+-----------------------------------
+=>Examples:
+-----------------------------------
+>>> s3={10,"KVR","PYTHON","HYD",34.56}
+>>> print(s3,type(s3),id(s3))-----{'KVR', 34.56, 'PYTHON', 10, 'HYD'} <class 'set'> 1804736795744
+>>> s3.remove(34.56)
+>>> print(s3,type(s3),id(s3))---{'KVR', 'PYTHON', 10, 'HYD'} <class 'set'> 1804736795744
+>>> s3.remove("PYTHON")
+>>> print(s3,type(s3),id(s3))---{'KVR', 10, 'HYD'} <class 'set'> 1804736795744
+>>> s3.remove(34.56)---KeyError: 34.56
+>>> s=set()
+>>> s.remove("KVR")---------KeyError: 'KVR'
+>>> set().remove(12)---------KeyError: 12
+--------------------------------------------------------------------------------------------------------
+4) discard()
+--------------------------------------------------------------------------------------------------------
+=>Syntax:      setobj.discard(Value)
+=>This Function is used for removing the Value(Key) from set object
+=>If the specified Value  does not exist  in the set object then we never get any error
+----------------
+Examples:
+---------------
+>>> s3={10,"KVR","PYTHON","HYD",34.56}
+>>> print(s3,type(s3),id(s3))-----{'KVR', 34.56, 'PYTHON', 10, 'HYD'} <class 'set'> 1804736794848
+>>> s3.discard("KVR")
+>>> print(s3,type(s3),id(s3))---{34.56, 'PYTHON', 10, 'HYD'} <class 'set'> 1804736794848
+>>> s3.discard(10)
+>>> print(s3,type(s3),id(s3))---{34.56, 'PYTHON', 'HYD'} <class 'set'> 1804736794848
+>>> s3.discard("KVR")
+>>> print(s3,type(s3),id(s3))---{34.56, 'PYTHON', 'HYD'} <class 'set'> 1804736794848
+>>> s3.remove("KVR")---KeyError: 'KVR'
+--------------------------------------------------------------------------------------------------------------------------
+5) pop()
+--------------------------------------------------------------------------------------------------------------------------
+=>Syntax:      setobj.pop()
+=>This Function is used for removing Any Arbitrary Element from set object
+=>When we call pop() upon empty set object then we get KeyError.
+------------------
+Examples:
+------------------
+>>> s3={10,"KVR","PYTHON","HYD",34.56}
+>>> s3.pop()-----------'KVR'
+>>> s3.pop()-----------34.56
+>>> s3.pop()---------'PYTHON'
+>>> s3.pop()----------10
+>>> s3.pop()---------'HYD'
+>>> print(s3,len(s3))----set() 0
+>>> s3.pop()----KeyError: 'pop from an empty set'
+--------------------------------------------------------------------------------------------------------------------------
+6) copy()
+--------------------------------------------------------------------------------------------------------------------------
+=>Syntax:     setobj2=setobj1.copy()
+=>This Function is used for Copying the content of One set object to another set object.
+Examples:
+---------------------------
+>>> s3={10,"KVR","PYTHON","HYD",34.56}
+>>> print(s3,type(s3),id(s3))---{'KVR', 34.56, 'PYTHON', 10, 'HYD'} <class 'set'> 1804736796192
+>>> s4=s3.copy()  # Shallow Copy
+>>> print(s4,type(s4),id(s4))--{'KVR', 34.56, 'PYTHON', 10, 'HYD'} <class 'set'> 1804736794848
+>>> s3.add("DSC")
+>>> s4.add("Django")
+>>> print(s3,type(s3),id(s3))--{'KVR', 34.56, 'PYTHON', 'DSC', 10, 'HYD'} <class 'set'>												1804736796192
+>>> print(s4,type(s4),id(s4))----{'KVR', 34.56, 'PYTHON', 10, 'HYD', 'Django'} <class 'set'> 
+							1804736794848
+--------------------------------------------------------------------------------------------------------------------------
+7) isdisjoint()
+--------------------------------------------------------------------------------------------------------------------------
+Syntax:     setobj1.isdisjoint(setobj2)
+=>This Function returns True provided there is no common element otherwise it returns False
+Examples:
+------------------
+>>> s1={10,20,30,40}
+>>> s2={15,25,10,35}
+>>> s3={95,85,75,65,55}
+>>> print(s1)-----------{40, 10, 20, 30}
+>>> print(s2)---------{25, 10, 35, 15}
+>>> print(s3)--------{65, 85, 55, 75, 95}
+>>> s1.isdisjoint(s3)--------True
+>>> s1.isdisjoint(s2)--------False
+>>> s3.isdisjoint(s2)--------True
+--------------------------------------------------------------------------------------------------------------------------
+8) issubset()----Monday
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+9) issuperset
+10) union()
+11) intersection()
+12) difference()
+13) symmetric_difference 
+14) update()
+
+8) issubset()
+--------------------------------------------------------------------------------------------------------------------------
+=>Syntax:   setobj1.issubset(setobj2)
+=>This Function returns True Provded All elements of SetObj1 must present in setobj2 
+    otherwise it returns False.
+Examples:
+----------------------
+>>> s1={10,20,30,40,50}
+>>> s2={10,20}
+>>> s3={10,15,25}
+>>> s2.issubset(s1)----------True
+>>> s3.issubset(s1)---------False
+>>> s3.issubset(s2)---------False
+--------------------------------------------------------------------------------------------------------------------------
+9) issuperset
+--------------------------------------------------------------------------------------------------------------------------
+Syntax:-   setobj1.issuperset(setobj2)
+=>This Function returns True provided setobj1 contains all the elements setobj2 otherwise it 
+    returns False
+---------------------
+Examples:
+--------------------
+>>> s1={10,20,30,40,50}
+>>> s2={10,20}
+>>> s3={10,15,25}
+>>> s1.issuperset(s2)--------True
+>>> s1.issuperset(s3)--------False
+>>> s2.issuperset(s3)--------False
+>>> s2.issuperset(s1)--------False
+--------------------------------------------------------------------------------------------------------------------------
+10) union()
+--------------------------------------------------------------------------------------------------------------------------
+=>Syntax:      setobj3=setobj1.union(setobj2)
+=>This Function obtains all the Unique elements  of setobj1 and setobj2 and result placed in 
+    setobj3.
+=>Examples:
+----------------------
+>>> cp={"sachin","Rohit","Kohli"}
+>>> tp={"Rohit","Rossum","Rajesh"}
+>>> print(cp)-------------------{'sachin', 'Kohli', 'Rohit'}
+>>> print(tp)-------------------{'Rossum', 'Rajesh', 'Rohit'}
+>>> allcptp=cp.union(tp)
+>>> print(allcptp)------------{'sachin', 'Rohit', 'Rajesh', 'Rossum', 'Kohli'}
+>>> allcptp=tp.union(cp)
+>>> print(allcptp)-------------{'sachin', 'Kohli', 'Rajesh', 'Rohit', 'Rossum'}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+11) intersection()
+--------------------------------------------------------------------------------------------------------------------------
+Syntax:-        setobj3=setobj1.intersection(setobj2)
+=>This Function obtains Common Value from both setobj1 and setobj2.
+=>If  common elements are not existing  then this function gives empty set( set() )
+---------------------------
+Examples:
+----------------------------
+>>> cp={"sachin","Rohit","Kohli"}
+>>> tp={"Rohit","Rossum","Rajesh"}
+>>> print(cp)---------------{'sachin', 'Kohli', 'Rohit'}
+>>> print(tp)---------------{'Rossum', 'Rajesh', 'Rohit'}
+>>> bothcptp=cp.intersection(tp)
+>>> print(bothcptp)-----------{'Rohit'}
+>>> bothcptp=tp.intersection(cp)
+>>> print(bothcptp)------------{'Rohit'}
+--------------------------------------------------------------------------------------------------------------------------
+12) difference()
+--------------------------------------------------------------------------------------------------------------------------
+Syntax:-     setobj3=setobj1.difference(setobj2)
+=>This Function removes the common elements from both setobj1 and setobj2 , Takes 
+    remaining elements from setobj1 and placed in setobj3.
+					(OR)
+Syntax:-     setobj3=setobj2.difference(setobj1)
+=>This Function removes the common elements from both setobj1 and setobj2 , Takes 
+    remaining elements from setobj2 and placed in setobj3.
+
+Examples:
+----------------
+>>> cp={"sachin","Rohit","Kohli"}
+>>> tp={"Rohit","Rossum","Rajesh"}
+>>> print(cp)-------------{'sachin', 'Kohli', 'Rohit'}
+>>> print(tp)-------------{'Rossum', 'Rajesh', 'Rohit'}
+>>> onlycp=cp.difference(tp)
+>>> print(onlycp)----------{'sachin', 'Kohli'}
+>>> onlytp=tp.difference(cp)
+>>> print(onlytp)-----------{'Rossum', 'Rajesh'}
+--------------------------------------------------------------------------------------------------------------------------
+13) symmetric_difference 
+--------------------------------------------------------------------------------------------------------------------------
+Syntax:-     setobj3=setobj1.symmetric_difference(setobj2)
+=>This Function removes the common elements from both setobj1 and setobj2 , Takes 
+    remaining elements from both setobj1 and setobj2 and placed in setobj3.
+Examples:
+-------------------
+>>> cp={"sachin","Rohit","Kohli"}
+>>> tp={"Rohit","Rossum","Rajesh"}
+>>> cptpxcl=cp.symmetric_difference(tp)
+>>> print(cptpxcl)----------{'sachin', 'Kohli', 'Rajesh', 'Rossum'}
+>>> cptpxcl=tp.symmetric_difference(cp)
+>>> print(cptpxcl)----------{'sachin', 'Kohli', 'Rajesh', 'Rossum'}
+------------------------------------------------------------------------------
+Special POINTS---Bitwise Operations on Sets
+-----------------------------------------------------------------------------
+>>> cp={"sachin","Rohit","Kohli"}
+>>> tp={"Rohit","Rossum","Rajesh"}
+>>> allcptp=cp|tp
+>>> print(allcptp)---------{'sachin', 'Rohit', 'Rajesh', 'Rossum', 'Kohli'}
+>>> bothcptp=cp&tp
+>>> print(bothcptp)------{'Rohit'}
+>>> onlycp=cp-tp
+>>> print(onlycp)--------{'sachin', 'Kohli'}
+>>> onlytp=tp-cp
+>>> print(onlytp)---------{'Rossum', 'Rajesh'}
+>>> cptpexcl=cp^tp
+>>> print(cptpexcl)--------{'sachin', 'Kohli', 'Rajesh', 'Rossum'}
+------------------------------------------------------------------------------------------------------------------
+>>> s1={10,20,30,40}
+>>> s2={15,10,25,20}
+>>> s3={10,25,45,55}
+>>> s1.union(s2,s3)------------{40, 10, 45, 15, 20, 55, 25, 30}
+>>> s1.union(s2).union(s3)-------{40, 10, 45, 15, 20, 55, 25, 30}
+>>> s1.intersection(s2,s3)--------{10}
+>>> s1.intersection(s2).intersection(s3)-------{10}
+>>> s1&s2&s3------------{10}
+>>> s1.difference(s2,s3)---------{40, 30}
+>>> s1.difference(s2).difference(s3)------{40, 30}
+--------------------------------------------------------------------------------------------------------------------------
+14) update()
+--------------------------------------------------------------------------------------------------------------------------
+=>Syntax:-      setobj1.update(setobj2)
+=>This Function is used for adding / updating all the values of setobj2 to setobj1 .
+-------------------
+Examples:
+-------------------
+>>> s1={10,20,30,40}
+>>> s2={15,25,35}
+>>> print(s1)-----------{40, 10, 20, 30}
+>>> print(s2)-----------{25, 35, 15}
+>>> s3=s1.update(s2)
+>>> print(s3)---------None
+>>> print(s1)-------{35, 20, 40, 25, 10, 30, 15}
+>>> print(s2)--------{25, 35, 15}
+-----------------------------------------
+>>> s1={10,20,30}
+>>> s2={10,15,25}
+>>> print(s1)---------{10, 20, 30}
+>>> print(s2)---------{25, 10, 15}
+>>> s1.update(s2)
+>>> print(s1)------------{20, 25, 10, 30, 15}
+---------------------------------------------
+>>> s1={10,20,30}
+>>> s2={10,20,30}
+>>> print(s1)------------{10, 20, 30}
+>>> s1={10,20,30}
+>>> s1.update(s2)
+>>> print(s1)---------{20, 10, 30}
+>>> print(s2)---------{10, 20, 30}
+--------------------------------------------------------------------------------------------------------------------------
+
+
+==============================================
+				Nested or Inner Properties of Set
+		===============================================
+=>We can define 
+
+	a)  Defining set inside of another set  NOT POSSIBLE 
+	b)  Defining set inside of another Tuple  POSSIBLE
+	c)  Defining set inside of another List POSSIBLE
+	d)  Defining tuple inside of Another Set POSSIBLE 
+	e) Defining  list inside of another set NOT POSSIBLE
+
+----------------------
+Examples:
+------------------
+>>> s1={10,"Rossum",{10,15,16},"OUCET"}-----TypeError: unhashable type: 'set'
+>>> s1={10,"Rossum",[10,15,16],"OUCET"}----TypeError: unhashable type: 'list'
+>>> s1={10,"Rossum",(10,15,16),"OUCET"}-----
+>>> print(s1,type(s1))----{'Rossum', 10, 'OUCET', (10, 15, 16)} <class 'set'>
+--------------------
+>>> t1=(10,"Rossum",{10,15,16},"OUCET")
+>>> print(t1[2],type(t1[2]),type(t1))----{16, 10, 15} <class 'set'> <class 'tuple'>
+>>> l1=[10,"Rossum",{10,15,16},"OUCET"]
+>>> print(l1[2],type(l1[2]),type(l1))----{16, 10, 15} <class 'set'> <class 'list'>
+=================================x=========================================
+
+===============================================
+					 frozenset
+		===============================================
+=>'frozenset' is one of the pre-defined class and treated as set data type.
+=>The purpose of frozenset data type is that "To store Multiple Values either Simiar Type or          Different Type or Both the Types in Single Object with Unique  Values".
+=>The elements of frozenset must be obtained from different objects like set , tuple and list
+		Syntax:   frozensetobj=frozenset(set/list/tuple)
+=>An Object of frozenset never maintains Insertion Order bcoz PVM can display any one of the 
+    possibility of elements of frozenset object.
+=>On the object of frozenset, we can't perform Indexing and Slicing Operations bcoz frozenset object never maintains Insertion Order.
+=>An object of frozenset belongs to  Immutable bcoz frozenset' object does not support item  assignment and  not possible to modify / Change.
+=>we can create two types of frozenset objects. They are
+			a) Empty frozenset
+			b) Non-Empty  frozenset
+a) Empty frozenset:
+----------------------------------
+=>An Empty  frozenset is one, which does not contain any elements and whose length is 0
+=>Syntax:        frozensetobj=frozenset()
+
+b) Non-Empty frozenset:
+------------------------
+=>A Non-Empty frozenset is one, which  contains  elements and whose length is >0
+=>Syntax:         frozensetobj=frozenset( { val1, val2, ....val-n } )
+=>Syntax:         frozensetobj=frozenset( ( val1, val2, ....val-n ) )
+=>Syntax:         frozensetobj=frozenset( [ val1, val2, ....val-n ] )
+-------------------------------------------------------------------------------------------------------------
+=>Note:  The Functionality of Frozenset is extactly similar to Set but set object belogs to both Mutable and Immutable where as frozenset object belongs to immutable.
+-------------------------------------------------------------------------------------------------------------
+Examples:
+---------------------------------------------------------------
+>>> s1={10,20,30,40,10}
+>>> print(s1,type(s1))-------------------{40, 10, 20, 30} <class 'set'>
+>>> fs=frozenset(s1)
+>>> print(fs,type(fs))---------------frozenset({40, 10, 20, 30}) <class 'frozenset'>
+>>> t1=(10,"Rossum",34.56,"Python")
+>>> fs=frozenset(t1)
+>>> print(fs,type(fs))-----------------frozenset({10, 34.56, 'Python', 'Rossum'}) <class 'frozenset'>
+>>> fs[0]--------------TypeError: 'frozenset' object is not subscriptable
+>>> fs[0:3]-----------TypeError: 'frozenset' object is not subscriptable
+>>> len(fs)-----------4
+>>> fs1=frozenset()
+>>> print(fs1,type(fs1))-------------frozenset() <class 'frozenset'>
+>>> len(fs1)-------------0
+---------------------------------------------------
+>>> fs1.add(10)------------------AttributeError: 'frozenset' object has no attribute 'add'
+>>> fs-------------------------frozenset({10, 34.56, 'Python', 'Rossum'})
+>>> fs[0]=123---------------TypeError: 'frozenset' object does not support item assignment
+>>> fs1.remove(10)------------AttributeError: 'frozenset' object has no attribute 'remove'
+===================================X==============================
+
+	Pre-Defined Functions in frozenset 
+			=====================================
+=>frozenset  contains the following Functions
+			a) copy()
+			b) isdisjoint()
+			c) issuperset()
+			d) issubset()
+			e) union()
+			f) intersection()
+			g) difference()
+			h) symmertic_difference()
+
+NOTE:
+-------------
+>>> fs1=frozenset({10,20,30,409})
+>>> print(fs1,type(fs1),id(fs1))--------frozenset({409, 10, 20, 30}) <class 'frozenset'>																2068835340960
+>>> fs2=fs1.copy()
+>>> print(fs2,type(fs2),id(fs2))-----frozenset({409, 10, 20, 30}) <class 'frozenset'>															2068835340960
+
+=>In General Immutable Object content is Not Possible to copy( in the case of tuple). Where as in the frozenset, we are able to copy its content to another frozenset object. Here Original frozenset object and copied frozenset object contains Same Address and Not at all possible to Modify / Change their content.
+
+=>frozenset  does not contain the following Functions
+			a) clear()
+			b) add()
+			c) remove()
+			d) discard()
+			e) pop()
+			f) update()
+--------------------------------------------------------------------------------------------------------------
+
+
+==================================================================
+			V) Dict Categeory Data Types ( Collection Data Types or Data Structures)
+		==================================================================
+=>'dict' is one of the pre-defined class and treated as Dict Data Type.
+=>The purpose of dict data type is that "To store (Key,value) in single variable"
+=>In (Key,Value), the value of Key is Unique and Value of Value may or may not be unique.
+=>The (Key,value) must be organized or stored in the object of dict within Curly Braces {} and 
+   they separated by comma.
+=>An object of dict does not support Indexing and Slicing bcoz Values of Key itself considered 
+    as Indices.
+=>In the object of dict, Values of Key are treated as Immutable and Values of Value  are treated 
+   as mutable.
+=>Originally an object of dict is mutable bcoz we can add (Key,Value) externally.
+=>We have two types of dict objects. They are
+			a) Empty dict
+			b) Non-empty dict
+-------------------------
+a) Empty dict
+-------------------------
+=>Empty dict is one, which does not contain any (Key,Value) and whose length is 0
+=>Syntax:-          dictobj1= { }
+				or
+			    dictobj=dict()
+			    
+=>Syntax for adding (Key,Value) to empty dict:
+    ----------------------------------------------------------------
+		dictobj[Key1]=Val1
+		dictobj[Key2]=Val2
+		---------------------------
+		dictobj[Key-n]=Val-n
+Here Key1,Key2...Key-n are called Values of Key and They must be Unique
+Here Val1, Val2...Val-n are called Values of Value and They may or may not be unique.
+-------------------------------------------------------------------------------------------------------------------------
+b) Non-Empty dict
+-------------------------
+=>Non-Empty dict is one, which contains  (Key,Value) and whose length is >0
+=>Syntax:-          dictobj1= { Key1:Val1,Key2:Val2......Key-n:Valn}
+			
+Here Key1,Key2...Key-n are called Values of Key and They must Unique
+Here Val1, Val2...Val-n are called Values of Value and They may or may not be unique.	
+==========================================================================
+Examples:
+-----------------
+>>> d1={10:"Python",20:"Data Sci",30:"Django"}
+>>> print(d1,type(d1))----------{10: 'Python', 20: 'Data Sci', 30: 'Django'} <class 'dict'>
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2,type(d2))------------{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4} <class 'dict'>
+>>> len(d1)--------------3
+>>> len(d2)------------4
+-------------------------------------------------
+>>> d3={}
+>>> print(d3,type(d3))------------{} <class 'dict'>
+>>> len(d3)-------------0
+>>> d4=dict()
+>>> print(d4,type(d4))-------------{} <class 'dict'>
+>>> len(d4)---------------0
+------------------------------------------------------------------------
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2)----------------------------------{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4}
+>>> d2[0]----------------------------------------KeyError: 0
+>>> d2[10]-------------------------------------3.4
+>>> d2[10]=10.44
+>>> print(d2)-------------------------------{10: 10.44, 20: 4.5, 30: 5.6, 40: 3.4}
+-------------------------------------------------------------------------------------
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2,type(d2),id(d2))----{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4} <class 'dict'> 2090750380736
+>>> d2[50]=5.5
+>>> print(d2,type(d2),id(d2))---{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4, 50: 5.5} <class 'dict'>														2090750380736
+-------------------------------------------------------------------------------------------------------------------------
+>>> d3={}
+>>> print(d3,type(d3),id(d3))-------------------{} <class 'dict'> 2090750332992
+>>> d3["Python"]=1
+>>> d3["Java"]=3
+>>> d3["C"]=2
+>>> d3["GO"]=1
+>>> print(d3,type(d3),id(d3))-----{'Python': 1, 'Java': 3, 'C': 2, 'GO': 1} <class 'dict'>																2090750332992
+-------------------------------------------------------------------------------------------------------
+>>> d4=dict()
+>>> print(d4,type(d4),id(d4))---------------{} <class 'dict'> 2090754532032
+>>> d4[10]="Apple"
+>>> d4[20]="Mango"
+>>> d4[30]="Kiwi"
+>>> d4[40]="Sberry"
+>>> d4[50]="Orange"
+>>> print(d4,type(d4),id(d4))---{10: 'Apple', 20: 'Mango', 30: 'Kiwi', 40: 'Sberry', 50: 'Orange'}								<class 'dict'> 2090754532032
+
+>>> d4[10]="Guava"
+>>> print(d4,type(d4),id(d4))----{10: 'Guava', 20: 'Mango', 30: 'Kiwi', 40: 'Sberry', 50: 'Orange'} 
+								<class 'dict'> 2090754532032
+--------------------------------------------------------------------------------------
+>>> d2={10:3.4,20:4.5,30:5.6,40:3.4}
+>>> print(d2,type(d2),id(d2))---{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4} <class 'dict'> 2090754531520
+>>> d2[50]=1.2
+>>> print(d2,type(d2),id(d2))---{10: 3.4, 20: 4.5, 30: 5.6, 40: 3.4, 50: 1.2} <class 'dict'> 
+                                                                    2090754531520
+--------------------------------------------------------------------------------------------------------------------------
+======================================
+			NoneType   data type
+		=======================================
+=>'NoneType' is one the pre-defined class and treated as None type Data type
+=> "None" is keyword acts as value for <class,'NoneType'>
+=>The value of 'None' is not False, Space , empty  , 0 
+=>An object of NoneType class can't be created explicitly.
+--------------------------------------------------------------------
+Examples:
+------------------
+>>> a=None
+>>> print(a,type(a))------------None <class 'NoneType'>
+>>> a=NoneType()---------NameError: name 'NoneType' is not defined
+>>> l1=[]
+>>> print(l1.clear())------------None
+>>> s1=set()
+>>> print(s1.clear())---------None
+>>> d1=dict()
+>>> print(d1.clear())-----------None
+>>> d1={10:1.2,20:3.4}
+>>> print(d1.get(100))---------None
+-------------------------------------------------------------------------------------------------------------------

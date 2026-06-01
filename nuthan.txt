@@ -403,12 +403,12 @@ select empno,..,last_value(sal) ignore nulls over (partition by deptno order by 
 select empno,..,lead(sal,1,0) over (order by sal),sal-lead(sal,1,0) over(order by sal) from employee;
 
 
-select listagg(ename,-) from employee;
+select listagg(ename,'-')within group (order by ename) as employees from employee;
 
 column employees format a40
 select deptno,listagg(ename,',')within group (order by ename) as employees from employee group by deptno order by deptno;
 
-select empo,..,nth_value(sal,3) from first over (order by sal rows between unbounded preceding and unbounded following) as third_lowest_salary,,nth_value(sal,3) from last over (order by sal rows between unbounded preceding and unbounded following) as third_Highest_salary from employee;
+select empno,..,nth_value(sal,3) from first over (order by sal rows between unbounded preceding and unbounded following) as third_lowest_salary,nth_value(sal,3) from last over (order by sal rows between unbounded preceding and unbounded following) as third_Highest_salary from employee;
 
 
 

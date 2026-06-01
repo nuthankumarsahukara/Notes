@@ -2,7 +2,6 @@ Conversion Functions:-
 BIN_TO_NUM function converts a bit vector to a number.
 Syntax BIN_TO_NUM( expr1, expr2, ... expr_n)
 
-CAST function converts one datatype to another.
 Syntax CAST({ expr | (subquery) | MULTISET(subquery)} AS type_name) Allowed Casts
 When using the CAST function, the following casts are allowed:
 
@@ -38,7 +37,7 @@ Syntax: HEXTORAW(char)
 NUMTODSINTERVAL function converts a number to an INTERVAL DAY TO SECOND literal.
 Syntax: NUMTODSINTERVAL( number, expression)
     number:The number to convert to an interval.
-   expression :The unit to convert to. It must be one of the following values: DAY,HOUR,MINUTE, 	      or SECOND.
+   expression :The unit to convert to. It must be one of the following values: DAY,HOUR,MINUTE,or SECOND.
 
 NUMTOYMINTERVAL function converts a number to an INTERVAL YEAR TO MONTH literal.
 Syntax: NUMTOYMINTERVAL( number, expression)

@@ -1,0 +1,29 @@
+History of Python
+
+=>Python Programming Language concevied in the year 1980
+=>Python Programming Language started its Implementation (bring into action) in the year 1989
+=>Python Programming Language officially released in thye year 1991 Feb 20.
+=>Python Programming Language developed by "GUIDO VAN ROSSUM".
+=>Python Programming Language Developed at Centrum Wiskude Informatica (CWI) Institue in Nether lands
+=>Python Programming Language maintained and Managed by a Non-Commericial 
+    Organization called "Python Software Foundation"(PSF).
+=>ABC Programming is the predecessor of Python Programming Language
+=>The official website for Python Software Foundation is www.python.org
+
+Versions of Python Programming 
+-------------------------
+=>Python Programming Language contains Three Versions. They are
+
+1) Python 1.x- here 1 is called Major Version and here x represents 0 1 2 3 4 5 6 7 
+(Outdated)
+2) Python 2.x----------here 2 is called Major Version and here x represents 0 1 2 3 4 5 6 7 
+here Python 2.x does not contain Backward compatability with Python 1.x
+Outdated---1 -1 -2020
+
+3) Python 3.x--------here 3 is called Major Version and 
+here x represents 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 (current Version) 
+			   
+			   3.14.2 --Latest Version
+			   3.15--Latest Preview Version
+
+=>We must download and install Python 3.14.2 from www.python.org.

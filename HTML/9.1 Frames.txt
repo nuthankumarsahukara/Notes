@@ -1,10 +1,10 @@
 Frames
 Frames can be used to embed multiple HTML files in a single Page or Window. Frames are developed by Netscape. In HTML the following list of frame tags existed..!!
 
-Tag 		Description
+Tag 			Description
 <frame>		Deprecated
-<frameset>	Deprecated
-<noframes> 	Deprecated
+<frameset>		Deprecated
+<noframes> 		Deprecated
 <iframe>html5	Defines an inline frame
 
 <frameset>

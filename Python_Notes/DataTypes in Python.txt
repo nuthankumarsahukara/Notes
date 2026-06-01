@@ -1,0 +1,275 @@
+DataTypes in Python
+----------------
+-->The purpose of data types in python is that "To allocate sufficient amount of memory space for storing Inputs / Literals / Data in Main Memory of the computer."
+-->In Python Programming, we have 14 data types and classfied into 6 Categories. 
+
+	I . Fundamental Category Data Types
+			1) int
+			2) float
+			3) bool
+			4) complex
+	
+	II . Sequence Category Data Types
+			1) str
+			2) bytes
+			3) bytearray
+			4) range
+
+	III . List  Category Data Types(Collections or Data Structures )
+			1) list
+			2) tuple
+
+	IV . Set Category Data Types (Collections or Data Structures )
+			1) set
+			2) frozenset
+	V . Dict Category Data Types (Collections or Data Structures )
+			1) dict
+
+	VI . NoneType Category Data Types
+			1) NoneType
+
+I . Fundamental Category Data Types
+------------------------------
+The purpose of Fundamental Category Data Types is that " To Store Single Value".
+-->In Python we have 4 data types in Fundamental Category. They are
+			
+	1. int 
+	2. float
+	3. bool
+	4. complex
+
+1. int 
+-----
+->'int' is one of the pre-defined class name and treated as Fundamental Data Type.
+->The purpose of 'int' data type is that "To Store Intergral Values or Integer Values or Whole Numbers (Numbers without decial Places) ".
+Examples:   stno, htno, empno, adcno,acno...etc
+
+>>a=10
+>>print(type(a))
+<class 'int'>
+>>print(a)
+	10
+>>id(a)
+	140704364397976
+>>print(a,type(a),id(a))
+	10 <class 'int'> 140704364397976
+>>int aa=100,bb=20
+	SyntaxError: invalid syntax
+>>aa=100,bb=200
+	SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
+>>aa=100;bb=200
+>>cc=aa+bb
+>>print(cc)
+	300
+>>print(type(cc),id(cc))
+	<class 'int'> 2509195925136
+
+-->With int data type, we can store or Represent Different Number System Values
+-->In Python Programming, int data type can store 4 different Types Number System. They are
+	1. Decimal Number System
+	2. Binary Number System
+	3. Octal Number System
+	4. Hexa Deciaml Number System.
+
+1. Decimal Number System
+----------------------
+-->It is one of the default number system understandable by all Human Beings
+-->This Number System contains the following Digits
+	Digits: 0  1   2   3  4   5   6   7   8   9      Total Digits: 10
+	Base: 10
+=>Base 10 Literals are called Decimal Number System values.
+Examples:    56   345   123   678   4569 ...etc
+
+2. Binary Number System
+---------------------
+-->It is understandable by OS and Processors during Program execution.
+-->This Number System contains the following Digits
+		Digits: 0  1      Tota1 Digits: 2
+		Base: 2
+-->=>Base 2 Literals are called Binary Number System values.
+-->In Python Programming, To Store Binary Data , Binary data must be preceded by a letter 0b (or) 0B
+=>Syntax:  varname=0b Binary data
+		(OR)
+=>Syntax:  varname=0B Binary data
+-->Even though we store the data in the form of Binary , Python Programming Execuition display binary data in the form deciaml number system value
+
+Example:
+-------
+>>a=0b1010
+>>b=0b11111
+>>c=0B1000
+>>print(a)
+	10
+>>print(b)
+	31
+>>print(c)
+	8
+>>print(type(a),type(b),type(c))
+	<class 'int'> <class 'int'> <class 'int'>
+
+3. Octal Number System
+--------------------
+-->It is understandable by Mirco Processor kits (8086) 
+-->This Number System contains the following Digits
+	Digits: 0  1   2    3  4   5   6   7     Total Digits: 8
+	Base: 8
+-->Base 8 Literals are called octal Number System values.
+-->In Python Programming, To Store octal Data , octal data must be preceded by a letter 0o or 0O
+=>Syntax:  varname=0o octal data
+		(OR)
+=>Syntax:  varname=0O octal data
+-->Even though we store the data in the form of octal , Python Programming Execuition display octal data in the form deciaml number system value
+
+Example:
+-------
+>>aa=0o123
+>>print(aa)
+	83
+>>bb=0O12345
+>>print(bb)
+	5349
+>>print(type(aa),type(bb))
+	<class 'int'> <class 'int'>
+
+123 => 1*8^2 +2*8^1+3*8^0
+     => 64+16+3
+     => 83
+
+12345 =>1*8^4+2*8^3+3*8^2+4*8^1+5*8^0
+	=>4096+1024+192+32+5
+	=>5349
+
+4. Hexa Decimal Number System.
+---------------------------
+-->It is Used to develop OS Based Softwares
+-->This Number System contains the following Digits
+	Digits: 0  1   2    3  4   5   6   7  8  9
+	A(10)    B(11)    C(12)   D(13)   E(14)   F(15)   Total Digits: 16
+	Base: 16
+-->Base 16 Literals are called Hexa Decimal Number System values.
+-->In Python Programming, To Store Hexa Decimal Data , Hexa Decimal data must be preceded by a letter 0x or 0X
+=>Syntax:  varname=0x Hexa Decimal data
+		(OR)
+=>Syntax:  varname=0X Hexa Decimal data
+-->Even though we store the data in the form of Hexa Decimal, Python Programming Execution display Hexa Decimal data in the form deciaml number system value
+
+Example:
+-------
+>>a=0xAB
+>>print(a)
+	171
+>>b=0X123A
+>>print(b)
+	4666
+>>print(type(a),type(b))
+	<class 'int'> <class 'int'>
+
+AB  => 10*16^1+11*16^0
+     => 160+11
+     => 171
+
+123A  =>1*16^3+2*16^2+3*16^1+10*16^0
+	=>4096+512+48+10
+	=>4666
+
+2) float
+-------
+-->'float' is one of the pre-defined class and treated as Fundamental Data Type.
+-->The purpose of float data type is that " To Store Real Constant Values (OR) Floating Point Values (Number with Decimal Values) ".
+-->This data type also  supports to store the Scientific Notation ,which is one of the floating point value. The advatnage of Scientific Notation is that to save memory space.
+-->float data does not support to store Number System values such as Binary, Octal and Hexa Decimal but it stores always Decimal Number System data.
+
+Example:
+------
+>>a=10.25
+>>print(a)
+	10.25
+>>print(type(a))
+	<class 'float'>
+>>print(id(a))
+	1332259079984
+>>b=20;c=350.25;
+>>d=b+c;
+>>print(d);
+	370.25
+>>print(type(d))
+	<class 'float'>
+>>e=0b1000.0b1010
+	SyntaxError: invalid decimal literal
+>>e=0o1007.0o1010
+	SyntaxError: invalid decimal literal
+>>e=0x10A.0x101B
+	SyntaxError: invalid decimal literal
+>>e=0.0000000000000000000000000008
+>>print(e);
+	8e-28
+>>print(type(e));
+	<class 'float'>
+
+3)Bool
+-----
+-->'bool' is a pre-defined class and treated as Fundamental Data Type.
+-->The purpose of bool data type is that "To store True and False Value".
+-->Programatically True and False are Keywords and they are treated as values for bool datatype.
+-->Internally The value True is considered as 1 and Value of False is considered as 0.
+
+Example:
+------
+>>a=True
+>>b=False
+>>print(a)
+	True
+>>print(b)
+	False
+>>print(type(a))
+	<class 'bool'>
+>>print(type(b))
+	<class 'bool'>
+>>c=true
+	NameError: name 'true' is not defined. Did you mean: 'True'?
+>>print(a+b)
+	1
+>>print(10+true)
+	NameError: name 'true' is not defined. Did you mean: 'True'?
+>>print(10+True)
+	11
+>>print(10+15+True)
+	26
+
+4) complex
+---------
+-->'complex' is one of the pre-defined class and treated as Fundamental Data Type
+-->The purpose of Complex Data Type is that "To store Complex Data"
+-->The General Notation of Complex Data is shown Bellow.
+		a+bj  or  a-bj
+		Here 'a' is called Real Part
+		Here 'b' is called Imaginary part
+		Here 'j' represents  Sqrt(-1)
+-->Internally real and imaginary parts are treated as floating point values.
+-->To obtain opr extract real and imaginary parts of a compex object, we use two pre-defined Attributes / Variables , which are present in complex object. They are
+		a) real
+		b) imag
+Syntax:complexobj.real------------->gives real part of complex object
+	complexobj.imag----------->gives imagirary of complex object
+
+Example
+------
+>>a=15+98j
+>>print(a)
+	(15+98j)
+>>print(type(a))
+	<class 'complex'>
+>>print(type(a) , a);
+	<class 'complex'> (15+98j)
+>>print(a.real)
+	15.0
+>>print(a.imag)
+	98.0
+>>b=10.25+98j
+>>print(type(b) , b);
+	<class 'complex'> (10.25+98j)
+>>print(b.imag)
+	98.0
+>>print(b.real)
+	10.25
+

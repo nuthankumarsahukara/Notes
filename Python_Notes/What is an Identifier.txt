@@ -1,0 +1,68 @@
+What is an Identifier?
+An identifier is the name given to a variable, function, class, or object in Python.
+
+name = "Nuthan"
+age = 21
+total_marks = 450
+
+name, age, total_marks → Identifiers
+
+Rules for Identifiers
+-----------------
+1.Must start with a letter (a-z, A-Z) or underscore _
+2.Cannot start with a number
+	->1name (invalid)
+3.Can contain letters, digits, underscores
+	->student_1
+4.Cannot use keywords
+	->class, if, for
+5.Identifiers are Case-sensitive
+	->name ≠ Name
+6.Identifiers should contains any whitespaces
+	->first name
+
+
+Valid Identifiers
+-------------
+studentName
+_marks
+total123
+
+Invalid Identifiers
+---------------
+123name     # starts with number
+my-name     # contains hyphen
+class       # keyword
+
+What is a Literal?
+A literal is a fixed value directly written in the code.
+
+Types of Literals in Python
+---------------------
+1. Numeric Literals
+
+x = 10        # Integer
+y = 3.14      # Float
+z = 2 + 3j    # Complex
+
+2. String Literals
+
+name = "Python"
+msg = 'Hello'
+
+3. Boolean Literals
+
+is_valid = True
+is_done = False
+
+4. Special Literal
+
+value = None
+
+
+5. Collection Literals
+
+list1 = [1, 2, 3]        # List
+tuple1 = (1, 2, 3)       # Tuple
+set1 = {1, 2, 3}         # Set
+dict1 = {"a": 1, "b": 2} # Dictionary

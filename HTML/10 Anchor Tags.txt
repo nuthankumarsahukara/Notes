@@ -18,7 +18,7 @@ Attributes
 Attribute 	Value 		Description
 href 		URL 		Specifies the URL of the page the link goes to
 name 		section_name 	Specifies the name of an anchor
-title		Any Value	It describes the 								link and shows description 							when hovering over the link.
+title		Any Value	It describes the link and shows description when hovering over 				the link.
 target 				_blank (NewTab.NewPage)
 				_parent (default)
 

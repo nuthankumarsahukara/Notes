@@ -1,0 +1,172 @@
+1. Simple
+
+=>Python of the Simple Programming Language bcoz of 3 Important Technical  Features. They are
+1. Python Provide Rich Set of MODULES. So that Python Programmers can RE-USE the pre-defined Code and develop the application easily.
+
+Def of MODULE:  A Module is a collection of Functions,Variables and Class Names
+
+2. Python Programming Privides in-built "Garbage Collection Facility " and collects Un-used Memory Space and imporves  the performnace of Python Based Applications.
+
+Def of Garbage Collector:
+
+=>A Garbage Collector is one of the background unbulit python program, which is running behind of regular python program and whose purpose is that to Collect Un-used Memory Space and imporves  the performnace of Python Based Applications.
+
+=>Hence Pyhton Garbage Collector provide automatic Memory Management.
+
+3. Python Programming User-Friendly Syntaxes . So that Python Programmers can develop error-Free Programs in limited span time. 
+
+2. FreeWare and Open Source
+		
+->FreeWare
+=>A language or Software is said to be FreeWare if and only if Which is Freely Downloaded.
+=>Example:   Java, Python...etc
+
+->Open Source
+
+=>The Customization of standard Software is called Open Source
+------------------
+=>The standard name of Python Software is "CPYTHON".
+=>Some of the  Software  Vendors came foward and Customized CPYTHON and the customized versions of CPYTHON are used In-huse tool those software Companies.
+=>The Customized Versions of CPYTHON are called "Python Distributions".
+=>Some of the distriutions of Python are
+1. JPython or Jython----->Used to Run Java Based Applications
+2. Iron Python OR Ipython--->Used to C#.net Based Applications.
+3. Micro Python----------------->Used to development Micro Controller Applications
+4. Anakonda Python------Used to deal with BIG Data / Hadoop Applications.
+5. Stackless python------Used to develop Concurrency Applications.
+....many more
+    
+					4. Dynamically Typed
+			========================================
+=>In context Programming, We have Two Types of Programming  Languages. They are
+
+			1. Static Typed Programming  Languages.
+			2. Dynamically Typed Programming  Languages.
+-----------------------------------------------------------------
+1. Static Typed Programming  Languages.
+-----------------------------------------------------------------
+=>Data Types are using Explicitly.
+=>In Static Typed Programming  Languages, It is mandatory to Declare Variables with the help of Data Types. Without Data Types we can't store and Process Data.
+
+Examples:
+-----------------
+		int a,b,c;   // Variable   Declaration
+		a=10
+		b=20
+		c=a+b
+Examples:   C,C++,JAVA, .NET...etc
+----------------------------------------------------------------------------------------
+2.  Dynamically Typed Programming  Languages
+----------------------------------------------------------------------------------------
+=>Data Types are automatically Used by the Python Execution Environment
+=>In  Dynamically Typed Programming  Languages, It is not Necessary to data types for declaration of Variables. I.e Python Execution Environment, automatically / Implcitly Assign Data Type based Type of Value placing in Variable.
+
+Examples:
+-------------------
+>>> a=10
+>>> b=20
+>>> c=a+b
+>>> print(a,type(a))--------------------10 <class 'int'>
+>>> print(b,type(b))--------------------20 <class 'int'>
+>>> print(c,type(c))--------------------30 <class 'int'>
+---------------------
+>>> a=10
+>>> b=1.2
+>>> c=a+b
+>>> print(a,type(a))-----------------10 <class 'int'>
+>>> print(b,type(b))----------------1.2 <class 'float'>
+>>> print(c,type(c))-----------------11.2 <class 'float'>
+
+Example:  PYTHON
+=>In Python All Values are stored in the form of OBJECTs 
+=>Behind of Every Object, there is a Class 
+
+4. Platform Indepedent
+=>In IT, "Platform"  is  nothing but type of OS  Being Used to run the application.
+=>In IT, we have two Types of Programming Languages. They are
+
+1. Platform Dependent languages.
+2.  Platform Independent languages.
+
+1. Platform Dependent languages.
+
+=>A Language is said to Platform Dependent iff whose data types differs their memory space from One OS another OS.
+
+Examples:    C,CPP...etc
+
+2. Platform Independent languages.
+
+=>A Language is said to Platform Independent iff whose data types takes Same  memory space on All Types OSes. (Java Slogan)
+
+=>A Language is said to Platform Independent iff whose OBJECTS takes Same  memory space on All Types OSes and There Restriction on size of Data  whoch is presesnt in object(Behid of objects there exist class). (Python Slogan)
+
+Example:  Java,PYTHON
+
+				5. Interpreted Programming
+
+=>When we develop any python program, we must give some file name with an extension .py (File Name.py).
+=>When we execute python program, two process taken place internally
+		a) Compilation Process
+		b) Execution Process.
+=>In COMPILATION PROCESS, The python Source Code submitted to Python Compiler and It reads the source Code, Check for errors by verifying syntaxes and if no errors found then Python Compiler Converts into Intermediate Code called BYTE CODE with an extension .pyc (FileName.pyc). If erros found in source code  then we get error displyed on the console.
+=>In EXECUTION PROCESS, The PVM reads the Python Intermediate Code(Byte Code) and Line by Line and Converted into Machine Understable Code (Executable or binary Code) and It is read by OS and Processer and finally Gives Result.
+=>Hence In Python Program execution, Compilation Process and Execution Process is taking place Line by Line conversion and  It is one of the Interpretation Based Programming Language.
+
+--------------------------------------------------------------------
+Definition of PVM ( Python Virtual Machine)
+--------------------------------------------------------------------
+=>PVM is one program in Python Software and whose role is to read LINE by LINE of Byte Code and Converted into Machine Understable Code (Executable or binary Code) 
+				6. High Level Programming 
+=>In this context, we have two types of languages. They are
+
+			1. Low Level Programming Languages
+			2. High Level Programming Languages
+
+1. Low Level Programming Languages:
+=>In Low Programming Languages, data is always stored in the form low level values such as Binary data, Octal Data and Hexa Decimal data. These Number System are not directly understandable end-users 
+
+Example :    a=0b1010101010
+		     b=0xBEE
+		     c=0o23
+
+2. High Level Programming Languages
+=>In these languages, Internally, Even the programmer specifies the data in the form of Low Level Format such Binary data, Octal Data and Hexa Decimal data, automatically Python Programming Language Execution Environment Converts into High Level data, which is understandable end-users .  Hence Python is one of the  High Level Programming Languages
+
+Examples:
+>>> a=0b101010111110000
+>>> b=0b10101111000
+>>> print(a)-----------------------22000
+>>> print(b)----------------------1400
+>>> a=0xBEE
+>>> print(a)-----------------------3054
+>>> bin(22000)-----------------'0b101010111110000'
+>>> hex(3054)----------------'0xbee'
+
+9. Extensible
+=>Extensible feature in Python refers that we can write some of Python Code in Other languages Like C, CPP, Java, HTML...etc.
+=>It means that it can be extended to other languages and makes other languages programmer easy in writing and Re-using code of Python and Hence Python Extensible Language.
+					10.Embedded 
+
+=>Embedded  feature of Python refers, Python Program can also call Other language codes.
+=>For Example. Inside Python Program, we  can use C, C++ and Java Code .
+
+Note:   Python is one of the comfortable Programming Language and not a Fastest 
+            Programming language.
+
+Extensive Support for Third Party APIs  
+
+=>As Python Libraries / API can do many tasks and Operations and unable perform complex operations and to solve such complex operations more easily and Quckly we use Third Party APIs such as
+
+	1) numpy----Numerical calculations
+	2) pandas---Analysis tool
+	3) matplotlib-----Data Visualization
+	4) scipy 
+	5) scikit
+8. Robust (Strong)
+=>Python is one of the Robust bcoz of Exception Handling
+
+Definition of Exception:  Run time Error(Invalid Input) of every program is called Exception.
+
+=>By Default, In every Programming language Exceptions generates Technical Error Messages
+
+Definition of Exception Handling:- The Process of Converting Technical Error Messages into User-Freindly Error Messages.

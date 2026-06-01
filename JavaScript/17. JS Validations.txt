@@ -6,7 +6,7 @@ Example1:
 <body>
 <script type='text/javascript'>
 x = 5;
-document.write("The Value is: ",x)
+document.write("The Value is: "+x)
 var x; 
 </script>
 </body>
@@ -90,11 +90,11 @@ HTML constraint validation is based on:
 Constraint Validation HTML Input Attributes
 Attribute 	Description
 disabled 	Specifies that the input element should be disabled
-max 	Specifies the maximum value of an input element
-min 	Specifies the minimum value of an input element
+max 		Specifies the maximum value of an input element
+min 		Specifies the minimum value of an input element
 pattern 	Specifies the value pattern of an input element
 required 	Specifies that the input field requires an element
-type  	Specifies the type of an input element
+type  		Specifies the type of an input element
 
 Form data that typically are checked by a JavaScript:
 1. If a text input is empty or not

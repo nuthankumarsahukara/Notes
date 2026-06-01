@@ -6,7 +6,7 @@ Syntax:
 
 Attributes	Parameters
 src		The path of url/image
-scrolling		auto, yes, no
+scrolling	auto, yes, no
 align		left,right
 height		pix or %
 width		pix or %

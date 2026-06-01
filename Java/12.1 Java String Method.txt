@@ -181,6 +181,11 @@ true
 true
 false
 In the above code, two strings are compared using equals() method of String class. And the result is printed as boolean values, true or false.
+
+"Nuthan".equals("Nuthan") ->True
+"nuthan".equals("Nuthan") ->false
+"nuthan".equalsIgnoreCase("Nuthan") ->true
+
 Teststringcomparison2.java
 	class Teststringcomparison2{  
 	 public static void main(String args[]){  

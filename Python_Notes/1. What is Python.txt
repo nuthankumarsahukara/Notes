@@ -1,0 +1,66 @@
+What is Python?
+-------------
+Python is a high-level, interpreted programming language known for its simplicity and readability. Python was created by Guido van Rossum in the late 1980s at the Centrum Wiskunde & Informatica (CWI) in the Netherlands. It was officially released in 1991.
+
+Python allows you to write programs using fewer lines of code compared to languages like Java or C++, making it ideal for beginners and professionals.
+
+Why Python Was Created
+---------------------
+Guido van Rossum wanted to build a language that:
+
+-->Is easy to read and write
+-->Requires less code compared to C/Java
+-->Helps beginners learn programming easily
+-->Supported rapid development
+-->Is powerful yet simple
+
+->He was inspired by a language called ABC, but improved it significantly.
+->Python is not named after the snake 
+->It comes from the comedy show Monty Python's Flying Circus.
+
+Why Learn Python?
+----------------
+Python is one of the most popular programming languages in the world because:
+
+-->Easy to learn and understand
+-->Simple syntax (like English)
+-->Huge community support
+-->Works on all platforms (Windows, Mac, Linux)
+-->Used in multiple fields
+
+What can Python do?
+-----------------
+-->Python can be used on a server to create web applications.
+-->Python can be used alongside software to create workflows.
+-->Python can connect to database systems. It can also read and modify files.
+-->Python can be used to handle big data and perform complex mathematics.
+-->Python can be used for rapid prototyping, or for production-ready software development.
+
+Where is Python Used?
+------------------
+Python is widely used in:
+
+🌐 Web Development (Django, Flask)
+📊 Data Science & Analytics
+🤖 Machine Learning & AI
+🎮 Game Development
+🔐 Cybersecurity & Automation
+📱 Desktop Applications
+
+How Python Works ?
+----------------
+	Code → Interpreter → Output
+
+-->Python is an interpreted language
+-->No compilation step like C/Java
+-->Errors are easier to debug
+
+Versions of Python
+--------------
+1989 → Development started
+1991 → Python 1.0 released
+2000 → Python 2.0
+2008 → Python 3.0
+2020 → Python 2 officially ended
+
+Latest Stable Version: 3.14.5

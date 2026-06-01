@@ -1,0 +1,640 @@
+		============================================
+					Data Types in Python 
+			============================================
+=>The purpose of data types in python is that "To allocate sufficient amount of memory space 
+    for storing Inputs / Literals / Data in Main Memory of the computer."
+=>In Python Programming, we have 14 data types and classfied into 6 Categories. 
+
+	I . Fundamental Category Data Types
+			1) int
+			2) float
+			3) bool
+			4) complex
+	
+	II . Sequence Category Data Types
+			1) str
+			2) bytes
+			3) bytearray
+			4) range
+
+	III . List  Category Data Types(Collections or Data Structures )
+			1) list
+			2) tuple
+
+	IV . Set Category Data Types (Collections or Data Structures )
+			1) set
+			2) frozenset
+	V . Dict Category Data Types (Collections or Data Structures )
+			1) dict
+
+	VI . NoneType Category Data Types
+			1) NoneType
+
+
+	=============================================
+			I . Fundamental Category Data Types
+		=============================================
+=>The purpose of Fundamental Category Data Types is that " To Store Single Value".
+=>In Python we have 4 data types in Fundamental Category. They are
+			
+			1. int 
+			2. float
+			3. bool
+			4. complex
+-----------------------------------------------------------------------------------------------------------------------
+
+===================================
+					1. int 
+		===================================
+=>'int' is one of the pre-defined class name and treated as Fundamental Data Type.
+=>The purpose of 'int' data type is that "To Store Intergral Values or Integer Values or Whole 
+    Numbers (Numbers without decial Places) ".
+=> Examples:   stno, htno, empno, adcno,acno...etc
+---------------------
+Examples
+------------------------------------	-------------------------------------
+Python Instructions			Outputs
+-------------------------------------	-------------------------------------
+>>> a=10
+>>> print(a)-------------------------------------10
+>>> type(a)-------------------------------------<class 'int'>
+>>> id(a)-----------------------------------------2432801636880
+>>> print(a, type(a), id(a))----------------10 <class 'int'> 2432801636880
+----------------------------------------------
+>>> a=100
+>>> b=200
+>>> c=a+b
+>>> print(a, type(a), id(a))---------------------100 <class 'int'> 2432801639760
+>>> print(b, type(b), id(b))--------------------200 <class 'int'> 2432801642960
+>>> print(c, type(c), id(c))--------------------300 <class 'int'> 2432802680304
+--------------------------------------------------------------------------------------------------------------------------
+=>With int data type, we can store or Represent Different Number System Values
+=>In Python Programming, int data type can store 4 different Types Number System. They are
+			1. Decimal Number System
+			2. Binary Number System
+			3. Octal Number System
+			4. Hexa Deciaml Number System.
+---------------------------------------------------------------------------------------------
+1. Decimal Number System
+----------------------------------------------------------------------------------------------
+=>It is one of the default number system understandable by all Human Beings.
+=>This Number System contains the following Digits
+		Digits: 0  1   2   3  4   5   6   7   8   9      Totak Digits: 10
+		Base: 10
+=>Base 10 Literals are called Decimal Number System values.
+Examples:    56   345   123   678   4569...etc
+----------------------------------------------------------------------------------------------
+2. Binary Number System
+----------------------------------------------------------------------------------------------
+=>It is understandable by OS and Processors during Program execution.
+=>This Number System contains the following Digits
+		Digits: 0  1      Totak Digits: 2
+		Base: 2
+=>Base 2 Literals are called Binary Number System values.
+=>In Python Programming, To Store Binary Data , Binary data must be preceded by a letter 0b 
+    or 0B
+=>Syntax:  varname=0b Binary data
+				(OR)
+=>Syntax:  varname=0B Binary data
+=>Even though we store the data in the form of Binary , Python Programming Execuition display binary data in the form deciaml number system value
+-----------------
+Examples:
+-----------------
+>>> a=0b1010
+>>> print(a, type(a))------------------10 <class 'int'>
+>>> a=0B1111
+>>> print(a,type(a))-----------------15 <class 'int'>
+>>> a=0b100
+>>> print(a,type(a))------------------4 <class 'int'>
+>>> bin(10)--------------'0b1010'
+>>> bin(15)---------------'0b1111'
+>>> bin(25)--------------'0b11001'
+
+----------------------------------------------------------------------------------------------
+3. Octal Number System
+----------------------------------------------------------------------------------------------
+=>It is understandable by Mirco Processor kits ( 8086) 
+=>This Number System contains the following Digits
+		Digits: 0  1   2    3  4   5   6   7     Totak Digits: 8
+		Base: 8
+=>Base 8 Literals are called octal Number System values.
+=>In Python Programming, To Store octal Data , octal data must be preceded by a letter 0o 
+    or 0O
+=>Syntax:  varname=0o octal data
+				(OR)
+=>Syntax:  varname=0O octal data
+=>Even though we store the data in the form of octal , Python Programming Execuition display octal data in the form deciaml number system value
+Examples:
+---------------------
+>>> a=0o27
+>>> print(a,type(a))-------------------23 <class 'int'>
+>>> a=0O123
+>>> print(a,type(a))------------------83 <class 'int'>
+>>> a=0o128----------------------SyntaxError: invalid digit '8' in octal literal
+>>> oct(23)----------'0o27'
+>>> oct(83)-----------'0o123'
+----------------------------------------------------------------------------------------------------------------------
+4. Hexa Decimal Number System.
+----------------------------------------------------------------------------------------------------------------------
+=>It is Used to develop OS Based Softwares
+=>This Number System contains the following Digits
+		Digits: 0  1   2    3  4   5   6   7  8  9
+			    A(10)    B(11)    C(12)   D(13)   E(14)   F(15)   Totak Digits: 16
+		Base: 16
+=>Base 16 Literals are called Hexa Decimal Number System values.
+=>In Python Programming, To Store Hexa Decimal Data , Hexa Decimal data must be preceded by a letter 0x    or 0X
+=>Syntax:  varname=0x Hexa Decimal data
+				(OR)
+=>Syntax:  varname=0X Hexa Decimal data
+=>Even though we store the data in the form of Hexa Decimal, Python Programming Execution display Hexa Decimal data in the form deciaml number system value
+-----------------------
+Examples:
+-----------------------
+-----------------------
+>>> a=0xAC
+>>> print(a,type(a))--------------172 <class 'int'>
+>>> hex(172)-----------------'0xac'
+>>> a=0xBEE
+>>> print(a,type(a))---------------3054 <class 'int'>
+>>> a=0XBEER----------------SyntaxError: invalid hexadecimal literal
+>>> a=0xFAce
+>>> print(a,type(a))------------64206 <class 'int'>
+
+---------------------------------------------------------------------------------------------------------------------
+
+============================================
+				2) float
+		============================================
+=>'float' is one of the pre-defined class and treated as Fundamental Data Type.
+=>The purpose of loat data type is that " To Store Real Constant Values (OR) Floating Point 
+    Values (Number with Decimal Values) ".
+=>This data type also  supports to store the Scientific Notation ,which is one of the floating 
+    point value. The advatnage of Scientific Notation is that to save memory space,
+=>float data does not support to store Number System values such as Binary, Octal and Hexa 
+    Decimal but it stores always Decimal Number System data
+
+Examples:
+--------------------
+>>> a=2.3
+>>> print(a,type(a))----------------2.3 <class 'float'>
+>>> a=10
+>>> b=2.3
+>>> c=a+b
+>>> print(a,type(a))-------------10 <class 'int'>
+>>> print(b,type(b))------------2.3 <class 'float'>
+>>> print(c,type(c))---------------12.3 <class 'float'>
+----------------------------
+>>> a=3e2
+>>> print(a,type(a))-----------300.0 <class 'float'>
+>>> b=2e-3
+>>> print(b,type(b))--------0.002 <class 'float'>
+--------------------
+>>> a=0.0000000000000000000000000000000000006
+>>> print(a,type(a))----------6e-37 <class 'float'>
+------------------------------------------------------------------------------------
+>>> a=0b1010.0b1010-----------------SyntaxError: invalid decimal literal
+>>> a=0o23.0b1010------------------SyntaxError: invalid decimal literal
+>>> a=0xBEE.0o23------------------SyntaxError: invalid decimal literal
+-------------------------------------------------------------------------------------------------------------
+======================================
+					3) bool
+			======================================
+=>'bool' is a pre-defined class and treated as Fundamental Data Type.
+=>The purpose of bool data type is that "To store True   and False Value".
+=>Programatically True and False are Keywords and they are treated as values for bool data 
+    type.
+=>Internally The value True is considered as 1 and Value of False is considered as 0.
+---------------------------------
+Examples
+---------------------------------
+>>> a=True
+>>> print(a,type(a))-----------------True <class 'bool'>
+>>> b=False
+>>> print(b,type(b))-----------------False <class 'bool'>
+>>> a=true------------------NameError: name 'true' is not defined.
+>>> True=5------------------SyntaxError: cannot assign to True
+-----------------------------------------------------------------------------------------------------------------
+>>> a=True
+>>> b=False
+>>> print(a+b)--------------------1
+>>> print(True+False+True)-----------2
+>>> print(True*True+False)--------------1
+>>> print(2.3*True-False)---------------2.3
+>>> print(0b1010+True)-----------------11
+>>> print(0xF+True-True)----------------15
+>>> print(3*True+False*3*True)---------------3
+===========================================================================
+
+=============================================
+					4) complex
+			=============================================
+=>'complex' is one of the pre-defined class and treated as Fundamental Data Type
+=>The purpose of Complex Data Type is that "To store Complex Data"
+=>The General Notation of Complex Data is shown Bellow.
+				a+bj  or  a-bj
+		Here 'a' is called Real Part
+		Here 'b' is called Imaginary part
+		Here 'j' represents  Sqrt(-1)
+=>Internally real and imaginary parts are treated as floating point values.
+=>To obtain opr extract real and imaginary parts of a compex object, we use two pre-defined 
+    Attributes / Variables , which are present in complex object. They are
+		a) real
+		b) imag
+	Syntax:   complexobj.real------------->gives real part of complex object
+			complexobj.imag----------->gives imagirary of complex object
+		
+-------------------
+Examples
+-------------------
+>>> a=2+3j
+>>> print(a,type(a))----------------------------(2+3j) <class 'complex'>
+>>> b=2-3j
+>>> print(b,type(b))-------------------------(2-3j) <class 'complex'>
+>>> c=2.5+3.6j
+>>> print(c,type(c))------------------------(2.5+3.6j) <class 'complex'>
+>>> d=10+4.5j
+>>> print(d,type(d))-----------------------(10+4.5j) <class 'complex'>
+>>> e=10j
+>>> print(e,type(e))-----------------------10j <class 'complex'>
+>>> f=10+0j
+>>> print(f,type(f))-------------------------(10+0j) <class 'complex'>
+----------------------------------
+>>> a=10+34j
+>>> print(a,type(a))----------------------------------(10+34j) <class 'complex'>
+>>> a.real----------------------------------10.0
+>>> a.imag-------------------------------34.0
+>>> b=-2-3.4j
+>>> print(b,type(b))------------------(-2-3.4j) <class 'complex'>
+>>> b.real-----------------------2.0
+>>> b.imag----------------------3.4
+>>> c=10.5j
+>>> print(c,type(c))--------------10.5j <class 'complex'>
+>>> c.real--------------------------0.0
+>>> c.imag-----------------------10.5
+>>> d=10.5+0j
+>>> print(d,type(d))------------(10.5+0j) <class 'complex'>
+>>> d.real------------------10.5
+>>> d.imag--------------0.0
+--------------------------------------------------
+>>> a=2+4.5j
+>>> a.real--------------2.0
+>>> imaginary-------------NameError: name 'imaginary' is not defined
+>>> b.imaginary---------AttributeError: 'complex' object has no attribute 'imaginary'
+================================x=====================================
+
+
+===========================================
+				II . Sequence Category Data Types
+			===========================================
+=>The purpose of Sequence Category Data Types is that " To Sequence of Values ".
+=>We have  4 data types in Sequence Category. They are
+
+				1. str
+				2. bytes
+				4. bytearray
+				5. range
+----------------------------------------------------------------------------------------------------------------------
+
+===================================
+						1. str 
+			===================================
+Index
+------------
+=>What is String
+=>Definition of String
+=>Notations of String
+=>Types of Strings
+=>Syntax for Storing Strings
+=>Memmory management of str data
+=>Operation on Strings
+		a) Indexing
+		b) Slicing 
+=>Programming Examples
+=================================================================
+
+	=========================================
+					1. str (Part-1 )
+			=========================================
+=>"str" is one of the pre-defined class and treated as Sequence Data Type,
+=>The purpose of str data type is that " To store Text Data or Numeric Data or Alpha-numeric 
+     Data and special symbols enclosed within Single or Double Quotes or Tripple Single or Tripple Double Quotes."
+----------------------------------
+=>Def. of str (String):
+----------------------------------
+=>A String  is sequnece or Collection of Characters or Numbers or Alpha-numeric Data and special symbols enclosed within Single or Double Quotes or Tripple Single or Tripple Double Quotes.
+---------------------------------------
+Types of str  data
+---------------------------------------
+=>In Python Programming, We have 2 types of str data. They are
+			1. Single Line String Data
+			2. Multi Line String Data
+---------------------------------------------------------------------------------------------------
+1. Single Line String Data
+---------------------------------------------------------------------------------------------------
+=>Syntax:                   "   String  Data  "
+---------------				(OR)
+				        ' String data  '
+
+=>Single Line string data always enclosed within Double or Single Quotes.
+=>Double or Single Quotes are not useful for organizing Multi Line String Data.
+---------------------------------------------------------------------------------------------------------
+2. Multi Line String Data
+---------------------------------------------------------------------------------------------------
+=>Syntax:       " " "	String Line 1
+				String Line 2
+				------------------
+				String Line n " " "
+					(OR)
+			' ' '	String Line 1
+				String Line 2
+				------------------
+				String Line n ' ' '
+=>With Tripple Double Quotes or  Tripple Single  Quotes we can organize Multi Line String data and also we can organize Single Line String data.
+
+---------------------------------------------------------------------------------------------------
+
+--------------------
+Examples:
+--------------------
+>>> s1="Guido Van Rossum"
+>>> print(s1,type(s1))---------------------------Guido Van Rossum <class 'str'>
+>>> s2="123456"
+>>> print(s2,type(s2))---------------------------123456 <class 'str'>
+>>> s2="Python3.10.6"
+>>> print(s2,type(s2))---------------------------Python3.10.6 <class 'str'>
+>>> s3='Travis Oliphant'
+>>> print(s3,type(s3))--------------------------Travis Oliphant <class 'str'>
+>>> s4='1234python%$'
+>>> print(s4,type(s4))--------------------------1234python%$ <class 'str'>
+>>> s5='A'
+>>> print(s5,type(s5))---------------------------A <class 'str'>
+>>> s6='6'
+>>> print(s6,type(s6))-------------------------6 <class 'str'>
+>>> s7='$%^&@'
+>>> print(s7,type(s7))---------------------------$%^&@ <class 'str'>
+----------------------------------
+>>> s1="Python Programming"
+>>> print(s1,type(s1))---------------------Python Programming <class 'str'>
+>>> s2='Python Programming'
+>>> print(s2,type(s2))--------------------Python Programming <class 'str'>
+------------------------------------------------------
+>>> addr1="Guido van Rossum
+						SyntaxError: unterminated string literal (detected at line 1)
+
+>>> addr1='Guido van Rossum
+						SyntaxError: unterminated string literal (detected at line 1)
+-----------------------------------------------
+>>> addr1=" " "Guido Van Rossum
+... FNO:3-4, Red Sea Side
+... Python Software Foundation
+... Nether Lands
+... Pin-57 " " "
+>>> print(addr1, type(addr1))
+					Guido Van Rossum
+					FNO:3-4, Red Sea Side
+					Python Software Foundation
+					Nether Lands
+					Pin-57  <class 'str'>
+---------------------------------
+>>> addr2=' ' 'T ravis Oliphant
+... Numpy Organization
+... FNO-34-56 Nether lands
+... PIN-45  ' ' '
+>>> print(addr2,type(addr2))
+				Travis Oliphant
+				Numpy Organization
+				FNO-34-56 Nether lands
+				PIN-45  <class 'str'>
+----------------------------------------------------------------------------------------
+>>> s1=" " "Python Programming" " "
+>>> print(s1,type(s1))------------------Python Programming <class 'str'>
+>>> s1=' ' ' Python Programming ' ' '
+>>> print(s1,type(s1))-------------------Python Programming <class 'str'>
+>>> s2=" " "K" " "
+>>> print(s2,type(s2))------------------K <class 'str'>
+>>> s2=' ' 'K' ' '
+>>> print(s2,type(s2))-------------------K <class 'str'>
+-------------------------------------------------------------------------------------
+
+===========================================
+					Operation on Strings
+			===========================================
+=>On str data, we can perform TWO Types of Operations. They are
+
+			1. Indexing
+			2. Slicing
+--------------------------------------------------------------------------------------------------------------------------
+1. Indexing
+--------------------------------------------------------------------------------------------------------------------------
+=>The process of obtaining single Character / Value from given str object by passing Valid 
+    Index  is called  Indexing.
+=>Syntax:-   strobj [ Index ]
+=>Here Index can be either +Ve Index or -Ve Index.
+=>If we enter Invalid Index then we get IndexError
+---------------------------------
+Examples:
+---------------------------------
+>>> s="PYTHON"
+>>> print(s,type(s))---------------------PYTHON <class 'str'>
+>>> print(s[0])---------------P
+>>> s[0]-----------------------'P'
+>>> s[1]-----------------------'Y'
+>>> s[-1]----------------------'N'
+>>> s[5]----------------------'N'
+>>> s[2]----------------------'T'
+>>> s[12]---------------------IndexError: string index out of range
+>>> s[-12]-------------------IndexError: string index out of range
+>>> "HYDERABAD"[3]-----------'E'
+>>> "HYDERABAD"[-3]------------'B'
+>>> "HYDERABAD"[5]-------------'A'
+>>> "HYDERABAD"[15]----------IndexError: string index out of range
+--------------------------------------------------------------------------------------------------------------------------
+2. Slicing:
+--------------------------------------------------------------------------------------------------------------------------
+=>The Process of Obtaining Range of Characters / Sub String from the Given Main String is 
+    called Slicing Operation.
+=>Slicing Operation Contains 5 Syntaxes. They are
+-------------------------
+Syntax:1:				strobj [ BEGIN INDEX : END INDEX ]
+-------------------------
+=>This Syntax gives Range of Characters / Sub String from BEGIN INDEX to END INDEX-1 
+    provided BEGIN INDEX < END INDEX Otherwise No Result will come ( ' ' will come)
+
+Examples:
+----------------------
+>>> s="PYTHON"
+>>> print(s,type(s))
+PYTHON <class 'str'>
+>>> s[0:4]------------------------'PYTH'
+>>> s[2:5]-----------------------'THO'
+>>> s[0:6]-----------------------'PYTHON'
+>>> s[2:6]------------------------'THON'
+>>> s[3:6]------------------------'HON'
+>>> s[4:2]--------------------------'  '
+>>> print(s[4:2])------------------ No result
+
+>>> s[-4:-2]-------------------------'TH'
+>>> s[-2:-4]-------------------------' '
+>>> s[-6:-2]------------------------- 'PYTH'
+>>> s[2:-2]------------------------'TH'
+>>> s[1:-2]-------------------------'YTH'
+>>> s[-6:5]-------------------------'PYTHO'
+>>> s[3:-5]----------------------------' '
+===============================================================
+-------------------------
+Syntax:2:				strobj [ BEGIN INDEX :  ]  ---Monday Class
+-------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+Syntaxes:
+					strobj[Begin Index : End Index]--completed
+					strobj[Begin Index : ]
+					strobj[ : End Index]
+					strobj[ : ]
+					strobj[Begin Index : End Index:Step]---Rules---1	 2  3 4  5   6
+
+-------------------------
+Syntax:2:				strobj [BEGIN INDEX :   ]  
+-------------------------
+=>In This Syntax, we are specifying BEGIN INDEX and we did't specify END INDEX.
+=>If we don't specify END INDEX then PVM takes END INDEX as Last Character Index 
+   len(strobj)-1
+-----------------------
+Examples:
+-----------------------
+>>> s="PYTHON"
+>>> print(s)-----------------------PYTHON
+>>> s[1:]--------------------------'YTHON'
+>>> s[2:]--------------------------'THON'
+>>> s[3:]-------------------------'HON'
+>>> s[4:]-------------------------'ON'
+>>> s[5:]------------------------'N'
+>>> s[-6:]----------------------'PYTHON'
+>>> s[-4:]---------------------'THON'
+>>> s[-3:]---------------------'HON'
+>>> s[-2:]---------------------'ON'
+------------------------------------------------------------------------------------------------------------------------------
+Syntax:3:				strobj [ : END INDEX  ]  
+-----------------------------------------------------------------------------------------------------------------------------
+=>In This Syntax, we are specifying END INDEX and we did't specify BEGIN INDEX.
+=>If we don't specify BEGIN  INDEX then PVM takes BEGIN INDEX as First Character Index (0)
+-----------------------
+Examples:
+-----------------------
+>>> s="PYTHON"
+>>> print(s)----------------PYTHON
+>>> s[:4]-------------------'PYTH'
+>>> s[:3]-------------------'PYT'
+>>> s[:2]-------------------'PY'
+>>> s[:6]-------------------'PYTHON'
+>>> s[:3]-------------------'PYT'
+>>> s[:1]-----------------'P'
+>>> s[:-3]-------------------'PYT'
+>>> s[:-1]------------------'PYTHO'
+>>> s[:0]---------------------------------Very IMP----'  '
+>>> s[:-4]----------------'PY'
+>>> s[:-2]-----------------'PYTH'
+>>> s[:-5]---------------'P'
+------------------------------------------------------------------------------------------------------------------------------
+Syntax:4:				strobj [  :  ]  
+-----------------------------------------------------------------------------------------------------------------------------
+=>In This Syntax, we are not specifying Both BEGIN INDEX and  END INDEX.
+=>If we don't specify BEGIN  INDEX then PVM takes BEGIN INDEX as First Character Index (0) 
+    and If we don't specify END INDEX then PVM takes END INDEX as Last Character Index (OR) len(strobj)-1
+=>Simply This syntax gives  Total Str object value as Result / Output
+---------------------------
+Examples
+--------------------------
+>>> s="PYTHON"
+>>> print(s)------------------------PYTHON
+>>> s[:]-----------------------------'PYTHON'
+>>> s="Python is an OOP Lang"
+>>> print(s)-----------------------Python is an OOP Lang
+>>> s[:]----------------------------'Python is an OOP Lang'
+NOTE:
+-------------
+Syntax1, Syntax2,Syntax3 and Syntax4 allows to slice the data of str object in FORWARD DIRECTION with default STEP Value 1
+------------------------------------------------------------------------------------------------------------------------------
+Syntax:4:				strobj [BEGIN INDEX  : END INDEX: STEP  ]  
+-----------------------------------------------------------------------------------------------------------------------------
+					
+Rule-1: Here BEGIN INDEX  , END INDEX,  STEP  values  can be either  +VE or -VE
+Rule-2: If STEP Value is +VE Then PVM Takes Range of Characters from BEGIN INDEX to 
+             END INDEX-1 in FORWARD DIRECTION Provided BEGIN INDEX < END INDEX Otherwise we get No Result ( '    ')
+Rule-3: If STEP Value is -VE Then PVM Takes Range of Characters from BEGIN INDEX to 
+             END INDEX+1 in BACKWARD DIRECTION Provided BEGIN INDEX > END INDEX Otherwise we get No Result ( '    ')
+Rule-4: When we obtain range of characters in FORWARD Direction if END INDEX is 0 then we 
+             never get any result
+Rule-5: When we obtain range of characters in BACKWARD Direction if END INDEX is -1 then		     we  never get any result
+
+Examples:
+-------------------------
+>>> s="PYTHON"
+>>> print(s)-----------------PYTHON
+>>> s[0:6:1]----------------'PYTHON'
+>>> s[0:6:2]---------------'PTO'
+>>> s[2:5:2]---------------'TO'
+>>> s[2:6:2]--------------'TO'
+>>> s[::1]------------------'PYTHON'
+>>> s[::2]------------------'PTO'
+>>> s[::3]-----------------'PH'
+>>> s[1::1]-----------------'YTHON'
+>>> s[:6:1]----------------'PYTHON'
+>>> s[:3:2]----------------'PT'
+>>> s[:2:2]----------------'P'
+>>> s[-6:-1:1]---------------'PYTHO'
+>>> s[-6:-1:3]-----------------'PH'
+>>> s[:-2:3]------------------'PH'
+>>> s[:-2:2]-----------------'PT'
+>>> s[0:-1:1]-----------------'PYTHO'
+>>> s[-6::2]--------------------'PTO'
+>>> s[0:-2:2]-----------------'PT'
+----------------------------------
+>>> s="PYTHON"
+>>> print(s)
+PYTHON
+>>> s[::]--------------------'PYTHON'
+>>> s[::-1]------------------'NOHTYP'
+>>> s[0:6:-1]---------------''
+>>> s[5:3:-1]-----------------'NO'
+>>> s[5:0:-1]----------------'NOHTY'
+>>> s[::-1]-------------------'NOHTYP'
+>>> s[-6: :]--------------------'PYTHON'
+>>> s[-6: :-1]--------------------'P'
+>>> s[-6: :1]-------------------'PYTHON'
+>>> s[-6:-1:-1]--------------------' '
+>>> s[::-2]----------------------------'NHY'
+>>> s[4:0:-2]----------------------------'OT'
+>>> s[4::-2]---------------------------'OTP'
+---------------------
+>>> s="PYTHON"
+>>> print(s)----------------------PYTHON
+>>> s[3:0:1]----------------------' '
+>>> s[3:-1:-11]-------------------' '
+>>> s[3:-1:-1]---------------------' '
+==================================X================================
+Special Case:
+--------------------------------
+>>> s="MADAM"
+>>> s[::]==s[::-1]
+True
+>>> s="MADAm"
+>>> s[::]==s[::-1]
+False
+>>> ord('M')
+77
+>>> ord('m')
+109
+>>> s="LIRIL"
+>>> s==s[::-1]
+True
+>>> s="MADAm"
+>>> s[::]==s[::-1][::-1]
+True
+>>> "RACECAR"[::2]=="RACECAR"[::-1][::2]
+True
+>>> "PYTHON"[::2]=="PYTHON"[::-1][::-1][0::2]
+True
+==================================X==================================

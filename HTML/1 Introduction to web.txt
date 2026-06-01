@@ -90,7 +90,7 @@ Example:
 https://www.datapro.in
 
 Explanation:
-1.https → HyperText Transfer Protocol Secure (protocol used to access the website securely)
+https → HyperText Transfer Protocol Secure (protocol used to access the website securely)
 :// → Delimiter (separates the protocol from the rest of the URL)
 www → Subdomain (optional part of the domain, often used for websites)
 datapro → Primary Level Domain (PLD) (main name of the website)

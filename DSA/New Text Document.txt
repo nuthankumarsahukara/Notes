@@ -1,0 +1,251 @@
+Core Java → Arrays → Strings → Recursion → Linked List → Stack → Queue → Hashing → Trees → Heap → Graphs → Sorting → Searching → Greedy → Backtracking → Dynamic Programming → Advanced DSA → Interview Problems
+
+Module 1: Introduction to DSA (1 Week)
+Topics
+What is DSA?
+Why DSA is important
+Problem-solving approach
+Algorithm design
+Flowcharts and Pseudocode
+Complexity Analysis
+Time Complexity
+Space Complexity
+Big O Notation
+Omega (Ω) Notation
+Theta (Θ) Notation
+Complexity Examples
+O(1)
+O(log n)
+O(n)
+O(n log n)
+O(n²)
+O(2ⁿ)
+
+Module 2: Recursion and Mathematics (1 Week)
+Recursion
+Recursive Functions
+Base Case
+Recursive Tree Analysis
+Problems
+Factorial
+Fibonacci Series
+Power Calculation
+Tower of Hanoi
+Sum of Digits
+Mathematical Algorithms
+GCD & LCM
+Prime Numbers
+Sieve of Eratosthenes
+Modular Arithmetic
+
+Module 3: Arrays (1 Week)
+Concepts
+Array Representation
+Memory Allocation
+Operations
+Traversal
+Insertion
+Deletion
+Searching
+Updating
+Problems
+Maximum Element
+Second Largest
+Rotate Array
+Merge Arrays
+Duplicate Elements
+
+Module 4: Strings (1 Week)
+Topics
+String Operations
+Character Arrays
+Mutable vs Immutable Strings
+Problems
+Reverse String
+Palindrome
+Anagram
+Frequency Count
+Substring Search
+Pattern Matching
+Naive Algorithm
+KMP Algorithm
+Rabin-Karp Algorithm
+
+Module 5: Linked Lists (1 Week)
+Types
+Singly Linked List
+Doubly Linked List
+Circular Linked List
+Operations
+Insert
+Delete
+Search
+Reverse
+Problems
+Detect Loop
+Middle Node
+Merge Lists
+Remove Duplicates
+
+Module 6: Stack (1 Week)
+Concepts
+LIFO Principle
+Implementation
+Array
+Linked List
+Applications
+Expression Evaluation
+Parenthesis Matching
+Infix to Postfix
+Postfix Evaluation
+
+Module 7: Queue (1 Week)
+Types
+Simple Queue
+Circular Queue
+Priority Queue
+Deque
+Applications
+CPU Scheduling
+BFS Traversal
+
+Module 8: Hashing (1 Week)
+Topics
+Hash Functions
+Collision Handling
+Chaining
+Open Addressing
+Problems
+Frequency Count
+Duplicate Detection
+Pair Sum
+
+Module 9: Trees (2 Weeks)
+Binary Tree
+Tree Terminology
+Traversals
+Preorder
+Inorder
+Postorder
+Level Order
+Binary Search Tree (BST)
+Insert
+Delete
+Search
+Advanced Trees
+AVL Tree
+Red Black Tree
+B Tree
+B+ Tree
+Heap
+Min Heap
+Max Heap
+Heap Sort
+Priority Queue
+
+Module 10: Graphs (2 Weeks)
+Graph Basics
+Directed Graph
+Undirected Graph
+Weighted Graph
+Representation
+Adjacency Matrix
+Adjacency List
+Traversal
+BFS
+DFS
+Advanced Algorithms
+Dijkstra Algorithm
+Bellman-Ford Algorithm
+Floyd-Warshall Algorithm
+Prim's Algorithm
+Kruskal's Algorithm
+Topological Sorting
+
+Module 11: Searching Algorithms (3 Days)
+Linear Search
+Binary Search
+Iterative
+Recursive
+Variations
+Lower Bound
+Upper Bound
+
+Module 12: Sorting Algorithms (1 Week)
+Basic Sorting
+Bubble Sort
+Selection Sort
+Insertion Sort
+Efficient Sorting
+Merge Sort
+Quick Sort
+Heap Sort
+Non-Comparison Sorting
+Counting Sort
+Radix Sort
+Bucket Sort
+
+Module 13: Greedy Algorithms (1 Week)
+Topics
+Greedy Strategy
+Problems
+Activity Selection
+Fractional Knapsack
+Job Scheduling
+Huffman Coding
+
+Module 14: Divide and Conquer (3 Days)
+Topics
+Concept
+Recurrence Relations
+Problems
+Merge Sort
+Quick Sort
+Binary Search
+
+Module 15: Backtracking (1 Week)
+Problems
+N Queens
+Rat in a Maze
+Sudoku Solver
+Permutations
+Combinations
+
+Module 16: Dynamic Programming (2 Weeks)
+Concepts
+Memoization
+Tabulation
+Problems
+Fibonacci
+0/1 Knapsack
+Coin Change
+Longest Common Subsequence
+Longest Increasing Subsequence
+Matrix Chain Multiplication
+
+Module 17: Advanced Data Structures (1 Week)
+Topics
+Trie
+Segment Tree
+Fenwick Tree (BIT)
+Disjoint Set Union (Union-Find)
+Applications
+Range Queries
+Network Connectivity
+
+Module 18: Competitive Programming Concepts (1 Week)
+Topics
+Sliding Window
+Two Pointers
+Prefix Sum
+Binary Search on Answer
+Bit Manipulation
+
+Module 19: Interview Preparation (1 Week)
+Most Asked Problems
+Arrays
+Strings
+Linked Lists
+Trees
+Graphs
+Dynamic Programming

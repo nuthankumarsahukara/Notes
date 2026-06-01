@@ -56,9 +56,9 @@ JavaScript and HTML DOM:(Document Object Model)
 2 Browser Objects
 
 JavaScript Objects:
-    Array object	    Boolean object
-    Date object	    	    Math object
-    String object	    Number object    
+    Array object	   Boolean object
+    Date object	   Math object
+    String object	   Number object    
     RegExp object
     
 Browser Objects: 

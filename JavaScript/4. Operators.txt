@@ -14,13 +14,10 @@ Arithmetic operators are used to perform arithmetic operations on the operands.
 
 Operator		Description		Example
 +		Addition			10+20 = 30
--		Subtraction		20-10 = 10
-*		Multiplication		10*20 = 200
-/		Division			20/10 = 2
-%		Modulus (Remainder)	20%10 = 0
-++		Increment		var a=10; a++; Now a = 11
---		Decrement		var a=10; a--; Now a = 9
-
+-		Subtraction			20-10 = 10
+*		Multiplication			10*20 = 200
+/		Division				20/10 = 2
+%		Modulus (Remainder)		20%10 = 0
 
 Example:
 <!DOCTYPE html>
@@ -47,10 +44,10 @@ Example:
 
 JavaScript Assignment Operators
 The assignment operators are used to assign values to variables.
-Operator 	Description 	Example 	Is The Same As
-= 	Assign 			x = y 	x = y
+Operator 	Description 		Example 	Is The Same As
+= 	Assign 			x = y 		x = y
 += 	Add and assign 		x += y 	x = x + y
--= 	Subtract and assign 	x -= y 	x = x - y
+-= 	Subtract and assign 		x -= y 	x = x - y
 *= 	Multiply and assign 		x *= y 	x = x * y
 /= 	Divide and assign quotient 	x /= y 	x = x / y
 %= 	Divide and assign modulus 	x %= y 	x = x % y
@@ -141,9 +138,9 @@ JavaScript Logical Operators
 The logical operators are typically used to combine conditional statements.
 
 Operator 	Name 	Example 	Result
-&& 	And 	x && y 	True if both x and y are true
-|| 	Or 	x || y 	True if either x or y is true
-! 	Not 	!x 	True if x is not true
+&& 		And 	x && y 	True if both x and y are true
+|| 		Or 	x || y 		True if either x or y is true
+! 		Not 	!x 		True if x is not true
 
 Example:
 <!doctype html>
@@ -174,12 +171,12 @@ JavaScript Comparison Operators
 The comparison operators are used to compare two values in a Boolean fashion.
 
 Operator 		Name 			Example 		
-== 		Equal 			x == y 		
+== 		Equal 				x == y 		
 === 		Identical 			x === y 		
-!= 		Not equal 		x != y 	
-!== 		Not identical 		x !== y 	
-< 		Less than 		x < y 	
-> 		Greater than 		x > y 	
+!= 		Not equal 			x != y 	
+!== 		Not identical 			x !== y 	
+< 		Less than 			x < y 	
+> 		Greater than 			x > y 	
 >= 		Greater than or equal to 	x >= y 	
 <= 		Less than or equal to 	x <= y 	
 

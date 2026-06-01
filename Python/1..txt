@@ -1,0 +1,33 @@
+Real Time Application developed by Using Python Programming Language
+=>By Using Python Programming Language, we can develop the following Real Time Applications.
+		
+1. Development of Web Applications. (Web Sites)
+	a) Java Language----Servlets, JDBC, Hibernate,Spring, ...etc(Sun MS)
+	b) C#.net Language----ASP.net-----(MS)
+	-----------------------------
+	c) Python Programming----Django, Falsk,Pyramid, Bottle....
+				
+2. Development of Gamming Applications.
+3. Development of Artificial Intiligence
+	--Machine Learning 
+	--Deep Learning
+4. Desktop GUI Applications  
+5. Image Processing Applications
+6. Text Processing   
+7. Business Application (Apps) 
+8. Audio and video Based Applications (youtube)
+9. Web Scrapping / Harvesting applications.
+10.Data Visualization Based Applications.
+11. Complex Mathematical Operations
+12. Scientific Applications.
+13. Software Development.
+14. Operating System Installers.
+15. CAD and CAM Applications.
+16. Embedded Applications
+17. Console Based Applications.
+18. Language Development.
+19. Automation of Testing
+20. Animation Applications
+21. Data Analysis and Data Analytics
+22. Computer Vision
+	......................Many More
